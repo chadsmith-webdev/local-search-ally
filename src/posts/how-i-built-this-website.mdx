@@ -1,30 +1,214 @@
 ---
-title: "How I Built the Local Search Ally Website"
+title: "How I Built the Local Search Ally Website: A Full Case Study"
 date: "2026-03-13"
-description: "A behind-the-scenes case study of building a Next.js website for a local SEO brand from scratch."
-image: "/images/how-i-built-the-local-search-ally-website.jpg"
-tags: ["case study", "web development", "next.js"]
+description: "A behind-the-scenes look at how I built localsearchally.com from scratch using Next.js 15, including every tech decision, SEO strategy, and lesson learned along the way."
+image: "/images/case-study-hero.webp"
 ---
 
-This is the first post on Local Search Ally — and it's a meta one.
+I want to be upfront about something: this website is both my business and my proof of work.
 
-I'm documenting the entire process of building this website as a live case study. 
-If you're a contractor wondering what goes into a modern website build, this series 
-will show you exactly what we do and why we do it.
+As someone who specializes in local SEO and web development for contractors, it felt wrong to tell clients "trust me with your online presence" while running a mediocre website myself. So I documented the entire build process — every decision, every mistake, every tool — so you can see exactly how I work.
 
-## The Stack
+This is that story.
 
-![Description of the image](/images/technology-stack.jpg)
+---
 
-This site is built with **Next.js 15**, styled with CSS variables, and deployed on **Vercel**. 
-The blog you're reading right now is powered by MDX — which means posts are written in 
-simple Markdown files, no database required.
+## Why I Started Local Search Ally
 
-## Why Document This?
+I've spent the last 5+ years doing local SEO for my own projects. I learned what actually moves the needle — not from courses or textbooks, but from watching rankings climb and fall in real time. That hands-on experience is something you can't fake.
 
-Two reasons:
+Recently I decided to add web development to my services, so I'm currently pursuing a degree in Web Development. The logic is simple: great local SEO deserves a great website. Why make clients juggle two vendors when I can handle both?
 
-1. 1️⃣ Transparency builds trust. I want potential clients to see exactly how I work.
-2. 2️⃣ This is a real-world example of the kind of site I build for contractors.
+Local Search Ally is the result — a focused agency serving contractors who want to get found online.
 
-More updates coming as the build continues.
+![A screenshot of the finished Local Search Ally homepage](/images/homepage-screenshot.webp)
+*The finished homepage — dark theme, Carolina Blue accents, and a clear value proposition.*
+
+---
+
+## The Tech Stack Decision
+
+The first real decision was choosing a tech stack. I narrowed it down to two options:
+
+**Option 1: Astro** — simpler to learn, blazing fast, great for blogs and mostly-static sites.
+
+**Option 2: Next.js** — the industry standard for React-based websites, more job-relevant, backed by Vercel.
+
+I chose **Next.js 15** for one reason: I'm pursuing a web development degree and React is the skill that opens the most doors. Astro would have been easier, but Next.js makes me a better developer long term. Sometimes the harder path is the right one.
+
+For hosting I chose **Vercel** — the company that builds Next.js. Deploying a Next.js site to Vercel is like plugging a lamp into the outlet it was designed for. One click, zero configuration, automatic SSL, and every GitHub push triggers a new deploy automatically.
+
+**Time taken: about 30 minutes** from project initialization to first deploy.
+
+---
+
+## The Design Choices
+
+I wanted the site to feel bold and professional — not the generic blue-and-white SaaS look you see everywhere.
+
+### Dark theme
+
+A dark background immediately sets the site apart. Most local business websites are light — going dark signals that this is a modern, technical operation. It also makes the accent colors pop dramatically.
+
+### The color palette
+
+I'm originally from North Carolina and I bleed Carolina and Duke blue. Those two colors became the brand:
+
+- **Carolina Blue `#7BAFD4`** — primary accent, used for headings, links, and CTAs
+- **Duke Blue `#012169`** — secondary, used for borders and depth
+- **Background `#0a0a0a`** — near-black, not pure black, which feels softer on the eyes
+
+The combination gives the site a bold, confident feel without being aggressive.
+
+![A close-up of the color palette in use on the services page](/images/color-palette.webp)
+*Carolina Blue for highlights, Duke Blue for structural borders — a nod to my NC roots.*
+
+### Typography
+
+I chose **Poppins** — a geometric sans-serif with strong weights that look great on dark backgrounds. Next.js loads it through its built-in font system, which serves the font from your own domain rather than Google's servers. That means faster load times and no privacy concerns.
+
+**Time taken: about 1 hour** for the full design system including navbar, footer, colors, and typography.
+
+---
+
+## Building the Pages
+
+The site launched with five pages: Home, Services, About, Blog, and Contact.
+
+### Home page
+
+The hero needed to communicate one thing instantly: what I do and who I do it for. I landed on:
+
+*"Helping Contractors Get Found Where It Matters Most"*
+
+Underneath that, two CTAs — one to see services, one to get a free audit. Below the hero, a services snapshot and a trust bar with key stats.
+
+### Services page
+
+I made a deliberate decision here: bundle related services rather than listing every individual offering. Local SEO, for example, covers citations, reviews, listings, and on-page optimization. Presenting these as one service keeps the page clean and makes it easier to sell packages.
+
+The four services I launched with:
+- Local SEO
+- Google Business Profile Optimization
+- Web Development
+- SEO Audits
+
+Each card has a description, bullet points of what's included, a starting price, and a CTA.
+
+![The services page showing all four service cards](/images/services-screenshot.webp)
+*Clean service cards with pricing — no fluff, just what contractors need to know.*
+
+### About page
+
+Local business owners hire people they trust. The About page is where that trust is built. I wrote it personally — my NC roots, my move to Siloam Springs, Arkansas (a small town that feels a lot like home with its cow pastures and tight-knit community), and my journey into web development.
+
+The left-side photo with right-side text layout keeps it human without feeling like a corporate bio.
+
+### Blog
+
+The blog runs on **MDX** — Markdown files with the ability to embed React components. Each post lives as a `.mdx` file in a `src/posts` folder. Next.js reads those files and generates pages automatically.
+
+This means adding a new blog post is as simple as creating a new file. No database, no CMS login, no plugins to update. Just write and push to GitHub.
+
+### Contact page
+
+Three ways to reach me: email, phone, and a Calendly link to book a free 30-minute call. The form is handled by **Formspree** — a free service that takes form submissions and emails them to me. No backend code required.
+
+**Time taken: about 3 hours** to build all five pages.
+
+---
+
+## The SEO Setup
+
+This is where I spent the most deliberate time. I refused to launch without proper SEO foundations in place — it would be embarrassing to build websites for contractors without practicing what I preach.
+
+### Metadata and Open Graph
+
+Every page has a unique title tag and meta description. The root layout uses Next.js's metadata system with a template that automatically appends the site name:
+
+`Services | Local Search Ally`
+
+Open Graph tags ensure the site looks great when shared on social media — with a custom branded preview image that shows the site name, tagline, and URL.
+
+### LocalBusiness schema markup
+
+This was the highest-priority SEO item. Schema markup is structured data that tells Google exactly what your business is in a language it understands natively. I implemented `ProfessionalService` schema with:
+
+- Business name, URL, phone, and email
+- Physical address in Siloam Springs, AR
+- Service areas covering Arkansas, North Carolina, and the US
+- List of service types
+- Links to booking page
+
+Think of it like filling out a very detailed form that Google reads before deciding how to display your business in search results.
+
+### Sitemap and robots.txt
+
+Next.js 15 generates both automatically from simple JavaScript files. The sitemap updates itself every time a new blog post is published — no manual updates needed. The robots.txt points Google directly to the sitemap.
+
+![The sitemap XML showing all pages including the blog post](/images/sitemap-screenshot.png)
+*Auto-generated sitemap — every page accounted for, priorities set correctly.*
+
+### Google Search Console
+
+Once the domain was live, I submitted the sitemap directly to Search Console. This tells Google to start crawling immediately rather than waiting to discover the site organically. Within a few days you'll start seeing which queries trigger impressions.
+
+### Google Analytics
+
+Installed via Next.js's official `@next/third-parties` package — it loads after the page is interactive so it never slows down page speed. I can now track visitors, traffic sources, and which pages perform best.
+
+**Time taken: about 2 hours** for the full SEO setup.
+
+---
+
+## Lessons Learned
+
+### 1. Next.js 15 changed how params work
+
+When building the blog post template, I ran into an error I didn't expect — in Next.js 15, route params are now a Promise that needs to be awaited before you can access them. In previous versions you could access `params.slug` directly. Now you need:
+```js
+const { slug } = await params;
+```
+
+A small change but it'll catch you off guard if you're following older tutorials.
+
+### 2. Build the SEO foundation before launch
+
+It's tempting to deploy and add SEO later. Don't. Schema markup, sitemaps, and metadata are structural — retrofitting them is harder than building them in from the start. Treat SEO like your site's foundation, not its paint job.
+
+### 3. MDX for blogging is underrated
+
+Most people default to WordPress for a blog. MDX in Next.js is a genuinely better experience for developers — posts are just files, there's no database to maintain, and everything lives in your GitHub repository alongside your code. Version-controlled blog posts are a feature, not a limitation.
+
+### 4. Poppins on dark backgrounds hits different
+
+I went back and forth on the font choice. Poppins at 800 weight on a dark background looks sharp in a way that lighter fonts simply don't. If you're building a dark-themed site, lean into heavy font weights.
+
+---
+
+## The Full Stack at a Glance
+
+| Tool | Purpose |
+|---|---|
+| Next.js 15 | Framework |
+| Vercel | Hosting + deployment |
+| Tailwind CSS | Utility styles |
+| MDX | Blog posts |
+| Formspree | Contact form |
+| Poppins | Typography |
+| Google Analytics | Traffic tracking |
+| Google Search Console | Search performance |
+| Schema markup | Structured data |
+
+---
+
+## What's Next
+
+This is a living site — I'll be adding to it regularly. On the roadmap:
+
+- Case studies from client work
+- Detailed local SEO guides for contractors
+- A portfolio section as web development projects are completed
+- Testimonials once clients start rolling in
+
+If you're a contractor who wants a site like this — fast, SEO-optimized, and built to convert — [get in touch](/contact). I'd love to be your ally.
