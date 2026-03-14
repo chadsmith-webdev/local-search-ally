@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const metadata = {
   title: "About | Local Search Ally",
   description: "Meet Chad, the local SEO and web development specialist behind Local Search Ally.",
@@ -25,20 +27,15 @@ export default function About() {
         alignItems: "start",
         marginBottom: "4rem",
       }}>
-        <div style={{
-          backgroundColor: "var(--surface)",
-          border: "1px solid var(--duke)",
-          borderRadius: "10px",
-          aspectRatio: "1",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "var(--muted)",
-          fontSize: "0.85rem",
-        }}>
-          {/* Replace this div with an <img> tag once you have your photo */}
-          Photo coming soon
-        </div>
+        <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+  <Image
+    src="/images/chad.jpg"
+    alt="Chad Smith — Local Search Ally"
+    width={250}
+    height={250}
+    style={{ width: "100%", height: "auto", display: "block" }}
+  />
+</div>
         <div>
           <p style={{ lineHeight: 1.8, marginBottom: "1.5rem", color: "var(--muted)" }}>
             I grew up in North Carolina — where local businesses are the backbone of every community. 
