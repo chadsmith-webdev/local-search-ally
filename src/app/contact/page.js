@@ -63,12 +63,10 @@ export default function Contact() {
 
         {/* Contact Form */}
         <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          style={{ display: "grid", gap: "1.25rem" }}
-        >
-          <input type="hidden" name="form-name" value="contact" />
+action="https://formspree.io/f/mzdjvvjb"
+  method="POST"
+  style={{ display: "grid", gap: "1.25rem" }}
+>
 
           {[
             { label: "Your Name", name: "name", type: "text" },
