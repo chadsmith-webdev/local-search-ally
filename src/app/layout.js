@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { siteConfig } from "@/lib/metadata";
 
 const poppins = Poppins({
@@ -18,6 +19,9 @@ export const metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  verification: {
+    google: siteConfig.googleVerification,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -67,6 +71,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <GoogleAnalytics gaId="G-SGQ98MEHWZ" />
       </body>
     </html>
   );
