@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Local Search Ally — Local SEO & Web Design for NWA Contractors";
+export const alt = "Local Search Ally — Local SEO & Web Dev for NWA Contractors";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

@@ -2,7 +2,7 @@ import { getAllPosts } from "@/lib/posts";
 import HomeClient from "@/components/HomeClient";
 
 export const metadata = {
-  title: "Local Search Ally | Local SEO & Web Design for NWA Contractors",
+  title: "Local Search Ally | Local SEO & Web Dev for NWA Contractors",
   description: "Local SEO and web development for NWA contractors. We help you rank higher on Google, get more calls, and win more jobs. Based in Siloam Springs, AR.",
 };
 
