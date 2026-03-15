@@ -49,14 +49,10 @@ export default function Footer() {
       borderTop: "1px solid var(--duke)",
       padding: "4rem 2rem 2rem",
     }}>
-      <div style={{
-        maxWidth: "1100px",
-        margin: "0 auto",
-        display: "grid",
-        gridTemplateColumns: "2fr 1fr 1fr",
-        gap: "4rem",
-        marginBottom: "3rem",
-      }}>
+      <div className="footer-grid" style={{
+  maxWidth: "1100px",
+  margin: "0 auto",
+}}>
 
         {/* Brand column */}
         <div>
@@ -139,7 +135,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{
+      <div className="fotter-bottom" style={{
         maxWidth: "1100px",
         margin: "0 auto",
         paddingTop: "2rem",
@@ -164,6 +160,26 @@ export default function Footer() {
           ))}
         </div>
       </div>
+      <style>{`
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+  }
+  .footer-social a:hover { color: var(--carolina) !important; }
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr !important;
+      gap: 2.5rem !important;
+    }
+    .footer-bottom {
+      flex-direction: column !important;
+      text-align: center !important;
+      gap: 0.75rem !important;
+    }
+  }
+`}</style>
     </footer>
   );
 }
