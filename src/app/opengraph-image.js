@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Local Search Ally";
+export const alt = "Local Search Ally — Local SEO & Web Development for NWA Contractors";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -103,6 +103,21 @@ export default function OGImage() {
         }}>
           Local Search Ally — helping NWA contractors get found online
         </div>
+        {/* CTA pill */}
+<div style={{
+  position: "absolute",
+  bottom: "48px",
+  left: "80px",
+  display: "flex",
+  backgroundColor: "#7BAFD4",
+  color: "#000000",
+  fontSize: "18px",
+  fontWeight: "700",
+  padding: "12px 28px",
+  borderRadius: "100px",
+}}>
+  Book a Free Consultation →
+</div>
         {/* URL */}
         <div style={{
           position: "absolute",
