@@ -138,7 +138,7 @@ export default function About() {
 
       {/* Photo + Intro */}
       <section style={{ padding: "5rem 2rem", maxWidth: "1000px", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "4rem", alignItems: "start" }}>
+        <div className="two-col" style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "4rem", alignItems: "start" }}>
           <Reveal>
             <div style={{ borderRadius: "10px", overflow: "hidden", border: "1px solid var(--duke)" }}>
               <Image
@@ -195,7 +195,7 @@ export default function About() {
 
       {/* Journey Timeline */}
       <section style={{ borderTop: "1px solid var(--duke)", padding: "5rem 2rem" }}>
-        <div style={{ maxWidth: "1000px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
+        <div className="two-col" style={{ maxWidth: "1000px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
           <Reveal>
             <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1.5rem" }}>
               My Journey

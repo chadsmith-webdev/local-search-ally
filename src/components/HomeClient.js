@@ -113,10 +113,17 @@ export default function HomeClient({ posts }) {
           border-radius: 0 8px 8px 0;
           margin-bottom: 1rem;
         }
+          @media (max-width: 768px) {
+  .hero-section { padding: 5rem 1.5rem 4rem !important; }
+  .two-col { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .three-col { grid-template-columns: 1fr !important; }
+  .hide-mobile { display: none !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+}
       `}</style>
 
       {/* 1. HERO */}
-<section style={{
+<section className="hero-section" style={{
   padding: "9rem 4rem 8rem",
   borderBottom: "1px solid var(--duke)",
   position: "relative",
@@ -188,7 +195,7 @@ export default function HomeClient({ posts }) {
             Every day, homeowners in NWA search Google for contractors. If you're not showing up, you're losing jobs to competitors who are — even if their work isn't as good as yours.
           </p>
         </Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
+        <div className="three-col" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
           {[
             { icon: "🫥", title: "Invisible on Google Maps", desc: "Your competitors are in the Map Pack. You're buried on page 3 — or not showing up at all." },
             { icon: "💾", title: "Outdated or No Website", desc: "Your website doesn't reflect the quality of your work — or worse, you don't have one and leads go to someone who does." },
@@ -207,7 +214,7 @@ export default function HomeClient({ posts }) {
 
       {/* 3. GUIDE */}
       <section style={{ borderTop: "1px solid var(--duke)", borderBottom: "1px solid var(--duke)", padding: "5rem 2rem" }}>
-        <div style={{ maxWidth: "1000px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
+        <div className="two-col" style={{ maxWidth: "1000px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
           <Reveal>
             <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1rem" }}>Meet Your Guide</p>
             <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: "800", marginBottom: "1.5rem", lineHeight: 1.3 }}>
@@ -254,7 +261,7 @@ export default function HomeClient({ posts }) {
             No jargon, no mystery. Just clear steps to get your business visible where it counts.
           </p>
         </Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", marginBottom: "3rem" }}>
+        <div className="three-col" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", marginBottom: "3rem" }}>
           {[
             { number: "01", title: "We Talk (For Free)", desc: "Book a no-pressure conversation. I'll look at your current online presence, ask about your business, and be honest about what I can help with — and what I can't." },
             { number: "02", title: "Plan & Build", desc: "From GBP optimization to a website that converts — I'll build the digital presence that gets your phone ringing. You'll know every step I'm taking." },
@@ -383,7 +390,7 @@ export default function HomeClient({ posts }) {
             <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: "800" }}>Two paths forward.</h2>
             <p style={{ color: "var(--muted)", marginTop: "1rem", lineHeight: 1.9 }}>Every month you're invisible online is a month your competitors are winning jobs that should be yours.</p>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+          <div className="two-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
             <Reveal>
               <div style={{ backgroundColor: "var(--surface)", border: "1px solid var(--duke)", borderTop: "4px solid #c0392b", borderRadius: "10px", padding: "2rem" }}>
                 <h3 style={{ color: "#c0392b", marginBottom: "1.5rem" }}>Do Nothing</h3>
@@ -459,7 +466,7 @@ export default function HomeClient({ posts }) {
             </div>
             <Link href="/blog" className="btn-outline">View All Posts</Link>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
+          <div className="three-col" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
             {posts.slice(0, 3).map((post, i) => (
               <Reveal key={post.slug} delay={i * 100}>
                 <Link href={`/blog/${post.slug}`} className="blog-card">
@@ -503,7 +510,7 @@ export default function HomeClient({ posts }) {
         gap: "1rem",
       }}
     >
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+      <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
         {[
           { name: "name", placeholder: "Your Name", type: "text" },
           { name: "business", placeholder: "Business Name", type: "text" },
@@ -529,7 +536,7 @@ export default function HomeClient({ posts }) {
           />
         ))}
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+      <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
         {[
           { name: "phone", placeholder: "Phone Number", type: "tel" },
           { name: "email", placeholder: "Email Address", type: "email" },
