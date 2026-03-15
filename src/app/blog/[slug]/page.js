@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { getPostBySlug, getAllPosts } from "@/lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
@@ -33,17 +34,17 @@ export default async function BlogPost({ params }) {
   const { metadata, content } = getPostBySlug(slug);
 
   return (
-    <div style={{ maxWidth: "750px", margin: "0 auto", padding: "4rem 2rem" }}>
+    <div style={{ maxWidth: "780px", margin: "0 auto", padding: "4rem 2rem" }}>
 
       {/* Feature Image */}
       {metadata.image && (
-        <div style={{ marginBottom: "2.5rem", borderRadius: "10px", overflow: "hidden" }}>
+        <div style={{ marginBottom: "3rem", borderRadius: "10px", overflow: "hidden", border: "1px solid var(--duke)" }}>
           <Image
             src={metadata.image}
             alt={metadata.title}
             width={1200}
             height={630}
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "100%", height: "auto", display: "block" }}
             priority
           />
         </div>
@@ -51,22 +52,118 @@ export default async function BlogPost({ params }) {
 
       {/* Post Header */}
       <div style={{ marginBottom: "3rem" }}>
-        <p style={{ color: "var(--muted)", fontSize: "0.85rem", marginBottom: "1rem" }}>
-          {new Date(metadata.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-        </p>
-        <h1 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: "800", lineHeight: 1.3, marginBottom: "1rem" }}>
+        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.25rem" }}>
+          {metadata.tags && metadata.tags.map((tag) => (
+            <span key={tag} style={{
+              backgroundColor: "rgba(1,33,105,0.4)",
+              border: "1px solid var(--duke)",
+              color: "var(--muted)",
+              fontSize: "0.7rem",
+              padding: "0.2rem 0.65rem",
+              borderRadius: "100px",
+            }}>
+              {tag}
+            </span>
+          ))}
+        </div>
+        <h1 style={{ fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: "800", lineHeight: 1.2, marginBottom: "1rem" }}>
           {metadata.title}
         </h1>
-        <p style={{ color: "var(--muted)", fontSize: "1.1rem", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--muted)", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
           {metadata.description}
         </p>
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem", paddingBottom: "2rem", borderBottom: "1px solid var(--duke)" }}>
+          <div style={{
+            width: "40px",
+            height: "40px",
+            borderRadius: "50%",
+            overflow: "hidden",
+            border: "2px solid var(--carolina)",
+            flexShrink: 0,
+          }}>
+            <Image
+              src="/images/chad.jpg"
+              alt="Chad Smith"
+              width={40}
+              height={40}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+          <div>
+            <p style={{ color: "var(--text)", fontWeight: "600", margin: 0, fontSize: "0.9rem" }}>Chad Smith</p>
+            <p style={{ color: "var(--muted)", margin: 0, fontSize: "0.8rem" }}>
+              {new Date(metadata.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+            </p>
+          </div>
+        </div>
       </div>
-
-      <hr style={{ borderColor: "var(--duke)", marginBottom: "3rem" }} />
 
       {/* Post Content */}
       <div className="prose">
         <MDXRemote source={content} components={mdxComponents} />
+      </div>
+
+      {/* Author Bio */}
+      <div style={{
+        marginTop: "4rem",
+        backgroundColor: "var(--surface)",
+        border: "1px solid var(--duke)",
+        borderLeft: "4px solid var(--carolina)",
+        borderRadius: "0 10px 10px 0",
+        padding: "2rem",
+        display: "grid",
+        gridTemplateColumns: "80px 1fr",
+        gap: "1.5rem",
+        alignItems: "start",
+      }}>
+        <div style={{ borderRadius: "50%", overflow: "hidden", border: "2px solid var(--carolina)" }}>
+          <Image
+            src="/images/chad.jpg"
+            alt="Chad Smith"
+            width={80}
+            height={80}
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        </div>
+        <div>
+          <p style={{ color: "var(--carolina)", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: "bold", marginBottom: "0.4rem" }}>
+            Written by
+          </p>
+          <p style={{ color: "var(--text)", fontWeight: "800", fontSize: "1.05rem", marginBottom: "0.5rem" }}>Chad Smith</p>
+          <p style={{ color: "var(--muted)", fontSize: "0.875rem", lineHeight: 1.8, marginBottom: "1rem" }}>
+            Founder of Local Search Ally. 5+ years of hands-on local SEO experience, currently pursuing a Web Development degree. Based in Siloam Springs, AR — helping NWA contractors get found online.
+          </p>
+          <Link href="/about" style={{ color: "var(--carolina)", fontSize: "0.875rem", fontWeight: "bold", textDecoration: "none" }}>
+            More about Chad →
+          </Link>
+        </div>
+      </div>
+
+      {/* Post Navigation */}
+      <div style={{
+        marginTop: "3rem",
+        paddingTop: "2rem",
+        borderTop: "1px solid var(--duke)",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        flexWrap: "wrap",
+        gap: "1rem",
+      }}>
+        <Link href="/blog" style={{ color: "var(--muted)", textDecoration: "none", fontSize: "0.9rem" }}>
+          ← Back to Blog
+        </Link>
+        <Link href="/contact" style={{
+          backgroundColor: "var(--carolina)",
+          color: "#000",
+          padding: "0.75rem 1.5rem",
+          borderRadius: "6px",
+          fontWeight: "bold",
+          textDecoration: "none",
+          fontSize: "0.875rem",
+        }}>
+          Work With Chad
+        </Link>
       </div>
     </div>
   );
