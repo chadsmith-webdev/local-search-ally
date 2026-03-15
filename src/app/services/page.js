@@ -138,10 +138,16 @@ export default function Services() {
           font-family: var(--font-satoshi);
         }
         .btn-outline:hover { background-color: rgba(123,175,212,0.1); }
+        @media (max-width: 768px) {
+  .hero-section { padding: 5rem 1.5rem 4rem !important; }
+  .three-col { grid-template-columns: 1fr !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+  .card-footer { flex-direction: column !important; align-items: flex-start !important; }
+}
       `}</style>
 
       {/* Hero */}
-      <section style={{
+      <section className="hero-section" style={{
         padding: "7rem 4rem 6rem",
         borderBottom: "1px solid var(--duke)",
         position: "relative",
@@ -190,7 +196,7 @@ export default function Services() {
 
       {/* Service Cards */}
       <section style={{ padding: "5rem 2rem", maxWidth: "1100px", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.5rem" }}>
+        <div className="three-col" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.5rem" }}>
           {services.map((service, i) => (
             <Reveal key={service.title} delay={i * 80}>
               <div className="service-card" style={{
@@ -264,7 +270,7 @@ export default function Services() {
             method="POST"
             style={{ maxWidth: "560px", margin: "0 auto", display: "grid", gap: "1rem" }}
           >
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+            <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
               {[
                 { name: "name", placeholder: "Your Name", type: "text" },
                 { name: "business", placeholder: "Business Name", type: "text" },
@@ -290,7 +296,7 @@ export default function Services() {
                 />
               ))}
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+            <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
               {[
                 { name: "phone", placeholder: "Phone Number", type: "tel" },
                 { name: "email", placeholder: "Email Address", type: "email" },

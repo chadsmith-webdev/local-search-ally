@@ -90,10 +90,15 @@ export default function About() {
           transition: transform 0.3s;
         }
         .value-card:hover { transform: translateX(4px); }
+        @media (max-width: 768px) {
+  .hero-section { padding: 5rem 1.5rem 4rem !important; }
+  .two-col { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .photo-col { grid-template-columns: 1fr !important; }
+}
       `}</style>
 
       {/* Hero */}
-      <section style={{
+      <section className="hero-section" style={{
         padding: "7rem 4rem 6rem",
         borderBottom: "1px solid var(--duke)",
         position: "relative",
@@ -138,7 +143,7 @@ export default function About() {
 
       {/* Photo + Intro */}
       <section style={{ padding: "5rem 2rem", maxWidth: "1000px", margin: "0 auto" }}>
-        <div className="two-col" style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "4rem", alignItems: "start" }}>
+        <div className="photo-col" style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "4rem", alignItems: "start" }}>
           <Reveal>
             <div style={{ borderRadius: "10px", overflow: "hidden", border: "1px solid var(--duke)" }}>
               <Image

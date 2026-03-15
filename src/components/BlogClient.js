@@ -54,10 +54,14 @@ export default function BlogClient({ posts }) {
           border-color: var(--carolina);
           transform: translateY(-4px);
         }
+          @media (max-width: 768px) {
+  .hero-section { padding: 5rem 1.5rem 4rem !important; }
+  .blog-grid { grid-template-columns: 1fr !important; }
+}
       `}</style>
 
       {/* Hero */}
-      <section style={{
+      <section className="hero-section" style={{
         padding: "7rem 4rem 6rem",
         borderBottom: "1px solid var(--duke)",
         position: "relative",
@@ -118,7 +122,7 @@ export default function BlogClient({ posts }) {
             </div>
           </Reveal>
         ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "1.5rem" }}>
+          <div className="blog-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "1.5rem" }}>
             {posts.map((post, i) => (
               <Reveal key={post.slug} delay={i * 80}>
                 <Link href={`/blog/${post.slug}`} className="blog-card">

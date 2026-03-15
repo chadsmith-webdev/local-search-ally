@@ -77,10 +77,15 @@ export default function Contact() {
         input::placeholder, textarea::placeholder {
           color: #555;
         }
+          @media (max-width: 768px) {
+  .hero-section { padding: 5rem 1.5rem 4rem !important; }
+  .contact-grid { grid-template-columns: 1fr !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+}
       `}</style>
 
       {/* Hero */}
-      <section style={{
+      <section className="hero-section" style={{
         padding: "7rem 4rem 6rem",
         borderBottom: "1px solid var(--duke)",
         position: "relative",
@@ -124,7 +129,7 @@ export default function Contact() {
 
       {/* Contact Methods + Form */}
       <section style={{ padding: "5rem 2rem", maxWidth: "1100px", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.75fr", gap: "4rem", alignItems: "start" }}>
+        <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.75fr", gap: "4rem", alignItems: "start" }}>
 
           {/* Left — contact methods */}
           <div>
@@ -186,7 +191,7 @@ export default function Contact() {
               method="POST"
               style={{ display: "grid", gap: "1.25rem" }}
             >
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+              <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                 {[
                   { label: "Your Name", name: "name", type: "text" },
                   { label: "Business Name", name: "business", type: "text" },
@@ -213,7 +218,7 @@ export default function Contact() {
                   </div>
                 ))}
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+              <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                 {[
                   { label: "Phone Number", name: "phone", type: "tel" },
                   { label: "Email Address", name: "email", type: "email" },

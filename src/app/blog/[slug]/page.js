@@ -36,6 +36,13 @@ export default async function BlogPost({ params }) {
   return (
     <div style={{ maxWidth: "780px", margin: "0 auto", padding: "4rem 2rem" }}>
 
+      <style>{`
+  @media (max-width: 768px) {
+    .author-bio { grid-template-columns: 1fr !important; }
+    .post-nav { flex-direction: column !important; align-items: flex-start !important; }
+  }
+`}</style>
+
       {/* Feature Image */}
       {metadata.image && (
         <div style={{ marginBottom: "3rem", borderRadius: "10px", overflow: "hidden", border: "1px solid var(--duke)" }}>
@@ -104,7 +111,7 @@ export default async function BlogPost({ params }) {
       </div>
 
       {/* Author Bio */}
-      <div style={{
+      <div className="author-bio" style={{
         marginTop: "4rem",
         backgroundColor: "var(--surface)",
         border: "1px solid var(--duke)",
@@ -140,7 +147,7 @@ export default async function BlogPost({ params }) {
       </div>
 
       {/* Post Navigation */}
-      <div style={{
+      <div className="post-nav" style={{
         marginTop: "3rem",
         paddingTop: "2rem",
         borderTop: "1px solid var(--duke)",
