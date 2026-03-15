@@ -476,7 +476,8 @@ export default function HomeClient({ posts }) {
         </div>
       </section>
 
-      {/* 8. BLOG PREVIEWS */}
+
+      {/* 8a. BLOG PREVIEWS */}
       {posts.length > 0 && (
         <section style={{ padding: "5rem 2rem", maxWidth: "1100px", margin: "0 auto" }}>
           <Reveal style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "3rem", flexWrap: "wrap", gap: "1rem" }}>
@@ -502,6 +503,102 @@ export default function HomeClient({ posts }) {
           </div>
         </section>
       )}
+
+      {/* 8b. PORTFOLIO PREVIEW */}
+<section style={{ borderTop: "1px solid var(--duke)", padding: "5rem 2rem" }}>
+  <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+    <Reveal style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "3rem", flexWrap: "wrap", gap: "1rem" }}>
+      <div>
+        <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "0.5rem" }}>Portfolio</p>
+        <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: "800", margin: 0 }}>Real work. Real results.</h2>
+      </div>
+      <Link href="/portfolio" className="btn-outline">View All Work</Link>
+    </Reveal>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1.5rem" }}>
+      {[
+        {
+          categoryLabel: "Web Development",
+          title: "Local Search Ally Website",
+          desc: "Built this site from scratch using Next.js 15 — documented as a live case study.",
+          tags: ["Next.js", "Vercel", "MDX"],
+          result: "Live at localsearchally.com",
+          link: "/blog/how-i-built-this-website",
+          live: true,
+        },
+        {
+          categoryLabel: "Local SEO",
+          title: "Local SEO Case Study",
+          desc: "A real-world local SEO engagement with a contractor client — coming soon.",
+          tags: ["Local SEO", "GBP", "Citations"],
+          result: "Coming soon",
+          live: false,
+        },
+        {
+          categoryLabel: "GBP Optimization",
+          title: "Google Business Profile Optimization",
+          desc: "Full GBP audit and optimization for a local contractor — coming soon.",
+          tags: ["GBP", "Map Pack", "Reviews"],
+          result: "Coming soon",
+          live: false,
+        },
+      ].map((project, i) => (
+        <Reveal key={project.title} delay={i * 80}>
+          <div className="card" style={{
+            borderTop: project.live ? "3px solid var(--carolina)" : "1px solid var(--duke)",
+            opacity: project.live ? 1 : 0.7,
+            display: "flex",
+            flexDirection: "column",
+          }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.75rem" }}>
+                <p style={{ color: project.live ? "var(--carolina)" : "var(--muted)", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: "bold", margin: 0 }}>
+                  {project.categoryLabel}
+                </p>
+                <span style={{
+                  backgroundColor: project.live ? "rgba(123,175,212,0.15)" : "rgba(1,33,105,0.3)",
+                  border: `1px solid ${project.live ? "var(--carolina)" : "var(--duke)"}`,
+                  color: project.live ? "var(--carolina)" : "var(--muted)",
+                  fontSize: "0.7rem",
+                  padding: "0.2rem 0.65rem",
+                  borderRadius: "100px",
+                  fontWeight: "bold",
+                }}>
+                  {project.live ? "Live" : "Coming Soon"}
+                </span>
+              </div>
+              <h3 style={{ fontSize: "1.05rem", marginBottom: "0.75rem", color: "var(--text)" }}>{project.title}</h3>
+              <p style={{ color: "var(--muted)", fontSize: "0.9rem", lineHeight: 1.8, marginBottom: "1.25rem" }}>{project.desc}</p>
+              <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.25rem" }}>
+                {project.tags.map((tag) => (
+                  <span key={tag} style={{
+                    backgroundColor: "rgba(1,33,105,0.4)",
+                    border: "1px solid var(--duke)",
+                    color: "var(--muted)",
+                    fontSize: "0.7rem",
+                    padding: "0.2rem 0.65rem",
+                    borderRadius: "100px",
+                  }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div style={{ borderTop: "1px solid var(--duke)", paddingTop: "1.25rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <p style={{ color: project.live ? "var(--carolina)" : "var(--muted)", fontSize: "0.85rem", fontWeight: "600", margin: 0 }}>
+                {project.result}
+              </p>
+              {project.live && (
+                <Link href={project.link} style={{ color: "var(--carolina)", fontSize: "0.85rem", fontWeight: "bold", textDecoration: "none" }}>
+                  Read more →
+                </Link>
+              )}
+            </div>
+          </div>
+        </Reveal>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* 9. FINAL CTA */}
 <section style={{

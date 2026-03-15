@@ -119,6 +119,7 @@ export default function Footer() {
               { label: "Blog", href: "/blog" },
               { label: "Services", href: "/services" },
               { label: "Contact", href: "/contact" },
+              { label: "Portfolio", href: "/portfolio"},
             ].map((item) => (
               <li key={item.label}>
                 <Link href={item.href} style={{ color: "var(--muted)", textDecoration: "none", fontSize: "0.875rem", transition: "color 0.2s" }}
