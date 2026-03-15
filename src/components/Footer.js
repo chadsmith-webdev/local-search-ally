@@ -1,6 +1,7 @@
 'use client'
 
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 const socialLinks = [
   {
@@ -56,9 +57,9 @@ export default function Footer() {
 
         {/* Brand column */}
         <div>
-          <Link href="/" style={{ color: "var(--carolina)", fontWeight: "800", fontSize: "1.2rem", textDecoration: "none", display: "block", marginBottom: "1rem", fontFamily: "var(--font-cabinet)" }}>
-            Local Search Ally
-          </Link>
+         <Link href="/" style={{ textDecoration: "none", display: "inline-block", marginBottom: "1rem" }}>
+  <Logo size={32} textSize="1rem" />
+</Link>
           <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "0.9rem", marginBottom: "1.5rem", maxWidth: "300px" }}>
             A startup on a mission to help NWA contractors get found online. Built on transparency, powered by real SEO expertise, and growing every day.
           </p>
@@ -136,7 +137,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="fotter-bottom" style={{
+      <div className="footer-bottom" style={{
         maxWidth: "1100px",
         margin: "0 auto",
         paddingTop: "2rem",

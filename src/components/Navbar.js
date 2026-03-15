@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 const links = [
   { label: "Services", href: "/services" },
@@ -41,15 +42,9 @@ export default function Navbar() {
         transition: "background-color 0.3s",
       }}>
         {/* Logo */}
-        <Link href="/" onClick={() => setOpen(false)} style={{
-          color: "var(--carolina)",
-          fontWeight: "800",
-          fontSize: "1.2rem",
-          textDecoration: "none",
-          fontFamily: "var(--font-cabinet)",
-        }}>
-          Local Search Ally
-        </Link>
+        <Link href="/" onClick={() => setOpen(false)} style={{ textDecoration: "none" }}>
+  <Logo size={36} textSize="1.1rem" />
+</Link>
 
         {/* Desktop links */}
         <ul style={{
