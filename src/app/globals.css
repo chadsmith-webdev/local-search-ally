@@ -1,12 +1,20 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500&f[]=cabinet-grotesk@700,800&display=swap');
+
 @import "tailwindcss";
 
 :root {
+  --font-satoshi: 'Satoshi', sans-serif;
+  --font-cabinet: 'Cabinet Grotesk', sans-serif;
   --carolina: #7bafd4;
   --duke: #012169;
   --bg: #0a0a0a;
   --surface: #141414;
   --text: #f0f0f0;
   --muted: #888888;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-cabinet);
 }
 
 /* Blog post typography */

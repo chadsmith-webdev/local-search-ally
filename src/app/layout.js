@@ -1,16 +1,9 @@
 import "./globals.css";
-import { Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { siteConfig } from "@/lib/metadata";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "600", "800"],
-  variable: "--font-poppins",
-});
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -53,7 +46,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en">
       <head>
         <SchemaMarkup />
       </head>
