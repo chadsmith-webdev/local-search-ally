@@ -68,6 +68,66 @@ export default function OGImage() {
           backgroundColor: "#7BAFD4",
           display: "flex",
         }} />
+        {/* Logo icon */}
+<div style={{
+  position: "absolute",
+  top: "48px",
+  left: "80px",
+  display: "flex",
+  alignItems: "center",
+  gap: "16px",
+}}>
+  <div style={{
+    width: "56px",
+    height: "56px",
+    backgroundColor: "#012169",
+    borderRadius: "12px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "relative",
+  }}>
+    <div style={{
+      position: "absolute",
+      width: "34px",
+      height: "34px",
+      borderRadius: "50%",
+      border: "2.5px solid #7BAFD4",
+      display: "flex",
+    }} />
+    <div style={{
+      position: "absolute",
+      width: "19px",
+      height: "19px",
+      borderRadius: "50%",
+      border: "2px solid #7BAFD4",
+      opacity: 0.5,
+      display: "flex",
+    }} />
+    <div style={{
+      position: "absolute",
+      width: "7px",
+      height: "7px",
+      borderRadius: "50%",
+      backgroundColor: "#7BAFD4",
+      display: "flex",
+    }} />
+    <div style={{
+      position: "absolute",
+      top: "36px",
+      left: "36px",
+      width: "14px",
+      height: "3px",
+      backgroundColor: "#7BAFD4",
+      borderRadius: "2px",
+      transform: "rotate(45deg)",
+      display: "flex",
+    }} />
+  </div>
+  <div style={{ display: "flex", color: "#f0f0f0", fontSize: "24px", fontWeight: "800" }}>
+    Local Search <span style={{ color: "#7BAFD4", marginLeft: "8px" }}>Ally</span>
+  </div>
+</div>
         {/* Eyebrow */}
         <div style={{
           position: "relative",
@@ -76,7 +136,8 @@ export default function OGImage() {
           fontSize: "18px",
           fontWeight: "700",
           letterSpacing: "4px",
-          marginBottom: "32px",
+          marginBottom: "24px",
+          marginTop: "32px",
         }}>
           LOCAL SEO & WEB DEVELOPMENT • SILOAM SPRINGS, AR
         </div>
