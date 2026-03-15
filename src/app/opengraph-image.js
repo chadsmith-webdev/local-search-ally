@@ -19,7 +19,7 @@ export default function OGImage() {
         position: "relative",
         overflow: "hidden",
       }}>
-        {/* Grid background */}
+        {/* Grid */}
         <div style={{
           position: "absolute",
           inset: 0,
@@ -31,15 +31,14 @@ export default function OGImage() {
         <div style={{
           position: "absolute",
           top: "-200px",
-          left: "50%",
-          width: "800px",
+          left: "300px",
+          width: "600px",
           height: "600px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(1,33,105,0.6) 0%, transparent 70%)",
-          transform: "translateX(-50%)",
+          backgroundColor: "rgba(1,33,105,0.5)",
           display: "flex",
         }} />
-        {/* Left accent bar */}
+        {/* Left bar */}
         <div style={{
           position: "absolute",
           left: 0,
@@ -49,7 +48,7 @@ export default function OGImage() {
           backgroundColor: "#7BAFD4",
           display: "flex",
         }} />
-        {/* Right accent bar */}
+        {/* Right bar */}
         <div style={{
           position: "absolute",
           right: 0,
@@ -59,7 +58,7 @@ export default function OGImage() {
           backgroundColor: "#012169",
           display: "flex",
         }} />
-        {/* Bottom accent bar */}
+        {/* Bottom bar */}
         <div style={{
           position: "absolute",
           bottom: 0,
@@ -67,39 +66,51 @@ export default function OGImage() {
           width: "100%",
           height: "4px",
           backgroundColor: "#7BAFD4",
-          opacity: 0.4,
           display: "flex",
         }} />
-
-        {/* Content */}
-        <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
-          <div style={{
-            color: "#7BAFD4",
-            fontSize: "18px",
-            fontWeight: "700",
-            letterSpacing: "4px",
-            marginBottom: "32px",
-            textTransform: "uppercase",
-          }}>
-            LOCAL SEO & WEB DEVELOPMENT • SILOAM SPRINGS, AR
+        {/* Eyebrow */}
+        <div style={{
+          position: "relative",
+          display: "flex",
+          color: "#7BAFD4",
+          fontSize: "18px",
+          fontWeight: "700",
+          letterSpacing: "4px",
+          marginBottom: "32px",
+        }}>
+          LOCAL SEO & WEB DEVELOPMENT • SILOAM SPRINGS, AR
+        </div>
+        {/* Headline */}
+        <div style={{
+          position: "relative",
+          display: "flex",
+          flexDirection: "column",
+          marginBottom: "32px",
+        }}>
+          <div style={{ display: "flex", color: "#f0f0f0", fontSize: "64px", fontWeight: "800", lineHeight: 1.1 }}>
+            Your next customer just searched Google.
           </div>
-          <div style={{ color: "#f0f0f0", fontSize: "68px", fontWeight: "800", lineHeight: 1.1, marginBottom: "32px" }}>
-            Your next customer just searched Google.{" "}
-            <span style={{ color: "#7BAFD4" }}>They found your competitor.</span>
-          </div>
-          <div style={{ color: "#666666", fontSize: "24px", marginBottom: "0" }}>
-            Local Search Ally — helping NWA contractors get found online
+          <div style={{ display: "flex", color: "#7BAFD4", fontSize: "64px", fontWeight: "800", lineHeight: 1.1 }}>
+            They found your competitor.
           </div>
         </div>
-
+        {/* Subtext */}
+        <div style={{
+          position: "relative",
+          display: "flex",
+          color: "#666666",
+          fontSize: "24px",
+        }}>
+          Local Search Ally — helping NWA contractors get found online
+        </div>
         {/* URL */}
         <div style={{
           position: "absolute",
           bottom: "48px",
           right: "88px",
+          display: "flex",
           color: "#444444",
           fontSize: "20px",
-          display: "flex",
         }}>
           localsearchally.com
         </div>
