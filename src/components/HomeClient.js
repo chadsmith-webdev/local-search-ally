@@ -213,42 +213,62 @@ export default function HomeClient({ posts }) {
       </section>
 
       {/* 3. GUIDE */}
-      <section style={{ borderTop: "1px solid var(--duke)", borderBottom: "1px solid var(--duke)", padding: "5rem 2rem" }}>
-        <div className="two-col" style={{ maxWidth: "1000px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
-          <Reveal>
-            <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1rem" }}>Meet Your Guide</p>
-            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: "800", marginBottom: "1.5rem", lineHeight: 1.3 }}>
-              I proved the method on myself first.
-            </h2>
-            <p style={{ color: "var(--muted)", lineHeight: 1.9, marginBottom: "1.25rem" }}>
-              I'm Chad, the founder of Local Search Ally — and I want to be upfront: I'm not a big agency with decades under my belt. I'm a startup founder in Siloam Springs who's obsessed with local SEO, and I've been proving it works on my own projects for years.
-            </p>
-            <p style={{ color: "var(--muted)", lineHeight: 1.9, marginBottom: "1.25rem" }}>
-              I started by teaching myself SEO through personal projects — ranking my own sites, optimizing Google Business Profiles, and studying what actually moves the needle in local search. The results I got for myself are what convinced me I could do this for others.
-            </p>
-            <p style={{ color: "var(--muted)", lineHeight: 1.9, marginBottom: "2rem" }}>
-              Now I'm learning web development too, so I can offer contractors a complete solution: a website that's built to convert and an SEO strategy that actually gets it found.
-            </p>
-            <Link href="/about" className="btn-outline">My Full Story</Link>
-          </Reveal>
+<section style={{ borderTop: "1px solid var(--duke)", borderBottom: "1px solid var(--duke)", padding: "5rem 2rem" }}>
+  <div style={{ maxWidth: "1000px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "5rem", alignItems: "start" }} className="two-col">
 
-          <Reveal delay={200}>
-            <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "2rem" }}>My Journey So Far</p>
-            {[
-              { title: "Learned Local SEO Hands-On", desc: "Ranked my own projects in local search. Studied Google's algorithms, GBP optimization, and citation building obsessively." },
-              { title: "Saw Real Results", desc: "Grew my own local search visibility significantly. Proved the methods work before ever offering them to anyone else." },
-              { title: "Started Learning Web Dev", desc: "Realized contractors need more than SEO — they need fast, converting websites. So I started building that skill too." },
-              { title: "Launched Local Search Ally", desc: "Moved to Siloam Springs and started helping NWA contractors get the online presence they deserve. This is just the beginning." },
-            ].map((item, i) => (
-              <div key={item.title} className="timeline-item">
-                <div className="timeline-dot" />
-                <h4 style={{ color: "var(--text)", marginBottom: "0.5rem", fontSize: "0.95rem" }}>{item.title}</h4>
-                <p style={{ color: "var(--muted)", fontSize: "0.875rem", lineHeight: 1.8, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </Reveal>
-        </div>
-      </section>
+    {/* Left — photo + stats */}
+    <Reveal>
+      <div style={{ borderRadius: "10px", overflow: "hidden", border: "1px solid var(--duke)", marginBottom: "1.5rem" }}>
+        <img
+          src="/images/chad.jpg"
+          alt="Chad Smith — Local Search Ally"
+          style={{ width: "100%", height: "auto", display: "block" }}
+        />
+      </div>
+      <div style={{ display: "grid", gap: "0.75rem" }}>
+        {[
+          { stat: "5+", label: "Years of hands-on local SEO experience" },
+          { stat: "100%", label: "Focused exclusively on contractors" },
+          { stat: "Full Stack", label: "SEO + web development under one roof" },
+        ].map((item) => (
+          <div key={item.label} style={{
+            backgroundColor: "var(--surface)",
+            border: "1px solid var(--duke)",
+            borderLeft: "4px solid var(--carolina)",
+            borderRadius: "0 8px 8px 0",
+            padding: "1rem 1.25rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "1rem",
+          }}>
+            <span style={{ fontSize: "1.25rem", fontWeight: "800", color: "var(--carolina)", whiteSpace: "nowrap" }}>{item.stat}</span>
+            <span style={{ color: "var(--muted)", fontSize: "0.875rem", lineHeight: 1.5 }}>{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </Reveal>
+
+    {/* Right — text */}
+    <Reveal delay={200}>
+      <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1rem" }}>
+        Meet Your Guide
+      </p>
+      <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: "800", marginBottom: "1.5rem", lineHeight: 1.3 }}>
+        I proved the method on myself first.
+      </h2>
+      <p style={{ color: "var(--muted)", lineHeight: 1.9, marginBottom: "1.25rem" }}>
+        I'm Chad, the founder of Local Search Ally — and I want to be upfront: I'm not a big agency with decades under my belt. I'm a startup founder in Siloam Springs who's obsessed with local SEO, and I've been proving it works on my own projects for years before ever offering it to anyone else.
+      </p>
+      <p style={{ color: "var(--muted)", lineHeight: 1.9, marginBottom: "1.25rem" }}>
+        I started by teaching myself SEO through personal projects — ranking my own sites, optimizing Google Business Profiles, and studying what actually moves the needle in local search. The results I got for myself are what convinced me I could do this for others.
+      </p>
+      <p style={{ color: "var(--muted)", lineHeight: 1.9, marginBottom: "2rem" }}>
+        Now I'm learning web development too, so I can offer contractors a complete solution: a website that's built to convert and an SEO strategy that actually gets it found.
+      </p>
+      <Link href="/about" className="btn-outline">My Full Story</Link>
+    </Reveal>
+  </div>
+</section>
 
       {/* 4. PLAN */}
       <section style={{ padding: "5rem 2rem", maxWidth: "1100px", margin: "0 auto" }}>
