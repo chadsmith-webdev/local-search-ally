@@ -1,10 +1,9 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500&f[]=cabinet-grotesk@700,800&display=swap');
-
 @import "tailwindcss";
 
+
 :root {
-  --font-satoshi: 'Satoshi', sans-serif;
-  --font-cabinet: 'Cabinet Grotesk', sans-serif;
+  --font-body: 'urbanist', sans-serif;
+  --font-display: 'Fraunces', sans-serif;
   --carolina: #7bafd4;
   --duke: #012169;
   --bg: #0a0a0a;
@@ -14,7 +13,7 @@
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-cabinet);
+  font-family: var(--font-display);
 }
 
 /* Blog post typography */

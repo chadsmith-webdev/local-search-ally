@@ -4,6 +4,11 @@ import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { siteConfig } from "@/lib/metadata";
+// app/layout.tsx
+import { Fraunces, Urbanist } from 'next/font/google'
+
+const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-display' })
+const urbanist = Urbanist({ subsets: ['latin'], variable: '--font-body' })
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
