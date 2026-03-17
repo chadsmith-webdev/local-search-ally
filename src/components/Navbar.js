@@ -40,6 +40,7 @@ export default function Navbar() {
         zIndex: 100,
         backdropFilter: scrolled ? "blur(10px)" : "none",
         transition: "background-color 0.3s",
+        
       }}>
         {/* Logo */}
         <Link href="/" onClick={() => setOpen(false)} style={{ textDecoration: "none" }}>
@@ -208,6 +209,7 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .hamburger { display: flex !important; }
+          .mobile-padding { padding: 1rem 1.5rem !important; }
         }
       `}</style>
     </>
