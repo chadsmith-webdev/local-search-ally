@@ -159,7 +159,7 @@ export default function HomeClient({ posts }) {
     <p className="h1" style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1.5rem" }}>
       Local SEO & Web Development • Siloam Springs, AR
     </p>
-    <h1 className="h1" style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)", fontWeight: "800", lineHeight: 1.1, marginBottom: "1.5rem" }}>
+    <h1 className="h1" style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)", fontWeight: "800", lineHeight: 1.1, marginBottom: "1.5rem" }}>
       Your next customer just searched Google.{" "}
       <span style={{ color: "var(--carolina)" }}>They found your competitor.</span>
     </h1>

@@ -86,7 +86,7 @@ export default function Contact() {
 
       {/* Hero */}
       <section className="hero-section" style={{
-        padding: "7rem 4rem 6rem",
+        padding: "12rem 8rem 10rem",
         borderBottom: "1px solid var(--duke)",
         position: "relative",
         overflow: "hidden",

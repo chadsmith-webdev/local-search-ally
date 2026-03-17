@@ -31,7 +31,7 @@ export default function Navbar() {
       <nav style={{
         backgroundColor: scrolled ? "rgba(10,10,10,0.95)" : "var(--surface)",
         borderBottom: "1px solid var(--duke)",
-        padding: "1rem 2rem",
+        padding: "1rem 8rem",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
