@@ -124,7 +124,7 @@ export default function HomeClient({ posts }) {
 
       {/* 1. HERO */}
 <section className="hero-section" style={{
-  padding: "9rem 4rem 8rem",
+  padding: "14rem 4rem 10rem",
   borderBottom: "1px solid var(--duke)",
   position: "relative",
   overflow: "hidden",

@@ -28,7 +28,7 @@ export default function Logo({ size = 36, showText = true, textSize = "1.2rem" }
       </svg>
       {showText && (
         <span style={{
-          fontFamily: "var(--font-cabinet)",
+          fontFamily: "var(--font-display)",
           fontWeight: "800",
           fontSize: textSize,
           color: "#f0f0f0",
