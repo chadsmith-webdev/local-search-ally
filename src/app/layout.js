@@ -7,8 +7,8 @@ import { siteConfig } from "@/lib/metadata";
 // app/layout.tsx
 import { Fraunces, Urbanist } from 'next/font/google'
 
-const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-display', display: 'swap' })
-const urbanist = Urbanist({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
+const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-display' })
+const urbanist = Urbanist({ subsets: ['latin'], variable: '--font-body' })
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -55,7 +55,15 @@ export default function RootLayout({ children }) {
       <head>
         <SchemaMarkup />
       </head>
-      <body className={`${fraunces.variable} ${urbanist.variable} font-body bg-bg text-text`} style={{ margin: 0, display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <body style={{
+        backgroundColor: "var(--bg)",
+        color: "var(--text)",
+        margin: 0,
+        fontFamily: "var(--font-poppins), sans-serif",
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}>
         <Navbar />
         <main style={{ flex: 1 }}>
           {children}

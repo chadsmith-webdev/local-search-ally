@@ -1,41 +1,21 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
-
-let sharedObserver = null;
-const revealedElements = new Set();
-
-function getSharedObserver() {
-  if (!sharedObserver) {
-    sharedObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !revealedElements.has(entry.target)) {
-            entry.target.classList.add("revealed");
-            revealedElements.add(entry.target);
-            sharedObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-  }
-  return sharedObserver;
-}
 
 function useReveal() {
   const ref = useRef(null);
   useEffect(() => {
-    const element = ref.current;
-    if (element && !revealedElements.has(element)) {
-      getSharedObserver().observe(element);
-    }
-    return () => {
-      if (element) {
-        getSharedObserver().unobserve(element);
-      }
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
   }, []);
   return ref;
 }
@@ -52,6 +32,96 @@ function Reveal({ children, style = {}, delay = 0 }) {
 export default function HomeClient({ posts }) {
   return (
     <>
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .h1 { animation: fadeUp 0.8s ease forwards; }
+        .h2 { animation: fadeUp 0.8s ease 0.2s forwards; opacity: 0; }
+        .h3 { animation: fadeUp 0.8s ease 0.4s forwards; opacity: 0; }
+        .reveal {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.revealed { opacity: 1; transform: translateY(0); }
+        .btn-primary {
+          background-color: var(--carolina);
+          color: #000;
+          padding: 0.9rem 2rem;
+          border-radius: 6px;
+          font-weight: bold;
+          text-decoration: none;
+          display: inline-block;
+          transition: opacity 0.2s;
+        }
+        .btn-primary:hover { opacity: 0.85; }
+        .btn-outline {
+          border: 1px solid var(--carolina);
+          color: var(--carolina);
+          padding: 0.9rem 2rem;
+          border-radius: 6px;
+          font-weight: bold;
+          text-decoration: none;
+          display: inline-block;
+          transition: background-color 0.2s;
+        }
+        .btn-outline:hover { background-color: rgba(123,175,212,0.1); }
+        .card {
+          background-color: var(--surface);
+          border: 1px solid var(--duke);
+          border-radius: 10px;
+          padding: 2rem;
+          transition: border-color 0.3s, transform 0.3s;
+          height: 100%;
+        }
+        .card:hover { border-color: var(--carolina); transform: translateY(-4px); }
+        .timeline-item {
+          position: relative;
+          padding-left: 2rem;
+          padding-bottom: 2.5rem;
+          border-left: 2px solid var(--duke);
+        }
+        .timeline-item:last-child { border-left: 2px solid transparent; padding-bottom: 0; }
+        .timeline-dot {
+          position: absolute;
+          left: -6px;
+          top: 4px;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: var(--carolina);
+        }
+        .blog-card {
+          background-color: var(--surface);
+          border: 1px solid var(--duke);
+          border-radius: 10px;
+          padding: 2rem;
+          text-decoration: none;
+          display: block;
+          transition: border-color 0.3s, transform 0.3s;
+        }
+        .blog-card:hover { border-color: var(--carolina); transform: translateY(-4px); }
+        .pledge-item {
+          display: flex;
+          gap: 1rem;
+          align-items: flex-start;
+          padding: 1.5rem;
+          border-left: 3px solid var(--carolina);
+          background-color: var(--surface);
+          border-radius: 0 8px 8px 0;
+          margin-bottom: 1rem;
+        }
+          @media (max-width: 768px) {
+  .hero-section { padding: 5rem 1.5rem 4rem !important; }
+  .two-col { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .three-col { grid-template-columns: 1fr !important; }
+  .hide-mobile { display: none !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+}
+      `}</style>
+
       {/* 1. HERO */}
 <section className="hero-section" style={{
   padding: "9rem 4rem 8rem",
@@ -148,14 +218,11 @@ export default function HomeClient({ posts }) {
 
     {/* Left — photo + stats */}
     <Reveal>
-      <div className="rounded-[10px] overflow-hidden border border-duke mb-6">
-        <Image
+      <div style={{ borderRadius: "10px", overflow: "hidden", border: "1px solid var(--duke)", marginBottom: "1.5rem" }}>
+        <img
           src="/images/chad.jpg"
           alt="Chad Smith — Local Search Ally"
-          width={400}
-          height={400}
-          className="w-full h-auto block"
-          sizes="(max-width: 768px) 100vw, 400px"
+          style={{ width: "100%", height: "auto", display: "block" }}
         />
       </div>
       <div style={{ display: "grid", gap: "0.75rem" }}>
