@@ -51,7 +51,7 @@ const services = [
   {
     title: "Web Design & Development",
     tagline: "Fast, modern websites built to convert",
-    desc: "Mobile-first websites built with performance and local SEO baked in from day one. Every site I build is SEO-optimized from the ground up — because that's what I know best.",
+    desc: "Mobile-first websites built with performance and local SEO baked in from day one. Built with modern frameworks for speed and performance — not WordPress page builders. Every site I build is SEO-optimized from the ground up — because that's what I know best.",
     includes: ["Custom design & development", "Mobile-first & fast loading", "On-page SEO foundation", "Contact forms & lead capture"],
     tags: ["Mobile-First", "SEO-Built", "Lead Gen"],
     price: "Starting at $799",
