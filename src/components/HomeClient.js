@@ -311,59 +311,41 @@ export default function HomeClient({ posts }) {
       <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: "800", marginBottom: "1rem" }}>
         Local SEO expertise. Web development growing daily.
       </h2>
-      <p style={{ color: "var(--muted)", maxWidth: "560px", margin: "0 auto", lineHeight: 1.9 }}>
-        I'm building a one-stop solution for NWA contractors. Here's what I can do for you right now — and where I'm headed.
+      <p style={{ color: "var(--muted)", maxWidth: "520px", margin: "0 auto", lineHeight: 1.9 }}>
+        A focused set of services built around one goal — more calls, more jobs, more growth for NWA contractors.
       </p>
     </Reveal>
 
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem", marginBottom: "3rem" }}>
       {[
         {
           label: "Core Strength",
           title: "Local SEO",
-          desc: "This is where my deepest experience lives. GBP optimization, local citations, keyword strategy, and on-page SEO — all battle-tested on my own projects first.",
+          desc: "Get your business ranking where your customers are searching — Google Maps, local results, and beyond. This is where my deepest experience lives.",
           tags: ["GBP Optimization", "Citations", "On-Page SEO"],
           highlight: true,
         },
         {
           label: "Growing Daily",
-          title: "Web Design & Dev",
-          desc: "I'm actively building my web development skills to offer fast, mobile-first websites that convert. Every site I build is SEO-optimized from the ground up.",
+          title: "Web Design & Development",
+          desc: "Fast, mobile-first websites built to convert visitors into calls. Every site is SEO-optimized from the ground up — because that's what I know best.",
           tags: ["Mobile-First", "SEO-Built", "Lead Gen"],
           highlight: false,
         },
         {
-          label: "Reputation",
-          title: "Reputation Building",
-          desc: "I'll help you set up systems to get more reviews, respond professionally, and build the kind of online reputation that makes customers choose you first.",
-          tags: ["Review Strategy", "GBP Reviews", "Monitoring"],
-          highlight: false,
-        },
-        {
-          label: "Content",
-          title: "Content & Keywords",
-          desc: "Strategic content that targets the searches your customers are actually making. Blog posts, service pages, and location pages that drive real local traffic.",
-          tags: ["Keyword Research", "Blog Content", "Service Pages"],
-          highlight: false,
-        },
-        {
-          label: "Reporting",
-          title: "Transparent Reporting",
-          desc: "No vanity metrics. I'll show you exactly what I'm doing, what's working, and what I'm adjusting. You'll always know where your investment is going.",
-          tags: ["Monthly Reports", "Honest Data", "Clear Updates"],
-          highlight: false,
-        },
-        {
-          label: "Startup Pricing",
-          title: "Early Adopter Rates",
-          desc: "I'm building my portfolio and reputation. That means you get real SEO expertise at startup-friendly prices. Work with me now and lock in rates before they go up.",
-          tags: ["No Contracts", "Flexible", "Fair Pricing"],
+          label: "Clarity",
+          title: "SEO Audits",
+          desc: "Find out exactly why you're not ranking. A detailed, actionable report covering technical SEO, citation gaps, and competitor analysis — no fluff.",
+          tags: ["Technical SEO", "Competitor Analysis", "Action Plan"],
           highlight: false,
         },
       ].map((item, i) => (
-        <Reveal key={item.title} delay={i * 80}>
+        <Reveal key={item.title} delay={i * 100}>
           <div className="card" style={{
             borderTop: item.highlight ? "3px solid var(--carolina)" : "1px solid var(--duke)",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
           }}>
             <p style={{
               color: item.highlight ? "var(--carolina)" : "var(--muted)",
@@ -371,20 +353,20 @@ export default function HomeClient({ posts }) {
               textTransform: "uppercase",
               letterSpacing: "0.1em",
               fontWeight: "bold",
-              marginBottom: "0.75rem",
+              margin: 0,
             }}>
               {item.label}
             </p>
-            <h3 style={{ color: "var(--text)", fontSize: "1.1rem", marginBottom: "0.75rem" }}>{item.title}</h3>
-            <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "0.9rem", marginBottom: "1.25rem" }}>{item.desc}</p>
+            <h3 style={{ color: "var(--text)", fontSize: "1.15rem", margin: 0 }}>{item.title}</h3>
+            <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "0.9rem", margin: 0, flex: 1 }}>{item.desc}</p>
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
               {item.tags.map((tag) => (
                 <span key={tag} style={{
                   backgroundColor: "rgba(1,33,105,0.4)",
                   border: "1px solid var(--duke)",
                   color: "var(--muted)",
-                  fontSize: "0.75rem",
-                  padding: "0.25rem 0.75rem",
+                  fontSize: "0.7rem",
+                  padding: "0.2rem 0.65rem",
                   borderRadius: "100px",
                 }}>
                   {tag}
@@ -396,8 +378,8 @@ export default function HomeClient({ posts }) {
       ))}
     </div>
 
-    <Reveal style={{ textAlign: "center", marginTop: "3rem" }}>
-      <Link href="/services" className="btn-outline">View Full Services</Link>
+    <Reveal style={{ textAlign: "center" }}>
+      <Link href="/services" className="btn-outline">View All Services</Link>
     </Reveal>
   </div>
 </section>

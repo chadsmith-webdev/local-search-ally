@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 function useReveal() {
@@ -31,17 +31,15 @@ function Reveal({ children, style = {}, delay = 0 }) {
 
 const services = [
   {
-    label: "Core Strength",
     title: "Local SEO",
     tagline: "Dominate your local market",
-    desc: "This is where my deepest experience lives. Full-service local SEO covering citation building, review management, listing optimization, and on-page SEO — all battle-tested on my own projects first.",
+    desc: "Full-service local SEO covering everything your business needs to rank — citation building, review management, listing optimization, and on-page SEO. All battle-tested on my own projects before ever being offered as a service.",
     includes: ["Google Business Profile optimization", "Citation & listing cleanup", "Review generation strategy", "On-page SEO optimization", "Monthly ranking reports"],
     tags: ["GBP Optimization", "Citations", "On-Page SEO"],
     price: "Starting at $499/mo",
     highlight: true,
   },
   {
-    label: "High Impact",
     title: "Google Business Profile Optimization",
     tagline: "Own the Map Pack",
     desc: "Your GBP listing is often the first thing a customer sees. I fully optimize your profile so you stand out from competitors and convert more profile views into calls.",
@@ -51,27 +49,24 @@ const services = [
     highlight: false,
   },
   {
-    label: "Growing Daily",
     title: "Web Design & Development",
     tagline: "Fast, modern websites built to convert",
-    desc: "I'm actively building my web development skills to offer fast, mobile-first websites that convert. Every site I build is SEO-optimized from the ground up — because that's what I know best.",
+    desc: "Mobile-first websites built with performance and local SEO baked in from day one. Every site I build is SEO-optimized from the ground up — because that's what I know best.",
     includes: ["Custom design & development", "Mobile-first & fast loading", "On-page SEO foundation", "Contact forms & lead capture"],
     tags: ["Mobile-First", "SEO-Built", "Lead Gen"],
-    price: "Starting at $1,500",
+    price: "Starting at $799",
     highlight: false,
   },
   {
-    label: "Reputation",
     title: "Reputation Building",
     tagline: "Build trust that sells for you",
     desc: "I'll help you set up systems to get more reviews, respond professionally, and build the kind of online reputation that makes customers choose you before they even call.",
     includes: ["Review generation systems", "Response templates", "GBP review management", "Reputation monitoring"],
     tags: ["Review Strategy", "GBP Reviews", "Monitoring"],
-    price: "Starting at $149/mo",
+    price: "Starting at $99/mo",
     highlight: false,
   },
   {
-    label: "Content",
     title: "Content & Keywords",
     tagline: "Get found for what customers actually search",
     desc: "Strategic content that targets the searches your customers are actually making. Blog posts, service pages, and location pages that drive real local traffic.",
@@ -81,7 +76,6 @@ const services = [
     highlight: false,
   },
   {
-    label: "Clarity",
     title: "SEO Audits",
     tagline: "Find out exactly why you're not ranking",
     desc: "A detailed audit of your website and local presence covering technical SEO, content gaps, citation issues, and competitor analysis. You get a clear, actionable report — no fluff.",
@@ -93,6 +87,8 @@ const services = [
 ];
 
 export default function Services() {
+  const [open, setOpen] = useState(0);
+
   return (
     <>
       <style>{`
@@ -102,16 +98,6 @@ export default function Services() {
           transition: opacity 0.7s ease, transform 0.7s ease;
         }
         .reveal.revealed { opacity: 1; transform: translateY(0); }
-        .service-card {
-          background-color: var(--surface);
-          border: 1px solid var(--duke);
-          border-radius: 10px;
-          padding: 2.5rem;
-          display: flex;
-          flex-direction: column;
-          transition: border-color 0.3s, transform 0.3s;
-        }
-        .service-card:hover { border-color: var(--carolina); transform: translateY(-4px); }
         .btn-primary {
           background-color: var(--carolina);
           color: #000;
@@ -121,8 +107,8 @@ export default function Services() {
           text-decoration: none;
           display: inline-block;
           transition: opacity 0.2s;
-          text-align: center;
-          font-family: var(--font-satoshi);
+          font-family: var(--font-body, sans-serif);
+          font-size: 0.875rem;
         }
         .btn-primary:hover { opacity: 0.85; }
         .btn-outline {
@@ -134,21 +120,76 @@ export default function Services() {
           text-decoration: none;
           display: inline-block;
           transition: background-color 0.2s;
-          text-align: center;
-          font-family: var(--font-satoshi);
+          font-family: var(--font-body, sans-serif);
+          font-size: 0.875rem;
         }
         .btn-outline:hover { background-color: rgba(123,175,212,0.1); }
+        .accordion-item {
+          border-bottom: 1px solid var(--duke);
+          transition: background-color 0.2s;
+        }
+        .accordion-item:first-child { border-top: 1px solid var(--duke); }
+        .accordion-trigger {
+          width: 100%;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 1.75rem 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1rem;
+          text-align: left;
+        }
+        .accordion-trigger:hover .accordion-title { color: var(--carolina); }
+        .accordion-title {
+          font-family: var(--font-display, serif);
+          font-size: clamp(1.1rem, 2vw, 1.35rem);
+          font-weight: 700;
+          color: var(--text);
+          transition: color 0.2s;
+          margin: 0;
+        }
+        .accordion-tagline {
+          color: var(--muted);
+          font-size: 0.875rem;
+          margin-top: 0.25rem;
+        }
+        .accordion-icon {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          border: 1px solid var(--duke);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          color: var(--carolina);
+          font-size: 1.1rem;
+          transition: transform 0.3s, border-color 0.2s;
+        }
+        .accordion-content {
+          overflow: hidden;
+          transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        }
+        .accordion-body {
+          padding-bottom: 2rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          align-items: start;
+        }
+        .form-row { grid-template-columns: 1fr 1fr; }
         @media (max-width: 768px) {
-  .hero-section { padding: 5rem 1.5rem 4rem !important; }
-  .three-col { grid-template-columns: 1fr !important; }
-  .form-row { grid-template-columns: 1fr !important; }
-  .card-footer { flex-direction: column !important; align-items: flex-start !important; }
-}
+          .hero-section { padding: 5rem 1.5rem 4rem !important; }
+          .accordion-body { grid-template-columns: 1fr !important; }
+          .form-row { grid-template-columns: 1fr !important; }
+        }
       `}</style>
 
       {/* Hero */}
       <section className="hero-section" style={{
-        padding: "12rem 8rem 10rem",
+        padding: "7rem 4rem 6rem",
         borderBottom: "1px solid var(--duke)",
         position: "relative",
         overflow: "hidden",
@@ -184,68 +225,109 @@ export default function Services() {
             Everything a contractor needs to{" "}
             <span style={{ color: "var(--carolina)" }}>get found online.</span>
           </h1>
-          <p style={{ color: "var(--muted)", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: "2rem", maxWidth: "560px" }}>
+          <p style={{ color: "var(--muted)", fontSize: "1.05rem", lineHeight: 1.9, maxWidth: "560px" }}>
             No bloated agency packages. No mystery pricing. Just focused services built around one goal — more calls, more jobs.
           </p>
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link href="/contact" className="btn-primary">Get a Free Consultation</Link>
-            <Link href="/contact" className="btn-outline">Request an Audit</Link>
-          </div>
         </div>
       </section>
 
-      {/* Service Cards */}
-      <section style={{ padding: "5rem 2rem", maxWidth: "1100px", margin: "0 auto" }}>
-        <div className="three-col" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.5rem" }}>
-          {services.map((service, i) => (
-            <Reveal key={service.title} delay={i * 80}>
-              <div className="service-card" style={{
-                borderTop: service.highlight ? "3px solid var(--carolina)" : "1px solid var(--duke)",
-              }}>
-                <div style={{ flex: 1 }}>
-                  <p style={{
-                    color: service.highlight ? "var(--carolina)" : "var(--muted)",
-                    fontSize: "0.75rem",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.1em",
-                    fontWeight: "bold",
-                    marginBottom: "0.5rem",
-                  }}>
-                    {service.label}
-                  </p>
-                  <h2 style={{ fontSize: "1.2rem", marginBottom: "0.25rem" }}>{service.title}</h2>
-                  <p style={{ color: "var(--carolina)", fontSize: "0.85rem", marginBottom: "1rem", fontStyle: "italic" }}>{service.tagline}</p>
-                  <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "0.9rem", marginBottom: "1.25rem" }}>{service.desc}</p>
-                  <ul style={{ paddingLeft: "1.25rem", color: "var(--muted)", lineHeight: 2, fontSize: "0.875rem", marginBottom: "1.25rem" }}>
-                    {service.includes.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                  <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
-                    {service.tags.map((tag) => (
-                      <span key={tag} style={{
-                        backgroundColor: "rgba(1,33,105,0.4)",
-                        border: "1px solid var(--duke)",
-                        color: "var(--muted)",
-                        fontSize: "0.75rem",
-                        padding: "0.25rem 0.75rem",
+      {/* Accordion */}
+      <section style={{ padding: "5rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
+        <Reveal>
+          <div>
+            {services.map((service, i) => (
+              <div key={service.title} className="accordion-item">
+                <button
+                  className="accordion-trigger"
+                  onClick={() => setOpen(open === i ? null : i)}
+                >
+                  <div>
+                    {service.highlight && (
+                      <span style={{
+                        backgroundColor: "rgba(123,175,212,0.15)",
+                        border: "1px solid var(--carolina)",
+                        color: "var(--carolina)",
+                        fontSize: "0.65rem",
+                        fontWeight: "bold",
+                        padding: "0.2rem 0.65rem",
                         borderRadius: "100px",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.1em",
+                        display: "inline-block",
+                        marginBottom: "0.5rem",
                       }}>
-                        {tag}
+                        Core Strength
                       </span>
-                    ))}
+                    )}
+                    <p className="accordion-title">{service.title}</p>
+                    <p className="accordion-tagline">{service.tagline}</p>
+                  </div>
+                  <div className="accordion-icon" style={{
+                    borderColor: open === i ? "var(--carolina)" : "var(--duke)",
+                    transform: open === i ? "rotate(45deg)" : "none",
+                  }}>
+                    +
+                  </div>
+                </button>
+
+                <div className="accordion-content" style={{
+                  maxHeight: open === i ? "600px" : "0px",
+                  opacity: open === i ? 1 : 0,
+                }}>
+                  <div className="accordion-body">
+                    {/* Left — description + tags */}
+                    <div>
+                      <p style={{ color: "var(--muted)", lineHeight: 1.9, marginBottom: "1.25rem", fontSize: "0.95rem" }}>
+                        {service.desc}
+                      </p>
+                      <ul style={{ paddingLeft: "1.25rem", color: "var(--muted)", lineHeight: 2, fontSize: "0.875rem", marginBottom: "1.25rem" }}>
+                        {service.includes.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                      <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                        {service.tags.map((tag) => (
+                          <span key={tag} style={{
+                            backgroundColor: "rgba(1,33,105,0.4)",
+                            border: "1px solid var(--duke)",
+                            color: "var(--muted)",
+                            fontSize: "0.7rem",
+                            padding: "0.2rem 0.65rem",
+                            borderRadius: "100px",
+                          }}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Right — pricing + CTA */}
+                    <div style={{
+                      backgroundColor: "var(--surface)",
+                      border: "1px solid var(--duke)",
+                      borderLeft: "4px solid var(--carolina)",
+                      borderRadius: "0 8px 8px 0",
+                      padding: "1.5rem",
+                    }}>
+                      <p style={{ color: "var(--muted)", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.5rem" }}>
+                        Pricing
+                      </p>
+                      <p style={{ fontSize: "1.5rem", fontWeight: "800", color: "var(--text)", marginBottom: "0.5rem" }}>
+                        {service.price}
+                      </p>
+                      <p style={{ color: "var(--muted)", fontSize: "0.8rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+                        Custom quotes available based on your market, competition, and goals.
+      </p>
+                      <Link href="/contact" className="btn-primary" style={{ display: "block", textAlign: "center" }}>
+                        Get a Quote
+                      </Link>
+                    </div>
                   </div>
                 </div>
-                <div style={{ borderTop: "1px solid var(--duke)", paddingTop: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-                  <p style={{ fontSize: "1.1rem", fontWeight: "800", color: "var(--text)", margin: 0 }}>{service.price}</p>
-                  <Link href="/contact" className="btn-primary" style={{ fontSize: "0.875rem", padding: "0.65rem 1.25rem" }}>
-                    Get a Quote
-                  </Link>
-                </div>
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       {/* Bottom CTA Form */}
@@ -291,7 +373,7 @@ export default function Services() {
                     outline: "none",
                     width: "100%",
                     boxSizing: "border-box",
-                    fontFamily: "var(--font-satoshi)",
+                    fontFamily: "var(--font-body, sans-serif)",
                   }}
                 />
               ))}
@@ -317,7 +399,7 @@ export default function Services() {
                     outline: "none",
                     width: "100%",
                     boxSizing: "border-box",
-                    fontFamily: "var(--font-satoshi)",
+                    fontFamily: "var(--font-body, sans-serif)",
                   }}
                 />
               ))}
@@ -338,7 +420,7 @@ export default function Services() {
                 width: "100%",
                 boxSizing: "border-box",
                 resize: "vertical",
-                fontFamily: "var(--font-satoshi)",
+                fontFamily: "var(--font-body, sans-serif)",
               }}
             />
             <button
@@ -352,7 +434,7 @@ export default function Services() {
                 border: "none",
                 cursor: "pointer",
                 fontSize: "1rem",
-                fontFamily: "var(--font-satoshi)",
+                fontFamily: "var(--font-body, sans-serif)",
                 transition: "opacity 0.2s",
               }}
             >
