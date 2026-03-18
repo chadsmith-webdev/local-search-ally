@@ -69,6 +69,7 @@ export default function OGImage() {
           display: "flex",
         }} />
         {/* Logo icon */}
+{/* Logo */}
 <div style={{
   position: "absolute",
   top: "48px",
@@ -83,44 +84,27 @@ export default function OGImage() {
     backgroundColor: "#012169",
     borderRadius: "12px",
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
     position: "relative",
   }}>
+    {/* Stem */}
     <div style={{
       position: "absolute",
-      width: "34px",
-      height: "34px",
-      borderRadius: "50%",
-      border: "2.5px solid #7BAFD4",
+      top: "31px",
+      left: "26px",
+      width: "5px",
+      height: "13px",
+      backgroundColor: "#f0f0f0",
       display: "flex",
     }} />
+    {/* Circle */}
     <div style={{
       position: "absolute",
-      width: "19px",
-      height: "19px",
-      borderRadius: "50%",
-      border: "2px solid #7BAFD4",
-      opacity: 0.5,
-      display: "flex",
-    }} />
-    <div style={{
-      position: "absolute",
-      width: "7px",
-      height: "7px",
+      width: "22px",
+      height: "22px",
       borderRadius: "50%",
       backgroundColor: "#7BAFD4",
-      display: "flex",
-    }} />
-    <div style={{
-      position: "absolute",
-      top: "36px",
-      left: "36px",
-      width: "14px",
-      height: "3px",
-      backgroundColor: "#7BAFD4",
-      borderRadius: "2px",
-      transform: "rotate(45deg)",
+      top: "10px",
+      left: "17px",
       display: "flex",
     }} />
   </div>
