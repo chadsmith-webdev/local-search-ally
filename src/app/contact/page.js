@@ -46,7 +46,7 @@ const contactMethods = [
     label: "Schedule a Call",
     value: "Book a free 30-min consultation",
     href: "https://calendly.com/smithchadlamont/30min",
-    desc: "Pick a time that works for you. No pressure, no pitch.",
+    desc: "Pick a time that works for you. I'll look at your current online presence before we talk.",
     external: true,
   },
 ];
@@ -122,7 +122,7 @@ export default function Contact() {
             No pitch. No pressure. <span style={{ color: "var(--carolina)" }}>Just an honest conversation.</span>
           </h1>
           <p style={{ color: "var(--muted)", fontSize: "1.05rem", lineHeight: 1.9, maxWidth: "560px" }}>
-            Tell me about your business and where you're struggling online. I'll give you my honest take — even if that means I'm not the right fit.
+            Tell me about your business and where you're stuck. I'll look at your online presence and give you my honest take — even if that means I'm not the right fit.
           </p>
         </div>
       </section>
@@ -175,7 +175,7 @@ export default function Contact() {
                   Free Consultation
                 </p>
                 <p style={{ color: "var(--muted)", margin: 0, fontSize: "0.85rem", lineHeight: 1.7 }}>
-                  Every engagement starts with a free, no-obligation conversation. I'll look at your current online presence and tell you exactly what I see.
+                  Every client starts with a free conversation. I'll look at your online presence before we talk and tell you exactly what I see (no filter).
                 </p>
               </div>
             </Reveal>
@@ -284,7 +284,7 @@ export default function Contact() {
                 Send Message
               </button>
               <p style={{ color: "var(--muted)", fontSize: "0.8rem", margin: 0 }}>
-                No spam. No sales pitch. Just an honest conversation about your business.
+                No spam. No pitch. I'll respond personally within one business day.
               </p>
             </form>
           </Reveal>
