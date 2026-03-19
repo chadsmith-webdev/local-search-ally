@@ -1,4 +1,5 @@
 import { getAllPosts } from "@/lib/posts";
+import { locations } from "@/lib/locations";
 import { siteConfig } from "@/lib/metadata";
 
 export default function sitemap() {
@@ -9,6 +10,13 @@ export default function sitemap() {
     lastModified: new Date(post.date),
     changeFrequency: "monthly",
     priority: 0.7,
+  }));
+
+  const locationUrls = locations.map((location) => ({
+    url: `${siteConfig.url}/locations/${location.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    prioty: 0.8,
   }));
 
   const staticUrls = [
@@ -50,5 +58,5 @@ export default function sitemap() {
 },
   ];
 
-  return [...staticUrls, ...blogUrls];
+  return [...staticUrls, ...blogUrls, ...locationUrls];
 }

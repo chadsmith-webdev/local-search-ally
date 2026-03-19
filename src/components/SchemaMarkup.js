@@ -38,6 +38,36 @@ export default function SchemaMarkup() {
     ],
     areaServed: [
       {
+        "@type": "City",
+        name: "Siloam Springs",
+        containedIn: "Arkansas",
+      }, 
+      {
+        "@type": "City",
+        name: "Bentonville",
+        containedIn: "Arkansas",
+      }, 
+      {
+        "@type": "City",
+        name: "Rogers",
+        containedIn: "Arkansas",
+      }, 
+      {
+        "@type": "City",
+        name: "Springdale",
+        containedIn: "Arkansas",
+      }, 
+      {
+        "@type": "City",
+        name: "Fayetteville",
+        containedIn: "Arkansas",
+      }, 
+      {
+        "@type": "City",
+        name: "Fort Smith",
+        containedIn: "Arkansas",
+      },
+      {
         "@type": "State",
         name: "Arkansas",
       },

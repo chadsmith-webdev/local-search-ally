@@ -111,6 +111,30 @@ export default function Footer() {
           </ul>
         </div>
 
+{/* Locations column */}
+<div>
+  <p style={{ color: "var(--text)", fontWeight: "600", marginBottom: "1.25rem", fontSize: "0.9rem" }}>Service Areas</p>
+  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "0.75rem" }}>
+    {[
+      { label: "Siloam Springs", href: "/locations/siloam-springs" },
+      { label: "Bentonville", href: "/locations/bentonville" },
+      { label: "Rogers", href: "/locations/rogers" },
+      { label: "Fayetteville", href: "/locations/fayetteville" },
+      { label: "Spingdale", href: "/locations/springdale"},
+      { label: "Fort Smith", href: "/locations/fort-smith"},
+    ].map((item) => (
+      <li key={item.label}>
+        <Link href={item.href} style={{ color: "var(--muted)", textDecoration: "none", fontSize: "0.875rem", transition: "color 0.2s" }}
+          onMouseEnter={(e) => e.currentTarget.style.color = "var(--carolina)"}
+          onMouseLeave={(e) => e.currentTarget.style.color = "var(--muted)"}
+        >
+          {item.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
+
         {/* Company column */}
         <div>
           <p style={{ color: "var(--text)", fontWeight: "600", marginBottom: "1.25rem", fontSize: "0.9rem" }}>Company</p>
@@ -165,7 +189,7 @@ export default function Footer() {
       <style>{`
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 4rem;
     margin-bottom: 3rem;
   }
