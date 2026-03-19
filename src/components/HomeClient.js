@@ -164,7 +164,7 @@ export default function HomeClient({ posts }) {
       <span style={{ color: "var(--carolina)" }}>They found your competitor.</span>
     </h1>
     <p className="h2" style={{ color: "var(--muted)", fontSize: "1.1rem", maxWidth: "580px", marginBottom: "2.5rem", lineHeight: 1.9 }}>
-      Most NWA contractors do great work — but they're invisible online. I've spent years learning exactly how local search works. Now I'm using that experience to help contractors like you get found, get calls, and get booked.
+      Most NWA contractors do great work — but they're invisible online. I've spent years figuring out how local search actually works. Now I use that to help contractors like you get found and get hired.
     </p>
     <div className="h3" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
       <Link href="/contact" className="btn-primary">Let's Talk About Your Business</Link>
@@ -229,7 +229,7 @@ export default function HomeClient({ posts }) {
         {[
           { stat: "5+", label: "Years of hands-on local SEO experience" },
           { stat: "100%", label: "Focused exclusively on contractors" },
-          { stat: "Full Stack", label: "SEO + web development under one roof" },
+          { stat: "One Person", label: "SEO + web development no hand-offs" },
         ].map((item) => (
           <div key={item.label} style={{
             backgroundColor: "var(--surface)",
@@ -260,10 +260,10 @@ export default function HomeClient({ posts }) {
         I'm Chad, the founder of Local Search Ally — and I want to be upfront: I'm not a big agency with decades under my belt. I'm a startup founder in Siloam Springs who's obsessed with local SEO, and I've been proving it works on my own projects for years before ever offering it to anyone else.
       </p>
       <p style={{ color: "var(--muted)", lineHeight: 1.9, marginBottom: "1.25rem" }}>
-        I started by teaching myself SEO through personal projects — ranking my own sites, optimizing Google Business Profiles, and studying what actually moves the needle in local search. The results I got for myself are what convinced me I could do this for others.
+        I started by teaching myself SEO on my own projects — ranking my own sites, optimizing Google Business Profiles, and learning what actually works in local search. The results I got for myself are what convinced me I could do this for others.
       </p>
       <p style={{ color: "var(--muted)", lineHeight: 1.9, marginBottom: "2rem" }}>
-        Now I'm learning web development too, so I can offer contractors a complete solution: a website that's built to convert and an SEO strategy that actually gets it found.
+        Now I'm building web development skills too — so you get SEO and a site built to convert, all from one person who's accountable for both.
       </p>
       <Link href="/about" className="btn-outline">My Full Story</Link>
     </Reveal>
@@ -284,8 +284,8 @@ export default function HomeClient({ posts }) {
         <div className="three-col" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", marginBottom: "3rem" }}>
           {[
             { number: "01", title: "We Talk (For Free)", desc: "Book a no-pressure conversation. I'll look at your current online presence, ask about your business, and be honest about what I can help with — and what I can't." },
-            { number: "02", title: "Plan & Build", desc: "From GBP optimization to a website that converts — I'll build the digital presence that gets your phone ringing. You'll know every step I'm taking." },
-            { number: "03", title: "Optimize & Grow", desc: "We launch, monitor, and keep improving. Rankings go up, the phone starts ringing, and you start getting more of the jobs you actually want." },
+            { number: "02", title: "Plan & Build", desc: "I'll optimize your Google Business Profile, clean up your citations, and build a site that converts. You'll know exactly what I'm doing and why — no surprises." },
+            { number: "03", title: "Optimize & Grow", desc: "We launch, monitor, and keep improving. The goal is simple: when someone in NWA searches for your trade, you show up." },
           ].map((step, i) => (
             <Reveal key={step.number} delay={i * 150}>
               <div className="card" style={{ textAlign: "center" }}>
@@ -312,7 +312,7 @@ export default function HomeClient({ posts }) {
         Local SEO expertise. Web development growing daily.
       </h2>
       <p style={{ color: "var(--muted)", maxWidth: "520px", margin: "0 auto", lineHeight: 1.9 }}>
-        A focused set of services built around one goal — more calls, more jobs, more growth for NWA contractors.
+        Everything I offer points at one thing: more calls from people ready to hire.
       </p>
     </Reveal>
 
@@ -415,7 +415,7 @@ export default function HomeClient({ posts }) {
                 {[
                   "Show up when NWA homeowners search for your services",
                   "Get a steady stream of calls from people ready to hire",
-                  "Build an online reputation that sells for you 24/7",
+                  "Build an online reputation that works for you when you're on a job site.",
                   "Work with someone transparent, hungry, and in your corner",
                 ].map((item) => (
                   <div key={item} style={{ display: "flex", gap: "0.75rem", marginBottom: "1rem", alignItems: "flex-start" }}>
@@ -437,10 +437,10 @@ export default function HomeClient({ posts }) {
             <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: "800" }}>No smoke. No mirrors. Just honest work.</h2>
           </Reveal>
           {[
-            { promise: "I will never claim results I haven't achieved.", detail: "Every case study on this site will be real work with real outcomes." },
-            { promise: "I will tell you if something is outside my skill set.", detail: "I'll either learn it fast or recommend someone who can help." },
-            { promise: "I will never lock you into a contract.", detail: "If I'm not delivering value, you can walk away. No hard feelings." },
-            { promise: "I will communicate clearly and often.", detail: "You'll always know what I'm working on and why." },
+            { promise: "✅ I will never claim results I haven't achieved.", detail: "Every case study on this site will be real work with real outcomes." },
+            { promise: "✅ I will tell you if something is outside my skill set.", detail: "I'll either learn it fast or recommend someone who can help." },
+            { promise: "✅ I will never lock you into a contract.", detail: "If I'm not delivering value, you can walk away. No hard feelings." },
+            { promise: "✅ I will communicate clearly and often.", detail: "You'll always know what I'm working on and why." },
           ].map((item, i) => (
             <Reveal key={item.promise} delay={i * 100}>
               <div className="pledge-item">

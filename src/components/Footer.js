@@ -61,7 +61,7 @@ export default function Footer() {
   <Logo size={32} textSize="1rem" />
 </Link>
           <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "0.9rem", marginBottom: "1.5rem", maxWidth: "300px" }}>
-            A startup on a mission to help NWA contractors get found online. Built on transparency, powered by real SEO expertise, and growing every day.
+            A startup built to help NWA contractors get found online. Transparent by default. Growing every day.
           </p>
           <p style={{ color: "var(--muted)", fontSize: "0.85rem", marginBottom: "1.5rem" }}>
             📍 Siloam Springs, Arkansas
