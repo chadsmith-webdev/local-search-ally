@@ -52,9 +52,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <SchemaMarkup />
-      </head>
       <body style={{
         backgroundColor: "var(--bg)",
         color: "var(--text)",
@@ -64,6 +61,7 @@ export default function RootLayout({ children }) {
         flexDirection: "column",
         minHeight: "100vh",
       }}>
+        <SchemaMarkup />
         <Navbar />
         <main style={{ flex: 1 }}>
           {children}

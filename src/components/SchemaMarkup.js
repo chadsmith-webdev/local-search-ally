@@ -51,21 +51,21 @@ export default function SchemaMarkup() {
   };
 
   const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
-    { "@type": "ListItem", position: 2, name: "Services", item: `${siteConfig.url}/services` },
-    { "@type": "ListItem", position: 3, name: "Portfolio", item: `${siteConfig.url}/portfolio` },
-    { "@type": "ListItem", position: 4, name: "Blog", item: `${siteConfig.url}/blog` },
-    { "@type": "ListItem", position: 5, name: "About", item: `${siteConfig.url}/about` },
-    { "@type": "ListItem", position: 6, name: "Contact", item: `${siteConfig.url}/contact` },
-    { "@type": "ListItem", position: 7, name: "Service Areas", item: `${siteConfig.url}/locations` },
-  ],
-};
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${siteConfig.url}/services` },
+      { "@type": "ListItem", position: 3, name: "Portfolio", item: `${siteConfig.url}/portfolio` },
+      { "@type": "ListItem", position: 4, name: "Blog", item: `${siteConfig.url}/blog` },
+      { "@type": "ListItem", position: 5, name: "About", item: `${siteConfig.url}/about` },
+      { "@type": "ListItem", position: 6, name: "Contact", item: `${siteConfig.url}/contact` },
+      { "@type": "ListItem", position: 7, name: "Service Areas", item: `${siteConfig.url}/locations` },
+    ],
+  };
 
   return (
-    <div style={{ display: "none" }}>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
@@ -74,11 +74,10 @@ export default function SchemaMarkup() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-
       <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-/>
-    </div>
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+    </>
   );
 }
