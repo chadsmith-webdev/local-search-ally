@@ -22,10 +22,6 @@ export default function SchemaMarkup() {
         name: "Arkansas",
       },
       {
-        "@type": "State",
-        name: "North Carolina",
-      },
-      {
         "@type": "AdministrativeArea",
         name: "United States",
       },

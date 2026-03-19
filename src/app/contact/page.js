@@ -290,6 +290,41 @@ export default function Contact() {
           </Reveal>
         </div>
       </section>
+
+      {/* Map */}
+<section style={{ borderTop: "1px solid var(--duke)" }}>
+  <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "4rem 2rem 0" }}>
+    <Reveal>
+      <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "0.75rem" }}>
+        Where We're Based
+      </p>
+      <h2 style={{ fontSize: "clamp(1.25rem, 2vw, 1.75rem)", fontWeight: "800", marginBottom: "0.75rem" }}>
+        Siloam Springs, Arkansas
+      </h2>
+      <p style={{ color: "var(--muted)", fontSize: "0.95rem", lineHeight: 1.8, marginBottom: "2rem", maxWidth: "560px" }}>
+        Based in the heart of NWA — serving contractors across Siloam Springs, Bentonville, Rogers, Springdale, Fayetteville, and the surrounding area.
+      </p>
+    </Reveal>
+  </div>
+  <div style={{ position: "relative", width: "100%", height: "400px", filter: "grayscale(30%) contrast(1.1)" }}>
+    <iframe
+      title="Local Search Ally — Siloam Springs, AR"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52244.27!2d-94.5407!3d36.1881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c94b3a3a3a3a3b%3A0x0!2sSiloam%20Springs%2C%20AR!5e0!3m2!1sen!2sus!4v1"
+      width="100%"
+      height="400"
+      style={{ border: 0, display: "block" }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+    <div style={{
+      position: "absolute",
+      inset: 0,
+      pointerEvents: "none",
+      boxShadow: "inset 0 0 60px rgba(1,33,105,0.15)",
+    }} />
+  </div>
+</section>
     </>
   );
 }
