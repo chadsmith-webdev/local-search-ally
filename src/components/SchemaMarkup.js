@@ -30,7 +30,6 @@ export default function SchemaMarkup() {
       { "@type": "City", name: "Fayetteville", containedIn: "Arkansas" },
       { "@type": "City", name: "Fort Smith", containedIn: "Arkansas" },
       { "@type": "State", name: "Arkansas" },
-      { "@type": "State", name: "North Carolina" },
     ],
     serviceType: ["Local SEO", "Web Development", "Google Business Profile Optimization", "SEO Audits", "Reputation Building", "Content & Keywords"],
     priceRange: "$$",
@@ -45,7 +44,7 @@ export default function SchemaMarkup() {
       name: faq.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer,
+        text: faq.schemaAnswer,
       },
     })),
   };
