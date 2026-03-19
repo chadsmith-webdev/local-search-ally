@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import FAQSection from "./FAQSection";
 
 function useReveal() {
   const ref = useRef(null);
@@ -582,7 +583,30 @@ export default function HomeClient({ posts }) {
   </div>
 </section>
 
-      {/* 9. FINAL CTA */}
+{/* 9. FAQ */}
+<section style={{ borderTop: "1px solid var(--duke)", padding: "5rem 2rem" }}>
+  <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+    <Reveal style={{ marginBottom: "3rem" }}>
+      <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1rem" }}>
+        FAQ
+      </p>
+      <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: "800", marginBottom: "1rem" }}>
+        Common questions from NWA contractors.
+      </h2>
+      <p style={{ color: "var(--muted)", lineHeight: 1.9, maxWidth: "560px" }}>
+        Straightforward answers — no jargon, no runaround.
+      </p>
+    </Reveal>
+    <Reveal>
+      <FAQSection limit={5} />
+    </Reveal>
+    <Reveal style={{ textAlign: "center", marginTop: "2.5rem" }}>
+      <Link href="/services#faq" className="btn-outline">View All FAQs</Link>
+    </Reveal>
+  </div>
+</section>
+
+      {/* 10. FINAL CTA */}
 <section style={{
   padding: "6rem 2rem",
   textAlign: "center",

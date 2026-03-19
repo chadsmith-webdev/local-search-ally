@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
 
 function useReveal() {
   const ref = useRef(null);
@@ -329,6 +330,24 @@ export default function Services() {
           </div>
         </Reveal>
       </section>
+
+      {/* FAQ */}
+<section id="faq" style={{ borderTop: "1px solid var(--duke)", padding: "5rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
+  <Reveal style={{ marginBottom: "3rem" }}>
+    <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1rem" }}>
+      FAQ
+    </p>
+    <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: "800", marginBottom: "1rem" }}>
+      Everything you wanted to know but didn't want to ask.
+    </h2>
+    <p style={{ color: "var(--muted)", lineHeight: 1.9, maxWidth: "560px" }}>
+      Honest answers to the questions contractors ask most.
+    </p>
+  </Reveal>
+  <Reveal>
+    <FAQSection />
+  </Reveal>
+</section>
 
       {/* Bottom CTA Form */}
       <section style={{
