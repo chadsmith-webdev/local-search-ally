@@ -157,7 +157,7 @@ export default function About() {
             <div style={{ marginTop: "1.5rem", display: "grid", gap: "0.75rem" }}>
               {[
                 { label: "📍 Location", value: "Siloam Springs, AR" },
-                { label: "🎓 Currently", value: "Pursuing Web Dev degree" },
+                { label: "🎓 Currently", value: "Building full-stack skills" },
                 { label: "💼 Focus", value: "NWA Contractors" },
               ].map((item) => (
                 <div key={item.label} style={{
@@ -185,10 +185,10 @@ export default function About() {
               I grew up in North Carolina — where local businesses are the backbone of every community. These days I'm based in Siloam Springs, Arkansas, a small town that feels a lot like home: cow pastures, tight-knit neighborhoods, and local contractors who work hard and deserve to be found online.
             </p>
             <p style={{ color: "var(--muted)", lineHeight: 1.9, marginBottom: "1.25rem" }}>
-              My local SEO experience didn't start in an agency — it started in the trenches. I spent years doing SEO for my own projects, learning what actually moves the needle in local search. No theory, just results. That hands-on background is what I bring to every client.
+              My local SEO experience didn't start in an agency — it started on my own projects. I spent years learning what actually works in local search: ranking my own sites, optimizing profiles, studying what Google actually responds to. No theory. Just hands-on work. That's what I bring to every client.
             </p>
             <p style={{ color: "var(--muted)", lineHeight: 1.9, marginBottom: "2rem" }}>
-              I'm currently pursuing a degree in Web Development because I believe great local SEO deserves a great website. Contractors shouldn't have to hire two separate vendors — I'm building the skills to be both.
+              I'm learning web development because I believe good local SEO deserves a good website. Contractors shouldn't have to hire two people and hope they talk to each other. I'm building the skills to handle both.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <Link href="/contact" className="btn-primary">Work With Me</Link>
@@ -210,7 +210,7 @@ export default function About() {
             </h2>
             {[
               { title: "Learned Local SEO Hands-On", desc: "Ranked my own projects in local search. Studied Google's algorithms, GBP optimization, and citation building obsessively — years before offering it as a service." },
-              { title: "Saw Real Results", desc: "Grew my own local search visibility significantly. Proved the methods work on real businesses before ever pitching them to anyone else." },
+              { title: "Proved It Works", desc: "Got real rankings on real projects before pitching any of it to anyone else. The methods I use on your business are the same ones I used on mine first." },
               { title: "Started Learning Web Dev", desc: "Realized contractors need more than just SEO — they need fast, converting websites. Enrolled in a Web Development degree to build that skill set the right way." },
               { title: "Launched Local Search Ally", desc: "Moved to Siloam Springs and started helping NWA contractors get the online presence they deserve. This is just the beginning." },
             ].map((item) => (

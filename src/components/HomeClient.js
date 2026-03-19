@@ -437,10 +437,10 @@ export default function HomeClient({ posts }) {
             <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: "800" }}>No smoke. No mirrors. Just honest work.</h2>
           </Reveal>
           {[
-            { promise: "✅ I will never claim results I haven't achieved.", detail: "Every case study on this site will be real work with real outcomes." },
-            { promise: "✅ I will tell you if something is outside my skill set.", detail: "I'll either learn it fast or recommend someone who can help." },
-            { promise: "✅ I will never lock you into a contract.", detail: "If I'm not delivering value, you can walk away. No hard feelings." },
-            { promise: "✅ I will communicate clearly and often.", detail: "You'll always know what I'm working on and why." },
+            { promise: "I will never claim results I haven't achieved.", detail: "Every case study on this site will be real work with real outcomes." },
+            { promise: "I will tell you if something is outside my skill set.", detail: "I'll either learn it fast or recommend someone who can help." },
+            { promise: "I will never lock you into a contract.", detail: "If I'm not delivering value, you can walk away. No hard feelings." },
+            { promise: "I will communicate clearly and often.", detail: "You'll always know what I'm working on and why." },
           ].map((item, i) => (
             <Reveal key={item.promise} delay={i * 100}>
               <div className="pledge-item">
