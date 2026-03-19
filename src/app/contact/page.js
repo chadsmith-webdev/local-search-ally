@@ -162,6 +162,42 @@ export default function Contact() {
   ))}
 </div>
 
+    {/* Business Hours */}
+    <Reveal delay={250}>
+      <div style={{
+      backgroundColor: "var(--surface)",
+      border: "1px solid var(--duke)",
+      borderRadius: "10px",
+      padding: "1.5rem",
+      marginTop: "1rem",
+      marginBottom: "1rem",
+    }}>
+        <p style={{ color: "var(--carolina)", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: "bold", marginBottom: "1rem" }}>
+      Business Hours
+        </p>
+    {[
+      { days: "Monday — Friday", hours: "8:00am – 6:00pm" },
+      { days: "Saturday", hours: "9:00am – 12:00pm" },
+      { days: "Sunday", hours: "2:00pm – 6:00pm" },
+    ].map((item) => (
+      <div key={item.days} style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingBottom: "0.6rem",
+        marginBottom: "0.6rem",
+        borderBottom: "1px solid var(--duke)",
+      }}>
+        <span style={{ color: "var(--muted)", fontSize: "0.875rem" }}>{item.days}</span>
+        <span style={{ color: "var(--text)", fontSize: "0.875rem", fontWeight: "600" }}>{item.hours}</span>
+      </div>
+    ))}
+    <p style={{ color: "var(--muted)", fontSize: "0.8rem", marginTop: "0.5rem", fontStyle: "italic" }}>
+      All times Central Time (CT)
+    </p>
+  </div>
+</Reveal>
+
             <Reveal delay={300}>
               <div style={{
                 marginTop: "2rem",
