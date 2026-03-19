@@ -32,18 +32,18 @@ function Reveal({ children, style = {}, delay = 0 }) {
 const services = [
   {
     title: "Local SEO",
-    tagline: "Dominate your local market",
+    tagline: "Rank where your customers are searching",
     desc: "Full-service local SEO covering everything your business needs to rank — citation building, review management, listing optimization, and on-page SEO. All battle-tested on my own projects before ever being offered as a service.",
-    includes: ["Google Business Profile optimization", "Citation & listing cleanup", "Review generation strategy", "On-page SEO optimization", "Monthly ranking reports"],
+    includes: ["- Google Business Profile optimization", "- Citation & listing cleanup", "- Review generation strategy", "- On-page SEO optimization", "- Monthly ranking reports"],
     tags: ["GBP Optimization", "Citations", "On-Page SEO"],
     price: "Starting at $499/mo",
     highlight: true,
   },
   {
     title: "Google Business Profile Optimization",
-    tagline: "Own the Map Pack",
+    tagline: "Get into the Map Pack",
     desc: "Your GBP listing is often the first thing a customer sees. I fully optimize your profile so you stand out from competitors and convert more profile views into calls.",
-    includes: ["Full profile audit & optimization", "Category & attribute setup", "Photo strategy", "Q&A and post management"],
+    includes: ["- Full profile audit & optimization", "- Category & attribute setup", "- Photo strategy", "- Q&A and post management"],
     tags: ["Map Pack", "Visibility", "Conversions"],
     price: "Starting at $199",
     highlight: false,
@@ -51,8 +51,8 @@ const services = [
   {
     title: "Web Design & Development",
     tagline: "Fast, modern websites built to convert",
-    desc: "Mobile-first websites built with performance and local SEO baked in from day one. Built with modern frameworks for speed and performance — not WordPress page builders. Every site I build is SEO-optimized from the ground up — because that's what I know best.",
-    includes: ["Custom design & development", "Mobile-first & fast loading", "On-page SEO foundation", "Contact forms & lead capture"],
+    desc: "Mobile-first websites built with local SEO baked in from day one. I build with modern frameworks not WordPress page builders, because the performance difference matters for rankings.",
+    includes: ["- Custom design & development", "- Mobile-first & fast loading", "- On-page SEO foundation", "- Contact forms & lead capture"],
     tags: ["Mobile-First", "SEO-Built", "Lead Gen"],
     price: "Starting at $799",
     highlight: false,
@@ -60,8 +60,8 @@ const services = [
   {
     title: "Reputation Building",
     tagline: "Build trust that sells for you",
-    desc: "I'll help you set up systems to get more reviews, respond professionally, and build the kind of online reputation that makes customers choose you before they even call.",
-    includes: ["Review generation systems", "Response templates", "GBP review management", "Reputation monitoring"],
+    desc: "I'll help you get more reviews, respond to them the right way, and build an online reputation that does some of the selling before a customer even calls.",
+    includes: ["- Review generation systems", "- Response templates", "- GBP review management", "- Reputation monitoring"],
     tags: ["Review Strategy", "GBP Reviews", "Monitoring"],
     price: "Starting at $99/mo",
     highlight: false,
@@ -69,8 +69,8 @@ const services = [
   {
     title: "Content & Keywords",
     tagline: "Get found for what customers actually search",
-    desc: "Strategic content that targets the searches your customers are actually making. Blog posts, service pages, and location pages that drive real local traffic.",
-    includes: ["Keyword research", "Service page copywriting", "Location page creation", "Blog content strategy"],
+    desc: "Content written around the exact searches your customers make - not generic SEO filler. Blog posts, services pages, and location pages built to rank in NWA.",
+    includes: ["- Keyword research", "- Service page copywriting", "- Location page creation", "- Blog content strategy"],
     tags: ["Keyword Research", "Blog Content", "Service Pages"],
     price: "Starting at $299/mo",
     highlight: false,
@@ -79,7 +79,7 @@ const services = [
     title: "SEO Audits",
     tagline: "Find out exactly why you're not ranking",
     desc: "A detailed audit of your website and local presence covering technical SEO, content gaps, citation issues, and competitor analysis. You get a clear, actionable report — no fluff.",
-    includes: ["Technical SEO analysis", "Local citation audit", "Competitor gap analysis", "Prioritized action plan"],
+    includes: ["- Technical SEO analysis", "- Local citation audit", "- Competitor gap analysis", "- Prioritized action plan"],
     tags: ["Technical SEO", "Competitor Analysis", "Action Plan"],
     price: "Starting at $299",
     highlight: false,
@@ -226,7 +226,7 @@ export default function Services() {
             <span style={{ color: "var(--carolina)" }}>get found online.</span>
           </h1>
           <p style={{ color: "var(--muted)", fontSize: "1.05rem", lineHeight: 1.9, maxWidth: "560px" }}>
-            No bloated agency packages. No mystery pricing. Just focused services built around one goal — more calls, more jobs.
+            No bloated packages. No mystery pricing. Every service I offer is aimed at one thing: more calls from people ready to hire.
           </p>
         </div>
       </section>
