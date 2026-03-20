@@ -117,28 +117,62 @@ export default function Footer() {
   </ul>
 </div>
 
-        {/* Company column */}
-        <div>
-          <p style={{ color: "var(--text)", fontWeight: "600", marginBottom: "1.25rem", fontSize: "0.9rem" }}>Company</p>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "0.75rem" }}>
-            {[
-              { label: "About", href: "/about" },
-              { label: "Blog", href: "/blog" },
-              { label: "Services", href: "/services" },
-              { label: "Contact", href: "/contact" },
-              { label: "Portfolio", href: "/portfolio"},
-            ].map((item) => (
-              <li key={item.label}>
-                <Link href={item.href} style={{ color: "var(--muted)", textDecoration: "none", fontSize: "0.875rem", transition: "color 0.2s" }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = "var(--carolina)"}
-                  onMouseLeave={(e) => e.currentTarget.style.color = "var(--muted)"}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Contact column */}
+<div>
+  <p style={{ color: "var(--text)", fontWeight: "600", marginBottom: "1.25rem", fontSize: "0.9rem" }}>Get in Touch</p>
+  <div style={{ display: "grid", gap: "1rem" }}>
+    <a href="tel:+14793808626" style={{
+      color: "var(--muted)",
+      textDecoration: "none",
+      fontSize: "0.875rem",
+      display: "flex",
+      alignItems: "center",
+      gap: "0.5rem",
+      transition: "color 0.2s",
+    }}
+      onMouseEnter={(e) => e.currentTarget.style.color = "var(--carolina)"}
+      onMouseLeave={(e) => e.currentTarget.style.color = "var(--muted)"}
+    >
+      <span style={{ color: "var(--carolina)" }}>📞</span>
+      (479) 380-8626
+    </a>
+    <a href="mailto:contact@localsearchally.com" style={{
+      color: "var(--muted)",
+      textDecoration: "none",
+      fontSize: "0.875rem",
+      display: "flex",
+      alignItems: "center",
+      gap: "0.5rem",
+      transition: "color 0.2s",
+    }}
+      onMouseEnter={(e) => e.currentTarget.style.color = "var(--carolina)"}
+      onMouseLeave={(e) => e.currentTarget.style.color = "var(--muted)"}
+    >
+      <span style={{ color: "var(--carolina)" }}>📧</span>
+      contact@localsearchally.com
+    </a>
+    <a href="https://calendly.com/smithchadlamont/30min" target="_blank" rel="noopener noreferrer" style={{
+      color: "var(--muted)",
+      textDecoration: "none",
+      fontSize: "0.875rem",
+      display: "flex",
+      alignItems: "center",
+      gap: "0.5rem",
+      transition: "color 0.2s",
+    }}
+      onMouseEnter={(e) => e.currentTarget.style.color = "var(--carolina)"}
+      onMouseLeave={(e) => e.currentTarget.style.color = "var(--muted)"}
+    >
+      <span style={{ color: "var(--carolina)" }}>📅</span>
+      Book a Free Call
+    </a>
+    <div style={{ paddingTop: "0.5rem", borderTop: "1px solid var(--duke)" }}>
+      <p style={{ color: "var(--muted)", fontSize: "0.8rem", marginBottom: "0.25rem" }}>Mon–Fri 8am–6pm CT</p>
+      <p style={{ color: "var(--muted)", fontSize: "0.8rem", marginBottom: "0.25rem" }}>Sat 9am–12pm CT</p>
+      <p style={{ color: "var(--muted)", fontSize: "0.8rem" }}>Sun 2pm–6pm CT</p>
+    </div>
+  </div>
+</div>
 
       </div>
 

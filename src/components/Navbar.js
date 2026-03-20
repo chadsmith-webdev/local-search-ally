@@ -165,6 +165,22 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTA */}
+        <a href="tel:+14793808626" className="desktop-nav" style={{
+  color: "var(--muted)",
+  textDecoration: "none",
+  fontSize: "0.85rem",
+  display: "flex",
+  alignItems: "center",
+  gap: "0.4rem",
+  transition: "color 0.2s",
+}}
+  onMouseEnter={(e) => e.currentTarget.style.color = "var(--carolina)"}
+  onMouseLeave={(e) => e.currentTarget.style.color = "var(--muted)"}
+>
+  <span style={{ color: "var(--carolina)", fontSize: "0.8rem" }}>📞</span>
+  (479) 380-8626
+</a>
+
         <Link href="/contact" className="nav-cta desktop-nav" style={{
           backgroundColor: "var(--carolina)",
           color: "#000",
@@ -275,6 +291,28 @@ export default function Navbar() {
     </Link>
   );
 })}
+
+<Link
+  href="/locations"
+  onClick={() => setOpen(false)}
+  style={{
+    color: pathname.startsWith("/locations") ? "var(--carolina)" : "var(--text)",
+    textDecoration: "none",
+    fontSize: "1.25rem",
+    fontWeight: "600",
+    padding: "0.75rem 0",
+    borderBottom: "1px solid var(--duke)",
+    transition: "color 0.2s",
+    opacity: open ? 1 : 0,
+    transform: open ? "translateX(0)" : "translateX(20px)",
+    transitionDelay: `${links.length * 60}ms`,
+    fontFamily: "var(--font-cabinet)",
+  }}
+>
+  Service Areas
+</Link>
+
+
         <Link
           href="/contact"
           onClick={() => setOpen(false)}
@@ -296,26 +334,6 @@ export default function Navbar() {
         >
           Let's Talk — It's Free
         </Link>
-
-        <Link
-  href="/locations"
-  onClick={() => setOpen(false)}
-  style={{
-    color: pathname.startsWith("/locations") ? "var(--carolina)" : "var(--text)",
-    textDecoration: "none",
-    fontSize: "1.25rem",
-    fontWeight: "600",
-    padding: "0.75rem 0",
-    borderBottom: "1px solid var(--duke)",
-    transition: "color 0.2s",
-    opacity: open ? 1 : 0,
-    transform: open ? "translateX(0)" : "translateX(20px)",
-    transitionDelay: `${links.length * 60}ms`,
-    fontFamily: "var(--font-cabinet)",
-  }}
->
-  Service Areas
-</Link>
       </div>
 
       <style>{`
