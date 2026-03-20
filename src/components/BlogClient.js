@@ -145,6 +145,9 @@ export default function BlogClient({ posts }) {
                     <p style={{ color: "var(--muted)", fontSize: "0.78rem", marginBottom: "0.75rem" }}>
                       {new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
                     </p>
+                    <span style ={{ color: "var(--duke)", fontSize: "0.78rem "}}>·</span>
+                    <p style={{ color: "var(--muted", fontSize: "0.78rem", margin: 0 }}>{post.readTime}</p>
+                    
                     <h2 style={{ color: "var(--text)", fontSize: "1.1rem", lineHeight: 1.5, marginBottom: "0.75rem", flex: 1 }}>
                       {post.title}
                     </h2>

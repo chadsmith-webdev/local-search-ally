@@ -495,7 +495,7 @@ export default function HomeClient({ posts }) {
     <Reveal style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "3rem", flexWrap: "wrap", gap: "1rem" }}>
       <div>
         <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "0.5rem" }}>Portfolio</p>
-        <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: "800", margin: 0 }}>Real work. Real results.</h2>
+        <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: "800", margin: 0 }}>The work speaks for itself.</h2>
       </div>
       <Link href="/portfolio" className="btn-outline">View All Work</Link>
     </Reveal>
@@ -509,22 +509,6 @@ export default function HomeClient({ posts }) {
           result: "Live at localsearchally.com",
           link: "/blog/how-i-built-this-website",
           live: true,
-        },
-        {
-          categoryLabel: "Local SEO",
-          title: "Local SEO Case Study",
-          desc: "A real-world local SEO engagement with a contractor client — coming soon.",
-          tags: ["Local SEO", "GBP", "Citations"],
-          result: "Coming soon",
-          live: false,
-        },
-        {
-          categoryLabel: "GBP Optimization",
-          title: "Google Business Profile Optimization",
-          desc: "Full GBP audit and optimization for a local contractor — coming soon.",
-          tags: ["GBP", "Map Pack", "Reviews"],
-          result: "Coming soon",
-          live: false,
         },
       ].map((project, i) => (
         <Reveal key={project.title} delay={i * 80}>

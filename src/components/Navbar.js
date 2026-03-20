@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import { usePathname } from "next/navigation";
 
 const links = [
   { label: "Services", href: "/services" },
@@ -14,6 +15,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -55,21 +57,26 @@ export default function Navbar() {
           margin: 0,
           padding: 0,
         }} className="desktop-nav">
-          {links.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} style={{
-                color: "var(--text)",
-                textDecoration: "none",
-                fontSize: "0.95rem",
-                transition: "color 0.2s",
-              }}
-                onMouseEnter={(e) => e.currentTarget.style.color = "var(--carolina)"}
-                onMouseLeave={(e) => e.currentTarget.style.color = "var(--text)"}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {links.map((link) => {
+  const isActive = pathname === link.href;
+  return (
+    <li key={link.href}>
+      <Link href={link.href} style={{
+        color: isActive ? "var(--carolina)" : "var(--text)",
+        textDecoration: "none",
+        fontSize: "0.95rem",
+        borderBottom: isActive ? "2px solid var(--carolina)" : "2px solid transparent",
+        paddingBottom: "4px",
+        transition: "color 0.2s, border-color 0.2s",
+      }}
+        onMouseEnter={(e) => e.currentTarget.style.color = "var(--carolina)"}
+        onMouseLeave={(e) => { if (!isActive) e.currentTarget.style.color = "var(--text)"; }}
+      >
+        {link.label}
+      </Link>
+    </li>
+  );
+})}
         </ul>
 
         {/* Desktop CTA */}
@@ -158,30 +165,31 @@ export default function Navbar() {
         flexDirection: "column",
         gap: "0.5rem",
       }}>
-        {links.map((link, i) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={() => setOpen(false)}
-            style={{
-              color: "var(--text)",
-              textDecoration: "none",
-              fontSize: "1.25rem",
-              fontWeight: "600",
-              padding: "0.75rem 0",
-              borderBottom: "1px solid var(--duke)",
-              transition: "color 0.2s",
-              opacity: open ? 1 : 0,
-              transform: open ? "translateX(0)" : "translateX(20px)",
-              transitionDelay: `${i * 60}ms`,
-              fontFamily: "var(--font-cabinet)",
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.color = "var(--carolina)"}
-            onMouseLeave={(e) => e.currentTarget.style.color = "var(--text)"}
-          >
-            {link.label}
-          </Link>
-        ))}
+        {links.map((link, i) => {
+  const isActive = pathname === link.href;
+  return (
+    <Link
+      key={link.href}
+      href={link.href}
+      onClick={() => setOpen(false)}
+      style={{
+        color: isActive ? "var(--carolina)" : "var(--text)",
+        textDecoration: "none",
+        fontSize: "1.25rem",
+        fontWeight: "600",
+        padding: "0.75rem 0",
+        borderBottom: "1px solid var(--duke)",
+        transition: "color 0.2s",
+        opacity: open ? 1 : 0,
+        transform: open ? "translateX(0)" : "translateX(20px)",
+        transitionDelay: `${i * 60}ms`,
+        fontFamily: "var(--font-body)",
+      }}
+    >
+      {link.label}
+    </Link>
+  );
+})}
         <Link
           href="/contact"
           onClick={() => setOpen(false)}

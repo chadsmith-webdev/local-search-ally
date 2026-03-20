@@ -97,11 +97,16 @@ export default async function BlogPost({ params }) {
             />
           </div>
           <div>
-            <p style={{ color: "var(--text)", fontWeight: "600", margin: 0, fontSize: "0.9rem" }}>Chad Smith</p>
-            <p style={{ color: "var(--muted)", margin: 0, fontSize: "0.8rem" }}>
-              {new Date(metadata.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-            </p>
-          </div>
+  <p style={{ color: "var(--text)", fontWeight: "600", margin: 0, fontSize: "0.9rem" }}>Chad Smith</p>
+  <p style={{ color: "var(--muted)", margin: 0, fontSize: "0.8rem" }}>
+    {new Date(metadata.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+    {" · "}
+    {(() => {
+      const words = content.trim().split(/\s+/).length;
+      return `${Math.ceil(words / 200)} min read`;
+    })()}
+  </p>
+</div>
         </div>
       </div>
 

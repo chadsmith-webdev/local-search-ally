@@ -1,6 +1,8 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
+
 
 function useReveal() {
   const ref = useRef(null);
@@ -49,55 +51,23 @@ const projects = [
     linkLabel: "Read the Case Study",
     live: true,
   },
-  {
-    category: "seo",
-    categoryLabel: "Local SEO",
-    title: "Local SEO Case Study",
-    desc: "A real-world local SEO engagement with a contractor client — rankings, traffic, and lead generation results documented transparently.",
-    tags: ["Local SEO", "GBP", "Citations"],
-    result: "Coming soon",
-    live: false,
-  },
-  {
-    category: "gbp",
-    categoryLabel: "GBP Optimization",
-    title: "Google Business Profile Optimization",
-    desc: "Full GBP audit and optimization for a local contractor — category setup, photo strategy, review generation, and post management.",
-    tags: ["GBP", "Map Pack", "Reviews"],
-    result: "Coming soon",
-    live: false,
-  },
-  {
-    category: "audit",
-    categoryLabel: "SEO Audit",
-    title: "Contractor SEO Audit",
-    desc: "A detailed SEO audit for a local contractor covering technical issues, citation gaps, competitor analysis, and a prioritized action plan.",
-    tags: ["Technical SEO", "Citations", "Competitor Analysis"],
-    result: "Coming soon",
-    live: false,
-  },
-  {
-    category: "web",
-    categoryLabel: "Web Development",
-    title: "Contractor Website Build",
-    desc: "A fast, mobile-first website for a local contractor built with SEO baked in from day one — designed to convert visitors into calls.",
-    tags: ["Next.js", "Mobile-First", "Lead Gen"],
-    result: "Coming soon",
-    live: false,
-  },
-  {
-    category: "seo",
-    categoryLabel: "Local SEO",
-    title: "Multi-Location Local SEO",
-    desc: "Local SEO strategy for a contractor operating across multiple NWA service areas — location pages, citations, and GBP optimization.",
-    tags: ["Local SEO", "Location Pages", "NWA"],
-    result: "Coming soon",
-    live: false,
-  },
 ];
 
 export default function Portfolio() {
-  const [active, setActive] = useRef("all") && require("react").useState("all");
+ const router = useRouter();
+const [active, setActive] = useState("all");
+
+useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const filter = params.get("filter");
+  if (filter) setActive(filter);
+}, []);
+
+function handleFilter(value) {
+  setActive(value);
+  const url = value === "all" ? "/portfolio" : `/portfolio?filter=${value}`;
+  router.replace(url, { scroll: false });
+}
 
   const filtered = active === "all"
     ? projects
@@ -193,14 +163,14 @@ export default function Portfolio() {
         <Reveal>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginBottom: "3rem" }}>
             {categories.map((cat) => (
-              <button
-                key={cat.value}
-                onClick={() => setActive(cat.value)}
-                className={`filter-btn${active === cat.value ? " active" : ""}`}
-              >
-                {cat.label}
-              </button>
-            ))}
+  <button
+    key={cat.value}
+    onClick={() => handleFilter(cat.value)}
+    className={`filter-btn${active === cat.value ? " active" : ""}`}
+  >
+    {cat.label}
+  </button>
+))}
           </div>
         </Reveal>
 
@@ -305,3 +275,4 @@ export default function Portfolio() {
     </>
   );
 }
+
