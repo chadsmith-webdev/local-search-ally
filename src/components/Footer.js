@@ -120,7 +120,7 @@ export default function Footer() {
       { label: "Bentonville", href: "/locations/bentonville" },
       { label: "Rogers", href: "/locations/rogers" },
       { label: "Fayetteville", href: "/locations/fayetteville" },
-      { label: "Spingdale", href: "/locations/springdale"},
+      { label: "Springdale", href: "/locations/springdale"},
       { label: "Fort Smith", href: "/locations/fort-smith"},
     ].map((item) => (
       <li key={item.label}>

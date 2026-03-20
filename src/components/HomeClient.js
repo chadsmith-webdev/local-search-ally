@@ -2,6 +2,8 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import FAQSection from "./FAQSection";
+import CTAForm from "./CTAForm";
+import { IconInvisible, IconNoWebsite, IconWordOfMouth } from "@/components/ProblemIcons";
 
 function useReveal() {
   const ref = useRef(null);
@@ -198,18 +200,18 @@ export default function HomeClient({ posts }) {
         </Reveal>
         <div className="three-col" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
           {[
-            { icon: "🫥", title: "Invisible on Google Maps", desc: "Your competitors are in the Map Pack. You're buried on page 3 — or not showing up at all." },
-            { icon: "💾", title: "Outdated or No Website", desc: "Your website doesn't reflect the quality of your work — or worse, you don't have one and leads go to someone who does." },
-            { icon: "🗣️", title: "Relying on Word of Mouth", desc: "Referrals are great — but they don't scale. When they dry up, you need a system that keeps the phone ringing." },
-          ].map((item, i) => (
-            <Reveal key={item.title} delay={i * 100}>
-              <div className="card">
-                <div style={{ fontSize: "2rem", marginBottom: "1rem" }}>{item.icon}</div>
-                <h3 style={{ color: "var(--text)", marginBottom: "0.75rem", fontSize: "1.05rem" }}>{item.title}</h3>
-                <p style={{ color: "var(--muted)", lineHeight: 1.8, margin: 0, fontSize: "0.95rem" }}>{item.desc}</p>
-              </div>
-            </Reveal>
-          ))}
+  { icon: <IconInvisible />, title: "Invisible on Google Maps", desc: "Your competitors are in the Map Pack. You're buried on page 3 — or not showing up at all." },
+  { icon: <IconNoWebsite />, title: "Outdated or No Website", desc: "Your website doesn't reflect the quality of your work — or worse, you don't have one and leads go to someone who does." },
+  { icon: <IconWordOfMouth />, title: "Relying on Word of Mouth", desc: "Referrals are great — but they don't scale. When they dry up, you need a system that keeps the phone ringing." },
+].map((item, i) => (
+  <Reveal key={item.title} delay={i * 100}>
+    <div className="card">
+      <div style={{ marginBottom: "1rem" }}>{item.icon}</div>
+      <h3 style={{ color: "var(--text)", marginBottom: "0.75rem", fontSize: "1.05rem" }}>{item.title}</h3>
+      <p style={{ color: "var(--muted)", lineHeight: 1.8, margin: 0, fontSize: "0.95rem" }}>{item.desc}</p>
+    </div>
+  </Reveal>
+))}
         </div>
       </section>
 
@@ -395,7 +397,7 @@ export default function HomeClient({ posts }) {
           </Reveal>
           <div className="two-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
             <Reveal>
-              <div style={{ backgroundColor: "var(--surface)", border: "1px solid var(--duke)", borderTop: "4px solid #c0392b", borderRadius: "10px", padding: "2rem" }}>
+              <div style={{ backgroundColor: "rgba(192,57,43,0.06)", border: "1px solid rgba(192,57,43,0.3)", borderTop: "4px solid #c0392b", borderRadius: "10px", padding: "2rem" }}>
                 <h3 style={{ color: "#c0392b", marginBottom: "1.5rem" }}>Do Nothing</h3>
                 {[
                   "Competitors keep taking your potential customers",
@@ -601,7 +603,7 @@ export default function HomeClient({ posts }) {
       <FAQSection limit={5} />
     </Reveal>
     <Reveal style={{ textAlign: "center", marginTop: "2.5rem" }}>
-      <Link href="/services#faq" className="btn-outline">View All FAQs</Link>
+      <Link href="/services#faq" className="btn-outline">View All FAQs on Services Page</Link>
     </Reveal>
   </div>
 </section>
@@ -623,108 +625,7 @@ export default function HomeClient({ posts }) {
     <p style={{ color: "var(--muted)", fontSize: "1.05rem", maxWidth: "560px", margin: "0 auto 3rem", lineHeight: 1.9 }}>
       Tell me about your business. I'll look at your online presence and give you my honest take on where you stand — even if that means I'm not the right fit.
     </p>
-    <form
-      action="https://formspree.io/f/mkoqvkzr"
-      method="POST"
-      style={{
-        maxWidth: "560px",
-        margin: "0 auto",
-        display: "grid",
-        gap: "1rem",
-      }}
-    >
-      <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-        {[
-          { name: "name", placeholder: "Your Name", type: "text" },
-          { name: "business", placeholder: "Business Name", type: "text" },
-        ].map((field) => (
-          <input
-            key={field.name}
-            type={field.type}
-            name={field.name}
-            placeholder={field.placeholder}
-            required
-            style={{
-              backgroundColor: "var(--surface)",
-              border: "1px solid var(--duke)",
-              borderRadius: "6px",
-              padding: "0.85rem 1rem",
-              color: "var(--text)",
-              fontSize: "0.95rem",
-              outline: "none",
-              width: "100%",
-              boxSizing: "border-box",
-              fontFamily: "var(--font-satoshi)",
-            }}
-          />
-        ))}
-      </div>
-      <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-        {[
-          { name: "phone", placeholder: "Phone Number", type: "tel" },
-          { name: "email", placeholder: "Email Address", type: "email" },
-        ].map((field) => (
-          <input
-            key={field.name}
-            type={field.type}
-            name={field.name}
-            placeholder={field.placeholder}
-            required
-            style={{
-              backgroundColor: "var(--surface)",
-              border: "1px solid var(--duke)",
-              borderRadius: "6px",
-              padding: "0.85rem 1rem",
-              color: "var(--text)",
-              fontSize: "0.95rem",
-              outline: "none",
-              width: "100%",
-              boxSizing: "border-box",
-              fontFamily: "var(--font-satoshi)",
-            }}
-          />
-        ))}
-      </div>
-      <textarea
-        name="challenge"
-        placeholder="What's your biggest challenge right now?"
-        rows={4}
-        required
-        style={{
-          backgroundColor: "var(--surface)",
-          border: "1px solid var(--duke)",
-          borderRadius: "6px",
-          padding: "0.85rem 1rem",
-          color: "var(--text)",
-          fontSize: "0.95rem",
-          outline: "none",
-          width: "100%",
-          boxSizing: "border-box",
-          resize: "vertical",
-          fontFamily: "var(--font-satoshi)",
-        }}
-      />
-      <button
-        type="submit"
-        style={{
-          backgroundColor: "var(--carolina)",
-          color: "#000",
-          padding: "1rem",
-          borderRadius: "6px",
-          fontWeight: "bold",
-          border: "none",
-          cursor: "pointer",
-          fontSize: "1rem",
-          fontFamily: "var(--font-satoshi)",
-          transition: "opacity 0.2s",
-        }}
-      >
-        Let's Talk — It's Free
-      </button>
-      <p style={{ color: "var(--muted)", fontSize: "0.8rem", margin: 0 }}>
-        No spam. No sales pitch. Just an honest conversation about your business.
-      </p>
-    </form>
+    <CTAForm />
   </Reveal>
 </section>
     </>
