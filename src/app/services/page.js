@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
+import CTAForm from "@/components/CTAForm";
 
 function useReveal() {
   const ref = useRef(null);
@@ -32,6 +33,7 @@ function Reveal({ children, style = {}, delay = 0 }) {
 
 const services = [
   {
+    label: "Most clients start here",
     title: "Local SEO",
     tagline: "Rank where your customers are searching",
     desc: "Full-service local SEO covering everything your business needs to rank — citation building, review management, listing optimization, and on-page SEO. All battle-tested on my own projects before ever being offered as a service.",
@@ -41,6 +43,7 @@ const services = [
     highlight: true,
   },
   {
+    label: "Standalone service",
     title: "Google Business Profile Optimization",
     tagline: "Get into the Map Pack",
     desc: "Your GBP listing is often the first thing a customer sees. I fully optimize your profile so you stand out from competitors and convert more profile views into calls.",
@@ -50,6 +53,7 @@ const services = [
     highlight: false,
   },
   {
+    label: "Included with every package",
     title: "Web Design & Development",
     tagline: "Fast, modern websites built to convert",
     desc: "Mobile-first websites built with local SEO baked in from day one. I build with modern frameworks not WordPress page builders, because the performance difference matters for rankings.",
@@ -59,6 +63,7 @@ const services = [
     highlight: false,
   },
   {
+    label: "Add-on or standalone",
     title: "Reputation Building",
     tagline: "Build trust that sells for you",
     desc: "I'll help you get more reviews, respond to them the right way, and build an online reputation that does some of the selling before a customer even calls.",
@@ -68,6 +73,7 @@ const services = [
     highlight: false,
   },
   {
+    label: "Add-on or standalone",
     title: "Content & Keywords",
     tagline: "Get found for what customers actually search",
     desc: "Content written around the exact searches your customers make - not generic SEO filler. Blog posts, services pages, and location pages built to rank in NWA.",
@@ -77,6 +83,7 @@ const services = [
     highlight: false,
   },
   {
+    label: "One-time investment",
     title: "SEO Audits",
     tagline: "Find out exactly why you're not ranking",
     desc: "A detailed audit of your website and local presence covering technical SEO, content gaps, citation issues, and competitor analysis. You get a clear, actionable report — no fluff.",
@@ -366,103 +373,8 @@ export default function Services() {
           <p style={{ color: "var(--muted)", fontSize: "1.05rem", maxWidth: "520px", margin: "0 auto 3rem", lineHeight: 1.9 }}>
             Tell me about your business and I'll recommend the right starting point — honestly, even if it's just one small thing to fix first.
           </p>
-          <form
-            action="https://formspree.io/f/mkoqvkzr"
-            method="POST"
-            style={{ maxWidth: "560px", margin: "0 auto", display: "grid", gap: "1rem" }}
-          >
-            <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-              {[
-                { name: "name", placeholder: "Your Name", type: "text" },
-                { name: "business", placeholder: "Business Name", type: "text" },
-              ].map((field) => (
-                <input
-                  key={field.name}
-                  type={field.type}
-                  name={field.name}
-                  placeholder={field.placeholder}
-                  required
-                  style={{
-                    backgroundColor: "var(--surface)",
-                    border: "1px solid var(--duke)",
-                    borderRadius: "6px",
-                    padding: "0.85rem 1rem",
-                    color: "var(--text)",
-                    fontSize: "0.95rem",
-                    outline: "none",
-                    width: "100%",
-                    boxSizing: "border-box",
-                    fontFamily: "var(--font-body, sans-serif)",
-                  }}
-                />
-              ))}
-            </div>
-            <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-              {[
-                { name: "phone", placeholder: "Phone Number", type: "tel" },
-                { name: "email", placeholder: "Email Address", type: "email" },
-              ].map((field) => (
-                <input
-                  key={field.name}
-                  type={field.type}
-                  name={field.name}
-                  placeholder={field.placeholder}
-                  required
-                  style={{
-                    backgroundColor: "var(--surface)",
-                    border: "1px solid var(--duke)",
-                    borderRadius: "6px",
-                    padding: "0.85rem 1rem",
-                    color: "var(--text)",
-                    fontSize: "0.95rem",
-                    outline: "none",
-                    width: "100%",
-                    boxSizing: "border-box",
-                    fontFamily: "var(--font-body, sans-serif)",
-                  }}
-                />
-              ))}
-            </div>
-            <textarea
-              name="message"
-              placeholder="Which service are you interested in, or what's your biggest challenge?"
-              rows={4}
-              required
-              style={{
-                backgroundColor: "var(--surface)",
-                border: "1px solid var(--duke)",
-                borderRadius: "6px",
-                padding: "0.85rem 1rem",
-                color: "var(--text)",
-                fontSize: "0.95rem",
-                outline: "none",
-                width: "100%",
-                boxSizing: "border-box",
-                resize: "vertical",
-                fontFamily: "var(--font-body, sans-serif)",
-              }}
-            />
-            <button
-              type="submit"
-              style={{
-                backgroundColor: "var(--carolina)",
-                color: "#000",
-                padding: "1rem",
-                borderRadius: "6px",
-                fontWeight: "bold",
-                border: "none",
-                cursor: "pointer",
-                fontSize: "1rem",
-                fontFamily: "var(--font-body, sans-serif)",
-                transition: "opacity 0.2s",
-              }}
-            >
-              Get a Free Consultation
-            </button>
-            <p style={{ color: "var(--muted)", fontSize: "0.8rem", margin: 0 }}>
-              No spam. No sales pitch. Just an honest conversation about your business.
-            </p>
-          </form>
+          <CTAForm
+            action="https://formspree.io/f/mkoqvkzr" />
         </Reveal>
       </section>
     </>

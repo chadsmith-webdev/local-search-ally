@@ -169,15 +169,86 @@ export default function HomeClient({ posts }) {
     <p className="h2" style={{ color: "var(--muted)", fontSize: "1.1rem", maxWidth: "580px", marginBottom: "2.5rem", lineHeight: 1.9 }}>
       Most NWA contractors do great work — but they're invisible online. I've spent years figuring out how local search actually works. Now I use that to help contractors like you get found and get hired.
     </p>
-    <div className="h3" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-      <Link href="/contact" className="btn-primary">Let's Talk About Your Business</Link>
-      <Link href="/about" className="btn-outline">Read My Story</Link>
-    </div>
+    <div className="h3">
+  <form
+    onSubmit={async (e) => {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      await fetch("https://formspree.io/f/mkoqvkzr", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      window.location.href = "/contact?submitted=true";
+    }}
+    style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", maxWidth: "560px" }}
+  >
+    <input
+      type="text"
+      name="name"
+      placeholder="Your name"
+      required
+      style={{
+        flex: 1,
+        minWidth: "160px",
+        backgroundColor: "var(--surface)",
+        border: "1px solid var(--duke)",
+        borderRadius: "6px",
+        padding: "0.85rem 1rem",
+        color: "var(--text)",
+        fontSize: "0.95rem",
+        outline: "none",
+        fontFamily: "var(--font-body, sans-serif)",
+      }}
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="Your email"
+      required
+      style={{
+        flex: 1,
+        minWidth: "160px",
+        backgroundColor: "var(--surface)",
+        border: "1px solid var(--duke)",
+        borderRadius: "6px",
+        padding: "0.85rem 1rem",
+        color: "var(--text)",
+        fontSize: "0.95rem",
+        outline: "none",
+        fontFamily: "var(--font-body, sans-serif)",
+      }}
+    />
+    <button
+      type="submit"
+      style={{
+        backgroundColor: "var(--carolina)",
+        color: "#000",
+        padding: "0.85rem 1.75rem",
+        borderRadius: "6px",
+        fontWeight: "bold",
+        border: "none",
+        cursor: "pointer",
+        fontSize: "0.95rem",
+        fontFamily: "var(--font-body, sans-serif)",
+        whiteSpace: "nowrap",
+      }}
+    >
+      Let's Talk →
+    </button>
+  </form>
+  <p style={{ color: "var(--muted)", fontSize: "0.8rem", marginTop: "0.75rem" }}>
+    No spam. No sales pitch. I'll reach out within one business day.
+  </p>
+  <Link href="/services" className="btn-outline" style={{ marginTop: "0.5rem", display: "inline-block" }}>
+    See How It Works
+  </Link>
+</div>
     <div style={{ display: "flex", gap: "2.5rem", marginTop: "3.5rem", flexWrap: "wrap" }}>
       {[
         { label: "Based in Siloam Springs, AR" },
-        { label: "Built on Transparency" },
-        { label: "Startup Energy, Real Skills" },
+        { label: "5+ Years SEO Experience" },
+        { label: "No Contracts, Ever" },
       ].map((item) => (
         <p key={item.label} style={{ color: "var(--muted)", fontSize: "0.85rem", margin: 0 }}>
           <span style={{ color: "var(--carolina)", marginRight: "0.5rem" }}>✓</span>{item.label}
@@ -322,21 +393,21 @@ export default function HomeClient({ posts }) {
     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem", marginBottom: "3rem" }}>
       {[
         {
-          label: "Core Strength",
+          label: "Most clients start here",
           title: "Local SEO",
           desc: "Get your business ranking where your customers are searching — Google Maps, local results, and beyond. This is where my deepest experience lives.",
           tags: ["GBP Optimization", "Citations", "On-Page SEO"],
           highlight: true,
         },
         {
-          label: "Growing Daily",
+          label: "Included with every website",
           title: "Web Design & Development",
           desc: "Fast, mobile-first websites built to convert visitors into calls. Every site is SEO-optimized from the ground up — because that's what I know best.",
           tags: ["Mobile-First", "SEO-Built", "Lead Gen"],
           highlight: false,
         },
         {
-          label: "Clarity",
+          label: "One-time investment",
           title: "SEO Audits",
           desc: "Find out exactly why you're not ranking. A detailed, actionable report covering technical SEO, citation gaps, and competitor analysis — no fluff.",
           tags: ["Technical SEO", "Competitor Analysis", "Action Plan"],
