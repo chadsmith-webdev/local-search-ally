@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import Link from "next/link";
+import CTAForm from "@/components/CTAForm";
 
 function useReveal() {
   const ref = useRef(null);
@@ -222,107 +222,7 @@ export default function Contact() {
             <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1.5rem" }}>
               Send a Message
             </p>
-            <form
-              action="https://formspree.io/f/mkoqvkzr"
-              method="POST"
-              style={{ display: "grid", gap: "1.25rem" }}
-            >
-              <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-                {[
-                  { label: "Your Name", name: "name", type: "text" },
-                  { label: "Business Name", name: "business", type: "text" },
-                ].map((field) => (
-                  <div key={field.name} style={{ display: "grid", gap: "0.5rem" }}>
-                    <label style={{ fontSize: "0.8rem", color: "var(--muted)" }}>{field.label}</label>
-                    <input
-                      type={field.type}
-                      name={field.name}
-                      required
-                      style={{
-                        backgroundColor: "var(--surface)",
-                        border: "1px solid var(--duke)",
-                        borderRadius: "6px",
-                        padding: "0.85rem 1rem",
-                        color: "var(--text)",
-                        fontSize: "0.95rem",
-                        outline: "none",
-                        width: "100%",
-                        boxSizing: "border-box",
-                        fontFamily: "var(--font-satoshi)",
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-                {[
-                  { label: "Phone Number", name: "phone", type: "tel" },
-                  { label: "Email Address", name: "email", type: "email" },
-                ].map((field) => (
-                  <div key={field.name} style={{ display: "grid", gap: "0.5rem" }}>
-                    <label style={{ fontSize: "0.8rem", color: "var(--muted)" }}>{field.label}</label>
-                    <input
-                      type={field.type}
-                      name={field.name}
-                      required
-                      style={{
-                        backgroundColor: "var(--surface)",
-                        border: "1px solid var(--duke)",
-                        borderRadius: "6px",
-                        padding: "0.85rem 1rem",
-                        color: "var(--text)",
-                        fontSize: "0.95rem",
-                        outline: "none",
-                        width: "100%",
-                        boxSizing: "border-box",
-                        fontFamily: "var(--font-satoshi)",
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div style={{ display: "grid", gap: "0.5rem" }}>
-                <label style={{ fontSize: "0.8rem", color: "var(--muted)" }}>What's your biggest challenge right now?</label>
-                <textarea
-                  name="message"
-                  rows={5}
-                  required
-                  style={{
-                    backgroundColor: "var(--surface)",
-                    border: "1px solid var(--duke)",
-                    borderRadius: "6px",
-                    padding: "0.85rem 1rem",
-                    color: "var(--text)",
-                    fontSize: "0.95rem",
-                    outline: "none",
-                    width: "100%",
-                    boxSizing: "border-box",
-                    resize: "vertical",
-                    fontFamily: "var(--font-satoshi)",
-                  }}
-                />
-              </div>
-              <button
-                type="submit"
-                style={{
-                  backgroundColor: "var(--carolina)",
-                  color: "#000",
-                  padding: "1rem",
-                  borderRadius: "6px",
-                  fontWeight: "bold",
-                  border: "none",
-                  cursor: "pointer",
-                  fontSize: "1rem",
-                  fontFamily: "var(--font-satoshi)",
-                  transition: "opacity 0.2s",
-                }}
-              >
-                Send Message
-              </button>
-              <p style={{ color: "var(--muted)", fontSize: "0.8rem", margin: 0 }}>
-                No spam. No pitch. I'll respond personally within one business day.
-              </p>
-            </form>
+            <CTAForm action="https://formspree.io/f/mkoqvkzr" />
           </Reveal>
         </div>
       </section>

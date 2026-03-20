@@ -23,24 +23,6 @@ const socialLinks = [
       </svg>
     ),
   },
-  {
-    label: "X",
-    href: "https://x.com/YOURHANDLE",
-    icon: (
-      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    ),
-  },
-  {
-    label: "Bluesky",
-    href: "https://bsky.app/profile/smithchad.bsky.social",
-    icon: (
-      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.5 6.5c.5 1.5-1 4-4.5 6-3.5-2-5-4.5-4.5-6 .4-1.2 1.8-1.8 3-1.2.5.3.9.7 1.5.7s1-.4 1.5-.7c1.2-.6 2.6 0 3 1.2z" />
-      </svg>
-    ),
-  },
 ];
 
 export default function Footer() {

@@ -12,9 +12,21 @@ const links = [
   { label: "Contact", href: "/contact" },
 ];
 
+const locationLinks = [
+  { label: "Siloam Springs", href: "/locations/siloam-springs" },
+  { label: "Bentonville", href: "/locations/bentonville" },
+  { label: "Rogers", href: "/locations/rogers" },
+  { label: "Springdale", href: "/locations/springdale" },
+  { label: "Fayetteville", href: "/locations/fayetteville" },
+  { label: "Fort Smith", href: "/locations/fort-smith" },
+];
+
+
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [locationsOpen, setLocationsOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -77,6 +89,79 @@ export default function Navbar() {
     </li>
   );
 })}
+
+         <li style={{ position: "relative" }}
+  onMouseEnter={() => setLocationsOpen(true)}
+  onMouseLeave={() => setLocationsOpen(false)}
+>
+  <Link href="/locations" style={{
+    color: pathname.startsWith("/locations") ? "var(--carolina)" : "var(--text)",
+    textDecoration: "none",
+    fontSize: "0.95rem",
+    borderBottom: pathname.startsWith("/locations") ? "2px solid var(--carolina)" : "2px solid transparent",
+    paddingBottom: "4px",
+    transition: "color 0.2s",
+    display: "flex",
+    alignItems: "center",
+    gap: "0.3rem",
+  }}>
+    Areas <span style={{ fontSize: "0.7rem", opacity: 0.7 }}>▾</span>
+  </Link>
+  {locationsOpen && (
+    <div style={{
+      position: "absolute",
+      top: "100%",
+      left: "50%",
+      transform: "translateX(-50%)",
+      backgroundColor: "var(--surface)",
+      border: "1px solid var(--duke)",
+      borderRadius: "8px",
+      padding: "0.5rem",
+      minWidth: "180px",
+      zIndex: 200,
+      marginTop: "0.5rem",
+      boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+    }}>
+      {locationLinks.map((loc) => (
+        <Link
+          key={loc.href}
+          href={loc.href}
+          style={{
+            display: "block",
+            padding: "0.6rem 1rem",
+            color: "var(--muted)",
+            textDecoration: "none",
+            fontSize: "0.875rem",
+            borderRadius: "6px",
+            transition: "background-color 0.2s, color 0.2s",
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "rgba(123,175,212,0.1)"; e.currentTarget.style.color = "var(--carolina)"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "var(--muted)"; }}
+        >
+          {loc.label}, AR
+        </Link>
+      ))}
+      <div style={{ borderTop: "1px solid var(--duke)", margin: "0.5rem 0" }} />
+      <Link
+        href="/locations"
+        style={{
+          display: "block",
+          padding: "0.6rem 1rem",
+          color: "var(--carolina)",
+          textDecoration: "none",
+          fontSize: "0.875rem",
+          fontWeight: "bold",
+          borderRadius: "6px",
+          transition: "background-color 0.2s",
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(123,175,212,0.1)"}
+        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
+      >
+        View All Areas →
+      </Link>
+    </div>
+  )}
+</li> 
         </ul>
 
         {/* Desktop CTA */}
@@ -211,6 +296,26 @@ export default function Navbar() {
         >
           Let's Talk — It's Free
         </Link>
+
+        <Link
+  href="/locations"
+  onClick={() => setOpen(false)}
+  style={{
+    color: pathname.startsWith("/locations") ? "var(--carolina)" : "var(--text)",
+    textDecoration: "none",
+    fontSize: "1.25rem",
+    fontWeight: "600",
+    padding: "0.75rem 0",
+    borderBottom: "1px solid var(--duke)",
+    transition: "color 0.2s",
+    opacity: open ? 1 : 0,
+    transform: open ? "translateX(0)" : "translateX(20px)",
+    transitionDelay: `${links.length * 60}ms`,
+    fontFamily: "var(--font-cabinet)",
+  }}
+>
+  Service Areas
+</Link>
       </div>
 
       <style>{`
