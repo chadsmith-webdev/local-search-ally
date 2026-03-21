@@ -312,7 +312,28 @@ export default function Navbar() {
   Service Areas
 </Link>
 
-
+<a 
+href="tel:+14793808626"
+  onClick={() => setOpen(false)}
+  style={{
+    color: "var(--muted)",
+    textDecoration: "none",
+    fontSize: "1.1rem",
+    fontWeight: "600",
+    padding: "0.75rem 0",
+    borderBottom: "1px solid var(--duke)",
+    display: "flex",
+    alignItems: "center",
+    gap: "0.75rem",
+    opacity: open ? 1 : 0,
+    transform: open ? "translateX(0)" : "translateX(20px)",
+    transitionDelay: `${links.length * 60 + 60}ms`,
+    transition: "opacity 0.3s, transform 0.3s, color 0.2s",
+  }}
+>
+  <span style={{ color: "var(--carolina)" }}>📞</span>
+  (479) 380-8626
+</a>
         <Link
           href="/contact"
           onClick={() => setOpen(false)}
