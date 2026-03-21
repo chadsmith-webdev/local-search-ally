@@ -1,0 +1,119 @@
+---
+title: "How I Built the Local Search Ally Website, Part 2: Logo, Fonts & Brand Identity"
+date: "2026-03-20"
+description: "How the Local Search Ally brand identity was built from scratch — logo design iterations, font selection, color system, and a full set of brand guidelines."
+image: "/images/case-study-brand.webp"
+tags: ["case study", "branding", "logo design", "part 2"]
+---
+
+[← Read Part 1: The Stack, Design & Pages](/blog/how-i-built-this-website)
+
+Every decision in Part 1 was technical. Part 2 is about identity — the visual and verbal system that makes Local Search Ally feel like a real brand rather than a website with a name on it.
+
+---
+
+## Why Brand Guidelines Before the Site Was Finished
+
+Most small businesses skip brand guidelines entirely. They pick a color, grab a font, and call it done. That works until you need to create a social post, write a proposal, or brief someone on the visual style — and realize nothing is documented.
+
+I built the brand guidelines alongside the site, not after. The document covers color palette with usage rules, typography scale, logo clearspace and minimum sizes, voice and tone guidelines, photography direction, email signature format, and social media specs. Version 1.1 at time of writing.
+
+The guidelines live as a standalone HTML document — self-contained, no dependencies, shareable as a file. That was a deliberate choice: a PDF locks the content, a web page requires hosting, but a single HTML file works everywhere.
+
+---
+
+## The Color System
+
+The palette was established early and never changed — a rare thing in a build that iterated on almost everything else.
+
+**Carolina Blue `#7BAFD4`** is the primary accent. It carries all the interactive weight — links, CTAs, highlights, the logo head. It's warm enough to feel approachable but saturated enough to pop against the dark background.
+
+**Duke Blue `#012169`** is the structural color. Borders, card backgrounds, depth layers. It creates hierarchy without competing with Carolina Blue for attention.
+
+**Background `#0a0a0a`** and **Surface `#141414`** create a two-layer dark system. The slight difference between the two builds depth — cards feel elevated without harsh shadows.
+
+The NC rivalry reference is genuine, not a gimmick. The colors mean something personally, which makes them easier to defend when someone suggests changing them.
+
+---
+
+## Typography: Three Rounds
+
+Getting the font pairing right took three rounds.
+
+**Round 1: Poppins** — the default choice for "modern and clean." Every SaaS company uses it. It's fine. Fine is not what this brand needed.
+
+**Round 2: Cabinet Grotesk + Satoshi** — a significant step up. Both are geometric sans-serifs with strong personality. The pairing worked but felt too similar to each other — two voices saying the same thing.
+
+**Round 3: Fraunces + Urbanist** — the final answer. Fraunces is an optical serif designed to look different at different sizes. At large display sizes it has personality and warmth. At body sizes it reads cleanly. The italic style adds a human quality that geometric fonts simply can't replicate. Urbanist as the body font is clean, modern, and completely deferential to Fraunces — it does its job without competing.
+
+The analogy that clicked: Fraunces is the personality, Urbanist is the professionalism. Together they sound like a person, not a template.
+
+Both fonts are loaded via Fontshare — free, served from your own domain, zero performance cost.
+
+---
+
+## The Logo: Two Concepts, One Decision
+
+### Concept 1: The Signal
+
+The first logo concept was the Signal — concentric rings suggesting local reach and visibility, with a search handle. Contained in a Duke Blue rounded square for versatility.
+
+It looked fine in isolation. The problem became clear when comparing it to other local business logos: abstract signal/wifi concepts are everywhere. It communicated "technology" more than "local." For a brand serving contractors in NWA, that was the wrong signal.
+
+### Concept 2: The Location Pin
+
+The location pin came from a Canva sketch — a filled Carolina Blue circle as the head, a white stem tapering to a point, all contained in a Duke Blue rounded square. Simple, bold, instantly local.
+
+The decision was easy once both concepts were side by side. The location pin does three things the Signal didn't:
+
+1. Communicates "local" without any explanation
+2. Works at 16px (favicon) without losing legibility
+3. Feels distinctive in a category full of abstract marks
+
+### Building It in Code
+
+The logo is a reusable SVG React component with proportional coordinates — every element calculated as a ratio of the icon size. This means the same component renders correctly at 32px (favicon), 36px (navbar), and 180px (Apple touch icon) without separate files for each context.
+
+The drawing order matters in SVG: the stem and point are drawn first, then the circle on top. This lets the circle cleanly overlap the stem join without any background bleed — a small detail that separates a logo that looks built from one that looks designed.
+
+The favicon, Apple touch icon, and OG image logo are all generated dynamically using Next.js's `ImageResponse` API — the same system used for the social sharing preview image. Every brand touchpoint is consistent because they all draw from the same design system.
+
+---
+
+## The Voice and Tone
+
+The brand guidelines define the voice as the **Transparent Expert** — someone who shares the process, admits the limits, and lets the work speak. The archetypes it draws from: the trusted contractor who explains what they're doing under your sink, the teacher who makes complex things simple, the founder who builds in public.
+
+The guidelines include a "Sounds Like / Never Sounds Like" reference:
+
+**Sounds like:**
+- "Here's exactly what I did and what happened."
+- "I don't know yet — but I'll find out and tell you."
+- "You don't need a long-term contract. If I'm not delivering, leave."
+
+**Never sounds like:**
+- "Our proprietary methodology delivers superior outcomes."
+- "You need to trust the process."
+- "As a leading expert in the space..."
+
+That distinction shaped every piece of copy on the site — the homepage, the service descriptions, the FAQ answers, the transparency pledge.
+
+---
+
+## Key Lessons from Part 2
+
+**Abstract logos are harder to defend than concrete ones.** The Signal concept looked good in isolation but couldn't explain itself. The location pin explains itself in half a second. For a local business brand, concrete beats abstract.
+
+**Document brand decisions as you make them.** The guidelines aren't a summary of what was built — they're the reasoning behind every decision. That context is what makes them useful six months later when you're designing a social post and can't remember why the colors are what they are.
+
+**Font pairing is a conversation, not a selection.** The right pairing isn't just two fonts that look good — it's two fonts that play different roles. One leads, one supports. Finding that dynamic takes iteration.
+
+**SVG proportional coordinates are worth the math.** Building the logo with ratio-based coordinates instead of fixed pixel values means it scales perfectly at any size. The one-time math investment pays off every time the logo appears in a new context.
+
+---
+
+## What's in Part 3
+
+Part 3 covers the SEO foundation — LocalBusiness schema, FAQ schema that passed Google's rich results test, six service area pages, sitemap, robots.txt, and the breadcrumb markup that ties it all together.
+
+[Read Part 3 →](/blog/local-search-ally-seo-foundation)

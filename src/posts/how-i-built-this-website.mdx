@@ -1,264 +1,155 @@
 ---
-title: "How I Built the Local Search Ally Website: A Full Case Study"
+title: "How I Built the Local Search Ally Website, Part 1: The Stack, Design & Pages"
 date: "2026-03-13"
-description: "A behind-the-scenes look at how I built localsearchally.com from scratch — every tech decision, brand choice, SEO strategy, and lesson learned documented transparently."
-image: "/images/case-study-feature.png"
-tags: ["case study", "web development", "next.js", "local seo"]
+description: "A behind-the-scenes look at building localsearchally.com from scratch — every tech decision, design choice, and page documented transparently."
+image: "/images/case-study-hero.webp"
+tags: ["case study", "web development", "next.js", "part 1"]
 ---
 
-I want to be upfront about something: this website is both my business and my proof of work.
+This is the first post in a four-part series documenting the complete build of localsearchally.com — from blank terminal to production-ready website. Every decision is explained, every mistake is included, and every tool is named.
 
-As someone who specializes in local SEO and web development for contractors, it felt wrong to tell clients "trust me with your online presence" while running a mediocre website myself. So I documented the entire build — every decision, every mistake, every tool — so you can see exactly how I work.
-
-This is that story.
-
----
-
-## Why I Started Local Search Ally
-
-I've spent the last 5+ years doing local SEO for my own projects. I learned what actually moves the needle — not from courses or textbooks, but from watching rankings climb and fall in real time. That hands-on experience is something you can't fake.
-
-Recently I decided to add web development to my services, so I'm currently pursuing a degree in Web Development. The logic is simple: great local SEO deserves a great website. Why make clients juggle two separate vendors when I can handle both?
-
-Local Search Ally is the result — a focused agency serving NWA contractors who want to get found online.
+If you're a contractor wondering what goes into building a modern website, this is exactly what we do — and exactly how we do it.
 
 ---
 
-## The Tech Stack Decision
+## Why Document This?
 
-The first real decision was choosing a tech stack. I narrowed it down to two options:
+Two reasons.
 
-**Option 1: Astro** — simpler to learn, blazing fast, great for mostly-static sites.
+First, transparency is the core of this brand. Telling clients "trust me with your online presence" while running a mediocre website would be embarrassing. This site is the proof of process.
 
-**Option 2: Next.js** — the industry standard for React-based websites, more job-relevant, backed by Vercel.
-
-I chose **Next.js 15** for one reason: I'm pursuing a web development degree and React is the skill that opens the most doors. Astro would have been easier, but Next.js makes me a better developer long term. Sometimes the harder path is the right one.
-
-For hosting I chose **Vercel** — the company that builds Next.js. Deploying a Next.js site to Vercel is like plugging a lamp into the outlet it was designed for. One click, zero configuration, automatic SSL, and every GitHub push triggers a new deploy automatically.
-
-**Time taken: about 30 minutes** from project initialization to first deploy.
+Second, most web development case studies are sanitized. They show the polished final product and skip the iterations, the errors, and the moments where something had to be completely rebuilt. This series skips nothing.
 
 ---
 
-## The Brand Identity
+## The Stack Decision
 
-Before writing a single line of code, I knew the brand had to feel different from the typical local marketing agency — bold, transparent, and built for contractors rather than corporate clients.
+The first real decision was the framework. Two serious options:
 
-### Color palette
+**Astro** — simpler to learn, blazing fast, purpose-built for content sites and blogs. Would have been the easier path.
 
-I'm originally from North Carolina and I bleed Carolina and Duke blue. Those two colors became the foundation:
+**Next.js 15** — the industry standard for React-based websites. More complex, more powerful, more job-relevant for someone seeking a career in web development.
 
-- **Carolina Blue `#7BAFD4`** — primary accent, used for headings, links, highlights, and CTAs
-- **Duke Blue `#012169`** — secondary, used for borders, backgrounds, and depth
-- **Background `#0a0a0a`** — near-black, not pure black, which feels softer on the eyes
-- **Surface `#141414`** — card and navbar backgrounds, creating subtle depth layers
+I chose Next.js 15. The reasoning was straightforward: React is the skill that opens the most doors in web development. Astro would have been faster to build in, but Next.js makes me a better developer over time. Sometimes the harder path is the right one.
 
-### Typography
+**Hosting: Vercel** — the company that builds Next.js. Deploying a Next.js site to Vercel is like plugging a lamp into the outlet it was designed for. One click, zero configuration, automatic SSL, and every GitHub push triggers a new deploy automatically. Free tier covers everything this site needs.
 
-After experimenting with Poppins early on, I landed on a combination that gives the site genuine personality:
+**Blog system: MDX** — Markdown files with the ability to embed React components. Each post lives as a `.mdx` file in a `src/posts` folder. Next.js reads those files at build time and generates pages automatically. No database, no CMS, no plugins to maintain. Version-controlled blog posts are a feature, not a limitation.
 
-- **Fraunces** — an optical serif with italic character for headings. It's editorial without being stuffy, and the italic style adds a human quality that sans-serif fonts can't match.
-- **Urbanist** — a clean geometric sans-serif for body text. Highly legible, modern, and pairs beautifully with Fraunces without competing with it.
-
-The pairing is like a well-dressed person — the serif is the personality, the sans-serif is the professionalism.
-
-### The Logo
-
-I built the logo entirely in code as a reusable SVG React component. The concept is a **location pin** — a filled Carolina Blue circle with a clean white stem and point, contained in a Duke Blue rounded square. It communicates "local" immediately and without ambiguity.
-
-The design went through several iterations. I started with an abstract signal concept — concentric rings suggesting local reach — but it felt too generic. After experimenting in Canva, I landed on the location pin: simpler, bolder, and instantly tied to the idea of being found in a specific place.
-
-Three key requirements drove every decision: it had to work at 32px (favicon), read clearly at 36px (navbar), and look sharp at 180px (Apple touch icon). The SVG is built with proportional coordinates — every element is calculated as a ratio of the icon size — so it scales perfectly at any size without a separate file for each context.
-
-The drawing order matters in SVG: the stem and point are drawn first, then the circle on top. This lets the circle cleanly overlap the stem join without any gap or background bleed — a small detail that makes the difference between a logo that looks built and one that looks designed.
-
-The design works at every size:
-- Full wordmark in the navbar
-- Contained icon as the favicon
-- Apple touch icon for mobile bookmarks
-- Embedded in the social sharing OG image
+**Time to first deploy: about 30 minutes** from `npx create-next-app` to live URL.
 
 ---
 
 ## The Design System
 
-Rather than using a component library, I built a lightweight design system using CSS custom properties. Every color, font, and spacing decision lives in `:root` variables, which means changing the brand color site-wide is a one-line edit.
+Before writing a single page, I built a lightweight design system using CSS custom properties. Every color, font, and spacing value lives in `:root` variables — changing the brand color site-wide is a one-line edit.
 
-The grid background on hero sections — subtle CSS lines at `rgba(123,175,212,0.06)` — adds depth without competing with content. It fades out using a CSS mask gradient so it blends naturally into the page below.
+### Color Palette
 
-The glow effect at the top of each hero section uses a `radial-gradient` on an absolutely positioned div. It's Duke Blue bleeding in from above — atmospheric without being distracting.
+The colors came from a personal place. I grew up in North Carolina and the Carolina/Duke rivalry is part of my identity. Those two blues became the brand:
 
----
+- **Carolina Blue `#7BAFD4`** — primary accent. Headings, links, highlights, CTAs.
+- **Duke Blue `#012169`** — secondary. Borders, card backgrounds, depth layers.
+- **Background `#0a0a0a`** — near-black. Softer than pure black on the eyes.
+- **Surface `#141414`** — card and navbar backgrounds. Creates subtle depth without harsh contrast.
 
-## The Homepage: StoryBrand Framework
+The dark theme sets the site apart from the sea of light-background agency sites. It also makes the accent colors hit harder.
 
-The original homepage was functional but flat — a hero, a services snapshot, and a trust bar. Good structure, no narrative.
+### Typography
 
-I rebuilt it using Donald Miller's **StoryBrand framework**, which flips the typical website mistake: instead of leading with "here's who we are," you lead with the customer's problem and position yourself as the guide who helps them win.
+Font selection went through three iterations:
 
-The full eight-section structure:
+1. **Poppins** — clean and modern but too generic. Every SaaS site uses it.
+2. **Cabinet Grotesk + Satoshi** — better pairing, stronger personality, still fully geometric.
+3. **Fraunces + Urbanist** — the final choice. Fraunces is an optical serif with a distinctive italic character — editorial without being formal. Urbanist is a clean geometric sans-serif that lets Fraunces do the personality work without competing. Together they give the site a voice that purely geometric pairings can't achieve.
 
-1. **Hero** — The customer's problem, stated boldly. *"Your next customer just searched Google. They found your competitor."*
-2. **Problem** — Three pain points NWA contractors actually feel: invisible on Google Maps, outdated website, relying on word of mouth
-3. **Guide** — Chad's story and credibility. Photo, timeline, stats — human before professional
-4. **Plan** — Three steps: Talk, Plan & Build, Optimize & Grow
-5. **What I Offer** — Six services with pill tags, honest about what's a core strength vs. growing skill
-6. **Success vs. Failure** — Two columns showing what life looks like with and without taking action
-7. **Transparency Pledge** — Four specific commitments, signed by the founder
-8. **Final CTA** — An inline form, not just a button. Lower friction, higher conversion intent
+Both fonts are loaded via Fontshare — a free font service that serves them from your own domain rather than Google's servers. Zero performance cost, no privacy concerns.
 
-Every section uses scroll-triggered animations via the browser's `IntersectionObserver` API — no external animation library needed. Each section fades up as it enters the viewport, with staggered delays on card grids. Think of it like a motion sensor that fires a CSS transition instead of a light.
+### Grid Background + Glow
 
-![The homepage hero section](/images/homepage-screenshot.webp)
-*Left-aligned hero with grid background, glow, and clear value proposition.*
+The hero sections use a subtle CSS grid background — lines at `rgba(123,175,212,0.06)` that fade out using a CSS mask gradient. It adds depth without competing with content. The Duke Blue glow above each hero is a `radial-gradient` on an absolutely positioned div — atmospheric without being distracting.
 
 ---
 
-## The Services
+## The Pages
 
-I made a deliberate positioning decision: bundle related services rather than listing every individual tactic. Local SEO, for example, covers citations, reviews, listings, and on-page optimization. Presenting these as one service keeps the page clean and makes it easier to sell packages.
+The site launched with eight pages. Here's what drove each one.
 
-The six services at launch:
+### Home
 
-1. **Local SEO** — the core offering, GBP, citations, reviews, on-page
-2. **Google Business Profile Optimization** — standalone because it's a high-search-volume term
-3. **Web Design & Development** — honest about being a growing skill
-4. **Reputation Building** — review systems and monitoring
-5. **Content & Keywords** — service pages, location pages, blog strategy
-6. **SEO Audits** — technical analysis with a prioritized action plan
+The original homepage was functional but flat — a hero, a services snapshot, and a trust bar. It worked structurally but had no narrative arc.
 
-Each service card includes a description, bullet points, pill tags, pricing, and a CTA button. The Local SEO card gets a highlighted top border — a visual signal that it's the core strength without saying it explicitly.
+I rebuilt it using Donald Miller's **StoryBrand framework** — a system that positions the customer as the hero and the business as the guide. The full structure:
 
----
+1. Hero — the customer's problem stated boldly
+2. Problem — three specific pain points NWA contractors feel
+3. Guide — Chad's credibility and story
+4. Plan — three steps to get found
+5. What I Offer — six services, honest about what's a core strength vs. growing skill
+6. Success vs. Failure — two columns showing the stakes
+7. Transparency Pledge — four specific commitments signed by the founder
+8. Final CTA — an inline form, not just a button
 
-## The Blog System
+Every section uses scroll-triggered animations via the browser's `IntersectionObserver` API — no external animation library. Each section fades up as it enters the viewport with staggered delays on card grids. Think of it as a motion sensor that fires a CSS transition instead of a light.
 
-The blog runs on **MDX** — Markdown files with the ability to embed React components. Each post lives as a `.mdx` file in a `src/posts` folder. Next.js reads those files at build time and generates pages automatically.
+### Services
 
-This means adding a blog post is as simple as creating a new file and writing in Markdown. No database, no CMS login, no plugins to update. Version-controlled blog posts are a feature, not a limitation.
+The services page went through two designs. The first used detailed cards — description, bullet points, pricing, and a CTA all visible at once. Clean but overwhelming.
 
-Each post page includes:
-- A feature image if provided in the front matter
-- Tag pills pulled from the post metadata
-- An author avatar and byline pulled from the headshot
-- A full author bio card at the bottom linking to the About page
-- Post navigation — back to blog and a "Work With Chad" CTA
+The second design uses an **accordion** — six service names visible by default, clicking any one expands the full details. Contractors can scan quickly and expand only what's relevant. Local SEO opens by default since it's the core offering.
 
-**Time taken: about 2 hours** to build the full blog system including the index, individual post template, and MDX configuration.
+The six services:
+1. Local SEO — the core offering
+2. Google Business Profile Optimization
+3. Web Design & Development
+4. Reputation Building
+5. Content & Keywords
+6. SEO Audits
 
----
+### About
 
-## The Portfolio
+The About page needs to do one thing: make a contractor trust a person they've never met. The layout puts the photo and stat cards on the left, the story on the right, with a timeline below showing the journey and a values section showing how engagements actually work.
 
-The portfolio is built with a client-side filter system — six project cards with category tags (Web Development, Local SEO, GBP Optimization, SEO Audits). Clicking a filter button shows only cards in that category.
+One detail worth noting: the stat cards under the photo include "One Person — SEO + web development, no handoffs." That's not just a feature — it's a direct response to the contractor's fear of being passed around between departments.
 
-Right now most cards are "Coming Soon" — honest placeholders rather than fabricated case studies. The one live entry links directly to this post, which is itself the first real case study.
+### Blog
 
-As client work comes in, each engagement gets documented and added here. The transparency pledge applies to the portfolio too: every case study will show real numbers, real challenges, and real outcomes.
+MDX blog with feature images, tag pills, author bio cards, and estimated read time on every post. The read time is calculated automatically from word count — `Math.ceil(words / 200)` minutes. It sets expectations for busy contractors before they click.
 
----
+### Contact
 
-## The SEO Foundation
+Four ways to reach out — email, phone, Calendly booking link, and a contact form. Business hours displayed clearly. All form submissions handled by Formspree with a JavaScript success state that keeps visitors on the page instead of redirecting to a generic thank you page.
 
-This is where I spent the most deliberate time. I refused to launch without proper SEO foundations — it would be embarrassing to build websites for contractors without practicing what I preach.
+### Portfolio
 
-### Metadata and Open Graph
+A filterable grid of case studies organized by category — Web Development, Local SEO, GBP Optimization, SEO Audits. Filter state persists in the URL as a query parameter so filtered views are shareable and survive page refreshes.
 
-Every page has a unique title tag and meta description. The root layout uses Next.js's metadata system with a template that automatically appends the brand name. Open Graph tags ensure the site looks great when shared — with a dynamic branded preview image generated by Next.js's `ImageResponse` API at build time.
+Currently one live entry: this site. Coming soon entries were removed — five "Coming Soon" placeholders next to one real entry undermines trust at exactly the moment you need to build it.
 
-The OG image includes the grid background, Duke Blue glow, accent bars, the hero headline, and the logo. It's generated as a PNG at exactly 1200×630px — the standard social sharing size.
+### Privacy Policy + Terms of Service
 
-### LocalBusiness schema markup
+Written in plain English. No legal maze, just honest documentation of what data is collected and how the business operates. Linked in the footer.
 
-`ProfessionalService` schema injected as JSON-LD in the document head. Tells Google the business name, URL, phone, email, address, service areas, and service types — all in a structured format Google can parse directly without inferring it from page content.
+### Service Area Pages
 
-### Sitemap and robots.txt
-
-Both auto-generated by Next.js from simple JavaScript files. The sitemap updates itself every time a new blog post or portfolio entry is published. No manual updates needed, ever.
-
-### Dynamic favicon
-
-Built with Next.js's `ImageResponse` — the same API used for OG images. The favicon, Apple touch icon, and OG image are all generated from the same design system, ensuring they're always consistent.
-
-**Time taken: about 2 hours** for the full SEO setup.
+Six dynamic location pages generated from a single template — Siloam Springs, Bentonville, Rogers, Springdale, Fayetteville, and Fort Smith. Each page targets "[service] + [city]" searches with localized content and city-specific CTAs. Built with Next.js dynamic routes so adding a new city is a one-line data change.
 
 ---
 
-## Mobile Responsiveness
+## Key Lessons from Part 1
 
-The site is fully responsive with a custom hamburger menu that slides in a drawer from the right. Key technical details:
+**Next.js 15 changed how params work.** Route params are now a Promise — `const { slug } = await params` instead of `params.slug` directly. Catches you off guard if you're following older tutorials.
 
-- The navbar becomes sticky on scroll and gains a frosted glass effect using `backdrop-filter: blur`
-- The hamburger icon animates its three bars into an X when the drawer is open
-- The body scroll is locked when the drawer is open using `document.body.style.overflow`
-- Each drawer link animates in with a staggered delay using CSS `transitionDelay`
-- Two-column grid sections collapse to single column at 768px using CSS media queries
+**Split server and client components deliberately.** Next.js 15's App Router is strict about the boundary between components that read files (server) and components that use React hooks and browser APIs (client). Several pages needed to be split: a server component fetches the data, a client component handles animations. Think of it like a kitchen and a dining room — the kitchen preps, the dining room presents.
 
-Rather than a separate mobile stylesheet, I used utility class names (`two-col`, `three-col`, `form-row`) as hooks for media queries. Think of it like labels on boxes — the media query handles the stacking globally for any element with that class.
+**Font pairing is worth iterating on.** I went through three combinations before landing on Fraunces + Urbanist. The first two were fine. The third transformed the feel of the site. Don't lock fonts in early.
+
+**Accordions beat card grids for complex services.** The first services page used detailed cards — everything visible at once. It looked thorough but felt overwhelming. The accordion trades visual density for clarity and converts better.
 
 ---
 
-## The Brand Guidelines
+## What's in Part 2
 
-Alongside the website I built a full set of brand guidelines documenting every decision made here — color palette with usage rules, typography scale, logo clearspace and minimum sizes, voice and tone guidelines, photography direction, email signature format, and social media specs.
+Part 2 covers the brand identity work — the logo design process, the Signal concept we started with, why we scrapped it for a location pin, and how the complete brand system was built in code.
 
-The guidelines are a living document — version 1.1 at time of writing, updated as the brand evolves. They exist so that every future touchpoint, whether it's a social post, a client proposal, or a new page on this site, pulls in the same direction.
-
----
-
-## Full Stack at a Glance
-
-| Tool | Purpose |
-|---|---|
-| Next.js 15 | Framework |
-| Vercel | Hosting + deployment |
-| MDX | Blog posts |
-| Formspree | Contact forms |
-| Fraunces | Display / heading font |
-| Urbanist | Body font |
-| Google Analytics | Traffic tracking |
-| Google Search Console | Search performance |
-| Schema markup | Structured data for Google |
-| ImageResponse | Dynamic OG image + favicon |
-
----
-
-## Lessons Learned
-
-### 1. Next.js 15 changed how params work
-
-When building the blog post template, I hit an error I didn't expect — in Next.js 15, route params are now a Promise that needs to be awaited. In previous versions you could access `params.slug` directly. Now you need `const { slug } = await params`. A small change but it catches you off guard if you're following older tutorials.
-
-### 2. Build the SEO foundation before launch
-
-It's tempting to deploy and add SEO later. Don't. Schema markup, sitemaps, and metadata are structural — retrofitting them is harder than building them in from the start. Treat SEO like the foundation of a house, not the paint job.
-
-### 3. Split server and client components deliberately
-
-Next.js 15's App Router is strict about the boundary between server components (which can read files and fetch data) and client components (which can use React hooks and browser APIs). Several pages needed to be split into a server component that fetches data and a client component that handles animations. Think of it like a kitchen and a dining room — the kitchen preps the food, the dining room presents it.
-
-### 4. `ImageResponse` requires `display: flex` on every element
-
-The API that generates OG images and favicons is more restrictive than regular CSS — every `<div>` must have `display: "flex"` explicitly set, even decorative ones. Missing it causes a 500 error with no obvious message. Learned this the hard way.
-
-### 5. Font pairing makes more difference than you think
-
-I went through three font combinations — Poppins, then Cabinet Grotesk + Satoshi, and finally Fraunces + Urbanist. The last pairing transformed the feel of the site. Fraunces's editorial character and subtle italic style add a personality that purely geometric fonts can't achieve. Don't settle on fonts early — they're worth iterating on.
-
-### 6. StoryBrand is a framework, not a template
-
-The StoryBrand structure is powerful but needs to be adapted for your specific audience and positioning. A contractor-focused startup that leads with radical transparency needs a different tone than a polished agency. The framework gave us the skeleton — the voice and personality had to come from the brand guidelines.
-
----
-
-## What's Next
-
-This is a living site — I'll be adding to it regularly. On the roadmap:
-
-- Real portfolio entries as client engagements are completed and documented
-- Detailed local SEO guides written specifically for NWA contractors
-- A portfolio section populated with real before/after results
-- Testimonials once clients start rolling in
-- Social media presence — Facebook is live, LinkedIn, X, and Bluesky coming soon
-
-If you're a contractor in NWA who wants a site like this — fast, SEO-optimized, and built to convert — [let's talk](/contact). I'd love to be your ally.
+[Read Part 2 →](/blog/local-search-ally-brand-identity)
