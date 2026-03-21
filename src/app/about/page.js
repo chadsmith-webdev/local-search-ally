@@ -147,7 +147,7 @@ export default function About() {
           <Reveal>
             <div style={{ borderRadius: "10px", overflow: "hidden", border: "1px solid var(--duke)" }}>
               <Image
-                src="/images/chad.jpg"
+                src="/images/chad.avif"
                 alt="Chad Smith — Local Search Ally"
                 width={280}
                 height={280}

@@ -130,7 +130,7 @@ export default async function BlogPost({ params }) {
       }}>
         <div style={{ borderRadius: "50%", overflow: "hidden", border: "2px solid var(--carolina)" }}>
           <Image
-            src="/images/chad.jpg"
+            src="/images/chad.avif"
             alt="Chad Smith"
             width={80}
             height={80}

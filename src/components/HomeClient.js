@@ -294,7 +294,7 @@ export default function HomeClient({ posts }) {
     <Reveal>
       <div style={{ borderRadius: "10px", overflow: "hidden", border: "1px solid var(--duke)", marginBottom: "1.5rem" }}>
         <img
-          src="/images/chad.jpg"
+          src="/images/chad.avif"
           alt="Chad Smith — Local Search Ally"
           style={{ width: "100%", height: "auto", display: "block" }}
         />
