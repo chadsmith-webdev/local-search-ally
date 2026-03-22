@@ -1,6 +1,6 @@
 {
-  "name": "MyWebsite",
-  "short_name": "MySite",
+  "name": "Local Search Ally",
+  "short_name": "LSA",
   "icons": [
     {
       "src": "/lsa-logo/web-app-manifest-192x192.png",

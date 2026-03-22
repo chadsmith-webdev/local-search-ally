@@ -16,7 +16,7 @@ export default function Logo({
   const tipW = s * 0.047;
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+    <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
         <defs>
           <linearGradient
@@ -41,7 +41,7 @@ export default function Logo({
         <circle cx='50' cy='33' r='20' fill='#7bafd4' />
 
         {/* Crescent highlight: white circle cut by a ball-colored circle */}
-        <g clip-path='url(#ballClip)'>
+        <g clipPath='url(#ballClip)'>
           <circle cx='46' cy='28' r='10' fill='white' opacity='0.88' />
           <circle cx='49.5' cy='30.5' r='10.1' fill='#7bafd4' />
         </g>
