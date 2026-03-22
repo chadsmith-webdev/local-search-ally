@@ -78,10 +78,10 @@ export default function Footer() {
           <p style={{ color: "var(--text)", fontWeight: "600", marginBottom: "1.25rem", fontSize: "0.9rem" }}>Services</p>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "0.75rem" }}>
             {[
-              { label: "Local SEO", href: "/services" },
-              { label: "Web Development", href: "/services" },
-              { label: "GBP Optimization", href: "/services" },
-              { label: "SEO Audits", href: "/services" },
+              { label: "Local SEO", href: "/services#local-seo" },
+{ label: "Web Development", href: "/services#web-development" },
+{ label: "GBP Optimization", href: "/services#gbp-optimization" },
+{ label: "SEO Audits", href: "/services#seo-audits" },
             ].map((item) => (
               <li key={item.label}>
                 <Link href={item.href} style={{ color: "var(--muted)", textDecoration: "none", fontSize: "0.875rem", transition: "color 0.2s" }}
