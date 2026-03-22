@@ -144,7 +144,7 @@ export default function Navbar() {
                   padding: "0.5rem",
                   minWidth: "180px",
                   zIndex: 200,
-                  marginTop: "0.5rem",
+                  paddingTop: "1rem",
                   boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
                 }}
               >
