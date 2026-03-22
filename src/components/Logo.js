@@ -17,7 +17,12 @@ export default function Logo({
 
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 100 100'
+        width={s}
+        height={s}
+      >
         <defs>
           <linearGradient
             id='needleGrad'
