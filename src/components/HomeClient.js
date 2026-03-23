@@ -199,10 +199,12 @@ export default function HomeClient({ posts }) {
               marginBottom: "1.5rem",
             }}
           >
-            Your next customer just searched Google.{" "}
-            <span style={{ color: "var(--carolina)" }}>
-              They found your competitor.
-            </span>
+            Your next customer just searched Google. <br />
+            <em>
+              <span style={{ color: "var(--carolina)" }}>
+                They found your competitor.
+              </span>
+            </em>
           </h1>
           <p
             className='h2'
@@ -569,6 +571,168 @@ export default function HomeClient({ posts }) {
             <Link href='/about' className='btn-outline'>
               My Full Story
             </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 3.5. STATS */}
+      <section
+        style={{
+          borderTop: "1px solid var(--duke)",
+          borderBottom: "1px solid var(--duke)",
+          padding: "5rem 2rem",
+          backgroundColor: "var(--surface)",
+        }}
+      >
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <Reveal style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <p
+              style={{
+                color: "var(--carolina)",
+                fontWeight: "bold",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontSize: "0.8rem",
+                marginBottom: "1rem",
+              }}
+            >
+              The Research
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
+                fontWeight: "800",
+                marginBottom: "1rem",
+                lineHeight: 1.3,
+              }}
+            >
+              This is what's happening in your market right now.
+            </h2>
+            <p
+              style={{
+                color: "var(--muted)",
+                lineHeight: 1.9,
+                maxWidth: "600px",
+                margin: "0 auto",
+              }}
+            >
+              I didn't make these up. This is what the research shows about how
+              homeowners in NWA — and everywhere else — find and hire
+              contractors. Your customers are already searching. The question is
+              whether they're finding you or your competitor.
+            </p>
+          </Reveal>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "2rem",
+              marginBottom: "4rem",
+            }}
+          >
+            {[
+              {
+                stat: "80%",
+                desc: "of consumers search for a local business every single week. That's not a \"some people Google things\" stat. That's 4 out of 5 potential customers actively looking for someone like you — this week.",
+                source: "SOCi Consumer Behavior Index · 2024",
+              },
+              {
+                stat: "42%",
+                desc: "of all local searches result in a click on the Google Map Pack. The Map Pack is the 3 businesses at the top with a map pin. If you're not there, nearly half the people searching never see you at all.",
+                source: "Backlinko · 2024",
+              },
+              {
+                stat: "76%",
+                desc: 'of "near me" searches result in a call or visit within 24 hours. When someone searches "HVAC repair near me" or "plumber Bentonville," they\'re not browsing. They\'re ready to hire. Today.',
+                source: "Google · via industry survey data",
+              },
+              {
+                stat: "71%",
+                desc: "of consumers won't consider a business with under 3 stars. You can rank #1 and still lose the job if your reviews don't hold up. Visibility and reputation have to work together.",
+                source: "BrightLocal · Local Consumer Review Survey 2024",
+              },
+            ].map((item, index) => (
+              <Reveal key={index} delay={index * 100}>
+                <div
+                  className='card'
+                  style={{
+                    textAlign: "center",
+                    padding: "2.5rem 2rem",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      fontWeight: "900",
+                      color: "var(--carolina)",
+                      marginBottom: "1rem",
+                      fontFamily: "var(--font-display)",
+                    }}
+                  >
+                    {item.stat}
+                  </div>
+                  <p
+                    style={{
+                      color: "var(--muted)",
+                      lineHeight: 1.7,
+                      marginBottom: "1.5rem",
+                    }}
+                  >
+                    {item.desc}
+                  </p>
+                  <div
+                    style={{
+                      fontSize: "0.75rem",
+                      color: "var(--carolina)",
+                      fontWeight: "600",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    {item.source}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={400}>
+            <div
+              style={{
+                backgroundColor: "var(--surface)",
+                border: "1px solid var(--duke)",
+                borderRadius: "10px",
+                padding: "2.5rem",
+                textAlign: "center",
+                maxWidth: "800px",
+                margin: "0 auto",
+              }}
+            >
+              <blockquote
+                style={{
+                  fontSize: "1.125rem",
+                  lineHeight: 1.7,
+                  color: "var(--muted)",
+                  marginBottom: "1.5rem",
+                  fontStyle: "italic",
+                }}
+              >
+                "I've spent years studying why good contractors stay invisible
+                online. It's not because they're bad at their job — it's because
+                the people who are visible figured out how local search works.
+                That's a learnable thing. It's what I do."
+              </blockquote>
+              <div
+                style={{
+                  fontSize: "0.875rem",
+                  color: "var(--carolina)",
+                  fontWeight: "600",
+                }}
+              >
+                — Chad Smith, Local Search Ally · Siloam Springs, AR
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
