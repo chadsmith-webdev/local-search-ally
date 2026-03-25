@@ -1,0 +1,136 @@
+---
+title: "How I Built the Local Search Ally Website, Part 3: The SEO Foundation"
+date: "2026-03-25"
+description: "How localsearchally.com was built for local search from day one — schema markup, service area pages, FAQ rich results, sitemap, and everything in between."
+image: "/images/case-study-seo.webp"
+tags: ["case study", "local seo", "schema markup", "part 3"]
+---
+
+[← Read Part 2: Logo, Fonts & Brand Identity](/blog/local-search-ally-brand-identity)
+
+Part 3 is where the web development and local SEO expertise meet. Building a site that ranks isn't a separate phase from building the site itself — it's baked in from the first line of code.
+
+This post documents every SEO decision made during the build, why it was made, and how it performed when tested against Google's own tools.
+
+---
+
+## The Philosophy: SEO as Architecture, Not Paint
+
+Most websites add SEO after launch — meta tags, a sitemap submission, maybe a blog. That approach treats SEO like paint on a finished house. You can do it, but you're working around decisions that are already locked in.
+
+This site was built with SEO as a structural requirement from day one. Every page has a purpose in the keyword architecture. Every piece of structured data was planned before the first component was written. The sitemap is auto-generated so it's always current.
+
+The analogy I keep coming back to: a contractor who frames a house with electrical in mind is easier to wire than one who frames first and figures out the wiring later. Same principle.
+
+---
+
+## Metadata and Open Graph
+
+Every page has a unique title tag and meta description. The root layout uses Next.js's metadata system with a template that automatically appends the brand name — `%s | Local Search Ally` — so individual pages only need to define their own titles.
+
+Open Graph tags ensure every page looks correct when shared on social media. The OG image is generated dynamically using Next.js's `ImageResponse` API — a PNG rendered at exactly 1200×630px from the same design system as the rest of the site. No static image file to maintain, no mismatch between the site and the share preview.
+
+---
+
+## LocalBusiness Schema
+
+The highest-priority structured data item was `ProfessionalService` schema — JSON-LD injected into the document that tells Google exactly what this business is in a structured format.
+
+The schema includes:
+
+- ~ Business name, URL, phone, email
+- ~ Physical address in Siloam Springs, AR
+- ~ Opening hours for all seven days
+- ~ Six service area cities with state containment
+- ~ Six service types
+- ~ Price range indicator
+
+Think of it like a very detailed business registration form that Google reads before deciding how to display the business in search results. Without it, Google has to infer everything from page content. With it, you're telling Google directly.
+
+---
+
+## FAQ Schema and Rich Results
+
+Eleven FAQs covering pricing, timelines, differentiators, local SEO basics, and web development questions. Each one targets a specific search query a contractor might type — "how much does local SEO cost," "how long does it take to rank on Google Maps," "what makes you different from other SEO agencies."
+
+The FAQ schema marks these up as `FAQPage` structured data so Google can pull them directly into search results as featured snippets — a way to appear prominently in search without needing to rank for position one.
+
+The initial implementation had a bug worth documenting: the schema was rendering twice — once from the root layout and once from the services page — causing a "Duplicate FAQPage" error in Google's Rich Results Test. The fix was moving the FAQ schema out of the global layout and onto the specific pages that display the FAQ content.
+
+**Test result after fix:** All four schema types valid — Breadcrumbs, FAQ, Local Business, Organization.
+
+---
+
+## Service Area Pages
+
+Six dynamic location pages targeting NWA contractor searches:
+
+- ~ Siloam Springs (home base)
+- ~ Bentonville
+- ~ Rogers
+- ~ Springdale
+- ~ Fayetteville
+- ~ Fort Smith
+
+Each page targets "[service] + [city]" keyword combinations — "local SEO Bentonville," "contractor website Fayetteville," and similar. The pages are generated from a single Next.js dynamic route template with a city data file — adding a new city is a one-line change to the data file, not a new page build.
+
+Each location page includes:
+
+- ~ City-specific hero with localized headline
+- ~ Two service sections (Local SEO and Web Development) with city references
+- ~ Local statistics section with sourced data points
+- ~ Nearby city links for internal linking between location pages
+- ~ City-specific CTA — "Get a Free Bentonville Audit"
+
+The nearby city links are deliberate — they create an internal linking mesh between all six location pages, which distributes page authority and helps Google understand the geographic relationship between them.
+
+---
+
+## Sitemap and Robots.txt
+
+Both auto-generated by Next.js from simple JavaScript files. The sitemap includes:
+
+- ~ All static pages with appropriate priority values (homepage: 1.0, services: 0.9, blog: 0.8)
+- ~ All blog posts with publish date as `lastModified`
+- ~ All six location pages
+- ~ The portfolio and locations index pages
+
+The robots.txt points directly to the sitemap URL. The sitemap was submitted to Google Search Console on launch day — this tells Google to start crawling immediately rather than waiting to discover the site organically.
+
+**Priority values explained:** 1.0 means "most important," 0.6 means "least important." These are hints to Google about crawl priority, not guarantees. The homepage is 1.0, the contact page is 0.6 — contact is important for visitors but not a page you need Google to crawl frequently.
+
+---
+
+## Breadcrumb Schema
+
+`BreadcrumbList` structured data mapping every main page in the site hierarchy. This helps Google display breadcrumb navigation in search results — the `localsearchally.com > Services` format that appears under some search results.
+
+The breadcrumb schema is global — it lives in the shared `SchemaMarkup` component rendered on every page. It covers all seven main navigation destinations.
+
+---
+
+## Dynamic Favicon and Apple Touch Icon
+
+Both generated using Next.js's `ImageResponse` API — the same system used for OG images. The favicon, Apple touch icon, and social sharing preview are all generated from the same design system.
+
+This means they're always consistent with the brand without maintaining separate image files. When the logo changes, updating one component updates every brand touchpoint simultaneously.
+
+---
+
+## Key Lessons from Part 3
+
+**Schema markup is a first draft, not a final answer.** The initial implementation passed structure validation but failed Google's Rich Results Test due to a duplicate FAQPage error. Always test with the actual tool, not just a schema validator.
+
+**Service area pages need internal links to each other.** The nearby city links on each location page weren't an afterthought — they're a deliberate internal linking strategy. Google uses link relationships to understand geographic relevance. Pages that link to each other signal a coherent local presence.
+
+**The sitemap updates itself.** Using Next.js's built-in sitemap generation means every new blog post and portfolio entry is automatically included. No manual updates, no forgotten pages, no stale XML.
+
+**Dynamic image generation beats static files.** Using `ImageResponse` for the favicon, Apple touch icon, and OG image means three brand touchpoints are maintained in one place. Static files get out of sync. Generated assets can't.
+
+---
+
+## What's in Part 4
+
+Part 4 covers the full UI/UX review — what a fresh set of eyes found after the build was complete, what changed, and the specific improvements that made the biggest difference to conversion and user experience.
+
+[Read Part 4 →](/blog/local-search-ally-ui-ux-lessons)
