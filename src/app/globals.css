@@ -12,6 +12,8 @@
   --muted: #888888;
   /* Accent for CTAs */
   --accent: #e53e3e;
+  --error: #e53e3e;
+  --secondary: #1e3a5f;
   /* Fluid type scale */
   --font-size-xs: clamp(0.75rem, 2vw, 0.875rem);
   --font-size-sm: clamp(0.875rem, 2.5vw, 1rem);

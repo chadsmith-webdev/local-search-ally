@@ -16,7 +16,7 @@ export default function sitemap() {
     url: `${siteConfig.url}/locations/${location.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
-    prioty: 0.8,
+    priority: 0.8,
   }));
 
   const staticUrls = [

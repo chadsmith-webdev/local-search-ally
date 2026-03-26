@@ -7,5 +7,12 @@ export default function robots() {
       allow: "/",
     },
     sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url,
+    other: [
+      {
+        name: "IndexNow",
+        value: `${siteConfig.url}/indexnow-72bc29c911304f96ba476049493d4a6e.txt`,
+      },
+    ],
   };
 }

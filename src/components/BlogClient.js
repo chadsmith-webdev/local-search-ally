@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 function useReveal() {
   const ref = useRef(null);
@@ -134,9 +135,11 @@ export default function BlogClient({ posts }) {
                       aspectRatio: "16/9",
                       backgroundColor: "var(--duke)",
                     }}>
-                      <img
+                      <Image
                         src={post.image}
                         alt={post.title}
+                        width={640}
+                        height={360}
                         style={{ width: "100%", height: "100%", objectFit: "cover" }}
                       />
                     </div>

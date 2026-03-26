@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import FAQSection from "./FAQSection";
 import CTAForm from "./CTAForm";
 import {
@@ -611,9 +612,11 @@ export default function HomeClient({ posts }) {
                 marginBottom: "1.5rem",
               }}
             >
-              <img
+              <Image
                 src='/images/chad.avif'
                 alt='Chad Smith — Local Search Ally'
+                width={600}
+                height={600}
                 style={{ width: "100%", height: "auto", display: "block" }}
               />
             </div>

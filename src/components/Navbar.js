@@ -379,7 +379,7 @@ export default function Navbar() {
             opacity: open ? 1 : 0,
             transform: open ? "translateX(0)" : "translateX(20px)",
             transitionDelay: `${links.length * 60}ms`,
-            fontFamily: "var(--font-cabinet)",
+            fontFamily: "var(--font-body)",
           }}
         >
           Service Areas

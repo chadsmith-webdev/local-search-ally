@@ -51,7 +51,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${fraunces.variable} ${urbanist.variable}`}>
       <body style={{
         backgroundColor: "var(--bg)",
         color: "var(--text)",
