@@ -97,16 +97,33 @@ function Reveal({ children, style = {}, delay = 0 }) {
 }
 
 export default function HomeClient({ posts }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <>
       <style>{`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
+        @keyframes gridMove {
+          0% { transform: translate(0, 0); }
+          100% { transform: translate(40px, 40px); }
         }
-        .h1 { animation: fadeUp 0.8s ease forwards; }
-        .h2 { animation: fadeUp 0.8s ease 0.2s forwards; opacity: 0; }
-        .h3 { animation: fadeUp 0.8s ease 0.4s forwards; opacity: 0; }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        @keyframes glow {
+          0%, 100% { opacity: 0.5; }
+          50% { opacity: 1; }
+        }
+        @keyframes fadeUp {
+          0% { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        .h1 { animation: fadeUp 0.8s ease-out forwards; }
+        .h2 { animation: fadeUp 0.8s ease-out 0.2s forwards; opacity: 0; }
+        .h3 { animation: fadeUp 0.8s ease-out 0.4s forwards; opacity: 0; }
         .reveal {
           opacity: 0;
           transform: translateY(40px);
@@ -121,9 +138,9 @@ export default function HomeClient({ posts }) {
           font-weight: bold;
           text-decoration: none;
           display: inline-block;
-          transition: opacity 0.2s;
+          transition: opacity 0.2s, transform 0.2s;
         }
-        .btn-primary:hover { opacity: 0.85; }
+        .btn-primary:hover { opacity: 0.85; transform: scale(0.98); }
         .btn-outline {
           border: 1px solid var(--carolina);
           color: var(--carolina);
@@ -132,18 +149,19 @@ export default function HomeClient({ posts }) {
           font-weight: bold;
           text-decoration: none;
           display: inline-block;
-          transition: background-color 0.2s;
+          transition: background-color 0.2s, transform 0.2s;
         }
-        .btn-outline:hover { background-color: rgba(123,175,212,0.1); }
+        .btn-outline:hover { background-color: rgba(123,175,212,0.1); transform: scale(0.98); }
         .card {
           background-color: var(--surface);
           border: 1px solid var(--duke);
           border-radius: 10px;
           padding: 2rem;
-          transition: border-color 0.3s, transform 0.3s;
+          transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
           height: 100%;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
         }
-        .card:hover { border-color: var(--carolina); transform: translateY(-4px); }
+        .card:hover { border-color: var(--carolina); transform: translateY(-4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 12px rgba(1,33,105,0.2); }
         .timeline-item {
           position: relative;
           padding-left: 2rem;
@@ -199,23 +217,48 @@ export default function HomeClient({ posts }) {
           overflow: "hidden",
         }}
       >
-        {/* Grid background */}
+        {/* Animated grid background */}
         <div
           style={{
             position: "absolute",
             inset: 0,
             backgroundImage: `
-      linear-gradient(rgba(123,175,212,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(123,175,212,0.06) 1px, transparent 1px)
-    `,
+              linear-gradient(rgba(123,175,212,0.08) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(123,175,212,0.08) 1px, transparent 1px)
+            `,
             backgroundSize: "40px 40px",
-            maskImage:
-              "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
+            animation: "gridMove 30s linear infinite",
             pointerEvents: "none",
           }}
         />
+        {/* Floating particles */}
+        {mounted && (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              pointerEvents: "none",
+            }}
+          >
+            {[...Array(10)].map((_, i) => (
+              <div
+                key={i}
+                style={{
+                  position: "absolute",
+                  width: "4px",
+                  height: "4px",
+                  backgroundColor: "var(--carolina)",
+                  borderRadius: "50%",
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animation: `float ${3 + Math.random() * 2}s ease-in-out infinite`,
+                  animationDelay: `${Math.random() * 2}s`,
+                  opacity: 0.6,
+                }}
+              />
+            ))}
+          </div>
+        )}
         {/* Glow */}
         <div
           style={{
@@ -228,6 +271,7 @@ export default function HomeClient({ posts }) {
             borderRadius: "50%",
             background:
               "radial-gradient(circle, rgba(1,33,105,0.5) 0%, transparent 70%)",
+            animation: "glow 4s ease-in-out infinite",
             pointerEvents: "none",
           }}
         />
@@ -253,11 +297,12 @@ export default function HomeClient({ posts }) {
               fontWeight: "800",
               lineHeight: 1.1,
               marginBottom: "1.5rem",
+              textShadow: "0 0 20px rgba(123,175,212,0.3)",
             }}
           >
             Your next customer just searched Google. <br />
             <em>
-              <span style={{ color: "var(--carolina)" }}>
+              <span style={{ color: "var(--carolina)", fontWeight: "600" }}>
                 They found your competitor.
               </span>
             </em>
@@ -268,13 +313,28 @@ export default function HomeClient({ posts }) {
               color: "var(--muted)",
               fontSize: "1.1rem",
               maxWidth: "580px",
-              marginBottom: "2.5rem",
+              marginBottom: "1rem",
               lineHeight: 1.9,
             }}
           >
-            Most NWA contractors do great work — but they're invisible online.
-            I've spent years figuring out how local search actually works. Now I
-            use that to help contractors like you get found and get hired.
+            Most NWA contractors do great work, but they’re invisible when
+            customers search. If you're not in the Google Map Pack, you’re
+            losing high-value calls to competitors today. I built Local Search
+            Ally after proving these strategies on my own sites—now I help
+            contractors get found and hired with clear, no-fluff local SEO.
+          </p>
+          <p
+            className='h2'
+            style={{
+              color: "var(--error)",
+              fontSize: "0.9rem",
+              fontWeight: "600",
+              marginBottom: "2.5rem",
+            }}
+          >
+            ⚠️ Free strategy calls are limited and fill fast. Secure your spot
+            now so you don’t lose another job to a competitor who is being
+            found.
           </p>
           <div className='h3'>
             <form
@@ -430,12 +490,15 @@ export default function HomeClient({ posts }) {
             even if their work isn't as good as yours.
           </p>
         </Reveal>
+
+        {/* Staggered layout instead of uniform cards */}
         <div
-          className='three-col'
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "1.5rem",
+            gridTemplateColumns: "1fr",
+            gap: "4rem",
+            maxWidth: "900px",
+            margin: "0 auto",
           }}
         >
           {[
@@ -443,40 +506,76 @@ export default function HomeClient({ posts }) {
               icon: <IconInvisible />,
               title: "Invisible on Google Maps",
               desc: "Your competitors are in the Map Pack. You're buried on page 3 — or not showing up at all.",
+              position: "left",
             },
             {
               icon: <IconNoWebsite />,
               title: "Outdated or No Website",
               desc: "Your website doesn't reflect the quality of your work — or worse, you don't have one and leads go to someone who does.",
+              position: "right",
             },
             {
               icon: <IconWordOfMouth />,
               title: "Relying on Word of Mouth",
               desc: "Referrals are great — but they don't scale. When they dry up, you need a system that keeps the phone ringing.",
+              position: "left",
             },
           ].map((item, i) => (
-            <Reveal key={item.title} delay={i * 100}>
-              <div className='card'>
-                <div style={{ marginBottom: "1rem" }}>{item.icon}</div>
-                <h3
+            <Reveal key={item.title} delay={i * 200}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection:
+                    item.position === "left" ? "row" : "row-reverse",
+                  gap: "2rem",
+                  alignItems: "center",
+                  padding: "2rem",
+                  borderRadius: "12px",
+                  backgroundColor:
+                    item.position === "left" ? "var(--surface)" : "transparent",
+                  border:
+                    item.position === "left"
+                      ? "1px solid var(--secondary)"
+                      : "none",
+                }}
+              >
+                <div
                   style={{
-                    color: "var(--text)",
-                    marginBottom: "0.75rem",
-                    fontSize: "1.05rem",
+                    flexShrink: 0,
+                    width: "80px",
+                    height: "80px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "50%",
+                    backgroundColor: "var(--text)",
+                    color: "var(--bg)",
                   }}
                 >
-                  {item.title}
-                </h3>
-                <p
-                  style={{
-                    color: "var(--muted)",
-                    lineHeight: 1.8,
-                    margin: 0,
-                    fontSize: "0.95rem",
-                  }}
-                >
-                  {item.desc}
-                </p>
+                  {item.icon}
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h3
+                    style={{
+                      color: "var(--text)",
+                      marginBottom: "0.75rem",
+                      fontSize: "1.25rem",
+                      fontWeight: "700",
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    style={{
+                      color: "var(--muted)",
+                      lineHeight: 1.8,
+                      margin: 0,
+                      fontSize: "1rem",
+                    }}
+                  >
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             </Reveal>
           ))}
@@ -595,11 +694,9 @@ export default function HomeClient({ posts }) {
                 marginBottom: "1.25rem",
               }}
             >
-              I'm Chad, the founder of Local Search Ally — and I want to be
-              upfront: I'm not a big agency with decades under my belt. I'm a
-              startup founder in Siloam Springs who's obsessed with local SEO,
-              and I've been proving it works on my own projects for years before
-              ever offering it to anyone else.
+              I'm Chad, a startup founder in Siloam Springs focused on local SEO
+              and contractor growth. I'm not a big agency, and I believe
+              transparency beats hype.
             </p>
             <p
               style={{
@@ -608,10 +705,10 @@ export default function HomeClient({ posts }) {
                 marginBottom: "1.25rem",
               }}
             >
-              I started by teaching myself SEO on my own projects — ranking my
-              own sites, optimizing Google Business Profiles, and learning what
-              actually works in local search. The results I got for myself are
-              what convinced me I could do this for others.
+              I started by testing SEO on my own projects—ranking sites,
+              improving Google Business Profiles, and turning search traffic
+              into real calls. Those learnings became the method I now offer to
+              contractors.
             </p>
             <p
               style={{
@@ -620,9 +717,9 @@ export default function HomeClient({ posts }) {
                 marginBottom: "2rem",
               }}
             >
-              Now I'm building web development skills too — so you get SEO and a
-              site built to convert, all from one person who's accountable for
-              both.
+              This is a startup path: I'm still scaling, but everything I do is
+              accountable, explainable, and aligned to the result you care
+              about: more qualified leads and booked jobs.
             </p>
             <Link href='/about' className='btn-outline'>
               My Full Story
@@ -634,8 +731,8 @@ export default function HomeClient({ posts }) {
       {/* 3.5. STATS */}
       <section
         style={{
-          borderTop: "1px solid var(--duke)",
-          borderBottom: "1px solid var(--duke)",
+          borderTop: "1px solid var(--secondary)",
+          borderBottom: "1px solid var(--secondary)",
           padding: "5rem 2rem",
           backgroundColor: "var(--surface)",
         }}
@@ -679,14 +776,27 @@ export default function HomeClient({ posts }) {
             </p>
           </Reveal>
 
+          {/* Timeline layout instead of grid cards */}
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "2rem",
-              marginBottom: "4rem",
+              position: "relative",
+              maxWidth: "800px",
+              margin: "0 auto",
             }}
           >
+            {/* Timeline line */}
+            <div
+              style={{
+                position: "absolute",
+                left: "2rem",
+                top: "2rem",
+                bottom: "2rem",
+                width: "2px",
+                background:
+                  "linear-gradient(to bottom, var(--carolina), var(--duke))",
+              }}
+            />
+
             {[
               {
                 stat: "80%",
@@ -709,45 +819,79 @@ export default function HomeClient({ posts }) {
                 source: "BrightLocal · Local Consumer Review Survey 2024",
               },
             ].map((item, index) => (
-              <Reveal key={index} delay={index * 100}>
+              <Reveal key={index} delay={index * 200}>
                 <div
-                  className='card'
                   style={{
-                    textAlign: "center",
-                    padding: "2.5rem 2rem",
+                    display: "flex",
+                    gap: "2rem",
+                    alignItems: "flex-start",
+                    marginBottom: "3rem",
+                    paddingLeft: "1rem",
                   }}
                 >
-                  <StatNumber stat={item.stat} />
-                  <p
-                    style={{
-                      color: "var(--muted)",
-                      lineHeight: 1.7,
-                      marginBottom: "1.5rem",
-                    }}
-                  >
-                    {item.desc}
-                  </p>
+                  {/* Timeline dot */}
                   <div
                     style={{
-                      fontSize: "0.75rem",
-                      color: "var(--carolina)",
-                      fontWeight: "600",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.05em",
+                      width: "1rem",
+                      height: "1rem",
+                      borderRadius: "50%",
+                      backgroundColor: "var(--carolina)",
+                      border: "3px solid var(--surface)",
+                      flexShrink: 0,
+                      marginTop: "0.5rem",
                     }}
-                  >
-                    {item.source}
+                  />
+
+                  <div style={{ flex: 1 }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "baseline",
+                        gap: "1rem",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: "2rem",
+                          fontWeight: "900",
+                          color: "var(--carolina)",
+                        }}
+                      >
+                        {item.stat}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: "0.75rem",
+                          color: "var(--carolina)",
+                          fontWeight: "600",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.05em",
+                        }}
+                      >
+                        {item.source}
+                      </span>
+                    </div>
+                    <p
+                      style={{
+                        color: "var(--muted)",
+                        lineHeight: 1.7,
+                        margin: 0,
+                      }}
+                    >
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               </Reveal>
             ))}
           </div>
 
-          <Reveal delay={400}>
+          <Reveal delay={600}>
             <div
               style={{
-                backgroundColor: "var(--surface)",
-                border: "1px solid var(--duke)",
+                backgroundColor: "var(--bg)",
+                border: "1px solid var(--secondary)",
                 borderRadius: "10px",
                 padding: "2.5rem",
                 textAlign: "center",
@@ -1098,9 +1242,9 @@ export default function HomeClient({ posts }) {
                 </h3>
                 {[
                   "Competitors keep taking your potential customers",
-                  "Referrals slow down and revenue becomes unpredictable",
-                  "Great work goes unnoticed because nobody can find you",
-                  "You stay stuck relying on luck instead of a system",
+                  "Referrals dry up and revenue becomes unpredictable",
+                  "Great work goes unseen because your visibility is weak",
+                  "You keep depending on luck instead of a repeatable system",
                 ].map((item) => (
                   <div
                     key={item}
