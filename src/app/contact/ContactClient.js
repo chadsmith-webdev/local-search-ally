@@ -127,7 +127,7 @@ export default function ContactClient() {
             No pitch. No pressure. <span style={{ color: "var(--carolina)" }}>Just an honest conversation.</span>
           </h1>
           <p style={{ color: "var(--muted)", fontSize: "1.05rem", lineHeight: 1.9, maxWidth: "560px" }}>
-            Tell me about your business and where you're stuck. I'll look at your online presence and give you my honest take — even if that means I'm not the right fit.
+            Tell me about your business and what's not working. I'll look at your online presence and tell you what I actually think, even if the answer is "you don't need me."
           </p>
         </div>
       </section>

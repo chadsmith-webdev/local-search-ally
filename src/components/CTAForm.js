@@ -85,10 +85,10 @@ export default function CTAForm({ action = "https://formspree.io/f/mkoqvkzr" }) 
         cursor: submitting ? "not-allowed" : "pointer",
         opacity: submitting ? 0.7 : 1,
       }}>
-        {submitting ? "Sending..." : "Let's Talk — It's Free"}
+        {submitting ? "Sending..." : "Let's Talk — Free, No Strings"}
       </button>
       <p style={{ color: "var(--muted)", fontSize: "0.8rem", margin: 0 }}>
-        No spam. No sales pitch. Just an honest conversation about your business.
+        I don't do sales pitches. We'll talk about your business and I'll tell you what I'd do.
       </p>
     </form>
   );

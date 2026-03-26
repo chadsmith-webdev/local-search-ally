@@ -332,11 +332,10 @@ export default function HomeClient({ posts }) {
               lineHeight: 1.9,
             }}
           >
-            Most NWA contractors do great work, but they’re invisible when
-            customers search. If you're not in the Google Map Pack, you’re
-            losing high-value calls to competitors today. I built Local Search
-            Ally after proving these strategies on my own sites—now I help
-            contractors get found and hired with clear, no-fluff local SEO.
+            Most NWA contractors do great work, but nobody finds them online.
+            If you're not in the Google Map Pack, the calls go to whoever is.
+            I started Local Search Ally after ranking my own sites first. Now
+            I do the same thing for contractors.
           </p>
           <p
             className='h2'
@@ -347,9 +346,8 @@ export default function HomeClient({ posts }) {
               marginBottom: "2.5rem",
             }}
           >
-            ⚠️ Free strategy calls are limited and fill fast. Secure your spot
-            now so you don’t lose another job to a competitor who is being
-            found.
+            ⚠️ I take a limited number of free strategy calls each month. If
+            yours is open, grab it before it's not.
           </p>
           <div className='h3'>
             <form
@@ -497,7 +495,7 @@ export default function HomeClient({ posts }) {
             }}
           >
             Every day, homeowners in NWA search Google for contractors. If
-            you're not showing up, you're losing jobs to competitors who are —
+            you're not showing up, you're losing jobs to competitors who are,
             even if their work isn't as good as yours.
           </p>
         </Reveal>
@@ -516,19 +514,19 @@ export default function HomeClient({ posts }) {
             {
               icon: <IconInvisible />,
               title: "Invisible on Google Maps",
-              desc: "Your competitors are in the Map Pack. You're buried on page 3 — or not showing up at all.",
+              desc: "Your competitors show up in the Map Pack. You're on page 3, or you're not showing up at all.",
               position: "left",
             },
             {
               icon: <IconNoWebsite />,
-              title: "Outdated or No Website",
-              desc: "Your website doesn't reflect the quality of your work — or worse, you don't have one and leads go to someone who does.",
+              title: "No Website (or a Bad One)",
+              desc: "Your website doesn't match the quality of your actual work. Or you don't have one, and the calls go to someone who does.",
               position: "right",
             },
             {
               icon: <IconWordOfMouth />,
-              title: "Relying on Word of Mouth",
-              desc: "Referrals are great — but they don't scale. When they dry up, you need a system that keeps the phone ringing.",
+              title: "Counting on Referrals Alone",
+              desc: "Referrals are great until they slow down. Then what? You need something that works whether or not someone remembers your name.",
               position: "left",
             },
           ].map((item, i) => (
@@ -632,11 +630,11 @@ export default function HomeClient({ posts }) {
             </div>
             <div style={{ display: "grid", gap: "0.75rem" }}>
               {[
-                { stat: "5+", label: "Years of hands-on local SEO experience" },
-                { stat: "100%", label: "Focused exclusively on contractors" },
+                { stat: "5+", label: "Years doing local SEO" },
+                { stat: "100%", label: "Contractors only" },
                 {
                   stat: "One Person",
-                  label: "SEO + web development no hand-offs",
+                  label: "SEO + web dev, no hand-offs",
                 },
               ].map((item) => (
                 <div
@@ -707,9 +705,9 @@ export default function HomeClient({ posts }) {
                 marginBottom: "1.25rem",
               }}
             >
-              I'm Chad, a startup founder in Siloam Springs focused on local SEO
-              and contractor growth. I'm not a big agency, and I believe
-              transparency beats hype.
+              I'm Chad. I run Local Search Ally out of Siloam Springs. I'm
+              not an agency. It's just me, and I'd rather be honest with
+              you than impressive.
             </p>
             <p
               style={{
@@ -718,10 +716,10 @@ export default function HomeClient({ posts }) {
                 marginBottom: "1.25rem",
               }}
             >
-              I started by testing SEO on my own projects—ranking sites,
-              improving Google Business Profiles, and turning search traffic
-              into real calls. Those learnings became the method I now offer to
-              contractors.
+              I started by testing SEO on my own projects. Ranked the
+              sites, optimized the Google Business Profiles, turned search
+              traffic into actual phone calls. What worked became the
+              method I now use for contractors.
             </p>
             <p
               style={{
@@ -730,9 +728,9 @@ export default function HomeClient({ posts }) {
                 marginBottom: "2rem",
               }}
             >
-              This is a startup path: I'm still scaling, but everything I do is
-              accountable, explainable, and aligned to the result you care
-              about: more qualified leads and booked jobs.
+              I'm still growing this business. But everything I do, you
+              can see, question, and measure. The only thing that matters
+              is whether your phone rings more.
             </p>
             <Link href='/about' className='btn-outline'>
               My Full Story
@@ -782,10 +780,10 @@ export default function HomeClient({ posts }) {
                 margin: "0 auto",
               }}
             >
-              I didn't make these up. This is what the research shows about how
-              homeowners in NWA — and everywhere else — find and hire
-              contractors. Your customers are already searching. The question is
-              whether they're finding you or your competitor.
+              I didn't make these up. This is what the data says about
+              how homeowners find and hire contractors. Your customers
+              are already searching. They're either finding you or finding
+              someone else.
             </p>
           </Reveal>
 
@@ -813,22 +811,22 @@ export default function HomeClient({ posts }) {
             {[
               {
                 stat: "80%",
-                desc: "of consumers search for a local business every single week. That's not a \"some people Google things\" stat. That's 4 out of 5 potential customers actively looking for someone like you — this week.",
+                desc: "of people search for a local business at least once a week. Four out of five. If they're not finding you, they're finding someone else.",
                 source: "SOCi Consumer Behavior Index · 2024",
               },
               {
                 stat: "42%",
-                desc: "of all local searches result in a click on the Google Map Pack. The Map Pack is the 3 businesses at the top with a map pin. If you're not there, nearly half the people searching never see you at all.",
+                desc: "of local searches end with a click on the Google Map Pack. That's the 3 businesses at the top with a map pin. If you're not one of them, nearly half the people searching never see you.",
                 source: "Backlinko · 2024",
               },
               {
                 stat: "76%",
-                desc: 'of "near me" searches result in a call or visit within 24 hours. When someone searches "HVAC repair near me" or "plumber Bentonville," they\'re not browsing. They\'re ready to hire. Today.',
+                desc: 'of "near me" searches lead to a call or visit within 24 hours. When someone searches "plumber Bentonville," they\'re not browsing. They need someone today.',
                 source: "Google · via industry survey data",
               },
               {
                 stat: "71%",
-                desc: "of consumers won't consider a business with under 3 stars. You can rank #1 and still lose the job if your reviews don't hold up. Visibility and reputation have to work together.",
+                desc: "of consumers won't consider a business with under 3 stars. You can rank #1 and still lose the job if your reviews are bad. Showing up is only half of it.",
                 source: "BrightLocal · Local Consumer Review Survey 2024",
               },
             ].map((item, index) => (
@@ -921,10 +919,10 @@ export default function HomeClient({ posts }) {
                   fontStyle: "italic",
                 }}
               >
-                "I've spent years studying why good contractors stay invisible
-                online. It's not because they're bad at their job — it's because
-                the people who are visible figured out how local search works.
-                That's a learnable thing. It's what I do."
+                "Good contractors stay invisible online all the time. Not
+                because they're bad at their job. The ones who show up just
+                figured out how local search works. That's a learnable
+                thing, and it's what I do."
               </blockquote>
               <div
                 style={{
@@ -974,8 +972,7 @@ export default function HomeClient({ posts }) {
               lineHeight: 1.9,
             }}
           >
-            No jargon, no mystery. Just clear steps to get your business visible
-            where it counts.
+            Three steps. No jargon. Here's how it actually works.
           </p>
         </Reveal>
         <div
@@ -991,17 +988,17 @@ export default function HomeClient({ posts }) {
             {
               number: "01",
               title: "We Talk (For Free)",
-              desc: "Book a no-pressure conversation. I'll look at your current online presence, ask about your business, and be honest about what I can help with — and what I can't.",
+              desc: "We talk. I'll pull up your Google listing, your website, and your competitors before the call. I'll tell you what I see, honestly, even the stuff you might not want to hear.",
             },
             {
               number: "02",
               title: "Plan & Build",
-              desc: "I'll optimize your Google Business Profile, clean up your citations, and build a site that converts. You'll know exactly what I'm doing and why — no surprises.",
+              desc: "I fix what's broken. GBP optimization, citations, a site that actually converts. You'll know what I'm doing and why at every step.",
             },
             {
               number: "03",
               title: "Optimize & Grow",
-              desc: "We launch, monitor, and keep improving. The goal is simple: when someone in NWA searches for your trade, you show up.",
+              desc: "We track it. Rankings, calls, visibility. If something's not working, we change it. No autopilot.",
             },
           ].map((step, i) => (
             <Reveal key={step.number} delay={i * 150}>
@@ -1098,21 +1095,21 @@ export default function HomeClient({ posts }) {
               {
                 label: "Most clients start here",
                 title: "Local SEO",
-                desc: "Get your business ranking where your customers are searching — Google Maps, local results, and beyond. This is where my deepest experience lives.",
+                desc: "Rank where your customers are actually searching. Google Maps, local results, the works. This is what I know best.",
                 tags: ["GBP Optimization", "Citations", "On-Page SEO"],
                 highlight: true,
               },
               {
                 label: "Included with every website",
                 title: "Web Design & Development",
-                desc: "Fast, mobile-first websites built to convert visitors into calls. Every site is SEO-optimized from the ground up — because that's what I know best.",
+                desc: "Mobile-first websites with SEO built into the structure, not bolted on after. Fast loading because the speed difference shows up in rankings.",
                 tags: ["Mobile-First", "SEO-Built", "Lead Gen"],
                 highlight: false,
               },
               {
                 label: "One-time investment",
                 title: "SEO Audits",
-                desc: "Find out exactly why you're not ranking. A detailed, actionable report covering technical SEO, citation gaps, and competitor analysis — no fluff.",
+                desc: "Find out exactly why you're not ranking. Technical SEO, citation gaps, competitor analysis. You get a report you can actually act on.",
                 tags: ["Technical SEO", "Competitor Analysis", "Action Plan"],
                 highlight: false,
               },
@@ -1254,10 +1251,10 @@ export default function HomeClient({ posts }) {
                   Do Nothing
                 </h3>
                 {[
-                  "Competitors keep taking your potential customers",
-                  "Referrals dry up and revenue becomes unpredictable",
-                  "Great work goes unseen because your visibility is weak",
-                  "You keep depending on luck instead of a repeatable system",
+                  "Competitors keep getting the calls that should be yours",
+                  "Referrals slow down and revenue gets unpredictable",
+                  "Great work goes unseen because nobody can find you",
+                  "You keep depending on luck instead of something repeatable",
                 ].map((item) => (
                   <div
                     key={item}
@@ -1299,10 +1296,10 @@ export default function HomeClient({ posts }) {
                   Take Action
                 </h3>
                 {[
-                  "Show up when NWA homeowners search for your services",
-                  "Get a steady stream of calls from people ready to hire",
-                  "Build an online reputation that works for you when you're on a job site.",
-                  "Work with someone transparent, hungry, and in your corner",
+                  "Show up when NWA homeowners search for what you do",
+                  "Get calls from people who are ready to hire, not just browse",
+                  "Build a reputation online that works while you're on the job",
+                  "Work with someone who tells you the truth, not what you want to hear",
                 ].map((item) => (
                   <div
                     key={item}

@@ -42,7 +42,7 @@ const services = [
     title: "Local SEO",
     slug: "local-seo",
     tagline: "Rank where your customers are searching",
-    desc: "Full-service local SEO covering everything your business needs to rank — citation building, review management, listing optimization, and on-page SEO. All battle-tested on my own projects before ever being offered as a service.",
+    desc: "Local SEO that actually moves the needle: citations, reviews, listings, on-page work. I tested all of this on my own projects before I started offering it to anyone else.",
     includes: [
       "- Google Business Profile optimization",
       "- Citation & listing cleanup",
@@ -59,7 +59,7 @@ const services = [
     title: "Google Business Profile Optimization",
     slug: "gbp-optimization",
     tagline: "Get into the Map Pack",
-    desc: "Your GBP listing is often the first thing a customer sees. I fully optimize your profile so you stand out from competitors and convert more profile views into calls.",
+    desc: "Your GBP listing is usually the first thing a customer sees. I optimize it so you actually stand out and turn profile views into calls.",
     includes: [
       "- Full profile audit & optimization",
       "- Category & attribute setup",
@@ -75,7 +75,7 @@ const services = [
     title: "Web Design & Development",
     slug: "web-development",
     tagline: "Fast, modern websites built to convert",
-    desc: "Mobile-first websites built with local SEO baked in from day one. I build with modern frameworks not WordPress page builders, because the performance difference matters for rankings.",
+    desc: "Mobile-first websites with SEO built into the structure, not bolted on after. I use modern frameworks instead of WordPress page builders because the speed difference shows up in rankings.",
     includes: [
       "- Custom design & development",
       "- Mobile-first & fast loading",
@@ -91,7 +91,7 @@ const services = [
     title: "Reputation Building",
     slug: "reputation-building",
     tagline: "Build trust that sells for you",
-    desc: "I'll build out your review process — automated follow-up messages, response templates, and monthly tracking — so reviews come in consistently without you thinking about it.",
+    desc: "I set up your review system: follow-up messages, response templates, monthly tracking. Reviews come in steady instead of in random bursts.",
     includes: [
       "- Review generation systems",
       "- Response templates",
@@ -107,7 +107,7 @@ const services = [
     title: "Content & Keywords",
     slug: "content-keywords",
     tagline: "Get found for what customers actually search",
-    desc: "Blog posts and service pages written to rank for searches like 'HVAC contractor Rogers AR' — the exact terms your customers type. No filler, no fluff. Built to show up in NWA.",
+    desc: "Blog posts and service pages written to rank for searches like 'HVAC contractor Rogers AR.' The exact terms your customers type. Built to show up in NWA.",
     includes: [
       "- Keyword research",
       "- Service page copywriting",
@@ -123,7 +123,7 @@ const services = [
     title: "SEO Audits",
     slug: "seo-audits",
     tagline: "Find out exactly why you're not ranking",
-    desc: "A detailed audit of your website and local presence covering technical SEO, content gaps, citation issues, and competitor analysis. You get a clear, actionable report — no fluff.",
+    desc: "A full audit of your website and local presence: technical SEO, content gaps, citation issues, competitor analysis. You get a clear report you can act on.",
     includes: [
       "- Technical SEO analysis",
       "- Local citation audit",
