@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import CTAForm from "@/components/CTAForm";
+import Starfield from "@/components/Starfield";
 
 function useReveal() {
   const ref = useRef(null);
@@ -57,22 +58,26 @@ export default function ContactClient() {
       <style>{`
         .reveal {
           opacity: 0;
-          transform: translateY(40px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
+          transform: translateY(30px);
+          filter: blur(4px);
+          transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
         }
-        .reveal.revealed { opacity: 1; transform: translateY(0); }
+        .reveal.revealed { opacity: 1; transform: translateY(0); filter: blur(0); }
         .contact-card {
-          background-color: var(--surface);
-          border: 1px solid var(--duke);
-          border-radius: 10px;
+          background: rgba(13,17,23,0.7);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(123,175,212,0.1);
+          border-radius: 12px;
           padding: 1.5rem;
           text-decoration: none;
           display: block;
-          transition: border-color 0.3s, transform 0.3s;
+          transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
         }
         .contact-card:hover {
-          border-color: var(--carolina);
+          border-color: rgba(123,175,212,0.3);
           transform: translateY(-3px);
+          box-shadow: 0 0 20px rgba(123,175,212,0.1);
         }
         input::placeholder, textarea::placeholder {
           color: #555;
@@ -87,18 +92,18 @@ export default function ContactClient() {
       {/* Hero */}
       <section className="hero-section" style={{
         padding: "12rem 8rem 10rem",
-        borderBottom: "1px solid var(--duke)",
+        borderBottom: "1px solid var(--border)",
         position: "relative",
         overflow: "hidden",
       }}>
+        <Starfield />
         <div style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: `
-            linear-gradient(rgba(123,175,212,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(123,175,212,0.06) 1px, transparent 1px)
+            backgroundImage: `
+            radial-gradient(circle, rgba(123,175,212,0.06) 1px, transparent 1px)
           `,
-          backgroundSize: "40px 40px",
+          backgroundSize: "32px 32px",
           maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
           WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
           pointerEvents: "none",
@@ -115,7 +120,7 @@ export default function ContactClient() {
           pointerEvents: "none",
         }} />
         <div style={{ maxWidth: "700px", position: "relative" }}>
-          <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1.5rem" }}>
+          <p className="eyebrow">
             Let's Talk
           </p>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: "800", lineHeight: 1.1, marginBottom: "1.5rem" }}>
@@ -134,7 +139,7 @@ export default function ContactClient() {
           {/* Left — contact methods */}
           <div>
             <Reveal>
-              <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1.5rem" }}>
+              <p className="eyebrow">
                 Reach Out Directly
               </p>
             </Reveal>
@@ -147,7 +152,7 @@ export default function ContactClient() {
         className="contact-card"
         {...(method.external && { target: "_blank", rel: "noopener noreferrer" })}
       >
-        <p style={{ color: "var(--carolina)", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: "bold", marginBottom: "0.4rem" }}>
+        <p style={{ color: "var(--carolina)", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: "bold", marginBottom: "0.4rem", fontFamily: "var(--font-mono)" }}>
           {method.label}
         </p>
         <p style={{ color: "var(--text)", fontWeight: "600", marginBottom: "0.4rem", fontSize: "0.95rem" }}>
@@ -166,13 +171,13 @@ export default function ContactClient() {
     <Reveal delay={250}>
       <div style={{
       backgroundColor: "var(--surface)",
-      border: "1px solid var(--duke)",
+      border: "1px solid var(--border)",
       borderRadius: "10px",
       padding: "1.5rem",
       marginTop: "1rem",
       marginBottom: "1rem",
     }}>
-        <p style={{ color: "var(--carolina)", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: "bold", marginBottom: "1rem" }}>
+        <p style={{ color: "var(--carolina)", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: "bold", marginBottom: "1rem", fontFamily: "var(--font-mono)" }}>
       Business Hours
         </p>
     {[
@@ -186,7 +191,7 @@ export default function ContactClient() {
         alignItems: "center",
         paddingBottom: "0.6rem",
         marginBottom: "0.6rem",
-        borderBottom: "1px solid var(--duke)",
+        borderBottom: "1px solid var(--border)",
       }}>
         <span style={{ color: "var(--muted)", fontSize: "0.875rem" }}>{item.days}</span>
         <span style={{ color: "var(--text)", fontSize: "0.875rem", fontWeight: "600" }}>{item.hours}</span>
@@ -202,7 +207,7 @@ export default function ContactClient() {
               <div style={{
                 marginTop: "2rem",
                 backgroundColor: "var(--surface)",
-                border: "1px solid var(--duke)",
+                border: "1px solid var(--border)",
                 borderLeft: "3px solid var(--carolina)",
                 borderRadius: "0 8px 8px 0",
                 padding: "1.25rem",
@@ -219,7 +224,7 @@ export default function ContactClient() {
 
           {/* Right — form */}
           <Reveal delay={150}>
-            <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1.5rem" }}>
+            <p className="eyebrow">
               Send a Message
             </p>
             <CTAForm action="https://formspree.io/f/mkoqvkzr" />
@@ -228,10 +233,10 @@ export default function ContactClient() {
       </section>
 
       {/* Map */}
-<section style={{ borderTop: "1px solid var(--duke)" }}>
+<section style={{ borderTop: "1px solid var(--border)" }}>
   <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "4rem 2rem 0" }}>
     <Reveal>
-      <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "0.75rem" }}>
+      <p className="eyebrow" style={{ marginBottom: "0.75rem" }}>
         Where We're Based
       </p>
       <h2 style={{ fontSize: "clamp(1.25rem, 2vw, 1.75rem)", fontWeight: "800", marginBottom: "0.75rem" }}>

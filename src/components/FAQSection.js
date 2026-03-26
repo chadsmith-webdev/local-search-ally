@@ -10,9 +10,9 @@ export default function FAQSection({ limit = null }) {
     <>
       <style>{`
         .faq-item {
-          border-bottom: 1px solid var(--duke);
+          border-bottom: 1px solid var(--border);
         }
-        .faq-item:first-child { border-top: 1px solid var(--duke); }
+        .faq-item:first-child { border-top: 1px solid var(--border); }
         .faq-trigger {
           width: 100%;
           background: none;
@@ -26,7 +26,7 @@ export default function FAQSection({ limit = null }) {
           text-align: left;
         }
         .faq-question {
-          font-family: var(--font-display, serif);
+          font-family: var(--font-display);
           font-size: 1rem;
           font-weight: 700;
           color: var(--text);
@@ -39,7 +39,7 @@ export default function FAQSection({ limit = null }) {
           width: 24px;
           height: 24px;
           border-radius: 50%;
-          border: 1px solid var(--duke);
+          border: 1px solid var(--border);
           display: flex;
           align-items: center;
           justify-content: center;

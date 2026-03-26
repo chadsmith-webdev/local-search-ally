@@ -23,11 +23,13 @@ export default function CTAForm({ action = "https://formspree.io/f/mkoqvkzr" }) 
       <div style={{
         maxWidth: "560px",
         margin: "0 auto",
-        backgroundColor: "var(--surface)",
+        backgroundColor: "rgba(13,17,23,0.7)",
         border: "1px solid var(--carolina)",
-        borderRadius: "10px",
+        borderRadius: "12px",
         padding: "3rem 2rem",
         textAlign: "center",
+        backdropFilter: "blur(12px)",
+        boxShadow: "0 0 20px rgba(123,175,212,0.1)",
       }}>
         <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>✓</div>
         <h3 style={{ color: "var(--carolina)", marginBottom: "0.75rem", fontSize: "1.25rem" }}>
@@ -51,9 +53,10 @@ export default function CTAForm({ action = "https://formspree.io/f/mkoqvkzr" }) 
           { name: "business", placeholder: "Business Name", type: "text" },
         ].map((field) => (
           <input key={field.name} type={field.type} name={field.name} placeholder={field.placeholder} required style={{
-            backgroundColor: "var(--surface)", border: "1px solid var(--duke)", borderRadius: "6px",
+            backgroundColor: "rgba(13,17,23,0.7)", border: "1px solid var(--border)", borderRadius: "8px",
             padding: "0.85rem 1rem", color: "var(--text)", fontSize: "0.95rem", outline: "none",
-            width: "100%", boxSizing: "border-box", fontFamily: "var(--font-body, sans-serif)",
+            width: "100%", boxSizing: "border-box", fontFamily: "var(--font-body)",
+            backdropFilter: "blur(8px)",
           }} />
         ))}
       </div>
@@ -63,22 +66,24 @@ export default function CTAForm({ action = "https://formspree.io/f/mkoqvkzr" }) 
           { name: "email", placeholder: "Email Address", type: "email" },
         ].map((field) => (
           <input key={field.name} type={field.type} name={field.name} placeholder={field.placeholder} required style={{
-            backgroundColor: "var(--surface)", border: "1px solid var(--duke)", borderRadius: "6px",
+            backgroundColor: "var(--surface)", border: "1px solid var(--border)", borderRadius: "6px",
             padding: "0.85rem 1rem", color: "var(--text)", fontSize: "0.95rem", outline: "none",
-            width: "100%", boxSizing: "border-box", fontFamily: "var(--font-body, sans-serif)",
+            width: "100%", boxSizing: "border-box", fontFamily: "var(--font-body)",
           }} />
         ))}
       </div>
       <textarea name="challenge" placeholder="What's your biggest challenge right now?" rows={4} required style={{
-        backgroundColor: "var(--surface)", border: "1px solid var(--duke)", borderRadius: "6px",
+        backgroundColor: "rgba(13,17,23,0.7)", border: "1px solid var(--border)", borderRadius: "8px",
         padding: "0.85rem 1rem", color: "var(--text)", fontSize: "0.95rem", outline: "none",
-        width: "100%", boxSizing: "border-box", resize: "vertical", fontFamily: "var(--font-body, sans-serif)",
+        width: "100%", boxSizing: "border-box", resize: "vertical", fontFamily: "var(--font-body)",
+        backdropFilter: "blur(8px)",
       }} />
-      <button type="submit" disabled={submitting} style={{
-        backgroundColor: "var(--carolina)", color: "#000", padding: "1rem", borderRadius: "6px",
-        fontWeight: "bold", border: "none", cursor: submitting ? "not-allowed" : "pointer",
-        fontSize: "1rem", fontFamily: "var(--font-body, sans-serif)",
-        opacity: submitting ? 0.7 : 1, transition: "opacity 0.2s",
+      <button type="submit" disabled={submitting} className="btn-glow" style={{
+        padding: "1rem",
+        width: "100%",
+        fontSize: "1rem",
+        cursor: submitting ? "not-allowed" : "pointer",
+        opacity: submitting ? 0.7 : 1,
       }}>
         {submitting ? "Sending..." : "Let's Talk — It's Free"}
       </button>

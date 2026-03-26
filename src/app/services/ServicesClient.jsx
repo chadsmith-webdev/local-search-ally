@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import CTAForm from "@/components/CTAForm";
+import Starfield from "@/components/Starfield";
 
 function useReveal() {
   const ref = useRef(null);
@@ -143,41 +144,43 @@ export default function Services() {
       <style>{`
         .reveal {
           opacity: 0;
-          transform: translateY(40px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
+          transform: translateY(30px);
+          filter: blur(4px);
+          transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
         }
-        .reveal.revealed { opacity: 1; transform: translateY(0); }
+        .reveal.revealed { opacity: 1; transform: translateY(0); filter: blur(0); }
         .btn-primary {
-          background-color: var(--carolina);
-          color: #000;
+          background: linear-gradient(135deg, #7bafd4, #012169);
+          color: #fff;
           padding: 0.75rem 1.5rem;
-          border-radius: 6px;
-          font-weight: bold;
+          border-radius: 8px;
+          font-weight: 700;
           text-decoration: none;
           display: inline-block;
-          transition: opacity 0.2s;
-          font-family: var(--font-body, sans-serif);
+          transition: transform 0.15s, box-shadow 0.25s;
+          font-family: var(--font-body);
           font-size: 0.875rem;
+          box-shadow: 0 0 8px rgba(123,175,212,0.15);
         }
-        .btn-primary:hover { opacity: 0.85; }
+        .btn-primary:hover { transform: scale(0.98); box-shadow: 0 0 24px rgba(123,175,212,0.3); }
         .btn-outline {
-          border: 1px solid var(--carolina);
+          border: 1px solid rgba(123,175,212,0.3);
           color: var(--carolina);
           padding: 0.75rem 1.5rem;
-          border-radius: 6px;
-          font-weight: bold;
+          border-radius: 8px;
+          font-weight: 700;
           text-decoration: none;
           display: inline-block;
-          transition: background-color 0.2s;
-          font-family: var(--font-body, sans-serif);
+          transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
+          font-family: var(--font-body);
           font-size: 0.875rem;
         }
-        .btn-outline:hover { background-color: rgba(123,175,212,0.1); }
+        .btn-outline:hover { background-color: rgba(123,175,212,0.08); border-color: var(--carolina); box-shadow: 0 0 12px rgba(123,175,212,0.1); }
         .accordion-item {
-          border-bottom: 1px solid var(--duke);
+          border-bottom: 1px solid var(--border);
           transition: background-color 0.2s;
         }
-        .accordion-item:first-child { border-top: 1px solid var(--duke); }
+        .accordion-item:first-child { border-top: 1px solid var(--border); }
         .accordion-trigger {
           width: 100%;
           background: none;
@@ -190,13 +193,13 @@ export default function Services() {
           gap: 1rem;
           text-align: left;
         }
-        .accordion-trigger:hover .accordion-title { color: var(--carolina); }
+        .accordion-trigger:hover .accordion-title { color: var(--carolina); text-shadow: 0 0 12px rgba(123,175,212,0.3); }
         .accordion-title {
-          font-family: var(--font-display, serif);
+          font-family: var(--font-display);
           font-size: clamp(1.1rem, 2vw, 1.35rem);
           font-weight: 700;
           color: var(--text);
-          transition: color 0.2s;
+          transition: color 0.2s, text-shadow 0.2s;
           margin: 0;
         }
         .accordion-tagline {
@@ -208,14 +211,14 @@ export default function Services() {
           width: 28px;
           height: 28px;
           border-radius: 50%;
-          border: 1px solid var(--duke);
+          border: 1px solid var(--border);
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
           color: var(--carolina);
           font-size: 1.1rem;
-          transition: transform 0.3s, border-color 0.2s;
+          transition: transform 0.3s, border-color 0.2s, box-shadow 0.2s;
         }
         .accordion-content {
           overflow: hidden;
@@ -241,20 +244,20 @@ export default function Services() {
         className='hero-section'
         style={{
           padding: "12rem 8rem 10rem",
-          borderBottom: "1px solid var(--duke)",
+          borderBottom: "1px solid var(--border)",
           position: "relative",
           overflow: "hidden",
         }}
       >
+        <Starfield />
         <div
           style={{
             position: "absolute",
             inset: 0,
             backgroundImage: `
-            linear-gradient(rgba(123,175,212,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(123,175,212,0.06) 1px, transparent 1px)
+            radial-gradient(circle, rgba(123,175,212,0.06) 1px, transparent 1px)
           `,
-            backgroundSize: "40px 40px",
+            backgroundSize: "32px 32px",
             maskImage:
               "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
             WebkitMaskImage:
@@ -277,16 +280,7 @@ export default function Services() {
           }}
         />
         <div style={{ maxWidth: "700px", position: "relative" }}>
-          <p
-            style={{
-              color: "var(--carolina)",
-              fontWeight: "bold",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              fontSize: "0.8rem",
-              marginBottom: "1.5rem",
-            }}
-          >
+          <p className='eyebrow'>
             Services
           </p>
           <h1
@@ -357,8 +351,9 @@ export default function Services() {
                     className='accordion-icon'
                     style={{
                       borderColor:
-                        open === i ? "var(--carolina)" : "var(--duke)",
+                        open === i ? "var(--carolina)" : "var(--border)",
                       transform: open === i ? "rotate(45deg)" : "none",
+                      boxShadow: open === i ? "0 0 10px rgba(123,175,212,0.3)" : "none",
                     }}
                   >
                     +
@@ -410,7 +405,7 @@ export default function Services() {
                             key={tag}
                             style={{
                               backgroundColor: "rgba(1,33,105,0.4)",
-                              border: "1px solid var(--duke)",
+                              border: "1px solid var(--border)",
                               color: "var(--muted)",
                               fontSize: "0.7rem",
                               padding: "0.2rem 0.65rem",
@@ -426,11 +421,13 @@ export default function Services() {
                     {/* Right — pricing + CTA */}
                     <div
                       style={{
-                        backgroundColor: "var(--surface)",
-                        border: "1px solid var(--duke)",
+                        backgroundColor: "rgba(13,17,23,0.7)",
+                        border: "1px solid var(--border)",
                         borderLeft: "4px solid var(--carolina)",
-                        borderRadius: "0 8px 8px 0",
+                        borderRadius: "0 10px 10px 0",
                         padding: "1.5rem",
+                        backdropFilter: "blur(12px)",
+                        boxShadow: "inset 4px 0 12px rgba(123,175,212,0.05)",
                       }}
                     >
                       <p
@@ -485,23 +482,14 @@ export default function Services() {
       <section
         id='faq'
         style={{
-          borderTop: "1px solid var(--duke)",
+          borderTop: "1px solid var(--border)",
           padding: "5rem 2rem",
           maxWidth: "900px",
           margin: "0 auto",
         }}
       >
         <Reveal style={{ marginBottom: "3rem" }}>
-          <p
-            style={{
-              color: "var(--carolina)",
-              fontWeight: "bold",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              fontSize: "0.8rem",
-              marginBottom: "1rem",
-            }}
-          >
+          <p className='eyebrow'>
             FAQ
           </p>
           <h2
@@ -531,7 +519,7 @@ export default function Services() {
       {/* Bottom CTA Form */}
       <section
         style={{
-          borderTop: "1px solid var(--duke)",
+          borderTop: "1px solid var(--border)",
           padding: "6rem 2rem",
           textAlign: "center",
           background:

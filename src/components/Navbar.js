@@ -44,17 +44,19 @@ export default function Navbar() {
     <>
       <nav
         style={{
-          backgroundColor: scrolled ? "rgba(10,10,10,0.95)" : "var(--surface)",
-          borderBottom: "1px solid var(--duke)",
-          padding: "1rem 8rem",
+          backgroundColor: scrolled ? "rgba(6,8,12,0.85)" : "rgba(13,17,23,0.6)",
+          borderBottom: `1px solid ${scrolled ? "var(--border-hover)" : "var(--border)"}`,
+          padding: "0.85rem 8rem",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           position: "sticky",
           top: 0,
           zIndex: 100,
-          backdropFilter: scrolled ? "blur(10px)" : "none",
-          transition: "background-color 0.3s",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          transition: "background-color 0.3s, border-color 0.3s, box-shadow 0.3s",
+          boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.3)" : "none",
         }}
       >
         {/* Logo */}
@@ -84,23 +86,37 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   style={{
-                    color: isActive ? "var(--carolina)" : "var(--text)",
+                    color: isActive ? "var(--carolina)" : "var(--muted)",
                     textDecoration: "none",
-                    fontSize: "0.95rem",
-                    borderBottom: isActive
-                      ? "2px solid var(--carolina)"
-                      : "2px solid transparent",
-                    paddingBottom: "4px",
-                    transition: "color 0.2s, border-color 0.2s",
+                    fontSize: "0.9rem",
+                    fontWeight: isActive ? "600" : "400",
+                    fontFamily: "var(--font-body)",
+                    letterSpacing: "0.01em",
+                    padding: "0.4rem 0",
+                    position: "relative",
+                    transition: "color 0.2s",
                   }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.color = "var(--carolina)")
                   }
                   onMouseLeave={(e) => {
-                    if (!isActive) e.currentTarget.style.color = "var(--text)";
+                    if (!isActive) e.currentTarget.style.color = "var(--muted)";
                   }}
                 >
                   {link.label}
+                  {isActive && (
+                    <span style={{
+                      position: "absolute",
+                      bottom: "-2px",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      width: "20px",
+                      height: "2px",
+                      background: "var(--carolina)",
+                      borderRadius: "1px",
+                      boxShadow: "0 0 8px rgba(123,175,212,0.5)",
+                    }} />
+                  )}
                 </Link>
               </li>
             );
@@ -116,36 +132,37 @@ export default function Navbar() {
               style={{
                 color: pathname.startsWith("/locations")
                   ? "var(--carolina)"
-                  : "var(--text)",
+                  : "var(--muted)",
                 textDecoration: "none",
-                fontSize: "0.95rem",
-                borderBottom: pathname.startsWith("/locations")
-                  ? "2px solid var(--carolina)"
-                  : "2px solid transparent",
-                paddingBottom: "4px",
+                fontSize: "0.9rem",
+                fontFamily: "var(--font-body)",
+                fontWeight: pathname.startsWith("/locations") ? "600" : "400",
+                padding: "0.4rem 0",
                 transition: "color 0.2s",
                 display: "flex",
                 alignItems: "center",
                 gap: "0.3rem",
               }}
             >
-              Areas <span style={{ fontSize: "0.7rem", opacity: 0.7 }}>▾</span>
+              Areas <span style={{ fontSize: "0.65rem", opacity: 0.5 }}>▾</span>
             </Link>
             {locationsOpen && (
               <div
                 style={{
                   position: "absolute",
-                  top: "100%",
+                  top: "calc(100% + 8px)",
                   left: "50%",
                   transform: "translateX(-50%)",
-                  backgroundColor: "var(--surface)",
-                  border: "1px solid var(--duke)",
-                  borderRadius: "8px",
+                  backgroundColor: "rgba(13,17,23,0.95)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid var(--border-hover)",
+                  borderRadius: "10px",
                   padding: "0.5rem",
-                  minWidth: "180px",
+                  minWidth: "200px",
                   zIndex: 200,
-                  paddingTop: "1rem",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+                  paddingTop: "0.75rem",
+                  boxShadow: "0 12px 40px rgba(0,0,0,0.5), 0 0 20px rgba(123,175,212,0.05)",
                 }}
               >
                 {locationLinks.map((loc) => (
@@ -157,13 +174,14 @@ export default function Navbar() {
                       padding: "0.6rem 1rem",
                       color: "var(--muted)",
                       textDecoration: "none",
-                      fontSize: "0.875rem",
+                      fontSize: "0.85rem",
+                      fontFamily: "var(--font-body)",
                       borderRadius: "6px",
                       transition: "background-color 0.2s, color 0.2s",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor =
-                        "rgba(123,175,212,0.1)";
+                        "rgba(123,175,212,0.08)";
                       e.currentTarget.style.color = "var(--carolina)";
                     }}
                     onMouseLeave={(e) => {
@@ -176,7 +194,7 @@ export default function Navbar() {
                 ))}
                 <div
                   style={{
-                    borderTop: "1px solid var(--duke)",
+                    borderTop: "1px solid var(--border)",
                     margin: "0.5rem 0",
                   }}
                 />
@@ -187,14 +205,15 @@ export default function Navbar() {
                     padding: "0.6rem 1rem",
                     color: "var(--carolina)",
                     textDecoration: "none",
-                    fontSize: "0.875rem",
-                    fontWeight: "bold",
+                    fontSize: "0.85rem",
+                    fontWeight: "600",
+                    fontFamily: "var(--font-body)",
                     borderRadius: "6px",
                     transition: "background-color 0.2s",
                   }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.backgroundColor =
-                      "rgba(123,175,212,0.1)")
+                      "rgba(123,175,212,0.08)")
                   }
                   onMouseLeave={(e) =>
                     (e.currentTarget.style.backgroundColor = "transparent")
@@ -215,6 +234,7 @@ export default function Navbar() {
             color: "var(--muted)",
             textDecoration: "none",
             fontSize: "0.85rem",
+            fontFamily: "var(--font-mono)",
             display: "flex",
             alignItems: "center",
             gap: "0.4rem",
@@ -226,8 +246,8 @@ export default function Navbar() {
           onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
         >
           <svg
-            width='18'
-            height='18'
+            width='16'
+            height='16'
             fill='currentColor'
             viewBox='0 0 24 24'
             style={{ color: "var(--carolina)" }}
@@ -239,16 +259,10 @@ export default function Navbar() {
 
         <Link
           href='/contact'
-          className='nav-cta desktop-nav'
+          className='btn-glow desktop-nav'
           style={{
-            backgroundColor: "var(--carolina)",
-            color: "#000",
             padding: "0.6rem 1.25rem",
-            borderRadius: "6px",
-            fontWeight: "bold",
-            textDecoration: "none",
-            fontSize: "0.875rem",
-            transition: "opacity 0.2s",
+            fontSize: "0.85rem",
           }}
         >
           Let's Talk
@@ -305,13 +319,14 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile drawer */}
+      {/* Mobile backdrop */}
       <div
         style={{
           position: "fixed",
           inset: 0,
           zIndex: 99,
-          backgroundColor: "rgba(0,0,0,0.5)",
+          backgroundColor: "rgba(0,0,0,0.6)",
+          backdropFilter: "blur(4px)",
           opacity: open ? 1 : 0,
           pointerEvents: open ? "all" : "none",
           transition: "opacity 0.3s",
@@ -319,22 +334,25 @@ export default function Navbar() {
         onClick={() => setOpen(false)}
       />
 
+      {/* Mobile drawer */}
       <div
         style={{
           position: "fixed",
           top: 0,
           right: 0,
           bottom: 0,
-          width: "280px",
-          backgroundColor: "var(--surface)",
-          borderLeft: "1px solid var(--duke)",
+          width: "300px",
+          backgroundColor: "rgba(13,17,23,0.95)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          borderLeft: "1px solid var(--border-hover)",
           zIndex: 100,
           padding: "5rem 2rem 2rem",
           transform: open ? "translateX(0)" : "translateX(100%)",
           transition: "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
           display: "flex",
           flexDirection: "column",
-          gap: "0.5rem",
+          gap: "0.25rem",
         }}
       >
         {links.map((link, i) => {
@@ -347,15 +365,15 @@ export default function Navbar() {
               style={{
                 color: isActive ? "var(--carolina)" : "var(--text)",
                 textDecoration: "none",
-                fontSize: "1.25rem",
+                fontSize: "1.15rem",
                 fontWeight: "600",
-                padding: "0.75rem 0",
-                borderBottom: "1px solid var(--duke)",
-                transition: "color 0.2s",
+                fontFamily: "var(--font-body)",
+                padding: "0.85rem 0",
+                borderBottom: "1px solid var(--border)",
+                transition: "color 0.2s, opacity 0.3s, transform 0.3s",
                 opacity: open ? 1 : 0,
                 transform: open ? "translateX(0)" : "translateX(20px)",
-                transitionDelay: `${i * 60}ms`,
-                fontFamily: "var(--font-body)",
+                transitionDelay: `${i * 50}ms`,
               }}
             >
               {link.label}
@@ -371,15 +389,15 @@ export default function Navbar() {
               ? "var(--carolina)"
               : "var(--text)",
             textDecoration: "none",
-            fontSize: "1.25rem",
+            fontSize: "1.15rem",
             fontWeight: "600",
-            padding: "0.75rem 0",
-            borderBottom: "1px solid var(--duke)",
-            transition: "color 0.2s",
+            fontFamily: "var(--font-body)",
+            padding: "0.85rem 0",
+            borderBottom: "1px solid var(--border)",
+            transition: "color 0.2s, opacity 0.3s, transform 0.3s",
             opacity: open ? 1 : 0,
             transform: open ? "translateX(0)" : "translateX(20px)",
-            transitionDelay: `${links.length * 60}ms`,
-            fontFamily: "var(--font-body)",
+            transitionDelay: `${links.length * 50}ms`,
           }}
         >
           Service Areas
@@ -391,16 +409,17 @@ export default function Navbar() {
           style={{
             color: "var(--muted)",
             textDecoration: "none",
-            fontSize: "1.1rem",
+            fontSize: "1rem",
             fontWeight: "600",
-            padding: "0.75rem 0",
-            borderBottom: "1px solid var(--duke)",
+            fontFamily: "var(--font-mono)",
+            padding: "0.85rem 0",
+            borderBottom: "1px solid var(--border)",
             display: "flex",
             alignItems: "center",
             gap: "0.75rem",
             opacity: open ? 1 : 0,
             transform: open ? "translateX(0)" : "translateX(20px)",
-            transitionDelay: `${links.length * 60 + 60}ms`,
+            transitionDelay: `${links.length * 50 + 50}ms`,
             transition: "opacity 0.3s, transform 0.3s, color 0.2s",
           }}
         >
@@ -418,19 +437,14 @@ export default function Navbar() {
         <Link
           href='/contact'
           onClick={() => setOpen(false)}
+          className="btn-glow"
           style={{
-            backgroundColor: "var(--carolina)",
-            color: "#000",
-            padding: "1rem",
-            borderRadius: "6px",
-            fontWeight: "bold",
-            textDecoration: "none",
-            textAlign: "center",
             marginTop: "1.5rem",
+            textAlign: "center",
             fontSize: "1rem",
             opacity: open ? 1 : 0,
             transform: open ? "translateX(0)" : "translateX(20px)",
-            transitionDelay: `${links.length * 60}ms`,
+            transitionDelay: `${links.length * 50 + 100}ms`,
             transition: "opacity 0.3s, transform 0.3s",
           }}
         >
@@ -442,7 +456,7 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .hamburger { display: flex !important; }
-          .mobile-padding { padding: 1rem 1.5rem !important; }
+          nav { padding: 0.85rem 1.5rem !important; }
         }
       `}</style>
     </>

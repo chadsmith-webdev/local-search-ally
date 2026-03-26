@@ -84,7 +84,7 @@ function handleFilter(value) {
         .reveal.revealed { opacity: 1; transform: translateY(0); }
         .portfolio-card {
           background-color: var(--surface);
-          border: 1px solid var(--duke);
+          border: 1px solid var(--border);
           border-radius: 10px;
           padding: 2rem;
           display: flex;
@@ -95,7 +95,7 @@ function handleFilter(value) {
         .portfolio-card:hover { border-color: var(--carolina); transform: translateY(-4px); }
         .filter-btn {
           background: none;
-          border: 1px solid var(--duke);
+          border: 1px solid var(--border);
           color: var(--muted);
           padding: 0.5rem 1.25rem;
           border-radius: 100px;
@@ -115,7 +115,7 @@ function handleFilter(value) {
       {/* Hero */}
       <section className="hero-section" style={{
         padding: "12rem 8rem 10rem",
-        borderBottom: "1px solid var(--duke)",
+        borderBottom: "1px solid var(--border)",
         position: "relative",
         overflow: "hidden",
       }}>
@@ -179,7 +179,7 @@ function handleFilter(value) {
           {filtered.map((project, i) => (
             <Reveal key={project.title} delay={i * 80}>
               <div className="portfolio-card" style={{
-                borderTop: project.live ? "3px solid var(--carolina)" : "1px solid var(--duke)",
+                borderTop: project.live ? "3px solid var(--carolina)" : "1px solid var(--border)",
                 opacity: project.live ? 1 : 0.7,
               }}>
                 <div style={{ flex: 1 }}>
@@ -212,7 +212,7 @@ function handleFilter(value) {
                     {project.tags.map((tag) => (
                       <span key={tag} style={{
                         backgroundColor: "rgba(1,33,105,0.4)",
-                        border: "1px solid var(--duke)",
+                        border: "1px solid var(--border)",
                         color: "var(--muted)",
                         fontSize: "0.7rem",
                         padding: "0.2rem 0.65rem",
@@ -223,7 +223,7 @@ function handleFilter(value) {
                     ))}
                   </div>
                 </div>
-                <div style={{ borderTop: "1px solid var(--duke)", paddingTop: "1.25rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div style={{ borderTop: "1px solid var(--border)", paddingTop: "1.25rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <p style={{ color: project.live ? "var(--carolina)" : "var(--muted)", fontSize: "0.85rem", fontWeight: "600", margin: 0 }}>
                     {project.result}
                   </p>
@@ -246,7 +246,7 @@ function handleFilter(value) {
 
       {/* CTA */}
       <section style={{
-        borderTop: "1px solid var(--duke)",
+        borderTop: "1px solid var(--border)",
         padding: "5rem 2rem",
         textAlign: "center",
         background: "radial-gradient(ellipse at 50% 100%, rgba(1,33,105,0.3) 0%, transparent 70%)",

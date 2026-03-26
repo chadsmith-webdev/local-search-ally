@@ -106,7 +106,7 @@ export default function About() {
         className='hero-section'
         style={{
           padding: "12rem 8rem 10rem",
-          borderBottom: "1px solid var(--duke)",
+          borderBottom: "1px solid var(--border)",
           position: "relative",
           overflow: "hidden",
         }}
@@ -200,7 +200,7 @@ export default function About() {
               style={{
                 borderRadius: "10px",
                 overflow: "hidden",
-                border: "1px solid var(--duke)",
+                border: "1px solid var(--border)",
               }}
             >
               <Image
@@ -280,7 +280,7 @@ export default function About() {
                   key={item.value}
                   style={{
                     backgroundColor: "var(--surface)",
-                    border: "1px solid var(--duke)",
+                    border: "1px solid var(--border)",
                     borderRadius: "8px",
                     padding: "0.75rem 1rem",
                     display: "flex",
@@ -371,7 +371,7 @@ export default function About() {
 
       {/* Journey Timeline */}
       <section
-        style={{ borderTop: "1px solid var(--duke)", padding: "5rem 2rem" }}
+        style={{ borderTop: "1px solid var(--border)", padding: "5rem 2rem" }}
       >
         <div
           className='two-col'
@@ -522,7 +522,7 @@ export default function About() {
       {/* CTA */}
       <section
         style={{
-          borderTop: "1px solid var(--duke)",
+          borderTop: "1px solid var(--border)",
           padding: "5rem 2rem",
           textAlign: "center",
           background:

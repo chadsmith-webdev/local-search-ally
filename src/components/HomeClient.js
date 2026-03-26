@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import FAQSection from "./FAQSection";
 import CTAForm from "./CTAForm";
+import Starfield from "./Starfield";
 import {
   IconInvisible,
   IconNoWebsite,
@@ -77,6 +78,7 @@ function StatNumber({ stat }) {
         color: "var(--carolina)",
         marginBottom: "1rem",
         fontFamily: "var(--font-display)",
+        textShadow: "0 0 20px rgba(123,175,212,0.4)",
       }}
     >
       {count}%
@@ -108,66 +110,76 @@ export default function HomeClient({ posts }) {
       <style>{`
         @keyframes gridMove {
           0% { transform: translate(0, 0); }
-          100% { transform: translate(40px, 40px); }
+          100% { transform: translate(32px, 32px); }
         }
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
+          50% { transform: translateY(-16px); }
         }
         @keyframes glow {
-          0%, 100% { opacity: 0.5; }
-          50% { opacity: 1; }
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 0.8; }
         }
         @keyframes fadeUp {
-          0% { opacity: 0; transform: translateY(20px); }
-          100% { opacity: 1; transform: translateY(0); }
+          0% { opacity: 0; transform: translateY(24px); filter: blur(4px); }
+          100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        @keyframes pulseGlow {
+          0%, 100% { box-shadow: 0 0 8px rgba(123,175,212,0.15); }
+          50% { box-shadow: 0 0 24px rgba(123,175,212,0.3); }
         }
         .h1 { animation: fadeUp 0.8s ease-out forwards; }
         .h2 { animation: fadeUp 0.8s ease-out 0.2s forwards; opacity: 0; }
         .h3 { animation: fadeUp 0.8s ease-out 0.4s forwards; opacity: 0; }
         .reveal {
           opacity: 0;
-          transform: translateY(40px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
+          transform: translateY(30px);
+          filter: blur(4px);
+          transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
         }
-        .reveal.revealed { opacity: 1; transform: translateY(0); }
+        .reveal.revealed { opacity: 1; transform: translateY(0); filter: blur(0); }
         .btn-primary {
-          background-color: var(--carolina);
-          color: #000;
+          background: linear-gradient(135deg, #7bafd4, #012169);
+          color: #fff;
           padding: 0.9rem 2rem;
-          border-radius: 6px;
-          font-weight: bold;
+          border-radius: 8px;
+          font-weight: 700;
+          font-family: var(--font-body);
           text-decoration: none;
           display: inline-block;
-          transition: opacity 0.2s, transform 0.2s;
+          transition: transform 0.15s, box-shadow 0.25s;
+          box-shadow: 0 0 8px rgba(123,175,212,0.15);
         }
-        .btn-primary:hover { opacity: 0.85; transform: scale(0.98); }
+        .btn-primary:hover { transform: scale(0.98); box-shadow: 0 0 24px rgba(123,175,212,0.3); }
         .btn-outline {
-          border: 1px solid var(--carolina);
+          border: 1px solid rgba(123,175,212,0.3);
           color: var(--carolina);
           padding: 0.9rem 2rem;
-          border-radius: 6px;
-          font-weight: bold;
+          border-radius: 8px;
+          font-weight: 700;
+          font-family: var(--font-body);
           text-decoration: none;
           display: inline-block;
-          transition: background-color 0.2s, transform 0.2s;
+          transition: background-color 0.25s, border-color 0.25s, transform 0.15s, box-shadow 0.25s;
         }
-        .btn-outline:hover { background-color: rgba(123,175,212,0.1); transform: scale(0.98); }
+        .btn-outline:hover { background-color: rgba(123,175,212,0.08); border-color: var(--carolina); transform: scale(0.98); box-shadow: 0 0 12px rgba(123,175,212,0.1); }
         .card {
-          background-color: var(--surface);
-          border: 1px solid var(--duke);
-          border-radius: 10px;
+          background: rgba(13,17,23,0.7);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(123,175,212,0.1);
+          border-radius: 12px;
           padding: 2rem;
-          transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+          transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
           height: 100%;
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
         }
-        .card:hover { border-color: var(--carolina); transform: translateY(-4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 12px rgba(1,33,105,0.2); }
+        .card:hover { border-color: rgba(123,175,212,0.3); transform: translateY(-4px); box-shadow: 0 0 20px rgba(123,175,212,0.1), inset 0 1px 0 rgba(255,255,255,0.06); }
         .timeline-item {
           position: relative;
           padding-left: 2rem;
           padding-bottom: 2.5rem;
-          border-left: 2px solid var(--duke);
+          border-left: 2px solid rgba(123,175,212,0.15);
         }
         .timeline-item:last-child { border-left: 2px solid transparent; padding-bottom: 0; }
         .timeline-dot {
@@ -178,26 +190,32 @@ export default function HomeClient({ posts }) {
           height: 10px;
           border-radius: 50%;
           background-color: var(--carolina);
+          box-shadow: 0 0 10px rgba(123,175,212,0.5);
+          animation: pulseGlow 2s ease-in-out infinite;
         }
         .blog-card {
-          background-color: var(--surface);
-          border: 1px solid var(--duke);
-          border-radius: 10px;
+          background: rgba(13,17,23,0.7);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(123,175,212,0.1);
+          border-radius: 12px;
           padding: 2rem;
           text-decoration: none;
           display: block;
-          transition: border-color 0.3s, transform 0.3s;
+          transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
         }
-        .blog-card:hover { border-color: var(--carolina); transform: translateY(-4px); }
+        .blog-card:hover { border-color: rgba(123,175,212,0.3); transform: translateY(-4px); box-shadow: 0 0 20px rgba(123,175,212,0.1); }
         .pledge-item {
           display: flex;
           gap: 1rem;
           align-items: flex-start;
           padding: 1.5rem;
           border-left: 3px solid var(--carolina);
-          background-color: var(--surface);
-          border-radius: 0 8px 8px 0;
+          background: rgba(13,17,23,0.7);
+          backdrop-filter: blur(12px);
+          border-radius: 0 10px 10px 0;
           margin-bottom: 1rem;
+          box-shadow: inset 4px 0 12px rgba(123,175,212,0.05);
         }
           @media (max-width: 768px) {
   .hero-section { padding: 5rem 1.5rem 4rem !important; }
@@ -213,22 +231,23 @@ export default function HomeClient({ posts }) {
         className='hero-section'
         style={{
           padding: "12rem 8rem 10rem",
-          borderBottom: "1px solid var(--duke)",
+          borderBottom: "1px solid var(--border)",
           position: "relative",
           overflow: "hidden",
         }}
       >
+        {/* Galaxy starfield */}
+        <Starfield />
         {/* Animated grid background */}
         <div
           style={{
             position: "absolute",
             inset: 0,
             backgroundImage: `
-              linear-gradient(rgba(123,175,212,0.08) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(123,175,212,0.08) 1px, transparent 1px)
+              radial-gradient(circle, rgba(123,175,212,0.06) 1px, transparent 1px)
             `,
-            backgroundSize: "40px 40px",
-            animation: "gridMove 30s linear infinite",
+            backgroundSize: "32px 32px",
+            animation: "gridMove 40s linear infinite",
             pointerEvents: "none",
           }}
         />
@@ -279,13 +298,8 @@ export default function HomeClient({ posts }) {
 
         <div style={{ maxWidth: "750px", position: "relative" }}>
           <p
-            className='h1'
+            className='h1 eyebrow'
             style={{
-              color: "var(--carolina)",
-              fontWeight: "bold",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              fontSize: "0.8rem",
               marginBottom: "1.5rem",
             }}
           >
@@ -364,14 +378,15 @@ export default function HomeClient({ posts }) {
                 style={{
                   flex: 1,
                   minWidth: "160px",
-                  backgroundColor: "var(--surface)",
-                  border: "1px solid var(--duke)",
-                  borderRadius: "6px",
+                  backgroundColor: "rgba(13,17,23,0.7)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "8px",
                   padding: "0.85rem 1rem",
                   color: "var(--text)",
                   fontSize: "0.95rem",
                   outline: "none",
-                  fontFamily: "var(--font-body, sans-serif)",
+                  fontFamily: "var(--font-body)",
+                  backdropFilter: "blur(8px)",
                 }}
               />
               <input
@@ -382,28 +397,23 @@ export default function HomeClient({ posts }) {
                 style={{
                   flex: 1,
                   minWidth: "160px",
-                  backgroundColor: "var(--surface)",
-                  border: "1px solid var(--duke)",
-                  borderRadius: "6px",
+                  backgroundColor: "rgba(13,17,23,0.7)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "8px",
                   padding: "0.85rem 1rem",
                   color: "var(--text)",
                   fontSize: "0.95rem",
                   outline: "none",
-                  fontFamily: "var(--font-body, sans-serif)",
+                  fontFamily: "var(--font-body)",
+                  backdropFilter: "blur(8px)",
                 }}
               />
               <button
                 type='submit'
+                className='btn-glow'
                 style={{
-                  backgroundColor: "var(--carolina)",
-                  color: "#000",
                   padding: "0.85rem 1.75rem",
-                  borderRadius: "6px",
-                  fontWeight: "bold",
-                  border: "none",
-                  cursor: "pointer",
                   fontSize: "0.95rem",
-                  fontFamily: "var(--font-body, sans-serif)",
                   whiteSpace: "nowrap",
                 }}
               >
@@ -586,8 +596,8 @@ export default function HomeClient({ posts }) {
       {/* 3. GUIDE */}
       <section
         style={{
-          borderTop: "1px solid var(--duke)",
-          borderBottom: "1px solid var(--duke)",
+          borderTop: "1px solid var(--border)",
+          borderBottom: "1px solid var(--border)",
           padding: "5rem 2rem",
         }}
       >
@@ -608,7 +618,7 @@ export default function HomeClient({ posts }) {
               style={{
                 borderRadius: "10px",
                 overflow: "hidden",
-                border: "1px solid var(--duke)",
+                border: "1px solid var(--border)",
                 marginBottom: "1.5rem",
               }}
             >
@@ -633,7 +643,7 @@ export default function HomeClient({ posts }) {
                   key={item.label}
                   style={{
                     backgroundColor: "var(--surface)",
-                    border: "1px solid var(--duke)",
+                    border: "1px solid var(--border)",
                     borderLeft: "4px solid var(--carolina)",
                     borderRadius: "0 8px 8px 0",
                     padding: "1rem 1.25rem",
@@ -1038,7 +1048,7 @@ export default function HomeClient({ posts }) {
 
       {/* 5. WHAT I OFFER */}
       <section
-        style={{ borderTop: "1px solid var(--duke)", padding: "5rem 2rem" }}
+        style={{ borderTop: "1px solid var(--border)", padding: "5rem 2rem" }}
       >
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <Reveal style={{ textAlign: "center", marginBottom: "3rem" }}>
@@ -1113,7 +1123,7 @@ export default function HomeClient({ posts }) {
                   style={{
                     borderTop: item.highlight
                       ? "3px solid var(--carolina)"
-                      : "1px solid var(--duke)",
+                      : "1px solid var(--border)",
                     display: "flex",
                     flexDirection: "column",
                     gap: "1rem",
@@ -1161,7 +1171,7 @@ export default function HomeClient({ posts }) {
                         key={tag}
                         style={{
                           backgroundColor: "rgba(1,33,105,0.4)",
-                          border: "1px solid var(--duke)",
+                          border: "1px solid var(--border)",
                           color: "var(--muted)",
                           fontSize: "0.7rem",
                           padding: "0.2rem 0.65rem",
@@ -1187,7 +1197,7 @@ export default function HomeClient({ posts }) {
 
       {/* 6. SUCCESS vs FAILURE */}
       <section
-        style={{ borderTop: "1px solid var(--duke)", padding: "5rem 2rem" }}
+        style={{ borderTop: "1px solid var(--border)", padding: "5rem 2rem" }}
       >
         <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
           <Reveal style={{ textAlign: "center", marginBottom: "3rem" }}>
@@ -1277,7 +1287,7 @@ export default function HomeClient({ posts }) {
               <div
                 style={{
                   backgroundColor: "var(--surface)",
-                  border: "1px solid var(--duke)",
+                  border: "1px solid var(--border)",
                   borderTop: "4px solid var(--carolina)",
                   borderRadius: "10px",
                   padding: "2rem",
@@ -1327,8 +1337,8 @@ export default function HomeClient({ posts }) {
       {/* 7. TRANSPARENCY PLEDGE */}
       <section
         style={{
-          borderTop: "1px solid var(--duke)",
-          borderBottom: "1px solid var(--duke)",
+          borderTop: "1px solid var(--border)",
+          borderBottom: "1px solid var(--border)",
           padding: "5rem 2rem",
         }}
       >
@@ -1531,7 +1541,7 @@ export default function HomeClient({ posts }) {
 
       {/* 8b. PORTFOLIO PREVIEW */}
       <section
-        style={{ borderTop: "1px solid var(--duke)", padding: "5rem 2rem" }}
+        style={{ borderTop: "1px solid var(--border)", padding: "5rem 2rem" }}
       >
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <Reveal
@@ -1595,7 +1605,7 @@ export default function HomeClient({ posts }) {
                   style={{
                     borderTop: project.live
                       ? "3px solid var(--carolina)"
-                      : "1px solid var(--duke)",
+                      : "1px solid var(--border)",
                     opacity: project.live ? 1 : 0.7,
                     display: "flex",
                     flexDirection: "column",
@@ -1674,7 +1684,7 @@ export default function HomeClient({ posts }) {
                           key={tag}
                           style={{
                             backgroundColor: "rgba(1,33,105,0.4)",
-                            border: "1px solid var(--duke)",
+                            border: "1px solid var(--border)",
                             color: "var(--muted)",
                             fontSize: "0.7rem",
                             padding: "0.2rem 0.65rem",
@@ -1688,7 +1698,7 @@ export default function HomeClient({ posts }) {
                   </div>
                   <div
                     style={{
-                      borderTop: "1px solid var(--duke)",
+                      borderTop: "1px solid var(--border)",
                       paddingTop: "1.25rem",
                       display: "flex",
                       justifyContent: "space-between",
@@ -1730,7 +1740,7 @@ export default function HomeClient({ posts }) {
 
       {/* 9. FAQ */}
       <section
-        style={{ borderTop: "1px solid var(--duke)", padding: "5rem 2rem" }}
+        style={{ borderTop: "1px solid var(--border)", padding: "5rem 2rem" }}
       >
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <Reveal style={{ marginBottom: "3rem" }}>
@@ -1781,7 +1791,7 @@ export default function HomeClient({ posts }) {
         style={{
           padding: "6rem 2rem",
           textAlign: "center",
-          borderTop: "1px solid var(--duke)",
+          borderTop: "1px solid var(--border)",
           background:
             "radial-gradient(ellipse at 50% 100%, rgba(1,33,105,0.3) 0%, transparent 70%)",
         }}

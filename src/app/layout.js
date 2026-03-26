@@ -5,10 +5,11 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { siteConfig } from "@/lib/metadata";
 // app/layout.tsx
-import { Fraunces, Urbanist } from 'next/font/google'
+import { Exo_2, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 
-const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-display' });
-const urbanist = Urbanist({ subsets: ['latin'], variable: '--font-body' });
+const exo2 = Exo_2({ subsets: ['latin'], variable: '--font-display' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-body' });
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -51,7 +52,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${urbanist.variable}`}>
+    <html lang="en" className={`${exo2.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <body style={{
         backgroundColor: "var(--bg)",
         color: "var(--text)",

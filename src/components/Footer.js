@@ -30,10 +30,21 @@ export default function Footer() {
     <footer
       style={{
         backgroundColor: "var(--surface)",
-        borderTop: "1px solid var(--duke)",
+        borderTop: "1px solid var(--border)",
         padding: "4rem 2rem 2rem",
+        position: "relative",
       }}
     >
+      {/* Top glow line */}
+      <div style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        height: "1px",
+        background: "linear-gradient(90deg, transparent, var(--carolina), transparent)",
+        opacity: 0.3,
+      }} />
       <div
         className='footer-grid'
         style={{
@@ -117,7 +128,10 @@ export default function Footer() {
               color: "var(--text)",
               fontWeight: "600",
               marginBottom: "1.25rem",
-              fontSize: "0.9rem",
+              fontSize: "0.8rem",
+              fontFamily: "var(--font-mono)",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
             }}
           >
             Services
@@ -317,7 +331,7 @@ export default function Footer() {
             <div
               style={{
                 paddingTop: "0.5rem",
-                borderTop: "1px solid var(--duke)",
+                borderTop: "1px solid var(--border)",
               }}
             >
               <p
@@ -353,7 +367,7 @@ export default function Footer() {
           maxWidth: "1100px",
           margin: "0 auto",
           paddingTop: "2rem",
-          borderTop: "1px solid var(--duke)",
+          borderTop: "1px solid var(--border)",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
