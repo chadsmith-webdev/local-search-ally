@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import FAQSection from "./FAQSection";
 import CTAForm from "./CTAForm";
@@ -25,6 +25,62 @@ function useReveal() {
     return () => observer.disconnect();
   }, []);
   return ref;
+}
+
+function useCountUp(targetNumber, duration = 2000) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const hasStarted = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasStarted.current) {
+          hasStarted.current = true;
+          const startTime = Date.now();
+
+          const animate = () => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            setCount(Math.floor(progress * targetNumber));
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          };
+
+          animate();
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [targetNumber, duration]);
+
+  return { count, ref };
+}
+
+function StatNumber({ stat }) {
+  const targetNumber = parseInt(stat);
+  const { count, ref } = useCountUp(targetNumber);
+
+  return (
+    <div
+      ref={ref}
+      style={{
+        fontSize: "3rem",
+        fontWeight: "900",
+        color: "var(--carolina)",
+        marginBottom: "1rem",
+        fontFamily: "var(--font-display)",
+      }}
+    >
+      {count}%
+    </div>
+  );
 }
 
 function Reveal({ children, style = {}, delay = 0 }) {
@@ -661,17 +717,7 @@ export default function HomeClient({ posts }) {
                     padding: "2.5rem 2rem",
                   }}
                 >
-                  <div
-                    style={{
-                      fontSize: "3rem",
-                      fontWeight: "900",
-                      color: "var(--carolina)",
-                      marginBottom: "1rem",
-                      fontFamily: "var(--font-display)",
-                    }}
-                  >
-                    {item.stat}
-                  </div>
+                  <StatNumber stat={item.stat} />
                   <p
                     style={{
                       color: "var(--muted)",
