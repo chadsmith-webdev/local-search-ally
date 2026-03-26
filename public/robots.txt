@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://localsearchally.com/sitemap.xml
+IndexNow: https://localsearchally.com/indexnow-72bc29c911304f96ba476049493d4a6e.txt
+Host: localsearchally.com
