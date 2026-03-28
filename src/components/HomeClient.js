@@ -208,7 +208,7 @@ const callExpectations = [
   "A clear answer on whether it makes sense to work together",
 ];
 
-const cinematicSectionIds = new Set(["problem", "plan", "final-cta"]);
+const cinematicSectionIds = new Set(["problem", "stakes", "final-cta"]);
 
 function IconBase({ children }) {
   return (
@@ -1110,7 +1110,7 @@ export default function HomeClient({ posts }) {
           margin: 0;
           font-size: clamp(1.5rem, 3.2vw, 2.5rem);
           line-height: 1.18;
-          max-width: 18ch;
+          max-width: 22ch;
         }
         .story-subtitle {
           margin: 0.75rem 0 0;
@@ -1590,9 +1590,20 @@ export default function HomeClient({ posts }) {
           text-align: center;
         }
         .plan-success-icon {
-          display: block;
-          font-size: 1.5rem;
-          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 2.5rem;
+          height: 2.5rem;
+          margin: 0 auto 0.5rem;
+          border-radius: 50%;
+          background: rgba(123, 175, 212, 0.1);
+          border: 1px solid rgba(123, 175, 212, 0.18);
+          color: var(--carolina);
+        }
+        .plan-success-icon svg {
+          width: 1.15rem;
+          height: 1.15rem;
         }
         .plan-success-item p {
           font-size: 0.92rem;
@@ -1627,6 +1638,9 @@ export default function HomeClient({ posts }) {
         .svc-row:hover {
           background: rgba(123, 175, 212, 0.04);
           transform: translateX(4px);
+        }
+        .svc-row:focus-within {
+          background: rgba(123, 175, 212, 0.04);
         }
         .svc-row:first-child {
           padding-top: 1rem;
@@ -1706,6 +1720,12 @@ export default function HomeClient({ posts }) {
           margin-top: 2.75rem;
         }
         @media (max-width: 840px) {
+          .demo-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+          }
+        }
+        @media (max-width: 560px) {
           .demo-grid {
             grid-template-columns: 1fr;
             max-width: 420px;
@@ -2548,20 +2568,26 @@ export default function HomeClient({ posts }) {
             </h3>
             <div className='plan-success-items'>
               <div className='plan-success-item'>
-                <span className='plan-success-icon'>📞</span>
+                <span className='plan-success-icon'>
+                  <CallFlowIcon />
+                </span>
                 <p>
                   Your phone rings from people who searched for your exact
                   service in your area
                 </p>
               </div>
               <div className='plan-success-item'>
-                <span className='plan-success-icon'>📅</span>
+                <span className='plan-success-icon'>
+                  <AuditGridIcon />
+                </span>
                 <p>
                   Your schedule fills from online searches, not just referrals
                 </p>
               </div>
               <div className='plan-success-item'>
-                <span className='plan-success-icon'>📈</span>
+                <span className='plan-success-icon'>
+                  <TrendPulseIcon />
+                </span>
                 <p>
                   You see which searches bring calls and which pages earn work
                 </p>
