@@ -44,7 +44,9 @@ export default function Navbar() {
     <>
       <nav
         style={{
-          backgroundColor: scrolled ? "rgba(6,8,12,0.85)" : "rgba(13,17,23,0.6)",
+          backgroundColor: scrolled
+            ? "rgba(6,8,12,0.85)"
+            : "rgba(13,17,23,0.6)",
           borderBottom: `1px solid ${scrolled ? "var(--border-hover)" : "var(--border)"}`,
           padding: "0.85rem 8rem",
           display: "flex",
@@ -55,7 +57,8 @@ export default function Navbar() {
           zIndex: 100,
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
-          transition: "background-color 0.3s, border-color 0.3s, box-shadow 0.3s",
+          transition:
+            "background-color 0.3s, border-color 0.3s, box-shadow 0.3s",
           boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.3)" : "none",
         }}
       >
@@ -105,17 +108,19 @@ export default function Navbar() {
                 >
                   {link.label}
                   {isActive && (
-                    <span style={{
-                      position: "absolute",
-                      bottom: "-2px",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      width: "20px",
-                      height: "2px",
-                      background: "var(--carolina)",
-                      borderRadius: "1px",
-                      boxShadow: "0 0 8px rgba(123,175,212,0.5)",
-                    }} />
+                    <span
+                      style={{
+                        position: "absolute",
+                        bottom: "-2px",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        width: "20px",
+                        height: "2px",
+                        background: "var(--carolina)",
+                        borderRadius: "1px",
+                        boxShadow: "0 0 8px rgba(123,175,212,0.5)",
+                      }}
+                    />
                   )}
                 </Link>
               </li>
@@ -162,7 +167,8 @@ export default function Navbar() {
                   minWidth: "200px",
                   zIndex: 200,
                   paddingTop: "0.75rem",
-                  boxShadow: "0 12px 40px rgba(0,0,0,0.5), 0 0 20px rgba(123,175,212,0.05)",
+                  boxShadow:
+                    "0 12px 40px rgba(0,0,0,0.5), 0 0 20px rgba(123,175,212,0.05)",
                 }}
               >
                 {locationLinks.map((loc) => (
@@ -437,7 +443,7 @@ export default function Navbar() {
         <Link
           href='/contact'
           onClick={() => setOpen(false)}
-          className="btn-glow"
+          className='btn-glow'
           style={{
             marginTop: "1.5rem",
             textAlign: "center",
@@ -453,10 +459,15 @@ export default function Navbar() {
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 1080px) {
           .desktop-nav { display: none !important; }
           .hamburger { display: flex !important; }
+        }
+        @media (max-width: 1080px) {
           nav { padding: 0.85rem 1.5rem !important; }
+        }
+        @media (min-width: 1081px) and (max-width: 1280px) {
+          nav { padding: 0.85rem 3rem !important; }
         }
       `}</style>
     </>
