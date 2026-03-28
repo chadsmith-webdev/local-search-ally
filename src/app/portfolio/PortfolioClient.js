@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-
 function useReveal() {
   const ref = useRef(null);
   useEffect(() => {
@@ -14,7 +13,7 @@ function useReveal() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -25,7 +24,11 @@ function useReveal() {
 function Reveal({ children, style = {}, delay = 0 }) {
   const ref = useReveal();
   return (
-    <div ref={ref} className="reveal" style={{ transitionDelay: `${delay}ms`, ...style }}>
+    <div
+      ref={ref}
+      className='reveal'
+      style={{ transitionDelay: `${delay}ms`, ...style }}
+    >
       {children}
     </div>
   );
@@ -34,6 +37,7 @@ function Reveal({ children, style = {}, delay = 0 }) {
 const categories = [
   { label: "All", value: "all" },
   { label: "Web Development", value: "web" },
+  { label: "Demo Sites", value: "demo" },
   { label: "Local SEO", value: "seo" },
   { label: "GBP Optimization", value: "gbp" },
   { label: "SEO Audits", value: "audit" },
@@ -51,27 +55,62 @@ const projects = [
     linkLabel: "Read the Case Study",
     live: true,
   },
+  {
+    category: "demo",
+    categoryLabel: "Demo Site",
+    title: "Ozark Electric Co. — Electrical Demo",
+    desc: "Full single-page site for a fictional NWA electrical contractor. Features a before/after gallery, financing calculator, emergency CTA flow, service area map, and LocalBusiness schema — built to show how an electrical contractor site should convert.",
+    tags: ["HTML/CSS/JS", "Local SEO", "Schema Markup", "Conversion Design"],
+    result: "Live demo on Netlify",
+    link: "https://contractor-website-electrical.netlify.app/",
+    linkLabel: "View Live Demo",
+    live: true,
+    external: true,
+  },
+  {
+    category: "demo",
+    categoryLabel: "Demo Site",
+    title: "FlowRight Plumbing — Plumber Demo",
+    desc: "Emergency-focused plumbing site with a bold, urgent tone. Includes a 5-step process breakdown, before/after project gallery, long-form social proof, and click-to-call priority — designed to capture panicked homeowners at 2 AM.",
+    tags: ["HTML/CSS/JS", "Local SEO", "Emergency UX", "Conversion Design"],
+    result: "Live demo on Netlify",
+    link: "https://contractor-website-plumber.netlify.app/",
+    linkLabel: "View Live Demo",
+    live: true,
+    external: true,
+  },
+  {
+    category: "demo",
+    categoryLabel: "Demo Site",
+    title: "Frost & Fire HVAC — HVAC Demo",
+    desc: "Clean, modern HVAC site built around seasonal demand capture. Features a cost-of-waiting comparison, 3-step booking path, service gallery, FAQ accordion, and trust badges — structured to turn uncomfortable homeowners into booked appointments.",
+    tags: ["HTML/CSS/JS", "Local SEO", "FAQ Schema", "Conversion Design"],
+    result: "Live demo on Netlify",
+    link: "https://contractor-website-hvac.netlify.app/",
+    linkLabel: "View Live Demo",
+    live: true,
+    external: true,
+  },
 ];
 
 export default function PortfolioClient() {
- const router = useRouter();
-const [active, setActive] = useState("all");
+  const router = useRouter();
+  const [active, setActive] = useState("all");
 
-useEffect(() => {
-  const params = new URLSearchParams(window.location.search);
-  const filter = params.get("filter");
-  if (filter) setActive(filter);
-}, []);
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const filter = params.get("filter");
+    if (filter) setActive(filter);
+  }, []);
 
-function handleFilter(value) {
-  setActive(value);
-  const url = value === "all" ? "/portfolio" : `/portfolio?filter=${value}`;
-  router.replace(url, { scroll: false });
-}
+  function handleFilter(value) {
+    setActive(value);
+    const url = value === "all" ? "/portfolio" : `/portfolio?filter=${value}`;
+    router.replace(url, { scroll: false });
+  }
 
-  const filtered = active === "all"
-    ? projects
-    : projects.filter((p) => p.category === active);
+  const filtered =
+    active === "all" ? projects : projects.filter((p) => p.category === active);
 
   return (
     <>
@@ -113,130 +152,263 @@ function handleFilter(value) {
       `}</style>
 
       {/* Hero */}
-      <section className="hero-section" style={{
-        padding: "12rem 8rem 10rem",
-        borderBottom: "1px solid var(--border)",
-        position: "relative",
-        overflow: "hidden",
-      }}>
-        <div style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: `
+      <section
+        className='hero-section'
+        style={{
+          padding: "12rem 8rem 10rem",
+          borderBottom: "1px solid var(--border)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: `
             linear-gradient(rgba(123,175,212,0.06) 1px, transparent 1px),
             linear-gradient(90deg, rgba(123,175,212,0.06) 1px, transparent 1px)
           `,
-          backgroundSize: "40px 40px",
-          maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
-          pointerEvents: "none",
-        }} />
-        <div style={{
-          position: "absolute",
-          top: "-150px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "600px",
-          height: "600px",
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(1,33,105,0.5) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }} />
+            backgroundSize: "40px 40px",
+            maskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            top: "-150px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "600px",
+            height: "600px",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(1,33,105,0.5) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
         <div style={{ maxWidth: "700px", position: "relative" }}>
-          <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1.5rem" }}>
+          <p
+            style={{
+              color: "var(--carolina)",
+              fontWeight: "bold",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              fontSize: "0.8rem",
+              marginBottom: "1.5rem",
+            }}
+          >
             Portfolio
           </p>
-          <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: "800", lineHeight: 1.1, marginBottom: "1.5rem" }}>
+          <h1
+            style={{
+              fontSize: "clamp(2rem, 5vw, 3.5rem)",
+              fontWeight: "800",
+              lineHeight: 1.1,
+              marginBottom: "1.5rem",
+            }}
+          >
             Real work.{" "}
             <span style={{ color: "var(--carolina)" }}>Real results.</span>
           </h1>
-          <p style={{ color: "var(--muted)", fontSize: "1.05rem", lineHeight: 1.9, maxWidth: "560px" }}>
-            Every project here is documented honestly — what the challenge was, what we did, and what the outcome was. No vanity metrics, no fabricated screenshots.
+          <p
+            style={{
+              color: "var(--muted)",
+              fontSize: "1.05rem",
+              lineHeight: 1.9,
+              maxWidth: "560px",
+            }}
+          >
+            Every project here is documented honestly — what the challenge was,
+            what we did, and what the outcome was. No vanity metrics, no
+            fabricated screenshots.
           </p>
         </div>
       </section>
 
       {/* Filter + Grid */}
-      <section style={{ padding: "5rem 2rem", maxWidth: "1100px", margin: "0 auto" }}>
-
+      <section
+        style={{ padding: "5rem 2rem", maxWidth: "1100px", margin: "0 auto" }}
+      >
         {/* Filter buttons */}
         <Reveal>
-          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginBottom: "3rem" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "0.75rem",
+              flexWrap: "wrap",
+              marginBottom: "3rem",
+            }}
+          >
             {categories.map((cat) => (
-  <button
-    key={cat.value}
-    onClick={() => handleFilter(cat.value)}
-    className={`filter-btn${active === cat.value ? " active" : ""}`}
-  >
-    {cat.label}
-  </button>
-))}
+              <button
+                key={cat.value}
+                onClick={() => handleFilter(cat.value)}
+                className={`filter-btn${active === cat.value ? " active" : ""}`}
+              >
+                {cat.label}
+              </button>
+            ))}
           </div>
         </Reveal>
 
         {/* Cards */}
-        <div className="portfolio-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "1.5rem" }}>
+        <div
+          className='portfolio-grid'
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+            gap: "1.5rem",
+          }}
+        >
           {filtered.map((project, i) => (
             <Reveal key={project.title} delay={i * 80}>
-              <div className="portfolio-card" style={{
-                borderTop: project.live ? "3px solid var(--carolina)" : "1px solid var(--border)",
-                opacity: project.live ? 1 : 0.7,
-              }}>
+              <div
+                className='portfolio-card'
+                style={{
+                  borderTop: project.live
+                    ? "3px solid var(--carolina)"
+                    : "1px solid var(--border)",
+                  opacity: project.live ? 1 : 0.7,
+                }}
+              >
                 <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.75rem" }}>
-                    <p style={{
-                      color: project.live ? "var(--carolina)" : "var(--muted)",
-                      fontSize: "0.75rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.1em",
-                      fontWeight: "bold",
-                      margin: 0,
-                    }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginBottom: "0.75rem",
+                    }}
+                  >
+                    <p
+                      style={{
+                        color: project.live
+                          ? "var(--carolina)"
+                          : "var(--muted)",
+                        fontSize: "0.75rem",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.1em",
+                        fontWeight: "bold",
+                        margin: 0,
+                      }}
+                    >
                       {project.categoryLabel}
                     </p>
-                    <span style={{
-                      backgroundColor: project.live ? "rgba(123,175,212,0.15)" : "rgba(1,33,105,0.3)",
-                      border: `1px solid ${project.live ? "var(--carolina)" : "var(--duke)"}`,
-                      color: project.live ? "var(--carolina)" : "var(--muted)",
-                      fontSize: "0.7rem",
-                      padding: "0.2rem 0.65rem",
-                      borderRadius: "100px",
-                      fontWeight: "bold",
-                    }}>
-                      {project.live ? "Live" : "Coming Soon"}
-                    </span>
-                  </div>
-                  <h3 style={{ fontSize: "1.1rem", marginBottom: "0.75rem", color: "var(--text)" }}>{project.title}</h3>
-                  <p style={{ color: "var(--muted)", fontSize: "0.9rem", lineHeight: 1.8, marginBottom: "1.25rem" }}>{project.desc}</p>
-                  <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.25rem" }}>
-                    {project.tags.map((tag) => (
-                      <span key={tag} style={{
-                        backgroundColor: "rgba(1,33,105,0.4)",
-                        border: "1px solid var(--border)",
-                        color: "var(--muted)",
+                    <span
+                      style={{
+                        backgroundColor: project.live
+                          ? "rgba(123,175,212,0.15)"
+                          : "rgba(1,33,105,0.3)",
+                        border: `1px solid ${project.live ? "var(--carolina)" : "var(--duke)"}`,
+                        color: project.live
+                          ? "var(--carolina)"
+                          : "var(--muted)",
                         fontSize: "0.7rem",
                         padding: "0.2rem 0.65rem",
                         borderRadius: "100px",
-                      }}>
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {project.live ? "Live" : "Coming Soon"}
+                    </span>
+                  </div>
+                  <h3
+                    style={{
+                      fontSize: "1.1rem",
+                      marginBottom: "0.75rem",
+                      color: "var(--text)",
+                    }}
+                  >
+                    {project.title}
+                  </h3>
+                  <p
+                    style={{
+                      color: "var(--muted)",
+                      fontSize: "0.9rem",
+                      lineHeight: 1.8,
+                      marginBottom: "1.25rem",
+                    }}
+                  >
+                    {project.desc}
+                  </p>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "0.5rem",
+                      flexWrap: "wrap",
+                      marginBottom: "1.25rem",
+                    }}
+                  >
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        style={{
+                          backgroundColor: "rgba(1,33,105,0.4)",
+                          border: "1px solid var(--border)",
+                          color: "var(--muted)",
+                          fontSize: "0.7rem",
+                          padding: "0.2rem 0.65rem",
+                          borderRadius: "100px",
+                        }}
+                      >
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
-                <div style={{ borderTop: "1px solid var(--border)", paddingTop: "1.25rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <p style={{ color: project.live ? "var(--carolina)" : "var(--muted)", fontSize: "0.85rem", fontWeight: "600", margin: 0 }}>
+                <div
+                  style={{
+                    borderTop: "1px solid var(--border)",
+                    paddingTop: "1.25rem",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      color: project.live ? "var(--carolina)" : "var(--muted)",
+                      fontSize: "0.85rem",
+                      fontWeight: "600",
+                      margin: 0,
+                    }}
+                  >
                     {project.result}
                   </p>
-                  {project.live && project.link && (
-                    <Link href={project.link} style={{
-                      color: "var(--carolina)",
-                      fontSize: "0.85rem",
-                      fontWeight: "bold",
-                      textDecoration: "none",
-                    }}>
-                      {project.linkLabel} →
-                    </Link>
-                  )}
+                  {project.live &&
+                    project.link &&
+                    (project.external ? (
+                      <a
+                        href={project.link}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        style={{
+                          color: "var(--carolina)",
+                          fontSize: "0.85rem",
+                          fontWeight: "bold",
+                          textDecoration: "none",
+                        }}
+                      >
+                        {project.linkLabel} →
+                      </a>
+                    ) : (
+                      <Link
+                        href={project.link}
+                        style={{
+                          color: "var(--carolina)",
+                          fontSize: "0.85rem",
+                          fontWeight: "bold",
+                          textDecoration: "none",
+                        }}
+                      >
+                        {project.linkLabel} →
+                      </Link>
+                    ))}
                 </div>
               </div>
             </Reveal>
@@ -245,29 +417,50 @@ function handleFilter(value) {
       </section>
 
       {/* CTA */}
-      <section style={{
-        borderTop: "1px solid var(--border)",
-        padding: "5rem 2rem",
-        textAlign: "center",
-        background: "radial-gradient(ellipse at 50% 100%, rgba(1,33,105,0.3) 0%, transparent 70%)",
-      }}>
+      <section
+        style={{
+          borderTop: "1px solid var(--border)",
+          padding: "5rem 2rem",
+          textAlign: "center",
+          background:
+            "radial-gradient(ellipse at 50% 100%, rgba(1,33,105,0.3) 0%, transparent 70%)",
+        }}
+      >
         <Reveal>
-          <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: "800", marginBottom: "1.25rem" }}>
+          <h2
+            style={{
+              fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
+              fontWeight: "800",
+              marginBottom: "1.25rem",
+            }}
+          >
             Want to be the next case study?
           </h2>
-          <p style={{ color: "var(--muted)", fontSize: "1.05rem", maxWidth: "480px", margin: "0 auto 2.5rem", lineHeight: 1.9 }}>
-            I'm actively taking on new clients and documenting every engagement. Let's talk about your business.
+          <p
+            style={{
+              color: "var(--muted)",
+              fontSize: "1.05rem",
+              maxWidth: "480px",
+              margin: "0 auto 2.5rem",
+              lineHeight: 1.9,
+            }}
+          >
+            I'm actively taking on new clients and documenting every engagement.
+            Let's talk about your business.
           </p>
-          <Link href="/contact" style={{
-            backgroundColor: "var(--carolina)",
-            color: "#000",
-            padding: "1rem 2.5rem",
-            borderRadius: "6px",
-            fontWeight: "bold",
-            textDecoration: "none",
-            fontSize: "1.05rem",
-            display: "inline-block",
-          }}>
+          <Link
+            href='/contact'
+            style={{
+              backgroundColor: "var(--carolina)",
+              color: "#000",
+              padding: "1rem 2.5rem",
+              borderRadius: "6px",
+              fontWeight: "bold",
+              textDecoration: "none",
+              fontSize: "1.05rem",
+              display: "inline-block",
+            }}
+          >
             Let's Talk — It's Free
           </Link>
         </Reveal>

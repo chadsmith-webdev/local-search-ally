@@ -157,6 +157,7 @@ const demos = [
     goal: "Generate emergency and maintenance calls from local search",
     stack: "Service pages, LocalBusiness schema, click-to-call priority",
     cta: "View plumbing demo",
+    href: "https://contractor-website-plumber.netlify.app/",
     Icon: PipeMarkIcon,
   },
   {
@@ -164,6 +165,7 @@ const demos = [
     goal: "Capture seasonal demand with clear offer and booking paths",
     stack: "Location intent pages, FAQ schema, conversion-focused layout",
     cta: "View HVAC demo",
+    href: "https://contractor-website-hvac.netlify.app/",
     Icon: AirFlowIcon,
   },
   {
@@ -171,6 +173,7 @@ const demos = [
     goal: "Build trust for higher-ticket jobs and panel upgrades",
     stack: "Authority content structure, review strategy, lead form flow",
     cta: "View electrical demo",
+    href: "https://contractor-website-electrical.netlify.app/",
     Icon: BoltMarkIcon,
   },
 ];
@@ -2401,10 +2404,10 @@ export default function HomeClient({ posts }) {
             </h1>
             <p className='hero-copy'>
               According to BrightLocal, 97% of consumers use Google to evaluate
-              local businesses. They usually just pick from the first trustworthy
-              options they see. Local Search Ally helps you improve local
-              visibility, tighten your lead path, and turn those searches into
-              booked calls.
+              local businesses. They usually just pick from the first
+              trustworthy options they see. Local Search Ally helps you improve
+              local visibility, tighten your lead path, and turn those searches
+              into booked calls.
             </p>
             <div className='hero-actions'>
               <Link href='/contact' className='btn-glow'>
@@ -2651,7 +2654,7 @@ export default function HomeClient({ posts }) {
         tone='contrast'
       >
         <div className='demo-grid'>
-          {demos.map(({ trade, goal, stack, cta, Icon }, index) => (
+          {demos.map(({ trade, goal, stack, cta, href, Icon }, index) => (
             <Reveal key={trade} delay={index * 100}>
               <div className='demo-frame'>
                 <div className='demo-chrome'>
@@ -2679,16 +2682,21 @@ export default function HomeClient({ posts }) {
                     <div className='demo-label'>Built with</div>
                     <p className='demo-value'>{stack}</p>
                   </div>
-                  <Link href='/portfolio' className='demo-cta'>
+                  <a
+                    href={href}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='demo-cta'
+                  >
                     {cta} <span className='motion-arrow'>→</span>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </Reveal>
           ))}
         </div>
         <div style={{ marginTop: "2.5rem", textAlign: "center" }}>
-          <Link href='/portfolio' className='btn-outline-glow'>
+          <Link href='/portfolio?filter=demo' className='btn-outline-glow'>
             View all sample builds <span className='motion-arrow'>→</span>
           </Link>
         </div>
