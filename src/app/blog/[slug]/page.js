@@ -84,11 +84,14 @@ export default async function BlogPost({ params }) {
                 key={tag}
                 style={{
                   backgroundColor: "rgba(1,33,105,0.4)",
-                  border: "1px solid var(--duke)",
-                  color: "var(--muted)",
-                  fontSize: "0.7rem",
-                  padding: "0.2rem 0.65rem",
+                  border: "1px solid var(--border)",
+                  color: "var(--carolina)",
+                  fontSize: "0.65rem",
+                  fontWeight: "700",
+                  padding: "0.4rem 0.8rem",
                   borderRadius: "100px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
                 }}
               >
                 {tag}
@@ -146,14 +149,17 @@ export default async function BlogPost({ params }) {
             <p
               style={{
                 color: "var(--text)",
-                fontWeight: "600",
+                fontWeight: "700",
                 margin: 0,
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
               }}
             >
               Chad Smith
             </p>
-            <p style={{ color: "var(--muted)", margin: 0, fontSize: "0.8rem" }}>
+            <p style={{ color: "var(--muted)", margin: "0.15rem 0 0.25rem", fontSize: "0.8rem" }}>
+              Founder & Local SEO Consultant
+            </p>
+            <p style={{ color: "var(--muted)", margin: 0, fontSize: "0.75rem", opacity: 0.8 }}>
               {new Date(metadata.date).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -176,17 +182,15 @@ export default async function BlogPost({ params }) {
 
       {/* Author Bio */}
       <div
-        className='author-bio'
+        className='author-bio glass-card'
         style={{
           marginTop: "4rem",
-          backgroundColor: "var(--surface)",
-          border: "1px solid var(--duke)",
           borderLeft: "4px solid var(--carolina)",
-          borderRadius: "0 10px 10px 0",
-          padding: "2rem",
+          borderRadius: "4px 12px 12px 4px",
+          padding: "2.5rem",
           display: "grid",
           gridTemplateColumns: "80px 1fr",
-          gap: "1.5rem",
+          gap: "1.75rem",
           alignItems: "start",
         }}
       >
@@ -259,8 +263,8 @@ export default async function BlogPost({ params }) {
         className='post-nav'
         style={{
           marginTop: "3rem",
-          paddingTop: "2rem",
-          borderTop: "1px solid var(--duke)",
+          paddingTop: "2.5rem",
+          borderTop: "1px solid var(--border)",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -280,17 +284,13 @@ export default async function BlogPost({ params }) {
         </Link>
         <Link
           href='/contact'
+          className='btn-glow'
           style={{
-            backgroundColor: "var(--carolina)",
-            color: "#000",
-            padding: "0.75rem 1.5rem",
-            borderRadius: "6px",
-            fontWeight: "bold",
+            padding: "0.85rem 1.75rem",
             textDecoration: "none",
-            fontSize: "0.875rem",
           }}
         >
-          Work With Chad
+          Book a Strategy Session
         </Link>
       </div>
     </div>

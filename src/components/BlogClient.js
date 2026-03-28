@@ -37,28 +37,23 @@ export default function BlogClient({ posts }) {
         .reveal {
           opacity: 0;
           transform: translateY(40px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
+          transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal.revealed { opacity: 1; transform: translateY(0); }
         .blog-card {
-          background-color: var(--surface);
-          border: 1px solid var(--duke);
-          border-radius: 10px;
           padding: 2rem;
-          text-decoration: none;
           display: flex;
           flex-direction: column;
           height: 100%;
-          transition: border-color 0.3s, transform 0.3s;
+          text-decoration: none;
         }
-        .blog-card:hover {
-          border-color: var(--carolina);
-          transform: translateY(-4px);
+        @media (max-width: 768px) {
+          .hero-section { padding: 5rem 1.5rem 4rem !important; }
+          .blog-grid { grid-template-columns: 1fr !important; }
         }
-          @media (max-width: 768px) {
-  .hero-section { padding: 5rem 1.5rem 4rem !important; }
-  .blog-grid { grid-template-columns: 1fr !important; }
-}
+        @media (max-width: 640px) {
+          .blog-hero-title { font-size: clamp(2rem, 8vw, 2.75rem) !important; }
+        }
       `}</style>
 
       {/* Hero */}
@@ -95,9 +90,9 @@ export default function BlogClient({ posts }) {
           <p style={{ color: "var(--carolina)", fontWeight: "bold", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.8rem", marginBottom: "1.5rem" }}>
             The Blog
           </p>
-          <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: "800", lineHeight: 1.1, marginBottom: "1.5rem" }}>
+          <h1 className="blog-hero-title" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: "800", lineHeight: 1.1, marginBottom: "1.5rem" }}>
             What I'm learning.{" "}
-            <span style={{ color: "var(--carolina)" }}>What I'm sharing.</span>
+            <span style={{ color: "var(--carolina)", display: "inline-block" }}>What I'm sharing.</span>
           </h1>
           <p style={{ color: "var(--muted)", fontSize: "1.05rem", lineHeight: 1.9, maxWidth: "560px" }}>
             Practical local SEO tips, web development insights, and honest case studies — written for NWA contractors who want to grow online.
@@ -126,7 +121,7 @@ export default function BlogClient({ posts }) {
           <div className="blog-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "1.5rem" }}>
             {posts.map((post, i) => (
               <Reveal key={post.slug} delay={i * 80}>
-                <Link href={`/blog/${post.slug}`} className="blog-card">
+                <Link href={`/blog/${post.slug}`} className="glass-card story-card-link blog-card">
                   {post.image && (
                     <div style={{
                       borderRadius: "6px",
@@ -196,19 +191,14 @@ export default function BlogClient({ posts }) {
             Ready to get found online?
           </h2>
           <p style={{ color: "var(--muted)", fontSize: "1.05rem", maxWidth: "480px", margin: "0 auto 2.5rem", lineHeight: 1.9 }}>
-            Reading about SEO is a great start. Let's talk about applying it to your business.
+            Reading about SEO is a great start. Let's talk about applying it to your business. We'll map out a clear path forward in a 30-minute block.
           </p>
-          <Link href="/contact" style={{
-            backgroundColor: "var(--carolina)",
-            color: "#000",
+          <Link href="/contact" className="btn-glow" style={{
             padding: "1rem 2.5rem",
-            borderRadius: "6px",
-            fontWeight: "bold",
             textDecoration: "none",
-            fontSize: "1.05rem",
             display: "inline-block",
           }}>
-            Let's Talk — It's Free
+            Book a Strategy Session
           </Link>
         </Reveal>
       </section>

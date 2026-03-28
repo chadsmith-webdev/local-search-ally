@@ -41,36 +41,14 @@ export default function About() {
         .reveal {
           opacity: 0;
           transform: translateY(40px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
+          transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal.revealed { opacity: 1; transform: translateY(0); }
-        .btn-primary {
-          background-color: var(--carolina);
-          color: #000;
-          padding: 0.9rem 2rem;
-          border-radius: 6px;
-          font-weight: bold;
-          text-decoration: none;
-          display: inline-block;
-          transition: opacity 0.2s;
-        }
-        .btn-primary:hover { opacity: 0.85; }
-        .btn-outline {
-          border: 1px solid var(--carolina);
-          color: var(--carolina);
-          padding: 0.9rem 2rem;
-          border-radius: 6px;
-          font-weight: bold;
-          text-decoration: none;
-          display: inline-block;
-          transition: background-color 0.2s;
-        }
-        .btn-outline:hover { background-color: rgba(123,175,212,0.1); }
         .timeline-item {
           position: relative;
           padding-left: 2rem;
           padding-bottom: 2.5rem;
-          border-left: 2px solid var(--duke);
+          border-left: 2px solid var(--border);
         }
         .timeline-item:last-child {
           border-left: 2px solid transparent;
@@ -84,21 +62,22 @@ export default function About() {
           height: 10px;
           border-radius: 50%;
           background-color: var(--carolina);
+          box-shadow: 0 0 10px var(--carolina);
         }
         .value-card {
           border-left: 3px solid var(--carolina);
-          background-color: var(--surface);
-          border-radius: 0 8px 8px 0;
+          border-radius: 4px 12px 12px 4px;
           padding: 1.5rem;
           margin-bottom: 1rem;
-          transition: transform 0.3s;
         }
-        .value-card:hover { transform: translateX(4px); }
         @media (max-width: 768px) {
-  .hero-section { padding: 5rem 1.5rem 4rem !important; }
-  .two-col { grid-template-columns: 1fr !important; gap: 2rem !important; }
-  .photo-col { grid-template-columns: 1fr !important; }
-}
+          .hero-section { padding: 4rem 1.5rem 3rem !important; }
+          .two-col { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .photo-col { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 640px) {
+          .about-hero-title { font-size: clamp(2rem, 8vw, 2.75rem) !important; }
+        }
       `}</style>
 
       {/* Hero */}
@@ -155,6 +134,7 @@ export default function About() {
             The Person Behind the Work
           </p>
           <h1
+            className='about-hero-title'
             style={{
               fontSize: "clamp(2rem, 5vw, 3.5rem)",
               fontWeight: "800",
@@ -163,7 +143,7 @@ export default function About() {
             }}
           >
             Hey, I'm Chad.{" "}
-            <span style={{ color: "var(--carolina)" }}>
+            <span style={{ color: "var(--carolina)", display: "inline-block" }}>
               Let me be straight with you.
             </span>
           </h1>
@@ -278,11 +258,9 @@ export default function About() {
               ].map((item) => (
                 <div
                   key={item.value}
+                  className='glass-card'
                   style={{
-                    backgroundColor: "var(--surface)",
-                    border: "1px solid var(--border)",
-                    borderRadius: "8px",
-                    padding: "0.75rem 1rem",
+                    padding: "0.85rem 1.25rem",
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
@@ -357,11 +335,11 @@ export default function About() {
               people and hope they talk to each other. I'm building the skills
               to handle both.
             </p>
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              <Link href='/contact' className='btn-primary'>
-                Work With Me
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "1rem" }}>
+              <Link href='/contact' className='btn-glow' style={{ textDecoration: "none", padding: "0.9rem 2rem" }}>
+                Book a Strategy Session
               </Link>
-              <Link href='/services' className='btn-outline'>
+              <Link href='/services' className='btn-outline-glow' style={{ textDecoration: "none", padding: "0.9rem 2rem" }}>
                 See My Services
               </Link>
             </div>
@@ -492,7 +470,7 @@ export default function About() {
                 desc: "If I'm not delivering value, you can walk away. My job is to keep earning your business every single month.",
               },
             ].map((item) => (
-              <div key={item.title} className='value-card'>
+              <div key={item.title} className='glass-card value-card'>
                 <p
                   style={{
                     color: "var(--text)",
@@ -553,10 +531,10 @@ export default function About() {
           </p>
           <Link
             href='/contact'
-            className='btn-primary'
-            style={{ fontSize: "1.05rem", padding: "1rem 2.5rem" }}
+            className='btn-glow'
+            style={{ textDecoration: "none", padding: "1rem 2.5rem", display: "inline-block" }}
           >
-            Let's Talk — It's Free
+            Book a Strategy Session
           </Link>
         </Reveal>
       </section>
