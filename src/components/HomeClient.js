@@ -2400,9 +2400,10 @@ export default function HomeClient({ posts }) {
               </span>
             </h1>
             <p className='hero-copy'>
-              Home service buyers usually choose from the first trustworthy
+              According to BrightLocal, 97% of consumers use Google to evaluate
+              local businesses. They usually just pick from the first trustworthy
               options they see. Local Search Ally helps you improve local
-              visibility, tighten your lead path, and turn more searches into
+              visibility, tighten your lead path, and turn those searches into
               booked calls.
             </p>
             <div className='hero-actions'>
@@ -2450,7 +2451,7 @@ export default function HomeClient({ posts }) {
         id='problem'
         eyebrow='The gap'
         title='Good work does not guarantee the phone rings.'
-        subtitle='Most customers pick from whoever shows up first. If that is not you, skill alone will not close the gap.'
+        subtitle='Safari Digital found 78% of local mobile searches result in an offline purchase. Most customers just pick from whoever shows up first. If that is not you, skill alone will not close the gap.'
       >
         <div className='prob-list'>
           {problemPoints.map(({ title, detail, Icon }, index) => (
@@ -2606,7 +2607,7 @@ export default function HomeClient({ posts }) {
         id='stakes'
         eyebrow='The cost of waiting'
         title='Every week this stays unfixed, calls go somewhere else'
-        subtitle='These are not hypothetical risks. They are happening right now in your market.'
+        subtitle='Think With Google reports 28% of searches for something nearby result in a purchase. These are not hypothetical risks. They are phone calls going to your competition right now.'
         tone='contrast'
       >
         <Reveal>
