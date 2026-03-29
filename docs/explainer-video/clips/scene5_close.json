@@ -1,0 +1,34 @@
+[1minference.sh[0m [2mv1.7.11[0m
+
+
+  Running google/veo-3-1-fast@4zatwq00
+  Task ID: 7ttwr9vjmfcxxbtr9xhk9epnb5
+
+→ Queued...
+✓ Completed in 1m16.2s
+
+  Output
+  {
+    "output_meta": {
+      "inputs": [],
+      "outputs": [
+        {
+          "extra": {
+            "generate_audio": false
+          },
+          "fps": 0,
+          "height": 720,
+          "resolution": null,
+          "resolution_mp": 0,
+          "seconds": 0,
+          "type": "video",
+          "width": 1280
+        }
+      ]
+    },
+    "videos": [
+      "https://cloud.inference.sh/app/files/u/3mejt3yph4nyv3qd29p5ycy9am/01kmx6vktymjxfcqamwft0ww8r.mp4"
+    ]
+  }
+
+  Task ID: 7ttwr9vjmfcxxbtr9xhk9epnb5

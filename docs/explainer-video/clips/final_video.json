@@ -1,0 +1,16 @@
+[1minference.sh[0m [2mv1.7.11[0m
+
+
+  Running infsh/media-merger@7a1sr0q1
+  Task ID: 7g98yf23xdmkm03fep05dxxp7a
+
+→ Queued...
+✓ Completed in 2m2.5s
+
+  Output
+  {
+    "output_meta": null,
+    "result": "https://cloud.inference.sh/app/files/u/3mejt3yph4nyv3qd29p5ycy9am/01kmx7c2468qy43gap8xb550fk.mp4"
+  }
+
+  Task ID: 7g98yf23xdmkm03fep05dxxp7a

@@ -1,0 +1,14 @@
+{
+  "media_files": [
+    {
+      "file": "https://cloud.inference.sh/app/files/u/3mejt3yph4nyv3qd29p5ycy9am/01kmx7c2468qy43gap8xb550fk.mp4",
+      "type": "video"
+    },
+    {
+      "file": "https://cloud.inference.sh/app/files/u/3mejt3yph4nyv3qd29p5ycy9am/01kmx6ybw8qvfdhrgzf42m8za0.wav",
+      "type": "audio"
+    }
+  ],
+  "fps": 30,
+  "output_format": "mp4"
+}
