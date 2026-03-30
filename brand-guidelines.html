@@ -1,0 +1,2254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Search Ally — Brand Guidelines v1.1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ── Reset & base ───────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --carolina: #7bafd4;
+        --duke: #012169;
+        --bg: #06080c;
+        --surface: #0d1117;
+        --surface-hover: #161b22;
+        --secondary: #1e3a5f;
+        --text: #e6edf3;
+        --muted: #7d8590;
+        --accent: #e53e3e;
+        --border: rgba(123, 175, 212, 0.12);
+        --border-hover: rgba(123, 175, 212, 0.3);
+        --border-solid: #1c2333;
+        --glow-sm: 0 0 8px rgba(123, 175, 212, 0.15);
+        --glow-md: 0 0 20px rgba(123, 175, 212, 0.2);
+        --font-display: "Exo 2", sans-serif;
+        --font-body: "Space Grotesk", sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: var(--font-display);
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      a {
+        color: var(--carolina);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* ── Layout ─────────────────────────────────────────────── */
+      .wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* ── Cover ──────────────────────────────────────────────── */
+      .cover {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 6rem 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .cover::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at 60% 20%,
+          rgba(123, 175, 212, 0.07) 0%,
+          transparent 55%
+        );
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .cover-eyebrow {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--carolina);
+        margin-bottom: 1.5rem;
+      }
+
+      .cover h1 {
+        font-size: clamp(3rem, 8vw, 5.5rem);
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+
+      .cover h1 span {
+        color: var(--carolina);
+      }
+
+      .cover-sub {
+        font-size: 1.25rem;
+        color: var(--muted);
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+      }
+
+      .cover-meta {
+        display: flex;
+        gap: 3rem;
+      }
+
+      .cover-meta-item label {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.25rem;
+      }
+
+      .cover-meta-item span {
+        font-size: 0.95rem;
+        color: var(--text);
+      }
+
+      /* ── Divider ────────────────────────────────────────────── */
+      .divider {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 0;
+      }
+
+      /* ── Sections ───────────────────────────────────────────── */
+      .section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section:last-child {
+        border-bottom: none;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 3rem;
+      }
+
+      .section-num {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--carolina);
+        letter-spacing: 0.08em;
+        flex-shrink: 0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      /* ── Cards ──────────────────────────────────────────────── */
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 2rem;
+      }
+
+      .card + .card {
+        margin-top: 1rem;
+      }
+
+      /* ── Grid ───────────────────────────────────────────────── */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+
+      @media (max-width: 640px) {
+        .grid-2,
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ── Labels ─────────────────────────────────────────────── */
+      .label {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      /* ── Tables ─────────────────────────────────────────────── */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      th {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-align: left;
+        padding: 0.6rem 1rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid var(--border-solid);
+        vertical-align: middle;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* ── Inline code ────────────────────────────────────────── */
+      code {
+        font-family: var(--font-mono);
+        font-size: 0.85em;
+        background: rgba(123, 175, 212, 0.08);
+        color: var(--carolina);
+        padding: 0.15em 0.45em;
+        border-radius: 4px;
+      }
+
+      /* ── Color swatches ─────────────────────────────────────── */
+      .swatch-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+
+      .swatch {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+
+      .swatch-color {
+        height: 80px;
+      }
+
+      .swatch-info {
+        background: var(--surface);
+        padding: 0.75rem 1rem;
+      }
+
+      .swatch-name {
+        font-weight: 600;
+        font-size: 0.85rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .swatch-hex {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+
+      .swatch-role {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-top: 0.25rem;
+      }
+
+      /* ── Logo demo ──────────────────────────────────────────── */
+      .logo-demo-row {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .logo-bg {
+        padding: 2rem 2.5rem;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        border: 1px solid var(--border);
+      }
+
+      .logo-label {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      /* ── Don't list ─────────────────────────────────────────── */
+      .do-dont {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      @media (max-width: 600px) {
+        .do-dont {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .do-list li::before {
+        content: "✓ ";
+        color: #4caf77;
+      }
+      .dont-list li::before {
+        content: "✕ ";
+        color: var(--accent);
+      }
+
+      ul.do-list,
+      ul.dont-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        font-size: 0.9rem;
+      }
+
+      .do-list-head {
+        font-weight: 700;
+        color: #4caf77;
+        font-family: var(--font-display);
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .dont-list-head {
+        font-weight: 700;
+        color: var(--accent);
+        font-family: var(--font-display);
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      /* ── Voice table ────────────────────────────────────────── */
+      .voice-pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      @media (max-width: 600px) {
+        .voice-pair {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .voice-col h4 {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-family: var(--font-mono);
+        margin-bottom: 1rem;
+      }
+
+      .voice-col.is {
+        color: #4caf77;
+      }
+      .voice-col.is h4 {
+        color: #4caf77;
+      }
+      .voice-col.isnt {
+        color: var(--muted);
+      }
+      .voice-col.isnt h4 {
+        color: var(--accent);
+      }
+
+      .voice-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .voice-col.is ul li::before {
+        content: "✓ ";
+      }
+      .voice-col.isnt ul li::before {
+        content: "✕ ";
+      }
+
+      /* ── Type specimen ──────────────────────────────────────── */
+      .type-specimen {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .type-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--border-solid);
+      }
+
+      .type-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .type-meta {
+        flex-shrink: 0;
+        min-width: 140px;
+        text-align: right;
+      }
+
+      .type-meta .type-style {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .type-meta .type-specs {
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        color: var(--border-hover);
+        margin-top: 0.25rem;
+      }
+
+      /* ── Gradient bar ───────────────────────────────────────── */
+      .gradient-bar {
+        height: 6px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, var(--carolina), var(--duke));
+        margin-bottom: 3rem;
+      }
+
+      /* ── TOC ────────────────────────────────────────────────── */
+      .toc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 2rem;
+      }
+
+      .toc a {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.35rem 0.75rem;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+        text-decoration: none;
+      }
+
+      .toc a:hover {
+        color: var(--carolina);
+        border-color: var(--border-hover);
+      }
+
+      /* ── Contrast badge ─────────────────────────────────────── */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.05em;
+        border-radius: 4px;
+        padding: 0.2rem 0.5rem;
+      }
+
+      .badge-pass {
+        background: rgba(76, 175, 119, 0.15);
+        color: #4caf77;
+        border: 1px solid rgba(76, 175, 119, 0.3);
+      }
+      .badge-aa {
+        background: rgba(123, 175, 212, 0.15);
+        color: var(--carolina);
+        border: 1px solid var(--border-hover);
+      }
+
+      /* ── Spacing scale ──────────────────────────────────────── */
+      .space-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .space-bar {
+        background: var(--carolina);
+        height: 20px;
+        border-radius: 4px;
+        opacity: 0.5;
+        flex-shrink: 0;
+      }
+
+      .space-label {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--muted);
+        min-width: 160px;
+      }
+
+      /* ── Subhead ────────────────────────────────────────────── */
+      .subhead {
+        font-family: var(--font-display);
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--carolina);
+        letter-spacing: 0.02em;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+      }
+
+      .subhead:first-child {
+        margin-top: 0;
+      }
+
+      /* ── Footer ─────────────────────────────────────────────── */
+      .guide-footer {
+        padding: 3rem 0;
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--muted);
+        font-family: var(--font-mono);
+      }
+
+      /* Print ─────────────────────────────────────────────────── */
+      @media print {
+        :root {
+          --bg: #fff;
+          --surface: #f6f8fb;
+          --text: #111;
+          --muted: #555;
+          --border: #dde;
+          --border-solid: #ccc;
+          --carolina: #2a7ab5;
+          --duke: #012169;
+        }
+        body {
+          background: #fff;
+        }
+        .cover::after {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══════════════════════════════════════════════
+     COVER
+════════════════════════════════════════════════ -->
+    <div class="cover">
+      <p class="cover-eyebrow">Brand Guidelines — Version 1.1</p>
+
+      <h1>Local Search <span>Ally</span></h1>
+      <p class="cover-sub">
+        The visual and verbal identity system for consistent brand expression.
+      </p>
+
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <label>Version</label>
+          <span>1.1 — March 2026</span>
+        </div>
+        <div class="cover-meta-item">
+          <label>Maintained by</label>
+          <span>Chad Smith</span>
+        </div>
+        <div class="cover-meta-item">
+          <label>Website</label>
+          <span>localsearchally.com</span>
+        </div>
+      </div>
+
+      <nav class="toc">
+        <a href="#brand-overview">Brand Overview</a>
+        <a href="#logo">Logo</a>
+        <a href="#colors">Colors</a>
+        <a href="#typography">Typography</a>
+        <a href="#spacing">Spacing &amp; Layout</a>
+        <a href="#imagery">Imagery</a>
+        <a href="#voice">Voice &amp; Tone</a>
+        <a href="#applications">Applications</a>
+        <a href="#dont">Do's &amp; Don'ts</a>
+      </nav>
+    </div>
+
+    <hr class="divider" />
+
+    <main class="wrap">
+      <!-- ══════════════════════════════════════════
+       1 · Brand Overview
+  ══════════════════════════════════════════ -->
+      <section class="section" id="brand-overview">
+        <div class="section-header">
+          <span class="section-num">01</span>
+          <h2 class="section-title">Brand Overview</h2>
+        </div>
+
+        <div class="gradient-bar"></div>
+
+        <div class="grid-2" style="gap: 2rem; margin-bottom: 3rem">
+          <div>
+            <p class="subhead">Mission</p>
+            <p>
+              Help NWA contractors get found online and win more jobs by making
+              professional local SEO and web development accessible to small
+              trade businesses.
+            </p>
+          </div>
+          <div>
+            <p class="subhead">Vision</p>
+            <p>
+              A Northwest Arkansas where the best contractor for the job — not
+              the one with the biggest marketing budget — wins.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 3rem">
+          <p class="subhead">Values</p>
+          <div class="grid-3">
+            <div class="card" style="padding: 1.5rem">
+              <strong
+                style="color: var(--carolina); font-family: var(--font-display)"
+                >Transparency</strong
+              >
+              <p
+                style="
+                  font-size: 0.9rem;
+                  margin-top: 0.5rem;
+                  color: var(--muted);
+                "
+              >
+                We share the process, admit the limits, and explain what we're
+                doing and why.
+              </p>
+            </div>
+            <div class="card" style="padding: 1.5rem">
+              <strong
+                style="color: var(--carolina); font-family: var(--font-display)"
+                >Craft</strong
+              >
+              <p
+                style="
+                  font-size: 0.9rem;
+                  margin-top: 0.5rem;
+                  color: var(--muted);
+                "
+              >
+                Every detail — code, copy, or design — is deliberate. No filler,
+                no defaults.
+              </p>
+            </div>
+            <div class="card" style="padding: 1.5rem">
+              <strong
+                style="color: var(--carolina); font-family: var(--font-display)"
+                >Local</strong
+              >
+              <p
+                style="
+                  font-size: 0.9rem;
+                  margin-top: 0.5rem;
+                  color: var(--muted);
+                "
+              >
+                Rooted in Siloam Springs. The problems we solve are real
+                problems in our backyard.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 3rem">
+          <p class="subhead">Brand Personality</p>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap">
+            <span
+              style="
+                background: rgba(123, 175, 212, 0.12);
+                border: 1px solid var(--border-hover);
+                border-radius: 20px;
+                padding: 0.4rem 1.1rem;
+                font-size: 0.9rem;
+              "
+              >Direct</span
+            >
+            <span
+              style="
+                background: rgba(123, 175, 212, 0.12);
+                border: 1px solid var(--border-hover);
+                border-radius: 20px;
+                padding: 0.4rem 1.1rem;
+                font-size: 0.9rem;
+              "
+              >Knowledgeable</span
+            >
+            <span
+              style="
+                background: rgba(123, 175, 212, 0.12);
+                border: 1px solid var(--border-hover);
+                border-radius: 20px;
+                padding: 0.4rem 1.1rem;
+                font-size: 0.9rem;
+              "
+              >Grounded</span
+            >
+            <span
+              style="
+                background: rgba(123, 175, 212, 0.12);
+                border: 1px solid var(--border-hover);
+                border-radius: 20px;
+                padding: 0.4rem 1.1rem;
+                font-size: 0.9rem;
+              "
+              >Honest</span
+            >
+            <span
+              style="
+                background: rgba(123, 175, 212, 0.12);
+                border: 1px solid var(--border-hover);
+                border-radius: 20px;
+                padding: 0.4rem 1.1rem;
+                font-size: 0.9rem;
+              "
+              >Precise</span
+            >
+          </div>
+        </div>
+
+        <div>
+          <p class="subhead">Brand Archetype</p>
+          <div class="card">
+            <p
+              style="
+                font-size: 1.05rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                color: var(--text);
+              "
+            >
+              The Transparent Expert
+            </p>
+            <p style="color: var(--muted); font-size: 0.9rem">
+              Someone who shares the process, admits the limits, and lets the
+              work speak. The trusted contractor who explains what they're doing
+              under your sink. The teacher who makes complex things simple. The
+              founder who builds in public.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+       2 · Logo
+  ══════════════════════════════════════════ -->
+      <section class="section" id="logo">
+        <div class="section-header">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Logo</h2>
+        </div>
+
+        <p class="subhead">Primary Logo</p>
+
+        <!-- Full-color on dark -->
+        <div style="margin-bottom: 2rem">
+          <p class="logo-label">Full color — on dark background</p>
+          <div
+            class="logo-bg"
+            style="background: var(--surface); width: fit-content"
+          >
+            <!-- Inline SVG logo -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
+              width="48"
+              height="48"
+            >
+              <defs>
+                <linearGradient
+                  id="needleGrad"
+                  x1="0"
+                  x2="1"
+                  gradientUnits="objectBoundingBox"
+                >
+                  <stop offset="0" stop-color="white" stop-opacity="0.5" />
+                  <stop offset="0.45" stop-color="white" stop-opacity="1" />
+                  <stop offset="1" stop-color="white" stop-opacity="0.35" />
+                </linearGradient>
+                <clipPath id="ballClip">
+                  <circle cx="50" cy="33" r="20" />
+                </clipPath>
+              </defs>
+              <polygon points="48,52 52,52 50,93" fill="url(#needleGrad)" />
+              <circle cx="50" cy="33" r="20" fill="#7bafd4" />
+              <g clip-path="url(#ballClip)">
+                <circle cx="46" cy="28" r="10" fill="white" opacity="0.88" />
+                <circle cx="49.5" cy="30.5" r="10.1" fill="#7bafd4" />
+              </g>
+            </svg>
+            <span
+              style="
+                font-family: var(--font-display);
+                font-weight: 800;
+                font-size: 1.5rem;
+                color: #f0f0f0;
+                line-height: 1;
+              "
+              >Local Search <span style="color: #7bafd4">Ally</span></span
+            >
+          </div>
+        </div>
+
+        <!-- Reversed on white -->
+        <div style="margin-bottom: 2rem">
+          <p class="logo-label">Reversed — on light background</p>
+          <div class="logo-bg" style="background: #f5f7fa; width: fit-content">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
+              width="48"
+              height="48"
+            >
+              <defs>
+                <clipPath id="ballClip2">
+                  <circle cx="50" cy="33" r="20" />
+                </clipPath>
+              </defs>
+              <polygon
+                points="48,52 52,52 50,93"
+                fill="#012169"
+                opacity="0.7"
+              />
+              <circle cx="50" cy="33" r="20" fill="#012169" />
+              <g clip-path="url(#ballClip2)">
+                <circle cx="46" cy="28" r="10" fill="white" opacity="0.5" />
+                <circle cx="49.5" cy="30.5" r="10.1" fill="#012169" />
+              </g>
+            </svg>
+            <span
+              style="
+                font-family: var(--font-display);
+                font-weight: 800;
+                font-size: 1.5rem;
+                color: #012169;
+                line-height: 1;
+              "
+              >Local Search <span style="color: #7bafd4">Ally</span></span
+            >
+          </div>
+        </div>
+
+        <!-- Icon only -->
+        <div style="margin-bottom: 3rem">
+          <p class="logo-label">Icon / mark — standalone</p>
+          <div style="display: flex; gap: 1rem; align-items: center">
+            <div
+              class="logo-bg"
+              style="
+                background: var(--surface);
+                width: fit-content;
+                padding: 1.5rem;
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                width="64"
+                height="64"
+              >
+                <defs>
+                  <linearGradient
+                    id="ng3"
+                    x1="0"
+                    x2="1"
+                    gradientUnits="objectBoundingBox"
+                  >
+                    <stop offset="0" stop-color="white" stop-opacity="0.5" />
+                    <stop offset="0.45" stop-color="white" stop-opacity="1" />
+                    <stop offset="1" stop-color="white" stop-opacity="0.35" />
+                  </linearGradient>
+                  <clipPath id="bc3">
+                    <circle cx="50" cy="33" r="20" />
+                  </clipPath>
+                </defs>
+                <polygon points="48,52 52,52 50,93" fill="url(#ng3)" />
+                <circle cx="50" cy="33" r="20" fill="#7bafd4" />
+                <g clip-path="url(#bc3)">
+                  <circle cx="46" cy="28" r="10" fill="white" opacity="0.88" />
+                  <circle cx="49.5" cy="30.5" r="10.1" fill="#7bafd4" />
+                </g>
+              </svg>
+            </div>
+            <div
+              class="logo-bg"
+              style="
+                background: var(--surface);
+                width: fit-content;
+                padding: 1.5rem;
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                width="32"
+                height="32"
+              >
+                <defs>
+                  <linearGradient
+                    id="ng4"
+                    x1="0"
+                    x2="1"
+                    gradientUnits="objectBoundingBox"
+                  >
+                    <stop offset="0" stop-color="white" stop-opacity="0.5" />
+                    <stop offset="0.45" stop-color="white" stop-opacity="1" />
+                    <stop offset="1" stop-color="white" stop-opacity="0.35" />
+                  </linearGradient>
+                  <clipPath id="bc4">
+                    <circle cx="50" cy="33" r="20" />
+                  </clipPath>
+                </defs>
+                <polygon points="48,52 52,52 50,93" fill="url(#ng4)" />
+                <circle cx="50" cy="33" r="20" fill="#7bafd4" />
+                <g clip-path="url(#bc4)">
+                  <circle cx="46" cy="28" r="10" fill="white" opacity="0.88" />
+                  <circle cx="49.5" cy="30.5" r="10.1" fill="#7bafd4" />
+                </g>
+              </svg>
+            </div>
+            <div
+              class="logo-bg"
+              style="
+                background: var(--surface);
+                width: fit-content;
+                padding: 1rem;
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                width="16"
+                height="16"
+              >
+                <defs>
+                  <linearGradient
+                    id="ng5"
+                    x1="0"
+                    x2="1"
+                    gradientUnits="objectBoundingBox"
+                  >
+                    <stop offset="0" stop-color="white" stop-opacity="0.5" />
+                    <stop offset="0.45" stop-color="white" stop-opacity="1" />
+                    <stop offset="1" stop-color="white" stop-opacity="0.35" />
+                  </linearGradient>
+                  <clipPath id="bc5">
+                    <circle cx="50" cy="33" r="20" />
+                  </clipPath>
+                </defs>
+                <polygon points="48,52 52,52 50,93" fill="url(#ng5)" />
+                <circle cx="50" cy="33" r="20" fill="#7bafd4" />
+                <g clip-path="url(#bc5)">
+                  <circle cx="46" cy="28" r="10" fill="white" opacity="0.88" />
+                  <circle cx="49.5" cy="30.5" r="10.1" fill="#7bafd4" />
+                </g>
+              </svg>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--muted)">
+              64px &nbsp;·&nbsp; 32px &nbsp;·&nbsp; 16px (favicon)
+            </p>
+          </div>
+        </div>
+
+        <p class="subhead">Clear Space</p>
+        <div class="card" style="margin-bottom: 2rem">
+          <p style="font-size: 0.9rem; color: var(--muted)">
+            Maintain a minimum clear space equal to the
+            <strong style="color: var(--text)">height of the logo mark</strong>
+            on all four sides. Never crowd the logo with other elements, text,
+            or edge of the page.
+          </p>
+        </div>
+
+        <p class="subhead">Minimum Sizes</p>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Context</th>
+                <th>Minimum size</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Favicon</td>
+                <td>16px</td>
+                <td>Icon mark only — wordmark omitted</td>
+              </tr>
+              <tr>
+                <td>Navbar</td>
+                <td>36px</td>
+                <td>Full lockup with wordmark</td>
+              </tr>
+              <tr>
+                <td>App icon (iOS)</td>
+                <td>180px</td>
+                <td>
+                  Apple touch icon — icon on <code>#06080c</code> background
+                </td>
+              </tr>
+              <tr>
+                <td>OG image</td>
+                <td>80px</td>
+                <td>Inside 1200×630 social preview</td>
+              </tr>
+              <tr>
+                <td>Print (business card)</td>
+                <td>24pt / 8mm</td>
+                <td>Minimum for legibility</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="subhead" style="margin-top: 2rem">Logo Don'ts</p>
+        <div class="card">
+          <ul class="dont-list" style="gap: 0.75rem">
+            <li>Stretch, skew, or distort the proportions</li>
+            <li>Rotate the logo</li>
+            <li>Change the Carolina Blue ball fill to any other color</li>
+            <li>Apply drop shadows, glows, or bevel effects</li>
+            <li>Place on a busy or low-contrast background</li>
+            <li>Use the wordmark without the icon mark</li>
+            <li>Rasterize below recommended minimum sizes</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+       3 · Colors
+  ══════════════════════════════════════════ -->
+      <section class="section" id="colors">
+        <div class="section-header">
+          <span class="section-num">03</span>
+          <h2 class="section-title">Color Palette</h2>
+        </div>
+
+        <p class="subhead">Primary Brand Colors</p>
+        <div class="swatch-grid" style="margin-bottom: 2.5rem">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #7bafd4"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Carolina Blue</div>
+              <div class="swatch-hex"><code>#7BAFD4</code></div>
+              <div class="swatch-role">
+                Primary accent · Links · CTAs · Logo mark
+              </div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #012169"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Duke Blue</div>
+              <div class="swatch-hex"><code>#012169</code></div>
+              <div class="swatch-role">
+                Structural depth · Gradients · Borders
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="subhead">Dark Surface Palette</p>
+        <div class="swatch-grid" style="margin-bottom: 2.5rem">
+          <div class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #06080c; border-bottom: 1px solid #1c2333"
+            ></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Background</div>
+              <div class="swatch-hex"><code>#06080C</code></div>
+              <div class="swatch-role">Page background</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #0d1117; border-bottom: 1px solid #1c2333"
+            ></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Surface</div>
+              <div class="swatch-hex"><code>#0D1117</code></div>
+              <div class="swatch-role">Cards · Panels</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #161b22; border-bottom: 1px solid #1c2333"
+            ></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Surface Hover</div>
+              <div class="swatch-hex"><code>#161B22</code></div>
+              <div class="swatch-role">Hover states</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #1e3a5f; border-bottom: 1px solid #1c2333"
+            ></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Secondary</div>
+              <div class="swatch-hex"><code>#1E3A5F</code></div>
+              <div class="swatch-role">Secondary surfaces</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="subhead">Text &amp; Utility</p>
+        <div class="swatch-grid" style="margin-bottom: 2.5rem">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #e6edf3"></div>
+            <div class="swatch-info">
+              <div class="swatch-name" style="color: #111">Text</div>
+              <div class="swatch-hex" style="color: #555">
+                <code style="background: #eee; color: #333">#E6EDF3</code>
+              </div>
+              <div class="swatch-role" style="color: #555">
+                Primary body text
+              </div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #7d8590"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Muted</div>
+              <div class="swatch-hex"><code>#7D8590</code></div>
+              <div class="swatch-role">Secondary text · Captions</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #e53e3e"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Accent / Error</div>
+              <div class="swatch-hex"><code>#E53E3E</code></div>
+              <div class="swatch-role">Error states · Warnings</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="subhead">Gradients</p>
+        <div class="grid-2" style="margin-bottom: 2.5rem; gap: 1rem">
+          <div class="card" style="padding: 0; overflow: hidden">
+            <div
+              style="
+                height: 80px;
+                background: linear-gradient(135deg, #7bafd4, #012169);
+              "
+            ></div>
+            <div style="padding: 1rem">
+              <div class="swatch-name">Accent Gradient</div>
+              <div class="swatch-hex">
+                <code>135deg #7BAFD4 → #012169</code>
+              </div>
+              <div
+                class="swatch-role"
+                style="
+                  margin-top: 0.25rem;
+                  font-size: 0.72rem;
+                  color: var(--muted);
+                "
+              >
+                Hero headlines · Feature section backgrounds
+              </div>
+            </div>
+          </div>
+          <div class="card" style="padding: 0; overflow: hidden">
+            <div
+              style="
+                height: 80px;
+                background: linear-gradient(
+                  135deg,
+                  rgba(123, 175, 212, 0.08),
+                  rgba(1, 33, 105, 0.08)
+                );
+                border-bottom: 1px solid var(--border);
+              "
+            ></div>
+            <div style="padding: 1rem">
+              <div class="swatch-name">Surface Gradient</div>
+              <div class="swatch-hex">
+                <code>135deg carolina/8% → duke/8%</code>
+              </div>
+              <div
+                class="swatch-role"
+                style="
+                  margin-top: 0.25rem;
+                  font-size: 0.72rem;
+                  color: var(--muted);
+                "
+              >
+                Subtle card tints · Section backgrounds
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="subhead">Accessibility</p>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Combination</th>
+                <th>Contrast Ratio</th>
+                <th>WCAG AA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span
+                    style="
+                      color: #e6edf3;
+                      background: #06080c;
+                      padding: 0.1em 0.4em;
+                      border-radius: 3px;
+                    "
+                    >#E6EDF3 on #06080C</span
+                  >
+                </td>
+                <td>~15.8:1</td>
+                <td><span class="badge badge-pass">PASS</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <span
+                    style="
+                      color: #7bafd4;
+                      background: #06080c;
+                      padding: 0.1em 0.4em;
+                      border-radius: 3px;
+                    "
+                    >#7BAFD4 on #06080C</span
+                  >
+                </td>
+                <td>~6.7:1</td>
+                <td><span class="badge badge-pass">PASS</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <span
+                    style="
+                      color: #7bafd4;
+                      background: #0d1117;
+                      padding: 0.1em 0.4em;
+                      border-radius: 3px;
+                    "
+                    >#7BAFD4 on #0D1117</span
+                  >
+                </td>
+                <td>~6.4:1</td>
+                <td><span class="badge badge-pass">PASS</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <span
+                    style="
+                      color: #7d8590;
+                      background: #06080c;
+                      padding: 0.1em 0.4em;
+                      border-radius: 3px;
+                    "
+                    >#7D8590 on #06080C</span
+                  >
+                </td>
+                <td>~5.4:1</td>
+                <td><span class="badge badge-aa">AA (large text)</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 0.8rem; color: var(--muted); margin-top: 1rem">
+            All interactive text and essential UI must meet WCAG 2.1 AA (4.5:1
+            normal text, 3:1 large text). Never use muted text for essential
+            content.
+          </p>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+       4 · Typography
+  ══════════════════════════════════════════ -->
+      <section class="section" id="typography">
+        <div class="section-header">
+          <span class="section-num">04</span>
+          <h2 class="section-title">Typography</h2>
+        </div>
+
+        <p class="subhead">Font Family</p>
+        <div class="grid-3" style="margin-bottom: 3rem">
+          <div class="card" style="padding: 1.5rem">
+            <p class="label">Display / Headings</p>
+            <p
+              style="
+                font-family: &quot;Exo 2&quot;, sans-serif;
+                font-size: 1.5rem;
+                font-weight: 800;
+                letter-spacing: -0.02em;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Exo 2
+            </p>
+            <p style="font-size: 0.8rem; color: var(--muted)">
+              Google Fonts · Weights: 400, 600, 700, 800
+            </p>
+            <p
+              style="
+                font-size: 0.75rem;
+                color: var(--muted);
+                margin-top: 0.25rem;
+              "
+            >
+              Use for all heading levels, navbar wordmark, CTAs
+            </p>
+          </div>
+          <div class="card" style="padding: 1.5rem">
+            <p class="label">Body / UI</p>
+            <p
+              style="
+                font-family: &quot;Space Grotesk&quot;, sans-serif;
+                font-size: 1.25rem;
+                font-weight: 400;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Space Grotesk
+            </p>
+            <p style="font-size: 0.8rem; color: var(--muted)">
+              Google Fonts · Weights: 400, 500, 600
+            </p>
+            <p
+              style="
+                font-size: 0.75rem;
+                color: var(--muted);
+                margin-top: 0.25rem;
+              "
+            >
+              Use for body copy, UI labels, navigation links
+            </p>
+          </div>
+          <div class="card" style="padding: 1.5rem">
+            <p class="label">Monospace / Code</p>
+            <p
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 1.1rem;
+                font-weight: 400;
+                margin-bottom: 0.5rem;
+              "
+            >
+              JetBrains Mono
+            </p>
+            <p style="font-size: 0.8rem; color: var(--muted)">
+              Google Fonts · Weights: 400, 500
+            </p>
+            <p
+              style="
+                font-size: 0.75rem;
+                color: var(--muted);
+                margin-top: 0.25rem;
+              "
+            >
+              Use for code blocks, hex values, labels, section numbers
+            </p>
+          </div>
+        </div>
+
+        <p class="subhead">Type Scale — Specimen</p>
+        <div class="card" style="margin-bottom: 2rem">
+          <div class="type-specimen">
+            <div class="type-row">
+              <h1
+                style="
+                  font-size: clamp(3rem, 8vw, 4rem);
+                  font-weight: 800;
+                  margin: 0;
+                  line-height: 1.1;
+                "
+              >
+                Display Hero
+              </h1>
+              <div class="type-meta">
+                <div class="type-style">Display / H1</div>
+                <div class="type-specs">Exo 2 · 800 · clamp(3rem→4rem)</div>
+              </div>
+            </div>
+            <div class="type-row">
+              <h2
+                style="
+                  font-size: clamp(2rem, 5vw, 3rem);
+                  font-weight: 700;
+                  margin: 0;
+                  line-height: 1.15;
+                "
+              >
+                Section Heading
+              </h2>
+              <div class="type-meta">
+                <div class="type-style">H2</div>
+                <div class="type-specs">Exo 2 · 700 · clamp(2rem→3rem)</div>
+              </div>
+            </div>
+            <div class="type-row">
+              <h3
+                style="
+                  font-size: clamp(1.5rem, 4vw, 2rem);
+                  font-weight: 700;
+                  margin: 0;
+                "
+              >
+                Subsection Title
+              </h3>
+              <div class="type-meta">
+                <div class="type-style">H3</div>
+                <div class="type-specs">Exo 2 · 700 · clamp(1.5rem→2rem)</div>
+              </div>
+            </div>
+            <div class="type-row">
+              <h4
+                style="
+                  font-size: clamp(1.125rem, 3vw, 1.25rem);
+                  font-weight: 600;
+                  margin: 0;
+                "
+              >
+                Card Title / Label
+              </h4>
+              <div class="type-meta">
+                <div class="type-style">H4</div>
+                <div class="type-specs">
+                  Exo 2 · 600 · clamp(1.125rem→1.25rem)
+                </div>
+              </div>
+            </div>
+            <div class="type-row">
+              <p
+                style="
+                  font-size: clamp(1rem, 3vw, 1.125rem);
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  margin: 0;
+                  line-height: 1.6;
+                "
+              >
+                Body text. Local Search Ally helps NWA contractors rank higher
+                on Google, get more calls, and win more jobs — without long-term
+                contracts.
+              </p>
+              <div class="type-meta">
+                <div class="type-style">Body</div>
+                <div class="type-specs">
+                  Space Grotesk · 400 · clamp(1rem→1.125rem)
+                </div>
+              </div>
+            </div>
+            <div class="type-row">
+              <p
+                style="
+                  font-size: clamp(0.875rem, 2.5vw, 1rem);
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  color: var(--muted);
+                  margin: 0;
+                "
+              >
+                Caption, meta text, secondary information, image labels, publish
+                dates.
+              </p>
+              <div class="type-meta">
+                <div class="type-style">Caption / Small</div>
+                <div class="type-specs">
+                  Space Grotesk · 400 · clamp(0.875rem→1rem)
+                </div>
+              </div>
+            </div>
+            <div class="type-row">
+              <p
+                style="
+                  font-size: clamp(0.75rem, 2vw, 0.875rem);
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  color: var(--carolina);
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  margin: 0;
+                "
+              >
+                SECTION — LABEL — META
+              </p>
+              <div class="type-meta">
+                <div class="type-style">Mono Label</div>
+                <div class="type-specs">
+                  JetBrains Mono · 400 · 0.75rem–0.875rem
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="subhead">Usage Rules</p>
+        <div class="card">
+          <ul
+            style="
+              list-style: none;
+              display: flex;
+              flex-direction: column;
+              gap: 0.6rem;
+              font-size: 0.9rem;
+            "
+          >
+            <li>
+              → All headings use <strong>letter-spacing: -0.02em</strong> to
+              tighten display at large sizes
+            </li>
+            <li>
+              → Heading line-height: <strong>1.2</strong> · Body line-height:
+              <strong>1.6</strong> · Mono: <strong>1.4</strong>
+            </li>
+            <li>
+              → Never mix Exo 2 and Space Grotesk at the same visual level
+            </li>
+            <li>
+              → JetBrains Mono is reserved for labels, hex values, code — not
+              for body text
+            </li>
+            <li>
+              → Use fluid type scales (<code>clamp()</code>) — avoid fixed px
+              sizes on headings
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+       5 · Spacing & Layout
+  ══════════════════════════════════════════ -->
+      <section class="section" id="spacing">
+        <div class="section-header">
+          <span class="section-num">05</span>
+          <h2 class="section-title">Spacing &amp; Layout</h2>
+        </div>
+
+        <p class="subhead">Fluid Spacing Scale</p>
+        <div class="card" style="margin-bottom: 2rem">
+          <div class="space-row">
+            <div class="space-bar" style="width: clamp(8px, 1vw, 16px)"></div>
+            <span class="space-label"><code>--space-xs</code> · 0.5→1rem</span
+            ><span style="font-size: 0.8rem; color: var(--muted)"
+              >Tight padding, inline gaps</span
+            >
+          </div>
+          <div class="space-row">
+            <div
+              class="space-bar"
+              style="width: clamp(12px, 1.5vw, 24px)"
+            ></div>
+            <span class="space-label"
+              ><code>--space-sm</code> · 0.75→1.5rem</span
+            ><span style="font-size: 0.8rem; color: var(--muted)"
+              >Form fields, small card padding</span
+            >
+          </div>
+          <div class="space-row">
+            <div class="space-bar" style="width: clamp(16px, 2vw, 32px)"></div>
+            <span class="space-label"><code>--space-md</code> · 1→2rem</span
+            ><span style="font-size: 0.8rem; color: var(--muted)"
+              >Component padding, grid gaps</span
+            >
+          </div>
+          <div class="space-row">
+            <div class="space-bar" style="width: clamp(24px, 3vw, 48px)"></div>
+            <span class="space-label"><code>--space-lg</code> · 1.5→3rem</span
+            ><span style="font-size: 0.8rem; color: var(--muted)"
+              >Section vertical padding</span
+            >
+          </div>
+          <div class="space-row">
+            <div class="space-bar" style="width: clamp(32px, 4vw, 64px)"></div>
+            <span class="space-label"><code>--space-xl</code> · 2→4rem</span
+            ><span style="font-size: 0.8rem; color: var(--muted)"
+              >Large section breaks</span
+            >
+          </div>
+          <div class="space-row">
+            <div class="space-bar" style="width: clamp(48px, 6vw, 96px)"></div>
+            <span class="space-label"><code>--space-2xl</code> · 3→6rem</span
+            ><span style="font-size: 0.8rem; color: var(--muted)"
+              >Hero padding, major page sections</span
+            >
+          </div>
+        </div>
+
+        <p class="subhead">Layout Conventions</p>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Max content width</td>
+                <td>900px (editorial) · 1200px (full page)</td>
+              </tr>
+              <tr>
+                <td>Horizontal page padding</td>
+                <td>2rem (mobile) · 8rem (desktop &gt;1000px)</td>
+              </tr>
+              <tr>
+                <td>Border radius — cards</td>
+                <td>12px</td>
+              </tr>
+              <tr>
+                <td>Border radius — buttons/chips</td>
+                <td>8px · 20px (pill)</td>
+              </tr>
+              <tr>
+                <td>Grid columns</td>
+                <td>1 (mobile) → 2 (≥640px) → 3 (≥900px)</td>
+              </tr>
+              <tr>
+                <td>Card border</td>
+                <td>
+                  1px solid <code>var(--border)</code> (12% Carolina Blue)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+       6 · Imagery
+  ══════════════════════════════════════════ -->
+      <section class="section" id="imagery">
+        <div class="section-header">
+          <span class="section-num">06</span>
+          <h2 class="section-title">Imagery</h2>
+        </div>
+
+        <p class="subhead">Photography Direction</p>
+        <div class="grid-2" style="margin-bottom: 2rem">
+          <div class="card">
+            <p
+              style="
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                font-family: var(--font-display);
+              "
+            >
+              Subject Matter
+            </p>
+            <ul
+              style="
+                list-style: disc;
+                padding-left: 1.2rem;
+                font-size: 0.9rem;
+                color: var(--muted);
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+              "
+            >
+              <li>Contractors at work — real job sites, not staged</li>
+              <li>
+                On-location NWA settings (Ozarks, small-town main streets)
+              </li>
+              <li>
+                Technology in context — phone with Google maps, laptop on job
+                site
+              </li>
+              <li>Before/after results — search rankings, review counts</li>
+            </ul>
+          </div>
+          <div class="card">
+            <p
+              style="
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                font-family: var(--font-display);
+              "
+            >
+              Style &amp; Mood
+            </p>
+            <ul
+              style="
+                list-style: disc;
+                padding-left: 1.2rem;
+                font-size: 0.9rem;
+                color: var(--muted);
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+              "
+            >
+              <li>Slightly desaturated — works against the dark UI</li>
+              <li>Edge-lit or natural light, not flat studio light</li>
+              <li>Documentary feel, not advertising polish</li>
+              <li>Authentic people, not stock-photo expressions</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="subhead">Image Formats &amp; Optimization</p>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Use</th>
+                <th>Format</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Blog hero images</td>
+                <td>AVIF → WebP fallback</td>
+                <td>Max 1200px wide, &lt;150KB ideal</td>
+              </tr>
+              <tr>
+                <td>OG / social</td>
+                <td>PNG or JPEG</td>
+                <td>1200×630px exactly</td>
+              </tr>
+              <tr>
+                <td>Logo / icons</td>
+                <td>SVG</td>
+                <td>Inline where possible</td>
+              </tr>
+              <tr>
+                <td>Portrait / headshots</td>
+                <td>AVIF → WebP fallback</td>
+                <td>Square crop, min 400×400px</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+       7 · Voice & Tone
+  ══════════════════════════════════════════ -->
+      <section class="section" id="voice">
+        <div class="section-header">
+          <span class="section-num">07</span>
+          <h2 class="section-title">Voice &amp; Tone</h2>
+        </div>
+
+        <p class="subhead">The Transparent Expert</p>
+        <div class="card" style="margin-bottom: 2rem">
+          <p style="color: var(--muted); font-size: 0.95rem">
+            Our voice is that of a trusted advisor who shares the process,
+            admits the limits, and lets the work speak. Like the contractor who
+            explains what they're doing under your sink. The teacher who makes
+            complex things simple. The founder who builds in public.
+          </p>
+        </div>
+
+        <p class="subhead">Voice Attributes</p>
+        <div class="voice-pair" style="margin-bottom: 2rem">
+          <div class="card voice-col is">
+            <h4>We Are</h4>
+            <ul>
+              <li>Direct — say the thing plainly</li>
+              <li>Confident — no hedging on expertise</li>
+              <li>Specific — numbers over vague claims</li>
+              <li>Honest — admit what we don't know</li>
+              <li>Local — rooted in NWA context</li>
+            </ul>
+          </div>
+          <div class="card voice-col isnt">
+            <h4>We Are Not</h4>
+            <ul>
+              <li>Jargon-heavy or corporate</li>
+              <li>Arrogant or dismissive</li>
+              <li>Vague or overblown</li>
+              <li>Pushier than necessary</li>
+              <li>Pretending to be national</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="subhead">Sounds Like / Never Sounds Like</p>
+        <div class="grid-2" style="margin-bottom: 2rem">
+          <div class="card" style="border-color: rgba(76, 175, 119, 0.25)">
+            <p class="label" style="color: #4caf77">Sounds like</p>
+            <ul
+              style="
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 0.6rem;
+                font-size: 0.875rem;
+              "
+            >
+              <li style="color: var(--text)">
+                "Here's exactly what I did and what happened."
+              </li>
+              <li style="color: var(--text)">
+                "I don't know yet — but I'll find out and tell you."
+              </li>
+              <li style="color: var(--text)">
+                "You don't need a long-term contract. If I'm not delivering,
+                leave."
+              </li>
+              <li style="color: var(--text)">
+                "This took three tries to get right. Here's what each try taught
+                me."
+              </li>
+            </ul>
+          </div>
+          <div class="card" style="border-color: rgba(229, 62, 62, 0.25)">
+            <p class="label" style="color: var(--accent)">Never sounds like</p>
+            <ul
+              style="
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 0.6rem;
+                font-size: 0.875rem;
+              "
+            >
+              <li style="color: var(--muted)">
+                "Our proprietary methodology delivers superior outcomes."
+              </li>
+              <li style="color: var(--muted)">
+                "You need to trust the process."
+              </li>
+              <li style="color: var(--muted)">
+                "As a leading expert in the space…"
+              </li>
+              <li style="color: var(--muted)">
+                "Leveraging synergies to maximize your digital footprint."
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="subhead">Tone by Context</p>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Context</th>
+                <th>Tone</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Marketing / homepage</td>
+                <td>Confident, tangible</td>
+                <td>
+                  "Contractors who rank first get the call. We get you to
+                  first."
+                </td>
+              </tr>
+              <tr>
+                <td>Blog / educational</td>
+                <td>Teaching, transparent</td>
+                <td>
+                  "Here's the exact schema markup that passed Google's
+                  validator."
+                </td>
+              </tr>
+              <tr>
+                <td>Proposals / email</td>
+                <td>Direct, respectful</td>
+                <td>
+                  "Based on your map pack position, here's what I'd fix first."
+                </td>
+              </tr>
+              <tr>
+                <td>Error / empty states</td>
+                <td>Helpful, unalarming</td>
+                <td>"Nothing here yet — check back after the next index."</td>
+              </tr>
+              <tr>
+                <td>Social media</td>
+                <td>Casual, real</td>
+                <td>
+                  "Iterated on the logo for two weeks. Here's every version I
+                  rejected."
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="subhead" style="margin-top: 2rem">Writing Guidelines</p>
+        <div class="card">
+          <ul
+            style="
+              list-style: disc;
+              padding-left: 1.2rem;
+              font-size: 0.9rem;
+              display: flex;
+              flex-direction: column;
+              gap: 0.5rem;
+              color: var(--muted);
+            "
+          >
+            <li>
+              <strong style="color: var(--text)">Active voice.</strong> "We
+              fixed the schema" — not "The schema was fixed."
+            </li>
+            <li>
+              <strong style="color: var(--text)">Short sentences.</strong>
+              Target 15–20 words for clarity. Break complex ideas into multiple
+              sentences.
+            </li>
+            <li>
+              <strong style="color: var(--text)">Specific numbers.</strong>
+              "Ranks #3 in Bentonville for HVAC" beats "ranks well locally."
+            </li>
+            <li>
+              <strong style="color: var(--text)">Second person.</strong> Address
+              the reader directly: "you" and "your business."
+            </li>
+            <li>
+              <strong style="color: var(--text)"
+                >No jargon without context.</strong
+              >
+              Define technical terms the first time, or cut them.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+       8 · Applications
+  ══════════════════════════════════════════ -->
+      <section class="section" id="applications">
+        <div class="section-header">
+          <span class="section-num">08</span>
+          <h2 class="section-title">Applications</h2>
+        </div>
+
+        <p class="subhead">Email Signature</p>
+        <div class="card" style="margin-bottom: 2rem">
+          <div
+            style="
+              background: var(--surface-hover);
+              border-radius: 8px;
+              padding: 1.5rem;
+              font-size: 0.9rem;
+              border-left: 3px solid var(--carolina);
+            "
+          >
+            <strong style="font-family: var(--font-display); font-size: 1.05rem"
+              >Chad Smith</strong
+            ><br />
+            <span style="color: var(--muted)"
+              >Local SEO &amp; Web Development</span
+            ><br /><br />
+            <a href="https://localsearchally.com" style="color: var(--carolina)"
+              >localsearchally.com</a
+            ><br />
+            <span style="color: var(--muted)">Siloam Springs, AR · NWA</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--muted); margin-top: 1rem">
+            Plain-text format. No images. Carolina Blue for the URL link only.
+            Name in Exo 2 Bold if HTML email.
+          </p>
+        </div>
+
+        <p class="subhead">Social Media Specs</p>
+        <div class="card" style="margin-bottom: 2rem">
+          <table>
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Profile image</th>
+                <th>Cover / header</th>
+                <th>Post image</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google Business Profile</td>
+                <td>250×250px</td>
+                <td>1332×750px</td>
+                <td>720×540px</td>
+              </tr>
+              <tr>
+                <td>X / Twitter</td>
+                <td>400×400px</td>
+                <td>1500×500px</td>
+                <td>1200×675px</td>
+              </tr>
+              <tr>
+                <td>LinkedIn</td>
+                <td>400×400px</td>
+                <td>1128×191px</td>
+                <td>1200×627px</td>
+              </tr>
+              <tr>
+                <td>Facebook</td>
+                <td>170×170px</td>
+                <td>820×312px</td>
+                <td>1200×630px</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 0.8rem; color: var(--muted); margin-top: 1rem">
+            Profile images: icon mark on <code>#06080C</code> background. Always
+            export at 2× for retina.
+          </p>
+        </div>
+
+        <p class="subhead">Open Graph / Social Preview</p>
+        <div class="card" style="margin-bottom: 2rem">
+          <p
+            style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--muted)"
+          >
+            1200×630px. Background <code>#06080C</code>. Logo mark top-left.
+            Page title in Exo 2 Bold, white. Muted subtitle below. Carolina Blue
+            horizontal rule at bottom.
+          </p>
+          <div
+            style="
+              width: 100%;
+              max-width: 480px;
+              aspect-ratio: 1200/630;
+              background: #06080c;
+              border-radius: 8px;
+              border: 1px solid var(--border);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              overflow: hidden;
+              padding: 2rem;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, #7bafd4, #012169);
+              "
+            ></div>
+            <div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                  width="28"
+                  height="28"
+                >
+                  <defs>
+                    <linearGradient
+                      id="ng6"
+                      x1="0"
+                      x2="1"
+                      gradientUnits="objectBoundingBox"
+                    >
+                      <stop offset="0" stop-color="white" stop-opacity="0.5" />
+                      <stop offset="0.45" stop-color="white" stop-opacity="1" />
+                      <stop offset="1" stop-color="white" stop-opacity="0.35" />
+                    </linearGradient>
+                    <clipPath id="bc6">
+                      <circle cx="50" cy="33" r="20" />
+                    </clipPath>
+                  </defs>
+                  <polygon points="48,52 52,52 50,93" fill="url(#ng6)" />
+                  <circle cx="50" cy="33" r="20" fill="#7bafd4" />
+                  <g clip-path="url(#bc6)">
+                    <circle
+                      cx="46"
+                      cy="28"
+                      r="10"
+                      fill="white"
+                      opacity="0.88"
+                    />
+                    <circle cx="49.5" cy="30.5" r="10.1" fill="#7bafd4" />
+                  </g>
+                </svg>
+                <span
+                  style="
+                    font-family: &quot;Exo 2&quot;, sans-serif;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    color: #7bafd4;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                  "
+                  >Local Search Ally</span
+                >
+              </div>
+              <p
+                style="
+                  font-family: &quot;Exo 2&quot;, sans-serif;
+                  font-size: 1.1rem;
+                  font-weight: 800;
+                  color: #e6edf3;
+                  line-height: 1.2;
+                  margin: 0 0 0.5rem;
+                "
+              >
+                Page Title Goes Here
+              </p>
+              <p
+                style="
+                  font-size: 0.7rem;
+                  color: #7d8590;
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                "
+              >
+                localsearchally.com
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="subhead">Favicon</p>
+        <div class="card">
+          <p style="font-size: 0.9rem; color: var(--muted)">
+            Icon mark only — no wordmark. Generated via Next.js
+            <code>ImageResponse</code> at 32×32px and 16×16px. Background
+            <code>#06080C</code>. Carolina Blue circle, white needle.
+          </p>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+       9 · Do's & Don'ts
+  ══════════════════════════════════════════ -->
+      <section class="section" id="dont">
+        <div class="section-header">
+          <span class="section-num">09</span>
+          <h2 class="section-title">Do's &amp; Don'ts</h2>
+        </div>
+
+        <div class="do-dont">
+          <div class="card" style="border-color: rgba(76, 175, 119, 0.25)">
+            <p class="do-list-head">Do ✓</p>
+            <ul class="do-list">
+              <li>Use approved hex values — no near-matches</li>
+              <li>Maintain logo clear space at all times</li>
+              <li>Use Exo 2 for headings, Space Grotesk for body</li>
+              <li>Export images as AVIF/WebP for web use</li>
+              <li>Write in active, second-person voice</li>
+              <li>Reference specific NWA cities and trades</li>
+              <li>Use fluid type and spacing scales</li>
+              <li>Test all text for WCAG AA contrast</li>
+            </ul>
+          </div>
+          <div class="card" style="border-color: rgba(229, 62, 62, 0.25)">
+            <p class="dont-list-head">Don't ✕</p>
+            <ul class="dont-list">
+              <li>Use off-brand colors as primary elements</li>
+              <li>Stretch, rotate, or recolor the logo</li>
+              <li>Mix Exo 2 and Space Grotesk at the same level</li>
+              <li>Use JetBrains Mono for body text</li>
+              <li>Use low-resolution or oversized uncompressed images</li>
+              <li>Write in passive voice or use corporate jargon</li>
+              <li>Use fixed px font sizes for headings</li>
+              <li>Add drop shadows or glow effects to the logo</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="guide-footer">
+      <div class="wrap">
+        <p>
+          Local Search Ally Brand Guidelines · v1.1 · March 2026 ·
+          localsearchally.com
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
