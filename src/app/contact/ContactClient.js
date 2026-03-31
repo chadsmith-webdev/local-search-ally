@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import CTAForm from "@/components/CTAForm";
-import Starfield from "@/components/Starfield";
+import Hero from "@/components/Hero";
 
 function useReveal() {
   const ref = useRef(null);
@@ -200,40 +200,15 @@ export default function ContactClient() {
       `}</style>
 
       {/* Hero */}
-      <section className="contact-hero">
-        <Starfield />
-        <div style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "radial-gradient(circle, rgba(123,175,212,0.06) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-          maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
-          pointerEvents: "none",
-        }} />
-        <div style={{
-          position: "absolute",
-          top: "-150px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "600px",
-          height: "600px",
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(1,33,105,0.5) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }} />
-        <Reveal style={{ position: "relative" }}>
-          <p className="eyebrow" style={{ marginBottom: "0.85rem", justifyContent: "center" }}>
-            Free Strategy Call
-          </p>
-          <h1 className="contact-hero-title">
-            No pitch. No pressure. <span style={{ color: "var(--carolina)", display: "inline-block" }}>Just an honest conversation.</span>
-          </h1>
-          <p className="contact-hero-copy">
-            Tell me about your business and what's not working. I'll look at your online presence and give you a clear read on where you stand—even if the answer is "you don't need me."
-          </p>
-        </Reveal>
-      </section>
+      <Hero
+        eyebrow='Free Strategy Call'
+        title={
+          <>
+            No pitch. No pressure. <span className='hero-title-accent' style={{ display: "inline-block" }}>Just an honest conversation.</span>
+          </>
+        }
+        subtitle="Tell me about your business and what's not working. I'll look at your online presence and give you a clear read on where you stand—even if the answer is &quot;you don't need me.&quot;"
+      />
 
       {/* Contact Methods + Form */}
       <section className="contact-grid-wrap">

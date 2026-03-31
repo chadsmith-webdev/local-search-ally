@@ -1,10 +1,186 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import Hero from "./Hero";
 import Link from "next/link";
 import Image from "next/image";
-import FAQSection from "./FAQSection";
+import styles from "./Hero.module.css";
 import CTAForm from "./CTAForm";
+import FAQSection from "./FAQSection";
+
+// Icon components for use in heroSignals, problemPoints, trustItems, etc.
+function SearchSignalIcon() {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.7'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      style={{ width: "1.2rem", height: "1.2rem", display: "block" }}
+    >
+      <circle cx='11' cy='11' r='5.5' />
+      <path d='M15 15l5 5' />
+      <path d='M11 3v2' />
+      <path d='M3 11h2' />
+      <path d='M17 11h2' />
+      <path d='M11 17v2' />
+    </svg>
+  );
+}
+
+function CallFlowIcon() {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.7'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      style={{ width: "1.2rem", height: "1.2rem", display: "block" }}
+    >
+      <path d='M7.5 5.5c.6 2.1 1.7 4 3.3 5.7 1.7 1.6 3.6 2.7 5.7 3.3l1.8-1.8a1.4 1.4 0 0 1 1.4-.33l2 .67a1.4 1.4 0 0 1 .95 1.33V19a1.5 1.5 0 0 1-1.5 1.5C11.4 20.5 3.5 12.6 3.5 3.5A1.5 1.5 0 0 1 5 2h3.6a1.4 1.4 0 0 1 1.33.95l.67 2a1.4 1.4 0 0 1-.33 1.4L8.5 8.1' />
+      <path d='M14 6h4v4' />
+      <path d='M18 6l-5 5' />
+    </svg>
+  );
+}
+
+function MapPulseIcon() {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.7'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      style={{ width: "1.2rem", height: "1.2rem", display: "block" }}
+    >
+      <path d='M12 21s6-5.55 6-11a6 6 0 1 0-12 0c0 5.45 6 11 6 11Z' />
+      <circle cx='12' cy='10' r='2.2' />
+    </svg>
+  );
+}
+
+function BadgeStarIcon() {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.7'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      style={{ width: "1.2rem", height: "1.2rem", display: "block" }}
+    >
+      <circle cx='12' cy='12' r='8.2' />
+      <path d='M12 7.5l1.45 2.94 3.25.47-2.35 2.29.56 3.25L12 15.1l-2.91 1.53.56-3.25-2.35-2.29 3.25-.47z' />
+    </svg>
+  );
+}
+
+function CircuitSchemaIcon() {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.7'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      style={{ width: "1.2rem", height: "1.2rem", display: "block" }}
+    >
+      <rect x='4' y='4' width='16' height='16' rx='4' />
+      <circle cx='8' cy='8' r='1.2' />
+      <circle cx='16' cy='8' r='1.2' />
+      <circle cx='8' cy='16' r='1.2' />
+      <circle cx='16' cy='16' r='1.2' />
+      <path d='M8 8v8M16 8v8M8 8h8M8 16h8' />
+    </svg>
+  );
+}
+
+function WrenchSignalIcon() {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.7'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      style={{ width: "1.2rem", height: "1.2rem", display: "block" }}
+    >
+      <path d='M21 19.5l-5.5-5.5a6 6 0 0 1-7.5-7.5l2.5 2.5M16.5 3a6 6 0 0 1-7.5 7.5l-2.5-2.5' />
+      <circle cx='7.5' cy='16.5' r='2.5' />
+    </svg>
+  );
+}
+
+function TrendPulseIcon() {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.7'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      style={{ width: "1.2rem", height: "1.2rem", display: "block" }}
+    >
+      <path d='M3 17l6-6 4 4 7-7' />
+      <circle cx='21' cy='7' r='1.2' />
+      <circle cx='9' cy='15' r='1.2' />
+      <circle cx='3' cy='17' r='1.2' />
+    </svg>
+  );
+}
+
+function SiteGridIcon() {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.7'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      style={{ width: "1.2rem", height: "1.2rem", display: "block" }}
+    >
+      <rect x='3' y='4' width='18' height='15.5' rx='2.5' />
+      <path d='M3 8h18M8 19.5V8M14 19.5V8' />
+    </svg>
+  );
+}
+
+function ShieldCheckIcon() {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.7'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      style={{ width: "1.2rem", height: "1.2rem", display: "block" }}
+    >
+      <path d='M12 3l7 3.5v5c0 4.7-3 8.3-7 9.5-4-1.2-7-4.8-7-9.5v-5L12 3Z' />
+      <path d='M9 12l2 2 4-4' />
+    </svg>
+  );
+}
 
 const heroSignals = [
   {
@@ -35,7 +211,7 @@ const problemPoints = [
   {
     title: "Visitors leave without calling",
     detail:
-      "People land on your site and leave. No clear path from \u2018I need this fixed\u2019 to \u2018I just booked a call.\u2019",
+      "People land on your site and leave. No clear path from ‘I need this fixed’ to ‘I just booked a call.’",
     Icon: CallFlowIcon,
   },
   {
@@ -46,467 +222,31 @@ const problemPoints = [
   },
 ];
 
-const stakes = [
-  {
-    label: "Calls going to competitors",
-    detail:
-      "People ready to book are calling someone else because they found them first.",
-    level: 92,
-    severity: "high",
-  },
-  {
-    label: "Relying only on word-of-mouth",
-    detail:
-      "When referrals slow down, there is nothing else filling the pipeline.",
-    level: 74,
-    severity: "mid",
-  },
-  {
-    label: "Less skilled competitors winning work",
-    detail:
-      "They are not better at the job. They are just easier to find online.",
-    level: 61,
-    severity: "mid",
-  },
-];
-
-const guideCredentials = [
-  {
-    value: "5+",
-    label: "Years doing local SEO",
-  },
-  {
-    value: "100%",
-    label: "Built for contractors and local service businesses",
-  },
-  {
-    value: "1:1",
-    label: "Direct access to the person doing the work",
-  },
-];
-
-const guidePrinciples = [
-  "Start with the visibility problems that are costing calls right now.",
-  "Fix the on-site path so search traffic has a clearer route to contact.",
-  "Track what changes, keep what works, and cut what does not.",
-];
-
-const fitGood = [
-  "Home service trades that want more qualified local calls",
-  "Owners who want a practical, no-fluff strategy",
-  "Businesses ready to improve both visibility and conversion",
-];
-
-const fitBad = [
-  "Businesses looking for overnight ranking promises",
-  "Teams shopping for the cheapest possible option only",
-  "Brands focused on broad national campaigns with no local intent",
-];
-
-const steps = [
-  {
-    title: "Audit",
-    detail:
-      "We review your local visibility, service pages, and competitor presence to find the highest-impact gaps.",
-    Icon: AuditGridIcon,
-  },
-  {
-    title: "Fix Priority Gaps",
-    detail:
-      "We improve what matters first: local relevance, on-page clarity, and lead paths that support calls.",
-    Icon: WrenchSignalIcon,
-  },
-  {
-    title: "Grow and Track",
-    detail:
-      "We monitor progress and adjust based on what improves visibility and call quality.",
-    Icon: TrendPulseIcon,
-  },
-];
-
 const services = [
-  {
-    title: "Google Business Profile",
-    detail:
-      "Get into the map results when someone nearby searches for what you do. Most contractors leave easy wins on the table here.",
-    Icon: BadgeStarIcon,
-  },
-  {
-    title: "Local SEO + service pages",
-    detail:
-      "Rank for the jobs and areas you actually want. Not vanity keywords\u2009\u2014\u2009the searches that lead to real calls.",
-    Icon: SiteGridIcon,
-  },
-  {
-    title: "Website conversion",
-    detail:
-      "Stop losing the visitors you already get. Small changes to layout, copy, and contact flow turn traffic into booked work.",
-    Icon: CallFlowIcon,
-  },
-  {
-    title: "Technical SEO + schema",
-    detail:
-      "Help search engines trust and surface your pages faster. The part most agencies skip because it\u2019s not flashy.",
-    Icon: CircuitSchemaIcon,
-  },
+  { title: "Local SEO", detail: "Show up when someone nearby searches for your trade", Icon: SearchSignalIcon },
+  { title: "GBP Optimization", detail: "Get into the Map Pack where buyers look first", Icon: BadgeStarIcon },
+  { title: "Web Development", detail: "Fast, mobile-first sites that actually convert", Icon: SiteGridIcon },
+  { title: "Reputation Building", detail: "Turn happy customers into visible proof", Icon: ShieldCheckIcon },
+  { title: "SEO Audits", detail: "Find out exactly what is costing you calls", Icon: TrendPulseIcon }
 ];
 
 const demos = [
-  {
-    trade: "Plumbing",
-    goal: "Generate emergency and maintenance calls from local search",
-    stack: "Service pages, LocalBusiness schema, click-to-call priority",
-    cta: "View plumbing demo",
-    href: "https://contractor-website-plumber.netlify.app/",
-    Icon: PipeMarkIcon,
-  },
-  {
-    trade: "HVAC",
-    goal: "Capture seasonal demand with clear offer and booking paths",
-    stack: "Location intent pages, FAQ schema, conversion-focused layout",
-    cta: "View HVAC demo",
-    href: "https://contractor-website-hvac.netlify.app/",
-    Icon: AirFlowIcon,
-  },
-  {
-    trade: "Electrical",
-    goal: "Build trust for higher-ticket jobs and panel upgrades",
-    stack: "Authority content structure, review strategy, lead form flow",
-    cta: "View electrical demo",
-    href: "https://contractor-website-electrical.netlify.app/",
-    Icon: BoltMarkIcon,
-  },
+  { trade: "Electrical", goal: "Emergency conversion", stack: "HTML/CSS/JS", cta: "View Demo", href: "https://contractor-website-electrical.netlify.app/", Icon: MapPulseIcon },
+  { trade: "Plumbing", goal: "Urgent lead capture", stack: "HTML/CSS/JS", cta: "View Demo", href: "https://contractor-website-plumber.netlify.app/", Icon: CallFlowIcon },
+  { trade: "HVAC", goal: "Seasonal demand", stack: "HTML/CSS/JS", cta: "View Demo", href: "https://contractor-website-hvac.netlify.app/", Icon: SearchSignalIcon }
 ];
 
 const technicalPoints = [
-  {
-    title: "Schema tied to page intent",
-    detail:
-      "Without structured data, Google guesses what your pages are about. With it, your services, service areas, and reviews show up faster\u2009\u2014\u2009and in richer results.",
-    Icon: CircuitSchemaIcon,
-  },
-  {
-    title: "Site architecture built to surface",
-    detail:
-      "Most contractor sites are a flat pile of pages. A clear hierarchy tells search engines which pages matter and how they connect to each other.",
-    Icon: SiteGridIcon,
-  },
-  {
-    title: "Pages matched to real searches",
-    detail:
-      "Generic service pages rank for nothing. Pages built around specific jobs in specific towns rank for the searches that lead to calls.",
-    Icon: MapPulseIcon,
-  },
-  {
-    title: "Tracking that filters the noise",
-    detail:
-      "Most analytics count bot visits and accidental clicks as wins. This measures qualified calls and form fills\u2009\u2014\u2009the signals that tell you what is actually working.",
-    Icon: TrendPulseIcon,
-  },
+  { title: "Technical SEO Audit", detail: "We identify the blockers keeping your site from ranking properly." },
+  { title: "Local Schema Markup", detail: "Detailed JSON-LD that tells Google exactly where and what your business is." },
+  { title: "Core Web Vitals", detail: "Optimizing for the speed and stability metrics Google uses to rank sites." }
 ];
 
 const callExpectations = [
-  "A plain-language read on what is helping or hurting your local visibility",
-  "A shortlist of fixes most likely to matter first",
-  "A clear answer on whether it makes sense to work together",
+  "A clear read on where you stand compared to your top 3 local competitors",
+  "A shortlist of the 'low hanging fruit' fixes that would move the needle first",
+  "A direct answer on whether we are a good fit to work together or not"
 ];
-
-const cinematicSectionIds = new Set(["problem", "stakes", "final-cta"]);
-
-function IconBase({ children }) {
-  return (
-    <svg
-      viewBox='0 0 24 24'
-      fill='none'
-      stroke='currentColor'
-      strokeWidth='1.7'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      aria-hidden='true'
-      style={{ width: "1.2rem", height: "1.2rem", display: "block" }}
-    >
-      {children}
-    </svg>
-  );
-}
-
-function SearchSignalIcon() {
-  return (
-    <IconBase>
-      <circle cx='11' cy='11' r='5.5' />
-      <path d='M15 15l5 5' />
-      <path d='M11 3v2' />
-      <path d='M3 11h2' />
-      <path d='M17 11h2' />
-      <path d='M11 17v2' />
-    </IconBase>
-  );
-}
-
-function CallFlowIcon() {
-  return (
-    <IconBase>
-      <path d='M7.5 5.5c.6 2.1 1.7 4 3.3 5.7 1.7 1.6 3.6 2.7 5.7 3.3l1.8-1.8a1.4 1.4 0 0 1 1.4-.33l2 .67a1.4 1.4 0 0 1 .95 1.33V19a1.5 1.5 0 0 1-1.5 1.5C11.4 20.5 3.5 12.6 3.5 3.5A1.5 1.5 0 0 1 5 2h3.6a1.4 1.4 0 0 1 1.33.95l.67 2a1.4 1.4 0 0 1-.33 1.4L8.5 8.1' />
-      <path d='M14 6h4v4' />
-      <path d='M18 6l-5 5' />
-    </IconBase>
-  );
-}
-
-function MapPulseIcon() {
-  return (
-    <IconBase>
-      <path d='M12 21s6-5.55 6-11a6 6 0 1 0-12 0c0 5.45 6 11 6 11Z' />
-      <circle cx='12' cy='10' r='2.2' />
-      <path d='M19 7c1.2.3 2.1.7 2.8 1.2' />
-      <path d='M2.2 8.2c.7-.5 1.6-.9 2.8-1.2' />
-    </IconBase>
-  );
-}
-
-function AuditGridIcon() {
-  return (
-    <IconBase>
-      <rect x='3.5' y='3.5' width='17' height='17' rx='2.5' />
-      <path d='M8.5 3.5v17' />
-      <path d='M15.5 3.5v17' />
-      <path d='M3.5 8.5h17' />
-      <path d='M3.5 15.5h17' />
-    </IconBase>
-  );
-}
-
-function WrenchSignalIcon() {
-  return (
-    <IconBase>
-      <path d='M14.5 5.5a3.5 3.5 0 0 0-4.7 4.6L4.5 15.4a1.8 1.8 0 0 0 2.5 2.5l5.3-5.3a3.5 3.5 0 0 0 4.6-4.7l-2.4 2.4-2.4-2.4 2.4-2.4Z' />
-      <path d='M18 3v3' />
-      <path d='M19.5 4.5h-3' />
-    </IconBase>
-  );
-}
-
-function TrendPulseIcon() {
-  return (
-    <IconBase>
-      <path d='M4 17l5-5 3.5 3.5L20 8' />
-      <path d='M14 8h6v6' />
-      <path d='M4 20h16' />
-    </IconBase>
-  );
-}
-
-function BadgeStarIcon() {
-  return (
-    <IconBase>
-      <path d='M12 3.5 14 7l3.8.6-2.7 2.7.7 3.8L12 12.4 8.2 14l.7-3.8L6.2 7.6 10 7l2-3.5Z' />
-      <path d='M7 15.5v4l5-2.2 5 2.2v-4' />
-    </IconBase>
-  );
-}
-
-function SiteGridIcon() {
-  return (
-    <IconBase>
-      <rect x='3' y='4' width='18' height='15.5' rx='2.5' />
-      <path d='M3 8h18' />
-      <path d='M8 19.5V8' />
-      <path d='M14 19.5V8' />
-    </IconBase>
-  );
-}
-
-function CircuitSchemaIcon() {
-  return (
-    <IconBase>
-      <path d='M6 6h4v4H6Z' />
-      <path d='M14 14h4v4h-4Z' />
-      <path d='M10 8h3a2 2 0 0 1 2 2v4' />
-      <path d='M12 8v-3' />
-      <path d='M12 3h3' />
-      <path d='M18 12h3' />
-    </IconBase>
-  );
-}
-
-function PipeMarkIcon() {
-  return (
-    <IconBase>
-      <path d='M6 5v6a3 3 0 0 0 3 3h9' />
-      <path d='M10 5v5a2 2 0 0 0 2 2h6' />
-      <path d='M18 8v8' />
-      <path d='M4 5h8' />
-    </IconBase>
-  );
-}
-
-function AirFlowIcon() {
-  return (
-    <IconBase>
-      <path d='M4 9c1.7-1.7 4.4-1.7 6.1 0 .9.9 2.1 1.3 3.3 1.3h6.6' />
-      <path d='M4 14c1.2-1.2 3.2-1.2 4.4 0 .8.8 1.8 1.2 2.9 1.2H20' />
-      <path d='M15 6h5' />
-    </IconBase>
-  );
-}
-
-function BoltMarkIcon() {
-  return (
-    <IconBase>
-      <path d='M13 2 6 13h5l-1 9 8-12h-5l1-8Z' />
-    </IconBase>
-  );
-}
-
-function useReveal() {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (reducedMotion) {
-      node.classList.add("visible");
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.14 },
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
-  return ref;
-}
-
-function Reveal({ children, delay = 0 }) {
-  const ref = useReveal();
-
-  return (
-    <div
-      ref={ref}
-      className='motion-reveal'
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-}
-
-function Section({ id, eyebrow, title, subtitle, children, tone = "default" }) {
-  const ref = useReveal();
-  const isCinematic = cinematicSectionIds.has(id);
-  const sectionStyle =
-    tone === "contrast"
-      ? {
-          background:
-            "linear-gradient(180deg, rgba(1,33,105,0.12), rgba(1,33,105,0.04))",
-          borderTop: "1px solid var(--border)",
-          borderBottom: "1px solid var(--border)",
-        }
-      : { borderTop: "1px solid var(--border)" };
-
-  return (
-    <section
-      id={id}
-      className={
-        isCinematic ? "story-section story-section-cinematic" : "story-section"
-      }
-      style={{
-        padding: "clamp(4.5rem, 8vw, 8rem) clamp(1.25rem, 4vw, 2.5rem)",
-        ...sectionStyle,
-      }}
-    >
-      <div
-        ref={ref}
-        className='motion-reveal'
-        style={{ maxWidth: "1120px", margin: "0 auto" }}
-      >
-        <div style={{ textAlign: "center" }}>
-          <p className='story-eyebrow'>{eyebrow}</p>
-          <h2
-            className='story-title'
-            style={{ maxWidth: "none", margin: "0 auto" }}
-          >
-            {title}
-          </h2>
-          {subtitle && (
-            <p className='story-subtitle' style={{ margin: "0.75rem auto 0" }}>
-              {subtitle}
-            </p>
-          )}
-        </div>
-        {children}
-      </div>
-    </section>
-  );
-}
-
-function PlanTimeline() {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (reducedMotion) {
-      setVisible(true);
-      return;
-    }
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.25 },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      className={`plan-timeline ${visible ? "plan-timeline-visible" : ""}`}
-      ref={ref}
-    >
-      <div className='plan-track' aria-hidden='true'>
-        <div className='plan-track-fill' />
-      </div>
-      {steps.map(({ title, detail, Icon }, idx) => (
-        <div
-          className='plan-node'
-          key={title}
-          style={{ transitionDelay: `${idx * 180}ms` }}
-        >
-          <div className='plan-node-dot'>
-            <span className='plan-node-num'>
-              {String(idx + 1).padStart(2, "0")}
-            </span>
-          </div>
-          <h3 className='plan-node-title'>{title}</h3>
-          <p className='plan-node-detail'>{detail}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 function FitBoard() {
   const ref = useRef(null);
@@ -747,7 +487,214 @@ function CardHeader({ Icon, title }) {
   );
 }
 
-export default function HomeClient({ posts }) {
+function useReveal() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (reducedMotion) {
+      node.classList.add("visible");
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.14 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+}
+
+function Reveal({ children, delay = 0 }) {
+  const ref = useReveal();
+  return (
+    <div
+      ref={ref}
+      className='motion-reveal'
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function Section({ id, eyebrow, title, subtitle, children, tone = "default" }) {
+  const ref = useReveal();
+  const sectionStyle =
+    tone === "contrast"
+      ? {
+          background:
+            "linear-gradient(180deg, rgba(1,33,105,0.12), rgba(1,33,105,0.04))",
+          borderTop: "1px solid var(--border)",
+          borderBottom: "1px solid var(--border)",
+        }
+      : { borderTop: "1px solid var(--border)" };
+
+  return (
+    <section
+      id={id}
+      className='story-section'
+      style={{
+        padding: "clamp(4.5rem, 8vw, 8rem) clamp(1.25rem, 4vw, 2.5rem)",
+        ...sectionStyle,
+      }}
+    >
+      <div
+        ref={ref}
+        className='motion-reveal'
+        style={{ maxWidth: "1120px", margin: "0 auto" }}
+      >
+        <div style={{ textAlign: "center" }}>
+          <p className='story-eyebrow'>{eyebrow}</p>
+          <h2
+            className='story-title'
+            style={{ maxWidth: "none", margin: "0 auto" }}
+          >
+            {title}
+          </h2>
+          {subtitle && (
+            <p className='story-subtitle' style={{ margin: "0.75rem auto 0" }}>
+              {subtitle}
+            </p>
+          )}
+        </div>
+        {children}
+      </div>
+    </section>
+  );
+}
+
+const fitGood = [
+  "Local service trades doing good work",
+  "Owners tired of paying for clicks that don't convert",
+  "Businesses operating primarily in NWA",
+  "Contractors looking for honest, transparent reporting"
+];
+
+const fitBad = [
+  "E-commerce stores and national chains",
+  "Businesses outside of the home service niche",
+  "Owners looking for 'overnight' AI tricks",
+  "Companies not willing to invest in their own reputation"
+];
+
+const stakes = [
+  { label: "Lost visibility", detail: "When someone nearby searches, they find a competitor first.", level: 85, severity: "high" },
+  { label: "Wasted clicks", detail: "People click your ad and leave without calling.", level: 65, severity: "mid" },
+  { label: "Zero momentum", detail: "No system to capture reviews limits your future growth.", level: 50, severity: "mid" }
+];
+
+const guideCredentials = [
+  { value: "12+", label: "Years Experience" },
+  { value: "100%", label: "NWA Focus" },
+  { value: "50+", label: "Local Businesses Helped" }
+];
+
+const guidePrinciples = [
+  "No fluff reporting: we track leads, not arbitrary metrics.",
+  "No outsourced labor: I do the analysis and the execution.",
+  "Your reputation is protected fiercely during any optimization."
+];
+
+function AuditGridIcon() {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.7'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      style={{ width: "1.2rem", height: "1.2rem", display: "block" }}
+    >
+      <rect x='3' y='3' width='7' height='7' rx='1' />
+      <rect x='14' y='3' width='7' height='7' rx='1' />
+      <rect x='14' y='14' width='7' height='7' rx='1' />
+      <rect x='3' y='14' width='7' height='7' rx='1' />
+    </svg>
+  );
+}
+
+function PlanTimeline() {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (reducedMotion) {
+      setVisible(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      className={`plan-timeline ${visible ? "plan-timeline-visible" : ""}`}
+      ref={ref}
+    >
+      <div className='plan-track'>
+        <div className='plan-track-fill' />
+      </div>
+
+      <div className='plan-node'>
+        <div className='plan-node-dot'>
+          <span className='plan-node-num'>01</span>
+        </div>
+        <h3 className='plan-node-title'>Visibility analysis</h3>
+        <p className='plan-node-detail'>
+          We locate exactly where you are losing customers to competitors in local search results.
+        </p>
+      </div>
+
+      <div className='plan-node'>
+        <div className='plan-node-dot'>
+          <span className='plan-node-num'>02</span>
+        </div>
+        <h3 className='plan-node-title'>Foundation repair</h3>
+        <p className='plan-node-detail'>
+          We optimize your Google Business Profile and website structure to signal local intent.
+        </p>
+      </div>
+
+      <div className='plan-node'>
+        <div className='plan-node-dot'>
+          <span className='plan-node-num'>03</span>
+        </div>
+        <h3 className='plan-node-title'>Growth and dominance</h3>
+        <p className='plan-node-detail'>
+          We actively monitor rankings and build out location pages that pull in continuous leads.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default function HomeClient({ posts = [] }) {
   const featuredPosts = posts.slice(0, 3);
 
   return (
@@ -2384,69 +2331,76 @@ export default function HomeClient({ posts }) {
         }
       `}</style>
 
-      <section className='story-shell'>
-        <SignalBackdrop />
-        <div className='hero-wrap'>
-          <div className='motion-reveal visible'>
-            <p className='story-eyebrow'>
-              NWA roots, serving home service trades
-            </p>
-            <h1 className='hero-title'>
-              <span className='hero-title-lead'>
-                <span className='hero-title-lead-line'>Your next customer</span>
-                <span className='hero-title-lead-line'>
-                  just searched Google.
+      <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+        <Image
+          src='/images/map-bg.webp'
+          alt='Map background'
+          fill
+          style={{
+            objectFit: "cover",
+            opacity: 0.18,
+            filter: "grayscale(1) blur(1.5px)",
+          }}
+          priority
+          aria-hidden='true'
+        />
+      </div>
+      
+      <Hero
+        eyebrow='NWA roots, serving home service trades'
+        title={
+          <>
+            <span className='hero-title-lead'>
+              <span className='hero-title-lead-line'>Your next customer</span>
+              <span className='hero-title-lead-line'>
+                just searched Google.
+              </span>
+            </span>
+            <span className='hero-title-accent'>
+              They found your competitor.
+            </span>
+          </>
+        }
+        subtitle='According to BrightLocal, 97% of consumers use Google to evaluate local businesses. They usually just pick from the first trustworthy options they see. Local Search Ally helps you improve local visibility, tighten your lead path, and turn those searches into booked calls.'
+        actions={
+          <div className='hero-actions'>
+            <Link href='/contact' className='btn-glow'>
+              Book your strategy call <span className='motion-arrow'>→</span>
+            </Link>
+            <Link href='/services' className='btn-outline-glow'>
+              See how it works <span className='motion-arrow'>→</span>
+            </Link>
+          </div>
+        }
+      >
+        <div
+          className='hero-card motion-reveal visible'
+          style={{ transitionDelay: "120ms" }}
+        >
+          <h3>What you get on the first call</h3>
+          <ul className='hero-list'>
+            {heroSignals.map(({ title, detail, Icon }) => (
+              <li key={title}>
+                <span className='hero-list-icon'>
+                  <Icon />
                 </span>
-              </span>
-              <span className='hero-title-accent'>
-                They found your competitor.
-              </span>
-            </h1>
-            <p className='hero-copy'>
-              According to BrightLocal, 97% of consumers use Google to evaluate
-              local businesses. They usually just pick from the first
-              trustworthy options they see. Local Search Ally helps you improve
-              local visibility, tighten your lead path, and turn those searches
-              into booked calls.
-            </p>
-            <div className='hero-actions'>
-              <Link href='/contact' className='btn-glow'>
-                Book your strategy call <span className='motion-arrow'>→</span>
-              </Link>
-              <Link href='/services' className='btn-outline-glow'>
-                See how it works <span className='motion-arrow'>→</span>
-              </Link>
-            </div>
-          </div>
-          <div
-            className='hero-card motion-reveal visible'
-            style={{ transitionDelay: "120ms" }}
-          >
-            <h3>What you get on the first call</h3>
-            <ul className='hero-list'>
-              {heroSignals.map(({ title, detail, Icon }) => (
-                <li key={title}>
-                  <span className='hero-list-icon'>
-                    <Icon />
-                  </span>
-                  <span>
-                    <strong
-                      style={{
-                        color: "var(--text)",
-                        display: "block",
-                        marginBottom: "0.16rem",
-                      }}
-                    >
-                      {title}
-                    </strong>
-                    {detail}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+                <span>
+                  <strong
+                    style={{
+                      color: "var(--text)",
+                      display: "block",
+                      marginBottom: "0.16rem",
+                    }}
+                  >
+                    {title}
+                  </strong>
+                  {detail}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
-      </section>
+      </Hero>
 
       <TrustMarquee />
 

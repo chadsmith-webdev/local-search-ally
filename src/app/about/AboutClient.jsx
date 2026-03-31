@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Hero from "@/components/Hero";
 
 function useReveal() {
   const ref = useRef(null);
@@ -81,86 +82,18 @@ export default function About() {
       `}</style>
 
       {/* Hero */}
-      <section
-        className='hero-section'
-        style={{
-          padding: "12rem 8rem 10rem",
-          borderBottom: "1px solid var(--border)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: `
-            linear-gradient(rgba(123,175,212,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(123,175,212,0.06) 1px, transparent 1px)
-          `,
-            backgroundSize: "40px 40px",
-            maskImage:
-              "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
-            pointerEvents: "none",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            top: "-150px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "600px",
-            height: "600px",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(1,33,105,0.5) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-        <div style={{ maxWidth: "700px", position: "relative" }}>
-          <p
-            style={{
-              color: "var(--carolina)",
-              fontWeight: "bold",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              fontSize: "0.8rem",
-              marginBottom: "1.5rem",
-            }}
-          >
-            The Person Behind the Work
-          </p>
-          <h1
-            className='about-hero-title'
-            style={{
-              fontSize: "clamp(2rem, 5vw, 3.5rem)",
-              fontWeight: "800",
-              lineHeight: 1.1,
-              marginBottom: "1.5rem",
-            }}
-          >
+      <Hero
+        eyebrow='The Person Behind the Work'
+        title={
+          <>
             Hey, I'm Chad.{" "}
-            <span style={{ color: "var(--carolina)", display: "inline-block" }}>
+            <span className='hero-title-accent' style={{ display: "block" }}>
               Let me be straight with you.
             </span>
-          </h1>
-          <p
-            style={{
-              color: "var(--muted)",
-              fontSize: "1.05rem",
-              lineHeight: 1.9,
-              maxWidth: "560px",
-            }}
-          >
-            I'm not a big agency. I'm a startup founder in Siloam Springs, AR
-            who's obsessed with local SEO — and I've been proving it works on my
-            own projects for years before ever offering it to anyone else.
-          </p>
-        </div>
-      </section>
+          </>
+        }
+        subtitle="I'm not a big agency. I'm a startup founder in Siloam Springs, AR who's obsessed with local SEO — and I've been proving it works on my own projects for years before ever offering it to anyone else."
+      />
 
       {/* Photo + Intro */}
       <section

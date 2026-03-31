@@ -1,0 +1,185 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding: clamp(5.25rem, 8vw, 7rem) 1.5rem clamp(4rem, 6vw, 5.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--carolina);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* Radar motif styles (simplified, adapt as needed) */
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.hero-radar-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(34rem, 72vw, 62rem);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+}
+.hero-radar-ring {
+  border: 1px solid rgba(123, 175, 212, 0.14);
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+}
+.hero-radar-ring-a {
+  animation: radarPulse 4.5s linear infinite;
+}
+.hero-radar-ring-b {
+  animation: radarPulse 4.5s linear infinite 1.5s;
+}
+.hero-radar-core {
+  background: radial-gradient(
+    circle,
+    rgba(123, 175, 212, 0.14),
+    rgba(123, 175, 212, 0.02) 52%,
+    transparent 72%
+  );
+  opacity: 0.62;
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+}
+.hero-radar-sweep {
+  background: conic-gradient(
+    from 120deg,
+    transparent 0deg,
+    rgba(123, 175, 212, 0.22) 48deg,
+    transparent 90deg
+  );
+  mix-blend-mode: screen;
+  animation: radarSweep 10s linear infinite;
+  opacity: 0.52;
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+}
+.hero-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(123, 175, 212, 0.45),
+    transparent
+  );
+  opacity: 0.3;
+}
+.hero-scan-line-a {
+  top: 25%;
+  animation: scanDrift 7s linear infinite;
+}
+.hero-scan-line-b {
+  top: 68%;
+  animation: scanDrift 8.5s linear infinite 1.2s;
+}
+.hero-signal-node {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--carolina);
+  box-shadow: 0 0 22px rgba(123, 175, 212, 0.42);
+  animation: floatNode 4s ease-in-out infinite;
+}
+.hero-signal-node-a {
+  left: 66%;
+  top: 30%;
+}
+.hero-signal-node-b {
+  left: 74%;
+  top: 40%;
+}
+.hero-signal-node-c {
+  left: 57%;
+  top: 56%;
+}
+
+@keyframes radarPulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0.1;
+    transform: scale(1.12);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+@keyframes radarSweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes scanDrift {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+@keyframes floatNode {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

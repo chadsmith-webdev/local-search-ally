@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import CTAForm from "@/components/CTAForm";
-import Starfield from "@/components/Starfield";
+import Hero from "@/components/Hero";
 
 /* ── Reveal hook (matches homepage motion-reveal pattern) ── */
 
@@ -829,36 +829,29 @@ export default function Services() {
       `}</style>
 
       {/* ────── Hero ────── */}
-      <section className='svc-hero'>
-        <Starfield />
-        <div className='svc-hero-inner'>
-          <div className='svc-reveal visible'>
-            <p className='svc-eyebrow'>
-              What we fix
-            </p>
-            <h1 className='svc-hero-title'>
-              Right now, someone is searching
-              for your trade in your town.
-              <span className='svc-hero-accent'>
-                Will they find you or your competitor?
-              </span>
-            </h1>
-            <p className='svc-hero-copy'>
-              Every service here targets a specific part of the path between
-              a local search and a booked call. No filler packages. Just the
-              work that makes your phone ring from the right people.
-            </p>
-            <div className='svc-hero-actions'>
-              <Link href='/contact' className='btn-glow'>
-                Book your strategy call <span className='motion-arrow'>→</span>
-              </Link>
-              <a href='#services-list' className='btn-outline-glow'>
-                See what we do <span className='motion-arrow'>→</span>
-              </a>
-            </div>
+      <Hero
+        eyebrow='What we fix'
+        title={
+          <>
+            <span className='hero-title-lead-line'>Right now, someone is searching</span>
+            <span className='hero-title-lead-line'>for your trade in your town.</span>
+            <span className='hero-title-accent'>
+              Will they find you or your competitor?
+            </span>
+          </>
+        }
+        subtitle='Every service here targets a specific part of the path between a local search and a booked call. No filler packages. Just the work that makes your phone ring from the right people.'
+        actions={
+          <div className='hero-actions'>
+            <Link href='/contact' className='btn-glow'>
+              Book your strategy call <span className='motion-arrow'>→</span>
+            </Link>
+            <a href='#services-list' className='btn-outline-glow'>
+              See what we do <span className='motion-arrow'>→</span>
+            </a>
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* ────── The Gap ────── */}
       <Section
