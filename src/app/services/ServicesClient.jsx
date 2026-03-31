@@ -268,10 +268,10 @@ const services = [
     featured: false,
   },
   {
-    title: "SEO audit",
-    slug: "seo-audits",
+    title: "Visibility Snapshot",
+    slug: "visibility-snapshot",
     tagline: "Find out exactly what is costing you calls",
-    desc: "A full audit of your website and local presence. Technical SEO, content gaps, citation issues, competitor analysis. You get a clear report with prioritized fixes, not a 40-page PDF you will never read.",
+    desc: "A weighted audit of your local presence. Technical SEO, content gaps, citation issues, and competitor analysis—packaged into a 60-second diagnostic tool.",
     includes: [
       "Technical SEO analysis",
       "Local citation audit",
@@ -280,10 +280,10 @@ const services = [
     ],
     outcome:
       "You know exactly where you stand, what is broken, and what to fix first. No guessing.",
-    price: "Starting at $299",
-    priceAnchor: "Stop guessing why the phone isn't ringing. A clear roadmap is cheaper than another month of lost leads.",
+    price: "FREE",
+    priceAnchor: "Stop guessing why the phone isn't ringing. A clear roadmap is the first step to growth.",
     Icon: TrendPulseIcon,
-    featured: false,
+    featured: true,
   },
 ];
 
@@ -830,7 +830,7 @@ export default function Services() {
 
       {/* ────── Hero ────── */}
       <Hero
-        eyebrow='What we fix'
+        eyebrow='Free Diagnostic tool'
         title={
           <>
             <span className='hero-title-lead-line'>Right now, someone is searching</span>
@@ -840,11 +840,11 @@ export default function Services() {
             </span>
           </>
         }
-        subtitle='Every service here targets a specific part of the path between a local search and a booked call. No filler packages. Just the work that makes your phone ring from the right people.'
+        subtitle='Find out exactly why customers aren&apos;t finding you on Google. 10 questions. 60 seconds. Get a weighted score out of 100 — and the 3 specific gaps costing you calls right now.'
         actions={
           <div className='hero-actions'>
-            <Link href='/contact' className='btn-glow'>
-              Book your strategy call <span className='motion-arrow'>→</span>
+            <Link href='/grader' className='btn-glow'>
+              Check Your Visibility <span className='motion-arrow'>→</span>
             </Link>
             <a href='#services-list' className='btn-outline-glow'>
               See what we do <span className='motion-arrow'>→</span>
@@ -881,7 +881,7 @@ export default function Services() {
           ))}
         </div>
         <div style={{ marginTop: "2.5rem", textAlign: "center" }}>
-          <Link href='/contact' className='btn-glow'>
+          <Link href='/grader' className='btn-glow'>
             Find out which gaps are costing you{" "}
             <span className='motion-arrow'>→</span>
           </Link>
@@ -974,7 +974,7 @@ export default function Services() {
                       <p className='pricing-anchor'>{service.priceAnchor}</p>
                     </div>
                     <Link
-                      href='/contact'
+                      href='/grader'
                       className='btn-glow'
                       style={{
                         display: "block",
@@ -982,7 +982,7 @@ export default function Services() {
                         fontSize: "0.9rem",
                       }}
                     >
-                      Talk about {service.title.toLowerCase()}
+                      Start your {service.title.toLowerCase()} audit
                     </Link>
                   </div>
                 </div>
@@ -1011,8 +1011,8 @@ export default function Services() {
                 Just a clear read on where you stand and what would move the
                 needle first.
               </p>
-              <Link href='/contact' className='btn-glow'>
-                Book your strategy call{" "}
+              <Link href='/grader' className='btn-glow'>
+                Check your visibility{" "}
                 <span className='motion-arrow'>→</span>
               </Link>
             </div>
@@ -1065,11 +1065,10 @@ export default function Services() {
           <div className='final-band'>
             <div className='final-left'>
               <p className='final-headline'>
-                Get a clear read on where you stand and what to fix first.
+                Find out exactly why customers aren&apos;t finding you on Google.
               </p>
               <p className='final-sub'>
-                No contracts, no agency runaround. Just a direct conversation
-                about your local visibility and the fastest path to more calls.
+                Get a weighted score in 60 seconds and see the 3 priority gaps costing you calls right now. No signup required.
               </p>
               <div className='final-trust'>
                 <div className='final-trust-item'>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 
 const navLinks = [
+  { label: "Free SEO Grader", href: "/grader" },
   { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },

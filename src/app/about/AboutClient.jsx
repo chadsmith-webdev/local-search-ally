@@ -83,16 +83,16 @@ export default function About() {
 
       {/* Hero */}
       <Hero
-        eyebrow='The Person Behind the Work'
+        eyebrow='The Strategy Behind the Visibility'
         title={
           <>
-            Hey, I'm Chad.{" "}
+            A Strategic Approach to{" "}
             <span className='hero-title-accent' style={{ display: "block" }}>
-              Let me be straight with you.
+              Local Market Dominance.
             </span>
           </>
         }
-        subtitle="I'm not a big agency. I'm a startup founder in Siloam Springs, AR who's obsessed with local SEO — and I've been proving it works on my own projects for years before ever offering it to anyone else."
+        subtitle="Local Search Ally was built to bridge the Gap between professional excellence and algorithmic invisibility. We transform high-performing NWA contractors into the pre-eminent local choice through precision-engineered search strategy."
       />
 
       {/* Photo + Intro */}
@@ -131,62 +131,35 @@ export default function About() {
                 {
                   label: (
                     <>
-                      <svg
-                        width='18'
-                        height='18'
-                        fill='currentColor'
-                        viewBox='0 0 24 24'
-                        style={{
-                          color: "var(--carolina)",
-                          marginRight: "0.25rem",
-                        }}
-                      >
+                      <svg width='18' height='18' fill='currentColor' viewBox='0 0 24 24' style={{ color: "var(--carolina)", marginRight: "0.25rem" }}>
                         <path d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z' />
-                      </svg>{" "}
-                      Location
-                    </>
-                  ),
-                  value: "Siloam Springs, AR",
-                },
-                {
-                  label: (
-                    <>
-                      <svg
-                        width='18'
-                        height='18'
-                        fill='currentColor'
-                        viewBox='0 0 24 24'
-                        style={{
-                          color: "var(--carolina)",
-                          marginRight: "0.25rem",
-                        }}
-                      >
-                        <path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5' />
-                      </svg>{" "}
-                      Currently
-                    </>
-                  ),
-                  value: "Building full-stack skills",
-                },
-                {
-                  label: (
-                    <>
-                      <svg
-                        width='18'
-                        height='18'
-                        fill='currentColor'
-                        viewBox='0 0 24 24'
-                        style={{
-                          color: "var(--carolina)",
-                          marginRight: "0.25rem",
-                        }}
-                      >
-                        <path d='M20 6h-3V4c0-1.11-.89-2-2-2H9c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z' />
                       </svg>{" "}
                       Focus
                     </>
                   ),
-                  value: "NWA Contractors",
+                  value: "NWA Market Strategy",
+                },
+                {
+                  label: (
+                    <>
+                      <svg width='18' height='18' fill='currentColor' viewBox='0 0 24 24' style={{ color: "var(--carolina)", marginRight: "0.25rem" }}>
+                        <path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5' />
+                      </svg>{" "}
+                      Methodology
+                    </>
+                  ),
+                  value: "Algorithm Mapping",
+                },
+                {
+                  label: (
+                    <>
+                      <svg width='18' height='18' fill='currentColor' viewBox='0 0 24 24' style={{ color: "var(--carolina)", marginRight: "0.25rem" }}>
+                        <path d='M20 6h-3V4c0-1.11-.89-2-2-2H9c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z' />
+                      </svg>{" "}
+                      Partnership
+                    </>
+                  ),
+                  value: "Consultative Only",
                 },
               ].map((item) => (
                 <div
@@ -228,7 +201,7 @@ export default function About() {
                 marginBottom: "1.5rem",
               }}
             >
-              My Story
+              The Methodology
             </p>
             <p
               style={{
@@ -237,11 +210,11 @@ export default function About() {
                 marginBottom: "1.25rem",
               }}
             >
-              I grew up in North Carolina — where local businesses are the
-              backbone of every community. These days I'm based in Siloam
-              Springs, Arkansas, a small town that feels a lot like home: cow
-              pastures, tight-knit neighborhoods, and local contractors who work
-              hard and deserve to be found online.
+              I founded Local Search Ally to solve a single, critical problem: 
+              the Invisibility Gap. In Northwest Arkansas, the best contractors 
+              are often the hardest to find online—not because they lack 
+              professionalism, but because they lack the technical signals 
+              required by the local search algorithm.
             </p>
             <p
               style={{
@@ -250,11 +223,11 @@ export default function About() {
                 marginBottom: "1.25rem",
               }}
             >
-              My local SEO experience didn't start in an agency — it started on
-              my own projects. I spent years learning what actually works in
-              local search: ranking my own sites, optimizing profiles, studying
-              what Google actually responds to. No theory. Just hands-on work.
-              That's what I bring to every client.
+              Our approach is built on precision, not mystery. We treat local 
+              SEO as a map to be navigated, ensuring your business is the 
+              primary destination for high-intent searchers. By focusing 
+              exclusively on the home service sector, we maintain a deep 
+              understanding of the conversion hurdles unique to your trade.
             </p>
             <p
               style={{
@@ -263,17 +236,16 @@ export default function About() {
                 marginBottom: "2rem",
               }}
             >
-              I'm learning web development because I believe good local SEO
-              deserves a good website. Contractors shouldn't have to hire two
-              people and hope they talk to each other. I'm building the skills
-              to handle both.
+              This is a strategic partnership. While you focus on professional 
+              excellence in the field, I focus on the technical integrity and 
+              visibility of your brand in the local market.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "1rem" }}>
-              <Link href='/contact' className='btn-glow' style={{ textDecoration: "none", padding: "0.9rem 2rem" }}>
-                Book a Strategy Session
+              <Link href='/grader' className='btn-glow' style={{ textDecoration: "none", padding: "0.9rem 2rem" }}>
+                Check My Visibility
               </Link>
-              <Link href='/services' className='btn-outline-glow' style={{ textDecoration: "none", padding: "0.9rem 2rem" }}>
-                See My Services
+              <Link href='/contact' className='btn-outline-glow' style={{ textDecoration: "none", padding: "0.9rem 2rem" }}>
+                Book a Strategy Session
               </Link>
             </div>
           </Reveal>
@@ -316,24 +288,24 @@ export default function About() {
                 lineHeight: 1.3,
               }}
             >
-              Building expertise one project at a time.
+              Mapping excellence to the local market.
             </h2>
             {[
               {
-                title: "Learned Local SEO Hands-On",
-                desc: "Ranked my own projects in local search. Studied Google's algorithms, GBP optimization, and citation building obsessively — years before offering it as a service.",
+                title: "Algorithm Deciphering",
+                desc: "We move beyond the surface-level SEO tips and dive into the specific data points Google uses to rank local businesses in the Map Pack.",
               },
               {
-                title: "Proved It Works",
-                desc: "Got real rankings on real projects before pitching any of it to anyone else. The methods I use on your business are the same ones I used on mine first.",
+                title: "Methodology Refinement",
+                desc: "Developing a repeatable, precision-engineered system that identifies and closes technical gaps for home service tradesmen.",
               },
               {
-                title: "Started Learning Web Dev",
-                desc: "Realized contractors need more than just SEO — they need fast, converting websites. Enrolled in a Web Development degree to build that skill set the right way.",
+                title: "Market Specificity",
+                desc: "Applying deep knowledge of the NWA local market to ensure our search strategies resonate with the specific needs of local customers.",
               },
               {
-                title: "Launched Local Search Ally",
-                desc: "Moved to Siloam Springs and started helping NWA contractors get the online presence they deserve. This is just the beginning.",
+                title: "Strategic Launch",
+                desc: "Local Search Ally launched with a single focus: providing high-performing contractors with the strategic authority they deserve.",
               },
             ].map((item) => (
               <div key={item.title} className='timeline-item'>
@@ -387,20 +359,20 @@ export default function About() {
             </h2>
             {[
               {
-                title: "Transparency first",
-                desc: "You'll always know what I'm working on, what it costs, and whether it's working. No smoke, no mirrors.",
+                title: "Precision over Volume",
+                desc: "We don't offer generic packages. Every diagnostic and roadmap is engineered for the unique position of your business.",
               },
               {
-                title: "Results before revenue",
-                desc: "I proved these methods on my own projects before charging anyone for them. I won't sell you something I haven't tested myself.",
+                title: "Strategic Integrity",
+                desc: "A commitment to transparent analysis. If a strategy won't move the needle for your trade, we won't recommend it.",
               },
               {
-                title: "Contractor-focused, always",
-                desc: "I don't work with everyone. Contractors are my niche — I understand your market, your customers, and your search patterns.",
+                title: "Algorithm Alignment",
+                desc: "Our methods stay synchronized with local search updates, ensuring your business asset remains productive and visible.",
               },
               {
-                title: "No long-term contracts",
-                desc: "If I'm not delivering value, you can walk away. My job is to keep earning your business every single month.",
+                title: "No-Pressure Consultations",
+                desc: "Value is provided before engagement. Our diagnostic is free because we believe the strategy should speak for itself.",
               },
             ].map((item) => (
               <div key={item.title} className='glass-card value-card'>
@@ -463,11 +435,11 @@ export default function About() {
             pressure.
           </p>
           <Link
-            href='/contact'
+            href='/grader'
             className='btn-glow'
             style={{ textDecoration: "none", padding: "1rem 2.5rem", display: "inline-block" }}
           >
-            Book a Strategy Session
+            Check My Visibility
           </Link>
         </Reveal>
       </section>

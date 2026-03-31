@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Hero from "./Hero";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import styles from "./Hero.module.css";
 import CTAForm from "./CTAForm";
 import FAQSection from "./FAQSection";
@@ -184,40 +185,36 @@ function ShieldCheckIcon() {
 
 const heroSignals = [
   {
-    title: "Visibility scan",
-    detail:
-      "Review how you appear in local search before buyers choose someone else.",
+    title: "Algorithm Visibility Mapping",
+    detail: "Identify the core technical blockers that determine your local search position.",
     Icon: SearchSignalIcon,
   },
   {
-    title: "Lead path check",
-    detail: "Find the friction between search traffic and booked calls.",
+    title: "Conversion Precision Audit",
+    detail: "Analyze high-friction points between local search visibility and a booked call.",
     Icon: CallFlowIcon,
   },
   {
-    title: "Local intent",
-    detail: "Tighten the location signals that support trust and action.",
+    title: "Market Authority Analysis",
+    detail: "Precision-engineered location signals that secure your position in the Map Pack.",
     Icon: MapPulseIcon,
   },
 ];
 
 const problemPoints = [
   {
-    title: "Hard to find locally",
-    detail:
-      "You do the work, but when someone nearby searches for your trade, your competitors show up first.",
+    title: "The Visibility Paradox",
+    detail: "You are the best at what you do, but the algorithm doesn't know it yet—leaving you invisible in your own market.",
     Icon: SearchSignalIcon,
   },
   {
-    title: "Visitors leave without calling",
-    detail:
-      "People land on your site and leave. No clear path from ‘I need this fixed’ to ‘I just booked a call.’",
+    title: "High-Friction Conversion",
+    detail: "Every missing signal is a 'stop sign' for a local customer who is ready to call, but chooses a competitor instead.",
     Icon: CallFlowIcon,
   },
   {
-    title: "Referrals are the only pipeline",
-    detail:
-      "When word-of-mouth slows down, there is nothing else generating calls. That is a single point of failure.",
+    title: "Strategic Vulnerability",
+    detail: "Relying purely on word-of-mouth is not a growth plan; it's a risk to your future scale and market share.",
     Icon: MapPulseIcon,
   },
 ];
@@ -227,7 +224,7 @@ const services = [
   { title: "GBP Optimization", detail: "Get into the Map Pack where buyers look first", Icon: BadgeStarIcon },
   { title: "Web Development", detail: "Fast, mobile-first sites that actually convert", Icon: SiteGridIcon },
   { title: "Reputation Building", detail: "Turn happy customers into visible proof", Icon: ShieldCheckIcon },
-  { title: "SEO Audits", detail: "Find out exactly what is costing you calls", Icon: TrendPulseIcon }
+  { title: "Visibility Snapshot", detail: "Find your 60-second local SEO score and see exactly where you stand", Icon: TrendPulseIcon }
 ];
 
 const demos = [
@@ -243,9 +240,9 @@ const technicalPoints = [
 ];
 
 const callExpectations = [
-  "A clear read on where you stand compared to your top 3 local competitors",
-  "A shortlist of the 'low hanging fruit' fixes that would move the needle first",
-  "A direct answer on whether we are a good fit to work together or not"
+  "A precision mapping of your local search presence against your top-tier competitors",
+  "A strategic roadmap of high-impact adjustments to move the needle first",
+  "A transparent assessment of whether a long-term strategic partnership is the right move"
 ];
 
 function FitBoard() {
@@ -588,15 +585,15 @@ const fitBad = [
 ];
 
 const stakes = [
-  { label: "Lost visibility", detail: "When someone nearby searches, they find a competitor first.", level: 85, severity: "high" },
-  { label: "Wasted clicks", detail: "People click your ad and leave without calling.", level: 65, severity: "mid" },
-  { label: "Zero momentum", detail: "No system to capture reviews limits your future growth.", level: 50, severity: "mid" }
+  { label: "Algorithm Drift", detail: "When your technical signals aren't aligned, you drift away from the Map Pack results.", level: 85, severity: "high" },
+  { label: "Market Displacement", detail: "Competitors with less experience but better positioning capture your local leads.", level: 65, severity: "mid" },
+  { label: "Strategic Stagnation", detail: "A lack of local intent mapping stops your momentum before it even starts.", level: 50, severity: "mid" }
 ];
 
 const guideCredentials = [
-  { value: "12+", label: "Years Experience" },
   { value: "100%", label: "NWA Focus" },
-  { value: "50+", label: "Local Businesses Helped" }
+  { value: "Precision", label: "Diagnostic" },
+  { value: "Strategic", label: "Partnership" }
 ];
 
 const guidePrinciples = [
@@ -665,9 +662,9 @@ function PlanTimeline() {
         <div className='plan-node-dot'>
           <span className='plan-node-num'>01</span>
         </div>
-        <h3 className='plan-node-title'>Visibility analysis</h3>
+        <h3 className='plan-node-title'>Interactive Diagnostic</h3>
         <p className='plan-node-detail'>
-          We locate exactly where you are losing customers to competitors in local search results.
+          We identify the exact technical and local gaps in your presence. <Link href="/grader" style={{ color: 'var(--carolina)', textDecoration: 'underline' }}>Start your score now →</Link>
         </p>
       </div>
 
@@ -677,7 +674,7 @@ function PlanTimeline() {
         </div>
         <h3 className='plan-node-title'>Foundation repair</h3>
         <p className='plan-node-detail'>
-          We optimize your Google Business Profile and website structure to signal local intent.
+          We close the highest-impact gaps first — usually starting with your Google Business Profile and TAP-to-call conversion.
         </p>
       </div>
 
@@ -695,7 +692,17 @@ function PlanTimeline() {
 }
 
 export default function HomeClient({ posts = [] }) {
+  const router = useRouter();
   const featuredPosts = posts.slice(0, 3);
+  const [heroBizInfo, setHeroBizInfo] = useState({ name: "", trade: "", city: "" });
+
+  const handleHeroStart = (e) => {
+    e.preventDefault();
+    if (heroBizInfo.name && heroBizInfo.trade && heroBizInfo.city) {
+      const params = new URLSearchParams(heroBizInfo);
+      router.push(`/grader?${params.toString()}`);
+    }
+  };
 
   return (
     <>
@@ -1004,6 +1011,25 @@ export default function HomeClient({ posts = [] }) {
           width: 100%;
           max-width: 36rem;
           text-align: left;
+        }
+        .hero-input {
+          background: var(--surface-hover);
+          border: 1px solid var(--border-solid);
+          color: var(--text);
+          border-radius: 12px;
+          transition: all 0.3s ease;
+          width: 100%;
+        }
+        .hero-input:focus {
+          border-color: var(--carolina);
+          box-shadow: var(--glow-sm);
+          outline: none;
+        }
+        .glass-card {
+          background: rgba(13, 17, 23, 0.7);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(123, 175, 212, 0.2);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
         .hero-card::after {
           content: "";
@@ -2347,7 +2373,7 @@ export default function HomeClient({ posts = [] }) {
       </div>
       
       <Hero
-        eyebrow='NWA roots, serving home service trades'
+        eyebrow='Free Diagnostic Tool — For Home Service Trades'
         title={
           <>
             <span className='hero-title-lead'>
@@ -2361,15 +2387,47 @@ export default function HomeClient({ posts = [] }) {
             </span>
           </>
         }
-        subtitle='According to BrightLocal, 97% of consumers use Google to evaluate local businesses. They usually just pick from the first trustworthy options they see. Local Search Ally helps you improve local visibility, tighten your lead path, and turn those searches into booked calls.'
+        subtitle='While you focus on mastery of your trade, we focus on the strategic precision of your local search presence. 10 questions. 60 seconds. A sophisticated diagnostic to end the invisibility gap.'
         actions={
-          <div className='hero-actions'>
-            <Link href='/contact' className='btn-glow'>
-              Book your strategy call <span className='motion-arrow'>→</span>
-            </Link>
-            <Link href='/services' className='btn-outline-glow'>
-              See how it works <span className='motion-arrow'>→</span>
-            </Link>
+          <div className="w-full max-w-4xl mx-auto mt-4 px-4">
+            <form onSubmit={handleHeroStart} className="glass-card p-2 md:p-3 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-2 md:items-center">
+              <input 
+                type="text" 
+                placeholder="Business Name"
+                className="hero-input flex-1 px-4 py-3 text-sm"
+                value={heroBizInfo.name}
+                onChange={(e) => setHeroBizInfo(p => ({...p, name: e.target.value}))}
+                required
+              />
+              <select 
+                className="hero-input flex-1 px-4 py-3 text-sm appearance-none cursor-pointer"
+                value={heroBizInfo.trade}
+                onChange={(e) => setHeroBizInfo(p => ({...p, trade: e.target.value}))}
+                required
+              >
+                <option value="">Select Trade Type</option>
+                {["HVAC", "Plumbing", "Electrical", "Roofing", "Other"].map(t => <option key={t} value={t}>{t}</option>)}
+              </select>
+              <input 
+                type="text" 
+                placeholder="City, ST"
+                className="hero-input flex-1 px-4 py-3 text-sm"
+                value={heroBizInfo.city}
+                onChange={(e) => setHeroBizInfo(p => ({...p, city: e.target.value}))}
+                required
+              />
+              <button 
+                type="submit"
+                className="bg-[var(--gradient-accent)] text-[var(--text)] font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-[var(--glow-sm)] transition-all text-sm whitespace-nowrap active:scale-95"
+              >
+                Check My Visibility →
+              </button>
+            </form>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 items-center text-[0.65rem] uppercase tracking-widest text-[var(--muted)] mt-5 opacity-60 font-mono">
+              <span className="flex items-center gap-1.5"><span className="text-[var(--carolina)]">✓</span> No signup</span>
+              <span className="flex items-center gap-1.5"><span className="text-[var(--carolina)]">✓</span> 60 seconds</span>
+              <span className="flex items-center gap-1.5"><span className="text-[var(--carolina)]">✓</span> Local expertise</span>
+            </div>
           </div>
         }
       >
@@ -2406,9 +2464,9 @@ export default function HomeClient({ posts = [] }) {
 
       <Section
         id='problem'
-        eyebrow='The gap'
-        title='Good work does not guarantee the phone rings.'
-        subtitle='Safari Digital found 78% of local mobile searches result in an offline purchase. Most customers just pick from whoever shows up first. If that is not you, skill alone will not close the gap.'
+        eyebrow='Strategic Invisibility'
+        title='Excellence stays hidden without the right precision.'
+        subtitle='The discrepancy between your skill and your visibility is not your fault. It is a technical gap—one we identify and close through precision-engineered local search strategy.'
       >
         <div className='prob-list'>
           {problemPoints.map(({ title, detail, Icon }, index) => (
@@ -2434,9 +2492,9 @@ export default function HomeClient({ posts = [] }) {
 
       <Section
         id='guide'
-        eyebrow='Who is behind this'
-        title='I get it. You are good at your trade, not at marketing it.'
-        subtitle='That is not a weakness. It is a gap, and it is exactly what Local Search Ally was built to close.'
+        eyebrow='Strategic Partnership'
+        title='You focus on mastery of your trade. We focus on your authority.'
+        subtitle='Local Search Ally was built as a bridge between local craftsmanship and the algorithmic visibility it deserves.'
       >
         <div className='story-grid-2'>
           <Reveal>
@@ -2455,10 +2513,9 @@ export default function HomeClient({ posts = [] }) {
               />
               <blockquote className='guide-quote'>
                 <p className='guide-quote-text'>
-                  "Good contractors stay invisible online all the time. Not
-                  because they&apos;re bad at their job. The ones who show up
-                  just figured out how local search works. That&apos;s a
-                  learnable thing, and it&apos;s what I do."
+                  "The local search algorithm is not a mystery—it is a map. 
+                  My role is to ensure your business is the primary destination
+                  for local searchers who value excellence as much as you do."
                 </p>
                 <span className='guide-quote-attribution'>
                   — Chad Smith, Local Search Ally

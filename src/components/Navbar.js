@@ -5,6 +5,7 @@ import Logo from "@/components/Logo";
 import { usePathname } from "next/navigation";
 
 const links = [
+  { label: "Free Grader", href: "/grader" },
   { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },

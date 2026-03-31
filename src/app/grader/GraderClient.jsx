@@ -1,6 +1,7 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import LocalSEOGrader from "@/components/LocalSEOGrader";
 
 // ── Reveal Animation Component ─────────────────────────────────────────────
@@ -70,9 +71,40 @@ function FAQAccordion({ questions }) {
 
 // ── Main Page Content ─────────────────────────────────────────────────────────
 export default function GraderClient() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#090d14]" />}>
+      <GraderContent />
+    </Suspense>
+  );
+}
+
+function GraderContent() {
   const graderRef = useRef(null);
+  const searchParams = useSearchParams();
   const [isStarted, setIsStarted] = useState(false);
   const [heroBizInfo, setHeroBizInfo] = useState({ name: "", trade: "", city: "" });
+
+  useEffect(() => {
+    const name = searchParams.get("name");
+    const trade = searchParams.get("trade");
+    const city = searchParams.get("city");
+
+    if (name || trade || city) {
+      setHeroBizInfo({
+        name: name || "",
+        trade: trade || "",
+        city: city || ""
+      });
+
+      if (name && trade && city) {
+        setIsStarted(true);
+        // Scroll to tool after a short delay to allow rendering
+        setTimeout(() => {
+          graderRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [searchParams]);
 
   const trades = ["HVAC", "Plumbing", "Electrical", "Roofing", "Other"];
 
@@ -186,7 +218,10 @@ export default function GraderClient() {
               <div ref={graderRef} className="max-w-2xl mx-auto pt-8">
                 <div className="beam mb-8" />
                 <div className="glass-card shadow-2xl rounded-3xl overflow-hidden text-left border border-[var(--carolina)]/20 animate-[fadeIn_0.5s_ease-out]">
-                  <LocalSEOGrader initialBizInfo={heroBizInfo} />
+                  <LocalSEOGrader 
+                    key={heroBizInfo.name || 'empty'}
+                    initialBizInfo={heroBizInfo.name ? heroBizInfo : null} 
+                  />
                 </div>
               </div>
             )}
