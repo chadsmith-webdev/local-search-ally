@@ -333,7 +333,7 @@ export default function LocalSEOGrader({ initialBizInfo = null, onStartQuiz = nu
               <span className="block text-[var(--carolina)] text-xs font-mono">Status: Analyzing...</span>
             </div>
           </div>
-          
+
           <ProgressBar step={catIndex + 2} total={TOTAL_STEPS} />
 
           <div className="mb-8">
@@ -347,7 +347,7 @@ export default function LocalSEOGrader({ initialBizInfo = null, onStartQuiz = nu
             {currentCat.questions.map((q, i) => (
               <Card key={q.id} className="!p-5 relative group">
                 <div className="absolute inset-0 bg-gradient-to-b from-[var(--carolina)] to-transparent opacity-[0.03] h-[2px] w-full top-0 left-0 animate-[scan_3s_linear_infinite]" />
-                
+
                 <p className="mb-4 leading-relaxed font-medium"
                    style={{ fontFamily: "var(--font-body)", fontSize: "var(--font-size-sm)", color: "var(--text)" }}>
                   <span className="mr-2" style={{ color: "var(--muted)", fontSize: "0.8rem" }}>0{catIndex + 1}.{i + 1}</span>
@@ -396,9 +396,9 @@ export default function LocalSEOGrader({ initialBizInfo = null, onStartQuiz = nu
 
         {/* Score hero */}
         <Card className="text-center !py-10 mb-5 relative overflow-hidden" style={{ boxShadow: scoreConfig.shadow }}>
-          <div className="absolute inset-0 opacity-[0.05]" 
+          <div className="absolute inset-0 opacity-[0.05]"
                style={{ background: "radial-gradient(circle at center, var(--carolina) 0%, transparent 70%)" }} />
-          
+
           <Eyebrow>Diagnostic Score</Eyebrow>
           <div className="flex justify-center my-5 relative z-10">
             <ScoreRing score={total} color={scoreConfig.color} shadow={scoreConfig.shadow} />

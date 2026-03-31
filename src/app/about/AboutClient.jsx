@@ -210,10 +210,10 @@ export default function About() {
                 marginBottom: "1.25rem",
               }}
             >
-              I founded Local Search Ally to solve a single, critical problem: 
-              the Invisibility Gap. In Northwest Arkansas, the best contractors 
-              are often the hardest to find online—not because they lack 
-              professionalism, but because they lack the technical signals 
+              I founded Local Search Ally to solve a single, critical problem:
+              the Invisibility Gap. In Northwest Arkansas, the best contractors
+              are often the hardest to find online—not because they lack
+              professionalism, but because they lack the technical signals
               required by the local search algorithm.
             </p>
             <p
@@ -223,10 +223,10 @@ export default function About() {
                 marginBottom: "1.25rem",
               }}
             >
-              Our approach is built on precision, not mystery. We treat local 
-              SEO as a map to be navigated, ensuring your business is the 
-              primary destination for high-intent searchers. By focusing 
-              exclusively on the home service sector, we maintain a deep 
+              Our approach is built on precision, not mystery. We treat local
+              SEO as a map to be navigated, ensuring your business is the
+              primary destination for high-intent searchers. By focusing
+              exclusively on the home service sector, we maintain a deep
               understanding of the conversion hurdles unique to your trade.
             </p>
             <p
@@ -236,8 +236,8 @@ export default function About() {
                 marginBottom: "2rem",
               }}
             >
-              This is a strategic partnership. While you focus on professional 
-              excellence in the field, I focus on the technical integrity and 
+              This is a strategic partnership. While you focus on professional
+              excellence in the field, I focus on the technical integrity and
               visibility of your brand in the local market.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "1rem" }}>

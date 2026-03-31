@@ -134,7 +134,7 @@ export default function ContactClient() {
           font-size: 0.88rem;
           line-height: 1.6;
         }
-        
+
         .contact-hero {
           padding: 10rem 1.5rem 8rem;
           border-bottom: 1px solid var(--border);
@@ -174,7 +174,7 @@ export default function ContactClient() {
           gap: 3.5rem;
           align-items: start;
         }
-        
+
         @media (max-width: 860px) {
           .contact-grid {
             grid-template-columns: 1fr;

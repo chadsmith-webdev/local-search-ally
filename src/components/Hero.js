@@ -197,7 +197,7 @@ export default function Hero({ title, subtitle, eyebrow, actions, children }) {
           max-width: 52ch;
           font-size: 1.02rem;
         }
-        
+
         .motion-reveal {
           opacity: 0;
           transform: translateY(26px);

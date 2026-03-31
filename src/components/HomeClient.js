@@ -2371,7 +2371,7 @@ export default function HomeClient({ posts = [] }) {
           aria-hidden='true'
         />
       </div>
-      
+
       <Hero
         eyebrow='Free Diagnostic Tool — For Home Service Trades'
         title={
@@ -2391,15 +2391,15 @@ export default function HomeClient({ posts = [] }) {
         actions={
           <div className="w-full max-w-4xl mx-auto mt-4 px-4">
             <form onSubmit={handleHeroStart} className="glass-card p-2 md:p-3 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-2 md:items-center">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 placeholder="Business Name"
                 className="hero-input flex-1 px-4 py-3 text-sm"
                 value={heroBizInfo.name}
                 onChange={(e) => setHeroBizInfo(p => ({...p, name: e.target.value}))}
                 required
               />
-              <select 
+              <select
                 className="hero-input flex-1 px-4 py-3 text-sm appearance-none cursor-pointer"
                 value={heroBizInfo.trade}
                 onChange={(e) => setHeroBizInfo(p => ({...p, trade: e.target.value}))}
@@ -2408,15 +2408,15 @@ export default function HomeClient({ posts = [] }) {
                 <option value="">Select Trade Type</option>
                 {["HVAC", "Plumbing", "Electrical", "Roofing", "Other"].map(t => <option key={t} value={t}>{t}</option>)}
               </select>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 placeholder="City, ST"
                 className="hero-input flex-1 px-4 py-3 text-sm"
                 value={heroBizInfo.city}
                 onChange={(e) => setHeroBizInfo(p => ({...p, city: e.target.value}))}
                 required
               />
-              <button 
+              <button
                 type="submit"
                 className="bg-[var(--gradient-accent)] text-[var(--text)] font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-[var(--glow-sm)] transition-all text-sm whitespace-nowrap active:scale-95"
               >
@@ -2513,7 +2513,7 @@ export default function HomeClient({ posts = [] }) {
               />
               <blockquote className='guide-quote'>
                 <p className='guide-quote-text'>
-                  "The local search algorithm is not a mystery—it is a map. 
+                  "The local search algorithm is not a mystery—it is a map.
                   My role is to ensure your business is the primary destination
                   for local searchers who value excellence as much as you do."
                 </p>

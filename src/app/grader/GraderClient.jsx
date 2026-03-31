@@ -156,12 +156,12 @@ function GraderContent() {
                   Free Tool — For Home Service Trades
                 </span>
               </div>
-              
+
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight">
                 Find out exactly why customers <br className="hidden md:block" />
                 aren&apos;t finding you on Google.
               </h1>
-              
+
               <p className="text-[var(--muted)] text-lg md:text-xl mb-12 leading-relaxed max-w-2xl mx-auto">
                 10 questions. 60 seconds. A weighted score out of 100 — <br className="hidden md:block" />
                 and the 3 specific gaps costing you calls right now.
@@ -171,15 +171,15 @@ function GraderContent() {
               {!isStarted && (
                 <div className="max-w-4xl mx-auto mb-16">
                   <form onSubmit={handleStart} className="glass-card p-2 md:p-3 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-2 md:items-center">
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       placeholder="Business Name"
                       className="hero-input flex-1 px-4 py-3 text-sm"
                       value={heroBizInfo.name}
                       onChange={(e) => setHeroBizInfo(p => ({...p, name: e.target.value}))}
                       required
                     />
-                    <select 
+                    <select
                       className="hero-input flex-1 px-4 py-3 text-sm appearance-none cursor-pointer"
                       value={heroBizInfo.trade}
                       onChange={(e) => setHeroBizInfo(p => ({...p, trade: e.target.value}))}
@@ -188,15 +188,15 @@ function GraderContent() {
                       <option value="">Select Trade Type</option>
                       {trades.map(t => <option key={t} value={t}>{t}</option>)}
                     </select>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       placeholder="City, ST"
                       className="hero-input flex-1 px-4 py-3 text-sm"
                       value={heroBizInfo.city}
                       onChange={(e) => setHeroBizInfo(p => ({...p, city: e.target.value}))}
                       required
                     />
-                    <button 
+                    <button
                       type="submit"
                       disabled={!heroBizInfo.name || !heroBizInfo.trade || !heroBizInfo.city}
                       className="bg-[var(--gradient-accent)] text-[var(--text)] font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-[var(--glow-sm)] transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm whitespace-nowrap"
@@ -218,9 +218,9 @@ function GraderContent() {
               <div ref={graderRef} className="max-w-2xl mx-auto pt-8">
                 <div className="beam mb-8" />
                 <div className="glass-card shadow-2xl rounded-3xl overflow-hidden text-left border border-[var(--carolina)]/20 animate-[fadeIn_0.5s_ease-out]">
-                  <LocalSEOGrader 
+                  <LocalSEOGrader
                     key={heroBizInfo.name || 'empty'}
-                    initialBizInfo={heroBizInfo.name ? heroBizInfo : null} 
+                    initialBizInfo={heroBizInfo.name ? heroBizInfo : null}
                   />
                 </div>
               </div>
@@ -253,7 +253,7 @@ function GraderContent() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 gap-4">
                   <div className="bucket-card">
                     <h3 className="font-bold mb-2">GBP Health — 30pts</h3>
@@ -290,7 +290,7 @@ function GraderContent() {
             <div className="max-w-2xl mx-auto relative z-10">
               <Reveal>
                 <h2 className="text-3xl md:text-5xl font-extrabold mb-8">Stop guessing. <br />Start growing.</h2>
-                <button 
+                <button
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   className="btn-glow inline-flex items-center gap-2 text-lg px-8 py-4 mb-6"
                 >

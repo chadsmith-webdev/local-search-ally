@@ -145,7 +145,7 @@ export default function BlogClient({ posts }) {
                     </p>
                     <span style ={{ color: "var(--duke)", fontSize: "0.78rem "}}>·</span>
                     <p style={{ color: "var(--muted", fontSize: "0.78rem", margin: 0 }}>{post.readTime}</p>
-                    
+
                     <h2 style={{ color: "var(--text)", fontSize: "1.1rem", lineHeight: 1.5, marginBottom: "0.75rem", flex: 1 }}>
                       {post.title}
                     </h2>
