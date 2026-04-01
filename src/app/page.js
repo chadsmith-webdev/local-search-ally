@@ -42,6 +42,7 @@ function H2({ children, style }) {
       fontFamily: "var(--font-display)",
       fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
       fontWeight: 700, lineHeight: 1.22, letterSpacing: "-0.02em",
+      fontVariationSettings: '"opsz" 72',
       color: C.text, marginBottom: "1.25rem", ...style,
     }}>
       {children}
@@ -60,17 +61,17 @@ function Body({ children, style }) {
   );
 }
 
-function GradientBtn({ href, children }) {
+function GradientBtn({ href, children, style }) {
   return (
     <Link href={href} className="btn-primary" style={{
-      display: "inline-block",
+      display: "inline-flex", alignItems: "center",
       background: `linear-gradient(135deg, ${C.carolina} 0%, ${C.steel} 100%)`,
       color: "#1e2a3a", fontWeight: 600, fontSize: "0.78rem",
       letterSpacing: "0.1em", textTransform: "uppercase",
       fontFamily: "var(--font-mono)",
       padding: "15px 32px", borderRadius: 6,
       textDecoration: "none", lineHeight: 1,
-      minHeight: 44, display: "inline-flex", alignItems: "center",
+      minHeight: 44, ...style,
     }}>
       {children}
     </Link>
@@ -194,7 +195,7 @@ export default function HomePage() {
         /* Buttons */
         .btn-primary {
           cursor: pointer;
-          transition: opacity 0.15s ease;
+          transition: opacity 0.15s ease, transform 0.15s ease;
         }
         .btn-primary:hover { opacity: 0.86; }
         .btn-primary:active { opacity: 0.75; transform: scale(0.985); }
@@ -211,11 +212,12 @@ export default function HomePage() {
 
         /* Cards */
         .problem-card {
-          transition: border-color 0.2s ease, transform 0.22s ease;
+          transition: border-color 0.2s ease, transform 0.22s ease, box-shadow 0.22s ease;
         }
         .problem-card:hover {
-          border-color: rgba(123,175,212,0.22) !important;
-          transform: translateY(-2px);
+          border-color: rgba(123,175,212,0.28) !important;
+          transform: translateY(-3px);
+          box-shadow: 0 12px 32px rgba(0,0,0,0.35);
         }
 
         /* FAQ */
@@ -233,6 +235,14 @@ export default function HomePage() {
           transition: color 0.15s ease;
         }
         .inline-link:hover { color: ${C.carolinaDark} !important; }
+
+        /* Atmospheric hero background — full-width radial glow + subtle grid */
+        .page-bg {
+          background-image:
+            radial-gradient(ellipse 90% 55% at 50% 0%, rgba(123,175,212,0.09) 0%, transparent 62%),
+            repeating-linear-gradient(rgba(255,255,255,0.022) 0px, rgba(255,255,255,0.022) 1px, transparent 1px, transparent 76px),
+            repeating-linear-gradient(90deg, rgba(255,255,255,0.022) 0px, rgba(255,255,255,0.022) 1px, transparent 1px, transparent 76px);
+        }
 
         /* Responsive */
         .problem-grid {
@@ -255,27 +265,26 @@ export default function HomePage() {
         }
       `}</style>
 
-      <div style={{ background: "#0a0a0a" }}>
+      <div className="page-bg" style={{ background: "#0a0a0a" }}>
 
         {/* ─── HERO ──────────────────────────────────────────────────────────── */}
         <section style={{
           maxWidth: 640, margin: "0 auto", textAlign: "center",
           padding: "clamp(5rem, 12vw, 9rem) clamp(1.25rem, 4vw, 2rem) clamp(4rem, 8vw, 7rem)",
         }}>
+          {/* Badge */}
           <div style={{
             display: "inline-flex", alignItems: "center", gap: 8,
             background: C.carolinaDim, borderRadius: 100,
             padding: "6px 14px", marginBottom: 28,
             border: `1px solid rgba(123,175,212,0.14)`,
+            animation: "fadeUp 0.5s ease both",
           }}>
-            <span
-              className="badge-dot"
-              style={{
-                width: 6, height: 6, borderRadius: "50%",
-                background: C.carolina, display: "inline-block",
-                animation: "pulse 2.5s ease-in-out infinite",
-              }}
-            />
+            <span style={{
+              width: 6, height: 6, borderRadius: "50%",
+              background: C.carolina, display: "inline-block",
+              animation: "pulse 2.5s ease-in-out infinite",
+            }} />
             <span style={{
               fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em",
               textTransform: "uppercase", color: C.carolina, fontFamily: "var(--font-ui)",
@@ -286,9 +295,12 @@ export default function HomePage() {
 
           <h1 style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(2.1rem, 5.5vw, 3.25rem)",
-            fontWeight: 700, lineHeight: 1.18, letterSpacing: "-0.025em",
-            color: C.text, margin: "0 0 20px",
+            fontSize: "clamp(2.5rem, 7vw, 4.25rem)",
+            fontWeight: 700, lineHeight: 1.12, letterSpacing: "-0.03em",
+            fontVariationSettings: '"opsz" 144',
+            color: C.text, margin: "0 0 22px",
+            animation: "fadeUp 0.65s ease both",
+            animationDelay: "90ms",
           }}>
             Your competitors are getting calls that should be yours.
           </h1>
@@ -296,20 +308,34 @@ export default function HomePage() {
           <p style={{
             color: C.text2, fontSize: "1.05rem", lineHeight: 1.72,
             fontFamily: "var(--font-ui)", margin: "0 0 10px",
+            animation: "fadeUp 0.6s ease both",
+            animationDelay: "200ms",
           }}>
             97% of people use Google to find a local contractor. If your name isn't in the results, the call goes to whoever is.
           </p>
 
           <p style={{
             color: C.muted, fontSize: "0.95rem", lineHeight: 1.72,
-            fontFamily: "var(--font-ui)", margin: "0 0 36px",
+            fontFamily: "var(--font-ui)", margin: "0 0 40px",
+            animation: "fadeUp 0.6s ease both",
+            animationDelay: "280ms",
           }}>
             The best contractor in town shouldn't be the hardest to find. I make sure they're not.
           </p>
 
-          <GradientBtn href="/audit">Run Your Free Audit →</GradientBtn>
+          <div style={{
+            animation: "fadeUp 0.6s ease both",
+            animationDelay: "360ms",
+          }}>
+            <GradientBtn href="/audit">Run Your Free Audit →</GradientBtn>
+          </div>
 
-          <p style={{ color: C.muted2, fontSize: "0.72rem", marginTop: 14, fontFamily: "var(--font-ui)" }}>
+          <p style={{
+            color: C.muted2, fontSize: "0.72rem", marginTop: 14,
+            fontFamily: "var(--font-ui)",
+            animation: "fadeUp 0.5s ease both",
+            animationDelay: "450ms",
+          }}>
             Real audit. Real data. 90 seconds. No email needed to see your scores.
           </p>
         </section>
@@ -336,11 +362,18 @@ export default function HomePage() {
           <div className="problem-grid" style={{ maxWidth: 960, margin: "0 auto" }}>
             {problemCards.map((card) => (
               <div key={card.label} className="problem-card" style={{
-                background: C.surface, borderRadius: 8,
+                background: `linear-gradient(160deg, rgba(123,175,212,0.04) 0%, ${C.surface} 40%)`,
+                borderRadius: 8,
                 border: `1px solid ${C.border}`,
                 padding: "28px 24px",
               }}>
-                <div style={{ color: C.carolina, marginBottom: 14 }}>
+                <div style={{
+                  display: "inline-flex", alignItems: "center", justifyContent: "center",
+                  width: 40, height: 40, borderRadius: 8,
+                  background: C.carolinaDim,
+                  border: `1px solid rgba(123,175,212,0.14)`,
+                  color: C.carolina, marginBottom: 16,
+                }}>
                   {card.icon}
                 </div>
                 <p style={{
@@ -578,6 +611,7 @@ export default function HomePage() {
             fontFamily: "var(--font-display)",
             fontSize: "clamp(1.5rem, 3.5vw, 2.1rem)",
             fontWeight: 700, color: C.text,
+            fontVariationSettings: '"opsz" 72',
             marginBottom: 32, letterSpacing: "-0.02em",
           }}>
             Questions worth asking.
