@@ -11,11 +11,13 @@ const C = {
   carolinaDark: "#5a93bc",
   steel:        "#4A6B8A",
   carolinaDim:  "rgba(123,175,212,0.12)",
+  carolinaBorder:"rgba(123,175,212,0.28)",
   muted:        "#888888",
   muted2:       "#555555",
   border:       "rgba(255,255,255,0.08)",
   borderStrong: "rgba(255,255,255,0.14)",
   surface:      "#141414",
+  surface2:     "#1e1e1e",
   text:         "#f0f0f0",
   text2:        "#c0c0c0",
 };
@@ -60,14 +62,15 @@ function Body({ children, style }) {
 
 function GradientBtn({ href, children }) {
   return (
-    <Link href={href} style={{
+    <Link href={href} className="btn-primary" style={{
       display: "inline-block",
       background: `linear-gradient(135deg, ${C.carolina} 0%, ${C.steel} 100%)`,
       color: "#1e2a3a", fontWeight: 600, fontSize: "0.78rem",
       letterSpacing: "0.1em", textTransform: "uppercase",
       fontFamily: "var(--font-mono)",
       padding: "15px 32px", borderRadius: 6,
-      textDecoration: "none",
+      textDecoration: "none", lineHeight: 1,
+      minHeight: 44, display: "inline-flex", alignItems: "center",
     }}>
       {children}
     </Link>
@@ -76,14 +79,15 @@ function GradientBtn({ href, children }) {
 
 function OutlineBtn({ href, children }) {
   return (
-    <Link href={href} style={{
-      display: "inline-block",
+    <Link href={href} className="btn-outline" style={{
+      display: "inline-flex", alignItems: "center",
       border: `1px solid ${C.borderStrong}`,
       color: C.carolina, fontWeight: 600, fontSize: "0.78rem",
       letterSpacing: "0.1em", textTransform: "uppercase",
       fontFamily: "var(--font-mono)",
-      padding: "14px 28px", borderRadius: 6,
-      textDecoration: "none",
+      padding: "15px 28px", borderRadius: 6,
+      textDecoration: "none", lineHeight: 1,
+      minHeight: 44,
     }}>
       {children}
     </Link>
@@ -130,18 +134,21 @@ const planSteps = [
     title: "Audit",
     body: "I review your Google Business Profile, website, competitor ranking, and local citation health to find what's actually costing you calls.",
     cta: { label: "Start with the free audit →", href: "/audit" },
+    active: true,
   },
   {
     num: "02",
     title: "Fix Priority Gaps",
     body: "Not everything at once. What matters most first — the things that move you up in search before we touch anything else.",
     cta: null,
+    active: false,
   },
   {
     num: "03",
     title: "Grow and Track",
     body: "Monthly reports on what's improving and what's next. You see the data, not just a summary.",
     cta: null,
+    active: false,
   },
 ];
 
@@ -184,6 +191,50 @@ export default function HomePage() {
   return (
     <>
       <style>{`
+        /* Buttons */
+        .btn-primary {
+          cursor: pointer;
+          transition: opacity 0.15s ease;
+        }
+        .btn-primary:hover { opacity: 0.86; }
+        .btn-primary:active { opacity: 0.75; transform: scale(0.985); }
+
+        .btn-outline {
+          cursor: pointer;
+          transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .btn-outline:hover {
+          border-color: ${C.carolinaBorder};
+          background: ${C.carolinaDim};
+        }
+        .btn-outline:active { background: rgba(123,175,212,0.16); }
+
+        /* Cards */
+        .problem-card {
+          transition: border-color 0.2s ease, transform 0.22s ease;
+        }
+        .problem-card:hover {
+          border-color: rgba(123,175,212,0.22) !important;
+          transform: translateY(-2px);
+        }
+
+        /* FAQ */
+        .faq-item {
+          transition: background 0.15s ease;
+          border-radius: 6px;
+          margin: 0 -12px;
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+        .faq-item:hover { background: rgba(255,255,255,0.025); }
+
+        /* Inline links */
+        .inline-link {
+          transition: color 0.15s ease;
+        }
+        .inline-link:hover { color: ${C.carolinaDark} !important; }
+
+        /* Responsive */
         .problem-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -200,7 +251,7 @@ export default function HomePage() {
         }
         @media (max-width: 480px) {
           .cta-row { flex-direction: column; align-items: stretch; }
-          .cta-row a { text-align: center; }
+          .cta-row a { justify-content: center; }
         }
       `}</style>
 
@@ -212,11 +263,19 @@ export default function HomePage() {
           padding: "clamp(5rem, 12vw, 9rem) clamp(1.25rem, 4vw, 2rem) clamp(4rem, 8vw, 7rem)",
         }}>
           <div style={{
-            display: "inline-flex", alignItems: "center", gap: 7,
+            display: "inline-flex", alignItems: "center", gap: 8,
             background: C.carolinaDim, borderRadius: 100,
-            padding: "5px 14px", marginBottom: 28,
+            padding: "6px 14px", marginBottom: 28,
+            border: `1px solid rgba(123,175,212,0.14)`,
           }}>
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: C.carolina, display: "inline-block" }} />
+            <span
+              className="badge-dot"
+              style={{
+                width: 6, height: 6, borderRadius: "50%",
+                background: C.carolina, display: "inline-block",
+                animation: "pulse 2.5s ease-in-out infinite",
+              }}
+            />
             <span style={{
               fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em",
               textTransform: "uppercase", color: C.carolina, fontFamily: "var(--font-ui)",
@@ -257,7 +316,7 @@ export default function HomePage() {
 
         {/* ─── PROBLEM ───────────────────────────────────────────────────────── */}
         <section style={{ padding: "0 clamp(1.25rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem)" }}>
-          <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center", marginBottom: 40 }}>
+          <div style={{ maxWidth: 640, margin: "0 auto 40px", textAlign: "center" }}>
             <Eyebrow>The Real Problem</Eyebrow>
             <H2>Good work used to be enough.</H2>
             <Body>
@@ -276,7 +335,7 @@ export default function HomePage() {
 
           <div className="problem-grid" style={{ maxWidth: 960, margin: "0 auto" }}>
             {problemCards.map((card) => (
-              <div key={card.label} style={{
+              <div key={card.label} className="problem-card" style={{
                 background: C.surface, borderRadius: 8,
                 border: `1px solid ${C.border}`,
                 padding: "28px 24px",
@@ -336,7 +395,7 @@ export default function HomePage() {
               fontFamily: "var(--font-ui)",
             }}>
               Before offering this to anyone, I built demo sites for plumbing, HVAC, and electrical with schema markup, dedicated service pages, GBP optimization, and conversion paths built in. Not to show clients — to prove the method on my own projects first.{" "}
-              <Link href="/portfolio" style={{
+              <Link href="/portfolio" className="inline-link" style={{
                 color: C.carolina, textDecoration: "underline",
                 textUnderlineOffset: 3,
               }}>
@@ -354,22 +413,35 @@ export default function HomePage() {
           <Eyebrow>How This Works</Eyebrow>
           <H2>Three steps. No surprises.</H2>
 
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div role="list">
             {planSteps.map((step, i) => (
-              <div key={step.num} style={{
-                borderLeft: `2px solid ${i === 0 ? C.carolina : C.borderStrong}`,
-                paddingLeft: 24, paddingBottom: i < planSteps.length - 1 ? 36 : 0,
+              <div key={step.num} role="listitem" style={{
+                borderLeft: `2px solid ${step.active ? C.carolina : C.border}`,
+                paddingLeft: 24,
+                paddingBottom: i < planSteps.length - 1 ? 36 : 0,
+                position: "relative",
               }}>
+                {/* Active indicator dot */}
+                {step.active && (
+                  <span style={{
+                    position: "absolute", left: -5, top: 2,
+                    width: 8, height: 8, borderRadius: "50%",
+                    background: C.carolina,
+                  }} />
+                )}
                 <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: 8 }}>
                   <span style={{
                     fontFamily: "var(--font-mono)", fontSize: "0.62rem",
-                    color: C.carolina, letterSpacing: "0.1em", fontWeight: 500,
+                    color: step.active ? C.carolina : C.muted,
+                    letterSpacing: "0.1em", fontWeight: 500,
                   }}>
                     {step.num}
                   </span>
                   <h3 style={{
                     fontFamily: "var(--font-display)", fontSize: "1.15rem",
-                    fontWeight: 700, color: C.text, letterSpacing: "-0.01em",
+                    fontWeight: 700,
+                    color: step.active ? C.text : C.text2,
+                    letterSpacing: "-0.01em",
                   }}>
                     {step.title}
                   </h3>
@@ -382,7 +454,7 @@ export default function HomePage() {
                   {step.body}
                 </p>
                 {step.cta && (
-                  <Link href={step.cta.href} style={{
+                  <Link href={step.cta.href} className="inline-link" style={{
                     color: C.carolina, fontSize: "0.82rem",
                     fontFamily: "var(--font-ui)",
                     textDecoration: "underline", textUnderlineOffset: 3,
@@ -430,25 +502,26 @@ export default function HomePage() {
             No email needed to see your scores. Takes 90 seconds.
           </p>
 
+          {/* Audit areas strip */}
           <div style={{
-            display: "flex", flexWrap: "wrap", gap: "8px 20px",
-            justifyContent: "center", marginTop: 32,
-          }}>
+            display: "flex", flexWrap: "wrap", alignItems: "center",
+            gap: "8px 0", justifyContent: "center", marginTop: 32,
+          }} aria-label="Audit covers">
             {auditAreas.map((area, i) => (
-              <span key={area} style={{
-                fontSize: "0.68rem", fontWeight: 600,
-                letterSpacing: "0.14em", textTransform: "uppercase",
-                color: C.muted, fontFamily: "var(--font-ui)",
-                display: "flex", alignItems: "center", gap: 20,
-              }}>
+              <span key={area} style={{ display: "inline-flex", alignItems: "center" }}>
                 {i > 0 && (
                   <span style={{
-                    display: "inline-block", width: 3, height: 3,
-                    borderRadius: "50%", background: C.borderStrong,
-                    marginRight: -12,
-                  }} />
+                    display: "inline-block", width: 3, height: 3, borderRadius: "50%",
+                    background: C.border, margin: "0 12px",
+                  }} aria-hidden="true" />
                 )}
-                {area}
+                <span style={{
+                  fontSize: "0.68rem", fontWeight: 600,
+                  letterSpacing: "0.14em", textTransform: "uppercase",
+                  color: C.muted, fontFamily: "var(--font-ui)",
+                }}>
+                  {area}
+                </span>
               </span>
             ))}
           </div>
@@ -476,8 +549,11 @@ export default function HomePage() {
         <section style={{ padding: "0 clamp(1.25rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem)" }}>
           <div style={{
             maxWidth: 640, margin: "0 auto",
-            background: C.surface, border: `1px solid ${C.border}`,
-            borderRadius: 12, padding: "clamp(2rem, 5vw, 3rem)",
+            background: C.surface,
+            border: `1px solid ${C.border}`,
+            borderTop: `1px solid rgba(123,175,212,0.18)`,
+            borderRadius: 12,
+            padding: "clamp(2rem, 5vw, 3rem)",
           }}>
             <H2>Every month you're invisible, that's work going to whoever shows up first.</H2>
             <Body>
@@ -507,28 +583,28 @@ export default function HomePage() {
             Questions worth asking.
           </h2>
 
-          <div>
+          <dl>
             {faqItems.map((item, i) => (
-              <div key={i} style={{
+              <div key={i} className="faq-item" style={{
                 borderTop: `1px solid ${C.border}`,
-                padding: "24px 0",
+                padding: "24px 12px",
               }}>
-                <p style={{
+                <dt style={{
                   fontFamily: "var(--font-ui)", fontSize: "0.95rem",
                   fontWeight: 600, color: C.text, marginBottom: 10, lineHeight: 1.5,
                 }}>
                   {item.q}
-                </p>
-                <p style={{
+                </dt>
+                <dd style={{
                   fontFamily: "var(--font-ui)", fontSize: "0.9rem",
-                  color: C.muted, lineHeight: 1.75,
+                  color: C.muted, lineHeight: 1.75, margin: 0,
                 }}>
                   {item.a}
-                </p>
+                </dd>
               </div>
             ))}
             <div style={{ borderTop: `1px solid ${C.border}` }} />
-          </div>
+          </dl>
         </section>
 
         {/* ─── FINAL CTA ─────────────────────────────────────────────────────── */}
