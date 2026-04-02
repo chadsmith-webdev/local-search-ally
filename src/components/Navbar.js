@@ -43,7 +43,7 @@ export default function Navbar() {
         background: scrolled ? "rgba(10,10,10,0.92)" : "rgba(10,10,10,0.7)",
         borderBottom: `1px solid ${scrolled ? "rgba(255,255,255,0.1)" : C.border}`,
         backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)",
-        padding: "0 clamp(1.25rem, 4vw, 2.5rem)",
+        padding: "0 var(--page-gutter)",
         display: "flex", alignItems: "center", justifyContent: "space-between",
         height: 60,
         transition: "background 0.25s, border-color 0.25s",

@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import {
   motion as m,
   useMotionValue,
@@ -11,7 +12,12 @@ import {
   useScroll,
   useReducedMotion,
   useInView,
+  AnimatePresence,
 } from "framer-motion";
+
+const ThreeCanvas = dynamic(() => import("@/components/ThreeCanvas"), {
+  ssr: false,
+});
 
 // ─── Animation constants ──────────────────────────────────────────────────────
 
@@ -54,8 +60,8 @@ function CountUp({ to, suffix = "", duration = 2 }) {
 function Spotlight() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const smoothX = useSpring(mouseX, { damping: 25, stiffness: 150 });
-  const smoothY = useSpring(mouseY, { damping: 25, stiffness: 150 });
+  const smoothX = useSpring(mouseX, { damping: 35, stiffness: 200 });
+  const smoothY = useSpring(mouseY, { damping: 35, stiffness: 200 });
 
   useEffect(() => {
     const onMove = (e) => {
@@ -69,7 +75,7 @@ function Spotlight() {
   const background = useTransform(
     [smoothX, smoothY],
     ([x, y]) =>
-      `radial-gradient(800px circle at ${x}px ${y}px, rgba(123,175,212,0.25), rgba(123,175,212,0.04) 35%, transparent 80%)`
+      `radial-gradient(1000px circle at ${x}px ${y}px, rgba(123,175,212,0.1), rgba(123,175,212,0.02) 30%, transparent 70%)`
   );
 
   return (
@@ -77,6 +83,35 @@ function Spotlight() {
       className="fixed inset-0 pointer-events-none z-[2]"
       style={{ background }}
     />
+  );
+}
+
+function GlassFrame({ children, className = "" }) {
+  return (
+    <div className={`relative group ${className}`}>
+      {/* Outer Glow */}
+      <div className="absolute -inset-4 bg-carolina/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+      
+      {/* 3D Glass Layer */}
+      <div className="relative glass-premium rounded-2xl overflow-hidden p-1.5 transform-gpu transition-all duration-700 group-hover:scale-[1.01] group-hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)]">
+        {/* Inner Refraction */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-white/10 pointer-events-none" />
+        {children}
+        
+        {/* Scanning Line Overlay */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+           <m.div 
+             animate={{ y: ["-100%", "200%"] }}
+             transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+             className="w-full h-1/2 bg-gradient-to-b from-transparent via-carolina/5 to-transparent opacity-50"
+           />
+        </div>
+      </div>
+
+      {/* Decorative HUD Elements */}
+      <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-carolina/30 rounded-tl-lg" />
+      <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-carolina/30 rounded-br-lg" />
+    </div>
   );
 }
 
@@ -96,7 +131,7 @@ function Eyebrow({ children }) {
 function SectionH2({ children, className = "" }) {
   return (
     <h2
-      className={`font-serif text-[clamp(2rem,5vw,3rem)] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#f0f0f0] mb-6 ${className}`}
+      className={`font-serif text-[clamp(2.2rem,6vw,3.5rem)] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#f8f9fa] mb-6 ${className}`}
     >
       {children}
     </h2>
@@ -106,7 +141,7 @@ function SectionH2({ children, className = "" }) {
 function BodyText({ children, className = "" }) {
   return (
     <p
-      className={`text-[#a0a0a0] text-[1.05rem] leading-[1.8] font-sans mb-5 max-w-[600px] ${className}`}
+      className={`text-muted text-[1.1rem] leading-[1.7] font-sans mb-5 max-w-[620px] ${className}`}
     >
       {children}
     </p>
@@ -369,25 +404,26 @@ export default function HomeClient() {
   const stakesOpacity = useTransform(stakesScroll, [0, 0.5], [0, 1]);
 
   return (
-    <div className="tech-grid min-h-screen" style={{ background: "#060607" }}>
+    <div className="tech-grid min-h-screen selection:bg-carolina/30" style={{ background: "var(--bg)" }}>
       <Spotlight />
+      <ThreeCanvas />
       <div className="noise">
 
         {/* ─── HERO ─────────────────────────────────────────────────────────── */}
         <section
           ref={heroRef}
-          className="relative max-w-[1100px] mx-auto"
+          className="relative max-w-[1400px] mx-auto"
           style={{ perspective: "1000px" }}
         >
-          <m.div
-            style={{
-              rotateX: mounted ? heroRotateX : 0,
-              scale: mounted ? heroScale : 1,
-              opacity: mounted ? heroOpacity : 1,
-              transformOrigin: "top",
-            }}
-            className="px-[clamp(1.5rem,5vw,3rem)] pt-[clamp(8rem,20vw,12rem)] pb-[clamp(5rem,10vw,8rem)] flex flex-col items-start"
-          >
+            <m.div
+              style={{
+                rotateX: mounted ? heroRotateX : 0,
+                scale: mounted ? heroScale : 1,
+                opacity: mounted ? heroOpacity : 1,
+                transformOrigin: "top",
+              }}
+              className="px-[var(--page-gutter)] pt-[clamp(8rem,12vw,10rem)] pb-[var(--section-spacing)] flex flex-col items-start"
+            >
             {/* Page-load stagger — initial/animate, not whileInView */}
             <m.div
               variants={stagger}
@@ -401,20 +437,20 @@ export default function HomeClient() {
 
               <m.h1
                 variants={fadeUp}
-                className="font-serif text-[clamp(2.5rem,9vw,6rem)] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#f0f0f0] mb-7 max-w-[900px]"
+                className="font-serif text-[clamp(2.5rem,8.5vw,6.5rem)] font-extrabold leading-[1.0] tracking-[-0.05em] text-[#f8f9fa] mb-12 max-w-[1200px] relative z-10"
               >
                 Your competitors are taking calls{" "}
-                <span className="text-carolina">that should be yours.</span>
+                <span className="text-carolina-dark">that should be yours.</span>
               </m.h1>
 
-              <div className="flex gap-[clamp(2rem,5vw,3.75rem)] flex-wrap items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-[clamp(2rem,6vw,5rem)] items-start">
                 {/* Left: copy + CTAs */}
-                <m.div variants={fadeUp} className="max-w-[540px]">
-                  <p className="text-[#c0c0c0] text-[1.25rem] leading-[1.6] font-sans mb-5 font-medium">
+                <m.div variants={fadeUp} className="max-w-[580px] relative z-10">
+                  <p className="text-[#c0c0c0] text-[clamp(1.15rem,2.2vw,1.45rem)] leading-[1.5] font-sans mb-8 font-medium">
                     97% of people use Google to find local contractors. If
                     you&apos;re not in the top results, you&apos;re invisible.
                   </p>
-                  <p className="text-[#888] text-[1.05rem] leading-[1.75] font-sans mb-10">
+                  <p className="text-[#888] text-[1.1rem] leading-[1.8] font-sans mb-12">
                     The best contractor in town shouldn&apos;t be the hardest to
                     find. I give you the data to fix your visibility gap and
                     start winning the search.
@@ -440,64 +476,90 @@ export default function HomeClient() {
                   </p>
                 </m.div>
 
-                {/* Right: sample audit preview */}
-                <m.div
-                  variants={fadeUp}
-                  className="flex-[1_1_280px] p-5 border border-white/[0.08] rounded-2xl bg-white/[0.02] backdrop-blur-[10px] flex flex-col gap-3 cursor-default"
-                >
-                  <div className="flex justify-between items-center">
-                    <span className="font-mono text-[0.6rem] text-carolina tracking-[0.15em]">
-                      SAMPLE AUDIT · ROGERS, AR
-                    </span>
-                    <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_#4ade80]" />
-                  </div>
-                  <div className="font-sans text-[0.8rem] text-[#f0f0f0] font-semibold leading-none">
-                    Apex Plumbing &amp; Drain
-                  </div>
-                  <div className="h-px bg-white/[0.08]" />
-                  <div className="flex flex-col gap-3">
-                    {[
-                      { label: "Google Business Profile", score: 42, status: "yellow" },
-                      { label: "Review Health",           score: 61, status: "yellow" },
-                      { label: "Website SEO",             score: 28, status: "red"    },
-                      { label: "Citation Consistency",    score: 55, status: "yellow" },
-                      { label: "Competitor Gap",          score: 34, status: "red"    },
-                    ].map(({ label, score, status }) => (
-                      <div key={label}>
-                        <div className="flex justify-between text-[0.62rem] font-mono mb-1">
-                          <span className="text-[#888]">{label}</span>
-                          <span style={{ color: status === "red" ? "var(--red)" : "var(--yellow)" }}>
-                            {score}/100
-                          </span>
+                {/* Right: sample audit preview - Layered HUD */}
+                <div className="relative">
+                  <m.div
+                    variants={fadeUp}
+                    className="w-full lg:w-[380px] p-8 glass-premium rounded-2xl flex flex-col gap-6 cursor-default relative overflow-hidden group hud-frame lg:absolute lg:top-[-100px] lg:right-[-20px] lg:z-20 lg:shadow-[0_45px_110px_rgba(0,0,0,0.8)]"
+                  >
+                    <div className="bracket-top" />
+                    <div className="bracket-bottom" />
+                    <div className="bracket-right" />
+                    
+                    {/* Pulsing Nodes in corners */}
+                    <div className="absolute top-2 left-2 pulsing-node opacity-40" />
+                    <div className="absolute top-2 right-2 pulsing-node opacity-40" />
+                    <div className="absolute bottom-2 left-2 pulsing-node opacity-40" />
+                    <div className="absolute bottom-2 right-2 pulsing-node opacity-40" />
+                    
+                    <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-50">
+                      <m.div
+                        animate={{ y: ["-100%", "200%"] }}
+                        transition={{ duration: 3.5, repeat: Infinity, ease: "linear" }}
+                        className="w-full h-1/3 bg-gradient-to-b from-transparent via-carolina/10 to-transparent"
+                      />
+                    </div>
+                    
+                    <div className="flex justify-between items-center relative z-10">
+                      <span className="font-mono text-[0.6rem] text-carolina tracking-[0.2em] font-bold">
+                        DIAGNOSTIC · ROGERS, AR
+                      </span>
+                      <m.span 
+                        animate={{ opacity: [0.4, 1, 0.4] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="w-1.5 h-1.5 rounded-full bg-green shadow-[0_0_12px_var(--green)]" 
+                      />
+                    </div>
+                    <div className="font-serif text-[0.95rem] text-text font-bold leading-none relative z-10">
+                      Apex Plumbing &amp; Drain
+                    </div>
+                    <div className="h-px bg-border-strong relative z-10" />
+                    <div className="flex flex-col gap-4 relative z-10">
+                      {[
+                        { label: "GBP Optimization", score: 42, status: "yellow" },
+                        { label: "Review Velocity",  score: 61, status: "yellow" },
+                        { label: "On-Page SEO",      score: 28, status: "red"    },
+                        { label: "Citation Health",  score: 55, status: "yellow" },
+                        { label: "The Invisibility Gap", score: 34, status: "red"    },
+                      ].map(({ label, score, status }) => (
+                        <div key={label} className="group/item">
+                          <div className="flex justify-between text-[0.65rem] font-mono mb-2">
+                            <span className="text-muted group-hover/item:text-carolina transition-colors">{label}</span>
+                            <span className="font-bold" style={{ color: `var(--${status})` }}>
+                              {mounted ? <CountUp to={score} duration={1.5} /> : score}/100
+                            </span>
+                          </div>
+                          <div className="h-1.5 rounded-full bg-white/[0.04] overflow-hidden">
+                            <m.div
+                              initial={{ width: 0 }}
+                              whileInView={{ width: `${score}%` }}
+                              viewport={{ once: true }}
+                              className="h-full rounded-full transition-all duration-1000"
+                              style={{
+                                background: `var(--${status})`,
+                                boxShadow: `0 0 10px var(--${status})`,
+                              }}
+                            />
+                          </div>
                         </div>
-                        <div className="h-1 rounded-full bg-white/[0.06] overflow-hidden">
-                          <div
-                            className="h-full rounded-full transition-all"
-                            style={{
-                              width: `${score}%`,
-                              background: status === "red" ? "var(--red)" : "var(--yellow)",
-                            }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="pt-1 border-t border-white/[0.06]">
-                    <p className="text-[0.6rem] font-mono text-[#555] m-0 tracking-[0.12em]">
-                      RUN YOURS FREE → TAKES 90 SECONDS
-                    </p>
-                  </div>
-                </m.div>
+                      ))}
+                    </div>
+                    <div className="pt-2 border-t border-border-strong relative z-10">
+                      <p className="text-[0.65rem] font-mono text-muted group-hover:text-carolina transition-colors m-0 tracking-[0.15em] font-bold">
+                        DATA FEED ACTIVE // 90s AUDIT
+                      </p>
+                    </div>
+                  </m.div>
+                </div>
               </div>
             </m.div>
           </m.div>
         </section>
 
-        {/* ─── PROBLEM ──────────────────────────────────────────────────────── */}
         <PerspectiveSection>
           <div
             ref={problemRef}
-            className="px-[clamp(1.5rem,5vw,3rem)] pb-[clamp(5rem,10vw,8rem)]"
+            className="px-[var(--page-gutter)] py-[var(--section-spacing)]"
           >
             <div className="max-w-[700px] mb-[60px]">
               <Eyebrow>The Problem</Eyebrow>
@@ -522,14 +584,14 @@ export default function HomeClient() {
               {problemCards.map((card, i) => (
                 <m.div
                   key={card.label}
-                  className="glass rounded-xl p-10 relative overflow-hidden cursor-default transition-all duration-300 hover:border-carolina/50 hover:-translate-y-2.5 hover:bg-carolina/5 hover:shadow-[0_25px_60px_rgba(0,0,0,0.6)]"
+                  className="glass-premium rounded-xl p-10 relative overflow-hidden cursor-default transition-all duration-500 hover:border-carolina/50 hover:-translate-y-3 hover:shadow-[0_40px_80px_rgba(0,0,0,0.8)]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
                     type: "spring",
                     stiffness: 300,
-                    damping: 20,
+                    damping: 25,
                     delay: i * 0.1,
                   }}
                   style={{
@@ -537,18 +599,21 @@ export default function HomeClient() {
                     rotateY: mounted ? cardParallax[i].r : 0,
                   }}
                 >
-                  <div className="absolute top-[-10px] right-[-10px] text-[5rem] font-black text-carolina opacity-[0.03] font-serif pointer-events-none select-none">
+                  <div className="absolute top-[-15px] right-[-15px] text-[6rem] font-black text-carolina opacity-[0.04] font-serif pointer-events-none select-none">
                     0{i + 1}
                   </div>
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-carolina/10 border border-carolina/20 text-carolina mb-6">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-carolina/10 border border-carolina/20 text-carolina mb-8 group-hover:scale-110 transition-transform">
                     {card.icon}
                   </div>
-                  <p className="text-[0.65rem] font-bold tracking-[0.15em] uppercase text-[#888] font-mono mb-3">
+                  <p className="text-[0.7rem] font-bold tracking-[0.2em] uppercase text-muted font-mono mb-4">
                     {card.label}
                   </p>
-                  <p className="text-[#f0f0f0] text-[1.1rem] leading-[1.6] font-sans font-medium">
+                  <p className="text-text text-[1.15rem] leading-[1.6] font-sans font-medium">
                     {card.body}
                   </p>
+                  
+                  {/* Bottom accented line */}
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-carolina/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </m.div>
               ))}
             </div>
@@ -557,7 +622,7 @@ export default function HomeClient() {
 
         {/* ─── GUIDE ────────────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div className="max-w-[1100px] mx-auto px-[clamp(1.5rem,5vw,3rem)] pt-[clamp(5rem,10vw,8rem)] pb-[clamp(10rem,18vw,14rem)]">
+          <div className="max-w-[1400px] mx-auto px-[var(--page-gutter)] py-[var(--section-spacing)]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[80px] items-center">
 
               <m.div
@@ -658,15 +723,15 @@ export default function HomeClient() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative"
               >
-                <div className="relative aspect-square rounded-xl overflow-hidden border border-white/[0.08] bg-surface">
+                <GlassFrame className="aspect-square">
                   <Image
                     src="/images/chad.avif"
                     alt="Chad Smith, founder of Local Search Ally"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover grayscale contrast-[1.1] brightness-90"
+                    className="object-cover grayscale contrast-[1.1] brightness-110"
                   />
-                </div>
+                </GlassFrame>
 
                 <m.div
                   initial={{ opacity: 0, y: 20 }}
@@ -694,7 +759,7 @@ export default function HomeClient() {
 
         {/* ─── PLAN ─────────────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div className="relative px-[clamp(1.5rem,5vw,3rem)] py-[clamp(5rem,10vw,8rem)]" style={{ background: "linear-gradient(180deg, #060607 0%, #0f1a24 20%, #0f1a24 80%, #060607 100%)" }}>
+          <div className="relative px-[var(--page-gutter)] py-[var(--section-spacing)]" style={{ background: "linear-gradient(180deg, var(--bg) 0%, #0a1118 30%, #0a1118 70%, var(--bg) 100%)" }}>
             <div className="max-w-[1100px] mx-auto">
               <div className="text-center mb-[60px]">
                 <Eyebrow>How This Works</Eyebrow>
@@ -714,10 +779,10 @@ export default function HomeClient() {
                       damping: 25,
                       delay: i * 0.1,
                     }}
-                    className={`rounded-2xl p-10 relative border transition-all duration-300 hover:-translate-y-1.5 hover:border-carolina hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] ${
+                    className={`rounded-2xl p-10 relative border transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] ${
                       step.active
-                        ? "bg-carolina/5 border-carolina/30"
-                        : "bg-transparent border-white/[0.08]"
+                        ? "glass-premium border-carolina/40 shadow-[0_20px_50px_rgba(123,175,212,0.15)]"
+                        : "bg-white/[0.01] border-white/[0.06] hover:border-carolina/30"
                     }`}
                   >
                     <div className="font-mono text-[0.8rem] text-carolina mb-5 font-bold">
@@ -776,7 +841,7 @@ export default function HomeClient() {
 
         {/* ─── AUDIT TOOL ───────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div className="max-w-[900px] mx-auto text-center px-[clamp(1.5rem,5vw,3rem)] py-[clamp(5rem,10vw,8rem)]">
+          <div className="max-w-[900px] mx-auto text-center px-[var(--page-gutter)] py-[var(--section-spacing)]">
             <Eyebrow>Free Tool</Eyebrow>
             <SectionH2>
               See your scores{" "}
@@ -791,17 +856,18 @@ export default function HomeClient() {
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="glass-strong p-12 rounded-3xl border border-carolina/30 relative overflow-hidden mb-10"
+              className="glass-premium p-12 rounded-3xl relative overflow-hidden mb-10 group"
             >
-              <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-carolina to-transparent opacity-30" />
-              <PrimaryBtn href="/audit" className="text-base px-12 py-5">
-                Launch Full SEO Audit Dashboard →
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-carolina to-transparent opacity-40" />
+              <div className="absolute inset-x-0 bottom-0 h-px bg-white/5" />
+              
+              <PrimaryBtn href="/audit" className="text-base px-16 py-6 shadow-[0_0_40px_rgba(123,175,212,0.3)] hover:shadow-[0_0_60px_rgba(123,175,212,0.5)]">
+                Launch Diagnostic Dashboard →
               </PrimaryBtn>
-              <p className="text-[#555] text-[0.75rem] mt-5 font-mono">
-                NO EMAIL REQUIRED TO SEE INITIAL SCORES
+              <p className="text-muted text-[0.8rem] mt-6 font-mono font-bold tracking-[0.1em]">
+                ENCRYPTED CONNECTION · 90s PROCESSING · NO EMAIL REQUIRED
               </p>
             </m.div>
-
             <div
               className="flex flex-wrap items-center gap-x-6 gap-y-3 justify-center opacity-60"
               aria-label="Audit covers"
@@ -824,7 +890,7 @@ export default function HomeClient() {
         <PerspectiveSection>
           <div
             ref={stakesRef}
-            className="max-w-[1100px] mx-auto px-[clamp(1.5rem,5vw,3rem)] pb-[clamp(5rem,10vw,8rem)]"
+            className="max-w-[1400px] mx-auto px-[var(--page-gutter)] py-[var(--section-spacing)]"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[80px] items-center">
               <div style={{ perspective: "1000px" }}>
@@ -842,11 +908,11 @@ export default function HomeClient() {
                     className="absolute w-4/5 h-4/5 border border-dashed border-carolina rounded-full opacity-20"
                     style={{ animation: "spin 20s linear infinite" }}
                   />
-                  <div className="absolute text-center">
-                    <div className="text-[clamp(3rem,10vw,4rem)] font-extrabold text-carolina leading-none">
-                      <CountUp to={97} suffix="%" duration={2} />
+                  <div className="absolute text-center bg-black/40 backdrop-blur-md p-8 rounded-full border border-carolina/20 shadow-[0_0_50px_rgba(123,175,212,0.1)]">
+                    <div className="text-[clamp(3.5rem,12vw,5rem)] font-extrabold text-[#f8f9fa] leading-none tracking-tighter">
+                      <CountUp to={97} suffix="%" duration={2.5} />
                     </div>
-                    <div className="text-[0.6rem] font-mono text-[#888] mt-2 tracking-[0.2em]">
+                    <div className="text-[0.7rem] font-mono text-carolina mt-3 tracking-[0.3em] font-bold">
                       OF SEARCHES START ON GOOGLE
                     </div>
                   </div>
@@ -875,24 +941,24 @@ export default function HomeClient() {
 
         {/* ─── STAKES ───────────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div className="px-[clamp(1.5rem,5vw,3rem)] pb-[clamp(5rem,10vw,8rem)]">
+          <div className="px-[var(--page-gutter)] py-[var(--section-spacing)]">
             <m.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="max-w-[1000px] mx-auto bg-carolina/[0.02] border border-white/[0.08] border-t-carolina/30 rounded-3xl p-[clamp(3rem,8vw,5rem)] text-center relative overflow-hidden"
+              className="max-w-[1000px] mx-auto glass-premium rounded-3xl p-[clamp(3rem,8vw,5rem)] text-center relative overflow-hidden"
             >
-              <div className="absolute top-[-80px] left-[-80px] w-[320px] h-[320px] bg-carolina blur-[140px] opacity-[0.12] pointer-events-none" />
-              <SectionH2 className="max-w-[800px] mx-auto mb-6">
+              <div className="absolute top-[-80px] left-[-80px] w-[400px] h-[400px] bg-carolina blur-[160px] opacity-[0.08] pointer-events-none" />
+              <SectionH2 className="max-w-[800px] mx-auto mb-8">
                 Every month you&apos;re invisible is work going to a competitor.
               </SectionH2>
-              <BodyText className="max-w-[700px] mx-auto mb-10">
+              <BodyText className="max-w-[720px] mx-auto mb-12">
                 Referrals are real business. But they&apos;re not a system —
                 they&apos;re a streak. When the streak slows, you need a machine
                 that produces calls. I build the machine.
               </BodyText>
               <div className="flex justify-center">
-                <PrimaryBtn href="/audit">
+                <PrimaryBtn href="/audit" className="px-12 py-5 text-[0.9rem]">
                   See Where You Stand Online →
                 </PrimaryBtn>
               </div>
@@ -902,7 +968,7 @@ export default function HomeClient() {
 
         {/* ─── FAQ ──────────────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div className="max-w-[900px] mx-auto px-[clamp(1.5rem,5vw,3rem)] pb-[clamp(5rem,10vw,8rem)]">
+          <div className="max-w-[1400px] mx-auto px-[var(--page-gutter)] py-[var(--section-spacing)]">
             <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-[60px]">
               <div>
                 <Eyebrow>Transparency</Eyebrow>
@@ -917,21 +983,21 @@ export default function HomeClient() {
                 {faqItems.map((item, i) => (
                   <m.div
                     key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
-                    className="border-t border-white/[0.08] mx-[-1rem] px-4 py-6 rounded-lg hover:bg-white/[0.03] hover:border-white/10 transition-all"
+                    className="border-t border-border mx-[-1rem] px-6 py-8 rounded-lg hover:bg-white/[0.02] hover:border-carolina/20 transition-all group"
                   >
-                    <dt className="font-sans text-[1.1rem] font-bold text-[#f0f0f0] mb-3 leading-[1.4]">
+                    <dt className="font-sans text-[1.2rem] font-bold text-text mb-4 leading-[1.3] group-hover:text-carolina transition-colors">
                       {item.q}
                     </dt>
-                    <dd className="font-sans text-base text-[#c0c0c0] leading-[1.7] m-0">
+                    <dd className="font-sans text-base text-muted leading-[1.7] m-0">
                       {item.a}
                     </dd>
                   </m.div>
                 ))}
-                <div className="border-t border-white/[0.08]" />
+                <div className="border-t border-border" />
               </dl>
             </div>
           </div>
@@ -939,7 +1005,7 @@ export default function HomeClient() {
 
         {/* ─── FINAL CTA ────────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div className="max-w-[800px] mx-auto text-center px-[clamp(1.5rem,5vw,3rem)] pb-[clamp(8rem,15vw,12rem)] relative">
+          <div className="max-w-[1400px] mx-auto text-center px-[var(--page-gutter)] py-[var(--section-spacing)] relative">
             <m.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
