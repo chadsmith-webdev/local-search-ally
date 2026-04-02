@@ -334,6 +334,19 @@ export default function AuditClient() {
   const [auditId, setAuditId]     = useState("");
   const [focusedId, setFocusedId] = useState(null);
 
+  // Card parallax ref — must live here (Rules of Hooks: no hooks after early returns)
+  const cardRef = useRef();
+  const handleCardMove = (e) => {
+    const el = cardRef.current; if (!el) return;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5;
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    el.style.transform = `perspective(1200px) rotateY(${x * 4}deg) rotateX(${-y * 3}deg)`;
+  };
+  const handleCardLeave = () => {
+    if (cardRef.current) cardRef.current.style.transform = `perspective(1200px) rotateY(0deg) rotateX(0deg)`;
+  };
+
   useEffect(() => {
     setMounted(true);
     setAuditId(Math.random().toString(36).slice(2, 9)); 
@@ -625,22 +638,20 @@ export default function AuditClient() {
     );
   }
 
+
   // ── FORM ──────────────────────────────────────────────────────────────────────
+
   return (
     <div style={{ minHeight: "100vh", background: C.bg, display: "flex", alignItems: "center", justifyContent: "center", padding: 20, perspective: "1200px" }}>
       <m.div 
+        ref={cardRef}
         key="audit-form-entry"
-        initial={{ opacity: 0, rotateY: -35, rotateX: 12, scale: 0.88, z: -150 }}
+        initial={{ opacity: 0, rotateY: -40, rotateX: 14, scale: 0.85, z: -200 }}
         animate={{ opacity: 1, rotateY: 0, rotateX: 0, scale: 1, z: 0 }}
-        transition={{ 
-          delay: 0.1,
-          type: "spring", 
-          stiffness: 38, 
-          damping: 14, 
-          mass: 1.4 
-        }}
-        whileHover={{ rotateY: -2, rotateX: 2, transition: { duration: 0.4 } }}
-        style={{ width: "100%", maxWidth: 490, transformStyle: "preserve-3d" }}
+        transition={{ delay: 0.05, type: "spring", stiffness: 60, damping: 18, mass: 1.0 }}
+        onMouseMove={handleCardMove}
+        onMouseLeave={handleCardLeave}
+        style={{ width: "100%", maxWidth: 490, transformStyle: "preserve-3d", transition: "transform 0.2s ease" }}
       >
 
         <div style={{ textAlign: "center", marginBottom: 26 }}>
@@ -718,9 +729,7 @@ export default function AuditClient() {
           </div>
 
           <div style={{ marginTop: 20 }}>
-            <m.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+            <button
               onClick={handleSubmit}
               style={{
                 width: "100%", padding: "13px 22px",
@@ -729,11 +738,13 @@ export default function AuditClient() {
                 color: C.slate, fontWeight: 700, fontSize: "0.75rem",
                 letterSpacing: "0.1em", textTransform: "uppercase",
                 cursor: "pointer", fontFamily: "var(--font-mono)",
-                transition: "opacity 0.15s",
+                transition: "opacity 0.15s, filter 0.15s",
               }}
+              onMouseEnter={e => e.currentTarget.style.filter = "brightness(1.1)"}
+              onMouseLeave={e => e.currentTarget.style.filter = "brightness(1)"}
             >
               Run My Free Audit →
-            </m.button>
+            </button>
           </div>
           <p style={{ textAlign: "center", color: C.muted, fontSize: "0.72rem", marginTop: 11, marginBottom: 0, fontFamily: "var(--font-ui)" }}>
             No spam. No sales pitch before you see your results.
