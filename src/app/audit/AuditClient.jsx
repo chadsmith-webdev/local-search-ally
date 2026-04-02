@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { motion as m, AnimatePresence, useTransform, useScroll, useMotionValue, useSpring } from "framer-motion";
 
 // ─── Brand tokens ───────────────────────────────────────────────────────────
 const C = {
@@ -42,66 +43,173 @@ function ScoreGauge({ score, size = 100 }) {
   const color = score >= 70 ? C.green : score >= 50 ? C.yellow : C.red;
   const dash = (score / 100) * circ * 0.75;
   return (
-    <svg width={size} height={size} viewBox="0 0 120 120" style={{ transform: "rotate(135deg)" }}>
+    <m.svg 
+      initial={{ scale: 0, rotate: 0 }}
+      animate={{ scale: 1, rotate: 135 }}
+      transition={{ type: "spring", stiffness: 100, damping: 15 }}
+      width={size} height={size} viewBox="0 0 120 120"
+    >
       <circle cx={cx} cy={cy} r={r} fill="none" stroke={C.surface2} strokeWidth="7"
         strokeDasharray={`${circ * 0.75} ${circ * 0.25}`} strokeLinecap="round" />
       <circle cx={cx} cy={cy} r={r} fill="none" stroke={color} strokeWidth="7"
         strokeDasharray={`${dash} ${circ - dash + circ * 0.25}`} strokeLinecap="round"
         style={{ transition: "stroke-dasharray 1.2s ease" }} />
-    </svg>
+    </m.svg>
+  );
+}
+
+// ─── Blueprint 3D ──────────────────────────────────────────────────────────
+function Blueprint3D({ completedIds }) {
+  const rotation = (completedIds.length / SECTION_IDS.length) * 360;
+  
+  return (
+    <div style={{
+      width: 140, height: 140, position: "relative",
+      perspective: "800px", margin: "0 auto 40px",
+    }}>
+      {/* 3D Wireframe Grid */}
+      <m.div
+        animate={{ 
+          rotateX: [20, 30, 20], 
+          rotateY: rotation 
+        }}
+        transition={{ 
+          rotateX: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+          rotateY: { type: "spring", stiffness: 50, damping: 20 }
+        }}
+        style={{
+          width: "100%", height: "100%", position: "relative",
+          transformStyle: "preserve-3d",
+        }}
+      >
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            style={{
+              position: "absolute", inset: 0,
+              border: `1px solid ${C.carolina}`,
+              opacity: 0.15,
+              transform: `rotateY(${i * 30}deg)`,
+            }}
+          />
+        ))}
+        
+        {/* Scanning Disk */}
+        <m.div
+          animate={{ y: [ -20, 100, -20] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          style={{
+            position: "absolute", top: 0, left: "-10%", width: "120%", height: 2,
+            background: `linear-gradient(90deg, transparent, ${C.carolina}, transparent)`,
+            boxShadow: `0 0 15px ${C.carolina}`,
+            zIndex: 5,
+          }}
+        />
+      </m.div>
+
+      {/* Orbiting Nodes */}
+      <m.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        style={{ position: "absolute", inset: -20, borderRadius: "50%", border: `1px dashed ${C.carolinaDim}` }}
+      />
+    </div>
   );
 }
 
 // ─── Section card ─────────────────────────────────────────────────────────────
-function SectionCard({ section, locked, visible }) {
-  const [open, setOpen] = useState(false);
+function SectionCard({ section, locked, visible, isFocused, onFocus }) {
   const meta = SECTION_META[section.id] || {};
   const statusColor = section.status === "green" ? C.green : section.status === "yellow" ? C.yellow : C.red;
+  const open = isFocused;
 
   return (
-    <div
-      onClick={() => !locked && setOpen(o => !o)}
+    <m.div
+      onClick={() => !locked && onFocus(open ? null : section.id)}
+      initial={false}
+      animate={{ 
+        scale: open ? 1.05 : 1,
+        rotateX: open ? 5 : 0,
+        z: open ? 100 : 0,
+        backgroundColor: open ? C.surface2 : C.surface,
+        borderColor: open ? C.carolina : C.border,
+      }}
+      whileHover={!locked && !open ? { 
+        y: -4, 
+        backgroundColor: "rgba(123, 175, 212, 0.05)",
+        borderColor: "rgba(123, 175, 212, 0.3)" 
+      } : {}}
       style={{
-        background: open ? C.surface2 : C.surface,
-        borderRadius: 8, padding: "14px 18px",
+        borderRadius: 12, padding: "20px 24px",
         cursor: locked ? "default" : "pointer",
         opacity: visible ? (locked ? 0.38 : 1) : 0,
-        transform: visible ? "translateY(0)" : "translateY(6px)",
-        transition: "opacity 0.35s ease, transform 0.35s ease, background 0.15s",
-        border: `1px solid ${open ? C.borderStrong : C.border}`,
+        transformStyle: "preserve-3d",
+        position: "relative",
+        zIndex: open ? 100 : 1,
+        boxShadow: open ? "0 40px 80px rgba(0,0,0,0.8)" : "none",
+        transition: "opacity 0.35s ease, transform 0.35s ease, background 0.15s, border-color 0.15s",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 11 }}>
-        <span style={{ fontSize: 17, flexShrink: 0 }}>{meta.icon}</span>
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <m.span 
+          animate={{ scale: open ? 1.2 : 1, rotate: open ? [0, -10, 10, 0] : 0 }}
+          style={{ fontSize: 22, flexShrink: 0 }}
+        >
+          {meta.icon}
+        </m.span>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: C.muted, marginBottom: 2, fontFamily: "var(--font-ui)" }}>
+          <div style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.muted, marginBottom: 4, fontFamily: "var(--font-mono)" }}>
             {meta.label}
           </div>
-          <div style={{ fontSize: "0.88rem", color: locked ? C.muted : C.text, lineHeight: 1.4, fontFamily: "var(--font-ui)" }}>
+          <div style={{ fontSize: "0.95rem", fontWeight: 600, color: locked ? C.muted : C.text, lineHeight: 1.4, fontFamily: "var(--font-ui)" }}>
             {locked ? "Unlock with your email →" : section.headline}
           </div>
         </div>
-        <div style={{ textAlign: "right", flexShrink: 0, minWidth: 40 }}>
-          <div style={{ fontSize: "1.4rem", fontWeight: 500, color: statusColor, lineHeight: 1, fontFamily: "var(--font-mono)" }}>{section.score}</div>
+        <div style={{ textAlign: "right", flexShrink: 0, minWidth: 50 }}>
+          <m.div 
+            animate={{ color: statusColor, scale: open ? 1.1 : 1 }}
+            style={{ fontSize: "1.6rem", fontWeight: 700, lineHeight: 1, fontFamily: "var(--font-mono)" }}
+          >
+            {section.score}
+          </m.div>
           <div style={{ fontSize: "0.55rem", color: C.muted, letterSpacing: "0.1em", fontFamily: "var(--font-mono)" }}>/10</div>
         </div>
       </div>
-      {open && !locked && (
-        <div style={{ marginTop: 13, paddingTop: 13, borderTop: `1px solid ${C.border}` }}>
-          <p style={{ fontSize: "0.86rem", color: C.muted, lineHeight: 1.7, margin: "0 0 11px", fontFamily: "var(--font-ui)" }}>
-            {section.finding}
-          </p>
-          <div style={{ background: C.bg, borderRadius: 6, padding: "10px 14px", borderLeft: `2px solid ${C.carolina}` }}>
-            <div style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: C.carolina, marginBottom: 4, fontFamily: "var(--font-ui)" }}>
-              Priority Action
+
+      <AnimatePresence>
+        {open && !locked && (
+          <m.div 
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            style={{ overflow: "hidden" }}
+          >
+            <div style={{ marginTop: 20, paddingTop: 20, borderTop: `1px solid ${C.border}` }}>
+              <p style={{ fontSize: "0.95rem", color: C.text, lineHeight: 1.8, margin: "0 0 20px", fontFamily: "var(--font-ui)" }}>
+                {section.finding}
+              </p>
+              <m.div 
+                initial={{ x: -10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.1 }}
+                style={{ 
+                  background: "rgba(123, 175, 212, 0.05)", 
+                  borderRadius: 8, padding: "16px 20px", 
+                  borderLeft: `3px solid ${C.carolina}` 
+                }}
+              >
+                <div style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: C.carolina, marginBottom: 6, fontFamily: "var(--font-mono)" }}>
+                  Priority Action
+                </div>
+                <div style={{ fontSize: "0.95rem", color: C.text, fontFamily: "var(--font-ui)", fontWeight: 500 }}>
+                  {section.priority_action}
+                </div>
+              </m.div>
             </div>
-            <div style={{ fontSize: "0.86rem", color: C.text, fontFamily: "var(--font-ui)" }}>
-              {section.priority_action}
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+          </m.div>
+        )}
+      </AnimatePresence>
+    </m.div>
   );
 }
 
@@ -113,44 +221,67 @@ function LoadingView({ businessName, completedIds }) {
 
   return (
     <div style={{ minHeight: "100vh", background: C.bg, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 20 }}>
-      <div style={{ textAlign: "center", maxWidth: 440, width: "100%" }}>
-        <div style={{ position: "relative", width: 52, height: 52, margin: "0 auto 26px" }}>
-          <div style={{ width: 52, height: 52, borderRadius: "50%", border: `2px solid ${C.surface2}`, borderTop: `2px solid ${C.carolina}`, animation: "spin 1s linear infinite" }} />
-        </div>
-        <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.35rem", fontWeight: 700, color: C.text, margin: "0 0 6px", letterSpacing: "-0.02em" }}>
+      <m.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        style={{ textAlign: "center", maxWidth: 440, width: "100%" }}
+      >
+        <Blueprint3D completedIds={completedIds} />
+
+        <m.h2 
+          key={businessName}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          style={{ fontFamily: "var(--font-display)", fontSize: "1.75rem", fontWeight: 800, color: C.text, margin: "0 0 8px", letterSpacing: "-0.02em" }}
+        >
           Auditing {businessName}
-        </h2>
-        <p style={{ color: C.carolina, fontSize: "0.84rem", margin: "0 0 26px", fontFamily: "var(--font-ui)" }}>{msg}</p>
-        <div style={{ display: "grid", gap: 5 }}>
+        </m.h2>
+        <m.p 
+          key={msg}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          style={{ color: C.carolina, fontSize: "0.9rem", margin: "0 0 32px", fontFamily: "var(--font-mono)", fontWeight: 600, letterSpacing: "0.05em" }}
+        >
+          {msg}
+        </m.p>
+
+        <div style={{ display: "grid", gap: 8 }}>
           {SECTION_IDS.map((id, i) => {
             const meta = SECTION_META[id];
             const done = completedIds.includes(id);
             const active = !done && i === completedCount;
             return (
-              <div key={id} style={{
-                display: "flex", alignItems: "center", gap: 10,
-                background: done ? C.slate : active ? C.surface2 : C.surface,
-                borderRadius: 6, padding: "9px 13px",
-                opacity: done || active ? 1 : 0.38,
-                transition: "all 0.4s ease",
-              }}>
-                <span style={{ fontSize: 13, minWidth: 16 }}>{done ? "✓" : meta.icon}</span>
-                <span style={{ fontSize: "0.78rem", flex: 1, textAlign: "left", color: done ? C.carolina : active ? C.text : C.muted, fontFamily: "var(--font-ui)" }}>
+              <m.div 
+                key={id} 
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ 
+                  opacity: done || active ? 1 : 0.2, 
+                  x: 0,
+                  backgroundColor: active ? "rgba(123, 175, 212, 0.08)" : done ? "rgba(123, 175, 212, 0.03)" : "transparent"
+                }}
+                style={{
+                  display: "flex", alignItems: "center", gap: 12,
+                  borderRadius: 8, padding: "12px 16px",
+                  border: `1px solid ${active ? C.carolina : "transparent"}`,
+                  transition: "all 0.4s ease",
+                }}
+              >
+                <m.span 
+                  animate={active ? { scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] } : {}}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                  style={{ fontSize: 16, minWidth: 20 }}
+                >
+                  {done ? "✓" : meta.icon}
+                </m.span>
+                <span style={{ fontSize: "0.85rem", flex: 1, textAlign: "left", color: done ? C.carolina : active ? C.text : C.muted, fontFamily: "var(--font-ui)", fontWeight: active ? 600 : 400 }}>
                   {meta.label}
                 </span>
-                {done && <span style={{ fontSize: "0.62rem", color: C.carolina, fontWeight: 500, fontFamily: "var(--font-mono)", letterSpacing: "0.08em" }}>DONE</span>}
-                {active && (
-                  <span style={{ display: "flex", gap: 3 }}>
-                    {[0, 1, 2].map(d => (
-                      <span key={d} style={{ width: 4, height: 4, borderRadius: "50%", background: C.carolina, animation: `pulse 1.2s ease-in-out ${d * 0.2}s infinite` }} />
-                    ))}
-                  </span>
-                )}
-              </div>
+                {done && <m.span initial={{ scale: 0 }} animate={{ scale: 1 }} style={{ fontSize: "0.6rem", color: C.carolina, fontWeight: 700, fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>ANALYZED</m.span>}
+              </m.div>
             );
           })}
         </div>
-      </div>
+      </m.div>
     </div>
   );
 }
@@ -189,8 +320,8 @@ const inputStyle = (err) => ({
   transition: "border-color 0.15s",
 });
 
-// ─── Main component ────────────────────────────────────────────────────────────
 export default function AuditClient() {
+  const [mounted, setMounted] = useState(false);
   const [step, setStep]           = useState("form");
   const [form, setForm]           = useState({ businessName: "", websiteUrl: "", primaryTrade: "", serviceCity: "", noWebsite: false });
   const [errors, setErrors]       = useState({});
@@ -201,8 +332,12 @@ export default function AuditClient() {
   const [visibleSections, setVisibleSections] = useState([]);
   const [completedIds, setCompletedIds]       = useState([]);
   const [auditId, setAuditId]     = useState("");
+  const [focusedId, setFocusedId] = useState(null);
 
-  useEffect(() => { setAuditId(Math.random().toString(36).slice(2, 9)); }, []);
+  useEffect(() => {
+    setMounted(true);
+    setAuditId(Math.random().toString(36).slice(2, 9)); 
+  }, []);
 
   // Stagger section reveal after results land
   useEffect(() => {
@@ -260,6 +395,7 @@ export default function AuditClient() {
       let buffer = "";
       let finalResult = null;
 
+      let event = "";
       while (true) {
         const { value, done } = await reader.read();
         if (done) break;
@@ -268,7 +404,6 @@ export default function AuditClient() {
         const lines = buffer.split("\n");
         buffer = lines.pop() || "";
 
-        let event = "";
         for (const line of lines) {
           if (line.startsWith("event: ")) {
             event = line.slice(7).trim();
@@ -284,7 +419,6 @@ export default function AuditClient() {
               }
             } catch (parseErr) {
               if (parseErr.message?.includes("audit")) throw parseErr;
-              // ignore parse errors on SSE comments/pings
             }
           }
         }
@@ -299,11 +433,12 @@ export default function AuditClient() {
         : err.message || "Something went wrong. Please try again.");
       setStep("form");
     }
-  }, [form]);
+  }, [form, validate]);
 
   const reset = () => {
     setStep("form"); setResult(null); setEmail(""); setEmailSent(false);
     setVisibleSections([]); setCompletedIds([]); setErrors({}); setApiError(null);
+    setFocusedId(null);
   };
 
   const errMsg = msg => (
@@ -314,6 +449,10 @@ export default function AuditClient() {
     ? result.overall_score >= 70 ? C.green : result.overall_score >= 50 ? C.yellow : C.red
     : C.carolina;
 
+  if (!mounted) {
+    return <div style={{ minHeight: "100vh", background: C.bg }} />;
+  }
+
   // ── LOADING ──────────────────────────────────────────────────────────────────
   if (step === "loading") {
     return <LoadingView businessName={form.businessName} completedIds={completedIds} />;
@@ -323,148 +462,163 @@ export default function AuditClient() {
   if (step === "results" && result) {
     const allS = result.sections || [];
     return (
-      <div style={{ minHeight: "100vh", background: C.bg, padding: "26px 20px 64px" }}>
-        <div style={{ maxWidth: 560, margin: "0 auto" }}>
+      <div style={{ minHeight: "100vh", background: C.bg, perspective: "1200px" }}>
+        
+        {/* Scrim Overlay */}
+        <AnimatePresence>
+          {focusedId && (
+            <m.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setFocusedId(null)}
+              style={{
+                position: "fixed", inset: 0,
+                background: "rgba(0,0,0,0.7)",
+                backdropFilter: "blur(4px)",
+                zIndex: 40,
+                cursor: "zoom-out",
+              }}
+            />
+          )}
+        </AnimatePresence>
 
-          {/* Header */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20, gap: 12 }}>
-            <div>
-              <div style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: C.muted, marginBottom: 3, fontFamily: "var(--font-ui)" }}>
-                Local SEO Audit
-              </div>
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", color: C.text, margin: 0, letterSpacing: "-0.02em" }}>
-                {result.business_name}
-              </h1>
-            </div>
-            <div style={{ display: "flex", gap: 7, flexShrink: 0 }}>
-              <CopyLinkButton auditId={auditId} />
-              <button onClick={reset} style={{ background: "transparent", border: `1px solid ${C.border}`, borderRadius: 6, color: C.muted, padding: "6px 11px", fontSize: "0.66rem", cursor: "pointer", fontFamily: "var(--font-mono)", letterSpacing: "0.06em" }}>
-                ↺ NEW
-              </button>
-            </div>
-          </div>
+        <div style={{ padding: "26px 20px 64px", position: "relative", zIndex: 1 }}>
+          <div style={{ maxWidth: 560, margin: "0 auto" }}>
 
-          {/* Overall score */}
-          <div style={{ background: C.slate, borderRadius: 12, padding: "20px 24px", marginBottom: 10, display: "flex", alignItems: "center", gap: 20 }}>
-            <div style={{ position: "relative", flexShrink: 0 }}>
-              <ScoreGauge score={result.overall_score} size={96} />
-              <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", paddingTop: 6 }}>
-                <div style={{ fontSize: "1.7rem", fontWeight: 500, color: overallColor, lineHeight: 1, fontFamily: "var(--font-mono)" }}>{result.overall_score}</div>
-                <div style={{ fontSize: "0.52rem", color: C.muted, letterSpacing: "0.1em", fontFamily: "var(--font-mono)" }}>/100</div>
-              </div>
-            </div>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ display: "inline-block", background: overallColor + "22", borderRadius: 4, padding: "2px 10px", marginBottom: 8 }}>
-                <span style={{ fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: overallColor, fontFamily: "var(--font-mono)" }}>
-                  {result.overall_label}
-                </span>
-              </div>
-              <p style={{ fontSize: "0.86rem", color: C.text, lineHeight: 1.6, margin: "0 0 7px", fontFamily: "var(--font-ui)" }}>{result.summary}</p>
-              {result.competitor_names?.length > 0 && (
-                <div style={{ fontSize: "0.72rem", color: C.muted, fontFamily: "var(--font-ui)" }}>
-                  Top competitors: {result.competitor_names.join(" · ")}
+            {/* Header */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20, gap: 12 }}>
+              <div>
+                <div style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: C.muted, marginBottom: 3, fontFamily: "var(--font-mono)" }}>
+                  Local SEO Audit
                 </div>
-              )}
-            </div>
-          </div>
-
-          {/* Sections */}
-          <div style={{ display: "grid", gap: 5, marginBottom: 10 }}>
-            {allS.map((s, i) => (
-              <SectionCard
-                key={s.id}
-                section={s}
-                locked={i >= 4}
-                visible={visibleSections.some(v => v.id === s.id)}
-              />
-            ))}
-          </div>
-
-          {/* Email gate */}
-          {!emailSent ? (
-            <div style={{ background: C.slate, borderRadius: 12, padding: 20, marginBottom: 10 }}>
-              <div style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: C.carolina, marginBottom: 6, fontFamily: "var(--font-ui)" }}>
-                Your Full Action Plan Is Ready
+                <h1 style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", color: C.text, margin: 0, letterSpacing: "-0.02em" }}>
+                  {result.business_name}
+                </h1>
               </div>
-              <p style={{ color: C.text, fontSize: "0.88rem", lineHeight: 1.6, margin: "0 0 14px", fontFamily: "var(--font-ui)" }}>
-                Get the prioritized fix list for all 7 sections — ranked by what will move the needle most — plus a PDF you can keep.
-              </p>
-              <div style={{ display: "flex", gap: 8 }}>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  placeholder="your@email.com"
-                  style={{ ...inputStyle(false), flex: 1, background: C.bg }}
-                  onKeyDown={e => e.key === "Enter" && email.includes("@") && setEmailSent(true)}
-                />
-                <button
-                  onClick={() => email.includes("@") && setEmailSent(true)}
-                  style={{
-                    background: `linear-gradient(135deg, ${C.carolina} 0%, ${C.steel} 100%)`,
-                    border: "none", borderRadius: 6, color: C.slate,
-                    fontWeight: 600, fontSize: "0.68rem", padding: "0 16px",
-                    cursor: "pointer", whiteSpace: "nowrap",
-                    letterSpacing: "0.08em", textTransform: "uppercase",
-                    fontFamily: "var(--font-mono)",
-                    opacity: email.includes("@") ? 1 : 0.5,
-                  }}
-                >
-                  Send It →
+              <div style={{ display: "flex", gap: 7, flexShrink: 0 }}>
+                <CopyLinkButton auditId={auditId} />
+                <button onClick={reset} style={{ background: "transparent", border: `1px solid ${C.border}`, borderRadius: 6, color: C.muted, padding: "6px 11px", fontSize: "0.66rem", cursor: "pointer", fontFamily: "var(--font-mono)", letterSpacing: "0.06em" }}>
+                  ↺ NEW
                 </button>
               </div>
-              <div style={{ fontSize: "0.68rem", color: C.muted, marginTop: 8, fontFamily: "var(--font-ui)" }}>
-                No spam. One email with your report. Unsubscribe anytime.
-              </div>
             </div>
-          ) : (
-            <div style={{ background: C.surface2, borderRadius: 12, padding: 20, marginBottom: 10, textAlign: "center" }}>
-              <div style={{ fontSize: "0.7rem", color: C.green, fontWeight: 500, letterSpacing: "0.1em", marginBottom: 5, fontFamily: "var(--font-mono)" }}>
-                ✓ REPORT ON THE WAY
-              </div>
-              <p style={{ color: C.muted, fontSize: "0.84rem", margin: "0 0 14px", fontFamily: "var(--font-ui)" }}>
-                Check your inbox. Your full action plan and PDF are headed your way.
-              </p>
-              <a
-                href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/localsearchally"}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: "inline-block", background: C.carolinaDim, borderRadius: 6, color: C.carolina, fontSize: "0.72rem", fontWeight: 600, padding: "9px 16px", textDecoration: "none", fontFamily: "var(--font-mono)", letterSpacing: "0.04em" }}
-              >
-                Book a Free Call →
-              </a>
-            </div>
-          )}
 
-          {/* Top 3 actions */}
-          {result.top_3_actions?.length > 0 && (
-            <div style={{ background: C.surface, borderRadius: 12, padding: 20, marginBottom: 10, border: `1px solid ${C.border}` }}>
-              <div style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: C.muted, marginBottom: 13, fontFamily: "var(--font-ui)" }}>
-                Top 3 Things to Fix First
+            {/* Overall score */}
+            <m.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              style={{ background: C.slate, borderRadius: 12, padding: "20px 24px", marginBottom: 10, display: "flex", alignItems: "center", gap: 24, border: `1px solid ${C.border}` }}
+            >
+              <div style={{ position: "relative", flexShrink: 0 }}>
+                <ScoreGauge score={result.overall_score} size={96} />
+                <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", paddingTop: 6 }}>
+                  <div style={{ fontSize: "1.8rem", fontWeight: 700, color: overallColor, lineHeight: 1, fontFamily: "var(--font-mono)" }}>{result.overall_score}</div>
+                  <div style={{ fontSize: "0.55rem", color: C.muted, letterSpacing: "0.1em", fontFamily: "var(--font-mono)" }}>/100</div>
+                </div>
               </div>
-              <div style={{ display: "grid", gap: 11 }}>
-                {result.top_3_actions.map((action, i) => (
-                  <div key={i} style={{ display: "flex", gap: 11, alignItems: "flex-start" }}>
-                    <div style={{ width: 22, height: 22, borderRadius: 4, background: C.carolinaDim, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontWeight: 500, color: C.carolina, flexShrink: 0, fontFamily: "var(--font-mono)" }}>
-                      {i + 1}
-                    </div>
-                    <div style={{ fontSize: "0.86rem", color: C.muted, lineHeight: 1.5, paddingTop: 2, fontFamily: "var(--font-ui)" }}>
-                      {action}
-                    </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ display: "inline-block", background: overallColor + "22", borderRadius: 4, padding: "2px 10px", marginBottom: 8 }}>
+                  <span style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: overallColor, fontFamily: "var(--font-mono)" }}>
+                    {result.overall_label}
+                  </span>
+                </div>
+                <p style={{ fontSize: "0.95rem", color: C.text, lineHeight: 1.6, margin: "0 0 7px", fontFamily: "var(--font-ui)", fontWeight: 500 }}>{result.summary}</p>
+                {result.competitor_names?.length > 0 && (
+                  <div style={{ fontSize: "0.75rem", color: C.muted, fontFamily: "var(--font-mono)" }}>
+                    Top competitors: {result.competitor_names.join(" · ")}
                   </div>
-                ))}
+                )}
+              </div>
+            </m.div>
+
+            {/* Sections */}
+            <div style={{ display: "grid", gap: 8, marginBottom: 10 }}>
+              {allS.map((s, i) => (
+                <SectionCard
+                  key={s.id}
+                  section={s}
+                  locked={i >= 4}
+                  visible={visibleSections.some(v => v.id === s.id)}
+                  isFocused={focusedId === s.id}
+                  onFocus={setFocusedId}
+                />
+              ))}
+            </div>
+
+            {/* Email gate */}
+            {!emailSent ? (
+              <m.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                style={{ background: C.slate, borderRadius: 12, padding: 24, marginBottom: 10, border: `1px solid ${C.borderStrong}` }}
+              >
+                <div style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: C.carolina, marginBottom: 8, fontFamily: "var(--font-mono)" }}>
+                  Your Full Action Plan Is Ready
+                </div>
+                <p style={{ color: C.text, fontSize: "0.95rem", lineHeight: 1.6, margin: "0 0 18px", fontFamily: "var(--font-ui)" }}>
+                  Get the prioritized fix list for all 7 sections — plus a PDF report to keep.
+                </p>
+                <div style={{ display: "flex", gap: 8 }}>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    placeholder="your@email.com"
+                    style={{ ...inputStyle(false), flex: 1, background: C.bg }}
+                    onKeyDown={e => e.key === "Enter" && email.includes("@") && setEmailSent(true)}
+                  />
+                  <button
+                    onClick={() => email.includes("@") && setEmailSent(true)}
+                    style={{
+                      background: `linear-gradient(135deg, ${C.carolina} 0%, ${C.steel} 100%)`,
+                      border: "none", borderRadius: 6, color: C.slate,
+                      fontWeight: 700, fontSize: "0.75rem", padding: "0 20px",
+                      cursor: "pointer", whiteSpace: "nowrap",
+                      letterSpacing: "0.1em", textTransform: "uppercase",
+                      fontFamily: "var(--font-mono)",
+                      opacity: email.includes("@") ? 1 : 0.5,
+                      transition: "all 0.2s",
+                    }}
+                  >
+                    Send It →
+                  </button>
+                </div>
+              </m.div>
+            ) : (
+              <m.div 
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                style={{ background: "rgba(74, 222, 128, 0.05)", border: `1px solid rgba(74, 222, 128, 0.2)`, borderRadius: 12, padding: 24, marginBottom: 10, textAlign: "center" }}
+              >
+                <div style={{ fontSize: "0.75rem", color: C.green, fontWeight: 700, letterSpacing: "0.12em", marginBottom: 8, fontFamily: "var(--font-mono)" }}>
+                  ✓ REPORT ON THE WAY
+                </div>
+                <p style={{ color: C.muted, fontSize: "0.9rem", margin: "0 0 16px", fontFamily: "var(--font-ui)" }}>
+                  Check your inbox. Your full action plan is headed your way.
+                </p>
+                <a
+                  href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/localsearchally"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "inline-block", background: C.carolinaDim, borderRadius: 6, color: C.carolina, fontSize: "0.75rem", fontWeight: 700, padding: "10px 20px", textDecoration: "none", fontFamily: "var(--font-mono)", letterSpacing: "0.05em" }}
+                >
+                  Book a Free Strategy Call →
+                </a>
+              </m.div>
+            )}
+
+            {/* Re-audit */}
+            <div style={{ opacity: focusedId ? 0.2 : 1, transition: "opacity 0.3s" }}>
+              <div style={{ background: C.surface2, borderRadius: 8, padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
+                <div style={{ fontSize: "0.85rem", color: C.muted, lineHeight: 1.4, fontFamily: "var(--font-ui)" }}>
+                  <strong style={{ color: C.text }}>Track your progress.</strong> Run this again in 30 days.
+                </div>
+                <button onClick={reset} style={{ background: "transparent", border: `1px solid ${C.border}`, borderRadius: 6, color: C.carolina, padding: "6px 13px", fontSize: "0.65rem", fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", letterSpacing: "0.08em", textTransform: "uppercase", fontFamily: "var(--font-mono)" }}>
+                  Re-Audit →
+                </button>
               </div>
             </div>
-          )}
-
-          {/* Re-audit */}
-          <div style={{ background: C.surface2, borderRadius: 8, padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
-            <div style={{ fontSize: "0.78rem", color: C.muted, lineHeight: 1.4, fontFamily: "var(--font-ui)" }}>
-              <strong style={{ color: C.text }}>Run this again in 30 days</strong> to track your progress.
-            </div>
-            <button onClick={reset} style={{ background: "transparent", border: `1px solid ${C.border}`, borderRadius: 6, color: C.carolina, padding: "6px 13px", fontSize: "0.65rem", fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap", letterSpacing: "0.08em", textTransform: "uppercase", fontFamily: "var(--font-mono)" }}>
-              Re-Audit →
-            </button>
           </div>
         </div>
       </div>
@@ -473,8 +627,21 @@ export default function AuditClient() {
 
   // ── FORM ──────────────────────────────────────────────────────────────────────
   return (
-    <div style={{ minHeight: "100vh", background: C.bg, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
-      <div style={{ width: "100%", maxWidth: 490 }}>
+    <div style={{ minHeight: "100vh", background: C.bg, display: "flex", alignItems: "center", justifyContent: "center", padding: 20, perspective: "1200px" }}>
+      <m.div 
+        key="audit-form-entry"
+        initial={{ opacity: 0, rotateY: -35, rotateX: 12, scale: 0.88, z: -150 }}
+        animate={{ opacity: 1, rotateY: 0, rotateX: 0, scale: 1, z: 0 }}
+        transition={{ 
+          delay: 0.1,
+          type: "spring", 
+          stiffness: 38, 
+          damping: 14, 
+          mass: 1.4 
+        }}
+        whileHover={{ rotateY: -2, rotateX: 2, transition: { duration: 0.4 } }}
+        style={{ width: "100%", maxWidth: 490, transformStyle: "preserve-3d" }}
+      >
 
         <div style={{ textAlign: "center", marginBottom: 26 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 7, background: C.carolinaDim, borderRadius: 100, padding: "5px 14px", marginBottom: 14 }}>
@@ -497,7 +664,7 @@ export default function AuditClient() {
           </div>
         )}
 
-        <div style={{ background: C.surface, borderRadius: 12, padding: 24 }}>
+        <div style={{ background: C.surface, borderRadius: 12, padding: 24, border: `1px solid ${C.border}`, boxShadow: "0 20px 40px rgba(0,0,0,0.4)" }}>
           <div style={{ display: "grid", gap: 14 }}>
 
             {/* Business name */}
@@ -532,10 +699,14 @@ export default function AuditClient() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               <div>
                 <label style={labelStyle}>Primary Trade</label>
-                <select value={form.primaryTrade} onChange={set("primaryTrade")} style={{ ...inputStyle(errors.primaryTrade), appearance: "none" }}>
+                <m.select 
+                   value={form.primaryTrade} 
+                   onChange={set("primaryTrade")} 
+                   style={{ ...inputStyle(errors.primaryTrade), appearance: "none" }}
+                >
                   <option value="">Select…</option>
                   {TRADES.map(t => <option key={t} value={t}>{t}</option>)}
-                </select>
+                </m.select>
                 {errors.primaryTrade && errMsg(errors.primaryTrade)}
               </div>
               <div>
@@ -547,22 +718,22 @@ export default function AuditClient() {
           </div>
 
           <div style={{ marginTop: 20 }}>
-            <button
+            <m.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={handleSubmit}
               style={{
                 width: "100%", padding: "13px 22px",
                 background: `linear-gradient(135deg, ${C.carolina} 0%, ${C.steel} 100%)`,
                 border: "none", borderRadius: 6,
-                color: C.slate, fontWeight: 600, fontSize: "0.75rem",
+                color: C.slate, fontWeight: 700, fontSize: "0.75rem",
                 letterSpacing: "0.1em", textTransform: "uppercase",
                 cursor: "pointer", fontFamily: "var(--font-mono)",
                 transition: "opacity 0.15s",
               }}
-              onMouseEnter={e => e.currentTarget.style.opacity = "0.88"}
-              onMouseLeave={e => e.currentTarget.style.opacity = "1"}
             >
               Run My Free Audit →
-            </button>
+            </m.button>
           </div>
           <p style={{ textAlign: "center", color: C.muted, fontSize: "0.72rem", marginTop: 11, marginBottom: 0, fontFamily: "var(--font-ui)" }}>
             No spam. No sales pitch before you see your results.
@@ -574,7 +745,7 @@ export default function AuditClient() {
             LOCAL SEARCH ALLY · SILOAM SPRINGS, AR
           </span>
         </div>
-      </div>
+      </m.div>
     </div>
   );
 }
