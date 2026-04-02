@@ -3,19 +3,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { siteConfig } from "@/lib/metadata";
-import { Fraunces, Urbanist, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 
-const fraunces = Fraunces({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: "variable",
-  axes: ["opsz"],
 });
 
-const urbanist = Urbanist({
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   variable: "--font-ui",
-  weight: ["400", "600"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -23,6 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   weight: ["400", "500"],
 });
+
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -52,7 +50,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${urbanist.variable} ${jetbrainsMono.variable}`}
+      className={`${bricolage.variable} ${hanken.variable} ${jetbrainsMono.variable}`}
     >
       <body>
         <Navbar />

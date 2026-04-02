@@ -137,10 +137,70 @@ input, select, textarea {
   margin: 2.5rem 0;
 }
 
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Texture & Effects */
+.noise {
+  position: relative;
+}
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.015;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  filter: contrast(120%) brightness(120%);
+}
+
+.tech-grid {
+  position: relative;
+  background-image: 
+    radial-gradient(circle, rgba(123,175,212, 0.12) 1px, transparent 1px),
+    linear-gradient(to right, rgba(123,175,212, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(123,175,212, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px, 128px 128px, 128px 128px;
+  background-position: center center;
+}
+
+.scan-line {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, 
+    transparent, 
+    rgba(123, 175, 212, 0.05) 50%, 
+    transparent
+  );
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 1;
+  animation: scan 10s linear infinite;
+}
+
 /* Animations */
 @keyframes spin   { to { transform: rotate(360deg); } }
 @keyframes pulse  { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); } }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scan {
+  from { transform: translateY(-100vh); }
+  to { transform: translateY(100vh); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -148,3 +208,4 @@ input, select, textarea {
     transition-duration: 0.01ms !important;
   }
 }
+
