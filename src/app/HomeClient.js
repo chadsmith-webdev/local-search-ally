@@ -373,7 +373,7 @@ export default function HomeClient() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-carolina/20 to-transparent rounded-3xl -rotate-3 group-hover:rotate-0 transition-transform duration-700" />
             <div className="relative h-full w-full glass-premium overflow-hidden rounded-3xl border border-white/10">
-              <Image src="/images/chad.avif" alt="Chad Smith - Founder" fill className="object-cover grayscale contrast-[1.1] group-hover:grayscale-0 transition-all duration-1000" />
+              <Image src="/images/chad.avif" alt="Chad Smith - Founder" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover grayscale contrast-[1.1] group-hover:grayscale-0 transition-all duration-1000" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#020203] via-transparent to-transparent opacity-60" />
               <div className="absolute bottom-10 left-10">
                 <p className="font-serif text-3xl font-bold text-white" style={{ marginBottom: "0.5rem" }}>Chad Smith</p>
