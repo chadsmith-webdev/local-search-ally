@@ -317,3 +317,16 @@ input, select, textarea {
   to   { transform: translateY(500px); }
 }
 
+
+/* FAQ responsive grid */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .faq-grid {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+}

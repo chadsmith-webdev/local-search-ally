@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion as m } from "framer-motion";
+import { motion as m, AnimatePresence } from "framer-motion";
 import ThreeCanvas from "@/components/ThreeCanvas";
 
 // ─── LAYOUT ─────────────────────────────────────────────────────────────────
@@ -104,6 +104,104 @@ const Stack = ({ children, gap = "2rem", className = "", style = {} }) => (
     {children}
   </div>
 );
+
+// ─── FAQ ACCORDION ────────────────────────────────────────────────────────────
+
+const FAQ_ITEMS = [
+  {
+    q: "What does the free audit actually check?",
+    node: (
+      <>
+        Seven areas: your Google Business Profile, review count, website&apos;s on-page setup, technical health (speed, schema), citation consistency, backlinks, and competitor comparison.{" "}
+        <Link href="/audit" className="text-carolina underline underline-offset-4 hover:text-carolina-dark transition-colors">
+          Run it free here →
+        </Link>
+      </>
+    ),
+  },
+  { q: "I don't have a website. Can you help?", a: "Yes — and the audit will show you exactly what not having one is costing you in search. Most of the calls going to your competitors are coming from people who found them on Google." },
+  { q: "How long before I see results?", a: "Most businesses see meaningful ranking movement in 60–90 days, depending on how competitive your trade is in your city." },
+  { q: "Do I have to sign a contract?", a: "No. I don't offer them. If I stop delivering, you leave." },
+];
+
+function FaqItem({ faq, isOpen, onToggle }) {
+  return (
+    <div style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+      <button
+        onClick={onToggle}
+        style={{
+          display: "flex", justifyContent: "space-between", alignItems: "center",
+          width: "100%", textAlign: "left", padding: "1.75rem 0",
+          cursor: "pointer", background: "none", border: "none",
+          color: isOpen ? "#7bafd4" : "#f8f9fa", transition: "color 0.25s",
+        }}
+      >
+        <span className="font-serif text-[1.3rem] font-bold" style={{ lineHeight: 1.3 }}>
+          {faq.q}
+        </span>
+        <span
+          style={{
+            width: "30px", height: "30px", borderRadius: "50%", flexShrink: 0,
+            marginLeft: "1.5rem", display: "flex", alignItems: "center", justifyContent: "center",
+            border: "1px solid rgba(123,175,212,0.3)", color: "#7bafd4",
+            fontSize: "1.25rem", fontWeight: "300", lineHeight: 1,
+            background: isOpen ? "rgba(123,175,212,0.1)" : "transparent",
+            transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
+            transition: "transform 0.3s ease, background 0.25s",
+          }}
+        >
+          +
+        </span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <m.div
+            key="answer"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
+            style={{ overflow: "hidden" }}
+          >
+            <p
+              className="font-sans leading-relaxed"
+              style={{ color: "#6c757d", paddingBottom: "1.75rem", fontSize: "1rem" }}
+            >
+              {faq.node ?? faq.a}
+            </p>
+          </m.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function FaqAccordion() {
+  const [openIdx, setOpenIdx] = useState(null);
+  return (
+    <Stack gap="0rem">
+      <div>
+        {FAQ_ITEMS.map((faq, i) => (
+          <FaqItem
+            key={i}
+            faq={faq}
+            isOpen={openIdx === i}
+            onToggle={() => setOpenIdx(openIdx === i ? null : i)}
+          />
+        ))}
+      </div>
+
+      {/* Primary CTA below the last question */}
+      <div style={{ paddingTop: "2.5rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+        <div><PrimaryBtn href="/audit">Run Your Free Audit →</PrimaryBtn></div>
+        <p className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase" style={{ color: "#444" }}>
+          See your scores in 90 seconds — no email required
+        </p>
+      </div>
+    </Stack>
+  );
+}
 
 // ─── PAGE ────────────────────────────────────────────────────────────────────
 
@@ -338,37 +436,88 @@ export default function HomeClient() {
 
       {/* ─── FREE AUDIT TOOL ────────────────────────────────────────────── */}
       <Section className="relative overflow-hidden">
-        <Stack gap="3rem" className="max-w-[1000px] mx-auto items-center text-center">
-          <Stack gap="1.5rem" className="items-center">
+        <Stack gap="3rem" style={{ maxWidth: "960px", margin: "0 auto", alignItems: "center", textAlign: "center" }}>
+
+          {/* Header copy */}
+          <Stack gap="1.5rem" style={{ alignItems: "center" }}>
             <Eyebrow>FREE TOOL</Eyebrow>
             <H2>See your scores <span className="text-carolina">before</span> you talk to anyone.</H2>
-            <Body className="max-w-[700px]">
-              Enter your business name, trade, and city. In about 90 seconds you&apos;ll get a scored audit across seven areas — your Google Business Profile, reviews, website setup, technical health, directory listings, backlinks, and how you compare to the top three competitors.
+            <Body style={{ maxWidth: "680px" }}>
+              Enter your business name, trade, and city. In 90 seconds you&apos;ll get a scored audit across seven areas — Google Business Profile, reviews, website, technical health, citations, backlinks, and competitor comparison.
             </Body>
           </Stack>
 
+          {/* Card */}
           <m.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-full glass-premium rounded-[40px] border border-carolina/20 shadow-[0_0_80px_rgba(123,175,212,0.1)] relative"
-            style={{ padding: "4rem" }}
+            transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
+            className="glass-premium border border-carolina/20 shadow-[0_0_80px_rgba(123,175,212,0.08)] relative w-full"
+            style={{ borderRadius: "2.5rem", padding: "3.5rem 3rem" }}
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-carolina to-transparent" />
-            <Stack gap="2rem" className="items-center">
-              <PrimaryBtn href="/audit" className="text-xl px-20 py-8">Run Your Free Audit Now →</PrimaryBtn>
-              <p className="font-mono text-xs tracking-widest text-[#6c757d] uppercase font-bold">
-                NO EMAIL NEEDED TO SEE SCORES · 90 SECONDS · SYSTEM ONLINE
-              </p>
-              <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "2rem" }} className="opacity-30">
-                {["GBP", "Reviews", "Website", "Technical", "Citations", "Backlinks", "Competitors"].map(tag => (
-                  <span key={tag} className="font-mono text-[0.65rem] font-bold tracking-[0.2em]">{tag}</span>
-                ))}
+            {/* Top accent line */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-carolina to-transparent rounded-full" />
+
+            <Stack gap="2.5rem" style={{ alignItems: "center" }}>
+
+              {/* Live status indicator */}
+              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                <span
+                  className="rounded-full bg-[#00ff88]"
+                  style={{
+                    width: "8px", height: "8px", flexShrink: 0,
+                    boxShadow: "0 0 8px #00ff88",
+                    animation: "pulse-node 2s ease-in-out infinite"
+                  }}
+                />
+                <span className="font-mono text-[0.65rem] font-bold tracking-[0.25em] uppercase text-[#00ff88]">
+                  SYSTEM ONLINE — READY TO SCAN
+                </span>
               </div>
+
+              {/* CTA Button */}
+              <PrimaryBtn href="/audit" className="text-lg">
+                Run Your Free Audit Now →
+              </PrimaryBtn>
+
+              {/* Trust line */}
+              <p className="font-mono text-[0.65rem] tracking-[0.25em] text-[#555] uppercase font-bold">
+                No email needed · 90 seconds · No pitch
+              </p>
+
+              {/* Score category badges */}
+              <div>
+                <p className="font-mono text-[0.55rem] tracking-[0.3em] text-[#444] uppercase font-bold" style={{ marginBottom: "1rem" }}>
+                  Scored audit areas
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.6rem" }}>
+                  {[
+                    { label: "GBP", desc: "Google Business Profile" },
+                    { label: "Reviews", desc: "Rating & Volume" },
+                    { label: "Website", desc: "On-Page SEO" },
+                    { label: "Technical", desc: "Speed & Schema" },
+                    { label: "Citations", desc: "Directory Listings" },
+                    { label: "Backlinks", desc: "Link Authority" },
+                    { label: "Competitors", desc: "vs. Top 3" },
+                  ].map(({ label }) => (
+                    <span
+                      key={label}
+                      className="font-mono text-[0.6rem] font-bold tracking-[0.15em] uppercase text-carolina border border-carolina/20 bg-carolina/5 rounded"
+                      style={{ padding: "0.3rem 0.7rem" }}
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
             </Stack>
           </m.div>
+
         </Stack>
       </Section>
+
 
       {/* ─── SUCCESS ────────────────────────────────────────────────────── */}
       <Section className="bg-carolina/5 relative overflow-hidden">
@@ -402,26 +551,14 @@ export default function HomeClient() {
 
       {/* ─── FAQ ────────────────────────────────────────────────────────── */}
       <Section id="faq">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-20">
+        <div className="faq-grid">
           <Stack gap="2rem">
             <H2>Questions worth asking.</H2>
-            <Body className="text-[#6c757d]">I don&apos;t expect you to take my word for it. Here is how I work, what it costs, and why I don&apos;t use contracts.</Body>
+            <Body style={{ color: "#6c757d" }}>I don&apos;t expect you to take my word for it. Here&apos;s how I work, what it costs, and why I don&apos;t use contracts.</Body>
             <div><OutlineBtn href="/contact">Book a free strategy call</OutlineBtn></div>
           </Stack>
 
-          <div>
-            {[
-              { q: "What does the free audit actually check?", a: "Seven areas: your Google Business Profile, review count, website's on-page setup, technical health (speed, schema), citation consistency, backlinks, and competitor comparison." },
-              { q: "I don't have a website. Can you help?", a: "Yes — and the audit will show you exactly what not having one is costing you in search. Most of the calls going to your competitors are coming from people who found them on Google." },
-              { q: "How long before I see results?", a: "Most businesses see meaningful ranking movement in 60–90 days, depending on how competitive your trade is in your city." },
-              { q: "Do I have to sign a contract?", a: "No. I don't offer them. If I stop delivering, you leave." },
-            ].map((faq, i) => (
-              <div key={i} className="py-10 border-b border-white/5 last:border-0 group cursor-default">
-                <h3 className="font-serif text-[1.4rem] font-bold group-hover:text-carolina transition-colors" style={{ marginBottom: "1rem" }}>{faq.q}</h3>
-                <p className="text-[#6c757d] leading-relaxed font-sans">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion />
         </div>
       </Section>
 
