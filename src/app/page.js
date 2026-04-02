@@ -3,9 +3,55 @@ import HomeClient from "./HomeClient";
 export const metadata = {
   title: "Local SEO for NWA Contractors | Local Search Ally",
   description:
-    "97% of people use Google to find a local contractor. If your name isn't in the results, the call goes to whoever is. Free audit for NWA contractors.",
+    "97% of people use Google to find a local contractor. If you're not in the results, the call goes to whoever is. Free audit for NWA home service trades.",
+  openGraph: {
+    title: "Local SEO for NWA Contractors | Local Search Ally",
+    description:
+      "97% of people use Google to find a local contractor. If you're not in the results, the call goes to whoever is.",
+    url: "https://localsearchally.com",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Local Search Ally",
+  description:
+    "Local SEO and web development for NWA home service trades — HVAC, plumbing, roofing, electrical, landscaping, and remodeling.",
+  url: "https://localsearchally.com",
+  telephone: "+14793808626",
+  founder: { "@type": "Person", name: "Chad Smith" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Siloam Springs",
+    addressRegion: "AR",
+    postalCode: "72761",
+    addressCountry: "US",
+  },
+  areaServed: [
+    "Rogers, AR",
+    "Bentonville, AR",
+    "Fayetteville, AR",
+    "Springdale, AR",
+    "Siloam Springs, AR",
+    "Northwest Arkansas",
+  ],
+  knowsAbout: [
+    "Local SEO",
+    "Google Business Profile",
+    "Web Development",
+    "Contractor Marketing",
+  ],
 };
 
 export default function Page() {
-  return <HomeClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <HomeClient />
+    </>
+  );
 }

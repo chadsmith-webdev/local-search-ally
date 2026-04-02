@@ -209,3 +209,38 @@ input, select, textarea {
   }
 }
 
+/* ─── Tailwind v4 theme tokens ───────────────────────────────────────────────
+   Registers brand values as Tailwind utilities:
+   text-carolina, bg-surface, border-steel, font-serif, font-sans, font-mono
+   ─────────────────────────────────────────────────────────────────────────── */
+@theme {
+  --color-carolina:    #7bafd4;
+  --color-steel:       #4A6B8A;
+  --color-slate:       #2E3A4D;
+  --color-surface:     #141414;
+  --color-surface-2:   #1e1e1e;
+
+  --font-family-serif: var(--font-display);
+  --font-family-sans:  var(--font-ui);
+  --font-family-mono:  var(--font-mono);
+}
+
+/* Scanning line — used in Success section stat block */
+.scanning-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--carolina), transparent);
+  top: -2px;
+  border-radius: 1px;
+  opacity: 0.4;
+  will-change: transform;
+  animation: scanning 3s linear infinite;
+}
+
+@keyframes scanning {
+  from { transform: translateY(0); }
+  to   { transform: translateY(500px); }
+}
+

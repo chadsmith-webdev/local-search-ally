@@ -1,149 +1,176 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion as m, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import Image from "next/image";
+import {
+  motion as m,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  useScroll,
+  useReducedMotion,
+  useInView,
+} from "framer-motion";
+
+// ─── Animation constants ──────────────────────────────────────────────────────
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+// ─── CountUp (viewport-triggered number animation) ───────────────────────────
+
+function CountUp({ to, suffix = "", duration = 2 }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const shouldReduce = useReducedMotion();
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    if (shouldReduce) { setDisplay(to); return; }
+    const start = performance.now();
+    const tick = (now) => {
+      const progress = Math.min((now - start) / 1000 / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplay(Math.round(eased * to));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, [inView, to, duration, shouldReduce]);
+
+  return <span ref={ref}>{display}{suffix}</span>;
+}
+
+// ─── Spotlight (mouse-following glow) ────────────────────────────────────────
 
 function Spotlight() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-
-  // Smooth the mouse movement
-  const springConfig = { damping: 25, stiffness: 150 };
-  const smoothX = useSpring(mouseX, springConfig);
-  const smoothY = useSpring(mouseY, springConfig);
+  const smoothX = useSpring(mouseX, { damping: 25, stiffness: 150 });
+  const smoothY = useSpring(mouseY, { damping: 25, stiffness: 150 });
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const onMove = (e) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
     };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
   }, [mouseX, mouseY]);
 
   const background = useTransform(
     [smoothX, smoothY],
-    ([x, y]) => `radial-gradient(800px circle at ${x}px ${y}px, rgba(123, 175, 212, 0.3), rgba(123, 175, 212, 0.05) 30%, transparent 80%)`
+    ([x, y]) =>
+      `radial-gradient(800px circle at ${x}px ${y}px, rgba(123,175,212,0.25), rgba(123,175,212,0.04) 35%, transparent 80%)`
   );
 
   return (
     <m.div
-      style={{
-        position: "fixed",
-        inset: 0,
-        background,
-        zIndex: 2,
-        pointerEvents: "none",
-      }}
+      className="fixed inset-0 pointer-events-none z-[2]"
+      style={{ background }}
     />
   );
 }
 
-const C = {
-  carolina: "#7bafd4",
-  carolinaDark: "#5a93bc",
-  steel: "#4A6B8A",
-  carolinaDim: "rgba(123,175,212,0.12)",
-  carolinaBorder: "rgba(123,175,212,0.28)",
-  muted: "#888888",
-  muted2: "#555555",
-  border: "rgba(255,255,255,0.08)",
-  borderStrong: "rgba(255,255,255,0.14)",
-  surface: "#141414",
-  surface2: "#1e1e1e",
-  text: "#f0f0f0",
-  text2: "#c0c0c0",
-};
-
-// ─── Shared primitives ───────────────────────────────────────────────────────
+// ─── Shared primitives ────────────────────────────────────────────────────────
 
 function Eyebrow({ children }) {
   return (
-    <div style={{
-      display: "inline-flex", alignItems: "center", gap: 10,
-      marginBottom: "1rem", overflow: "hidden",
-    }}>
-      <div style={{ width: 12, height: 1, background: C.carolina, opacity: 0.5 }} />
-      <p style={{
-        fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.22em",
-        textTransform: "uppercase", color: C.carolina,
-        fontFamily: "var(--font-mono)", margin: 0,
-      }}>
+    <div className="inline-flex items-center gap-2.5 mb-4">
+      <div className="w-3 h-px bg-carolina opacity-50" />
+      <p className="text-[0.62rem] font-bold tracking-[0.22em] uppercase text-carolina font-mono m-0">
         {children}
       </p>
     </div>
   );
 }
 
-function H2({ children, style }) {
+function SectionH2({ children, className = "" }) {
   return (
-    <h2 style={{
-      fontFamily: "var(--font-display)",
-      fontSize: "clamp(2rem, 5vw, 3rem)",
-      fontWeight: 800, lineHeight: 1.15, letterSpacing: "-0.03em",
-      color: C.text, marginBottom: "1.5rem", ...style,
-    }}>
+    <h2
+      className={`font-serif text-[clamp(2rem,5vw,3rem)] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#f0f0f0] mb-6 ${className}`}
+    >
       {children}
     </h2>
   );
 }
 
-function Body({ children, style }) {
+function BodyText({ children, className = "" }) {
   return (
-    <p style={{
-      color: C.text2, fontSize: "1.05rem", lineHeight: 1.8,
-      fontFamily: "var(--font-ui)", marginBottom: "1.25rem",
-      maxWidth: 600, ...style,
-    }}>
+    <p
+      className={`text-[#a0a0a0] text-[1.05rem] leading-[1.8] font-sans mb-5 max-w-[600px] ${className}`}
+    >
       {children}
     </p>
   );
 }
 
-function GradientBtn({ href, children, style }) {
+function PrimaryBtn({ href, children, className = "" }) {
   return (
     <m.div
       whileHover={{ scale: 1.03, y: -2 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
-      <Link href={href} className="btn-primary" style={{
-        display: "inline-flex", alignItems: "center",
-        background: `linear-gradient(135deg, ${C.carolina} 0%, ${C.steel} 100%)`,
-        color: "#1e2a3a", fontWeight: 600, fontSize: "0.78rem",
-        letterSpacing: "0.1em", textTransform: "uppercase",
-        fontFamily: "var(--font-mono)",
-        padding: "15px 32px", borderRadius: 6,
-        textDecoration: "none", lineHeight: 1,
-        minHeight: 44, ...style,
-      }}>
+      <Link
+        href={href}
+        className={`inline-flex items-center justify-center bg-gradient-to-br from-carolina to-steel text-[#1e2a3a] font-semibold text-[0.78rem] tracking-[0.1em] uppercase font-mono px-8 py-4 rounded-md min-h-[44px] no-underline transition-shadow hover:shadow-[0_10px_20px_-5px_rgba(123,175,212,0.4)] focus-visible:ring-2 focus-visible:ring-carolina ${className}`}
+      >
         {children}
       </Link>
     </m.div>
   );
 }
 
-function OutlineBtn({ href, children }) {
+function OutlineBtn({ href, children, className = "" }) {
   return (
-    <m.div
-      whileHover={{ scale: 1.03, y: -1 }}
-      whileTap={{ scale: 0.98 }}
-    >
-      <Link href={href} className="btn-outline" style={{
-        display: "inline-flex", alignItems: "center",
-        border: `1px solid ${C.borderStrong}`,
-        color: C.carolina, fontWeight: 600, fontSize: "0.78rem",
-        letterSpacing: "0.1em", textTransform: "uppercase",
-        fontFamily: "var(--font-mono)",
-        padding: "15px 28px", borderRadius: 6,
-        textDecoration: "none", lineHeight: 1,
-        minHeight: 44,
-      }}>
+    <m.div whileHover={{ scale: 1.03, y: -1 }} whileTap={{ scale: 0.98 }}>
+      <Link
+        href={href}
+        className={`inline-flex items-center justify-center border border-white/[0.14] text-carolina font-semibold text-[0.78rem] tracking-[0.1em] uppercase font-mono px-7 py-4 rounded-md min-h-[44px] no-underline transition-all hover:border-carolina hover:bg-carolina/5 hover:-translate-y-px focus-visible:ring-2 focus-visible:ring-carolina ${className}`}
+      >
         {children}
       </Link>
     </m.div>
+  );
+}
+
+// ─── PerspectiveSection (3D scroll parallax wrapper) ─────────────────────────
+
+function PerspectiveSection({ children }) {
+  const ref = useRef(null);
+  const shouldReduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const rotateX = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    shouldReduce ? [0, 0, 0] : [10, 0, -10]
+  );
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    shouldReduce ? [1, 1, 1] : [0.95, 1, 0.95]
+  );
+  const opacity = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
+
+  return (
+    <section ref={ref} className="relative" style={{ perspective: "1200px" }}>
+      <m.div style={{ rotateX, scale, opacity, transformOrigin: "center" }}>
+        {children}
+      </m.div>
+    </section>
   );
 }
 
@@ -154,7 +181,17 @@ const problemCards = [
     label: "On Google Maps",
     body: "Your competitors are in the Map Pack. You're buried below them — or not showing up at all. Customers searching your trade in your city right now are calling someone else.",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
         <circle cx="12" cy="10" r="3" />
       </svg>
@@ -164,7 +201,17 @@ const problemCards = [
     label: "On your website",
     body: "An outdated site, or no site at all, tells customers to keep scrolling. It doesn't matter how good the work is if the first impression is a page that looks like it hasn't been touched since 2015.",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
         <rect x="2" y="3" width="20" height="14" rx="2" />
         <path d="M8 21h8M12 17v4" />
       </svg>
@@ -174,7 +221,17 @@ const problemCards = [
     label: "In your reviews",
     body: "You've done hundreds of jobs. But online you might look like the new guy. Customers can't tell who's been operating for twenty years and who started six months ago.",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
       </svg>
     ),
@@ -192,7 +249,7 @@ const planSteps = [
   {
     num: "02",
     title: "Fix Priority Gaps",
-    body: "Not everything at once. What matters most first — the things that move you up in search before we touch anything else.",
+    body: "Not everything at once. What matters most first — the things that move you up in search before anything else.",
     cta: null,
     active: false,
   },
@@ -205,7 +262,15 @@ const planSteps = [
   },
 ];
 
-const auditAreas = ["GBP", "Reviews", "Website", "Technical", "Citations", "Backlinks", "Competitors"];
+const auditAreas = [
+  "GBP",
+  "Reviews",
+  "Website",
+  "Technical",
+  "Citations",
+  "Backlinks",
+  "Competitors",
+];
 
 const faqItems = [
   {
@@ -238,581 +303,387 @@ const faqItems = [
   },
 ];
 
-// ─── 3D Perspective Component ───────────────────────────────────────────────
-
-function PerspectiveSection({ children }) {
-  const [mounted, setMounted] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const rotateX = useTransform(scrollYProgress, [0, 0.5, 1], [10, 0, -10]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-
-  return (
-    <section 
-      ref={ref}
-      style={{
-        perspective: "1200px",
-        position: "relative",
-      }}
-    >
-      <m.div
-        style={{
-          rotateX: mounted ? rotateX : 0,
-          scale: mounted ? scale : 1,
-          opacity: mounted ? opacity : 1,
-          transformOrigin: "center",
-        }}
-      >
-        {children}
-      </m.div>
-    </section>
-  );
-}
-
-// ─── Page ─────────────────────────────────────────────────────────────────────
+// ─── Main component ───────────────────────────────────────────────────────────
 
 export default function HomeClient() {
   const [mounted, setMounted] = useState(false);
-  const heroRef = useRef(null);
-  
+  const shouldReduce = useReducedMotion();
+
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const { scrollYProgress } = useScroll({
+  // Hero scroll parallax
+  const heroRef = useRef(null);
+  const { scrollYProgress: heroScroll } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
   });
+  const heroRotateX = useTransform(
+    heroScroll,
+    [0, 1],
+    shouldReduce ? [0, 0] : [0, 12]
+  );
+  const heroScale = useTransform(
+    heroScroll,
+    [0, 1],
+    shouldReduce ? [1, 1] : [1, 0.94]
+  );
+  const heroOpacity = useTransform(heroScroll, [0, 0.85], [1, 0]);
 
-  const rotateX = useTransform(scrollYProgress, [0, 1], [0, 15]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
-  // ─── Problem Section Parallax ───
+  // Problem cards parallax
   const problemRef = useRef(null);
   const { scrollYProgress: problemScroll } = useScroll({
     target: problemRef,
     offset: ["start end", "end start"],
   });
+  const py1 = useTransform(problemScroll, [0, 1], [-40, 40]);
+  const py2 = useTransform(problemScroll, [0, 1], [-80, 80]);
+  const py3 = useTransform(problemScroll, [0, 1], [-120, 120]);
+  const pr1 = useTransform(problemScroll, [0, 1], [-4, 4]);
+  const pr2 = useTransform(problemScroll, [0, 1], [6, -6]);
+  const pr3 = useTransform(problemScroll, [0, 1], [-2, 2]);
+  const cardParallax = [
+    { y: py1, r: pr1 },
+    { y: py2, r: pr2 },
+    { y: py3, r: pr3 },
+  ];
 
-  const y1 = useTransform(problemScroll, [0, 1], [-20, 20]);
-  const y2 = useTransform(problemScroll, [0, 1], [-40, 40]);
-  const y3 = useTransform(problemScroll, [0, 1], [-60, 60]);
-  const r1 = useTransform(problemScroll, [0, 1], [-2, 2]);
-  const r2 = useTransform(problemScroll, [0, 1], [3, -3]);
-  const r3 = useTransform(problemScroll, [0, 1], [-1, 1]);
-
-  // ─── Stakes Section 3D ───
+  // Success stat 3D scroll-in
   const stakesRef = useRef(null);
   const { scrollYProgress: stakesScroll } = useScroll({
     target: stakesRef,
     offset: ["start end", "center center"],
   });
-
-  const rotateXStakes = useTransform(stakesScroll, [0, 1], [45, 0]);
-  const rotateYStakes = useTransform(stakesScroll, [0, 1], [-30, 0]);
-  const scaleStakes = useTransform(stakesScroll, [0, 1], [0.8, 1]);
-  const opacityStakes = useTransform(stakesScroll, [0, 0.5], [0, 1]);
+  const stakesRotateX = useTransform(
+    stakesScroll,
+    [0, 1],
+    shouldReduce ? [0, 0] : [45, 0]
+  );
+  const stakesRotateY = useTransform(
+    stakesScroll,
+    [0, 1],
+    shouldReduce ? [0, 0] : [-30, 0]
+  );
+  const stakesScale = useTransform(stakesScroll, [0, 1], [0.8, 1]);
+  const stakesOpacity = useTransform(stakesScroll, [0, 0.5], [0, 1]);
 
   return (
-    <div className="tech-grid" style={{ background: "#060607", minHeight: "100vh" }}>
-      <style>{`
-        /* Buttons */
-        .btn-primary {
-          cursor: pointer;
-          transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
-        }
-        .btn-primary:hover { 
-          transform: translateY(-2px) scale(1.02);
-          box-shadow: 0 10px 20px -5px rgba(123, 175, 212, 0.4);
-        }
-        .btn-primary:active { transform: scale(0.98); }
-
-        .btn-outline {
-          cursor: pointer;
-          transition: all 0.2s ease;
-        }
-        .btn-outline:hover {
-          border-color: ${C.carolina};
-          background: rgba(123, 175, 212, 0.05);
-          transform: translateY(-1px);
-        }
-
-        /* Cards */
-        .problem-card {
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .problem-card:hover {
-          border-color: rgba(123,175,212,0.5) !important;
-          transform: translateY(-6px);
-          box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-          background: rgba(123, 175, 212, 0.06) !important;
-        }
-
-        /* FAQ */
-        .faq-grid {
-          display: grid;
-          grid-template-columns: 0.8fr 1.2fr;
-          gap: 60px;
-        }
-        .faq-item {
-          transition: all 0.2s ease;
-          border-radius: 8px;
-          margin: 0 -16px;
-          padding: 24px 16px !important;
-        }
-        .faq-item:hover { 
-          background: rgba(255,255,255,0.03);
-          border-color: rgba(255, 255, 255, 0.1) !important;
-        }
-
-        /* Success/Stakes stacking */
-        .stakes-grid {
-          display: grid;
-          grid-template-columns: 1fr 1.2fr;
-          gap: 80px;
-          align-items: center;
-        }
-
-        /* Inline links */
-        .inline-link {
-          position: relative;
-          text-decoration: none !important;
-        }
-        .inline-link::after {
-          content: "";
-          position: absolute;
-          bottom: -2px;
-          left: 0;
-          width: 0%;
-          height: 1px;
-          background: currentColor;
-          transition: width 0.3s ease;
-        }
-        .inline-link:hover::after {
-          width: 100%;
-        }
-
-        /* Responsive */
-        .problem-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-        }
-        .cta-row {
-          display: flex;
-          align-items: center;
-          gap: 20px;
-          flex-wrap: wrap;
-        }
-        
-        /* Scanning Line */
-        .scanning-line {
-          position: absolute;
-          width: 100%;
-          height: 2px;
-          background: linear-gradient(90deg, transparent, ${C.carolina}, transparent);
-          top: -100%;
-          border-radius: 1px;
-          opacity: 0.4;
-          animation: scan 3s linear infinite;
-        }
-        @keyframes scan {
-          0% { top: -10%; }
-          100% { top: 110%; }
-        }
-        
-        @media (max-width: 900px) {
-          .problem-grid { grid-template-columns: 1fr; }
-          .stakes-grid { grid-template-columns: 1fr; gap: 40px; }
-          .faq-grid { grid-template-columns: 1fr; gap: 40px; }
-          .guide-grid { grid-template-columns: 1fr !important; gap: 40px; }
-        }
-        @media (max-width: 480px) {
-          .cta-row { flex-direction: column; align-items: stretch; }
-          .cta-row a { justify-content: center; }
-        }
-      `}</style>
+    <div className="tech-grid min-h-screen" style={{ background: "#060607" }}>
       <Spotlight />
       <div className="noise">
 
-
-        {/* ─── HERO ──────────────────────────────────────────────────────────── */}
+        {/* ─── HERO ─────────────────────────────────────────────────────────── */}
         <section
           ref={heroRef}
-          style={{
-            position: "relative",
-            maxWidth: 1100, margin: "0 auto",
-            perspective: "1000px",
-          }}
+          className="relative max-w-[1100px] mx-auto"
+          style={{ perspective: "1000px" }}
         >
           <m.div
             style={{
-              rotateX: mounted ? rotateX : 0,
-              scale: mounted ? scale : 1,
-              opacity: mounted ? opacity : 1,
+              rotateX: mounted ? heroRotateX : 0,
+              scale: mounted ? heroScale : 1,
+              opacity: mounted ? heroOpacity : 1,
               transformOrigin: "top",
-              padding: "clamp(8rem, 20vw, 12rem) clamp(1.5rem, 5vw, 3rem) clamp(5rem, 10vw, 8rem)",
-              display: "flex", flexDirection: "column", alignItems: "flex-start",
-              textAlign: "left",
             }}
+            className="px-[clamp(1.5rem,5vw,3rem)] pt-[clamp(8rem,20vw,12rem)] pb-[clamp(5rem,10vw,8rem)] flex flex-col items-start"
           >
-            <div className="scan-line" />
-
+            {/* Page-load stagger — initial/animate, not whileInView */}
             <m.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              variants={stagger}
+              initial="hidden"
+              animate="visible"
+              className="w-full"
             >
-              <Eyebrow>Free Local SEO Audit for NWA Contractors</Eyebrow>
-            </m.div>
+              <m.div variants={fadeUp}>
+                <Eyebrow>Free Local SEO Audit for NWA Contractors</Eyebrow>
+              </m.div>
 
-            <m.h1
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.19, 1, 0.22, 1] }}
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(2rem, 8vw, 5rem)",
-                fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.04em",
-                color: C.text, margin: "0 0 28px",
-                maxWidth: 900,
-              }}
-            >
-              Your competitors are taking calls <span style={{ color: C.carolina }}>that should be yours.</span>
-            </m.h1>
-
-            <div style={{ display: "flex", gap: 60, flexWrap: "wrap", alignItems: "flex-start" }}>
-              <m.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                style={{ maxWidth: 540 }}
+              <m.h1
+                variants={fadeUp}
+                className="font-serif text-[clamp(2.5rem,9vw,6rem)] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#f0f0f0] mb-7 max-w-[900px]"
               >
-                <p style={{
-                  color: C.text2, fontSize: "1.25rem", lineHeight: 1.6,
-                  fontFamily: "var(--font-ui)", margin: "0 0 20px",
-                  fontWeight: 500,
-                }}>
-                  97% of people use Google to find local contractors. If you&apos;re not in the top results, you&apos;re invisible.
-                </p>
-                <p style={{
-                  color: C.muted, fontSize: "1.05rem", lineHeight: 1.75,
-                  fontFamily: "var(--font-ui)", margin: "0 0 40px",
-                }}>
-                  The best contractor in town shouldn&apos;t be the hardest to find. I give you the data to fix your visibility gap and start winning the search war.
-                </p>
+                Your competitors are taking calls{" "}
+                <span className="text-carolina">that should be yours.</span>
+              </m.h1>
 
-                <div className="cta-row">
-                  <GradientBtn href="/audit" style={{ fontSize: "0.85rem", padding: "18px 36px" }}>
-                    Run Your Free Audit Now →
-                  </GradientBtn>
-                </div>
+              <div className="flex gap-[clamp(2rem,5vw,3.75rem)] flex-wrap items-start">
+                {/* Left: copy + CTAs */}
+                <m.div variants={fadeUp} className="max-w-[540px]">
+                  <p className="text-[#c0c0c0] text-[1.25rem] leading-[1.6] font-sans mb-5 font-medium">
+                    97% of people use Google to find local contractors. If
+                    you&apos;re not in the top results, you&apos;re invisible.
+                  </p>
+                  <p className="text-[#888] text-[1.05rem] leading-[1.75] font-sans mb-10">
+                    The best contractor in town shouldn&apos;t be the hardest to
+                    find. I give you the data to fix your visibility gap and
+                    start winning the search.
+                  </p>
 
-                <div style={{
-                  display: "flex", alignItems: "center", gap: 12, marginTop: 20,
-                }}>
-                  <div style={{ display: "flex" }}>
-                    {[1, 2, 3, 4, 5].map(i => (
-                      <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill={C.carolina} style={{ marginRight: 2 }}>
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  <div className="flex items-center gap-4 flex-wrap">
+                    <PrimaryBtn href="/audit" className="text-[0.85rem] px-9 py-[18px]">
+                      Run Your Free Audit Now →
+                    </PrimaryBtn>
+                    <a
+                      href="tel:+14793808626"
+                      className="inline-flex items-center gap-2 text-[#888] text-[0.9rem] font-sans hover:text-[#f0f0f0] transition-colors min-h-[44px]"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                       </svg>
-                    ))}
+                      (479) 380-8626
+                    </a>
                   </div>
-                  <p style={{ color: C.muted2, fontSize: "0.75rem", fontFamily: "var(--font-mono)", margin: 0 }}>
+
+                  <p className="text-[#555] text-[0.75rem] font-mono mt-5">
                     90s AUDIT · REAL DATA · NO EMAIL REQUIRED
                   </p>
-                </div>
-              </m.div>
+                </m.div>
 
-              <m.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{
-                  scale: 1.02,
-                  borderColor: C.carolinaBorder,
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
-                }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.5 }}
-                style={{
-                  flex: "1 1 280px",
-                  padding: "24px",
-                  border: `1px solid ${C.border}`,
-                  borderRadius: 16,
-                  background: "rgba(255,255,255,0.02)",
-                  backdropFilter: "blur(10px)",
-                  display: "flex", flexDirection: "column", gap: 16,
-                  cursor: "default",
-                }}
-              >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", color: C.carolina }}>SYSTEM STATUS</span>
-                  <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#4ade80", boxShadow: "0 0 10px #4ade80" }} />
-                </div>
-                <div style={{ height: 1, background: C.border }} />
-                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                  {["GOOGLE MAPS", "LOCAL SEARCH", "REVIEW HEALTH", "SITE AUDIT"].map(txt => (
-                    <div key={txt} style={{ display: "flex", justifyContent: "space-between", fontSize: "0.65rem", fontFamily: "var(--font-mono)", color: C.muted }}>
-                      <span>{txt}</span>
-                      <span style={{ color: C.text }}>READY</span>
-                    </div>
-                  ))}
-                </div>
-                <div style={{ marginTop: "auto", paddingTop: 10 }}>
-                  <p style={{ fontSize: "0.7rem", color: C.text, fontFamily: "var(--font-mono)", margin: 0 }}>
-                    DIAGNOSTIC ENGINE v2.4
-                  </p>
-                </div>
-              </m.div>
-            </div>
+                {/* Right: sample audit preview */}
+                <m.div
+                  variants={fadeUp}
+                  className="flex-[1_1_280px] p-5 border border-white/[0.08] rounded-2xl bg-white/[0.02] backdrop-blur-[10px] flex flex-col gap-3 cursor-default"
+                >
+                  <div className="flex justify-between items-center">
+                    <span className="font-mono text-[0.6rem] text-carolina tracking-[0.15em]">
+                      SAMPLE AUDIT · ROGERS, AR
+                    </span>
+                    <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_#4ade80]" />
+                  </div>
+                  <div className="font-sans text-[0.8rem] text-[#f0f0f0] font-semibold leading-none">
+                    Apex Plumbing &amp; Drain
+                  </div>
+                  <div className="h-px bg-white/[0.08]" />
+                  <div className="flex flex-col gap-3">
+                    {[
+                      { label: "Google Business Profile", score: 42, status: "yellow" },
+                      { label: "Review Health",           score: 61, status: "yellow" },
+                      { label: "Website SEO",             score: 28, status: "red"    },
+                      { label: "Citation Consistency",    score: 55, status: "yellow" },
+                      { label: "Competitor Gap",          score: 34, status: "red"    },
+                    ].map(({ label, score, status }) => (
+                      <div key={label}>
+                        <div className="flex justify-between text-[0.62rem] font-mono mb-1">
+                          <span className="text-[#888]">{label}</span>
+                          <span style={{ color: status === "red" ? "var(--red)" : "var(--yellow)" }}>
+                            {score}/100
+                          </span>
+                        </div>
+                        <div className="h-1 rounded-full bg-white/[0.06] overflow-hidden">
+                          <div
+                            className="h-full rounded-full transition-all"
+                            style={{
+                              width: `${score}%`,
+                              background: status === "red" ? "var(--red)" : "var(--yellow)",
+                            }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="pt-1 border-t border-white/[0.06]">
+                    <p className="text-[0.6rem] font-mono text-[#555] m-0 tracking-[0.12em]">
+                      RUN YOURS FREE → TAKES 90 SECONDS
+                    </p>
+                  </div>
+                </m.div>
+              </div>
+            </m.div>
           </m.div>
         </section>
 
-        {/* ─── PROBLEM ───────────────────────────────────────────────────────── */}
+        {/* ─── PROBLEM ──────────────────────────────────────────────────────── */}
         <PerspectiveSection>
           <div
             ref={problemRef}
-            style={{ padding: "0 clamp(1.5rem, 5vw, 3rem) clamp(5rem, 10vw, 8rem)" }}
+            className="px-[clamp(1.5rem,5vw,3rem)] pb-[clamp(5rem,10vw,8rem)]"
           >
-            <div style={{ maxWidth: 700, marginBottom: 60 }}>
+            <div className="max-w-[700px] mb-[60px]">
               <Eyebrow>The Problem</Eyebrow>
-              <H2>Good work used to be enough.</H2>
-              <Body>
-                You built something real. You show up on time, do the job right, and your customers tell their neighbors. But the homeowner who needs a repair <strong style={{ color: C.text }}>this week</strong> isn&apos;t asking a neighbor first.
-              </Body>
-              <Body style={{ color: C.carolina, fontWeight: 500 }}>
-                They&apos;re opening Google. And if you&apos;re not in the &quot;Map Pack&quot;, you don&apos;t exist to them.
-              </Body>
+              <SectionH2>Good work used to be enough.</SectionH2>
+              <BodyText>
+                You built something real. You show up on time, do the job right,
+                and your customers tell their neighbors. But the homeowner who
+                needs a repair{" "}
+                <strong className="text-[#f0f0f0]">this week</strong> isn&apos;t
+                asking a neighbor first.
+              </BodyText>
+              <BodyText className="text-carolina font-medium">
+                They&apos;re opening Google. And if you&apos;re not in the
+                &quot;Map Pack&quot;, you don&apos;t exist to them.
+              </BodyText>
             </div>
 
-            <div className="problem-grid" style={{
-              maxWidth: 1100,
-              margin: "0 auto",
-              perspective: "1200px"
-            }}>
-              {problemCards.map((card, i) => {
-                const yOff = [y1, y2, y3][i];
-                const rOff = [r1, r2, r3][i];
-
-                return (
-                  <m.div
-                    key={card.label}
-                    className="problem-card glass"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    whileHover={{
-                      y: -10,
-                      scale: 1.02,
-                      borderColor: "rgba(123, 175, 212, 0.6)",
-                      boxShadow: "0 25px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(123, 175, 212, 0.15)",
-                      backgroundColor: "rgba(123, 175, 212, 0.08)"
-                    }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    style={{
-                      borderRadius: 12,
-                      padding: "40px 32px",
-                      position: "relative",
-                      overflow: "hidden",
-                      // Apply parallax
-                      y: mounted ? yOff : 0,
-                      rotateY: mounted ? rOff : 0,
-                    }}
-                  >
-                    <div style={{
-                      position: "absolute", top: -10, right: -10,
-                      fontSize: "5rem", fontWeight: 900, color: C.carolina,
-                      opacity: 0.03, fontFamily: "var(--font-display)",
-                      pointerEvents: "none",
-                    }}>
-                      0{i + 1}
-                    </div>
-
-                    <div style={{
-                      display: "inline-flex", alignItems: "center", justifyContent: "center",
-                      width: 48, height: 48, borderRadius: 12,
-                      background: "rgba(123, 175, 212, 0.1)",
-                      border: `1px solid rgba(123, 175, 212, 0.2)`,
-                      color: C.carolina, marginBottom: 24,
-                    }}>
-                      {card.icon}
-                    </div>
-
-                    <p style={{
-                      fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.15em",
-                      textTransform: "uppercase", color: C.muted,
-                      fontFamily: "var(--font-mono)", marginBottom: 12,
-                    }}>
-                      {card.label}
-                    </p>
-
-                    <p style={{
-                      color: C.text, fontSize: "1.1rem", lineHeight: 1.6,
-                      fontFamily: "var(--font-ui)", fontWeight: 500,
-                    }}>
-                      {card.body}
-                    </p>
-                  </m.div>
-                );
-              })}
+            <div
+              className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto"
+              style={{ perspective: "1200px" }}
+            >
+              {problemCards.map((card, i) => (
+                <m.div
+                  key={card.label}
+                  className="glass rounded-xl p-10 relative overflow-hidden cursor-default transition-all duration-300 hover:border-carolina/50 hover:-translate-y-2.5 hover:bg-carolina/5 hover:shadow-[0_25px_60px_rgba(0,0,0,0.6)]"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20,
+                    delay: i * 0.1,
+                  }}
+                  style={{
+                    y: mounted ? cardParallax[i].y : 0,
+                    rotateY: mounted ? cardParallax[i].r : 0,
+                  }}
+                >
+                  <div className="absolute top-[-10px] right-[-10px] text-[5rem] font-black text-carolina opacity-[0.03] font-serif pointer-events-none select-none">
+                    0{i + 1}
+                  </div>
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-carolina/10 border border-carolina/20 text-carolina mb-6">
+                    {card.icon}
+                  </div>
+                  <p className="text-[0.65rem] font-bold tracking-[0.15em] uppercase text-[#888] font-mono mb-3">
+                    {card.label}
+                  </p>
+                  <p className="text-[#f0f0f0] text-[1.1rem] leading-[1.6] font-sans font-medium">
+                    {card.body}
+                  </p>
+                </m.div>
+              ))}
             </div>
           </div>
         </PerspectiveSection>
 
-        {/* ─── GUIDE (THE ARCHITECT) ─────────────────────────────────────────── */}
+        {/* ─── GUIDE ────────────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div style={{
-            maxWidth: 1100, margin: "0 auto",
-            padding: "clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem)",
-          }}>
-            <div className="guide-grid" style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 80,
-              alignItems: "center"
-            }}>
+          <div className="max-w-[1100px] mx-auto px-[clamp(1.5rem,5vw,3rem)] pt-[clamp(5rem,10vw,8rem)] pb-[clamp(10rem,18vw,14rem)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[80px] items-center">
 
-              {/* Left: Copy Content */}
               <m.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <Eyebrow>Not Another Agency</Eyebrow>
-                <H2 style={{ maxWidth: 600 }}>I know why you&apos;re skeptical.</H2>
+                <SectionH2 className="max-w-[600px]">
+                  I know why you&apos;re skeptical.
+                </SectionH2>
 
-                <Body>
-                  If you&apos;ve hired a marketing company before and walked away feeling like you paid for reports instead of results — I get it. Most agencies sell the idea of results. They hand you a 40-page document, disappear for three months, and call it strategy.
-                </Body>
-                <Body>
-                  I&apos;m one person in Siloam Springs, and I don&apos;t take on clients I can&apos;t actually help. If something is outside my skill set, I&apos;ll say so before you pay for it.
-                </Body>
+                <BodyText>
+                  If you&apos;ve hired a marketing company before and walked away
+                  feeling like you paid for reports instead of results — I get it.
+                  Most agencies sell the idea of results. They hand you a 40-page
+                  document, disappear for three months, and call it strategy.
+                </BodyText>
+                <BodyText>
+                  I&apos;m one person in Siloam Springs, and I don&apos;t take on
+                  clients I can&apos;t actually help. If something is outside my
+                  skill set, I&apos;ll say so before you pay for it.
+                </BodyText>
 
-                {/* Checklist Items */}
-                <div style={{ display: "flex", flexDirection: "column", gap: 24, marginTop: 40 }}>
-                  <div style={{ display: "flex", gap: 16 }}>
-                    <div style={{ width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(123,175,212,0.1)", borderRadius: "50%", color: C.carolina, flexShrink: 0 }}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div style={{ color: C.text, fontWeight: 700, fontSize: "1rem", marginBottom: 4 }}>Brand Fortress</div>
-                      <div style={{ color: C.muted, fontSize: "0.9rem", lineHeight: 1.5 }}>Securing your identity across every digital node.</div>
-                    </div>
-                  </div>
-
-                  <div style={{ display: "flex", gap: 16 }}>
-                    <div style={{ width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(123,175,212,0.1)", borderRadius: "50%", color: C.carolina, flexShrink: 0 }}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <div className="flex flex-col gap-6 mt-10">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-11 h-11 rounded-full bg-carolina/10 flex items-center justify-center text-carolina">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                     </div>
                     <div>
-                      <div style={{ color: C.text, fontWeight: 700, fontSize: "1rem", marginBottom: 4 }}>Algorithmic Integrity</div>
-                      <div style={{ color: C.muted, fontSize: "0.9rem", lineHeight: 1.5 }}>Pure data-driven methodology. No shortcuts.</div>
+                      <div className="text-[#f0f0f0] font-bold text-base mb-1">
+                        No contracts, ever.
+                      </div>
+                      <div className="text-[#888] text-[0.9rem] leading-[1.5]">
+                        Zero lock-in. If what I&apos;m doing isn&apos;t working,
+                        you walk. No paperwork, no fees.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-11 h-11 rounded-full bg-carolina/10 flex items-center justify-center text-carolina">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-[#f0f0f0] font-bold text-base mb-1">
+                        You&apos;ll always know what&apos;s happening.
+                      </div>
+                      <div className="text-[#888] text-[0.9rem] leading-[1.5]">
+                        Monthly reports with plain findings — not agency metrics
+                        you can&apos;t connect to actual calls.
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div style={{
-                  background: "rgba(123, 175, 212, 0.03)",
-                  borderLeft: `3px solid ${C.carolina}`,
-                  padding: "20px 24px", borderRadius: "0 12px 12px 0",
-                  marginTop: 40,
-                }}>
-                  <p style={{
-                    color: C.text, fontSize: "0.95rem", lineHeight: 1.6,
-                    fontFamily: "var(--font-ui)", margin: 0, fontWeight: 500,
-                  }}>
-                    The data is straightforward: <span style={{ color: C.carolina }}>28% of searches</span> for a nearby service result in a purchase the same day.
+                <div className="bg-carolina/[0.03] border-l-[3px] border-carolina pl-6 py-5 pr-6 rounded-r-xl mt-10">
+                  <p className="text-[#f0f0f0] text-[0.95rem] leading-[1.6] font-sans m-0 font-medium">
+                    28% of searches for a nearby service result in a purchase that
+                    same day.{" "}
+                    <span className="text-carolina">
+                      That&apos;s the call you&apos;re missing right now.
+                    </span>
                   </p>
                 </div>
               </m.div>
 
-              {/* Right: Architect Portrait & Quote */}
               <m.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                style={{ position: "relative" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="relative"
               >
-                <div style={{
-                  borderRadius: 12, overflow: "hidden",
-                  border: `1px solid ${C.border}`,
-                  background: C.surface,
-                  aspectRatio: "1/1",
-                }}>
-                  <img
+                <div className="relative aspect-square rounded-xl overflow-hidden border border-white/[0.08] bg-surface">
+                  <Image
                     src="/images/chad.avif"
-                    alt="Chad Smith, Systems Architect"
-                    style={{
-                      width: "100%", height: "100%",
-                      objectFit: "cover",
-                      filter: "grayscale(1) contrast(1.1) brightness(0.9)",
-                      display: "block",
-                    }}
+                    alt="Chad Smith, founder of Local Search Ally"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover grayscale contrast-[1.1] brightness-90"
                   />
                 </div>
 
-                {/* Floating Quote Card */}
                 <m.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
-                  style={{
-                    position: "absolute",
-                    bottom: -115, // Shifted up to overlap shoulder but clear chin
-                    left: -40,
-                    padding: "24px",
-                    borderRadius: 12,
-                    background: "rgba(6, 6, 7, 0.50)", // Increased opacity for better card definition
-                    border: `1px solid ${C.carolinaBorder}`,
-                    maxWidth: 300,
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.6), 0 0 10px rgba(123, 175, 212, 0.1)",
-                    backdropFilter: "blur(12px)", // Reduced blur for a cleaner frosted glass effect
-                    zIndex: 10,
-                  }}
+                  className="absolute bottom-[-115px] left-[-40px] p-6 rounded-xl border border-carolina/30 max-w-[300px] backdrop-blur-[12px] z-10 shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+                  style={{ background: "rgba(6,6,7,0.75)" }}
                 >
-                  <div style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "0.65rem",
-                    letterSpacing: "0.2em",
-                    color: C.carolina,
-                    marginBottom: 16,
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 10,
-                    fontWeight: 800,
-                  }}>
-                    <span style={{ width: 6, height: 6, background: C.carolina, borderRadius: "50%" }} />
-                    SYSTEMS_ARCHITECT
+                  <div className="font-mono text-[0.65rem] tracking-[0.2em] text-carolina mb-4 flex items-center gap-2.5 font-bold">
+                    <span className="w-1.5 h-1.5 bg-carolina rounded-full" />
+                    Chad Smith · Local Search Ally
                   </div>
-                  <p style={{
-                    color: C.text,
-                    fontSize: "1.05rem",
-                    lineHeight: 1.6,
-                    margin: 0,
-                    fontStyle: "italic",
-                    fontWeight: 600,
-                    textShadow: "0 2px 4px rgba(0,0,0,0.5)", // Added for extra clarity
-                  }}>
-                    &quot;Data is the only currency that matters in the local ecosystem. We don&apos;t just find it; we master it.&quot;
+                  <p className="text-[#f0f0f0] text-[1.05rem] leading-[1.6] m-0 italic font-semibold">
+                    &quot;I&apos;m not here to sell you a retainer. I&apos;m here
+                    to help you rank above whoever&apos;s taking your calls right
+                    now.&quot;
                   </p>
                 </m.div>
               </m.div>
@@ -821,65 +692,48 @@ export default function HomeClient() {
           </div>
         </PerspectiveSection>
 
-        {/* ─── PLAN ──────────────────────────────────────────────────────────── */}
+        {/* ─── PLAN ─────────────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div style={{
-            background: "linear-gradient(180deg, transparent, rgba(123,175,212,0.02), transparent)",
-            padding: "clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem)",
-          }}>
-            <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-              <div style={{ textAlign: "center", marginBottom: 60 }}>
+          <div className="relative px-[clamp(1.5rem,5vw,3rem)] py-[clamp(5rem,10vw,8rem)]" style={{ background: "linear-gradient(180deg, #060607 0%, #0f1a24 20%, #0f1a24 80%, #060607 100%)" }}>
+            <div className="max-w-[1100px] mx-auto">
+              <div className="text-center mb-[60px]">
                 <Eyebrow>How This Works</Eyebrow>
-                <H2>Three steps. No surprises.</H2>
+                <SectionH2>Three steps. No surprises.</SectionH2>
               </div>
 
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                gap: 32,
-              }}>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {planSteps.map((step, i) => (
                   <m.div
                     key={step.num}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    whileHover={{
-                      y: -5,
-                      scale: 1.01,
-                      borderColor: C.carolina,
-                      boxShadow: "0 15px 35px rgba(0,0,0,0.4)"
-                    }}
                     viewport={{ once: true }}
-                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    style={{
-                      background: step.active ? "rgba(123, 175, 212, 0.05)" : "transparent",
-                      border: `1px solid ${step.active ? C.carolinaBorder : C.border}`,
-                      borderRadius: 16, padding: "40px",
-                      position: "relative",
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 25,
+                      delay: i * 0.1,
                     }}
+                    className={`rounded-2xl p-10 relative border transition-all duration-300 hover:-translate-y-1.5 hover:border-carolina hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] ${
+                      step.active
+                        ? "bg-carolina/5 border-carolina/30"
+                        : "bg-transparent border-white/[0.08]"
+                    }`}
                   >
-                    <div style={{
-                      fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: C.carolina,
-                      marginBottom: 20, fontWeight: 700,
-                    }}>
+                    <div className="font-mono text-[0.8rem] text-carolina mb-5 font-bold">
                       {step.num}
                     </div>
-                    <h3 style={{
-                      fontFamily: "var(--font-display)", fontSize: "1.5rem",
-                      fontWeight: 800, color: C.text, marginBottom: 16,
-                    }}>
+                    <h3 className="font-serif text-2xl font-extrabold text-[#f0f0f0] mb-4">
                       {step.title}
                     </h3>
-                    <p style={{
-                      color: C.text2, fontSize: "1rem", lineHeight: 1.7,
-                      fontFamily: "var(--font-ui)", marginBottom: 24,
-                    }}>
+                    <p className="text-[#c0c0c0] text-base leading-[1.7] font-sans mb-6">
                       {step.body}
                     </p>
                     {step.cta && (
-                      <Link href={step.cta.href} className="inline-link" style={{
-                        color: C.carolina, fontWeight: 600, fontSize: "0.9rem",
-                      }}>
+                      <Link
+                        href={step.cta.href}
+                        className="text-carolina font-semibold text-[0.9rem] no-underline relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-px after:bg-current hover:after:w-full after:transition-all"
+                      >
                         {step.cta.label}
                       </Link>
                     )}
@@ -891,89 +745,74 @@ export default function HomeClient() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                style={{
-                  maxWidth: 800, margin: "60px auto 0",
-                  background: "rgba(255,255,255,0.02)", border: `1px solid ${C.border}`,
-                  borderRadius: 12, padding: "24px 32px",
-                  display: "flex", flexWrap: "wrap", gap: "24px 40px",
-                  justifyContent: "center",
-                }}
+                className="max-w-[800px] mx-auto mt-[60px] bg-white/[0.02] border border-white/[0.08] rounded-xl px-8 py-6 flex flex-wrap gap-x-10 gap-y-6 justify-center"
               >
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={C.carolina} strokeWidth="2">
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
-                  <span style={{ fontSize: "0.85rem", color: C.text, fontWeight: 600 }}>No contracts, ever.</span>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={C.carolina} strokeWidth="2">
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
-                  <span style={{ fontSize: "0.85rem", color: C.text, fontWeight: 600 }}>Full transparency.</span>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={C.carolina} strokeWidth="2">
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
-                  <span style={{ fontSize: "0.85rem", color: C.text, fontWeight: 600 }}>Real results, no fluff.</span>
-                </div>
+                {[
+                  "No contracts, ever.",
+                  "Full transparency.",
+                  "Real results, no fluff.",
+                ].map((text) => (
+                  <div key={text} className="flex items-center gap-3">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#7bafd4"
+                      strokeWidth="2"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                    <span className="text-[0.85rem] text-[#f0f0f0] font-semibold">
+                      {text}
+                    </span>
+                  </div>
+                ))}
               </m.div>
             </div>
           </div>
         </PerspectiveSection>
 
-        {/* ─── AUDIT TOOL ────────────────────────────────────────────────────── */}
+        {/* ─── AUDIT TOOL ───────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div style={{
-            maxWidth: 900, margin: "0 auto", textAlign: "center",
-            padding: "clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem)",
-          }}>
+          <div className="max-w-[900px] mx-auto text-center px-[clamp(1.5rem,5vw,3rem)] py-[clamp(5rem,10vw,8rem)]">
             <Eyebrow>Free Tool</Eyebrow>
-            <H2>See your scores <span style={{ color: C.carolina }}>before</span> you talk to anyone.</H2>
-            <Body style={{ margin: "0 auto 40px" }}>
-              Enter your business name, trade, and city. In about 90 seconds you&apos;ll get a scored audit across seven critical areas.
-            </Body>
+            <SectionH2>
+              See your scores{" "}
+              <span className="text-carolina">before</span> you talk to anyone.
+            </SectionH2>
+            <BodyText className="mx-auto mb-10">
+              Enter your business name, trade, and city. In about 90 seconds
+              you&apos;ll get a scored audit across seven critical areas.
+            </BodyText>
 
             <m.div
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="glass-strong"
-              style={{
-                padding: "48px", borderRadius: 24, border: `1px solid ${C.carolinaBorder}`,
-                position: "relative", overflow: "hidden",
-                marginBottom: 40,
-              }}
+              className="glass-strong p-12 rounded-3xl border border-carolina/30 relative overflow-hidden mb-10"
             >
-              <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "2px", background: `linear-gradient(90deg, transparent, ${C.carolina}, transparent)`, opacity: 0.3 }} />
-
-              <GradientBtn href="/audit" style={{ fontSize: "1rem", padding: "20px 48px" }}>
+              <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-carolina to-transparent opacity-30" />
+              <PrimaryBtn href="/audit" className="text-base px-12 py-5">
                 Launch Full SEO Audit Dashboard →
-              </GradientBtn>
-
-              <p style={{ color: C.muted2, fontSize: "0.75rem", marginTop: 20, fontFamily: "var(--font-mono)" }}>
+              </PrimaryBtn>
+              <p className="text-[#555] text-[0.75rem] mt-5 font-mono">
                 NO EMAIL REQUIRED TO SEE INITIAL SCORES
               </p>
             </m.div>
 
-            <div style={{
-              display: "flex", flexWrap: "wrap", alignItems: "center",
-              gap: "12px 24px", justifyContent: "center", opacity: 0.6,
-            }} aria-label="Audit covers">
+            <div
+              className="flex flex-wrap items-center gap-x-6 gap-y-3 justify-center opacity-60"
+              aria-label="Audit covers"
+            >
               {auditAreas.map((area, i) => (
-                <span key={area} style={{ display: "inline-flex", alignItems: "center" }}>
-                  <span style={{
-                    fontSize: "0.7rem", fontWeight: 700,
-                    letterSpacing: "0.15em", textTransform: "uppercase",
-                    color: C.muted, fontFamily: "var(--font-mono)",
-                  }}>
+                <span key={area} className="inline-flex items-center">
+                  <span className="text-[0.7rem] font-bold tracking-[0.15em] uppercase text-[#888] font-mono">
                     {area}
                   </span>
                   {i < auditAreas.length - 1 && (
-                    <span style={{
-                      display: "inline-block", width: 4, height: 4, borderRadius: "50%",
-                      background: C.carolina, marginLeft: 24, opacity: 0.3,
-                    }} />
+                    <span className="inline-block w-1 h-1 rounded-full bg-carolina ml-6 opacity-30" />
                   )}
                 </span>
               ))}
@@ -981,102 +820,97 @@ export default function HomeClient() {
           </div>
         </PerspectiveSection>
 
-        {/* ─── SUCCESS ───────────────────────────────────────────────────────── */}
+        {/* ─── SUCCESS ──────────────────────────────────────────────────────── */}
         <PerspectiveSection>
           <div
             ref={stakesRef}
-            style={{
-              maxWidth: 1100, margin: "0 auto",
-              padding: "0 clamp(1.5rem, 5vw, 3rem) clamp(5rem, 10vw, 8rem)",
-            }}
+            className="max-w-[1100px] mx-auto px-[clamp(1.5rem,5vw,3rem)] pb-[clamp(5rem,10vw,8rem)]"
           >
-            <div className="stakes-grid">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[80px] items-center">
               <div style={{ perspective: "1000px" }}>
                 <m.div
+                  className="aspect-square bg-carolina/5 border border-white/[0.08] rounded-3xl flex items-center justify-center relative overflow-hidden"
                   style={{
-                    aspectRatio: "1/1",
-                    background: "rgba(123,175,212,0.05)",
-                    border: `1px solid ${C.border}`, borderRadius: 24,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    position: "relative",
-                    rotateX: mounted ? rotateXStakes : 0,
-                    rotateY: mounted ? rotateYStakes : 0,
-                    scale: mounted ? scaleStakes : 1,
-                    opacity: mounted ? opacityStakes : 1,
-                    overflow: "hidden",
+                    rotateX: mounted ? stakesRotateX : 0,
+                    rotateY: mounted ? stakesRotateY : 0,
+                    scale: mounted ? stakesScale : 1,
+                    opacity: mounted ? stakesOpacity : 1,
                   }}
                 >
                   <div className="scanning-line" />
-                  <div style={{
-                    width: "80%", height: "80%", border: `1px dashed ${C.carolina}`,
-                    borderRadius: "50%", opacity: 0.2, animation: "spin 20s linear infinite",
-                  }} />
-                  <div style={{ position: "absolute", textAlign: "center" }}>
-                    <div style={{ fontSize: "clamp(3rem, 10vw, 4rem)", fontWeight: 800, color: C.carolina, lineHeight: 1 }}>97%</div>
-                    <div style={{ fontSize: "0.6rem", fontFamily: "var(--font-mono)", color: C.muted, marginTop: 8, letterSpacing: "0.2em" }}>SYSTEM_RELIANCE</div>
+                  <div
+                    className="absolute w-4/5 h-4/5 border border-dashed border-carolina rounded-full opacity-20"
+                    style={{ animation: "spin 20s linear infinite" }}
+                  />
+                  <div className="absolute text-center">
+                    <div className="text-[clamp(3rem,10vw,4rem)] font-extrabold text-carolina leading-none">
+                      <CountUp to={97} suffix="%" duration={2} />
+                    </div>
+                    <div className="text-[0.6rem] font-mono text-[#888] mt-2 tracking-[0.2em]">
+                      OF SEARCHES START ON GOOGLE
+                    </div>
                   </div>
                 </m.div>
               </div>
+
               <div>
                 <Eyebrow>What Success Looks Like</Eyebrow>
-                <H2>The phone rings from people who already want to hire you.</H2>
-                <Body>
-                  When visibility gaps are fixed, you stop depending on referral timing. Someone needs HVAC before summer hits. They open Google, they find you, they call.
-                </Body>
-                <Body>
-                  What that looks like day-to-day: a schedule that fills from search, not just referrals. Calls from people who already know what they need.
-                </Body>
+                <SectionH2>
+                  The phone rings from people who already want to hire you.
+                </SectionH2>
+                <BodyText>
+                  When visibility gaps are fixed, you stop depending on referral
+                  timing. Someone needs HVAC before summer hits. They open Google,
+                  they find you, they call.
+                </BodyText>
+                <BodyText>
+                  What that looks like day-to-day: a schedule that fills from
+                  search, not just referrals. Calls from people who already know
+                  what they need.
+                </BodyText>
               </div>
             </div>
           </div>
         </PerspectiveSection>
 
-        {/* ─── STAKES ────────────────────────────────────────────────────────── */}
+        {/* ─── STAKES ───────────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div style={{ padding: "0 clamp(1.5rem, 5vw, 3rem) clamp(5rem, 10vw, 8rem)" }}>
+          <div className="px-[clamp(1.5rem,5vw,3rem)] pb-[clamp(5rem,10vw,8rem)]">
             <m.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              style={{
-                maxWidth: 1000, margin: "0 auto",
-                background: "rgba(123, 175, 212, 0.02)",
-                border: `1px solid ${C.border}`,
-                borderTop: `1px solid ${C.carolinaBorder}`,
-                borderRadius: 24,
-                padding: "clamp(3rem, 8vw, 5rem)",
-                textAlign: "center",
-                position: "relative", overflow: "hidden",
-              }}
+              className="max-w-[1000px] mx-auto bg-carolina/[0.02] border border-white/[0.08] border-t-carolina/30 rounded-3xl p-[clamp(3rem,8vw,5rem)] text-center relative overflow-hidden"
             >
-              <div style={{ position: "absolute", top: -50, left: -50, width: 200, height: 200, background: C.carolina, filter: "blur(120px)", opacity: 0.05 }} />
-
-              <H2 style={{ maxWidth: 800, margin: "0 auto 24px" }}>
+              <div className="absolute top-[-80px] left-[-80px] w-[320px] h-[320px] bg-carolina blur-[140px] opacity-[0.12] pointer-events-none" />
+              <SectionH2 className="max-w-[800px] mx-auto mb-6">
                 Every month you&apos;re invisible is work going to a competitor.
-              </H2>
-              <Body style={{ maxWidth: 700, margin: "0 auto 40px" }}>
-                Referrals are real business. But they&apos;re not a system — they&apos;re a streak. When the streak slows, you need a machine that produces calls. I build the machine.
-              </Body>
-              <div className="cta-row" style={{ justifyContent: "center" }}>
-                <GradientBtn href="/audit">See Where You Stand Online →</GradientBtn>
+              </SectionH2>
+              <BodyText className="max-w-[700px] mx-auto mb-10">
+                Referrals are real business. But they&apos;re not a system —
+                they&apos;re a streak. When the streak slows, you need a machine
+                that produces calls. I build the machine.
+              </BodyText>
+              <div className="flex justify-center">
+                <PrimaryBtn href="/audit">
+                  See Where You Stand Online →
+                </PrimaryBtn>
               </div>
             </m.div>
           </div>
         </PerspectiveSection>
 
-        {/* ─── FAQ ───────────────────────────────────────────────────────────── */}
+        {/* ─── FAQ ──────────────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div style={{
-            maxWidth: 900, margin: "0 auto",
-            padding: "0 clamp(1.5rem, 5vw, 3rem) clamp(5rem, 10vw, 8rem)",
-          }}>
-            <div className="faq-grid">
+          <div className="max-w-[900px] mx-auto px-[clamp(1.5rem,5vw,3rem)] pb-[clamp(5rem,10vw,8rem)]">
+            <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-[60px]">
               <div>
                 <Eyebrow>Transparency</Eyebrow>
-                <H2>Questions worth asking.</H2>
-                <Body>
-                  I don't expect you to take my word for it. Here is how I work, what it costs, and why I don't use contracts.
-                </Body>
+                <SectionH2>Questions worth asking.</SectionH2>
+                <BodyText>
+                  I don&apos;t expect you to take my word for it. Here is how I
+                  work, what it costs, and why I don&apos;t use contracts.
+                </BodyText>
               </div>
 
               <dl>
@@ -1087,52 +921,46 @@ export default function HomeClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
-                    className="faq-item"
-                    style={{
-                      borderTop: `1px solid ${C.border}`,
-                    }}
+                    className="border-t border-white/[0.08] mx-[-1rem] px-4 py-6 rounded-lg hover:bg-white/[0.03] hover:border-white/10 transition-all"
                   >
-                    <dt style={{
-                      fontFamily: "var(--font-ui)", fontSize: "1.1rem",
-                      fontWeight: 700, color: C.text, marginBottom: 12, lineHeight: 1.4,
-                    }}>
+                    <dt className="font-sans text-[1.1rem] font-bold text-[#f0f0f0] mb-3 leading-[1.4]">
                       {item.q}
                     </dt>
-                    <dd style={{
-                      fontFamily: "var(--font-ui)", fontSize: "1rem",
-                      color: C.text2, lineHeight: 1.7, margin: 0,
-                    }}>
+                    <dd className="font-sans text-base text-[#c0c0c0] leading-[1.7] m-0">
                       {item.a}
                     </dd>
                   </m.div>
                 ))}
-                <div style={{ borderTop: `1px solid ${C.border}` }} />
+                <div className="border-t border-white/[0.08]" />
               </dl>
             </div>
           </div>
         </PerspectiveSection>
 
-        {/* ─── FINAL CTA ─────────────────────────────────────────────────────── */}
+        {/* ─── FINAL CTA ────────────────────────────────────────────────────── */}
         <PerspectiveSection>
-          <div style={{
-            maxWidth: 800, margin: "0 auto", textAlign: "center",
-            padding: "0 clamp(1.5rem, 5vw, 3rem) clamp(8rem, 15vw, 12rem)",
-            position: "relative",
-          }}>
+          <div className="max-w-[800px] mx-auto text-center px-[clamp(1.5rem,5vw,3rem)] pb-[clamp(8rem,15vw,12rem)] relative">
             <m.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <H2 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>The best contractor in town shouldn&apos;t be the hardest to find.</H2>
-              <Body style={{ margin: "0 auto 40px", maxWidth: 600 }}>
-                Run the free audit. If the findings are useful on their own, take them. If you want to talk through fixing them, I&apos;m here.
-              </Body>
-              <div className="cta-row" style={{ justifyContent: "center" }}>
-                <GradientBtn href="/audit" style={{ padding: "20px 48px" }}>Run Your Free Audit →</GradientBtn>
-                <OutlineBtn href="/contact">Let&apos;s Talk — It&apos;s Free →</OutlineBtn>
+              <SectionH2 className="text-[clamp(2rem,5vw,3.5rem)]">
+                The best contractor in town shouldn&apos;t be the hardest to find.
+              </SectionH2>
+              <BodyText className="mx-auto mb-10 max-w-[600px]">
+                Run the free audit. If the findings are useful on their own, take
+                them. If you want to talk through fixing them, I&apos;m here.
+              </BodyText>
+              <div className="flex items-center justify-center gap-5 flex-wrap">
+                <PrimaryBtn href="/audit" className="px-12 py-5">
+                  Run Your Free Audit →
+                </PrimaryBtn>
+                <OutlineBtn href="/contact">
+                  Let&apos;s Talk — It&apos;s Free →
+                </OutlineBtn>
               </div>
-              <p style={{ color: C.muted2, fontSize: "0.75rem", marginTop: 24, fontFamily: "var(--font-mono)" }}>
+              <p className="text-[#555] text-[0.75rem] mt-6 font-mono">
                 NO PITCH · NO PRESSURE · REAL DATA
               </p>
             </m.div>
