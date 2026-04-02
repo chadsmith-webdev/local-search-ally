@@ -43,63 +43,68 @@ export default function Navbar() {
         background: scrolled ? "rgba(10,10,10,0.92)" : "rgba(10,10,10,0.7)",
         borderBottom: `1px solid ${scrolled ? "rgba(255,255,255,0.1)" : C.border}`,
         backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)",
-        padding: "0 var(--page-gutter)",
-        display: "flex", alignItems: "center", justifyContent: "space-between",
         height: 60,
         transition: "background 0.25s, border-color 0.25s",
+        display: "flex", alignItems: "center"
       }}>
-        <Logo size={26} />
+        <div style={{
+          maxWidth: 1400, width: "100%", margin: "0 auto",
+          paddingLeft: "var(--page-gutter)", paddingRight: "var(--page-gutter)",
+          display: "flex", alignItems: "center", justifyContent: "space-between"
+        }}>
+          <Logo size={26} />
 
-        {/* Desktop links */}
-        <div style={{ display: "flex", alignItems: "center", gap: "1.75rem" }} className="nav-desktop">
-          {links.map(({ label, href }) => {
-            const active = pathname === href || pathname.startsWith(href + "/");
-            return (
-              <Link key={href} href={href} style={{
-                color: active ? C.carolina : C.muted,
-                textDecoration: "none", fontSize: "0.84rem",
-                fontFamily: "var(--font-ui)", letterSpacing: "0.01em",
-                fontWeight: active ? 600 : 400,
-                transition: "color 0.15s",
-              }}
-                onMouseEnter={e => e.currentTarget.style.color = C.carolina}
-                onMouseLeave={e => { if (!active) e.currentTarget.style.color = C.muted; }}
-              >
-                {label}
-              </Link>
-            );
-          })}
-          <Link href="/audit" style={{
-            background: `linear-gradient(135deg, ${C.carolina} 0%, ${C.steel} 100%)`,
-            color: "#1e2a3a", fontWeight: 600, fontSize: "0.72rem",
-            letterSpacing: "0.1em", textTransform: "uppercase",
-            fontFamily: "var(--font-mono)",
-            padding: "8px 16px", borderRadius: 6,
-            textDecoration: "none", whiteSpace: "nowrap",
-            transition: "opacity 0.15s",
-          }}
-            onMouseEnter={e => e.currentTarget.style.opacity = "0.88"}
-            onMouseLeave={e => e.currentTarget.style.opacity = "1"}
-          >
-            Free Audit →
-          </Link>
+          {/* Desktop links */}
+          <div style={{ display: "flex", alignItems: "center", gap: "1.75rem" }} className="nav-desktop">
+            {links.map(({ label, href }) => {
+              const active = pathname === href || pathname.startsWith(href + "/");
+              return (
+                <Link key={href} href={href} style={{
+                  color: active ? C.carolina : C.muted,
+                  textDecoration: "none", fontSize: "0.84rem",
+                  fontFamily: "var(--font-ui)", letterSpacing: "0.01em",
+                  fontWeight: active ? 600 : 400,
+                  transition: "color 0.15s",
+                }}
+                  onMouseEnter={e => e.currentTarget.style.color = C.carolina}
+                  onMouseLeave={e => { if (!active) e.currentTarget.style.color = C.muted; }}
+                >
+                  {label}
+                </Link>
+              );
+            })}
+            <Link href="/audit" style={{
+              background: `linear-gradient(135deg, ${C.carolina} 0%, ${C.steel} 100%)`,
+              color: "#1e2a3a", fontWeight: 600, fontSize: "0.72rem",
+              letterSpacing: "0.1em", textTransform: "uppercase",
+              fontFamily: "var(--font-mono)",
+              padding: "8px 16px", borderRadius: 6,
+              textDecoration: "none", whiteSpace: "nowrap",
+              transition: "opacity 0.15s",
+            }}
+              onMouseEnter={e => e.currentTarget.style.opacity = "0.88"}
+              onMouseLeave={e => e.currentTarget.style.opacity = "1"}
+            >
+              Free Audit →
+            </Link>
+          </div>
+
+          {/* Hamburger */}
+          <button onClick={() => setOpen(o => !o)} className="nav-hamburger" aria-label="Toggle menu"
+            style={{ background: "none", border: "none", cursor: "pointer", padding: "8px", display: "none", flexDirection: "column", gap: 5 }}>
+            {[0, 1, 2].map(i => (
+              <span key={i} style={{
+                display: "block", width: 22, height: 2, background: C.text, borderRadius: 2,
+                transition: "transform 0.25s, opacity 0.25s",
+                transform: open
+                  ? i === 0 ? "translateY(7px) rotate(45deg)"
+                  : i === 2 ? "translateY(-7px) rotate(-45deg)" : "none"
+                  : "none",
+                opacity: open && i === 1 ? 0 : 1,
+              }} />
+            ))}
+          </button>
         </div>
-
-        {/* Hamburger */}
-        <button onClick={() => setOpen(o => !o)} className="nav-hamburger" aria-label="Toggle menu"
-          style={{ background: "none", border: "none", cursor: "pointer", padding: "8px", display: "none", flexDirection: "column", gap: 5 }}>
-          {[0, 1, 2].map(i => (
-            <span key={i} style={{
-              display: "block", width: 22, height: 2, background: C.text, borderRadius: 2,
-              transition: "transform 0.25s, opacity 0.25s",
-              transform: open
-                ? i === 0 ? "translateY(7px) rotate(45deg)"
-                : i === 2 ? "translateY(-7px) rotate(-45deg)" : "none"
-                : "none",
-              opacity: open && i === 1 ? 0 : 1,
-            }} />
-          ))}
-        </button>
       </nav>
 
       {/* Mobile drawer */}
