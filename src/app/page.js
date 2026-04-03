@@ -1,5 +1,3 @@
-import HomeClient from "./HomeClient";
-
 export const metadata = {
   title: "Local SEO for NWA Contractors | Local Search Ally",
   description:
@@ -48,10 +46,12 @@ export default function Page() {
   return (
     <>
       <script
-        type="application/ld+json"
+        type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HomeClient />
+      <main>
+        <p>Coming soon.</p>
+      </main>
     </>
   );
 }

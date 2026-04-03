@@ -23,7 +23,7 @@ This is a redesign of the primary marketing and lead-generation website. The sit
 | ---------- | --------------------------------------------------------------------------- |
 | Framework  | Next.js (App Router)                                                        |
 | Language   | JavaScript — no TypeScript                                                  |
-| Styling    | Tailwind CSS (pure — no component library)                                  |
+| Styling    | CSS Modules (layout) + Tailwind CSS (color, typography, interactive states) |
 | Blog       | MDX — posts live in `src/posts/`                                            |
 | 3D / WebGL | Three.js via React Three Fiber (`@react-three/fiber`) + `@react-three/drei` |
 | Animations | Framer Motion (page loads, scroll, UI transitions)                          |
@@ -65,9 +65,9 @@ jsconfig.json
 
 ### Key conventions
 
-- **Server vs. Client components:** Default to Server Components. Only add `"use client"` when needed (event handlers, hooks, Framer Motion, R3F). The `HomeClient.js` pattern — a thin client wrapper over a server page — is correct; keep using it.
+- **Server vs. Client components:** Default to Server Components. Only add `"use client"` when needed (event handlers, hooks, Framer Motion, R3F). The `HomeClient.jsx` pattern — a thin client wrapper over a server page — is correct; keep using it.
 - **No TypeScript:** Use JSDoc comments for prop documentation instead of TypeScript types where clarity is needed.
-- **Tailwind only:** No inline styles unless absolutely necessary for dynamic values (e.g., R3F canvas sizing). No CSS Modules.
+- **CSS architecture:** Tailwind handles color (`text-carolina`, `bg-surface`), typography (`font-bold`, `text-sm`, `uppercase`, `tracking-widest`), and interactive states (`hover:brightness-110`, `transition-all`, `focus-visible:`). All layout CSS — `display`, `flex`, `grid`, `gap`, `margin`, `padding`, `width`, `max-width`, `position`, `overflow`, `border-radius`, `height` — goes in CSS Modules (`.module.css` files colocated with the component). Shared layout patterns (`.container`, `.section`) are defined in `globals.css`. Never use Tailwind for layout — it does not generate reliably for client components in Tailwind v4.
 - **MDX blog:** Posts go in `src/posts/`. Frontmatter handles title, date, description, and slug. Process via `next-mdx-remote` or `@next/mdx` — whichever is already configured.
 
 ---
@@ -147,10 +147,11 @@ This is an active redesign — the existing code is being rebuilt, not patched. 
 
 ### File naming conventions going forward
 
-- Components: PascalCase (`HeroSection.js`, `ServiceCard.js`)
-- Utilities/helpers: camelCase (`formatDate.js`, `getMdxPosts.js`)
+- Components: PascalCase `.jsx` (`HeroSection.jsx`, `ServiceCard.jsx`)
+- Component styles: same name with `.module.css` suffix (`HeroSection.module.css`) — colocated in the same folder
+- Utilities/helpers: camelCase `.js` (`formatDate.js`, `getMdxPosts.js`)
 - Pages: Next.js convention (`page.js`, `layout.js`)
-- 3D/R3F components: PascalCase, suffix with `Scene` or `Canvas` (`HeroScene.js`, `PinCanvas.js`)
+- 3D/R3F components: PascalCase `.jsx`, suffix with `Scene` or `Canvas` (`HeroScene.jsx`, `PinCanvas.jsx`)
 
 ---
 
@@ -400,14 +401,16 @@ Before committing any copy changes, verify:
 
 - **Mobile-first always** — home service trade owners are often on phones at job sites
 - **No TypeScript** — plain JavaScript throughout; use JSDoc for type hints where helpful
-- **Inline styles for all box-model and layout CSS** — Tailwind v4 utility classes for padding, margin, display, flex, grid, height, width, overflow, border-radius, and gap are unreliable in client components. Use `style={{}}` props for these. Tailwind color, font, and text utilities work fine.
+- **CSS Modules for all layout** — Never use Tailwind utilities for layout properties (`display`, `flex`, `grid`, `gap`, `margin`, `padding`, `width`, `max-width`, `height`, `overflow`, `position`, `border-radius`). They do not generate reliably for client components in Tailwind v4. Put all layout in a colocated `.module.css` file instead.
+- **Tailwind for non-layout only** — Color, typography, hover/focus states, transitions, and shadows are safe and work correctly.
 - Keep components small and single-purpose — if a component file exceeds ~150 lines, it probably needs splitting
 
 ### Tailwind v4 Known Gotchas
 
-- **`mx-auto` ≠ `margin: 0 auto`** — Tailwind v4 maps `mx-auto` to `margin-inline: auto` (CSS Logical Properties), which behaves differently inside flex containers. Always use `style={{ margin: "0 auto" }}` for block centering.
-- **`h-full` inside Framer Motion `m.div` collapses to zero** — `m.div` has no height by default, so `height: 100%` on children resolves to 0. Use `style={{ flex: 1 }}` on children instead, and add `style={{ display: "flex", flexDirection: "column" }}` to the `m.div` wrapper.
-- **`<Image fill>` breaks `overflow: hidden` under 3D transforms** — `fill` renders the `<img>` as `position: absolute`, which escapes `overflow: hidden` clipping when any ancestor has a 3D CSS transform (`perspective`, `translateZ`, `transformStyle: preserve-3d`). For images inside tilt/3D card components, use explicit `width`/`height` props with `style={{ objectFit: "cover", width: "100%" }}` instead.
+- **Layout utilities silently fail in client components** — Classes like `flex`, `grid`, `gap-8`, `p-6`, `mx-auto`, `h-full`, `overflow-hidden`, `rounded-xl` do not generate CSS reliably for dynamic/client-side JSX. Use CSS Modules for all layout instead.
+- **`mx-auto` ≠ `margin: 0 auto`** — Tailwind v4 maps `mx-auto` to `margin-inline: auto` (CSS Logical Properties), which behaves differently inside flex containers. Use `margin: 0 auto` in a CSS Module instead.
+- **`h-full` inside Framer Motion `m.div` collapses to zero** — `m.div` has no height by default, so `height: 100%` on children resolves to 0. In your CSS Module, give the `m.div` `display: flex; flex-direction: column;` and use `flex: 1` on the child.
+- **`<Image fill>` breaks `overflow: hidden` under 3D transforms** — `fill` renders the `<img>` as `position: absolute`, which escapes `overflow: hidden` clipping when any ancestor has a 3D CSS transform (`perspective`, `translateZ`, `transformStyle: preserve-3d`). For images inside tilt/3D card components, use explicit `width`/`height` props with `object-fit: cover` in the CSS Module instead.
 
 ### SEO (this site lives or dies on local SEO)
 

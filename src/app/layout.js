@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
     >
       <body>
         <Navbar />
-        <main style={{ flex: 1, minHeight: "100vh" }}>{children}</main>
+        <main className='flex-1 min-h-screen'>{children}</main>
         <Footer />
         <GoogleAnalytics gaId='G-SGQ98MEHWZ' />
       </body>
