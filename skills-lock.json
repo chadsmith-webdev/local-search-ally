@@ -26,6 +26,11 @@
       "sourceType": "github",
       "computedHash": "081e388a6bd35c8e11a7b08de47fea59e64fc5422bf1bb898f2d94175ab0eda3"
     },
+    "superpowers": {
+      "source": "founderjourney/claude-skills",
+      "sourceType": "github",
+      "computedHash": "5732c6239dae04ef5e36d22713f338552df717f1cd1d677a9561ec967e6851eb"
+    },
     "ui-ux-pro-max": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",
       "sourceType": "github",
