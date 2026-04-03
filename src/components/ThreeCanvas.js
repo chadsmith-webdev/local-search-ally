@@ -2,6 +2,16 @@
 
 import { useRef, useMemo, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+
+// R3F v9 uses THREE.Clock internally; Three.js r175+ deprecated it in favor of THREE.Timer.
+// Suppress until R3F v10 (currently alpha) ships a stable fix.
+if (typeof window !== "undefined") {
+  const _warn = console.warn;
+  console.warn = (...args) => {
+    if (typeof args[0] === "string" && args[0].includes("THREE.Clock")) return;
+    _warn.apply(console, args);
+  };
+}
 import { Sphere, MeshDistortMaterial, Points, PointMaterial, Torus } from "@react-three/drei";
 
 // Module-level ref — readable inside useFrame without causing re-renders
