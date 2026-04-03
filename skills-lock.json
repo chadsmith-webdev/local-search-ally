@@ -11,6 +11,11 @@
       "sourceType": "github",
       "computedHash": "2370ebe70b19e3a60948772624c904d2308add52a403c4dceb84cf44708c6d3f"
     },
+    "SEO Optimizer": {
+      "source": "davila7/claude-code-templates",
+      "sourceType": "github",
+      "computedHash": "40f156d4e5f94c560128a46a5118170ad3515d7f12edbe80cfc461d9af46c606"
+    },
     "frontend-design": {
       "source": "anthropics/claude-code",
       "sourceType": "github",
@@ -30,6 +35,11 @@
       "source": "inferen-sh/skills",
       "sourceType": "github",
       "computedHash": "081e388a6bd35c8e11a7b08de47fea59e64fc5422bf1bb898f2d94175ab0eda3"
+    },
+    "storybrand-messaging": {
+      "source": "wondelai/skills",
+      "sourceType": "github",
+      "computedHash": "97e1fe5e886c49a5fd7ca5776071b0fca82878976a440945abcc8d8cd4f3b276"
     },
     "superpowers": {
       "source": "founderjourney/claude-skills",
