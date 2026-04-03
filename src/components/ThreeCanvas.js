@@ -3,7 +3,6 @@
 import { useRef, useMemo, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial, Points, PointMaterial, Torus } from "@react-three/drei";
-import * as THREE from "three";
 
 // Module-level ref — readable inside useFrame without causing re-renders
 const scrollProgress = { current: 0 };
@@ -11,31 +10,33 @@ const scrollProgress = { current: 0 };
 // ─── DIAGNOSTIC CORE ────────────────────────────────────────────────────────
 
 function DiagnosticCore() {
-  const groupRef  = useRef();
-  const ring1Ref  = useRef();
-  const ring2Ref  = useRef();
-  const ring3Ref  = useRef();
+  const groupRef   = useRef();
+  const ring1Ref   = useRef();
+  const ring2Ref   = useRef();
+  const ring3Ref   = useRef();
   const nucleusRef = useRef();
+  const elapsed    = useRef(0);
 
-  useFrame((state) => {
-    const time   = state.clock.getElapsedTime();
+  useFrame((state, delta) => {
+    elapsed.current += delta;
+    const time   = elapsed.current;
     const scroll = scrollProgress.current; // 0 = top, 1 = 1 viewport scrolled
 
     // ── 1. Camera fly-in (first 2s, ease-out cubic) ─────────────────────────
-    const loadT  = Math.min(time / 2, 1);
-    const eased  = 1 - Math.pow(1 - loadT, 3);
+    const loadT = Math.min(time / 2, 1);
+    const eased = 1 - Math.pow(1 - loadT, 3);
     state.camera.position.z = 60 - 35 * eased; // 60 → 25
 
     // ── 2. Scroll-driven rotation & drift ────────────────────────────────────
-    groupRef.current.position.y  = Math.sin(time * 0.5) * 2 - scroll * 4;
-    groupRef.current.rotation.y  = time * 0.1 + scroll * 1.8;
-    groupRef.current.rotation.x  = scroll * 0.25;
+    groupRef.current.position.y = Math.sin(time * 0.5) * 2 - scroll * 4;
+    groupRef.current.rotation.y = time * 0.1 + scroll * 1.8;
+    groupRef.current.rotation.x = scroll * 0.25;
     const s = Math.max(0.35, 1 - scroll * 0.25);
     groupRef.current.scale.setScalar(s);
 
     // ── Rings ────────────────────────────────────────────────────────────────
-    ring1Ref.current.rotation.z = time * 0.4;
-    ring1Ref.current.rotation.x = time * 0.2;
+    ring1Ref.current.rotation.z =  time * 0.4;
+    ring1Ref.current.rotation.x =  time * 0.2;
     ring2Ref.current.rotation.z = -time * 0.3;
     ring2Ref.current.rotation.y =  time * 0.5;
     ring3Ref.current.rotation.x = -time * 0.6;

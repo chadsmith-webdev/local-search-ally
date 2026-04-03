@@ -118,7 +118,7 @@ function Blueprint3D({ completedIds }) {
 }
 
 // ─── Section card ─────────────────────────────────────────────────────────────
-function SectionCard({ section, locked, visible, isFocused, onFocus }) {
+function SectionCard({ section, locked, visible, isFocused, onFocus, competitorNames }) {
   const meta = SECTION_META[section.id] || {};
   const statusColor = section.status === "green" ? C.green : section.status === "yellow" ? C.yellow : C.red;
   const open = isFocused;
@@ -164,6 +164,11 @@ function SectionCard({ section, locked, visible, isFocused, onFocus }) {
           <div style={{ fontSize: "0.95rem", fontWeight: 600, color: locked ? C.muted : C.text, lineHeight: 1.4, fontFamily: "var(--font-ui)" }}>
             {locked ? "Unlock with your email →" : section.headline}
           </div>
+          {locked && section.id === "competitors" && competitorNames?.length > 0 && (
+            <div style={{ fontSize: "0.75rem", color: C.carolina, fontFamily: "var(--font-mono)", marginTop: 4, letterSpacing: "0.03em" }}>
+              {competitorNames.join(" · ")}
+            </div>
+          )}
         </div>
         <div style={{ textAlign: "right", flexShrink: 0, minWidth: 50 }}>
           <m.div 
@@ -555,6 +560,7 @@ export default function AuditClient() {
                   visible={visibleSections.some(v => v.id === s.id)}
                   isFocused={focusedId === s.id}
                   onFocus={setFocusedId}
+                  competitorNames={s.id === "competitors" ? result.competitor_names : undefined}
                 />
               ))}
             </div>
