@@ -1,7 +1,10 @@
 import ServicesHero from "@/components/ServicesHero";
+import ServicesStatBar from "@/components/ServicesStatBar";
 import ProblemFrame from "@/components/ProblemFrame";
 import ServicesGrid from "@/components/ServicesGrid";
 import ServicesBundle from "@/components/ServicesBundle";
+import ServicesHowItWorks from "@/components/ServicesHowItWorks";
+import ServicesAuthority from "@/components/ServicesAuthority";
 import ServicesAuditCTA from "@/components/ServicesAuditCTA";
 import ServicesFAQ from "@/components/ServicesFAQ";
 import ServicesFinalCTA from "@/components/ServicesFinalCTA";
@@ -118,9 +121,12 @@ export default function ServicesPage() {
       />
       <main>
         <ServicesHero />
+        <ServicesStatBar />
         <ProblemFrame />
         <ServicesGrid />
         <ServicesBundle />
+        <ServicesHowItWorks />
+        <ServicesAuthority />
         <ServicesAuditCTA />
         <ServicesFAQ />
         <ServicesFinalCTA />

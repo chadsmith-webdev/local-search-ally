@@ -246,7 +246,7 @@ export default function HomeClient() {
               className="text-[#b0b0b0] text-[clamp(1.1rem,2vw,1.45rem)] leading-[1.6] font-sans font-medium"
               style={{ maxWidth: "660px" }}
             >
-              97% of people use Google to find a local contractor. If your name isn&apos;t in the results, the call goes to whoever is.
+              46% of Google searches have local intent. If your name isn&apos;t in the results, the call goes to whoever is.
             </m.p>
 
             {/* CTA block */}

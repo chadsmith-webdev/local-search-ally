@@ -333,8 +333,20 @@ Only use these — never fabricate:
 | 97% of consumers use Google to evaluate local businesses | BrightLocal |
 | 78% of local mobile searches result in an offline purchase | Safari Digital |
 | 28% of searches for something nearby result in a purchase | Think With Google |
-
----
+ 46% of Google searches have local intent. | SearchEngineRoundtable |
+ | 8 in 10 (80%) US consumers search for a local business online at least once a week. | BrightLocal |
+ | 51% of consumers use Google Maps for local search. | Backlinko |
+ | 96% of users learn about local businesses online. | SEO.com |
+ | 72% of consumers use Google to search for local business information. | BrightLocal |
+ | 50% of consumers who perform a local search visit a store within one day. | Think With Google |
+ | 78% of local mobile searches result in an offline purchase. | Safari Digital |
+ | 61% of consumers say they are likely to choose a business that has a website. | BrightLocal |
+ | 88% of consumers who search for a type of business on a mobile device call or visit that business within 24 hours. | Think With Google |
+ | 60% of consumers say that the quality of a business's website affects their perception of the business. | BrightLocal |
+ | 30% of consumers say that a business's website affects their decision to recommend the business to others. | BrightLocal |
+ | 20% of consumers say that a business's website affects their decision to leave a review. | BrightLocal |
+ 
+ ---
 
 ## Transparency Pledge
 
