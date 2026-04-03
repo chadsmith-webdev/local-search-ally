@@ -1,3 +1,13 @@
+import HeroSection from "@/components/HeroSection";
+import ProblemSection from "@/components/ProblemSection";
+import StakesSection from "@/components/StakesSection";
+import SuccessSection from "@/components/SuccessSection";
+import GuideSection from "@/components/GuideSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import ServicesSection from "@/components/ServicesSection";
+import StatsSection from "@/components/StatsSection";
+import FinalCTASection from "@/components/FinalCTASection";
+
 export const metadata = {
   title: "Local SEO for NWA Contractors | Local Search Ally",
   description:
@@ -50,7 +60,15 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main>
-        <p>Coming soon.</p>
+        <HeroSection />
+        <ProblemSection />
+        <StakesSection />
+        <SuccessSection />
+        <GuideSection />
+        <HowItWorksSection />
+        <ServicesSection />
+        <StatsSection />
+        <FinalCTASection />
       </main>
     </>
   );
