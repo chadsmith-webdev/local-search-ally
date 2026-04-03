@@ -1,0 +1,133 @@
+.section {
+  position: relative;
+  padding: var(--section-spacing) var(--page-gutter)
+    calc(var(--section-spacing) * 1.5);
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glow {
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(123, 175, 212, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  max-width: 660px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  align-items: center;
+}
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.h2 em {
+  font-style: normal;
+  color: var(--carolina);
+}
+
+.body {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(248, 249, 250, 0.7);
+  max-width: 520px;
+}
+
+.reframe {
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── CTA group ── */
+.ctaGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2.25rem;
+  background: var(--carolina);
+  color: #020203;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  transition:
+    filter 0.2s,
+    transform 0.15s;
+}
+
+.ctaPrimary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.ctaMicro {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* ── Transparency pledge ── */
+.transparency {
+  margin-top: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  width: 100%;
+}
+
+.pledgeList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.pledgeList li {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(248, 249, 250, 0.5);
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .ctaPrimary {
+    width: 100%;
+    justify-content: center;
+  }
+}
