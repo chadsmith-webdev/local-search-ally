@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
+
+// ─── Variants ─────────────────────────────────────────────────────────────────
 
 const fadeUp = {
   hidden:  { opacity: 0, y: 20 },
@@ -13,14 +16,16 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
 };
 
+// ─── Data ─────────────────────────────────────────────────────────────────────
+
 const SERVICES = [
   {
     eyebrow: "Local SEO",
     heading: "Get into the Map Pack for your trade in your city.",
     body: [
-      'When someone in Rogers searches \u201cHVAC repair\u201d or a homeowner in Bentonville needs an emergency plumber, the three businesses in the map results get the overwhelming majority of calls. This service is built around getting you into that position.',
+      'When someone in Rogers searches "HVAC repair" or a homeowner in Bentonville needs an emergency plumber, the three businesses in the map results get the overwhelming majority of calls. This service is built around getting you into that position.',
       "I handle GBP optimization, local citation cleanup, keyword research for your trade and service area, on-page SEO for your site, and content built to rank for searches your customers are actually making. Every month you get a report on what moved — rankings and calls, not impressions.",
-      'Local SEO compounds. The contractor ranking first for \u201cplumber Fayetteville AR\u201d didn\'t get there in a week, but most of them got there because their competitors weren\'t paying attention. That gap is usually still open.',
+      'Local SEO compounds. The contractor ranking first for "plumber Fayetteville AR" didn\'t get there in a week, but most of them got there because their competitors weren\'t paying attention. That gap is usually still open.',
       "Most businesses see their rankings moving in 60–90 days. I'll give you a realistic read on your trade and city before we start — not after you've already paid.",
     ],
     pricing: "Starting at $499/month",
@@ -76,9 +81,69 @@ const SERVICES = [
   },
 ];
 
+// ─── Sticky rail item ─────────────────────────────────────────────────────────
+// Shows the eyebrow label with a brightness fade based on how close the
+// corresponding service block is to the centre of the viewport.
+
+function RailItem({ label, scrollYProgress, threshold }) {
+  // Active when scroll is within ±0.15 of the threshold
+  const opacity = useTransform(
+    scrollYProgress,
+    [threshold - 0.18, threshold, threshold + 0.18],
+    [0.2, 1, 0.2]
+  );
+  const color = useTransform(
+    scrollYProgress,
+    [threshold - 0.18, threshold, threshold + 0.18],
+    ["#444444", "#7bafd4", "#444444"]
+  );
+
+  return (
+    <motion.div
+      style={{ display: "flex", alignItems: "center", gap: "0.6rem", opacity }}
+    >
+      <motion.div
+        style={{
+          width: "4px",
+          height: "4px",
+          borderRadius: "50%",
+          flexShrink: 0,
+          background: color,
+        }}
+      />
+      <motion.span
+        style={{
+          fontFamily: "var(--font-mono, monospace)",
+          fontSize: "0.58rem",
+          fontWeight: 700,
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          color,
+          whiteSpace: "nowrap",
+        }}
+      >
+        {label}
+      </motion.span>
+    </motion.div>
+  );
+}
+
+// ─── Section ──────────────────────────────────────────────────────────────────
+
 export default function ServicesGrid() {
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start center", "end center"],
+  });
+
+  // Progress bar height tracks 0→100% of the section
+  const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
     <section
+      ref={sectionRef}
       className="relative bg-[#0a0a0a]"
       style={{ paddingTop: "var(--section-spacing)", paddingBottom: "var(--section-spacing)" }}
       aria-labelledby="services-grid-heading"
@@ -88,6 +153,57 @@ export default function ServicesGrid() {
         style={{ background: "linear-gradient(to right, transparent, #1e1e1e 20%, #1e1e1e 80%, transparent)" }}
         aria-hidden="true"
       />
+
+      {/* ── Sticky progress rail — desktop only ── */}
+      <div
+        className="services-sticky-rail"
+        aria-hidden="true"
+        style={{
+          position: "sticky",
+          top: "140px",
+          float: "right",
+          width: "160px",
+          marginRight: "calc(-160px - 3rem)",
+          zIndex: 5,
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+        }}
+      >
+        {/* Vertical progress track */}
+        <div
+          style={{
+            position: "absolute",
+            left: "-1px",
+            top: 0,
+            bottom: 0,
+            width: "1px",
+            background: "#1e1e1e",
+          }}
+        />
+        {/* Active progress fill */}
+        <motion.div
+          style={{
+            position: "absolute",
+            left: "-1px",
+            top: 0,
+            width: "1px",
+            height: progressHeight,
+            background: "#7bafd4",
+            boxShadow: "0 0 6px rgba(123,175,212,0.6)",
+          }}
+        />
+
+        {/* Service labels */}
+        {SERVICES.map((s, i) => (
+          <RailItem
+            key={s.eyebrow}
+            label={s.eyebrow}
+            scrollYProgress={scrollYProgress}
+            threshold={i / (SERVICES.length - 1)}
+          />
+        ))}
+      </div>
 
       <div
         style={{
@@ -128,15 +244,26 @@ export default function ServicesGrid() {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 1320px) {
+          .services-sticky-rail { display: none !important; }
+        }
+      `}</style>
     </section>
   );
 }
 
+// ─── Individual service block ─────────────────────────────────────────────────
+
 function ServiceBlock({ service, index }) {
   const { eyebrow, heading, body, pricing, contract, cta, ctaNote, badge } = service;
+  const blockRef = useRef(null);
+  const inView = useInView(blockRef, { once: true, margin: "-120px" });
 
   return (
     <motion.div
+      ref={blockRef}
       variants={stagger}
       initial="hidden"
       whileInView="visible"

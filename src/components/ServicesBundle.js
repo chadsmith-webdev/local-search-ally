@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const fadeUp = {
   hidden:  { opacity: 0, y: 20 },
@@ -12,6 +13,84 @@ const stagger = {
   hidden:  {},
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
 };
+
+// ─── Animated connector helpers ───────────────────────────────────────────────
+
+// Dot that pulses scale/opacity in a slow loop once the card is in view
+function PulsingDot({ inView }) {
+  return (
+    <motion.div
+      style={{
+        width: "8px",
+        height: "8px",
+        borderRadius: "50%",
+        background: "#7bafd4",
+        flexShrink: 0,
+        marginTop: "6px",
+      }}
+      animate={
+        inView
+          ? { scale: [1, 1.5, 1], opacity: [0.9, 0.45, 0.9] }
+          : { scale: 1, opacity: 0.9 }
+      }
+      transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut", delay: Math.random() * 1 }}
+      aria-hidden="true"
+    />
+  );
+}
+
+// Vertical SVG line that draws itself in from top to bottom
+function AnimatedConnector({ index, inView }) {
+  return (
+    <svg
+      width="2"
+      height="20"
+      style={{ display: "block", marginLeft: "3px", overflow: "visible" }}
+      aria-hidden="true"
+    >
+      <motion.line
+        x1="1" y1="0" x2="1" y2="20"
+        stroke="#7bafd4"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={inView ? { pathLength: 1, opacity: 0.55 } : { pathLength: 0, opacity: 0 }}
+        transition={{ duration: 0.45, delay: index * 0.18 + 0.1, ease: "easeInOut" }}
+      />
+    </svg>
+  );
+}
+
+function ServiceListItem({ label, note, index, isLast }) {
+  const inViewRef = useRef(null);
+  const inView = useInView(inViewRef, { once: true, margin: "-40px" });
+
+  return (
+    <div ref={inViewRef}>
+      <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
+        <PulsingDot inView={inView} />
+        <div>
+          <div className="font-sans font-semibold text-[#f0f0f0]" style={{ fontSize: "0.95rem" }}>
+            {label}
+          </div>
+          <div className="font-sans text-[#888888]" style={{ fontSize: "0.82rem", marginTop: "2px" }}>
+            {note}
+          </div>
+        </div>
+      </div>
+      {!isLast && (
+        <AnimatedConnector index={index} inView={inView} />
+      )}
+    </div>
+  );
+}
+
+const SERVICES_LIST = [
+  { label: "Local SEO",                    note: "Rankings, citations, on-page" },
+  { label: "Web Design & Development",     note: "Converts the ranking into a call" },
+  { label: "Google Business Profile",      note: "The Map Pack anchor" },
+  { label: "Reputation Management",        note: "Seals the trust before they call" },
+];
 
 const COMMITMENTS = [
   "No contracts — if I stop delivering, you walk. No lock-in, no notice period.",
@@ -115,56 +194,17 @@ export default function ServicesBundle() {
                 padding: "2.5rem",
                 display: "flex",
                 flexDirection: "column",
-                gap: "1rem",
+                gap: "0.5rem",
               }}
             >
-              {[
-                { label: "Local SEO", note: "Rankings, citations, on-page" },
-                { label: "Web Design & Development", note: "Converts the ranking into a call" },
-                { label: "Google Business Profile", note: "The Map Pack anchor" },
-                { label: "Reputation Management", note: "Seals the trust before they call" },
-              ].map(({ label, note }, i, arr) => (
-                <div key={label}>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: "1rem",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "8px",
-                        height: "8px",
-                        borderRadius: "50%",
-                        background: "#7bafd4",
-                        marginTop: "6px",
-                        flexShrink: 0,
-                      }}
-                      aria-hidden="true"
-                    />
-                    <div>
-                      <div className="font-sans font-semibold text-[#f0f0f0]" style={{ fontSize: "0.95rem" }}>
-                        {label}
-                      </div>
-                      <div className="font-sans text-[#888888]" style={{ fontSize: "0.82rem", marginTop: "2px" }}>
-                        {note}
-                      </div>
-                    </div>
-                  </div>
-                  {i < arr.length - 1 && (
-                    <div
-                      style={{
-                        width: "1px",
-                        height: "1.25rem",
-                        background: "#1e1e1e",
-                        marginLeft: "3.5px",
-                        marginTop: "0.5rem",
-                      }}
-                      aria-hidden="true"
-                    />
-                  )}
-                </div>
+              {SERVICES_LIST.map(({ label, note }, i) => (
+                <ServiceListItem
+                  key={label}
+                  label={label}
+                  note={note}
+                  index={i}
+                  isLast={i === SERVICES_LIST.length - 1}
+                />
               ))}
             </motion.div>
           </motion.div>

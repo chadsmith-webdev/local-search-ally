@@ -1,7 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+
+// Lazy-load the R3F canvas — SSR off, zero blocking render cost
+const ServicesFinalOrb = dynamic(
+  () => import("@/components/ServicesFinalOrb"),
+  { ssr: false, loading: () => null }
+);
 
 const fadeUp = {
   hidden:  { opacity: 0, y: 20 },
@@ -14,20 +22,52 @@ const stagger = {
 };
 
 export default function ServicesFinalCTA() {
+  const reducedMotion = useReducedMotion();
+
   return (
     <section
-      className="relative bg-[#0a0a0a]"
+      className="relative bg-[#0a0a0a] overflow-hidden"
       style={{ paddingTop: "var(--section-spacing)", paddingBottom: "var(--section-spacing)" }}
       aria-labelledby="final-cta-heading"
     >
+      {/* Top separator */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
         style={{ background: "linear-gradient(to right, transparent, #2E3A4D 30%, #2E3A4D 70%, transparent)" }}
         aria-hidden="true"
       />
 
+      {/* ── Fibonacci orb — right-side ambient 3D background ── */}
+      {!reducedMotion && (
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            // Offset to the right so it doesn't occlude the left-side text
+            transform: "translateX(30%)",
+            opacity: 0.7,
+          }}
+          aria-hidden="true"
+        >
+          <Suspense fallback={null}>
+            <ServicesFinalOrb />
+          </Suspense>
+        </div>
+      )}
+
+      {/* Radial vignette — pulls focus left toward the copy */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 65% 90% at 15% 50%, transparent 0%, #0a0a0a 70%)",
+        }}
+        aria-hidden="true"
+      />
+
       <div
         style={{
+          position: "relative",
+          zIndex: 10,
           maxWidth: 1400,
           width: "100%",
           margin: "0 auto",

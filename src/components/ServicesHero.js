@@ -2,8 +2,9 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { Suspense } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { Suspense, useRef, useEffect } from "react";
+import { motion, useReducedMotion, useScroll } from "framer-motion";
+import { heroScrollProgress } from "@/lib/scrollStore";
 
 // Lazy-load the R3F canvas — SSR off, no blocking render
 const ServicesHeroScene = dynamic(
@@ -30,9 +31,26 @@ const staggerContainer = {
 
 export default function ServicesHero() {
   const reducedMotion = useReducedMotion();
+  const sectionRef = useRef(null);
+
+  // Track how far the hero has scrolled out of view (0 = fully visible, 1 = gone)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Write to the shared mutable ref — no re-renders, readable inside R3F useFrame
+  useEffect(() => {
+    if (reducedMotion) return;
+    const unsub = scrollYProgress.on("change", (v) => {
+      heroScrollProgress.current = v;
+    });
+    return unsub;
+  }, [scrollYProgress, reducedMotion]);
 
   return (
     <section
+      ref={sectionRef}
       className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0a]"
       style={{ paddingTop: "120px", paddingBottom: "8rem" }}
       aria-labelledby="services-hero-heading"

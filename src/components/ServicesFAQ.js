@@ -134,11 +134,11 @@ export default function ServicesFAQ() {
                 {open === i && (
                   <motion.div
                     key="answer"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                    style={{ overflow: "hidden" }}
+                    initial={{ height: 0, opacity: 0, rotateX: -14, transformOrigin: "top center" }}
+                    animate={{ height: "auto", opacity: 1, rotateX: 0 }}
+                    exit={{ height: 0, opacity: 0, rotateX: -14 }}
+                    transition={{ duration: 0.32, ease: [0.43, 0.13, 0.23, 0.96] }}
+                    style={{ overflow: "hidden", perspective: 600 }}
                   >
                     <p
                       className="text-[#b0b0b0] font-sans leading-[1.7]"

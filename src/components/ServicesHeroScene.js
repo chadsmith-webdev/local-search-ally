@@ -2,6 +2,7 @@
 
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import { heroScrollProgress } from "@/lib/scrollStore";
 
 // R3F v9 uses THREE.Clock internally; Three.js r175+ deprecated it in favor of THREE.Timer.
 // Suppress until R3F v10 (currently alpha) ships a stable fix.
@@ -123,18 +124,32 @@ function AmbientParticles() {
   );
 }
 
-// ─── CAMERA FLY-IN ────────────────────────────────────────────────────────────
+// ─── CAMERA RIG ───────────────────────────────────────────────────────────────
+// Combines a page-load fly-in (time-driven) with a scroll-driven drift.
+// heroScrollProgress.current: 0 = hero fully visible, 1 = hero scrolled past.
 
 function CameraRig() {
   const elapsed = useRef(0);
 
   useFrame((state, delta) => {
     elapsed.current += delta;
+
+    // ── fly-in phase (first 2 s) ────────────────────────────────────────────
     const t     = Math.min(elapsed.current / 2, 1);
     const eased = 1 - Math.pow(1 - t, 3);
-    state.camera.position.z = 42 - 22 * eased; // 42 → 20
-    state.camera.position.y = 2  - 1.5 * eased; // 2 → 0.5
+    const baseZ = 42 - 22 * eased; // 42 → 20
+    const baseY = 2  - 1.5 * eased; // 2 → 0.5
+
+    // ── scroll drift phase ─────────────────────────────────────────────────
+    // As the hero scrolls off screen the camera creeps forward and tilts,
+    // giving a "diving into the map" feeling.
+    const s = heroScrollProgress.current;
+    state.camera.position.z = baseZ - s * 5;   // drift forward 5 units
+    state.camera.position.y = baseY + s * 1.4; // rise slightly
+    state.camera.position.x += (-s * 0.8 - state.camera.position.x) * 0.04; // lazy left drift
+    state.camera.rotation.x  = -s * 0.07;      // subtle downward tilt
   });
+
   return null;
 }
 
