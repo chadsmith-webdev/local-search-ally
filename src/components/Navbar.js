@@ -15,7 +15,12 @@ const C = {
 };
 
 const links = [
-  { label: "Blog", href: "/blog" },
+  { label: "Services",  href: "/services" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Blog",      href: "/blog" },
+  { label: "About",     href: "/about" },
+  { label: "Locations", href: "/locations" },
+  { label: "Contact",   href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -50,12 +55,12 @@ export default function Navbar() {
         <div style={{
           maxWidth: 1400, width: "100%", margin: "0 auto",
           paddingLeft: "var(--page-gutter)", paddingRight: "var(--page-gutter)",
-          display: "flex", alignItems: "center", justifyContent: "space-between"
+          display: "grid", gridTemplateColumns: "auto 1fr auto", alignItems: "center", gap: "1rem",
         }}>
           <Logo size={26} />
 
-          {/* Desktop links */}
-          <div style={{ display: "flex", alignItems: "center", gap: "1.75rem" }} className="nav-desktop">
+          {/* Desktop links — centered column */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.5rem" }} className="nav-desktop">
             {links.map(({ label, href }) => {
               const active = pathname === href || pathname.startsWith(href + "/");
               return (
@@ -73,7 +78,11 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <Link href="/audit" style={{
+          </div>
+
+          {/* CTA + hamburger — right column */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <Link href="/audit" className="nav-desktop" style={{
               background: `linear-gradient(135deg, ${C.carolina} 0%, ${C.steel} 100%)`,
               color: "#1e2a3a", fontWeight: 600, fontSize: "0.72rem",
               letterSpacing: "0.1em", textTransform: "uppercase",
@@ -87,23 +96,23 @@ export default function Navbar() {
             >
               Free Audit →
             </Link>
-          </div>
 
           {/* Hamburger */}
-          <button onClick={() => setOpen(o => !o)} className="nav-hamburger" aria-label="Toggle menu"
-            style={{ background: "none", border: "none", cursor: "pointer", padding: "8px", display: "none", flexDirection: "column", gap: 5 }}>
-            {[0, 1, 2].map(i => (
-              <span key={i} style={{
-                display: "block", width: 22, height: 2, background: C.text, borderRadius: 2,
-                transition: "transform 0.25s, opacity 0.25s",
-                transform: open
-                  ? i === 0 ? "translateY(7px) rotate(45deg)"
-                  : i === 2 ? "translateY(-7px) rotate(-45deg)" : "none"
-                  : "none",
-                opacity: open && i === 1 ? 0 : 1,
-              }} />
-            ))}
-          </button>
+            <button onClick={() => setOpen(o => !o)} className="nav-hamburger" aria-label="Toggle menu"
+              style={{ background: "none", border: "none", cursor: "pointer", padding: "8px", display: "none", flexDirection: "column", gap: 5 }}>
+              {[0, 1, 2].map(i => (
+                <span key={i} style={{
+                  display: "block", width: 22, height: 2, background: C.text, borderRadius: 2,
+                  transition: "transform 0.25s, opacity 0.25s",
+                  transform: open
+                    ? i === 0 ? "translateY(7px) rotate(45deg)"
+                    : i === 2 ? "translateY(-7px) rotate(-45deg)" : "none"
+                    : "none",
+                  opacity: open && i === 1 ? 0 : 1,
+                }} />
+              ))}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -150,7 +159,7 @@ export default function Navbar() {
       </div>
 
       <style>{`
-        @media (max-width: 640px) {
+        @media (max-width: 860px) {
           .nav-desktop { display: none !important; }
           .nav-hamburger { display: flex !important; }
         }
