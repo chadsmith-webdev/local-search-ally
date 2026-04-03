@@ -1,8 +1,28 @@
 "use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Logo from "@/components/Logo";
 
+const NAV_LINKS = [
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
+  { label: "Free Audit", href: "/audit" },
+];
+
+const SECONDARY_LINKS = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+];
+
 export default function Footer() {
+  const [year, setYear] = useState(2026);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer style={{
       background: "#0d0d0d",
@@ -16,13 +36,7 @@ export default function Footer() {
         }}>
           <Logo size={24} />
           <nav style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
-            {[
-              { label: "Services", href: "/services" },
-              { label: "About", href: "/about" },
-              { label: "Blog", href: "/blog" },
-              { label: "Contact", href: "/contact" },
-              { label: "Free Audit", href: "/audit" },
-            ].map(({ label, href }) => (
+            {NAV_LINKS.map(({ label, href }) => (
               <Link key={href} href={href} style={{
                 color: "#888", textDecoration: "none", fontSize: "0.82rem",
                 fontFamily: "var(--font-ui)", transition: "color 0.15s",
@@ -42,10 +56,10 @@ export default function Footer() {
           flexWrap: "wrap", gap: "0.75rem",
         }}>
           <p style={{ color: "#555", fontSize: "0.72rem", fontFamily: "var(--font-ui)", margin: 0 }}>
-            © {new Date().getFullYear()} Local Search Ally · Siloam Springs, AR
+            © {year} Local Search Ally · Siloam Springs, AR
           </p>
           <div style={{ display: "flex", gap: "1.25rem" }}>
-            {[{ label: "Privacy", href: "/privacy" }, { label: "Terms", href: "/terms" }].map(({ label, href }) => (
+            {SECONDARY_LINKS.map(({ label, href }) => (
               <Link key={href} href={href} style={{
                 color: "#555", textDecoration: "none", fontSize: "0.72rem",
                 fontFamily: "var(--font-ui)", transition: "color 0.15s",
