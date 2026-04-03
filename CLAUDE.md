@@ -19,15 +19,15 @@ This is a redesign of the primary marketing and lead-generation website. The sit
 
 ## Tech Stack
 
-| Layer | Choice |
-|---|---|
-| Framework | Next.js (App Router) |
-| Language | JavaScript — no TypeScript |
-| Styling | Tailwind CSS (pure — no component library) |
-| Blog | MDX — posts live in `src/posts/` |
+| Layer      | Choice                                                                      |
+| ---------- | --------------------------------------------------------------------------- |
+| Framework  | Next.js (App Router)                                                        |
+| Language   | JavaScript — no TypeScript                                                  |
+| Styling    | Tailwind CSS (pure — no component library)                                  |
+| Blog       | MDX — posts live in `src/posts/`                                            |
 | 3D / WebGL | Three.js via React Three Fiber (`@react-three/fiber`) + `@react-three/drei` |
-| Animations | Framer Motion (page loads, scroll, UI transitions) |
-| Deployment | Vercel |
+| Animations | Framer Motion (page loads, scroll, UI transitions)                          |
+| Deployment | Vercel                                                                      |
 
 ### Folder structure
 
@@ -56,6 +56,7 @@ jsconfig.json
 ```
 
 ### Folders to ignore (do not modify or generate files in these)
+
 - `.next/` — Next.js build cache, auto-generated
 - `node_modules/` — dependencies, never touch
 - `.vscode/` — editor settings, not part of the project
@@ -63,6 +64,7 @@ jsconfig.json
 - `.agents/` — non-standard, left over from experimentation; safe to delete
 
 ### Key conventions
+
 - **Server vs. Client components:** Default to Server Components. Only add `"use client"` when needed (event handlers, hooks, Framer Motion, R3F). The `HomeClient.js` pattern — a thin client wrapper over a server page — is correct; keep using it.
 - **No TypeScript:** Use JSDoc comments for prop documentation instead of TypeScript types where clarity is needed.
 - **Tailwind only:** No inline styles unless absolutely necessary for dynamic values (e.g., R3F canvas sizing). No CSS Modules.
@@ -73,9 +75,11 @@ jsconfig.json
 ## Animation System
 
 ### Philosophy
+
 Animations should feel like the site breathing — not performing. Think of them like good lighting in a room: you notice when it's wrong, not when it's right. Every animation must serve comprehension or reinforce brand confidence. No animation for animation's sake.
 
 ### Page Load Animations (Framer Motion)
+
 - Fade + slight upward translate on hero content (`y: 20 → 0, opacity: 0 → 1`)
 - Stagger children by 0.1s for text blocks
 - Duration: 0.6s ease-out — fast enough to feel snappy, slow enough to feel intentional
@@ -85,17 +89,19 @@ Animations should feel like the site breathing — not performing. Think of them
 // Standard entry variant — reuse across components
 export const fadeUp = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-}
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 ```
 
 ### Scroll Animations (Framer Motion)
+
 - Use `whileInView` + `viewport={{ once: true }}` — animate once, not on every scroll pass
 - Section reveals: same `fadeUp` variant
 - Stat counters: trigger count-up animation on enter
 - Never animate content that conveys critical information (headings, CTAs) in a way that delays reading
 
 ### 3D Elements (React Three Fiber)
+
 - Use R3F for ambient/background 3D only — not for content delivery
 - Appropriate uses: hero background particle field, subtle floating geometry, location pin 3D scene
 - Always wrap R3F canvases in a `Suspense` boundary with a plain dark fallback
@@ -104,16 +110,17 @@ export const fadeUp = {
 - Canvas must never block interaction with page content (use `style={{ pointerEvents: 'none' }}` on decorative scenes)
 
 ### Performance rules
+
 - Lazy-load all R3F canvases with `next/dynamic` and `ssr: false`
 - Wrap heavy Framer Motion sections in `LazyMotion` with `domAnimation` feature bundle
 - Respect `prefers-reduced-motion` — wrap all animations in a check or use Framer Motion's `useReducedMotion()`
 
 ```js
 // Required pattern for all R3F components
-const HeroScene = dynamic(() => import('@/components/HeroScene'), {
+const HeroScene = dynamic(() => import("@/components/HeroScene"), {
   ssr: false,
-  loading: () => <div className="w-full h-full bg-[#0a0a0a]" />,
-})
+  loading: () => <div className='w-full h-full bg-[#0a0a0a]' />,
+});
 ```
 
 ---
@@ -123,6 +130,7 @@ const HeroScene = dynamic(() => import('@/components/HeroScene'), {
 This is an active redesign — the existing code is being rebuilt, not patched. When in doubt, write it fresh rather than extending old code.
 
 ### What to keep
+
 - `src/posts/` — MDX blog content is good, preserve all files
 - `src/app/api/` — API routes may be reusable, review before rewriting
 - `src/app/audit/` — SEO audit tool, keep and improve
@@ -132,11 +140,13 @@ This is an active redesign — the existing code is being rebuilt, not patched. 
 - `robots.js`, `sitemap.js`, `manifest.json` — Keep, these are correct
 
 ### What to rebuild
+
 - `page.js` + `HomeClient.js` — Full homepage redesign
 - `src/components/` — Rebuild components from scratch using the design system below
 - `src/lib/` — Review utilities; keep what works, rewrite what doesn't
 
 ### File naming conventions going forward
+
 - Components: PascalCase (`HeroSection.js`, `ServiceCard.js`)
 - Utilities/helpers: camelCase (`formatDate.js`, `getMdxPosts.js`)
 - Pages: Next.js convention (`page.js`, `layout.js`)
@@ -147,9 +157,11 @@ This is an active redesign — the existing code is being rebuilt, not patched. 
 ## Brand Positioning
 
 **One-liner (use everywhere):**
+
 > "The best contractor in town shouldn't be the hardest to find. I make sure they're not."
 
 **Key differentiators:**
+
 1. No contracts — zero risk to try
 2. Radical transparency — clients always know what's happening
 3. Local — in NWA, understands the market
@@ -166,6 +178,7 @@ This is an active redesign — the existing code is being rebuilt, not patched. 
 Write as Chad — one person talking to one person. Plain-spoken, honest, direct.
 
 ### Core rules
+
 - **"I" always — never "we"**
 - Lead with the problem, not the service
 - Name the trade, the city, the number — vague claims get cut
@@ -174,23 +187,24 @@ Write as Chad — one person talking to one person. Plain-spoken, honest, direct
 
 ### Banned words (always swap these)
 
-| Banned | Use Instead |
-|---|---|
-| solutions | results |
-| leverage | use |
-| synergy | (cut it) |
-| cutting-edge | current / proven |
-| dominate | rank above / show up first / get into the Map Pack |
-| moves the needle | actually works |
-| complete solution | one place / one person |
-| powered by | built on / using |
-| best-in-class | proven |
-| transform | fix / improve / rank |
-| digital presence | website / GBP / listings |
-| drive traffic | get found / rank for |
-| strategic content | (name what it actually does) |
+| Banned            | Use Instead                                        |
+| ----------------- | -------------------------------------------------- |
+| solutions         | results                                            |
+| leverage          | use                                                |
+| synergy           | (cut it)                                           |
+| cutting-edge      | current / proven                                   |
+| dominate          | rank above / show up first / get into the Map Pack |
+| moves the needle  | actually works                                     |
+| complete solution | one place / one person                             |
+| powered by        | built on / using                                   |
+| best-in-class     | proven                                             |
+| transform         | fix / improve / rank                               |
+| digital presence  | website / GBP / listings                           |
+| drive traffic     | get found / rank for                               |
+| strategic content | (name what it actually does)                       |
 
 ### Approved CTAs (low-pressure and specific)
+
 - "Let's Talk — It's Free"
 - "Start With a Free Conversation"
 - "See Where You Stand Online"
@@ -207,17 +221,18 @@ Write as Chad — one person talking to one person. Plain-spoken, honest, direct
 ### Colors
 
 ```css
---carolina: #7bafd4;   /* Primary accent — links, borders, highlights, CTAs */
---slate:    #2E3A4D;   /* Deep brand moments, dark badges, feature sections */
---steel:    #4A6B8A;   /* Secondary accent, hover states, mid-tone emphasis */
---bg:       #0a0a0a;   /* Page background */
---surface:  #141414;   /* Cards, nav, elevated sections */
---surface2: #1e1e1e;   /* Secondary surface, subtle contrast */
---text:     #f0f0f0;   /* All primary body and heading text */
---muted:    #888888;   /* Captions, labels, supporting text */
+--carolina: #7bafd4; /* Primary accent — links, borders, highlights, CTAs */
+--slate: #2e3a4d; /* Deep brand moments, dark badges, feature sections */
+--steel: #4a6b8a; /* Secondary accent, hover states, mid-tone emphasis */
+--bg: #0a0a0a; /* Page background */
+--surface: #141414; /* Cards, nav, elevated sections */
+--surface2: #1e1e1e; /* Secondary surface, subtle contrast */
+--text: #f0f0f0; /* All primary body and heading text */
+--muted: #888888; /* Captions, labels, supporting text */
 ```
 
 **Rules:**
+
 - Always dark backgrounds — never invert to a light theme
 - Carolina blue handles all interactive work: borders, accents, CTAs
 - Slate navy is for depth and badge-level emphasis only
@@ -239,6 +254,7 @@ Write as Chad — one person talking to one person. Plain-spoken, honest, direct
 - Never distort or add effects
 
 **SVG icon:**
+
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
@@ -264,15 +280,15 @@ Write as Chad — one person talking to one person. Plain-spoken, honest, direct
 
 ## Site Structure
 
-| Page | Path | Purpose |
-|---|---|---|
-| Homepage | `/` | Primary conversion page |
-| Services | `/services` | Full service breakdown with pricing |
-| Portfolio | `/portfolio` | Demo builds and sample work |
-| Blog | `/blog` | Educational content, no email gate |
-| About | `/about` | Chad's story and values |
-| Contact | `/contact` | Strategy call booking (Calendly) |
-| Locations | `/locations` | NWA service areas |
+| Page      | Path         | Purpose                             |
+| --------- | ------------ | ----------------------------------- |
+| Homepage  | `/`          | Primary conversion page             |
+| Services  | `/services`  | Full service breakdown with pricing |
+| Portfolio | `/portfolio` | Demo builds and sample work         |
+| Blog      | `/blog`      | Educational content, no email gate  |
+| About     | `/about`     | Chad's story and values             |
+| Contact   | `/contact`   | Strategy call booking (Calendly)    |
+| Locations | `/locations` | NWA service areas                   |
 
 ---
 
@@ -281,13 +297,13 @@ Write as Chad — one person talking to one person. Plain-spoken, honest, direct
 **No prices yet — always use "custom quote" or "contact for pricing" until confirmed.**  
 All services are no long-term contracts.
 
-| Service | Notes |
-|---|---|
-| Local SEO | GBP, citations, keyword strategy, on-page SEO, monthly reports |
-| Web Design & Development | Mobile-first, SEO-built, lead-gen focused |
-| GBP Optimization & Management | Full profile audit, photo strategy, post management |
-| Reputation | Review request process, templates, monitoring |
-| Free SEO Audit Tool | Primary transitional CTA — available on the website |
+| Service                       | Notes                                                          |
+| ----------------------------- | -------------------------------------------------------------- |
+| Local SEO                     | GBP, citations, keyword strategy, on-page SEO, monthly reports |
+| Web Design & Development      | Mobile-first, SEO-built, lead-gen focused                      |
+| GBP Optimization & Management | Full profile audit, photo strategy, post management            |
+| Reputation                    | Review request process, templates, monitoring                  |
+| Free SEO Audit Tool           | Primary transitional CTA — available on the website            |
 
 ---
 
@@ -319,6 +335,7 @@ All services are no long-term contracts.
 No client case studies yet. Current proof is demo sites and third-party data.
 
 ### Demo Sites (live at localsearchally.com/portfolio)
+
 - Plumbing — emergency and maintenance calls from local search
 - HVAC — seasonal demand capture with clear booking paths
 - Electrical — trust for higher-ticket jobs and panel upgrades
@@ -326,31 +343,33 @@ No client case studies yet. Current proof is demo sites and third-party data.
 Reference demo sites as proof of build quality and technical approach — not client results.
 
 ### Approved Third-Party Stats
+
 Only use these — never fabricate:
 
-| Stat | Source |
-|---|---|
-| 97% of consumers use Google to evaluate local businesses | BrightLocal |
-| 78% of local mobile searches result in an offline purchase | Safari Digital |
-| 28% of searches for something nearby result in a purchase | Think With Google |
- 46% of Google searches have local intent. | SearchEngineRoundtable |
- | 8 in 10 (80%) US consumers search for a local business online at least once a week. | BrightLocal |
- | 51% of consumers use Google Maps for local search. | Backlinko |
- | 96% of users learn about local businesses online. | SEO.com |
- | 72% of consumers use Google to search for local business information. | BrightLocal |
- | 50% of consumers who perform a local search visit a store within one day. | Think With Google |
- | 78% of local mobile searches result in an offline purchase. | Safari Digital |
- | 61% of consumers say they are likely to choose a business that has a website. | BrightLocal |
- | 88% of consumers who search for a type of business on a mobile device call or visit that business within 24 hours. | Think With Google |
- | 60% of consumers say that the quality of a business's website affects their perception of the business. | BrightLocal |
- | 30% of consumers say that a business's website affects their decision to recommend the business to others. | BrightLocal |
- | 20% of consumers say that a business's website affects their decision to leave a review. | BrightLocal |
- 
- ---
+| Stat                                                                                                               | Source                 |
+| ------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| 97% of consumers use Google to evaluate local businesses                                                           | BrightLocal            |
+| 78% of local mobile searches result in an offline purchase                                                         | Safari Digital         |
+| 28% of searches for something nearby result in a purchase                                                          | Think With Google      |
+| 46% of Google searches have local intent.                                                                          | SearchEngineRoundtable |
+| 8 in 10 (80%) US consumers search for a local business online at least once a week.                                | BrightLocal            |
+| 51% of consumers use Google Maps for local search.                                                                 | Backlinko              |
+| 96% of users learn about local businesses online.                                                                  | SEO.com                |
+| 72% of consumers use Google to search for local business information.                                              | BrightLocal            |
+| 50% of consumers who perform a local search visit a store within one day.                                          | Think With Google      |
+| 78% of local mobile searches result in an offline purchase.                                                        | Safari Digital         |
+| 61% of consumers say they are likely to choose a business that has a website.                                      | BrightLocal            |
+| 88% of consumers who search for a type of business on a mobile device call or visit that business within 24 hours. | Think With Google      |
+| 60% of consumers say that the quality of a business's website affects their perception of the business.            | BrightLocal            |
+| 30% of consumers say that a business's website affects their decision to recommend the business to others.         | BrightLocal            |
+| 20% of consumers say that a business's website affects their decision to leave a review.                           | BrightLocal            |
+
+---
 
 ## Transparency Pledge
 
 Use verbatim or paraphrase where appropriate:
+
 - "I will never claim results I haven't achieved."
 - "I will tell you if something is outside my skill set."
 - "I will never lock you into a contract."
@@ -363,6 +382,7 @@ Do not edit or water down these lines — they are the strongest copy on the sit
 ## Copy Review Checklist
 
 Before committing any copy changes, verify:
+
 - [ ] Leads with the problem, not the service
 - [ ] "I" used throughout — no "we"
 - [ ] No banned words present
@@ -377,17 +397,20 @@ Before committing any copy changes, verify:
 ## Code Quality Standards
 
 ### General
+
 - **Mobile-first always** — home service trade owners are often on phones at job sites
 - **No TypeScript** — plain JavaScript throughout; use JSDoc for type hints where helpful
 - **Inline styles for all box-model and layout CSS** — Tailwind v4 utility classes for padding, margin, display, flex, grid, height, width, overflow, border-radius, and gap are unreliable in client components. Use `style={{}}` props for these. Tailwind color, font, and text utilities work fine.
 - Keep components small and single-purpose — if a component file exceeds ~150 lines, it probably needs splitting
 
 ### Tailwind v4 Known Gotchas
+
 - **`mx-auto` ≠ `margin: 0 auto`** — Tailwind v4 maps `mx-auto` to `margin-inline: auto` (CSS Logical Properties), which behaves differently inside flex containers. Always use `style={{ margin: "0 auto" }}` for block centering.
 - **`h-full` inside Framer Motion `m.div` collapses to zero** — `m.div` has no height by default, so `height: 100%` on children resolves to 0. Use `style={{ flex: 1 }}` on children instead, and add `style={{ display: "flex", flexDirection: "column" }}` to the `m.div` wrapper.
 - **`<Image fill>` breaks `overflow: hidden` under 3D transforms** — `fill` renders the `<img>` as `position: absolute`, which escapes `overflow: hidden` clipping when any ancestor has a 3D CSS transform (`perspective`, `translateZ`, `transformStyle: preserve-3d`). For images inside tilt/3D card components, use explicit `width`/`height` props with `style={{ objectFit: "cover", width: "100%" }}` instead.
 
 ### SEO (this site lives or dies on local SEO)
+
 - Every page needs a `generateMetadata()` export with title, description, and Open Graph tags
 - Homepage and service pages need `LocalBusiness` JSON-LD schema
 - Blog posts need `Article` JSON-LD schema built from MDX frontmatter
@@ -395,17 +418,20 @@ Before committing any copy changes, verify:
 - Use Next.js `<Image>` component always — never raw `<img>` tags
 
 ### Performance
+
 - Minimize render-blocking resources — Core Web Vitals affect local rankings
 - Lazy-load R3F canvases with `next/dynamic + ssr: false` (see Animation System above)
 - Use `next/font` for any web fonts — never load fonts from a CDN `<link>` tag
 - Prefer Server Components; only reach for `"use client"` when necessary
 
 ### Accessibility
+
 - All interactive elements need keyboard focus states (use `focus-visible:` Tailwind variants)
 - Phone numbers must be `<a href="tel:+14793808626">` links — critical for mobile users
 - Heading hierarchy must be logical — one `<h1>` per page, then `<h2>`, `<h3>`
 
 ### Forms & CTAs
+
 - Keep forms minimal — name + phone is enough to start a conversation
 - Click-to-call is the highest-priority CTA on mobile
 - Contact page integrates Calendly for strategy call booking
