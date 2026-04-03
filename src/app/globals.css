@@ -287,15 +287,24 @@ input, select, textarea {
    text-carolina, bg-surface, border-steel, font-serif, font-sans, font-mono
    ─────────────────────────────────────────────────────────────────────────── */
 @theme {
-  --color-carolina:    #7bafd4;
-  --color-steel:       #4A6B8A;
-  --color-slate:       #2E3A4D;
-  --color-surface:     #141414;
-  --color-surface-2:   #1e1e1e;
+  --color-carolina:       #7bafd4;
+  --color-carolina-dark:  #4d8cb9;
+  --color-slate:          #1a222e;
+  --color-steel:          #3a5570;
+  --color-cyan-accent:    #00f2ff;
+  --color-surface:        #080a0d;
+  --color-surface-2:      #0e1217;
+  --color-bg:             #020203;
+  --color-text:           #f8f9fa;
+  --color-muted:          #6c757d;
+  --color-red:            #ff4d4d;
 
-  --font-family-serif: var(--font-display);
-  --font-family-sans:  var(--font-ui);
-  --font-family-mono:  var(--font-mono);
+  --font-family-serif:    var(--font-display);
+  --font-family-sans:     var(--font-ui);
+  --font-family-mono:     var(--font-mono);
+
+  --spacing-page-gutter:  var(--page-gutter);
+  --spacing-section:     var(--section-spacing);
 }
 
 /* Scanning line — used in Success section stat block */

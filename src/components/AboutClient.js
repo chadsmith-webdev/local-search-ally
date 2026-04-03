@@ -5,106 +5,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion as m } from "framer-motion";
 
-// ─── LAYOUT ──────────────────────────────────────────────────────────────────
-
-const Container = ({ children, className = "" }) => (
-  <div
-    style={{ maxWidth: 1400, width: "100%", margin: "0 auto", paddingLeft: "var(--page-gutter)", paddingRight: "var(--page-gutter)" }}
-    className={className}
-  >
-    {children}
-  </div>
-);
-
-const Section = ({ children, className = "", id = "" }) => (
-  <section
-    id={id}
-    className={`relative ${className}`}
-    style={{ paddingTop: "var(--section-spacing)", paddingBottom: "var(--section-spacing)" }}
-  >
-    <Container>{children}</Container>
-  </section>
-);
-
-// ─── TYPOGRAPHY ──────────────────────────────────────────────────────────────
-
-const Eyebrow = ({ children }) => (
-  <m.span
-    initial={{ opacity: 0, x: -10 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-    className="inline-block font-mono text-[0.65rem] font-bold tracking-[0.3em] uppercase text-[#7bafd4] bg-[rgba(123,175,212,0.1)] px-3 py-1 rounded"
-  >
-    {children}
-  </m.span>
-);
-
-const H2 = ({ children, className = "" }) => (
-  <m.h2
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className={`font-serif font-extrabold leading-[1.1] tracking-[-0.03em] text-[#f8f9fa] ${className}`}
-    style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
-  >
-    {children}
-  </m.h2>
-);
-
-const Body = ({ children, className = "", style = {} }) => (
-  <m.p
-    initial={{ opacity: 0, y: 16 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: 0.1 }}
-    className={`text-[#b0b0b0] leading-[1.75] font-sans ${className}`}
-    style={{ fontSize: "clamp(1rem, 1.6vw, 1.125rem)", ...style }}
-  >
-    {children}
-  </m.p>
-);
-
-// ─── INTERACTIVE ─────────────────────────────────────────────────────────────
-
-const PrimaryBtn = ({ href, children }) => (
-  <Link
-    href={href}
-    style={{ padding: "1.25rem 2.75rem" }}
-    className="inline-flex items-center justify-center bg-[#7bafd4] text-[#0a1118] font-bold rounded-lg text-[1rem] hover:brightness-110 hover:scale-[1.02] transition-all shadow-[0_0_30px_rgba(123,175,212,0.3)] hover:shadow-[0_0_50px_rgba(123,175,212,0.5)] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7bafd4]"
-  >
-    {children}
-  </Link>
-);
-
-const OutlineBtn = ({ href, children }) => (
-  <Link
-    href={href}
-    style={{ padding: "1.25rem 2.25rem" }}
-    className="inline-flex items-center justify-center bg-transparent border border-[#1e1e1e] text-[#f0f0f0] font-semibold rounded-lg text-[1rem] hover:border-[#7bafd4] hover:text-[#7bafd4] transition-all active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7bafd4]"
-  >
-    {children}
-  </Link>
-);
-
-const Stack = ({ children, gap = "2rem", className = "", style = {} }) => (
-  <div style={{ display: "flex", flexDirection: "column", gap, ...style }} className={className}>
-    {children}
-  </div>
-);
+import { Container, Section, Stack } from "@/components/ui/Layout";
+import { H1, H2, Body, Eyebrow } from "@/components/ui/Typography";
+import { GlassCard, SurfaceCard } from "@/components/ui/Cards";
+import { PrimaryBtn, OutlineBtn } from "@/components/ui/Buttons";
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
 export default function AboutClient() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
-  if (!mounted) return <div className="min-h-screen bg-[#020203]" />;
+  if (!mounted) return <div className="min-h-screen bg-bg" />;
 
   return (
-    <div className="relative text-[#f8f9fa] selection:bg-[rgba(123,175,212,0.2)]">
+    <div className="relative text-text selection:bg-carolina/20">
 
       {/* ─── HERO ─────────────────────────────────────────────────────────── */}
       <section
-        className="relative flex items-center overflow-hidden bg-[#020203]"
+        className="relative flex items-center overflow-hidden bg-bg"
         style={{ minHeight: "85vh", paddingTop: "140px", paddingBottom: "8rem" }}
         aria-labelledby="about-hero-heading"
       >
@@ -130,30 +48,22 @@ export default function AboutClient() {
         />
 
         <Container className="relative z-10">
-          <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
-          >
-            <Stack gap="2rem" style={{ maxWidth: "880px" }}>
-              <m.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-                <Eyebrow>ABOUT LOCAL SEARCH ALLY</Eyebrow>
-              </m.div>
+            <Stack gap="2.5rem" style={{ maxWidth: "900px" }}>
+              <Eyebrow>ABOUT LOCAL SEARCH ALLY</Eyebrow>
 
-              <m.h1
-                id="about-hero-heading"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.15, ease: [0.2, 0.8, 0.2, 1] }}
-                className="font-serif font-extrabold leading-[1.05] tracking-[-0.04em] text-[#f8f9fa]"
-                style={{ fontSize: "clamp(2.6rem, 7vw, 5rem)" }}
-              >
+              <H1 id="about-hero-heading">
                 Most NWA contractors do great work.{" "}
-                <span className="text-[#7bafd4]">Most of them are hard to find online.</span>{" "}
-                That&apos;s the problem I&apos;m here to fix.
-              </m.h1>
+                <span className="text-carolina">Most of them are hard to find online.</span>
+              </H1>
+
+              <Body variant="hero" className="max-w-[660px]">
+                I&apos;m Chad. I built this to help Northwest Arkansas trades be the names people find in search — and the ones they call first.
+              </Body>
+
+              <div className="pt-4">
+                <PrimaryBtn href="/audit">Run My Free Audit →</PrimaryBtn>
+              </div>
             </Stack>
-          </m.div>
         </Container>
 
         {/* Scroll hint */}
@@ -161,26 +71,26 @@ export default function AboutClient() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.6, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           aria-hidden="true"
         >
-          <span className="font-mono text-[0.55rem] tracking-[0.35em] text-[#333] uppercase">Scroll</span>
+          <span className="font-mono text-[0.55rem] tracking-[0.35em] text-muted/40 uppercase">Scroll</span>
           <m.div
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="w-px h-8 bg-gradient-to-b from-[#7bafd4] to-transparent opacity-30"
+            className="w-px h-8 bg-gradient-to-b from-carolina to-transparent opacity-30"
           />
         </m.div>
       </section>
 
       {/* ─── PERSONAL STORY ───────────────────────────────────────────────── */}
-      <Section className="bg-[#050507]/80">
+      <Section id="story" className="bg-bg/80 backdrop-blur-sm">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
           {/* Text block */}
           <Stack gap="1.75rem">
             <Eyebrow>HOW I GOT HERE</Eyebrow>
-            <H2>How I got here.</H2>
+            <H2>The visibility gap is fixable.</H2>
             <Stack gap="1.25rem">
               <Body>
                 I came to local SEO through real estate wholesaling. That world runs on contractor relationships,
@@ -205,15 +115,11 @@ export default function AboutClient() {
                 on real projects first. I don&apos;t have a decade of client case studies. The demo sites are the
                 current proof of method, and I think that&apos;s the honest way to start.
               </Body>
-              <Body>
-                I&apos;m based in Siloam Springs. I know this market. I&apos;m building this business the same way
-                I&apos;d tell a contractor to build theirs — one client at a time, with work you can actually see.
-              </Body>
             </Stack>
             <div>
               <Link
                 href="/portfolio"
-                className="font-mono text-[0.7rem] font-bold text-[#7bafd4] hover:underline tracking-tighter"
+                className="font-mono text-[0.7rem] font-bold text-carolina hover:underline tracking-tighter"
               >
                 [SEE WHAT THAT LOOKS LIKE IN THE PORTFOLIO →]
               </Link>
@@ -226,16 +132,11 @@ export default function AboutClient() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative group"
-            style={{ height: "clamp(420px, 55vw, 700px)" }}
+            className="relative group h-[clamp(420px,55vw,700px)]"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#7bafd4]/20 to-transparent rounded-3xl -rotate-2 group-hover:rotate-0 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-br from-carolina/20 to-transparent rounded-3xl -rotate-2 group-hover:rotate-0 transition-transform duration-700" />
             <div
-              className="relative h-full w-full overflow-hidden rounded-3xl border border-white/10"
-              style={{
-                background: "linear-gradient(135deg, rgba(123,175,212,0.08) 0%, rgba(255,255,255,0) 100%)",
-                backdropFilter: "blur(24px)",
-              }}
+              className="relative h-full w-full overflow-hidden rounded-3xl border border-white/10 glass-premium"
             >
               <Image
                 src="/images/chad.avif"
@@ -244,12 +145,12 @@ export default function AboutClient() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover grayscale contrast-[1.1] group-hover:grayscale-0 transition-all duration-1000"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020203] via-transparent to-transparent opacity-60" />
-              <div className="absolute bottom-8 left-8">
-                <p className="font-serif text-2xl font-bold text-white" style={{ marginBottom: "0.4rem" }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-60" />
+              <div className="absolute bottom-8 left-8 text-left">
+                <p className="font-serif text-2xl font-bold text-text mb-1.5">
                   Chad Smith
                 </p>
-                <p className="font-mono text-[0.65rem] tracking-[0.25em] text-[#7bafd4] uppercase font-bold">
+                <p className="font-mono text-[0.65rem] tracking-[0.25em] text-carolina uppercase font-bold">
                   FOUNDER · LOCAL SEARCH ALLY · SILOAM SPRINGS, AR
                 </p>
               </div>
@@ -260,26 +161,19 @@ export default function AboutClient() {
       </Section>
 
       {/* ─── DIFFERENTIATOR ───────────────────────────────────────────────── */}
-      <Section>
+      <Section id="method" className="bg-bg">
         <Stack gap="3.5rem">
 
           <Stack gap="1.5rem" style={{ maxWidth: "800px" }}>
             <Eyebrow>HOW I WORK</Eyebrow>
-            <H2>Most agencies run the same playbook on every client. I don&apos;t.</H2>
+            <H2>Most agencies run the same generic playbook. I don&apos;t.</H2>
             <Stack gap="1.25rem">
-              <Body>
-                Here&apos;s what I&apos;ve seen too many times: a contractor pays an agency, gets a package, and three
-                months later gets a report full of numbers that don&apos;t connect to actual calls. No one asked what
-                was actually wrong with that specific business. They ran the same strategy they ran for the last ten
-                clients and called it done.
-              </Body>
-              <Body style={{ color: "#f8f9fa", fontWeight: 600 }}>That&apos;s not how I work.</Body>
               <Body>
                 Before I recommend anything, I do a complete audit of your local online presence — your Google
                 Business Profile, your website, your citations, your reviews, and how you compare to the top
-                competitors showing up for your trade in your area right now. I look at what&apos;s actually
-                happening, not what I assume is happening based on your trade category.
+                competitors showing up for your trade in your area right now.
               </Body>
+              <Body className="!text-text font-semibold">Diagnostic-first, strategy-second.</Body>
               <Body>
                 Then I walk you through it — what&apos;s working and what&apos;s not. From there, I put
                 together a strategy built around your specific gaps. Not a package designed for a hypothetical
@@ -294,23 +188,14 @@ export default function AboutClient() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="border-l-4 border-l-[#7bafd4] rounded-r-2xl"
-            style={{
-              padding: "2rem 2.5rem",
-              maxWidth: "720px",
-              background: "linear-gradient(135deg, rgba(123,175,212,0.06) 0%, transparent 100%)",
-              borderRight: "1px solid rgba(123,175,212,0.1)",
-              borderTop: "1px solid rgba(123,175,212,0.1)",
-              borderBottom: "1px solid rgba(123,175,212,0.1)",
-            }}
+            className="border-l-4 border-l-carolina rounded-r-2xl bg-gradient-to-br from-carolina/5 to-transparent border-t border-r border-b border-white/5 p-8 max-w-[720px]"
           >
             <Stack gap="1rem">
-              <p className="text-[#f0f0f0] leading-[1.65] font-sans" style={{ fontSize: "clamp(1rem, 1.5vw, 1.1rem)" }}>
+              <p className="text-[#f0f0f0] leading-[1.65] font-sans text-[clamp(1rem,1.5vw,1.1rem)]">
                 The free audit tool on this site is where that process starts. It gives you a clear picture of where
-                you stand before you spend a dollar on anything. If you want to go further, the strategy call picks
-                up where it leaves off.
+                you stand before you spend a dollar on anything.
               </p>
-              <p className="font-serif text-[#7bafd4] font-bold italic" style={{ fontSize: "0.95rem" }}>
+              <p className="font-serif text-carolina font-bold italic text-[0.95rem]">
                 This takes more time upfront than dropping you into a template. That&apos;s the point.
               </p>
             </Stack>
@@ -324,210 +209,70 @@ export default function AboutClient() {
       </Section>
 
       {/* ─── VALUES ───────────────────────────────────────────────────────── */}
-      <Section className="bg-[#050507]/80 backdrop-blur-sm">
+      <Section id="values" className="bg-bg/80 backdrop-blur-sm">
         <Stack gap="4rem">
 
           <Stack gap="1.5rem" className="text-center items-center">
             <Eyebrow>WHAT I BELIEVE</Eyebrow>
-            <H2>A few things I won&apos;t budge on.</H2>
+            <H2>Accountability is everything.</H2>
           </Stack>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 label: "01 / HONEST SCOPE",
-                body: "I won't take on clients I can't actually help. If your situation is outside my skill set, or your market is more competitive than I can realistically move in, I'll say so before you pay anything. That's not a sales tactic — it's the only way I think this should work.",
+                body: "I won't take on clients I can't actually help. If your market is more competitive than I can realistically move in, I'll say so before you pay anything.",
               },
               {
                 label: "02 / LOCAL SPECIFICITY",
-                body: "Local search is specific, not complicated. What works for an HVAC company in Rogers isn't automatically what works for a plumber in Fayetteville. The differences matter. Ignoring them is why most local SEO work produces underwhelming results.",
+                body: "Local search is specific, not complicated. What works for an HVAC company in Rogers isn't automatically what works for a plumber in Fayetteville.",
               },
               {
                 label: "03 / NO CONTRACTS",
-                body: "I don't offer contracts. If I stop delivering, you leave. No lock-in, no cancellation fees, no notice period. That's the only arrangement that keeps me accountable.",
+                body: "I don't offer contracts. If I stop delivering, you leave. No lock-in, no cancellation fees, no notice period.",
               },
               {
                 label: "04 / RADICAL TRANSPARENCY",
-                body: "Transparency isn't a selling point. It's just how this should work. You'll know what I'm doing, what I'm seeing in the data, and what I think comes next. If something isn't moving, I'll tell you before you figure it out yourself.",
+                body: "You'll always know what I'm doing and whether it's working. If something isn't moving, I'll tell you before you figure it out yourself.",
               },
             ].map((item, i) => (
-              <m.div
+              <SurfaceCard
                 key={item.label}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
-                className="glass-premium rounded-2xl hover:border-[rgba(123,175,212,0.4)] transition-colors"
-                style={{ padding: "2rem 2.25rem" }}
+                delay={i * 0.1}
+                className="hover:border-carolina/40"
               >
                 <Stack gap="1rem">
-                  <span className="font-mono text-[0.6rem] font-bold tracking-[0.25em] uppercase text-[#7bafd4]">
+                  <span className="font-mono text-[0.6rem] font-bold tracking-[0.25em] uppercase text-carolina">
                     {item.label}
                   </span>
-                  <p className="text-[#b0b0b0] leading-[1.7] font-sans" style={{ fontSize: "0.95rem" }}>
+                  <p className="text-muted leading-[1.7] font-sans text-[0.95rem]">
                     {item.body}
                   </p>
                 </Stack>
-              </m.div>
+              </SurfaceCard>
             ))}
           </div>
 
         </Stack>
       </Section>
 
-      {/* ─── TRANSPARENCY PLEDGE ──────────────────────────────────────────── */}
-      <Section>
-        <m.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          style={{ maxWidth: "860px", margin: "0 auto" }}
-        >
-          {/* Section header */}
-          <Stack gap="1rem" className="items-center text-center" style={{ marginBottom: "3.5rem" }}>
-            <Eyebrow>THE PLEDGE</Eyebrow>
-            <h2
-              className="font-serif font-extrabold tracking-[-0.03em] text-[#f8f9fa]"
-              style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)" }}
-            >
-              In writing.
-            </h2>
-          </Stack>
-
-          {/* Pledge card */}
-          <div
-            className="relative rounded-2xl"
-            style={{
-              padding: "3.5rem clamp(2rem, 6vw, 4.5rem)",
-              border: "1px solid rgba(123,175,212,0.2)",
-              background: "linear-gradient(135deg, rgba(123,175,212,0.05) 0%, transparent 60%)",
-            }}
-          >
-            {/* Top accent line */}
-            <div
-              className="absolute top-0 left-1/2 -translate-x-1/2 h-[2px] rounded-full"
-              style={{
-                width: "120px",
-                background: "linear-gradient(to right, transparent, #7bafd4, transparent)",
-              }}
-              aria-hidden="true"
-            />
-
-            {/* Pledge statements */}
-            <Stack gap="0">
-              {[
-                "I will never claim results I haven't achieved.",
-                "I will tell you if something is outside my skill set.",
-                "I will never lock you into a contract.",
-                "I will communicate clearly and often.",
-              ].map((pledge, i) => (
-                <m.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.12, duration: 0.6 }}
-                  className="flex items-start gap-4"
-                  style={{
-                    padding: "1.75rem 0",
-                    borderBottom: i < 3 ? "1px solid rgba(255,255,255,0.05)" : "none",
-                  }}
-                >
-                  <span
-                    className="font-mono font-bold text-[#7bafd4] shrink-0"
-                    style={{ fontSize: "0.6rem", letterSpacing: "0.15em", marginTop: "0.3rem" }}
-                  >
-                    0{i + 1}
-                  </span>
-                  <p
-                    className="font-serif font-bold text-[#f8f9fa] leading-[1.4]"
-                    style={{ fontSize: "clamp(1.1rem, 2.5vw, 1.45rem)" }}
-                  >
-                    {pledge}
-                  </p>
-                </m.div>
-              ))}
-            </Stack>
-
-            {/* Signature line */}
-            <div
-              style={{
-                marginTop: "2.5rem",
-                paddingTop: "2rem",
-                borderTop: "1px solid rgba(255,255,255,0.05)",
-                display: "flex",
-                alignItems: "center",
-                gap: "1rem",
-              }}
-            >
-              <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.05)" }} />
-              <span className="font-mono text-[0.6rem] font-bold tracking-[0.25em] text-[#444] uppercase">
-                Chad Smith · Local Search Ally · Siloam Springs, AR
-              </span>
-              <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.05)" }} />
-            </div>
-          </div>
-        </m.div>
-      </Section>
-
       {/* ─── CLOSING CTA ──────────────────────────────────────────────────── */}
-      <section
-        className="relative border-t border-white/5 overflow-hidden"
-        style={{
-          paddingTop: "var(--section-spacing)",
-          paddingBottom: "var(--section-spacing)",
-          background: "#050507",
-        }}
-      >
-        {/* Ambient glow */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 50% 60% at 50% 0%, rgba(123,175,212,0.06) 0%, transparent 70%)",
-          }}
-          aria-hidden="true"
-        />
-
-        <Container className="relative z-10">
-          <m.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            style={{
-              maxWidth: "760px",
-              margin: "0 auto",
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "2rem",
-            }}
-          >
+      <Section id="cta" className="border-t border-white/5 bg-bg/95">
+        <Stack gap="2.5rem" className="mx-auto max-w-[760px] text-center items-center">
             <H2>
-              If that sounds like the kind of person you want working on your business,{" "}
-              <span className="text-[#7bafd4]">let&apos;s talk.</span>
+              Let&apos;s build <span className="text-carolina">actual visibility.</span>
             </H2>
 
-            <Body style={{ maxWidth: "580px" }}>
-              Start with the free audit — 90 seconds, scored results across seven areas, no email needed to see
-              where you stand. If the findings are useful on their own, use them. If you want to talk through what
-              fixing them would look like, I&apos;m here.
+            <Body className="max-w-[580px]">
+              Start with the free audit — 90 seconds, scoped results, no email needed. If the findings are useful on their own, take them.
             </Body>
 
-            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
+            <div className="flex flex-wrap justify-center gap-4">
               <PrimaryBtn href="/audit">Run Your Free Audit →</PrimaryBtn>
               <OutlineBtn href="/contact">Let&apos;s Talk — It&apos;s Free →</OutlineBtn>
             </div>
-
-            <p className="font-mono font-bold uppercase text-[#444]" style={{ fontSize: "0.6rem", letterSpacing: "0.35em" }}>
-              No pitch. No pressure.
-            </p>
-          </m.div>
-        </Container>
-      </section>
+        </Stack>
+      </Section>
 
     </div>
   );

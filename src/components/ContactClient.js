@@ -4,85 +4,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion as m, AnimatePresence } from "framer-motion";
 
-// ─── LAYOUT ──────────────────────────────────────────────────────────────────
-
-const Container = ({ children, className = "" }) => (
-  <div
-    style={{ maxWidth: 1400, width: "100%", margin: "0 auto", paddingLeft: "var(--page-gutter)", paddingRight: "var(--page-gutter)" }}
-    className={className}
-  >
-    {children}
-  </div>
-);
-
-const Section = ({ children, className = "", id = "" }) => (
-  <section
-    id={id}
-    className={`relative ${className}`}
-    style={{ paddingTop: "var(--section-spacing)", paddingBottom: "var(--section-spacing)" }}
-  >
-    <Container>{children}</Container>
-  </section>
-);
-
-// ─── TYPOGRAPHY ──────────────────────────────────────────────────────────────
-
-const Eyebrow = ({ children }) => (
-  <m.span
-    initial={{ opacity: 0, x: -10 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-    className="inline-block font-mono text-[0.65rem] font-bold tracking-[0.3em] uppercase text-[#7bafd4] bg-[rgba(123,175,212,0.1)] px-3 py-1 rounded"
-  >
-    {children}
-  </m.span>
-);
-
-const H2 = ({ children, className = "" }) => (
-  <m.h2
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className={`font-serif font-extrabold leading-[1.1] tracking-[-0.03em] text-[#f8f9fa] ${className}`}
-    style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
-  >
-    {children}
-  </m.h2>
-);
-
-const Body = ({ children, className = "", style = {} }) => (
-  <m.p
-    initial={{ opacity: 0, y: 16 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: 0.1 }}
-    className={`text-[#b0b0b0] leading-[1.75] font-sans ${className}`}
-    style={{ fontSize: "clamp(1rem, 1.6vw, 1.125rem)", ...style }}
-  >
-    {children}
-  </m.p>
-);
-
-// ─── INTERACTIVE ─────────────────────────────────────────────────────────────
-
-const GlassCard = ({ children, className = "", delay = 0 }) => (
-  <m.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
-    style={{ padding: "2.5rem" }}
-    className={`glass-premium rounded-2xl border border-white/5 hover:border-[#7bafd4]/30 transition-colors ${className}`}
-  >
-    {children}
-  </m.div>
-);
-
-const Stack = ({ children, gap = "2rem", className = "", style = {} }) => (
-  <div style={{ display: "flex", flexDirection: "column", gap, ...style }} className={className}>
-    {children}
-  </div>
-);
+import { Container, Section, Stack } from "@/components/ui/Layout";
+import { H1, H2, Body, Eyebrow } from "@/components/ui/Typography";
+import { GlassCard } from "@/components/ui/Cards";
+import { PrimaryBtn, MotionButton } from "@/components/ui/Buttons";
 
 // ─── ICONS ───────────────────────────────────────────────────────────────────
 
@@ -114,25 +39,25 @@ const MapIcon = () => (
 
 const ContactCard = ({ icon: Icon, title, value, href, delay = 0, microText }) => (
   <GlassCard className="flex flex-col gap-4 group" delay={delay}>
-    <div className="flex items-center gap-4 text-[#7bafd4]">
-      <div className="p-3 rounded-lg bg-[#7bafd4]/10 group-hover:bg-[#7bafd4]/20 transition-colors">
+    <div className="flex items-center gap-4 text-carolina">
+      <div className="p-3 rounded-lg bg-carolina/10 group-hover:bg-carolina/20 transition-colors">
         <Icon />
       </div>
       <div>
-        <p className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#444]">{title}</p>
+        <p className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase text-muted/60">{title}</p>
         {href ? (
-          <a href={href} className="block font-serif text-xl font-bold text-white hover:text-[#7bafd4] transition-colors leading-tight">
+          <a href={href} className="block font-serif text-xl font-bold text-text hover:text-carolina transition-colors leading-tight">
             {value}
           </a>
         ) : (
-          <p className="font-serif text-xl font-bold text-white leading-tight">
+          <p className="font-serif text-xl font-bold text-text leading-tight">
             {value}
           </p>
         )}
       </div>
     </div>
     {microText && (
-       <p className="font-mono text-[0.55rem] tracking-[0.1em] text-[#555] uppercase mt-1">
+       <p className="font-mono text-[0.55rem] tracking-[0.1em] text-muted uppercase mt-1">
          {microText}
        </p>
     )}
@@ -141,11 +66,11 @@ const ContactCard = ({ icon: Icon, title, value, href, delay = 0, microText }) =
 
 const HoursCard = ({ delay = 0 }) => (
   <GlassCard className="flex flex-col gap-6" delay={delay}>
-    <div className="flex items-center gap-4 text-[#7bafd4]">
-      <div className="p-3 rounded-lg bg-[#7bafd4]/10">
+    <div className="flex items-center gap-4 text-carolina">
+      <div className="p-3 rounded-lg bg-carolina/10">
         <ClockIcon />
       </div>
-      <p className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#444]">BUSINESS HOURS</p>
+      <p className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase text-muted/60">BUSINESS HOURS</p>
     </div>
     <div className="space-y-3">
       {[
@@ -154,8 +79,8 @@ const HoursCard = ({ delay = 0 }) => (
         { days: "Sunday", time: "2:00 PM – 6:00 PM" },
       ].map((row) => (
         <div key={row.days} className="flex justify-between items-center py-1 border-b border-white/5">
-          <span className="font-sans text-[0.9rem] text-[#b0b0b0]">{row.days}</span>
-          <span className="font-mono text-[0.75rem] font-bold text-[#f8f9fa]">{row.time}</span>
+          <span className="font-sans text-[0.9rem] text-muted">{row.days}</span>
+          <span className="font-mono text-[0.75rem] font-bold text-text">{row.time}</span>
         </div>
       ))}
     </div>
@@ -165,9 +90,9 @@ const HoursCard = ({ delay = 0 }) => (
 // ─── FORM COMPONENTS ─────────────────────────────────────────────────────────
 
 const InputGroup = ({ label, id, type = "text", required = false, name, placeholder }) => (
-  <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-    <label htmlFor={id} className="font-sans text-[0.63rem] font-semibold tracking-[0.16em] text-[#888] uppercase">
-      {label} {required && <span className="text-[#ff4d4d]">*</span>}
+  <div className="flex flex-col gap-1.5">
+    <label htmlFor={id} className="font-sans text-[0.63rem] font-semibold tracking-[0.16em] text-muted uppercase">
+      {label} {required && <span className="text-red">*</span>}
     </label>
     <input
       type={type}
@@ -175,16 +100,15 @@ const InputGroup = ({ label, id, type = "text", required = false, name, placehol
       name={name}
       required={required}
       placeholder={placeholder}
-      style={{ borderRadius: "6px", padding: "12px 14px" }}
-      className="w-full bg-[#2E3A4D] border border-transparent text-[#f0f0f0] text-[0.9rem] focus:border-[#7bafd4]/50 focus:outline-none transition-colors font-sans outline-none"
+      className="w-full bg-slate border border-transparent rounded-lg px-3.5 py-3 text-text text-[0.9rem] focus:border-carolina/50 focus:outline-none transition-colors font-sans outline-none"
     />
   </div>
 );
 
 const TextareaGroup = ({ label, id, required = false, name, placeholder, rows = 4 }) => (
-  <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-    <label htmlFor={id} className="font-sans text-[0.63rem] font-semibold tracking-[0.16em] text-[#888] uppercase">
-      {label} {required && <span className="text-[#ff4d4d]">*</span>}
+  <div className="flex flex-col gap-1.5">
+    <label htmlFor={id} className="font-sans text-[0.63rem] font-semibold tracking-[0.16em] text-muted uppercase">
+      {label} {required && <span className="text-red">*</span>}
     </label>
     <textarea
       id={id}
@@ -192,8 +116,7 @@ const TextareaGroup = ({ label, id, required = false, name, placeholder, rows = 
       required={required}
       placeholder={placeholder}
       rows={rows}
-      style={{ borderRadius: "6px", padding: "12px 14px" }}
-      className="w-full bg-[#2E3A4D] border border-transparent text-[#f0f0f0] text-[0.9rem] focus:border-[#7bafd4]/50 focus:outline-none transition-colors font-sans outline-none resize-none"
+      className="w-full bg-slate border border-transparent rounded-lg px-3.5 py-3 text-text text-[0.9rem] focus:border-carolina/50 focus:outline-none transition-colors font-sans outline-none resize-none"
     />
   </div>
 );
@@ -233,14 +156,14 @@ export default function ContactClient() {
     }
   };
 
-  if (!mounted) return <div className="min-h-screen bg-[#020203]" />;
+  if (!mounted) return <div className="min-h-screen bg-bg" />;
 
   return (
-    <div className="relative text-[#f8f9fa] selection:bg-[rgba(123,175,212,0.2)]">
+    <div className="relative text-text selection:bg-carolina/20">
 
       {/* ─── HERO ─────────────────────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex items-center overflow-hidden bg-[#020203]"
+        className="relative min-h-screen flex items-center overflow-hidden bg-bg"
         style={{ paddingTop: "120px", paddingBottom: "8rem" }}
       >
         <div
@@ -253,21 +176,13 @@ export default function ContactClient() {
         />
         <Container className="relative z-10 text-center">
             <Stack gap="2rem" style={{ maxWidth: "900px", margin: "0 auto" }}>
-              <m.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-                <Eyebrow>GET IN TOUCH</Eyebrow>
-              </m.div>
+              <Eyebrow>GET IN TOUCH</Eyebrow>
 
-              <m.h1
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.15, ease: [0.2, 0.8, 0.2, 1] }}
-                className="font-serif font-extrabold leading-[1.05] tracking-[-0.04em] text-[#f8f9fa]"
-                style={{ fontSize: "clamp(2.6rem, 7vw, 5rem)" }}
-              >
-                Let&apos;s talk. <span className="text-[#7bafd4]">No pitch, no pressure.</span>
-              </m.h1>
+              <H1>
+                Let&apos;s talk. <span className="text-carolina">No pitch, no pressure.</span>
+              </H1>
               
-              <Body style={{ maxWidth: "600px", margin: "0 auto" }}>
+              <Body variant="hero" className="mx-auto max-w-[600px]">
                 Whether you have a specific question about your local presence or just want to see if your market is a good fit, I&apos;m here to help.
               </Body>
             </Stack>
@@ -280,11 +195,11 @@ export default function ContactClient() {
           transition={{ delay: 1.8, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
         >
-          <span className="font-mono text-[0.55rem] tracking-[0.35em] text-[#333] uppercase">Scroll</span>
+          <span className="font-mono text-[0.55rem] tracking-[0.35em] text-muted/40 uppercase">Scroll</span>
           <m.div
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="text-[#333] text-lg leading-none"
+            className="text-muted/40 text-lg leading-none"
           >
             ↓
           </m.div>
@@ -292,7 +207,7 @@ export default function ContactClient() {
       </section>
 
       {/* ─── CONTACT SECTION ─────────────────────────────────────────────── */}
-      <Section id="contact-content" className="bg-[#050507]/80 backdrop-blur-sm">
+      <Section id="contact-content" className="bg-bg/80 backdrop-blur-sm">
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-24 items-start">
           
           {/* Left: Info Cards */}
@@ -343,11 +258,11 @@ export default function ContactClient() {
                   <div className="w-20 h-20 bg-[#00ff88]/10 text-[#00ff88] rounded-full flex items-center justify-center mx-auto text-3xl">
                     ✓
                   </div>
-                  <H2 className="!text-3xl text-white">Message sent.</H2>
+                  <H2 className="!text-3xl text-text">Message sent.</H2>
                   <Body>I&apos;ll get back to you personally within one business day.</Body>
                   <button 
                     onClick={() => setStatus(null)}
-                    className="font-mono text-[0.7rem] font-bold text-[#7bafd4] hover:underline uppercase tracking-widest"
+                    className="font-mono text-[0.7rem] font-bold text-carolina hover:underline uppercase tracking-widest"
                   >
                     Send another message
                   </button>
@@ -376,18 +291,17 @@ export default function ContactClient() {
                     <button
                       type="submit"
                       disabled={status === 'sending'}
-                      style={{ borderRadius: "6px", padding: "13px 22px" }}
-                      className="w-full bg-[#7bafd4] text-[#2E3A4D] font-mono font-bold text-[0.75rem] uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(123,175,212,0.3)]"
+                      className="w-full bg-carolina text-slate font-mono font-bold text-[0.75rem] uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(123,175,212,0.3)] rounded-lg py-3.5"
                     >
                       {status === 'sending' ? 'Sending...' : 'Send Message →'}
                     </button>
                     {status === 'error' && (
-                      <p className="text-[#ff4d4d] text-center mt-4 font-mono text-xs">
+                      <p className="text-red text-center mt-4 font-mono text-xs">
                         There was an error sending your message. Please try again or email directly.
                       </p>
                     )}
                   </div>
-                  <p className="text-center font-mono text-[0.55rem] text-[#444] uppercase tracking-[0.25em]">
+                  <p className="text-center font-mono text-[0.55rem] text-muted/40 uppercase tracking-[0.25em]">
                     No email list · No spam · Just a personal response
                   </p>
                 </form>
@@ -421,22 +335,17 @@ export default function ContactClient() {
         {/* Overlay */}
         <div className="absolute inset-0 pointer-events-none z-10">
           <Container className="h-full relative">
-            <div className="absolute bottom-12 left-[var(--page-gutter)]">
-              <GlassCard className="!p-6 !bg-[#050507]/90 !backdrop-blur-xl border border-white/10 shadow-2xl">
+            <div className="absolute bottom-12 left-page-gutter">
+              <GlassCard className="!p-6 !bg-bg/90 !backdrop-blur-xl border border-white/10 shadow-2xl">
                  <Stack gap="0.5rem">
-                    <p className="font-serif text-lg font-bold text-white">Serving all of NWA.</p>
-                    <p className="font-mono text-[0.65rem] text-[#7bafd4] tracking-widest uppercase">From Rogers to Fayetteville</p>
+                    <p className="font-serif text-lg font-bold text-text">Serving all of NWA.</p>
+                    <p className="font-mono text-[0.65rem] text-carolina tracking-widest uppercase">From Rogers to Fayetteville</p>
                  </Stack>
               </GlassCard>
             </div>
           </Container>
         </div>
       </section>
-
-      {/* ─── SCANLINE OVERLAY ────────────────────────────────────────────── */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[100] mix-blend-overlay">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat" />
-      </div>
 
     </div>
   );

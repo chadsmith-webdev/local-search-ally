@@ -6,104 +6,10 @@ import Link from "next/link";
 import { motion as m, AnimatePresence } from "framer-motion";
 import ThreeCanvas from "@/components/ThreeCanvas";
 
-// ─── LAYOUT ─────────────────────────────────────────────────────────────────
-
-const Container = ({ children, className = "" }) => (
-  <div
-    style={{ maxWidth: 1400, width: "100%", margin: "0 auto", paddingLeft: "var(--page-gutter)", paddingRight: "var(--page-gutter)" }}
-    className={className}
-  >
-    {children}
-  </div>
-);
-
-const Section = ({ children, className = "", id = "" }) => (
-  <section
-    id={id}
-    className={`relative ${className}`}
-    style={{ paddingTop: "var(--section-spacing)", paddingBottom: "var(--section-spacing)" }}
-  >
-    <Container>{children}</Container>
-  </section>
-);
-
-// ─── TYPOGRAPHY ──────────────────────────────────────────────────────────────
-
-const Eyebrow = ({ children }) => (
-  <m.span
-    initial={{ opacity: 0, x: -10 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-    className="inline-block font-mono text-[0.65rem] font-bold tracking-[0.3em] uppercase text-carolina bg-carolina/10 px-3 py-1 rounded"
-  >
-    {children}
-  </m.span>
-);
-
-const H2 = ({ children, className = "" }) => (
-  <m.h2
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className={`font-serif text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#f8f9fa] ${className}`}
-  >
-    {children}
-  </m.h2>
-);
-
-const Body = ({ children, className = "" }) => (
-  <m.p
-    initial={{ opacity: 0, y: 16 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: 0.1 }}
-    className={`text-[#b0b0b0] text-[clamp(1rem,1.6vw,1.25rem)] leading-[1.7] font-sans font-medium ${className}`}
-  >
-    {children}
-  </m.p>
-);
-
-// ─── INTERACTIVE ─────────────────────────────────────────────────────────────
-
-const GlassCard = ({ children, className = "", delay = 0 }) => (
-  <m.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
-    style={{ padding: "2.5rem" }}
-    className={`glass-premium rounded-2xl border border-white/5 hover:border-carolina/30 transition-colors ${className}`}
-  >
-    {children}
-  </m.div>
-);
-
-const PrimaryBtn = ({ href, children, className = "" }) => (
-  <Link
-    href={href}
-    style={{ padding: "1.25rem 2.75rem" }}
-    className={`inline-flex items-center justify-center bg-carolina text-[#0a1118] font-bold rounded-lg text-[1rem] hover:brightness-110 hover:scale-[1.02] transition-all shadow-[0_0_30px_rgba(123,175,212,0.3)] hover:shadow-[0_0_50px_rgba(123,175,212,0.5)] active:scale-[0.98] cursor-pointer ${className}`}
-  >
-    {children}
-  </Link>
-);
-
-const OutlineBtn = ({ href, children, className = "" }) => (
-  <Link
-    href={href}
-    style={{ padding: "1.25rem 2.75rem" }}
-    className={`inline-flex items-center justify-center border border-carolina/30 text-carolina font-bold rounded-lg text-[1rem] tracking-tight hover:bg-carolina/10 transition-all cursor-pointer ${className}`}
-  >
-    {children}
-  </Link>
-);
-
-// ─── STACK helper — consistent vertical rhythm via gap, not margins ───────────
-const Stack = ({ children, gap = "2rem", className = "", style = {} }) => (
-  <div style={{ display: "flex", flexDirection: "column", gap, ...style }} className={className}>
-    {children}
-  </div>
-);
+import { Container, Section, Stack } from "@/components/ui/Layout";
+import { H1, H2, Body, Eyebrow } from "@/components/ui/Typography";
+import { GlassCard, SurfaceCard } from "@/components/ui/Cards";
+import { PrimaryBtn, OutlineBtn } from "@/components/ui/Buttons";
 
 // ─── FAQ ACCORDION ────────────────────────────────────────────────────────────
 
@@ -133,7 +39,7 @@ function FaqItem({ faq, isOpen, onToggle }) {
           display: "flex", justifyContent: "space-between", alignItems: "center",
           width: "100%", textAlign: "left", padding: "1.75rem 0",
           cursor: "pointer", background: "none", border: "none",
-          color: isOpen ? "#7bafd4" : "#f8f9fa", transition: "color 0.25s",
+          color: isOpen ? "var(--color-carolina)" : "var(--color-text)", transition: "color 0.25s",
         }}
       >
         <span className="font-serif text-[1.3rem] font-bold" style={{ lineHeight: 1.3 }}>
@@ -143,7 +49,7 @@ function FaqItem({ faq, isOpen, onToggle }) {
           style={{
             width: "30px", height: "30px", borderRadius: "50%", flexShrink: 0,
             marginLeft: "1.5rem", display: "flex", alignItems: "center", justifyContent: "center",
-            border: "1px solid rgba(123,175,212,0.3)", color: "#7bafd4",
+            border: "1px solid rgba(123,175,212,0.3)", color: "var(--color-carolina)",
             fontSize: "1.25rem", fontWeight: "300", lineHeight: 1,
             background: isOpen ? "rgba(123,175,212,0.1)" : "transparent",
             transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
@@ -165,8 +71,7 @@ function FaqItem({ faq, isOpen, onToggle }) {
             style={{ overflow: "hidden" }}
           >
             <p
-              className="font-sans leading-relaxed"
-              style={{ color: "#6c757d", paddingBottom: "1.75rem", fontSize: "1rem" }}
+              className="font-sans leading-relaxed text-muted pb-7 text-base"
             >
               {faq.node ?? faq.a}
             </p>
@@ -193,9 +98,9 @@ function FaqAccordion() {
       </div>
 
       {/* Primary CTA below the last question */}
-      <div style={{ paddingTop: "2.5rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+      <div className="pt-10 flex flex-col gap-3">
         <div><PrimaryBtn href="/audit">Run Your Free Audit →</PrimaryBtn></div>
-        <p className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase" style={{ color: "#444" }}>
+        <p className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase text-muted/40">
           See your scores in 90 seconds — no email required
         </p>
       </div>
@@ -208,10 +113,10 @@ function FaqAccordion() {
 export default function HomeClient() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
-  if (!mounted) return <div className="min-h-screen bg-[#020203]" />;
+  if (!mounted) return <div className="min-h-screen bg-bg" />;
 
   return (
-    <div className="relative text-[#f8f9fa] selection:bg-carolina selection:text-[#020203]">
+    <div className="relative text-text selection:bg-carolina selection:text-bg">
       <ThreeCanvas />
 
       {/* ─── HERO ───────────────────────────────────────────────────────── */}
@@ -222,50 +127,39 @@ export default function HomeClient() {
         <Container className="relative z-10">
           <Stack gap="2rem" style={{ maxWidth: "900px" }}>
 
-            {/* Eyebrow */}
-            <m.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-              <Eyebrow>LOCAL SEO FOR NWA CONTRACTORS</Eyebrow>
-            </m.div>
+            <Eyebrow>LOCAL SEO FOR NWA CONTRACTORS</Eyebrow>
 
-            {/* H1 */}
-            <m.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
-              className="font-serif text-[clamp(2.8rem,8vw,6rem)] font-extrabold leading-[1.02] tracking-[-0.05em] text-[#f8f9fa]"
-            >
+            <H1>
               Your competitors are getting calls{" "}
               <span className="text-carolina-dark">that should be yours.</span>
-            </m.h1>
+            </H1>
 
-            {/* Supporting copy */}
-            <m.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-[#b0b0b0] text-[clamp(1.1rem,2vw,1.45rem)] leading-[1.6] font-sans font-medium"
-              style={{ maxWidth: "660px" }}
-            >
+            <Body variant="hero" className="max-w-[660px]">
               46% of all Google searches have local intent. If your name isn&apos;t in the results, the call goes to whoever is.
-            </m.p>
+            </Body>
 
-            {/* CTA block */}
-            <m.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <Stack gap="1.25rem">
-                <div><PrimaryBtn href="/audit">Run Your Free Audit →</PrimaryBtn></div>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
-                  {["47 Contractors Audited", "90-Second Results", "No Email Needed", "Zero Pitch"].map(item => (
-                    <span key={item} className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#444]">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </Stack>
-            </m.div>
+            <Stack gap="1.25rem">
+              <m.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                <PrimaryBtn href="/audit">Run Your Free Audit →</PrimaryBtn>
+              </m.div>
+              <div className="flex flex-wrap gap-6">
+                {["47 Contractors Audited", "90-Second Results", "No Email Needed", "Zero Pitch"].map((item, i) => (
+                  <m.span 
+                    key={item} 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.7 + (i * 0.1) }}
+                    className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase text-muted/40"
+                  >
+                    {item}
+                  </m.span>
+                ))}
+              </div>
+            </Stack>
 
           </Stack>
         </Container>
@@ -277,21 +171,21 @@ export default function HomeClient() {
           transition={{ delay: 1.8, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
         >
-          <span className="font-mono text-[0.55rem] tracking-[0.35em] text-[#333] uppercase">Scroll</span>
+          <span className="font-mono text-[0.55rem] tracking-[0.35em] text-muted/40 uppercase">Scroll</span>
           <m.div
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="text-[#333] text-lg leading-none"
+            className="text-muted/40 text-lg leading-none"
           >
             ↓
           </m.div>
         </m.div>
 
-        <div className="absolute left-0 top-[25%] w-full h-[1px] bg-gradient-to-r from-transparent via-carolina/20 to-transparent animate-pulse pointer-events-none" />
+        <div className="absolute left-0 top-[25%] w-full h-px bg-gradient-to-r from-transparent via-carolina/20 to-transparent animate-pulse pointer-events-none" />
       </section>
 
       {/* ─── PROBLEM ────────────────────────────────────────────────────── */}
-      <Section id="problem" className="bg-[#050507]/80 backdrop-blur-sm">
+      <Section id="problem" className="bg-bg/80 backdrop-blur-sm">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.8fr] gap-20 items-start">
           <Stack gap="2rem">
             <Eyebrow>THE REAL PROBLEM</Eyebrow>
@@ -303,14 +197,18 @@ export default function HomeClient() {
               </Body>
               <Body>And if your name isn&apos;t in the first three results on the map, they call someone else without ever knowing you exist.</Body>
             </Stack>
-            <div>
+            <m.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <p
-                className="font-serif text-2xl font-bold text-white bg-white/5 inline-block rounded-lg border border-white/10 border-l-carolina border-l-4"
-                style={{ padding: "1rem 1.5rem" }}
+                className="font-serif text-2xl font-bold text-text bg-white/5 inline-block rounded-lg border border-white/10 border-l-carolina border-l-4 p-4"
               >
                 The work isn&apos;t the problem. <span className="text-carolina">The visibility is.</span>
               </p>
-            </div>
+            </m.div>
           </Stack>
 
           <Stack gap="1.5rem">
@@ -320,10 +218,10 @@ export default function HomeClient() {
               { label: "In your reviews", body: "You've done hundreds of jobs. But online you might look like the new guy. Customers can't tell who's been operating for twenty years and who started six months ago." },
             ].map((p, i) => (
               <GlassCard key={p.label} delay={i * 0.1}>
-                <div className="font-mono text-[0.65rem] font-bold tracking-[0.2em] text-carolina uppercase" style={{ marginBottom: "1rem" }}>
+                <div className="font-mono text-[0.65rem] font-bold tracking-[0.2em] text-carolina uppercase mb-4">
                   ERROR_CODE // {p.label}
                 </div>
-                <p className="text-[#c0c0c0] font-medium leading-[1.6]">{p.body}</p>
+                <p className="text-muted font-medium leading-[1.6]">{p.body}</p>
               </GlassCard>
             ))}
           </Stack>
@@ -353,11 +251,11 @@ export default function HomeClient() {
                   I&apos;m not a big agency. I&apos;m one person in Siloam Springs, and I don&apos;t take on clients I can&apos;t actually help. If something is outside my skill set, I&apos;ll say so before you pay for it.
                 </Body>
               </Stack>
-              <div className="glass-premium border-l-4 border-l-carolina rounded-r-xl" style={{ padding: "2rem" }}>
-                <p className="text-[#f8f9fa] text-[0.95rem] leading-[1.6] italic font-semibold">
+              <div className="glass-premium border-l-4 border-l-carolina rounded-r-xl p-8">
+                <p className="text-text text-[0.95rem] leading-[1.6] italic font-semibold">
                   &ldquo;I built demo sites for plumbing, HVAC, and electrical... Not to show clients — to prove the method on my own projects first.&rdquo;
                 </p>
-                <Link href="/portfolio" className="inline-block font-mono text-[0.7rem] font-bold text-carolina hover:translate-x-2 transition-transform" style={{ marginTop: "1rem" }}>
+                <Link href="/portfolio" className="inline-block font-mono text-[0.7rem] font-bold text-carolina hover:translate-x-2 transition-transform mt-4">
                   [SEE THE PORTFOLIO →]
                 </Link>
               </div>
@@ -374,9 +272,9 @@ export default function HomeClient() {
             <div className="absolute inset-0 bg-gradient-to-br from-carolina/20 to-transparent rounded-3xl -rotate-3 group-hover:rotate-0 transition-transform duration-700" />
             <div className="relative h-full w-full glass-premium overflow-hidden rounded-3xl border border-white/10">
               <Image src="/images/chad.avif" alt="Chad Smith - Founder" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover grayscale contrast-[1.1] group-hover:grayscale-0 transition-all duration-1000" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020203] via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-60" />
               <div className="absolute bottom-10 left-10">
-                <p className="font-serif text-3xl font-bold text-white" style={{ marginBottom: "0.5rem" }}>Chad Smith</p>
+                <p className="font-serif text-3xl font-bold text-text mb-2">Chad Smith</p>
                 <p className="font-mono text-xs tracking-[0.3em] text-carolina uppercase font-bold">FOUNDER · LOCAL SEARCH ALLY</p>
               </div>
             </div>
@@ -385,7 +283,7 @@ export default function HomeClient() {
       </Section>
 
       {/* ─── PLAN ───────────────────────────────────────────────────────── */}
-      <Section className="bg-[#050507]/80 backdrop-blur-sm">
+      <Section id="plan" className="bg-bg/80 backdrop-blur-sm">
         <Stack gap="4rem">
           <Stack gap="1.5rem" className="text-center items-center">
             <Eyebrow>HOW THIS WORKS</Eyebrow>
@@ -393,7 +291,7 @@ export default function HomeClient() {
           </Stack>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            <div className="hidden md:block absolute top-[100px] left-[15%] right-[15%] h-[1px] bg-gradient-to-r from-transparent via-carolina/20 to-transparent" />
+            <div className="hidden md:block absolute top-[100px] left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-carolina/20 to-transparent" />
             {[
               { step: "01", title: "Audit", body: "I review your Google Business Profile, website, competitor ranking, and local citation health to find what's actually costing you calls.", cta: "Start with the free audit →" },
               { step: "02", title: "Fix Priority Gaps", body: "Not everything at once. What matters most first — the things that move you up in search before we touch anything else." },
@@ -407,7 +305,7 @@ export default function HomeClient() {
                   {s.step}
                 </m.div>
                 <h3 className="font-serif text-2xl font-bold">{s.title}</h3>
-                <p className="text-[#6c757d] leading-relaxed">{s.body}</p>
+                <p className="text-muted leading-relaxed">{s.body}</p>
                 {s.cta && (
                   <Link href="/audit" className="font-mono text-[0.7rem] font-bold text-carolina hover:underline tracking-tighter">
                     [{s.cta.toUpperCase()}]
@@ -418,18 +316,18 @@ export default function HomeClient() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <GlassCard className="text-center">
+            <SurfaceCard className="text-center">
               <Stack gap="0.75rem">
-                <p className="font-serif text-xl font-bold text-white">No contracts, ever.</p>
-                <p className="text-[#6c757d] text-sm">If I stop delivering, you leave — no lock-in, no cancellation fees, no notice period.</p>
+                <p className="font-serif text-xl font-bold text-text">No contracts, ever.</p>
+                <p className="text-muted text-sm">If I stop delivering, you leave — no lock-in, no cancellation fees, no notice period.</p>
               </Stack>
-            </GlassCard>
-            <GlassCard className="text-center">
+            </SurfaceCard>
+            <SurfaceCard className="text-center">
               <Stack gap="0.75rem">
-                <p className="font-serif text-xl font-bold text-white">Full Transparency.</p>
-                <p className="text-[#6c757d] text-sm">You&apos;ll always know what I&apos;m doing and whether it&apos;s working. No black box marketing.</p>
+                <p className="font-serif text-xl font-bold text-text">Full Transparency.</p>
+                <p className="text-muted text-sm">You&apos;ll always know what I&apos;m doing and whether it&apos;s working. No black box marketing.</p>
               </Stack>
-            </GlassCard>
+            </SurfaceCard>
           </div>
         </Stack>
       </Section>
@@ -442,7 +340,7 @@ export default function HomeClient() {
           <Stack gap="1.5rem" style={{ alignItems: "center" }}>
             <Eyebrow>FREE TOOL</Eyebrow>
             <H2>See your scores <span className="text-carolina">before</span> you talk to anyone.</H2>
-            <Body style={{ maxWidth: "680px" }}>
+            <Body className="mx-auto max-w-[680px]">
               Enter your business name, trade, and city. In 90 seconds you&apos;ll get a scored audit across seven areas — Google Business Profile, reviews, website, technical health, citations, backlinks, and competitor comparison.
             </Body>
           </Stack>
@@ -453,45 +351,39 @@ export default function HomeClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
-            className="glass-premium border border-carolina/20 shadow-[0_0_80px_rgba(123,175,212,0.08)] relative w-full"
-            style={{ borderRadius: "2.5rem", padding: "3.5rem 3rem" }}
+            className="glass-premium border border-carolina/20 shadow-[0_0_80px_rgba(123,175,212,0.08)] relative w-full rounded-[2.5rem] p-14"
           >
             {/* Top accent line */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-carolina to-transparent rounded-full" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-0.5 bg-gradient-to-r from-transparent via-carolina to-transparent rounded-full" />
 
             <Stack gap="2.5rem" style={{ alignItems: "center" }}>
 
               {/* Live status indicator */}
-              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+              <div className="flex items-center gap-2.5">
                 <span
-                  className="rounded-full bg-[#00ff88]"
-                  style={{
-                    width: "8px", height: "8px", flexShrink: 0,
-                    boxShadow: "0 0 8px #00ff88",
-                    animation: "pulse-node 2s ease-in-out infinite"
-                  }}
+                  className="rounded-full bg-green-500 w-2 h-2 shrink-0 shadow-[0_0_8px_#10b981] animate-pulse"
                 />
-                <span className="font-mono text-[0.65rem] font-bold tracking-[0.25em] uppercase text-[#00ff88]">
+                <span className="font-mono text-[0.65rem] font-bold tracking-[0.25em] uppercase text-green-500">
                   SYSTEM ONLINE — READY TO SCAN
                 </span>
               </div>
 
               {/* CTA Button */}
-              <PrimaryBtn href="/audit" className="text-lg">
+              <PrimaryBtn href="/audit" className="text-xl">
                 Run Your Free Audit Now →
               </PrimaryBtn>
 
               {/* Trust line */}
-              <p className="font-mono text-[0.65rem] tracking-[0.25em] text-[#555] uppercase font-bold">
+              <p className="font-mono text-[0.65rem] tracking-[0.25em] text-muted/40 uppercase font-bold">
                 No email needed · 90 seconds · No pitch
               </p>
 
               {/* Score category badges */}
-              <div>
-                <p className="font-mono text-[0.55rem] tracking-[0.3em] text-[#444] uppercase font-bold" style={{ marginBottom: "1rem" }}>
+              <Stack gap="1rem">
+                <p className="font-mono text-[0.55rem] tracking-[0.3em] text-muted/40 uppercase font-bold">
                   Scored audit areas
                 </p>
-                <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.6rem" }}>
+                <div className="flex flex-wrap justify-center gap-2.5">
                   {[
                     { label: "GBP", desc: "Google Business Profile" },
                     { label: "Reviews", desc: "Rating & Volume" },
@@ -503,14 +395,13 @@ export default function HomeClient() {
                   ].map(({ label }) => (
                     <span
                       key={label}
-                      className="font-mono text-[0.6rem] font-bold tracking-[0.15em] uppercase text-carolina border border-carolina/20 bg-carolina/5 rounded"
-                      style={{ padding: "0.3rem 0.7rem" }}
+                      className="font-mono text-[0.6rem] font-bold tracking-[0.15em] uppercase text-carolina border border-carolina/20 bg-carolina/5 rounded px-3 py-1.5"
                     >
                       {label}
                     </span>
                   ))}
                 </div>
-              </div>
+              </Stack>
 
             </Stack>
           </m.div>
@@ -521,7 +412,7 @@ export default function HomeClient() {
 
       {/* ─── SUCCESS ────────────────────────────────────────────────────── */}
       <Section className="bg-carolina/5 relative overflow-hidden">
-        <Stack gap="2rem" style={{ maxWidth: "760px", margin: "0 auto", textAlign: "center", alignItems: "center" }}>
+        <Stack gap="2rem" className="mx-auto max-w-[760px] text-center items-center">
           <Eyebrow>WHAT SUCCESS LOOKS LIKE</Eyebrow>
           <H2>The phone rings from people who already want to hire you.</H2>
           <Stack gap="1.25rem">
@@ -533,19 +424,23 @@ export default function HomeClient() {
       </Section>
 
       {/* ─── STAKES ─────────────────────────────────────────────────────── */}
-      <Section className="bg-[#050507]/80 backdrop-blur-sm">
-        <Stack gap="2rem" style={{ maxWidth: "760px", margin: "0 auto", textAlign: "center", alignItems: "center" }}>
+      <Section id="stakes" className="bg-bg/80 backdrop-blur-sm">
+        <Stack gap="2rem" className="mx-auto max-w-[760px] text-center items-center">
           <Eyebrow>THE STAKES</Eyebrow>
           <H2>Every month you&apos;re invisible, that&apos;s work going to whoever shows up first.</H2>
           <Stack gap="1.25rem">
             <Body>Referrals are real business. But they&apos;re not a system — they&apos;re a streak. The streak slows when your best customers get busy, move, or just forget to mention you.</Body>
-            <Body className="text-[#888]">The gap between your position and theirs isn&apos;t talent — it&apos;s visibility, and it&apos;s usually fixable.</Body>
+            <Body className="text-muted/60">The gap between your position and theirs isn&apos;t talent — it&apos;s visibility, and it&apos;s usually fixable.</Body>
           </Stack>
-          <div>
-            <Link href="/audit" className="font-serif text-xl font-bold text-white hover:text-carolina transition-colors underline decoration-carolina/40 underline-offset-8">
+          <m.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          >
+            <Link href="/audit" className="font-serif text-xl font-bold text-text hover:text-carolina transition-colors underline decoration-carolina/40 underline-offset-8">
               See where you stand online →
             </Link>
-          </div>
+          </m.div>
         </Stack>
       </Section>
 
@@ -554,7 +449,7 @@ export default function HomeClient() {
         <div className="faq-grid">
           <Stack gap="2rem">
             <H2>Questions worth asking.</H2>
-            <Body style={{ color: "#6c757d" }}>I don&apos;t expect you to take my word for it. Here&apos;s how I work, what it costs, and why I don&apos;t use contracts.</Body>
+            <Body className="text-muted">I don&apos;t expect you to take my word for it. Here&apos;s how I work, what it costs, and why I don&apos;t use contracts.</Body>
             <div><OutlineBtn href="/contact">Book a free strategy call</OutlineBtn></div>
           </Stack>
 
@@ -568,8 +463,7 @@ export default function HomeClient() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-carolina/10 via-transparent to-transparent rounded-[60px] border border-white/5"
-          style={{ padding: "5rem", maxWidth: "900px", margin: "0 auto", textAlign: "center" }}
+          className="bg-gradient-to-br from-carolina/10 via-transparent to-transparent rounded-[60px] border border-white/5 p-20 mx-auto max-w-[900px] text-center"
         >
           <Stack gap="2.5rem" className="items-center">
             <H2 className="text-[clamp(2.5rem,6vw,4.5rem)]">
@@ -578,22 +472,16 @@ export default function HomeClient() {
             <Body className="max-w-[600px]">
               Run the free audit and see where you stand. If the findings are useful on their own, take them. If you want to talk through what fixing them would look like, I&apos;m here.
             </Body>
-            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1.5rem" }}>
+            <div className="flex flex-wrap justify-center gap-6">
               <PrimaryBtn href="/audit">Run Your Free Audit →</PrimaryBtn>
               <OutlineBtn href="/contact">Let&apos;s Talk — It&apos;s Free →</OutlineBtn>
             </div>
-            <p className="font-mono text-[0.6rem] tracking-[0.4em] text-[#444] uppercase font-bold">
+            <p className="font-mono text-[0.6rem] tracking-[0.4em] text-muted/40 uppercase font-bold">
               NO PITCH · NO PRESSURE · DIAGNOSTIC-FIRST
             </p>
           </Stack>
         </m.div>
       </Section>
-
-
-      {/* Scanline overlay */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[100] mix-blend-overlay">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat" />
-      </div>
     </div>
   );
 }

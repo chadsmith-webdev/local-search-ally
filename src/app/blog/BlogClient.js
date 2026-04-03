@@ -5,24 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion as m } from "framer-motion";
 
-// ─── TYPEWRITER ───────────────────────────────────────────────────────────────
-
-function useTypewriter(text, speed = 90) {
-  const [displayed, setDisplayed] = useState("");
-  const [done, setDone] = useState(false);
-
-  useEffect(() => {
-    let i = 0;
-    const id = setInterval(() => {
-      i++;
-      setDisplayed(text.slice(0, i));
-      if (i >= text.length) { setDone(true); clearInterval(id); }
-    }, speed);
-    return () => clearInterval(id);
-  }, [text, speed]);
-
-  return { displayed, done };
-}
+import { Container, Section, Stack } from "@/components/ui/Layout";
+import { H1, H2, Body, Eyebrow } from "@/components/ui/Typography";
+import { GlassCard, SurfaceCard } from "@/components/ui/Cards";
+import { PrimaryBtn } from "@/components/ui/Buttons";
 
 // ─── READING PROGRESS BAR ────────────────────────────────────────────────────
 
@@ -80,11 +66,8 @@ function TiltCard({ children, href }) {
       href={href}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
+      className="flex h-full no-underline bg-slate border border-white/10 rounded-xl overflow-hidden transition-all duration-300 transform-gpu"
       style={{
-        display: "flex", textDecoration: "none",
-        background: "#141414", borderRadius: "8px", overflow: "hidden",
-        border: "1px solid rgba(255,255,255,0.08)",
-        transition: "transform 0.18s ease, border-color 0.15s, background 0.15s",
         transformStyle: "preserve-3d",
       }}
     >
@@ -96,136 +79,92 @@ function TiltCard({ children, href }) {
 // ─── BLOG CLIENT ─────────────────────────────────────────────────────────────
 
 export default function BlogClient({ posts }) {
-  const { displayed, done } = useTypewriter("Blog", 90);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+
+  if (!mounted) return <div className="min-h-screen bg-bg" />;
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0a0a0a" }}>
+    <div className="relative text-text selection:bg-carolina/20 min-h-screen bg-bg">
       <ReadingProgress />
 
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(3rem, 8vw, 5rem) clamp(1.25rem, 4vw, 3rem)" }}>
+      {/* ─── CINEMATIC HERO ────────────────────────────────────────────────── */}
+      <section
+        className="relative flex items-center overflow-hidden bg-bg"
+        style={{ minHeight: "65vh", paddingTop: "140px", paddingBottom: "4rem" }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 50% at 50% 110%, rgba(123,175,212,0.07) 0%, transparent 70%)",
+          }}
+          aria-hidden="true"
+        />
 
-        {/* ── Header ── */}
-        <m.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          style={{ marginBottom: 48 }}
-        >
-          <m.p
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-            style={{
-              fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em",
-              textTransform: "uppercase", color: "#7bafd4",
-              fontFamily: "var(--font-mono)", marginBottom: 10,
-            }}
-          >
-            LOCAL SEARCH ALLY — INSIGHTS
-          </m.p>
+        <Container className="relative z-10 text-center">
+            <Stack gap="2.5rem" style={{ maxWidth: "900px", margin: "0 auto" }}>
+              <Eyebrow>LOCAL SEARCH ALLY · INSIGHTS</Eyebrow>
 
-          {/* Typewriter headline */}
-          <h1 style={{
-            fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
-            fontWeight: 700, lineHeight: 1.2, letterSpacing: "-0.02em",
-            color: "#f0f0f0", margin: "0 0 12px",
-          }}>
-            {displayed}
-            <span style={{
-              display: "inline-block", width: "2px", height: "0.85em",
-              background: "#7bafd4", marginLeft: "3px", verticalAlign: "middle",
-              animation: done ? "blink-cursor 1s step-end infinite" : "none",
-            }} />
-          </h1>
+              <H1>
+                SEO for contractors is <span className="text-carolina">broken.</span> Here&apos;s how to fix it.
+              </H1>
+              
+              <Body variant="hero" className="mx-auto max-w-[640px]">
+                No fluff. No generic marketing advice. Just technical insights on how to win the Map Pack and get the calls you deserve.
+              </Body>
+            </Stack>
+        </Container>
+      </section>
 
-          <m.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            style={{ color: "#888", fontSize: "0.95rem", fontFamily: "var(--font-ui)", lineHeight: 1.6 }}
-          >
-            Local SEO tips and contractor marketing strategies.
-          </m.p>
-        </m.div>
-
-        {/* ── Post grid ── */}
-        <style>{`
-          .blog-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-          }
-          @media (min-width: 640px)  { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
-          @media (min-width: 1024px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
-        `}</style>
-        <div className="blog-grid">
+      {/* ─── POST GRID ───────────────────────────────────────────────────── */}
+      <Section className="bg-bg/80 backdrop-blur-sm -mt-20 relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, i) => (
             <m.div
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 + i * 0.07, duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 * i, duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
             >
               <TiltCard href={`/blog/${post.slug}`}>
-                <article style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+                <article className="flex flex-col w-full h-full">
                   {/* Feature image */}
-                  <div style={{ width: "100%", height: 200, overflow: "hidden", flexShrink: 0, background: "#1a1a1a" }}>
+                  <div className="relative w-full h-52 overflow-hidden bg-slate-900 border-b border-white/5">
                     {post.image ? (
                       <Image
                         src={post.image}
                         alt={post.title}
-                        width={600}
-                        height={400}
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                       />
                     ) : (
-                      <div style={{
-                        width: "100%", height: "100%",
-                        background: "linear-gradient(135deg, rgba(123,175,212,0.08) 0%, rgba(77,140,185,0.04) 100%)",
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                      }}>
-                        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", color: "rgba(123,175,212,0.3)", letterSpacing: "0.2em" }}>NO IMAGE</span>
+                      <div className="flex items-center justify-center w-full h-full bg-slate">
+                        <span className="font-mono text-[0.6rem] text-muted/40 tracking-[0.2em]">NO_IMAGE.AVIF</span>
                       </div>
                     )}
-                  </div>
-
-                  {/* Content */}
-                  <div style={{ padding: "1.25rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                      {post.tags?.slice(0, 2).map(tag => (
-                        <span key={tag} style={{
-                          fontSize: "0.55rem", fontWeight: 600, letterSpacing: "0.12em",
-                          textTransform: "uppercase", color: "#7bafd4",
-                          background: "rgba(123,175,212,0.12)", borderRadius: 100,
-                          padding: "2px 8px", fontFamily: "var(--font-mono)",
-                        }}>
+                    <div className="absolute top-4 left-4 flex gap-2">
+                      {post.tags?.slice(0, 1).map(tag => (
+                        <span key={tag} className="font-mono text-[0.55rem] font-bold tracking-[0.1em] uppercase text-carolina bg-bg/90 backdrop-blur-md px-2.5 py-1 rounded border border-carolina/20">
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <h2 style={{
-                      fontFamily: "var(--font-display)", fontWeight: 700,
-                      fontSize: "0.95rem", lineHeight: 1.4, letterSpacing: "-0.01em",
-                      color: "#f0f0f0", margin: 0,
-                    }}>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-7 flex flex-col flex-1 gap-4">
+                    <H2 style={{ fontSize: "1.15rem", lineHeight: 1.4, margin: 0 }}>
                       {post.title}
-                    </h2>
-                    <p style={{
-                      color: "#777", fontSize: "0.78rem", lineHeight: 1.55,
-                      margin: 0, fontFamily: "var(--font-ui)",
-                      display: "-webkit-box", WebkitLineClamp: 3,
-                      WebkitBoxOrient: "vertical", overflow: "hidden",
-                      flex: 1,
-                    }}>
+                    </H2>
+                    <p className="text-muted text-[0.875rem] leading-[1.6] line-clamp-3 font-sans">
                       {post.description}
                     </p>
-                    <div style={{ display: "flex", gap: "0.75rem", alignItems: "center", marginTop: "auto", paddingTop: "0.5rem" }}>
-                      <span style={{ fontSize: "0.65rem", color: "#444", fontFamily: "var(--font-mono)" }}>
-                        {new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
-                      </span>
-                      <span style={{ fontSize: "0.65rem", color: "#444", fontFamily: "var(--font-mono)" }}>
-                        {post.readTime}
-                      </span>
+                    <div className="mt-auto pt-6 flex items-center justify-between border-t border-white/5">
+                       <span className="font-mono text-[0.6rem] text-muted/40 uppercase tracking-widest">{post.readTime}</span>
+                       <span className="font-mono text-[0.6rem] text-carolina font-bold uppercase tracking-widest">READ_MORE →</span>
                     </div>
                   </div>
                 </article>
@@ -233,45 +172,33 @@ export default function BlogClient({ posts }) {
             </m.div>
           ))}
         </div>
+      </Section>
 
-        {/* ── CTA ── */}
+      {/* ─── FINAL CTA ──────────────────────────────────────────────────── */}
+      <Section className="border-t border-white/5">
         <m.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          style={{
-            marginTop: 56, background: "#141414", borderRadius: 8,
-            padding: "28px 24px", textAlign: "center",
-            border: "1px solid rgba(255,255,255,0.06)",
-          }}
+          className="bg-gradient-to-br from-carolina/10 via-transparent to-transparent rounded-[60px] border border-white/5 p-16 mx-auto max-w-[1000px] text-center"
         >
-          <p style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1.1rem", color: "#f0f0f0", marginBottom: 8 }}>
-            Want to see how your business ranks?
-          </p>
-          <p style={{ color: "#888", fontSize: "0.84rem", fontFamily: "var(--font-ui)", marginBottom: 18 }}>
-            Run a free AI-powered local SEO audit — 90 seconds, no account needed.
-          </p>
-          <Link href="/audit" style={{
-            display: "inline-block",
-            background: "#7bafd4", color: "#0a1118",
-            fontWeight: 700, fontSize: "0.82rem", letterSpacing: "0.05em",
-            fontFamily: "var(--font-mono)", padding: "12px 28px",
-            borderRadius: 6, textDecoration: "none", cursor: "pointer",
-          }}>
-            Run Free Audit →
-          </Link>
+          <Stack gap="2rem" className="items-center">
+            <H2 className="text-3xl lg:text-4xl">
+              Stop guessing. Start ranking.
+            </H2>
+            <Body className="max-w-[640px]">
+              The insights here are free. The strategy to implement them is what I do. See where you stand first with a 90-second scored audit.
+            </Body>
+            <div className="flex flex-wrap justify-center gap-6">
+              <PrimaryBtn href="/audit">Run Your Free Audit →</PrimaryBtn>
+            </div>
+            <p className="font-mono text-[0.6rem] tracking-[0.3em] text-muted/40 uppercase font-bold">
+              NO EMAIL NEEDED · 90 SECONDS · SYSTEM ONLINE
+            </p>
+          </Stack>
         </m.div>
+      </Section>
 
-      </div>
-
-      {/* Cursor blink keyframe */}
-      <style>{`
-        @keyframes blink-cursor {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-        }
-      `}</style>
     </div>
   );
 }

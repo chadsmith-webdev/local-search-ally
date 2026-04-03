@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion as m, AnimatePresence, useTransform, useScroll, useMotionValue, useSpring } from "framer-motion";
+import { H1, Body, Eyebrow } from "@/components/ui/Typography";
 
 // ─── Brand tokens ───────────────────────────────────────────────────────────
 const C = {
@@ -507,12 +508,10 @@ export default function AuditClient() {
             {/* Header */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20, gap: 12 }}>
               <div>
-                <div style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: C.muted, marginBottom: 3, fontFamily: "var(--font-mono)" }}>
-                  Local SEO Audit
-                </div>
-                <h1 style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", color: C.text, margin: 0, letterSpacing: "-0.02em" }}>
+                <Eyebrow className="mb-2">Local SEO Audit</Eyebrow>
+                <H1 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)", lineHeight: 1.1 }}>
                   {result.business_name}
-                </h1>
+                </H1>
               </div>
               <div style={{ display: "flex", gap: 7, flexShrink: 0 }}>
                 <CopyLinkButton auditId={auditId} />
@@ -667,9 +666,9 @@ export default function AuditClient() {
               Free · No Account Needed
             </span>
           </div>
-          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.55rem, 4vw, 2rem)", fontWeight: 700, color: C.text, lineHeight: 1.2, letterSpacing: "-0.02em", margin: "0 0 9px" }}>
+          <H1 style={{ fontSize: "clamp(1.8rem, 6vw, 2.75rem)", marginBottom: "1rem" }}>
             See Exactly How Your Business<br />Shows Up in Google
-          </h1>
+          </H1>
           <p style={{ color: C.muted, fontSize: "0.9rem", lineHeight: 1.6, margin: 0, fontFamily: "var(--font-ui)" }}>
             Real audit. Real data. 60–90 seconds.
           </p>
