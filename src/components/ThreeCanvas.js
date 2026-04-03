@@ -86,6 +86,7 @@ function DiagnosticCore() {
 
 function OrbitalPoints() {
   const pointsRef = useRef();
+  const elapsed   = useRef(0);
   const count = 200;
 
   const positions = useMemo(() => {
@@ -101,10 +102,10 @@ function OrbitalPoints() {
     return pos;
   }, []);
 
-  useFrame((state) => {
-    const time = state.clock.getElapsedTime();
-    pointsRef.current.rotation.y = time * 0.05;
-    pointsRef.current.rotation.x = time * 0.02;
+  useFrame((_, delta) => {
+    elapsed.current += delta;
+    pointsRef.current.rotation.y = elapsed.current * 0.05;
+    pointsRef.current.rotation.x = elapsed.current * 0.02;
   });
 
   return (

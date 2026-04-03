@@ -6,10 +6,25 @@
       "sourceType": "github",
       "computedHash": "52d1f5e660966525a08430edd6004d55cf6b061c58a9463510d7eac1a02d0108"
     },
+    "Framer Expert": {
+      "source": "frankxai/claude-skills-library",
+      "sourceType": "github",
+      "computedHash": "2370ebe70b19e3a60948772624c904d2308add52a403c4dceb84cf44708c6d3f"
+    },
     "frontend-design": {
       "source": "anthropics/claude-code",
       "sourceType": "github",
       "computedHash": "e8118284a6365753790d44bb2758a6032b3af27fa84696428d9233f2be0f4e78"
+    },
+    "landing-page-copywriter": {
+      "source": "onewave-ai/claude-skills",
+      "sourceType": "github",
+      "computedHash": "f7c7ceb8d99be73eb3e84c6281f1cd56121342f36c94b1d5d2835e4273598ab1"
+    },
+    "landing-page-design": {
+      "source": "inferen-sh/skills",
+      "sourceType": "github",
+      "computedHash": "081e388a6bd35c8e11a7b08de47fea59e64fc5422bf1bb898f2d94175ab0eda3"
     },
     "ui-ux-pro-max": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",

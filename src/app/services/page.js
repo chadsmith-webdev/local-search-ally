@@ -1,4 +1,10 @@
 import ServicesHero from "@/components/ServicesHero";
+import ProblemFrame from "@/components/ProblemFrame";
+import ServicesGrid from "@/components/ServicesGrid";
+import ServicesBundle from "@/components/ServicesBundle";
+import ServicesAuditCTA from "@/components/ServicesAuditCTA";
+import ServicesFAQ from "@/components/ServicesFAQ";
+import ServicesFinalCTA from "@/components/ServicesFinalCTA";
 
 export const metadata = {
   title: "Local SEO Services for NWA Contractors | Local Search Ally",
@@ -112,7 +118,12 @@ export default function ServicesPage() {
       />
       <main>
         <ServicesHero />
-        {/* Remaining sections will be added in subsequent builds */}
+        <ProblemFrame />
+        <ServicesGrid />
+        <ServicesBundle />
+        <ServicesAuditCTA />
+        <ServicesFAQ />
+        <ServicesFinalCTA />
       </main>
     </>
   );

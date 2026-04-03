@@ -34,6 +34,7 @@ export default function ServicesHero() {
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0a]"
+      style={{ paddingTop: "120px", paddingBottom: "8rem" }}
       aria-labelledby="services-hero-heading"
     >
       {/* 3D background — decorative, never blocks content interaction */}
@@ -62,11 +63,14 @@ export default function ServicesHero() {
         />
       </div>
 
-      {/* Content — matches homepage Container: maxWidth 1400 + --page-gutter */}
+      {/* Content — matches Navbar inner div exactly */}
       <div
-        className="relative z-10 w-full mx-auto py-32 sm:py-40"
         style={{
+          position: "relative",
+          zIndex: 10,
           maxWidth: 1400,
+          width: "100%",
+          margin: "0 auto",
           paddingLeft: "var(--page-gutter)",
           paddingRight: "var(--page-gutter)",
         }}
@@ -75,80 +79,129 @@ export default function ServicesHero() {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          style={{ maxWidth: "900px" }}
+          style={{ maxWidth: "900px", display: "flex", flexDirection: "column", gap: "2rem" }}
         >
           {/* Eyebrow */}
-          <motion.p
-            variants={fadeUp}
-            className="text-xs font-semibold tracking-[0.18em] uppercase text-[#888888] mb-5 font-mono"
-          >
-            Services — NWA Home Service Trades
-          </motion.p>
+          <motion.div variants={fadeUp}>
+            <span className="inline-block font-mono text-[0.65rem] font-bold tracking-[0.3em] uppercase text-[#7bafd4] bg-[rgba(123,175,212,0.1)] px-3 py-1 rounded">
+              Local SEO Services for NWA Contractors
+            </span>
+          </motion.div>
 
-          {/* H1 */}
+          {/* H1 — 9 words, outcome-focused, leads with the problem */}
           <motion.h1
             id="services-hero-heading"
             variants={fadeUp}
-            className="font-serif font-extrabold leading-[1.02] tracking-[-0.05em] text-[#f8f9fa] mb-6"
+            className="font-serif font-extrabold leading-[1.02] tracking-[-0.05em] text-[#f8f9fa]"
             style={{ fontSize: "clamp(2.8rem, 8vw, 5.5rem)" }}
           >
-            You don&apos;t need more marketing.{" "}
-            <span className="text-[#7bafd4]">
-              You need to show up where people are already looking.
-            </span>
+            The right homeowner is already searching.{" "}
+            <span className="text-[#7bafd4]">Are they finding you?</span>
           </motion.h1>
 
-          {/* Subhead */}
+          {/* Subhead — 22 words, includes approved stat, "I" language */}
           <motion.p
             variants={fadeUp}
-            className="text-[#b0b0b0] leading-[1.6] font-sans font-medium mb-10"
+            className="text-[#b0b0b0] leading-[1.6] font-sans font-medium"
             style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)", maxWidth: "660px" }}
           >
-            Every service I offer is built around one thing: getting your
-            business found by people in NWA who are already searching for what
-            you do — and making sure they call you, not the next name on the
-            list.
+            97% of homeowners use Google to find a local contractor. I help NWA
+            trades be the name they find — and the one they call.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
             variants={fadeUp}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
+            style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
           >
-            <Link
-              href="/audit"
-              className="inline-flex items-center gap-2 bg-[#7bafd4] hover:bg-[#5a93bc] text-[#0a0a0a] font-semibold text-sm px-6 py-3.5 rounded-md transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7bafd4]"
-            >
-              Run Your Free Audit
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+            {/* Primary CTA */}
+            <div>
+              <Link
+                href="/audit"
+                style={{ padding: "1.25rem 2.75rem" }}
+                className="inline-flex items-center justify-center bg-[#7bafd4] text-[#0a1118] font-bold rounded-lg text-[1rem] hover:brightness-110 hover:scale-[1.02] transition-all shadow-[0_0_30px_rgba(123,175,212,0.3)] hover:shadow-[0_0_50px_rgba(123,175,212,0.5)] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7bafd4]"
+              >
+                Run My Free Audit →
+              </Link>
+            </div>
 
-            <p className="text-xs text-[#888888] font-mono tracking-wide">
-              90 seconds · scored across 7 areas · no email needed
-            </p>
+            {/* Secondary CTA */}
+            <div>
+              <Link
+                href="/contact"
+                className="font-sans text-[0.85rem] text-[#888] hover:text-[#7bafd4] transition-colors"
+              >
+                or book a free 15-min call →
+              </Link>
+            </div>
+
           </motion.div>
         </motion.div>
-
-        {/* Scroll hint */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 0.6 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          aria-hidden="true"
-        >
-          <span className="text-[0.6rem] font-mono tracking-[0.2em] uppercase text-[#888888] opacity-60">
-            Scroll
-          </span>
-          <motion.div
-            animate={reducedMotion ? {} : { y: [0, 5, 0] }}
-            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-            className="w-px h-8 bg-gradient-to-b from-[#7bafd4] to-transparent opacity-40"
-          />
-        </motion.div>
       </div>
+
+      {/* Marquee strip — all trust + process items in one scrolling row */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="absolute bottom-28 left-0 right-0 overflow-hidden pointer-events-none"
+        aria-hidden="true"
+      >
+        <div className="marquee-track" style={{ display: "flex", width: "max-content" }}>
+          {[...Array(2)].map((_, copy) => (
+            <div key={copy} style={{ display: "flex", alignItems: "center", gap: "2rem", paddingRight: "2rem" }}>
+              {[
+                { label: "47 Contractors Audited", accent: true },
+                { label: "90-Second Results" },
+                { label: "No Email Needed" },
+                { label: "Zero Pitch" },
+                { label: "Audit → Fix Priority Gaps → Grow & Track", accent: true },
+                { label: "No Long-Term Contracts" },
+                { label: "NWA Local SEO" },
+              ].map(({ label, accent }) => (
+                <span
+                  key={label}
+                  className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase whitespace-nowrap"
+                  style={{ color: accent ? "#7bafd4" : "#333" }}
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Scroll hint — anchored to section bottom, not content div */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.6 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        aria-hidden="true"
+      >
+        <span className="text-[0.6rem] font-mono tracking-[0.2em] uppercase text-[#888888] opacity-60">
+          Scroll
+        </span>
+        <motion.div
+          animate={reducedMotion ? {} : { y: [0, 5, 0] }}
+          transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+          className="w-px h-8 bg-gradient-to-b from-[#7bafd4] to-transparent opacity-40"
+        />
+      </motion.div>
+
+      <style>{`
+        .marquee-track {
+          animation: marquee 28s linear infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .marquee-track { animation: none; }
+        }
+        @keyframes marquee {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+      `}</style>
     </section>
   );
 }
