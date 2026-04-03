@@ -16,6 +16,11 @@
       "sourceType": "github",
       "computedHash": "e8118284a6365753790d44bb2758a6032b3af27fa84696428d9233f2be0f4e78"
     },
+    "geo-content-optimizer": {
+      "source": "aaron-he-zhu/seo-geo-claude-skills",
+      "sourceType": "github",
+      "computedHash": "924d32f867ca0b615f58bca730e0dad562494d226622cb65bdf17e2c3f5615d5"
+    },
     "landing-page-copywriter": {
       "source": "onewave-ai/claude-skills",
       "sourceType": "github",
