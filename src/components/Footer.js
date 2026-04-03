@@ -17,7 +17,10 @@ export default function Footer() {
           <Logo size={24} />
           <nav style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
             {[
+              { label: "Services", href: "/services" },
+              { label: "About", href: "/about" },
               { label: "Blog", href: "/blog" },
+              { label: "Contact", href: "/contact" },
               { label: "Free Audit", href: "/audit" },
             ].map(({ label, href }) => (
               <Link key={href} href={href} style={{

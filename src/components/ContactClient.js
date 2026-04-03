@@ -84,6 +84,84 @@ const Stack = ({ children, gap = "2rem", className = "", style = {} }) => (
   </div>
 );
 
+// ─── ICONS ───────────────────────────────────────────────────────────────────
+
+const MailIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+  </svg>
+);
+
+const PhoneIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </svg>
+);
+
+const ClockIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </svg>
+);
+
+const MapIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+  </svg>
+);
+
+// ─── CONTACT CARD COMPONENT ───────────────────────────────────────────────────
+
+const ContactCard = ({ icon: Icon, title, value, href, delay = 0, microText }) => (
+  <GlassCard className="flex flex-col gap-4 group" delay={delay}>
+    <div className="flex items-center gap-4 text-[#7bafd4]">
+      <div className="p-3 rounded-lg bg-[#7bafd4]/10 group-hover:bg-[#7bafd4]/20 transition-colors">
+        <Icon />
+      </div>
+      <div>
+        <p className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#444]">{title}</p>
+        {href ? (
+          <a href={href} className="block font-serif text-xl font-bold text-white hover:text-[#7bafd4] transition-colors leading-tight">
+            {value}
+          </a>
+        ) : (
+          <p className="font-serif text-xl font-bold text-white leading-tight">
+            {value}
+          </p>
+        )}
+      </div>
+    </div>
+    {microText && (
+       <p className="font-mono text-[0.55rem] tracking-[0.1em] text-[#555] uppercase mt-1">
+         {microText}
+       </p>
+    )}
+  </GlassCard>
+);
+
+const HoursCard = ({ delay = 0 }) => (
+  <GlassCard className="flex flex-col gap-6" delay={delay}>
+    <div className="flex items-center gap-4 text-[#7bafd4]">
+      <div className="p-3 rounded-lg bg-[#7bafd4]/10">
+        <ClockIcon />
+      </div>
+      <p className="font-mono text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#444]">BUSINESS HOURS</p>
+    </div>
+    <div className="space-y-3">
+      {[
+        { days: "Mon – Fri", time: "8:00 AM – 6:00 PM" },
+        { days: "Saturday", time: "9:00 AM – 12:00 PM" },
+        { days: "Sunday", time: "2:00 PM – 6:00 PM" },
+      ].map((row) => (
+        <div key={row.days} className="flex justify-between items-center py-1 border-b border-white/5">
+          <span className="font-sans text-[0.9rem] text-[#b0b0b0]">{row.days}</span>
+          <span className="font-mono text-[0.75rem] font-bold text-[#f8f9fa]">{row.time}</span>
+        </div>
+      ))}
+    </div>
+  </GlassCard>
+);
+
 // ─── FORM COMPONENTS ─────────────────────────────────────────────────────────
 
 const InputGroup = ({ label, id, type = "text", required = false, name, placeholder }) => (
@@ -160,8 +238,8 @@ export default function ContactClient() {
 
       {/* ─── HERO ─────────────────────────────────────────────────────────── */}
       <section
-        className="relative flex items-center overflow-hidden bg-[#020203]"
-        style={{ minHeight: "60vh", paddingTop: "140px", paddingBottom: "4rem" }}
+        className="relative min-h-screen flex items-center overflow-hidden bg-[#020203]"
+        style={{ paddingTop: "120px", paddingBottom: "8rem" }}
       >
         <div
           className="absolute inset-0 pointer-events-none"
@@ -172,7 +250,7 @@ export default function ContactClient() {
           aria-hidden="true"
         />
         <Container className="relative z-10 text-center">
-            <Stack gap="2rem" style={{ maxWidth: "880px", margin: "0 auto" }}>
+            <Stack gap="2rem" style={{ maxWidth: "900px", margin: "0 auto" }}>
               <m.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
                 <Eyebrow>GET IN TOUCH</Eyebrow>
               </m.div>
@@ -188,64 +266,68 @@ export default function ContactClient() {
               </m.h1>
               
               <Body style={{ maxWidth: "600px", margin: "0 auto" }}>
-                Whether you have a specific question about your Google Business Profile or just want to see if your market is a good fit, I&apos;m here to help.
+                Whether you have a specific question about your local presence or just want to see if your market is a good fit, I&apos;m here to help.
               </Body>
             </Stack>
         </Container>
+
+        {/* Scroll cue — matching homepage */}
+        <m.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.8, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+        >
+          <span className="font-mono text-[0.55rem] tracking-[0.35em] text-[#333] uppercase">Scroll</span>
+          <m.div
+            animate={{ y: [0, 5, 0] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            className="text-[#333] text-lg leading-none"
+          >
+            ↓
+          </m.div>
+        </m.div>
       </section>
 
       {/* ─── CONTACT SECTION ─────────────────────────────────────────────── */}
       <Section id="contact-content" className="bg-[#050507]/80 backdrop-blur-sm">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-24 items-start">
           
-          {/* Left: Info */}
-          <Stack gap="3rem">
-            <div className="space-y-8">
-              <Stack gap="1rem">
-                <p className="font-mono text-[0.6rem] font-bold tracking-[0.25em] text-[#7bafd4] uppercase">CONTACT DETAILS</p>
-                <div className="space-y-4">
-                  <a href="mailto:chad@localsearchally.com" className="block font-serif text-2xl font-bold hover:text-[#7bafd4] transition-colors leading-tight">
-                    chad@localsearchally.com
-                  </a>
-                  <a href="tel:479-380-8626" className="block font-serif text-2xl font-bold hover:text-[#7bafd4] transition-colors leading-tight">
-                    479-380-8626
-                  </a>
-                </div>
-              </Stack>
-
-              <Stack gap="1rem">
-                <p className="font-mono text-[0.6rem] font-bold tracking-[0.25em] text-[#7bafd4] uppercase">BUSINESS HOURS</p>
-                <div className="grid grid-cols-1 gap-2">
-                  {[
-                    { days: "Mon – Fri", time: "8:00 AM – 6:00 PM" },
-                    { days: "Saturday", time: "9:00 AM – 12:00 PM" },
-                    { days: "Sunday", time: "2:00 PM – 6:00 PM" },
-                  ].map((row) => (
-                    <div key={row.days} className="flex justify-between items-center py-2 border-b border-white/5">
-                      <span className="font-sans text-[#b0b0b0]">{row.days}</span>
-                      <span className="font-mono text-[0.8rem] font-bold text-[#f8f9fa]">{row.time}</span>
-                    </div>
-                  ))}
-                </div>
-              </Stack>
-            </div>
-
-            <GlassCard className="!p-8">
-              <Stack gap="1rem">
-                <p className="font-serif text-xl font-bold">Based in Siloam Springs.</p>
-                <Body className="!text-[0.95rem]">
-                  I serve contractors across Northwest Arkansas — including Rogers, Bentonville, Fayetteville, Springdale, and beyond.
-                </Body>
-              </Stack>
-            </GlassCard>
-          </Stack>
+          {/* Left: Info Cards */}
+          <div className="space-y-6">
+            <ContactCard 
+              icon={MailIcon} 
+              title="EMAIL ME" 
+              value="chad@localsearchally.com" 
+              href="mailto:chad@localsearchally.com" 
+              delay={0}
+              microText="Direct to my inbox · 24h response"
+            />
+            <ContactCard 
+              icon={PhoneIcon} 
+              title="CALL OR TEXT" 
+              value="479-380-8626" 
+              href="tel:479-380-8626" 
+              delay={0.1}
+              microText="Local NWA number"
+            />
+            <HoursCard delay={0.2} />
+            <ContactCard 
+              icon={MapIcon} 
+              title="LOCATION" 
+              value="Siloam Springs, AR" 
+              delay={0.3}
+              microText="Serving all of Northwest Arkansas"
+            />
+          </div>
 
           {/* Right: Form */}
           <m.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-strong rounded-3xl p-8 lg:p-12 border border-white/10"
+            className="glass-premium rounded-[2.5rem] border border-carolina/20 flex flex-col justify-center"
+            style={{ padding: "3.5rem 3rem" }}
           >
             <AnimatePresence mode="wait">
               {status === 'success' ? (
@@ -292,7 +374,7 @@ export default function ContactClient() {
                     <button
                       type="submit"
                       disabled={status === 'sending'}
-                      className="w-full bg-[#7bafd4] text-[#0a1118] font-bold py-4 rounded-xl text-lg hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(123,175,212,0.3)] hover:shadow-[0_0_50px_rgba(123,175,212,0.5)]"
+                      className="w-full bg-[#7bafd4] text-[#0a1118] font-bold py-4 rounded-xl text-[1rem] hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(123,175,212,0.3)] hover:shadow-[0_0_50px_rgba(123,175,212,0.5)]"
                     >
                       {status === 'sending' ? 'Sending...' : 'Send Message →'}
                     </button>
@@ -302,8 +384,8 @@ export default function ContactClient() {
                       </p>
                     )}
                   </div>
-                  <p className="text-center font-mono text-[0.6rem] text-[#444] uppercase tracking-[0.25em]">
-                    Typical response time: &lt; 24 business hours
+                  <p className="text-center font-mono text-[0.55rem] text-[#444] uppercase tracking-[0.25em]">
+                    No email list · No spam · Just a personal response
                   </p>
                 </form>
               )}
@@ -333,7 +415,7 @@ export default function ContactClient() {
           tabIndex="0"
         />
         
-        {/* Overlay to keep the premium feel */}
+        {/* Overlay */}
         <div className="absolute inset-0 pointer-events-none z-10">
           <Container className="h-full relative">
             <div className="absolute bottom-12 left-[var(--page-gutter)]">
