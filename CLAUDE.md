@@ -379,8 +379,13 @@ Before committing any copy changes, verify:
 ### General
 - **Mobile-first always** — home service trade owners are often on phones at job sites
 - **No TypeScript** — plain JavaScript throughout; use JSDoc for type hints where helpful
-- **No inline styles** unless driven by dynamic runtime values
+- **Inline styles for all box-model and layout CSS** — Tailwind v4 utility classes for padding, margin, display, flex, grid, height, width, overflow, border-radius, and gap are unreliable in client components. Use `style={{}}` props for these. Tailwind color, font, and text utilities work fine.
 - Keep components small and single-purpose — if a component file exceeds ~150 lines, it probably needs splitting
+
+### Tailwind v4 Known Gotchas
+- **`mx-auto` ≠ `margin: 0 auto`** — Tailwind v4 maps `mx-auto` to `margin-inline: auto` (CSS Logical Properties), which behaves differently inside flex containers. Always use `style={{ margin: "0 auto" }}` for block centering.
+- **`h-full` inside Framer Motion `m.div` collapses to zero** — `m.div` has no height by default, so `height: 100%` on children resolves to 0. Use `style={{ flex: 1 }}` on children instead, and add `style={{ display: "flex", flexDirection: "column" }}` to the `m.div` wrapper.
+- **`<Image fill>` breaks `overflow: hidden` under 3D transforms** — `fill` renders the `<img>` as `position: absolute`, which escapes `overflow: hidden` clipping when any ancestor has a 3D CSS transform (`perspective`, `translateZ`, `transformStyle: preserve-3d`). For images inside tilt/3D card components, use explicit `width`/`height` props with `style={{ objectFit: "cover", width: "100%" }}` instead.
 
 ### SEO (this site lives or dies on local SEO)
 - Every page needs a `generateMetadata()` export with title, description, and Open Graph tags

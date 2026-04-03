@@ -16,7 +16,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   name: "Contact Local Search Ally",
-  description: "Contact Chad Smith for Local SEO services in Northwest Arkansas.",
+  description:
+    "Contact Chad Smith for Local SEO services in Northwest Arkansas.",
   url: "https://localsearchally.com/contact",
   contactPoint: {
     "@type": "ContactPoint",
@@ -32,12 +33,10 @@ export default function ContactPage() {
   return (
     <>
       <script
-        type="application/ld+json"
+        type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main>
-        <ContactClient />
-      </main>
+      <ContactClient />
     </>
   );
 }

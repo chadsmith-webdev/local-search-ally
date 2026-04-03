@@ -38,12 +38,10 @@ export default function AboutPage() {
   return (
     <>
       <script
-        type="application/ld+json"
+        type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main>
-        <AboutClient />
-      </main>
+      <AboutClient />
     </>
   );
 }
