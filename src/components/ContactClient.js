@@ -165,8 +165,8 @@ const HoursCard = ({ delay = 0 }) => (
 // ─── FORM COMPONENTS ─────────────────────────────────────────────────────────
 
 const InputGroup = ({ label, id, type = "text", required = false, name, placeholder }) => (
-  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-    <label htmlFor={id} className="font-mono text-[0.65rem] font-bold tracking-[0.2em] text-[#444] uppercase">
+  <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+    <label htmlFor={id} className="font-sans text-[0.63rem] font-semibold tracking-[0.16em] text-[#888] uppercase">
       {label} {required && <span className="text-[#ff4d4d]">*</span>}
     </label>
     <input
@@ -175,14 +175,15 @@ const InputGroup = ({ label, id, type = "text", required = false, name, placehol
       name={name}
       required={required}
       placeholder={placeholder}
-      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-[#f8f9fa] focus:border-[#7bafd4]/50 focus:outline-none transition-colors font-sans"
+      style={{ borderRadius: "6px", padding: "12px 14px" }}
+      className="w-full bg-[#2E3A4D] border border-transparent text-[#f0f0f0] text-[0.9rem] focus:border-[#7bafd4]/50 focus:outline-none transition-colors font-sans outline-none"
     />
   </div>
 );
 
 const TextareaGroup = ({ label, id, required = false, name, placeholder, rows = 4 }) => (
-  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-    <label htmlFor={id} className="font-mono text-[0.65rem] font-bold tracking-[0.2em] text-[#444] uppercase">
+  <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+    <label htmlFor={id} className="font-sans text-[0.63rem] font-semibold tracking-[0.16em] text-[#888] uppercase">
       {label} {required && <span className="text-[#ff4d4d]">*</span>}
     </label>
     <textarea
@@ -191,7 +192,8 @@ const TextareaGroup = ({ label, id, required = false, name, placeholder, rows = 
       required={required}
       placeholder={placeholder}
       rows={rows}
-      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-4 text-[#f8f9fa] focus:border-[#7bafd4]/50 focus:outline-none transition-colors font-sans resize-none"
+      style={{ borderRadius: "6px", padding: "12px 14px" }}
+      className="w-full bg-[#2E3A4D] border border-transparent text-[#f0f0f0] text-[0.9rem] focus:border-[#7bafd4]/50 focus:outline-none transition-colors font-sans outline-none resize-none"
     />
   </div>
 );
@@ -294,7 +296,7 @@ export default function ContactClient() {
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-24 items-start">
           
           {/* Left: Info Cards */}
-          <div className="space-y-6">
+          <div className="flex flex-col gap-8">
             <ContactCard 
               icon={MailIcon} 
               title="EMAIL ME" 
@@ -354,27 +356,28 @@ export default function ContactClient() {
                 <form 
                   key="form"
                   onSubmit={handleSubmit}
-                  className="space-y-8"
+                  className="flex flex-col gap-[14px]"
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <InputGroup label="Your Name" id="name" name="name" required placeholder="John Doe" />
                     <InputGroup label="Business Name" id="business" name="business" placeholder="Summit Ridge Roofing" />
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <InputGroup label="Trade / Craft" id="trade" name="trade" placeholder="HVAC, Plumbing, etc." />
                     <InputGroup label="City / Service Area" id="city" name="city" placeholder="Rogers, AR" />
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <InputGroup label="Email Address" id="email" name="email" type="email" required placeholder="john@example.com" />
                     <InputGroup label="Phone Number" id="phone" name="phone" type="tel" placeholder="479-555-0123" />
                   </div>
                   <TextareaGroup label="How can I help?" id="message" name="message" required placeholder="Tell me what's on your mind..." />
                   
-                  <div className="pt-4">
+                  <div className="pt-2">
                     <button
                       type="submit"
                       disabled={status === 'sending'}
-                      className="w-full bg-[#7bafd4] text-[#0a1118] font-bold py-4 rounded-xl text-[1rem] hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(123,175,212,0.3)] hover:shadow-[0_0_50px_rgba(123,175,212,0.5)]"
+                      style={{ borderRadius: "6px", padding: "13px 22px" }}
+                      className="w-full bg-[#7bafd4] text-[#2E3A4D] font-mono font-bold text-[0.75rem] uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(123,175,212,0.3)]"
                     >
                       {status === 'sending' ? 'Sending...' : 'Send Message →'}
                     </button>
