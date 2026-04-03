@@ -419,6 +419,38 @@ textarea {
   --font-family-mono: var(--font-mono);
 }
 
+/* ─── Shared layout utilities ────────────────────────────────────────────────
+   Use these class names in JSX instead of Tailwind layout utilities.
+   Safe to use in both server and client components.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Full-width section wrapper — handles vertical rhythm */
+.section {
+  width: 100%;
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+}
+
+/* Centered content container — max-width + horizontal gutter */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+}
+
+/* Narrow container for text-heavy sections */
+.container-narrow {
+  max-width: 800px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+}
+
 /* Scanning line — used in Success section stat block */
 .scanning-line {
   position: absolute;
