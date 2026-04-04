@@ -1,6 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import CountUp from "react-countup";
 import styles from "./LocationsProof.module.css";
 
 const fadeUp = {
@@ -15,17 +17,20 @@ const container = {
 
 const stats = [
   {
-    stat: "97%",
+    end: 97,
+    suffix: "%",
     label: "of consumers use Google to evaluate local businesses",
     source: "BrightLocal",
   },
   {
-    stat: "88%",
+    end: 88,
+    suffix: "%",
     label: "of mobile searchers call or visit within 24 hours",
     source: "Think With Google",
   },
   {
-    stat: "78%",
+    end: 78,
+    suffix: "%",
     label: "of local mobile searches result in offline purchases",
     source: "Safari Digital",
   },
@@ -46,9 +51,35 @@ const demos = [
   },
 ];
 
-export default function LocationsProof() {
+function StatItem({ stat, isVisible, delay }) {
   return (
-    <section className={styles.section}>
+    <motion.div className={styles.stat} variants={fadeUp}>
+      <div className={styles.statNumber}>
+        {isVisible ? (
+          <CountUp
+            start={0}
+            end={stat.end}
+            duration={1.8}
+            delay={delay}
+            useEasing
+          />
+        ) : (
+          <span>0</span>
+        )}
+        <span className={styles.statSuffix}>{stat.suffix}</span>
+      </div>
+      <p className={styles.statLabel}>{stat.label}</p>
+      <p className={styles.statSource}>{stat.source}</p>
+    </motion.div>
+  );
+}
+
+export default function LocationsProof() {
+  const ref = useRef(null);
+  const isVisible = useInView(ref, { once: true, amount: 0.3 });
+
+  return (
+    <section className={styles.section} ref={ref}>
       <div className={styles.inner}>
         {/* Stats Grid */}
         <motion.div
@@ -58,12 +89,8 @@ export default function LocationsProof() {
           viewport={{ once: true }}
           variants={container}
         >
-          {stats.map((item) => (
-            <motion.div key={item.stat} className={styles.stat} variants={fadeUp}>
-              <div className={styles.statNumber}>{item.stat}</div>
-              <p className={styles.statLabel}>{item.label}</p>
-              <p className={styles.statSource}>{item.source}</p>
-            </motion.div>
+          {stats.map((stat, i) => (
+            <StatItem key={stat.source + stat.end} stat={stat} isVisible={isVisible} delay={i * 0.1} />
           ))}
         </motion.div>
 
