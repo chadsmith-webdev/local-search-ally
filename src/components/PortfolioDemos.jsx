@@ -18,7 +18,6 @@ const DEMOS = [
   {
     trade: "Plumbing",
     name: "Ozark Plumbing Co.",
-    url: "https://roofer-demo-v2.netlify.app/",
     slug: "plumbing",
     description:
       "Built for the two moments that drive plumbing calls: emergencies and scheduled maintenance. Optimized for searches like \u201cplumber near me,\u201d \u201cemergency plumber Bentonville,\u201d and \u201cwater heater replacement Rogers.\u201d",
@@ -28,7 +27,7 @@ const DEMOS = [
       "Emergency service page structured for high-intent, middle-of-the-night searches",
       "Google Business Profile integration with review prompts",
     ],
-    url: null,
+    url: "https://plumber-demo-v2.netlify.app/",
     accent: "#7bafd4",
     icon: (
       <svg
