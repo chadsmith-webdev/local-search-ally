@@ -1,0 +1,148 @@
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(123, 175, 212, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.citiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.cityCard {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.cityCard:hover {
+  border-color: rgba(123, 175, 212, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cityHeader {
+  margin-bottom: 1.5rem;
+}
+
+.cityHeader h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--carolina);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.problem {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(248, 249, 250, 0.8);
+  margin: 0 0 1.5rem;
+}
+
+.highlights {
+  background: rgba(123, 175, 212, 0.04);
+  border-left: 2px solid var(--carolina);
+  padding: 1.25rem;
+  border-radius: 4px;
+}
+
+.highlightLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--carolina);
+  margin: 0 0 0.75rem;
+}
+
+.highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.highlights li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.check {
+  color: var(--carolina);
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .citiesGrid {
+    grid-template-columns: 1fr;
+  }
+}
