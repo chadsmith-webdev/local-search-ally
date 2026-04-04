@@ -1,0 +1,322 @@
+/* ── Reading progress ──────────────────────────────────────────────────────── */
+
+.progressTrack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.progressBar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #7bafd4, #4d8cb9);
+  box-shadow: 0 0 8px rgba(123, 175, 212, 0.5);
+  transition: width 0.1s linear;
+}
+
+/* ── Page shell ────────────────────────────────────────────────────────────── */
+
+.page {
+  min-height: 100vh;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--page-gutter, 1.5rem);
+}
+
+/* ── Hero ──────────────────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 65vh;
+  padding-top: 140px;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.heroOrb {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 80% 50% at 50% 110%,
+    rgba(123, 175, 212, 0.07) 0%,
+    transparent 70%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  padding: 0 var(--page-gutter, 1.5rem);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--carolina, #7bafd4);
+  margin-bottom: 1.25rem;
+}
+
+.h1 {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text, #f0f0f0);
+  margin: 0 0 1.5rem;
+}
+
+.accent {
+  font-style: italic;
+  color: var(--carolina, #7bafd4);
+}
+
+.subhead {
+  font-family: var(--font-ui, sans-serif);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--muted, #888);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ── Post grid ─────────────────────────────────────────────────────────────── */
+
+.gridSection {
+  padding: 4rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* ── Post card ─────────────────────────────────────────────────────────────── */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  background: var(--surface, #141414);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: rgba(123, 175, 212, 0.25);
+  background: #1a1a1a;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover .cardImg {
+  filter: grayscale(0);
+}
+
+/* Image wrapper — overflow clip lives here, NOT on .card */
+.cardImage {
+  position: relative;
+  width: 100%;
+  height: 208px;
+  overflow: hidden;
+  background: #0d1117;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px 12px 0 0;
+  flex-shrink: 0;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1);
+  transition: filter 0.7s ease;
+}
+
+.cardImageFallback {
+  width: 100%;
+  height: 100%;
+  background: #1a222e;
+}
+
+.cardTag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--carolina, #7bafd4);
+  background: rgba(2, 2, 3, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(123, 175, 212, 0.2);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.875rem;
+  padding: 1.75rem;
+}
+
+.cardTitle {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--text, #f0f0f0);
+  margin: 0;
+}
+
+.cardDesc {
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--muted, #888);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cardReadTime {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(136, 136, 136, 0.45);
+}
+
+.cardCta {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--carolina, #7bafd4);
+}
+
+/* ── CTA section ───────────────────────────────────────────────────────────── */
+
+.ctaSection {
+  padding: 6rem var(--page-gutter, 1.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ctaBox {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: radial-gradient(
+    ellipse 70% 60% at 50% 0%,
+    rgba(123, 175, 212, 0.08) 0%,
+    transparent 70%
+  );
+  text-align: center;
+}
+
+.ctaHeading {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text, #f0f0f0);
+  margin: 0 0 1.25rem;
+}
+
+.ctaBody {
+  font-family: var(--font-ui, sans-serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--muted, #888);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+}
+
+.ctaBtn {
+  display: inline-block;
+  background: var(--carolina, #7bafd4);
+  color: #000;
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.9rem 2.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ctaBtn:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+}
+
+.ctaNote {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(136, 136, 136, 0.4);
+  margin: 1.5rem 0 0;
+}
+
+/* ── Mobile ────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .ctaBox {
+    padding: 3rem 1.5rem;
+    border-radius: 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
