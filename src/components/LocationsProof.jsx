@@ -81,6 +81,20 @@ export default function LocationsProof() {
   return (
     <section className={styles.section} ref={ref}>
       <div className={styles.inner}>
+        {/* Header */}
+        <motion.div
+          className={styles.header}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+        >
+          <p className={styles.label}>Why local SEO matters for NWA contractors</p>
+          <p className={styles.intro}>
+            These aren't abstract marketing numbers. This is how contractors in Rogers, Bentonville, Fayetteville, and Springdale are getting found right now—and losing jobs when they're not visible.
+          </p>
+        </motion.div>
+
         {/* Stats Grid */}
         <motion.div
           className={styles.statsGrid}
