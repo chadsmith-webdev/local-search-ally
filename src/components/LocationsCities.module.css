@@ -58,23 +58,38 @@
 }
 
 .cityCard {
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid rgba(123, 175, 212, 0.12);
+  border-radius: 12px;
   padding: 2rem;
   backdrop-filter: blur(8px);
   transition:
     border-color 0.2s ease,
     background 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cityCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--carolina), transparent);
+  opacity: 0.5;
 }
 
 .cityCard:hover {
-  border-color: rgba(123, 175, 212, 0.2);
-  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(123, 175, 212, 0.25);
+  background: rgba(123, 175, 212, 0.05);
 }
 
 .cityHeader {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(123, 175, 212, 0.1);
 }
 
 .cityHeader h3 {
@@ -103,18 +118,21 @@
 
 .highlights {
   background: rgba(123, 175, 212, 0.04);
-  border-left: 2px solid var(--carolina);
-  padding: 1.25rem;
-  border-radius: 4px;
+  border: 1px solid rgba(123, 175, 212, 0.12);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
 }
 
 .highlightLabel {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--carolina);
-  margin: 0 0 0.75rem;
+  opacity: 0.8;
+  margin: 0 0 1rem;
 }
 
 .highlights ul {
