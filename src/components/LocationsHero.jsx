@@ -28,7 +28,7 @@ export default function LocationsHero() {
           animate="visible"
         >
           <motion.span variants={fadeUp} className={styles.eyebrow}>
-            Service Areas
+            NWA Service Areas
           </motion.span>
 
           <motion.h1 variants={fadeUp} className={styles.h1}>
@@ -40,7 +40,7 @@ export default function LocationsHero() {
           </motion.p>
 
           <motion.p variants={fadeUp} className={styles.credibility}>
-            <strong>Chad Smith</strong> | 15+ years local SEO | Siloam Springs, AR<br />
+            <strong>Chad Smith</strong> | 5+ years local SEO | Siloam Springs, AR<br />
             <em>I limit audits to 10 per week—reserve yours below.</em>
           </motion.p>
 
