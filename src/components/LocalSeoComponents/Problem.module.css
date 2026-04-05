@@ -79,14 +79,9 @@
 
 .problems {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   auto-rows: auto;
-}
-
-/* Bento grid: 3rd item spans full width */
-.problem:nth-child(3) {
-  grid-column: 1 / -1;
 }
 
 .problem {
@@ -241,16 +236,12 @@
   }
 
   .problems {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
 
   .problem {
     padding: 24px;
-  }
-
-  .problem:nth-child(3) {
-    grid-column: 1;
   }
 
   .heading {
