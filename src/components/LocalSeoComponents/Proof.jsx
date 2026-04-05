@@ -22,6 +22,7 @@ export default function Proof() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>What It Looks Like</span>
           <h2 className={styles.heading}>What Results Look Like</h2>
           <p className={styles.intro}>
             Every client is different, but the pattern is consistent: visibility

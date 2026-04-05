@@ -22,6 +22,7 @@ export default function Solution() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>The Strategy</span>
           <h2 className={styles.heading}>Here's How I Fix It</h2>
           <p className={styles.intro}>
             I use a proven 3-step process focused on what actually moves

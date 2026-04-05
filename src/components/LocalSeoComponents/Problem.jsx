@@ -33,6 +33,7 @@ export default function Problem() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>The Challenge</span>
           <h2 className={styles.heading}>The Invisibility Problem</h2>
           <p className={styles.intro}>
             You're good at your job. Your customers love you. But Google doesn't

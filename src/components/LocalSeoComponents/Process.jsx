@@ -54,6 +54,7 @@ export default function Process() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>Three Steps</span>
           <h2 className={styles.heading}>The Process</h2>
           <p className={styles.intro}>
             Every engagement follows the same transparent 3-step process. You
