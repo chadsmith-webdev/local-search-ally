@@ -112,11 +112,162 @@ export default function RogersPage() {
           city='Rogers'
           state='AR'
           population='67,000+'
-          punchline="Invisible on Google? You're losing calls to contractors ranking above you."
+          punchline="Rogers Contractor SEO — Get Found on Google (In 3 Months or We'll Keep Optimizing for Free)"
         />
+
+        {/* Opening + Definitions */}
+        <section
+          style={{ padding: "4rem 2rem", maxWidth: "900px", margin: "0 auto" }}
+        >
+          <p
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.7",
+              marginBottom: "1.5rem",
+              color: "#f0f0f0",
+            }}
+          >
+            If you're a contractor in Rogers—HVAC, plumbing, electrical,
+            roofing, or remodeling—there's a good chance you're losing calls to
+            competitors who show up first on Google.
+          </p>
+          <p
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.7",
+              marginBottom: "1.5rem",
+              color: "#f0f0f0",
+            }}
+          >
+            Local SEO is how independent contractors in Rogers get found when
+            homeowners search "emergency plumber near me" or "HVAC repair
+            Rogers." It's not about having a fancy website. It's about showing
+            up first when someone in Rogers needs you <em>right now</em>.
+          </p>
+          <p
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.7",
+              marginBottom: "1.5rem",
+              color: "#f0f0f0",
+            }}
+          >
+            Here's what I know:{" "}
+            <strong>46% of Google searches have local intent.</strong> For home
+            service trades in Rogers, that's not a statistic—it's your phone
+            ringing or not ringing.
+          </p>
+          <p
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.7",
+              marginBottom: "2rem",
+              color: "#f0f0f0",
+            }}
+          >
+            <strong>I'm Chad Smith, I run Local Search Ally.</strong> I just
+            moved to Siloam Springs, so I'm new to Northwest Arkansas—which
+            means I'm hungry to prove that local SEO works here. I specialize in
+            this. No long-term contracts. We work on 3-month engagements, and if
+            you're not ranking in the Map Pack by then, I keep optimizing free
+            until you do.
+          </p>
+
+          {/* Definition Box */}
+          <div
+            style={{
+              background: "#1e1e1e",
+              padding: "2rem",
+              borderRadius: "8px",
+              marginBottom: "3rem",
+              borderLeft: "4px solid #7bafd4",
+            }}
+          >
+            <h3
+              style={{
+                marginBottom: "1.5rem",
+                color: "#7bafd4",
+                fontWeight: 600,
+              }}
+            >
+              Three Key Terms You Need to Know
+            </h3>
+            <ul style={{ listStyle: "none", padding: 0 }}>
+              <li style={{ marginBottom: "1.5rem" }}>
+                <strong style={{ color: "#7bafd4" }}>Local SEO</strong> =
+                Optimizing your online presence so you show up in Google search
+                results and Map Pack when people in Rogers search for your
+                service
+              </li>
+              <li style={{ marginBottom: "1.5rem" }}>
+                <strong style={{ color: "#7bafd4" }}>Map Pack</strong> = The 3
+                business location pins that appear at the top of Google search
+                results (more valuable than any paid ad)
+              </li>
+              <li>
+                <strong style={{ color: "#7bafd4" }}>
+                  Google Business Profile
+                </strong>{" "}
+                = The listing that controls whether you appear in that Map Pack
+              </li>
+            </ul>
+          </div>
+        </section>
+
         <CityWhy city='Rogers' />
         <CityLocalStats city='Rogers' />
         <CityProcess />
+
+        {/* Services Served */}
+        <section
+          style={{ padding: "4rem 2rem", maxWidth: "900px", margin: "0 auto" }}
+        >
+          <h2
+            style={{ fontSize: "2rem", marginBottom: "2rem", color: "#f0f0f0" }}
+          >
+            What Services Do You Serve in Rogers?
+          </h2>
+          <p
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.7",
+              marginBottom: "2rem",
+              color: "#f0f0f0",
+            }}
+          >
+            I work with these home service trades (and others):
+          </p>
+          <ul style={{ columns: 2, columnGap: "3rem", marginBottom: "2rem" }}>
+            <li style={{ marginBottom: "1rem", color: "#f0f0f0" }}>
+              <strong>HVAC & heating</strong> (air conditioning, furnace repair,
+              maintenance)
+            </li>
+            <li style={{ marginBottom: "1rem", color: "#f0f0f0" }}>
+              <strong>Plumbing</strong> (emergency repairs, water heater, drain
+              cleaning)
+            </li>
+            <li style={{ marginBottom: "1rem", color: "#f0f0f0" }}>
+              <strong>Roofing</strong> (repairs, inspections, replacement)
+            </li>
+            <li style={{ marginBottom: "1rem", color: "#f0f0f0" }}>
+              <strong>Electrical</strong> (panel upgrades, rewiring, emergency
+              calls)
+            </li>
+            <li style={{ marginBottom: "1rem", color: "#f0f0f0" }}>
+              <strong>Landscaping</strong> (lawn care, design, maintenance)
+            </li>
+            <li style={{ marginBottom: "1rem", color: "#f0f0f0" }}>
+              <strong>Remodeling</strong> (kitchens, bathrooms, additions)
+            </li>
+          </ul>
+          <p
+            style={{ fontSize: "1.1rem", lineHeight: "1.7", color: "#f0f0f0" }}
+          >
+            If you're in a different trade, that's fine. The same principles
+            apply. Local search works for any service business.
+          </p>
+        </section>
+
         <CityFinal city='Rogers' ctaText='Get Your Free Rogers Audit' />
       </main>
     </>
