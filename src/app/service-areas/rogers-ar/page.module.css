@@ -5,8 +5,8 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: calc(var(--section-spacing) * 1.35) var(--page-gutter)
-    var(--section-spacing);
+  padding-top: calc(var(--section-spacing) * 1.35);
+  padding-bottom: var(--section-spacing);
   border-bottom: 1px solid var(--border);
 }
 
@@ -39,7 +39,11 @@
 .heroInner {
   position: relative;
   max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
   gap: clamp(1.5rem, 3vw, 2.5rem);
@@ -240,9 +244,36 @@
 .citationList {
   display: grid;
   gap: 0.8rem;
-  margin-left: 1.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   color: rgba(248, 249, 250, 0.78);
   line-height: 1.7;
+}
+
+.signalItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  list-style: none;
+}
+
+.signalItem::before {
+  content: "✓";
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 0.15rem;
+  background: rgba(123, 175, 212, 0.15);
+  border: 1px solid rgba(123, 175, 212, 0.3);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--carolina);
+  flex-shrink: 0;
 }
 
 .problemLayout,

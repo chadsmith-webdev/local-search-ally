@@ -148,11 +148,8 @@ export default function RogersServiceAreaPage() {
             <div className={styles.heroContent}>
               <span className={styles.eyebrow}>Rogers, Arkansas</span>
               <h1 className={styles.heroTitle}>
-                Local SEO for Rogers home service trades,
-                <span className={styles.heroAccent}>
-                  {" "}
-                  handled city by city.
-                </span>
+                Local SEO for Rogers
+                <span className={styles.heroAccent}> home service trades.</span>
               </h1>
               <p className={styles.heroBody}>
                 If you run a home service business in Rogers, local SEO is what
@@ -190,7 +187,9 @@ export default function RogersServiceAreaPage() {
               </div>
               <ul className={styles.signalList}>
                 {rogersSignals.map((signal) => (
-                  <li key={signal}>{signal}</li>
+                  <li key={signal} className={styles.signalItem}>
+                    {signal}
+                  </li>
                 ))}
               </ul>
             </div>
