@@ -1,5 +1,5 @@
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);
@@ -36,6 +36,8 @@
   gap: 24px;
   align-items: center;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .heading {
@@ -85,17 +87,72 @@
   transition: all 0.3s ease-out;
   width: fit-content;
   margin: 16px auto 0 auto;
+  box-shadow: 0 2px 16px 0 rgba(123, 175, 212, 0.08);
 }
 
-.cta:hover {
-  background-color: rgba(123, 175, 212, 0.1);
+.cta:hover,
+.cta:active {
+  background-color: rgba(123, 175, 212, 0.13);
   border-color: #f0f0f0;
   color: #f0f0f0;
+  box-shadow: 0 4px 24px 0 rgba(123, 175, 212, 0.13);
 }
 
 .cta:focus-visible {
   outline: 2px solid #7bafd4;
   outline-offset: 4px;
+}
+
+.trustStat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b6d6ec;
+  font-size: 1rem;
+  margin: 18px auto 0 auto;
+  background: rgba(123, 175, 212, 0.07);
+  border-radius: 5px;
+  padding: 8px 18px 8px 10px;
+  font-weight: 500;
+  box-shadow: 0 1px 8px 0 rgba(123, 175, 212, 0.07);
+}
+.trustStat strong {
+  color: #7bafd4;
+  font-weight: 700;
+}
+.trustSource {
+  font-size: 0.85em;
+  color: #7bafd4;
+  margin-left: 8px;
+  opacity: 0.7;
+}
+
+.callLink {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  color: #7bafd4;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 10px auto 0 auto;
+  transition: color 0.2s;
+}
+.callLink:hover,
+.callLink:focus-visible {
+  color: #f0f0f0;
+  text-decoration: underline;
+}
+.phoneNumber {
+  font-family: var(--font-mono, monospace);
+  font-size: 1em;
+  margin-left: 2px;
+}
+
+@media (max-width: 600px) {
+  .callLink {
+    display: inline-flex;
+  }
 }
 
 @media (max-width: 768px) {
