@@ -90,4 +90,28 @@ assert.match(
   "Proof section should get its own editorial treatment rather than reusing the existing proof panel styling.",
 );
 
-console.log("Hero, brief, problem, and middle-section checks passed.");
+assert.match(
+  pageJs,
+  /className=\{styles\.faqStack\}/,
+  "FAQ section should use a calmer stacked wrapper.",
+);
+
+assert.match(
+  pageJs,
+  /<section className=\{styles\.ctaSection\}>[\s\S]*href='\/audit'[\s\S]*href='\/contact'/,
+  "Final CTA must keep the existing audit and contact destinations.",
+);
+
+assert.match(
+  css,
+  /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.heroContent[\s\S]*animation:\s*none;/,
+  "Reduced-motion support must still disable the hero animation.",
+);
+
+assert.match(
+  css,
+  /\.faqStack\s*\{[\s\S]*?gap:/,
+  "FAQ stack should have a dedicated quieter layout block.",
+);
+
+console.log("All Rogers redesign checks passed.");

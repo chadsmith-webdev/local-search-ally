@@ -368,7 +368,7 @@ export default function RogersServiceAreaPage() {
                 Questions I expect from Rogers trade owners
               </h2>
             </div>
-            <div className={styles.faqGrid}>
+            <div className={styles.faqStack}>
               {faqItems.map((item) => (
                 <article key={item.question} className={styles.faqItem}>
                   <h3 className={styles.faqQuestion}>{item.question}</h3>
