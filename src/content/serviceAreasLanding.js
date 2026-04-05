@@ -88,6 +88,7 @@ export const serviceAreasLandingContent = {
       {
         city: "Centerton",
         county: "Benton County",
+        href: "/service-areas/centerton-ar",
         body: "One of the fastest-growing cities in Arkansas. New construction means new homeowners and first-time Google searchers looking for trades they can trust. Early visibility here matters.",
         tags: ["HVAC", "Electrical", "Landscaping", "Plumbing"],
       },
