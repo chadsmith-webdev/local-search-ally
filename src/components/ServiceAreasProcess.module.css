@@ -1,0 +1,137 @@
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.eyebrow {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--carolina);
+}
+
+.h2,
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+
+.subhead,
+.ctaBody,
+.stepBody,
+.note {
+  color: rgba(248, 249, 250, 0.78);
+  line-height: 1.8;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.step {
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.stepNum {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  border: 1px solid rgba(123, 175, 212, 0.22);
+  background: rgba(123, 175, 212, 0.06);
+  color: rgba(248, 249, 250, 0.85);
+  font-family: var(--font-mono);
+}
+
+.stepTitle {
+  margin-top: 0.85rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.stepBody {
+  margin-top: 0.45rem;
+}
+
+.ctaCard {
+  margin-top: 0.25rem;
+  padding: 1.4rem;
+  border-radius: 18px;
+  border: 1px solid rgba(123, 175, 212, 0.22);
+  background: linear-gradient(
+    135deg,
+    rgba(123, 175, 212, 0.14) 0%,
+    rgba(255, 255, 255, 0.02) 45%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+}
+
+.ctaBody {
+  margin-top: 0.7rem;
+  max-width: 760px;
+}
+
+.ctas {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.25rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.primaryBtn {
+  background: var(--carolina);
+  color: #020203;
+}
+
+.secondaryBtn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text);
+}
+
+.note {
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 860px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ctas {
+    flex-direction: row;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    min-width: 240px;
+  }
+}

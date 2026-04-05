@@ -1,0 +1,132 @@
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.eyebrow {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--carolina);
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+
+.body {
+  color: rgba(248, 249, 250, 0.78);
+  line-height: 1.8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(123, 175, 212, 0.08),
+      rgba(255, 255, 255, 0) 55%
+    ),
+    rgba(255, 255, 255, 0.02);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+
+.city {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.county {
+  margin-top: 0.3rem;
+  color: rgba(248, 249, 250, 0.56);
+  font-size: 0.9rem;
+}
+
+.badge {
+  border: 1px solid rgba(123, 175, 212, 0.28);
+  color: var(--carolina);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.cardBody {
+  margin-top: 0.95rem;
+  color: rgba(248, 249, 250, 0.78);
+  line-height: 1.75;
+}
+
+.tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  color: rgba(248, 249, 250, 0.78);
+  font-size: 0.8rem;
+}
+
+.footerNoteRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  align-items: flex-start;
+}
+
+.footerNote {
+  color: rgba(248, 249, 250, 0.72);
+}
+
+.footerLink {
+  color: var(--carolina);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1120px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
