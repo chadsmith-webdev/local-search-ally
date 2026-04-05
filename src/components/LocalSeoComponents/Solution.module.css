@@ -36,10 +36,7 @@
 }
 
 .answerFirst h3 {
-  font-family:
-    Helvetica Neue,
-    Arial,
-    sans-serif;
+  font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 600;
   color: #7bafd4;
@@ -61,7 +58,7 @@
 }
 
 .what > h3 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.8rem;
   font-weight: 700;
   color: #f0f0f0;
