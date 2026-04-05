@@ -88,6 +88,9 @@ export default function Footer() {
                 <Link href='/portfolio'>Portfolio</Link>
               </li>
               <li>
+                <Link href='/service-areas'>Service Areas</Link>
+              </li>
+              <li>
                 <Link href='/contact'>Contact</Link>
               </li>
             </ul>

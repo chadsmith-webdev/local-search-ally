@@ -41,6 +41,11 @@
       "sourceType": "github",
       "computedHash": "af3884d295b03ab4bdce99b024dbd3d71d4dd982f5824d1485e896d7be48f862"
     },
+    "seo-content-writer": {
+      "source": "aaron-he-zhu/seo-geo-claude-skills",
+      "sourceType": "github",
+      "computedHash": "be1172a44a549939aa2d0ec19996095b9ddd1a1117c15df1e3790ecee81321ff"
+    },
     "services-page-generator": {
       "source": "kostja94/marketing-skills",
       "sourceType": "github",
