@@ -5,7 +5,10 @@ export default function ReputationHero() {
     <section className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <h1 className={styles.heading}>Build Your Online Reputation</h1>
+          <h1 className={styles.heading}>
+            Build Your Online{" "}
+            <span className={styles.colorSpan}>Reputation</span>
+          </h1>
           <p className={styles.subheading}>
             More reviews. Better ratings. More trust. More calls.
           </p>

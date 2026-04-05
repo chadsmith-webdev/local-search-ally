@@ -6,7 +6,8 @@ export default function FreeAuditHero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.heading}>
-            See Where You Actually Stand Online
+            See Where You Actually{" "}
+            <span className={styles.colorSpan}>Stand Online</span>
           </h1>
           <p className={styles.subheading}>
             Free SEO audit. No email gate. No charges. Just the truth.

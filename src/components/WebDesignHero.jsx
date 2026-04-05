@@ -6,7 +6,8 @@ export default function WebDesignHero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.heading}>
-            Your Website Should Make Phone Calls Ring
+            Your Website Should Make{" "}
+            <span className={styles.colorSpan}>Phone Calls</span> Ring
           </h1>
           <p className={styles.subheading}>
             Not every website works. Most are pretty but don't convert. I build

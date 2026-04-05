@@ -5,7 +5,9 @@ export default function LocalSeoHero() {
     <section className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <h1 className={styles.heading}>Get Found on Google</h1>
+          <h1 className={styles.heading}>
+            Get Found on <span className={styles.colorSpan}>Google</span>
+          </h1>
           <p className={styles.subheading}>
             Local SEO that turns "searching nearby" into "calling you." 78% of
             local mobile searches result in an offline purchase. If you're not

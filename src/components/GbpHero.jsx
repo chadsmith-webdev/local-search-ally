@@ -5,7 +5,10 @@ export default function GbpHero() {
     <section className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <h1 className={styles.heading}>Dominate the Google Map Pack</h1>
+          <h1 className={styles.heading}>
+            Dominate the{" "}
+            <span className={styles.colorSpan}>Google Map Pack</span>
+          </h1>
           <p className={styles.subheading}>
             Get into the top 3 local results. When homeowners search for your
             service, they see you first. That's where the calls come from.
