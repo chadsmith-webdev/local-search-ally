@@ -95,6 +95,7 @@ export const serviceAreasLandingContent = {
       {
         city: "Lowell",
         county: "Benton County",
+        href: "/service-areas/lowell-ar",
         body: "Smaller market, but underserved in local search. Trades willing to show up online face less competition for the top spots here than they would in Rogers or Bentonville.",
         tags: ["Roofing", "HVAC", "General Contracting"],
       },
