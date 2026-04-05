@@ -262,3 +262,22 @@
     font-size: 1rem;
   }
 }
+
+/* Mobile-first: single column grid and tighter spacing */
+@media (max-width: 600px) {
+  .problems {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .problem {
+    padding: 18px;
+  }
+  .statistic {
+    padding: 18px;
+  }
+}
+
+/* Slightly tighter vertical rhythm for container */
+.container {
+  gap: 48px;
+}

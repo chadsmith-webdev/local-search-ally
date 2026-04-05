@@ -1,31 +1,40 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import styles from "./Problem.module.css";
-import { motion } from "framer-motion";
 
 export default function Problem() {
+  // useReducedMotion must be called inside the component and only on the client
+  const shouldReduceMotion = useReducedMotion();
   const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: shouldReduceMotion
+        ? { duration: 0 }
+        : { duration: 0.6, ease: "easeOut" },
     },
   };
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
+      transition: shouldReduceMotion
+        ? { staggerChildren: 0, delayChildren: 0 }
+        : { staggerChildren: 0.1, delayChildren: 0.2 },
     },
   };
 
+  // Keyboard focus handler for cards
+  function handleKeyDown(e, idx) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.currentTarget.click();
+    }
+  }
+
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-labelledby='problem-heading'>
       <div className={styles.container}>
         <motion.div
           initial='hidden'
@@ -33,8 +42,12 @@ export default function Problem() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <span className={styles.eyebrow}>The Challenge</span>
-          <h2 className={styles.heading}>The Invisibility Problem</h2>
+          <span className={styles.eyebrow} id='problem-eyebrow'>
+            The Challenge
+          </span>
+          <h2 className={styles.heading} id='problem-heading'>
+            The Invisibility Problem
+          </h2>
           <p className={styles.intro}>
             You're good at your job. Your customers love you. But Google doesn't
             know you exist.
@@ -49,7 +62,15 @@ export default function Problem() {
             variants={containerVariants}
             className={styles.problems}
           >
-            <motion.div variants={fadeUp} className={styles.problem}>
+            {/* Card 1 */}
+            <motion.div
+              variants={fadeUp}
+              className={styles.problem}
+              tabIndex={0}
+              role='group'
+              aria-label='Not Visible in Google Maps'
+              onKeyDown={(e) => handleKeyDown(e, 0)}
+            >
               <div className={styles.problemIcon}>
                 <svg
                   viewBox='0 0 18 18'
@@ -58,6 +79,9 @@ export default function Problem() {
                   strokeWidth='1'
                   strokeLinecap='round'
                   strokeLinejoin='round'
+                  role='img'
+                  aria-label='Location pin icon'
+                  focusable='false'
                 >
                   <path d='M9 1c-3.3 0-6 2.7-6 6 0 4 6 10 6 10s6-6 6-10c0-3.3-2.7-6-6-6Z' />
                   <circle cx='9' cy='7' r='1.5' />
@@ -71,7 +95,15 @@ export default function Problem() {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className={styles.problem}>
+            {/* Card 2 */}
+            <motion.div
+              variants={fadeUp}
+              className={styles.problem}
+              tabIndex={0}
+              role='group'
+              aria-label='Missing Reviews and Social Proof'
+              onKeyDown={(e) => handleKeyDown(e, 1)}
+            >
               <div className={styles.problemIcon}>
                 <svg
                   viewBox='0 0 18 18'
@@ -80,6 +112,9 @@ export default function Problem() {
                   strokeWidth='1'
                   strokeLinecap='round'
                   strokeLinejoin='round'
+                  role='img'
+                  aria-label='Star badge icon'
+                  focusable='false'
                 >
                   <path d='M9 2l2.3 5.4h5.9l-4.8 3.6 1.8 5.4-4.2-3.2-4.2 3.2 1.8-5.4-4.8-3.6h5.9z' />
                 </svg>
@@ -92,7 +127,15 @@ export default function Problem() {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className={styles.problem}>
+            {/* Card 3 */}
+            <motion.div
+              variants={fadeUp}
+              className={styles.problem}
+              tabIndex={0}
+              role='group'
+              aria-label="Website Doesn't Rank for Local Keywords"
+              onKeyDown={(e) => handleKeyDown(e, 2)}
+            >
               <div className={styles.problemIcon}>
                 <svg
                   viewBox='0 0 18 18'
@@ -101,6 +144,9 @@ export default function Problem() {
                   strokeWidth='1'
                   strokeLinecap='round'
                   strokeLinejoin='round'
+                  role='img'
+                  aria-label='Magnifying glass icon'
+                  focusable='false'
                 >
                   <circle cx='8' cy='8' r='5' />
                   <path d='m13 13 3 3' />
@@ -114,7 +160,15 @@ export default function Problem() {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className={styles.problem}>
+            {/* Card 4 */}
+            <motion.div
+              variants={fadeUp}
+              className={styles.problem}
+              tabIndex={0}
+              role='group'
+              aria-label='Lost Leads to Bigger Companies'
+              onKeyDown={(e) => handleKeyDown(e, 3)}
+            >
               <div className={styles.problemIcon}>
                 <svg
                   viewBox='0 0 18 18'
@@ -123,6 +177,9 @@ export default function Problem() {
                   strokeWidth='1'
                   strokeLinecap='round'
                   strokeLinejoin='round'
+                  role='img'
+                  aria-label='Document icon'
+                  focusable='false'
                 >
                   <rect x='2' y='4' width='14' height='10' rx='1' />
                   <path d='M6 4V3c0-.5.5-1 1-1h4c.5 0 1 .5 1 1v1' />
@@ -139,8 +196,12 @@ export default function Problem() {
             </motion.div>
           </motion.div>
 
-          <motion.div variants={fadeUp} className={styles.statistic}>
-            <div className={styles.statHighlight}>
+          <motion.div
+            variants={fadeUp}
+            className={styles.statistic}
+            aria-label='Local search statistic'
+          >
+            <div className={styles.statHighlight} aria-hidden='true'>
               <div className={styles.statNumber}>46%</div>
               <div className={styles.statLabel}>
                 of searches have local intent
