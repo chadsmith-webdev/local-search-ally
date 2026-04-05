@@ -246,7 +246,7 @@ export default function RogersServiceAreaPage() {
           </div>
         </section>
 
-        <section className='section'>
+        <section className={`section ${styles.fitSectionWrap}`}>
           <div className='container'>
             <div className={styles.fitStructured}>
               <div className={styles.sectionIntro}>
