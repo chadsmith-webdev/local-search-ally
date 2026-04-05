@@ -72,31 +72,21 @@
   margin: 0;
 }
 
-/* 2-Column Layout */
+/* Grid Container */
 .contentGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-@media (max-width: 768px) {
-  .contentGrid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-.problemsList {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: contents;
 }
 
 .problems {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  auto-rows: auto;
+}
+
+/* Bento grid: 3rd item spans full width */
+.problem:nth-child(3) {
+  grid-column: 1 / -1;
 }
 
 .problem {
@@ -172,15 +162,6 @@
   line-height: 1.6;
   color: var(--muted, #b0b0b0);
   margin: 0;
-}
-
-/* Statistic Column */
-.statColumn {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  position: sticky;
-  top: 100px;
 }
 
 .statistic {
@@ -260,11 +241,16 @@
   }
 
   .problems {
+    grid-template-columns: 1fr;
     gap: 24px;
   }
 
   .problem {
     padding: 24px;
+  }
+
+  .problem:nth-child(3) {
+    grid-column: 1;
   }
 
   .heading {
