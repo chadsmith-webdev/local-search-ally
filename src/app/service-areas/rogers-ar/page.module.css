@@ -4,6 +4,7 @@
 
 .hero {
   position: relative;
+  min-height: 100dvh;
   overflow: hidden;
   padding-top: calc(var(--section-spacing) * 1.35);
   padding-bottom: var(--section-spacing);
@@ -38,6 +39,7 @@
 
 .heroInner {
   position: relative;
+  min-height: calc(100dvh - 72px);
   max-width: 1200px;
   width: 100%;
   margin-left: auto;
@@ -46,7 +48,14 @@
   padding-right: var(--page-gutter);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: start;
+}
+
+.heroScene {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
 }
 
 .heroContent {

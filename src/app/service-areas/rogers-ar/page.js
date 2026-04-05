@@ -145,35 +145,40 @@ export default function RogersServiceAreaPage() {
           <div className={styles.grid} aria-hidden='true' />
           <div className={styles.orb} aria-hidden='true' />
           <div className={styles.heroInner}>
-            <div className={styles.heroContent}>
-              <span className={styles.eyebrow}>Rogers, Arkansas</span>
-              <h1 className={styles.heroTitle}>
-                Local SEO for Rogers
-                <span className={styles.heroAccent}> home service trades.</span>
-              </h1>
-              <p className={styles.heroBody}>
-                If you run a home service business in Rogers, local SEO is what
-                gets you found when people are ready to hire. When someone
-                searches for "AC repair Rogers AR" or "plumber near me," Google
-                shows a short list. If your business is not in that list, you
-                are easy to miss even if your work is better.
-              </p>
-              <p className={styles.heroBody}>
-                I help Rogers home service trades show up where calls start:
-                Google Maps, city + service searches, and service pages that
-                match what people actually type.
-              </p>
-              <div className={styles.heroActions}>
-                <Link href='/audit' className={styles.primaryBtn}>
-                  Run Your Free Audit
-                </Link>
-                <Link href='/contact' className={styles.secondaryBtn}>
-                  Start With a Free Conversation
-                </Link>
+            <div className={styles.heroScene}>
+              <div className={styles.heroContent}>
+                <span className={styles.eyebrow}>Rogers, Arkansas</span>
+                <h1 className={styles.heroTitle}>
+                  Local SEO for Rogers
+                  <span className={styles.heroAccent}>
+                    {" "}
+                    home service trades.
+                  </span>
+                </h1>
+                <p className={styles.heroBody}>
+                  If you run a home service business in Rogers, local SEO is
+                  what gets you found when people are ready to hire. When
+                  someone searches for "AC repair Rogers AR" or "plumber near
+                  me," Google shows a short list. If your business is not in
+                  that list, you are easy to miss even if your work is better.
+                </p>
+                <p className={styles.heroBody}>
+                  I help Rogers home service trades show up where calls start:
+                  Google Maps, city + service searches, and service pages that
+                  match what people actually type.
+                </p>
+                <div className={styles.heroActions}>
+                  <Link href='/audit' className={styles.primaryBtn}>
+                    Run Your Free Audit
+                  </Link>
+                  <Link href='/contact' className={styles.secondaryBtn}>
+                    Start With a Free Conversation
+                  </Link>
+                </div>
+                <p className={styles.trust}>
+                  No pitch. No signup. Real findings in about 90 seconds.
+                </p>
               </div>
-              <p className={styles.trust}>
-                No pitch. No signup. Real findings in about 90 seconds.
-              </p>
             </div>
           </div>
         </section>
