@@ -45,6 +45,7 @@ export const serviceAreasLandingContent = {
       {
         city: "Siloam Springs",
         county: "Benton County",
+        href: "/service-areas/siloam-springs-ar",
         badge: "Home base",
         body: "Where I'm based. A growing community with a mix of established trades and room for the right businesses to own their category in local search.",
         tags: ["HVAC", "Plumbing", "Roofing", "Electrical"],
