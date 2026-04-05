@@ -54,6 +54,7 @@ export default function Process() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>How It Works</span>
           <h2 className={styles.heading}>The Process</h2>
           <p className={styles.intro}>
             From your first conversation to a live website, I keep it simple and

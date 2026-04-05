@@ -1,18 +1,61 @@
 .section {
   padding: 100px 40px;
   background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle upward glow */
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(123, 175, 212, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #7bafd4;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 8px;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: #7bafd4;
+  opacity: 0.6;
 }
 
 .heading {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 6vw, 2.8rem);
   font-weight: 700;
   line-height: 1.2;
@@ -36,17 +79,42 @@
 
 .step {
   padding: 40px;
-  background: linear-gradient(135deg, #141414 0%, #1e1e1e 100%);
-  border: 1px solid rgba(123, 175, 212, 0.2);
+  background: linear-gradient(
+    135deg,
+    rgba(20, 28, 42, 0.6) 0%,
+    rgba(15, 15, 15, 0.4) 100%
+  );
+  border: 1px solid rgba(123, 175, 212, 0.25);
   border-radius: 8px;
   position: relative;
   transition: all 0.3s ease-out;
 }
 
+.step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #7bafd4 0%, transparent 100%);
+  border-radius: 8px 8px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
 .step:hover {
-  border-color: rgba(123, 175, 212, 0.4);
-  background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+  border-color: rgba(123, 175, 212, 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 58, 82, 0.8) 0%,
+    rgba(20, 28, 42, 0.6) 100%
+  );
   transform: translateY(-4px);
+}
+
+.step:hover::before {
+  opacity: 1;
 }
 
 .stepNumber {

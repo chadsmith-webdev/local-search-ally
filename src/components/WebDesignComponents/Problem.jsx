@@ -33,6 +33,7 @@ export default function Problem() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>The Challenge</span>
           <h2 className={styles.heading}>Most Contractor Websites Fail</h2>
           <p className={styles.intro}>
             They look nice. Then nobody calls. Here's why.
@@ -47,7 +48,12 @@ export default function Problem() {
           className={styles.problems}
         >
           <motion.div variants={fadeUp} className={styles.problem}>
-            <div className={styles.problemIcon}>⏱️</div>
+            <div className={styles.problemIcon}>
+              <svg viewBox='0 0 18 18' fill='none' stroke='currentColor' strokeWidth='1.75' strokeLinecap='round' strokeLinejoin='round'>
+                <circle cx='9' cy='9' r='7' />
+                <polyline points='9 5 9 9 12 11' />
+              </svg>
+            </div>
             <h3>Too Slow</h3>
             <p>
               Slow websites kill conversions and rankings. If your site takes 5
@@ -58,7 +64,12 @@ export default function Problem() {
           </motion.div>
 
           <motion.div variants={fadeUp} className={styles.problem}>
-            <div className={styles.problemIcon}>📱</div>
+            <div className={styles.problemIcon}>
+              <svg viewBox='0 0 18 18' fill='none' stroke='currentColor' strokeWidth='1.75' strokeLinecap='round' strokeLinejoin='round'>
+                <rect x='5' y='1' width='8' height='16' rx='1' />
+                <line x1='9' y1='13' x2='9' y2='13.5' strokeWidth='2' strokeLinecap='round' />
+              </svg>
+            </div>
             <h3>Doesn't Work on Mobile</h3>
             <p>
               88% of consumers who do a local search call the business within 24
@@ -69,7 +80,13 @@ export default function Problem() {
           </motion.div>
 
           <motion.div variants={fadeUp} className={styles.problem}>
-            <div className={styles.problemIcon}>🎯</div>
+            <div className={styles.problemIcon}>
+              <svg viewBox='0 0 18 18' fill='none' stroke='currentColor' strokeWidth='1.75' strokeLinecap='round' strokeLinejoin='round'>
+                <circle cx='9' cy='9' r='7' />
+                <circle cx='9' cy='9' r='3' />
+                <circle cx='9' cy='9' r='1' fill='currentColor' />
+              </svg>
+            </div>
             <h3>No Clear Call-to-Action</h3>
             <p>
               Visitors land on your site and don't know what to do next. Should
@@ -80,7 +97,13 @@ export default function Problem() {
           </motion.div>
 
           <motion.div variants={fadeUp} className={styles.problem}>
-            <div className={styles.problemIcon}>👻</div>
+            <div className={styles.problemIcon}>
+              <svg viewBox='0 0 18 18' fill='none' stroke='currentColor' strokeWidth='1.75' strokeLinecap='round' strokeLinejoin='round'>
+                <circle cx='8' cy='8' r='5' />
+                <path d='m13 13 3 3' />
+                <line x1='3' y1='3' x2='15' y2='15' />
+              </svg>
+            </div>
             <h3>Invisible to Google</h3>
             <p>
               Even if your site is pretty, Google might not rank it. Poor page
@@ -91,7 +114,13 @@ export default function Problem() {
           </motion.div>
 
           <motion.div variants={fadeUp} className={styles.problem}>
-            <div className={styles.problemIcon}>💰</div>
+            <div className={styles.problemIcon}>
+              <svg viewBox='0 0 18 18' fill='none' stroke='currentColor' strokeWidth='1.75' strokeLinecap='round' strokeLinejoin='round'>
+                <rect x='2' y='4' width='14' height='10' rx='1' />
+                <line x1='2' y1='8' x2='16' y2='8' />
+                <line x1='6' y1='12' x2='8' y2='12' />
+              </svg>
+            </div>
             <h3>Big Agency Prices, Mediocre Results</h3>
             <p>
               Web design agencies charge $5,000-$15,000+ and hand you off to a

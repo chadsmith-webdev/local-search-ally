@@ -62,6 +62,7 @@ export default function FAQ() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>Questions</span>
           <h2 className={styles.heading}>Common Questions</h2>
           <p className={styles.intro}>
             Everything you need to know about custom website design and how I
@@ -77,7 +78,7 @@ export default function FAQ() {
               whileInView='visible'
               viewport={{ once: true }}
               variants={fadeUp}
-              className={styles.faqItem}
+              className={`${styles.faqItem} ${openIndex === index ? styles.active : ""}`}
             >
               <button
                 className={`${styles.question} ${

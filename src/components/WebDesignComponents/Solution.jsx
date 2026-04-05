@@ -22,6 +22,7 @@ export default function Solution() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>The Build</span>
           <h2 className={styles.heading}>A Website That Actually Works</h2>
           <p className={styles.intro}>
             I build custom websites on Next.js — fast, mobile-first, and

@@ -22,6 +22,7 @@ export default function Proof() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>What You Get</span>
           <h2 className={styles.heading}>Websites That Convert</h2>
           <p className={styles.intro}>
             Fast load times, clear CTAs, and mobile-first design all lead to one
@@ -82,23 +83,43 @@ export default function Proof() {
           <h3>What This Means For You</h3>
           <ul className={styles.list}>
             <li>
-              <span className={styles.checkmark}>✓</span>
+              <span className={styles.checkmark}>
+                <svg viewBox='0 0 18 18' fill='none' stroke='currentColor' strokeWidth='1.75' strokeLinecap='round' strokeLinejoin='round'>
+                  <polyline points='2 9 7 14 16 4' />
+                </svg>
+              </span>
               Faster website = more customers (people leave slow sites)
             </li>
             <li>
-              <span className={styles.checkmark}>✓</span>
+              <span className={styles.checkmark}>
+                <svg viewBox='0 0 18 18' fill='none' stroke='currentColor' strokeWidth='1.75' strokeLinecap='round' strokeLinejoin='round'>
+                  <polyline points='2 9 7 14 16 4' />
+                </svg>
+              </span>
               Mobile-first = you reach customers on their phones
             </li>
             <li>
-              <span className={styles.checkmark}>✓</span>
+              <span className={styles.checkmark}>
+                <svg viewBox='0 0 18 18' fill='none' stroke='currentColor' strokeWidth='1.75' strokeLinecap='round' strokeLinejoin='round'>
+                  <polyline points='2 9 7 14 16 4' />
+                </svg>
+              </span>
               Built for SEO = you rank better on Google
             </li>
             <li>
-              <span className={styles.checkmark}>✓</span>
+              <span className={styles.checkmark}>
+                <svg viewBox='0 0 18 18' fill='none' stroke='currentColor' strokeWidth='1.75' strokeLinecap='round' strokeLinejoin='round'>
+                  <polyline points='2 9 7 14 16 4' />
+                </svg>
+              </span>
               Clear CTAs = visitors know what to do next
             </li>
             <li>
-              <span className={styles.checkmark}>✓</span>
+              <span className={styles.checkmark}>
+                <svg viewBox='0 0 18 18' fill='none' stroke='currentColor' strokeWidth='1.75' strokeLinecap='round' strokeLinejoin='round'>
+                  <polyline points='2 9 7 14 16 4' />
+                </svg>
+              </span>
               Custom design = you stand out from competitors
             </li>
           </ul>
