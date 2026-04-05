@@ -1,7 +1,6 @@
 import LocationsHero from "@/components/LocationsHero";
 import LocationsCities from "@/components/LocationsCities";
 import LocationsStats from "@/components/LocationsStats";
-import LocationsProof from "@/components/LocationsProof";
 import LocationsFAQ from "@/components/LocationsFAQ";
 import LocationsCTA from "@/components/LocationsCTA";
 
@@ -57,7 +56,6 @@ export default function LocationsPage() {
         <LocationsHero />
         <LocationsCities />
         <LocationsStats />
-        <LocationsProof />
         <LocationsFAQ />
         <LocationsCTA />
       </main>

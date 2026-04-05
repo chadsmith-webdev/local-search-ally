@@ -41,6 +41,11 @@
       "sourceType": "github",
       "computedHash": "af3884d295b03ab4bdce99b024dbd3d71d4dd982f5824d1485e896d7be48f862"
     },
+    "services-page-generator": {
+      "source": "kostja94/marketing-skills",
+      "sourceType": "github",
+      "computedHash": "54cb1416af06f8501b93cbf07c858ec5e18e9e722b715f34dac777608efc0e03"
+    },
     "storybrand-messaging": {
       "source": "wondelai/skills",
       "sourceType": "github",
