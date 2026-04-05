@@ -103,7 +103,7 @@
 
 .heroBody,
 .bodyCopy {
-  color: rgba(248, 249, 250, 0.78);
+  color: rgba(248, 249, 250, 0.86);
   line-height: 1.8;
 }
 
@@ -150,6 +150,10 @@
   box-shadow: 0 0 52px rgba(123, 175, 212, 0.5);
 }
 
+.primaryBtn:active {
+  transform: translateY(0) scale(0.985);
+}
+
 .secondaryBtn {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -166,6 +170,16 @@
   border-color: rgba(123, 175, 212, 0.45);
   color: var(--carolina);
   background: rgba(123, 175, 212, 0.04);
+}
+
+.secondaryBtn:active {
+  transform: scale(0.985);
+}
+
+.primaryBtn:focus-visible,
+.secondaryBtn:focus-visible {
+  outline: 2px solid var(--carolina);
+  outline-offset: 3px;
 }
 
 .trust {
@@ -236,7 +250,7 @@
 }
 
 .panelCopy {
-  color: rgba(248, 249, 250, 0.78);
+  color: rgba(248, 249, 250, 0.86);
   line-height: 1.75;
 }
 
@@ -247,7 +261,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  color: rgba(248, 249, 250, 0.78);
+  color: rgba(248, 249, 250, 0.86);
   line-height: 1.7;
 }
 
@@ -264,13 +278,13 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  margin-top: 0.15rem;
+  width: 24px;
+  height: 24px;
+  margin-top: 0.08rem;
   background: rgba(123, 175, 212, 0.15);
   border: 1px solid rgba(123, 175, 212, 0.3);
   border-radius: 4px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--carolina);
   flex-shrink: 0;
@@ -419,5 +433,18 @@
 
   .faqGrid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryBtn,
+  .secondaryBtn {
+    transition: none;
+  }
+
+  .primaryBtn:hover,
+  .primaryBtn:active,
+  .secondaryBtn:active {
+    transform: none;
   }
 }
