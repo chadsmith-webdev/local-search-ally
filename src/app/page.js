@@ -1,37 +1,75 @@
-import { getAllPosts } from "@/lib/posts";
-import HomeClient from "@/components/HomeClient";
-import { faqs } from "@/lib/faqs";
-import { siteConfig } from "@/lib/metadata";
+import HeroSection from "@/components/HeroSection";
+import ProblemSection from "@/components/ProblemSection";
+import StakesSection from "@/components/StakesSection";
+import SuccessSection from "@/components/SuccessSection";
+import GuideSection from "@/components/GuideSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import ServicesSection from "@/components/ServicesSection";
+import StatsSection from "@/components/StatsSection";
+import FinalCTASection from "@/components/FinalCTASection";
 
 export const metadata = {
-  title: "Local Search Ally | Local SEO & Web Dev for NWA Contractors",
+  title: "Local SEO for NWA Contractors | Local Search Ally",
   description:
-    "Local SEO and web development for NWA contractors. Get found on Google, get more calls, and win more jobs. Based in Siloam Springs, AR.",
+    "97% of people use Google to find a local contractor. If you're not in the results, the call goes to whoever is. Free audit for NWA home service trades.",
+  openGraph: {
+    title: "Local SEO for NWA Contractors | Local Search Ally",
+    description:
+      "97% of people use Google to find a local contractor. If you're not in the results, the call goes to whoever is.",
+    url: "https://localsearchally.com",
+  },
 };
 
-export default function Home() {
-  const posts = getAllPosts();
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Local Search Ally",
+  description:
+    "Local SEO and web development for NWA home service trades — HVAC, plumbing, roofing, electrical, landscaping, and remodeling.",
+  url: "https://localsearchally.com",
+  telephone: "+14793808626",
+  founder: { "@type": "Person", name: "Chad Smith" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Siloam Springs",
+    addressRegion: "AR",
+    postalCode: "72761",
+    addressCountry: "US",
+  },
+  areaServed: [
+    "Rogers, AR",
+    "Bentonville, AR",
+    "Fayetteville, AR",
+    "Springdale, AR",
+    "Siloam Springs, AR",
+    "Northwest Arkansas",
+  ],
+  knowsAbout: [
+    "Local SEO",
+    "Google Business Profile",
+    "Web Development",
+    "Contractor Marketing",
+  ],
+};
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.schemaAnswer,
-      },
-    })),
-  };
-
+export default function Page() {
   return (
     <>
       <script
         type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HomeClient posts={posts} />
+      <main>
+        <HeroSection />
+        <ProblemSection />
+        <StakesSection />
+        <SuccessSection />
+        <GuideSection />
+        <HowItWorksSection />
+        <ServicesSection />
+        <StatsSection />
+        <FinalCTASection />
+      </main>
     </>
   );
 }

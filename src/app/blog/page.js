@@ -1,12 +1,12 @@
 import { getAllPosts } from "@/lib/posts";
-import BlogClient from "@/components/BlogClient";
+import BlogClient from "./BlogClient";
 
 export const metadata = {
   title: "Blog | Local Search Ally",
-  description: "Local SEO tips, web development insights, and contractor marketing strategies.",
+  description: "Local SEO tips and contractor marketing strategies from Local Search Ally.",
 };
 
-export default function Blog() {
+export default function BlogPage() {
   const posts = getAllPosts();
   return <BlogClient posts={posts} />;
 }

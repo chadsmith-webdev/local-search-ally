@@ -1,0 +1,268 @@
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.inner {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Two-column: photo left, content right ─────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* ─── Photo column ───────────────────────────────────── */
+.photoWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photoFrame {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+
+/* Subtle blue glow behind the photo */
+.photoFrame::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(123, 175, 212, 0.25),
+    transparent 60%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.photo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 14px;
+  display: block;
+}
+
+/* Location tag below photo */
+.locationTag {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.locationTag svg {
+  width: 12px;
+  height: 12px;
+  color: var(--carolina);
+  flex-shrink: 0;
+}
+
+/* ─── Content column ────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--carolina);
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--carolina);
+  opacity: 0.6;
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.625rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.p {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ─── Pledge items ───────────────────────────────────── */
+.pledges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding-top: 0.25rem;
+}
+
+.pledge {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+
+.pledgeCheck {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(123, 175, 212, 0.1);
+  border: 1px solid rgba(123, 175, 212, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pledgeCheck svg {
+  width: 10px;
+  height: 10px;
+  color: var(--carolina);
+}
+
+.pledgeText {
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ─── Divider ───────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+/* ─── Signature / name block ─────────────────────────── */
+.sig {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sigName {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.sigRole {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-top: 0.125rem;
+}
+
+.sigSep {
+  width: 1px;
+  height: 36px;
+  background: var(--border-strong);
+}
+
+.sigPhone {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--carolina);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.sigPhone:hover {
+  opacity: 0.75;
+}
+
+/* ─── Responsive ────────────────────────────────────── */
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .photoWrap {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .photoFrame {
+    width: 140px;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+  }
+
+  .photo {
+    border-radius: 50%;
+  }
+
+  .photoFrame::before {
+    border-radius: 50%;
+  }
+
+  .locationTag {
+    margin-top: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .photoWrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

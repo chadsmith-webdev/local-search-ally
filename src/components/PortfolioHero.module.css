@@ -1,0 +1,106 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--section-spacing) * 1.5) var(--page-gutter)
+    var(--section-spacing);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(123, 175, 212, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(123, 175, 212, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent);
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(123, 175, 212, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--carolina);
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(123, 175, 212, 0.25);
+  border-radius: 100px;
+  backdrop-filter: blur(4px);
+  width: fit-content;
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  max-width: 720px;
+}
+
+.h1 em {
+  font-style: normal;
+  color: var(--carolina);
+}
+
+.subhead {
+  font-family: var(--font-ui);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 620px;
+}
+
+.bridge {
+  background: rgba(123, 175, 212, 0.04);
+  border: 1px solid rgba(123, 175, 212, 0.12);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+}
+
+.bridge p {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0;
+}
+
+.bridge em {
+  font-style: normal;
+  color: var(--text);
+}

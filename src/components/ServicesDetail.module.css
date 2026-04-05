@@ -1,0 +1,239 @@
+.section {
+  padding: 0 var(--page-gutter) var(--section-spacing);
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Service block ── */
+.service {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 3rem;
+  padding: 4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.service:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Left rail ── */
+.rail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+.railTop {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(123, 175, 212, 0.5);
+  letter-spacing: 0.1em;
+}
+
+.iconWrap {
+  width: 32px;
+  height: 32px;
+  color: var(--carolina);
+  flex-shrink: 0;
+}
+
+.iconWrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+.serviceLabel {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.railLine {
+  width: 1px;
+  flex: 1;
+  min-height: 40px;
+  background: linear-gradient(to bottom, rgba(123, 175, 212, 0.2), transparent);
+  margin-top: 0.5rem;
+}
+
+/* ── Right body ── */
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+.hook {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.bodyText {
+  font-size: 0.96rem;
+  line-height: 1.8;
+  color: rgba(248, 249, 250, 0.7);
+}
+
+/* ── Grouped bullets ── */
+.groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.groupLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--carolina);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(123, 175, 212, 0.2);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+/* ── Flat bullets ── */
+.flatList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+/* ── Shared bullet item ── */
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(248, 249, 250, 0.75);
+}
+
+.bullet {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--carolina);
+  flex-shrink: 0;
+  margin-top: 0.45em;
+}
+
+/* ── Aside ── */
+.aside {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+  padding: 0.6rem 0.9rem;
+  border-left: 2px solid rgba(123, 175, 212, 0.3);
+}
+
+/* ── Soft inline CTA ── */
+.softCTA {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(123, 175, 212, 0.06);
+  border: 1px solid rgba(123, 175, 212, 0.2);
+  border-radius: 6px;
+}
+
+.softCTAIcon {
+  color: var(--carolina);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  flex-shrink: 0;
+}
+
+.softCTA p {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: rgba(248, 249, 250, 0.8);
+}
+
+/* ── Outcome ── */
+.outcome {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--carolina);
+  padding-top: 0.25rem;
+  border-top: 1px solid rgba(123, 175, 212, 0.15);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .service {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .rail {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .railLine {
+    display: none;
+  }
+
+  .groups {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

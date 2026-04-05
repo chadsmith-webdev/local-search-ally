@@ -1,0 +1,264 @@
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* Faint horizontal rule at top — separates from Guide */
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--page-gutter);
+  right: var(--page-gutter);
+  height: 1px;
+  background: var(--border);
+}
+
+.inner {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Header ─────────────────────────────────────────── */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 600px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--carolina);
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--carolina);
+  opacity: 0.6;
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 3.5vw, 2.875rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+.lead {
+  font-family: var(--font-ui);
+  font-size: 1.0625rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ─── Steps row ──────────────────────────────────────── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+/* Connector line between steps */
+.steps::before {
+  content: "";
+  position: absolute;
+  top: 28px; /* vertically centered on step number */
+  left: calc(33.333% - 20px);
+  right: calc(33.333% - 20px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(123, 175, 212, 0.3) 0%,
+    rgba(123, 175, 212, 0.15) 50%,
+    rgba(123, 175, 212, 0.3) 100%
+  );
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 2rem 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.step:last-child {
+  padding-right: 0;
+}
+
+/* ─── Step number badge ──────────────────────────────── */
+.stepNum {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(123, 175, 212, 0.25);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Inner glow ring on the number badge */
+.stepNum::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px dashed rgba(123, 175, 212, 0.12);
+}
+
+.stepNumText {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--carolina);
+  line-height: 1;
+}
+
+/* ─── Step content ───────────────────────────────────── */
+.stepBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.stepDesc {
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ─── Bottom note + CTA row ──────────────────────────── */
+.noteRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1.25rem 1.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  flex: 1;
+  min-width: 260px;
+}
+
+.auditCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--carolina);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition:
+    gap 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.auditCta:hover {
+  opacity: 0.75;
+  gap: 0.75rem;
+}
+
+.noteIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(123, 175, 212, 0.08);
+  border: 1px solid rgba(123, 175, 212, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.noteIcon svg {
+  width: 15px;
+  height: 15px;
+  color: var(--carolina);
+}
+
+.noteText {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.noteText strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ─── Responsive ────────────────────────────────────── */
+@media (max-width: 860px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* Hide connector line on mobile — steps stack vertically */
+  .steps::before {
+    display: none;
+  }
+
+  .step {
+    padding-right: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .stepBody {
+    padding-top: 0.25rem;
+  }
+}

@@ -1,0 +1,119 @@
+.section {
+  padding: var(--section-spacing) var(--page-gutter);
+}
+
+.card {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  background: rgba(123, 175, 212, 0.04);
+  border: 1px solid rgba(123, 175, 212, 0.2);
+  border-radius: 12px;
+  padding: 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+}
+
+/* Corner accents */
+.cornerTL {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 60px;
+  height: 60px;
+  border-top: 2px solid rgba(123, 175, 212, 0.5);
+  border-left: 2px solid rgba(123, 175, 212, 0.5);
+  border-radius: 12px 0 0 0;
+}
+
+.cornerBR {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 60px;
+  height: 60px;
+  border-bottom: 2px solid rgba(123, 175, 212, 0.5);
+  border-right: 2px solid rgba(123, 175, 212, 0.5);
+  border-radius: 0 0 12px 0;
+}
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--carolina);
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  max-width: 560px;
+}
+
+.body {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: rgba(248, 249, 250, 0.7);
+  max-width: 540px;
+}
+
+.social {
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.ctaWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.875rem 2rem;
+  background: var(--carolina);
+  color: #020203;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  transition:
+    filter 0.2s,
+    transform 0.15s;
+}
+
+.cta:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.zeroFriction {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+  .cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
