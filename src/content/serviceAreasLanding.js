@@ -17,7 +17,10 @@ export const serviceAreasLandingContent = {
   },
   hero: {
     eyebrow: "Where I Work",
-    h1: "Service areas across Northwest Arkansas, handled city by city.",
+    h1: {
+      text: "Service areas across Northwest Arkansas,",
+      accent: "handled city by city.",
+    },
     body: [
       "Local search is hyper-specific. A roofer in Rogers doesn't compete with one in Fayetteville. They compete with the three roofers showing up in that city's Map Pack.",
       "I help home service trades get found at that level across Northwest Arkansas, starting with the cities where visibility actually turns into calls.",

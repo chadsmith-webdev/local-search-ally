@@ -9,7 +9,10 @@ export default function ServiceAreasHero({ content }) {
 
       <div className={styles.inner}>
         <span className={styles.eyebrow}>{content.eyebrow}</span>
-        <h1 className={styles.h1}>{content.h1}</h1>
+        <h1 className={styles.h1}>
+          {content.h1.text}{" "}
+          <span className={styles.h1Accent}>{content.h1.accent}</span>
+        </h1>
         <div className={styles.bodyWrap}>
           {content.body.map((paragraph) => (
             <p key={paragraph} className={styles.body}>
