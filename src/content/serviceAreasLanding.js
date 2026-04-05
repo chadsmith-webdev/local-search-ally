@@ -67,6 +67,7 @@ export const serviceAreasLandingContent = {
       {
         city: "Fayetteville",
         county: "Washington County",
+        href: "/service-areas/fayetteville-ar",
         body: "The largest market in NWA. More searches, more competition. Trades that rank here consistently handle serious call volume. Those that don't are effectively invisible.",
         tags: ["Plumbing", "Roofing", "HVAC", "Remodeling"],
       },
