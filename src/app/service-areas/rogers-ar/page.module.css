@@ -53,6 +53,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
+  animation: fadeUp 0.62s ease-out both;
 }
 
 .eyebrow,
@@ -298,6 +299,8 @@
 .briefSection .heroPanel {
   width: 100%;
   max-width: 520px;
+  animation: fadeUp 0.62s ease-out both;
+  animation-delay: 0.08s;
 }
 
 .problemLayout,
@@ -343,6 +346,24 @@
 .proofPanel,
 .faqItem {
   padding: 1.3rem;
+  animation: fadeUp 0.62s ease-out both;
+}
+
+.focusGrid .surfaceCard:nth-child(1),
+.steps .stepCard:nth-child(1),
+.faqGrid .faqItem:nth-child(1) {
+  animation-delay: 0.06s;
+}
+
+.focusGrid .surfaceCard:nth-child(2),
+.steps .stepCard:nth-child(2),
+.faqGrid .faqItem:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.focusGrid .surfaceCard:nth-child(3),
+.steps .stepCard:nth-child(3) {
+  animation-delay: 0.18s;
 }
 
 .tradeChips {
@@ -406,8 +427,19 @@
   justify-items: center;
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 1024px) {
-  .heroInner,
   .problemLayout,
   .fitGrid,
   .focusGrid,
@@ -421,6 +453,39 @@
 }
 
 @media (max-width: 720px) {
+  .hero {
+    padding-top: calc(var(--section-spacing) * 1.1);
+  }
+
+  .heroTitle {
+    font-size: clamp(2rem, 11vw, 2.65rem);
+    line-height: 1.08;
+  }
+
+  .heroBody,
+  .bodyCopy {
+    line-height: 1.7;
+  }
+
+  .sectionTitle,
+  .ctaTitle {
+    font-size: clamp(1.6rem, 8.5vw, 2.1rem);
+  }
+
+  .cardTitle,
+  .stepTitle,
+  .faqQuestion {
+    font-size: 1.12rem;
+  }
+
+  .heroPanel,
+  .surfaceCard,
+  .stepCard,
+  .proofPanel,
+  .faqItem {
+    padding: 1.1rem;
+  }
+
   .heroActions {
     width: 100%;
     flex-direction: column;
@@ -437,6 +502,15 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .heroContent,
+  .briefSection .heroPanel,
+  .surfaceCard,
+  .stepCard,
+  .proofPanel,
+  .faqItem {
+    animation: none;
+  }
+
   .primaryBtn,
   .secondaryBtn {
     transition: none;
