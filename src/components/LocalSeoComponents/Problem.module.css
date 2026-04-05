@@ -219,6 +219,10 @@
   margin-bottom: 0;
 }
 
+.statistic .source {
+  color: var(--carolina, #7bafd4);
+}
+
 .source {
   font-size: 0.85rem;
   color: var(--carolina, #7bafd4);
