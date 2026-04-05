@@ -29,6 +29,13 @@ This is a redesign of the primary marketing and lead-generation website. The sit
 | Animations | Framer Motion (page loads, scroll, UI transitions)                          |
 | Deployment | Vercel                                                                      |
 
+### Deployment workflow
+
+- `main` is the production branch. Commits that land on `main` deploy to the live site after a successful Vercel build.
+- Non-`main` branches (for example `redesign-v2`) create preview deployments only.
+- Standard release path: push feature branch -> review preview -> merge PR into `main` -> production goes live.
+- If a production deployment fails, the live site does not update until a succeeding deployment is created.
+
 ### Folder structure
 
 ```
