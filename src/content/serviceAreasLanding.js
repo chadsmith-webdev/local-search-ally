@@ -74,6 +74,7 @@ export const serviceAreasLandingContent = {
       {
         city: "Springdale",
         county: "Washington County",
+        href: "/service-areas/springdale-ar",
         body: "Dense residential and commercial market. Trades here often compete across both Springdale and Fayetteville searches, so local relevance signals have to be dialed in.",
         tags: ["Roofing", "HVAC", "Plumbing", "Electrical"],
       },
