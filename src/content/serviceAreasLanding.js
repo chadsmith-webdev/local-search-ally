@@ -102,6 +102,7 @@ export const serviceAreasLandingContent = {
       {
         city: "Cave Springs",
         county: "Benton County",
+        href: "/service-areas/cave-springs-ar",
         body: "Growing suburb with new residential developments. Most trades here are still relying on word of mouth, which means the window to establish early visibility is still open.",
         tags: ["HVAC", "Landscaping", "Plumbing"],
       },
