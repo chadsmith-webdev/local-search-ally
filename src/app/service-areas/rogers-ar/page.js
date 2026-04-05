@@ -185,46 +185,63 @@ export default function RogersServiceAreaPage() {
 
         <section className={`section ${styles.briefSectionWrap}`}>
           <div className={`container ${styles.briefSection}`}>
-            <div className={styles.heroPanel}>
-              <p className={styles.panelLabel}>Rogers local brief</p>
-              <div className={styles.panelStat}>
-                <span className={styles.panelNumber}>3</span>
+            <div className={styles.briefShell}>
+              <div className={styles.briefLead}>
+                <p className={styles.panelLabel}>Rogers local brief</p>
+                <h2 className={styles.briefTitle}>
+                  Rogers is competitive enough that weak local signals show up
+                  fast.
+                </h2>
                 <p className={styles.panelCopy}>
-                  Google&apos;s Map Pack shows three businesses per search. If
-                  you are not in that group, you are easy to miss.
+                  This is not a market where a thin Google Business Profile and
+                  a generic service page quietly slide by. When demand spikes,
+                  the businesses with stronger local relevance get seen first.
                 </p>
+                <div className={styles.briefStat}>
+                  <span className={styles.panelNumber}>3</span>
+                  <p className={styles.panelCopy}>
+                    Google&apos;s Map Pack shows three businesses per search. If
+                    you are not in that group, you are easy to miss.
+                  </p>
+                </div>
               </div>
-              <ul className={styles.signalList}>
-                {rogersSignals.map((signal) => (
-                  <li key={signal} className={styles.signalItem}>
-                    {signal}
-                  </li>
-                ))}
-              </ul>
+
+              <div className={styles.briefSignals}>
+                <p className={styles.cardLabel}>What that means in Rogers</p>
+                <ul className={styles.signalList}>
+                  {rogersSignals.map((signal) => (
+                    <li key={signal} className={styles.signalItem}>
+                      {signal}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
 
         <section className={`section ${styles.problemSectionWrap}`}>
-          <div className={`container ${styles.problemLayout}`}>
-            <div className={styles.sectionIntro}>
-              <p className={styles.sectionEyebrow}>The real problem</p>
-              <h2 className={styles.sectionTitle}>
-                Referrals are fine. Until they are not.
-              </h2>
-            </div>
-            <div className={styles.problemCopy}>
-              <p className={styles.bodyCopy}>
-                Most home service trades in Rogers are busy until the same
-                referral pipeline slows down. When that happens, the companies
-                already showing up in search absorb the demand.
-              </p>
-              <p className={styles.bodyCopy}>
-                The problem is usually not a lack of searches. It is weak local
-                visibility. Rogers is competitive enough that if your Google
-                Business Profile, city pages, and review signals are uneven,
-                your competitor gets the call first.
-              </p>
+          <div className='container'>
+            <div className={styles.problemEditorial}>
+              <div className={styles.sectionIntro}>
+                <p className={styles.sectionEyebrow}>The real problem</p>
+                <h2 className={styles.sectionTitle}>
+                  Referrals are fine. Until they are not.
+                </h2>
+              </div>
+              <div className={styles.problemCopy}>
+                <p className={styles.bodyCopy}>
+                  Most home service trades in Rogers are busy until the same
+                  referral pipeline slows down. When that happens, the companies
+                  already showing up in search absorb the demand.
+                </p>
+                <p className={styles.bodyCopy}>
+                  The problem is usually not a lack of searches. It is weak
+                  local visibility. Rogers is competitive enough that if your
+                  Google Business Profile, city pages, and review signals are
+                  uneven, your competitor gets the call first.
+                </p>
+              </div>
             </div>
           </div>
         </section>
