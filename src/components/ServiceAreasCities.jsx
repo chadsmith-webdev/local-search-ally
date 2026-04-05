@@ -15,7 +15,7 @@ export default function ServiceAreasCities({ content }) {
           {content.cards.map((card) => (
             <article key={card.city} className={styles.card}>
               <div className={styles.cardTop}>
-                <div>
+                <div className={styles.headingBlock}>
                   <h3 className={styles.city}>{card.city}</h3>
                   <p className={styles.county}>{card.county}</p>
                 </div>
@@ -24,14 +24,19 @@ export default function ServiceAreasCities({ content }) {
                 ) : null}
               </div>
 
-              <p className={styles.cardBody}>{card.body}</p>
+              <div className={styles.copyBlock}>
+                <p className={styles.cardBody}>{card.body}</p>
+              </div>
 
-              <div className={styles.tags}>
-                {card.tags.map((tag) => (
-                  <span key={tag} className={styles.tag}>
-                    {tag}
-                  </span>
-                ))}
+              <div className={styles.tagsBlock}>
+                <p className={styles.tagsLabel}>Common fits</p>
+                <div className={styles.tags}>
+                  {card.tags.map((tag) => (
+                    <span key={tag} className={styles.tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}
