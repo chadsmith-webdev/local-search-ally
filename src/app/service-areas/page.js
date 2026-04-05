@@ -13,7 +13,7 @@ export const metadata = {
     title: "Service Areas — Local Search Ally",
     description:
       "Free SEO audits for NWA contractors. See where you rank, why competitors are winning, and your fastest path to visibility.",
-    url: "https://localsearchally.com/locations",
+    url: "https://localsearchally.com/service-areas",
     type: "website",
   },
 };
