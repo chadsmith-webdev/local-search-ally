@@ -16,6 +16,7 @@ const container = {
 const cities = [
   {
     name: "Rogers",
+    slug: "rogers",
     title: "The Growth Hub",
     problem:
       "Rogers is where the money is. Thousands search for your service every month—most click one of the first three results. If you're not there, they call someone else.",
@@ -27,6 +28,7 @@ const cities = [
   },
   {
     name: "Bentonville",
+    slug: "bentonville",
     title: "Corporate & Retail Momentum",
     problem:
       "Bentonville is concentrated money. Walmart HQ means high-income neighborhoods, constant retail construction, and property managers needing reliable contractors.",
@@ -38,6 +40,7 @@ const cities = [
   },
   {
     name: "Fayetteville",
+    slug: "fayetteville",
     title: "The Established Market",
     problem:
       "Fayetteville has older homes, methodical homeowners who research online, and fewer contractors visible for local searches. The market favors contractors who show up.",
@@ -49,6 +52,7 @@ const cities = [
   },
   {
     name: "Springdale",
+    slug: "springdale",
     title: "Industrial & Residential Mix",
     problem:
       "Springdale balances residential, light commercial, and multi-family work. Less saturated market than Rogers/Bentonville, but requires showing up in both spaces.",
@@ -104,6 +108,10 @@ export default function LocationsCities() {
                   ))}
                 </ul>
               </div>
+
+              <a href={`/service-areas/${city.slug}`} className={styles.cityLink}>
+                Learn more about {city.name} →
+              </a>
             </motion.div>
           ))}
         </motion.div>
