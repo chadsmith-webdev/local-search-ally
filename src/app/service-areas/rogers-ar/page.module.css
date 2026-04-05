@@ -156,9 +156,9 @@
 }
 
 .secondaryBtn {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text);
+  background: rgba(123, 175, 212, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: rgba(248, 249, 250, 0.95);
   font-size: 0.9375rem;
   font-weight: 600;
   transition:
@@ -168,9 +168,9 @@
 }
 
 .secondaryBtn:hover {
-  border-color: rgba(123, 175, 212, 0.45);
+  border-color: rgba(123, 175, 212, 0.62);
   color: var(--carolina);
-  background: rgba(123, 175, 212, 0.04);
+  background: rgba(123, 175, 212, 0.1);
 }
 
 .secondaryBtn:active {
@@ -220,7 +220,7 @@
 .cardLabel,
 .stepLabel {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -232,7 +232,7 @@
 }
 
 .cardLabel {
-  color: rgba(248, 249, 250, 0.5);
+  color: rgba(248, 249, 250, 0.62);
 }
 
 .panelStat {
@@ -312,8 +312,6 @@
 .briefSection .heroPanel {
   width: 100%;
   max-width: 560px;
-  animation: fadeUp 0.62s ease-out both;
-  animation-delay: 0.08s;
 }
 
 .problemLayout,
@@ -359,24 +357,6 @@
 .proofPanel,
 .faqItem {
   padding: 1.3rem;
-  animation: fadeUp 0.62s ease-out both;
-}
-
-.focusGrid .surfaceCard:nth-child(1),
-.steps .stepCard:nth-child(1),
-.faqGrid .faqItem:nth-child(1) {
-  animation-delay: 0.06s;
-}
-
-.focusGrid .surfaceCard:nth-child(2),
-.steps .stepCard:nth-child(2),
-.faqGrid .faqItem:nth-child(2) {
-  animation-delay: 0.12s;
-}
-
-.focusGrid .surfaceCard:nth-child(3),
-.steps .stepCard:nth-child(3) {
-  animation-delay: 0.18s;
 }
 
 .tradeChips {
@@ -389,10 +369,10 @@
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 999px;
   padding: 0.42rem 0.75rem;
-  color: rgba(248, 249, 250, 0.82);
+  color: rgba(248, 249, 250, 0.9);
   background: rgba(255, 255, 255, 0.035);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.74rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -498,7 +478,7 @@
   .cardTitle,
   .stepTitle,
   .faqQuestion {
-    font-size: 1.12rem;
+    font-size: 1.16rem;
   }
 
   .heroPanel,
@@ -526,11 +506,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .heroContent,
-  .briefSection .heroPanel,
-  .surfaceCard,
-  .stepCard,
-  .proofPanel,
-  .faqItem {
+  .briefSection .heroPanel {
     animation: none;
   }
 
