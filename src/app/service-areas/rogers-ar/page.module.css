@@ -296,9 +296,18 @@
   justify-content: center;
 }
 
+.briefSectionWrap {
+  padding-top: clamp(1.4rem, 3.5vw, 2.4rem);
+  padding-bottom: clamp(2.1rem, 5vw, 3.4rem);
+}
+
+.problemSectionWrap {
+  padding-top: clamp(2.6rem, 5vw, 4rem);
+}
+
 .briefSection .heroPanel {
   width: 100%;
-  max-width: 520px;
+  max-width: 560px;
   animation: fadeUp 0.62s ease-out both;
   animation-delay: 0.08s;
 }

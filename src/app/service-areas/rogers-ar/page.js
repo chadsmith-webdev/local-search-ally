@@ -178,7 +178,7 @@ export default function RogersServiceAreaPage() {
           </div>
         </section>
 
-        <section className='section'>
+        <section className={`section ${styles.briefSectionWrap}`}>
           <div className={`container ${styles.briefSection}`}>
             <div className={styles.heroPanel}>
               <p className={styles.panelLabel}>Rogers local brief</p>
@@ -200,7 +200,7 @@ export default function RogersServiceAreaPage() {
           </div>
         </section>
 
-        <section className='section'>
+        <section className={`section ${styles.problemSectionWrap}`}>
           <div className={`container ${styles.problemLayout}`}>
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>The real problem</p>
