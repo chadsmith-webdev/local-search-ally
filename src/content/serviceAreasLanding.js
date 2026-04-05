@@ -81,6 +81,7 @@ export const serviceAreasLandingContent = {
       {
         city: "Bella Vista",
         county: "Benton County",
+        href: "/service-areas/bella-vista-ar",
         body: "Established community with older housing stock that drives steady demand for HVAC replacement, roofing, and plumbing repairs. A market where trust and reviews matter more than price.",
         tags: ["HVAC", "Roofing", "Plumbing", "Landscaping"],
       },
