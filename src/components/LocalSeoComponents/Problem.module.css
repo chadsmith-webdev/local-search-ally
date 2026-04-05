@@ -221,7 +221,7 @@
 
 .source {
   font-size: 0.85rem;
-  color: var(--muted, #888888);
+  color: var(--carolina, #7bafd4);
   font-style: italic;
   margin: 0 !important;
 }
