@@ -83,19 +83,63 @@ export default function Proof() {
           <h3>What You Can Count On</h3>
           <ul className={styles.list}>
             <li>
-              <span className={styles.checkmark}>✓</span>I never claim results I
-              haven't achieved
+              <span className={styles.checkmark}>
+                <svg
+                  viewBox='0 0 18 18'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='1.75'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <polyline points='2 9 7 14 16 4' />
+                </svg>
+              </span>
+              I never claim results I haven't achieved
             </li>
             <li>
-              <span className={styles.checkmark}>✓</span>
+              <span className={styles.checkmark}>
+                <svg
+                  viewBox='0 0 18 18'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='1.75'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <polyline points='2 9 7 14 16 4' />
+                </svg>
+              </span>
               Monthly reports showing exactly what moved
             </li>
             <li>
-              <span className={styles.checkmark}>✓</span>
+              <span className={styles.checkmark}>
+                <svg
+                  viewBox='0 0 18 18'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='1.75'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <polyline points='2 9 7 14 16 4' />
+                </svg>
+              </span>
               Direct access — you're not talking to a team, you're talking to me
             </li>
             <li>
-              <span className={styles.checkmark}>✓</span>
+              <span className={styles.checkmark}>
+                <svg
+                  viewBox='0 0 18 18'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='1.75'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <polyline points='2 9 7 14 16 4' />
+                </svg>
+              </span>
               Honest assessment about what's possible in your market
             </li>
             <li>
