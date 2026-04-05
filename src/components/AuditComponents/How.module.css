@@ -1,0 +1,108 @@
+.section {
+  padding: 100px 40px;
+  background: #0a0a0a;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.heading {
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #f0f0f0;
+  margin: 0 0 16px 0;
+}
+
+.intro {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+
+.step {
+  padding: 32px;
+  background: linear-gradient(135deg, #141414 0%, #1e1e1e 100%);
+  border: 1px solid rgba(123, 175, 212, 0.2);
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease-out;
+}
+
+.step:hover {
+  border-color: rgba(123, 175, 212, 0.4);
+  background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+  transform: translateY(-4px);
+}
+
+.stepNumber {
+  font-family:
+    JetBrains Mono,
+    monospace;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: rgba(123, 175, 212, 0.15);
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  line-height: 1;
+}
+
+.stepTitle {
+  font-family:
+    Helvetica Neue,
+    Arial,
+    sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #7bafd4;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 2;
+}
+
+.stepDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 24px;
+  }
+
+  .container {
+    gap: 40px;
+  }
+
+  .step {
+    padding: 24px;
+  }
+
+  .stepNumber {
+    font-size: 2.5rem;
+  }
+
+  .stepTitle {
+    font-size: 1.1rem;
+  }
+}
