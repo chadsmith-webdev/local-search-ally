@@ -280,6 +280,7 @@
   align-items: flex-start;
   gap: 0.65rem;
   list-style: none;
+  margin: 0;
 }
 
 .signalItem::before {
@@ -540,6 +541,7 @@
 .faqQuestion {
   font-size: 1.25rem;
   line-height: 1.2;
+  margin: 0;
 }
 
 .faqGrid {
@@ -562,6 +564,10 @@
     ),
     rgba(255, 255, 255, 0.008);
   box-shadow: none;
+}
+
+.faqItem .bodyCopy {
+  margin: 0;
 }
 
 .proofEditorial {
@@ -613,6 +619,7 @@
 .proofEditorial .citationList li {
   padding: 1rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.09);
+  margin: 0;
 }
 
 .proofEditorial .citationList li:first-child {
@@ -791,8 +798,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .heroContent,
-  .briefSection .heroPanel {
+  .heroContent {
     animation: none;
   }
 
