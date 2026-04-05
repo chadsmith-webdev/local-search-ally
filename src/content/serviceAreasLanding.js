@@ -60,6 +60,7 @@ export const serviceAreasLandingContent = {
       {
         city: "Bentonville",
         county: "Benton County",
+        href: "/service-areas/bentonville-ar",
         body: "Higher-income households mean higher service ticket value. Homeowners here search before they call, and they read reviews. A polished online presence is table stakes.",
         tags: ["HVAC", "Remodeling", "Landscaping", "Electrical"],
       },
