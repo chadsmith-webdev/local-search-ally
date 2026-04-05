@@ -26,12 +26,21 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--page-gutter, 40px);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
+  align-items: start;
   position: relative;
   z-index: 1;
 }
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
 
 .eyebrow {
   font-family: var(--font-mono, "JetBrains Mono", monospace);
@@ -100,9 +109,22 @@
 }
 
 .what {
+  grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+.whatGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .whatGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .what > h3 {
@@ -144,6 +166,7 @@
 }
 
 .transparency {
+  grid-column: 1 / -1;
   padding: 40px;
   background: rgba(123, 175, 212, 0.08);
   border: 1px solid rgba(123, 175, 212, 0.2);
