@@ -56,7 +56,7 @@ export default function Problem() {
                     viewBox='0 0 18 18'
                     fill='none'
                     stroke='currentColor'
-                    strokeWidth='1.75'
+                    strokeWidth='1'
                     strokeLinecap='round'
                     strokeLinejoin='round'
                   >
@@ -78,7 +78,7 @@ export default function Problem() {
                     viewBox='0 0 18 18'
                     fill='none'
                     stroke='currentColor'
-                    strokeWidth='1.75'
+                    strokeWidth='1'
                     strokeLinecap='round'
                     strokeLinejoin='round'
                   >
@@ -99,7 +99,7 @@ export default function Problem() {
                     viewBox='0 0 18 18'
                     fill='none'
                     stroke='currentColor'
-                    strokeWidth='1.75'
+                    strokeWidth='1'
                     strokeLinecap='round'
                     strokeLinejoin='round'
                   >
@@ -121,7 +121,7 @@ export default function Problem() {
                     viewBox='0 0 18 18'
                     fill='none'
                     stroke='currentColor'
-                    strokeWidth='1.75'
+                    strokeWidth='1'
                     strokeLinecap='round'
                     strokeLinejoin='round'
                   >
