@@ -175,7 +175,11 @@ export default function RogersServiceAreaPage() {
                 No pitch. No signup. Real findings in about 90 seconds.
               </p>
             </div>
+          </div>
+        </section>
 
+        <section className='section'>
+          <div className={`container ${styles.briefSection}`}>
             <div className={styles.heroPanel}>
               <p className={styles.panelLabel}>Rogers local brief</p>
               <div className={styles.panelStat}>
