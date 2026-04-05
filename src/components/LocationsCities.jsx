@@ -62,6 +62,66 @@ const cities = [
       "High-opportunity keywords competitors miss",
     ],
   },
+  {
+    name: "Siloam Springs",
+    slug: "siloam-springs",
+    title: "Growing Residential Market",
+    problem:
+      "Siloam Springs is expanding fast. New construction, growing families, and homeowners who need reliable contractors. Visibility here means capturing demand early.",
+    highlights: [
+      "Siloam Springs micro-market keyword rankings",
+      "Local review momentum and reputation health",
+      "Opportunities competitors haven't touched",
+    ],
+  },
+  {
+    name: "Bella Vista",
+    slug: "bella-vista",
+    title: "Affluent Communities",
+    problem:
+      "Bella Vista has high-income homeowners with established homes and the budget to fix them right. They search online and expect professionalism. Being visible means premium work.",
+    highlights: [
+      "Bella Vista-specific rankings for your service",
+      "Review profile perception and trust markers",
+      "High-value keywords and client acquisition",
+    ],
+  },
+  {
+    name: "Eureka Springs",
+    slug: "eureka-springs",
+    title: "Historic & Tourism-Driven",
+    problem:
+      "Eureka Springs blends historic properties with vacation rentals and property manager demand. It's a smaller market but with unique needs—and less contractor visibility.",
+    highlights: [
+      "Eureka Springs search visibility and rankings",
+      "Property manager and short-term rental contractor demand",
+      "Unique service opportunities in this market",
+    ],
+  },
+  {
+    name: "Gentry",
+    slug: "gentry",
+    title: "Emerging Opportunity",
+    problem:
+      "Gentry is growing and often overlooked by contractors chasing bigger cities. Homeowners here search locally—and there's less competition if you show up.",
+    highlights: [
+      "Gentry keyword rankings and search visibility",
+      "Local market saturation and opportunity gaps",
+      "Your competitive position in this area",
+    ],
+  },
+  {
+    name: "Gravette",
+    slug: "gravette",
+    title: "Rural & Residential Growth",
+    problem:
+      "Gravette is small but growing. Homeowners need contractors who are accessible and reliable. Being found here means capturing work from a market with light competition.",
+    highlights: [
+      "Gravette visibility and local search rankings",
+      "Review profile and reputation in a tight market",
+      "Growth opportunities as the area expands",
+    ],
+  },
 ];
 
 export default function LocationsCities() {
