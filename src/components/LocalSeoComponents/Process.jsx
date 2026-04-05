@@ -53,62 +53,86 @@ export default function Process() {
           whileInView='visible'
           viewport={{ once: true }}
           variants={fadeUp}
+          className={styles.header}
         >
-          <span className={styles.eyebrow}>Three Steps</span>
-          <h2 className={styles.heading}>The Process</h2>
+          <div className={styles.eyebrowContainer}>
+            <span className={styles.eyebrow}>Strategic Engineering</span>
+            <span className={styles.statusNode}>
+              <span className={styles.pulsingNode}></span>
+              LIVE_SYSTEM
+            </span>
+          </div>
+          <h2 className={styles.heading}>The Local SEO Engine</h2>
           <p className={styles.intro}>
-            Every engagement follows the same transparent 3-step process. You
-            know what to expect, and you see progress tracked month to month.
+            A precise, data-driven framework optimized for Northwest Arkansas
+            contractors. We don't just build links; we build local authority.
           </p>
         </motion.div>
 
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className={styles.steps}
-        >
-          {steps.map((step, index) => (
-            <motion.div key={index} variants={fadeUp} className={styles.step}>
-              <div className={styles.stepNumber}>{step.number}</div>
-              <h3 className={styles.stepTitle}>{step.title}</h3>
-              <p className={styles.stepDescription}>{step.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className={styles.grid}>
+          {/* Main Steps Column */}
+          <motion.div
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className={styles.mainSteps}
+          >
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                variants={fadeUp}
+                className={`${styles.step} glass-premium hud-frame`}
+              >
+                <div className={styles.stepHeader}>
+                  <span className={styles.stepTag}>STG-0{index + 1}</span>
+                  <div className={styles.stepNumber}>{step.number}</div>
+                </div>
+                <h3 className={styles.stepTitle}>{step.title}</h3>
+                <p className={styles.stepDescription}>{step.description}</p>
+                <div className='bracket-bottom'></div>
+                <div className='bracket-right'></div>
+              </motion.div>
+            ))}
+          </motion.div>
 
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={fadeUp}
-          className={styles.timeline}
-        >
-          <h3>Timeline</h3>
-          <ul className={styles.timelineList}>
-            <li>
-              <strong>0-2 weeks:</strong> Audit complete, recommendations
-              delivered
-            </li>
-            <li>
-              <strong>Weeks 2-4:</strong> GBP optimization launched, citation
-              building begins
-            </li>
-            <li>
-              <strong>30-60 days:</strong> First visibility improvements,
-              initial results
-            </li>
-            <li>
-              <strong>60-90 days:</strong> Map pack movement likely, steady
-              ranking growth
-            </li>
-            <li>
-              <strong>Ongoing:</strong> Monthly reports, strategy refinement,
-              continuous growth
-            </li>
-          </ul>
-        </motion.div>
+          {/* Sidebar Timeline Column */}
+          <motion.aside
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className={`${styles.sidebar} glass-premium hud-frame`}
+          >
+            <div className={styles.sidebarHeader}>
+              <h3 className={styles.sidebarTitle}>Deployment Timeline</h3>
+              <span className={styles.sidebarSub}>ESTIMATED_VELOCITY</span>
+            </div>
+
+            <div className={styles.timelineList}>
+              {[
+                { label: "0-2 Weeks", text: "Audit & GBP Baselining" },
+                { label: "Weeks 2-4", text: "Citation Engine Launch" },
+                { label: "30-60 Days", text: "Map Pack Signal Growth" },
+                { label: "60-90 Days", text: "Authority Solidification" },
+                { label: "Ongoing", text: "Growth & Recalibration" },
+              ].map((item, idx) => (
+                <div key={idx} className={styles.timelineItem}>
+                  <div className={styles.timelineNode}>
+                    <div className={styles.pulsingNode}></div>
+                    <div className={styles.timelineLine}></div>
+                  </div>
+                  <div className={styles.timelineContent}>
+                    <span className={styles.timelineLabel}>{item.label}</span>
+                    <p className={styles.timelineText}>{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className='bracket-bottom'></div>
+            <div className='bracket-right'></div>
+          </motion.aside>
+        </div>
       </div>
     </section>
   );

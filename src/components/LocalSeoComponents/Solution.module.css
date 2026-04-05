@@ -23,9 +23,7 @@
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--page-gutter, 40px);
+  composes: container-cinematic from global;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
