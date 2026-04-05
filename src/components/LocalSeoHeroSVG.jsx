@@ -19,10 +19,10 @@ export default function LocalSeoHeroSVG() {
       {/* Subtle grid */}
       <g stroke='#7bafd4' strokeWidth='0.5' opacity='0.18'>
         {Array.from({ length: 17 }).map((_, i) => (
-          <>
-            <line key={`h${i}`} x1='0' y1={i * 20} x2='340' y2={i * 20} />
-            <line key={`v${i}`} y1='0' x1={i * 20} y2='340' x2={i * 20} />
-          </>
+          <g key={`grid-${i}`}>
+            <line x1='0' y1={i * 20} x2='340' y2={i * 20} />
+            <line y1='0' x1={i * 20} y2='340' x2={i * 20} />
+          </g>
         ))}
       </g>
       {/* Location pin */}
