@@ -52,6 +52,7 @@ export const serviceAreasLandingContent = {
       {
         city: "Rogers",
         county: "Benton County",
+        href: "/service-areas/rogers-ar",
         body: "Fast-growing market with high search volume for home services. Competition is real here, and trades that show up first in the Map Pack capture most of the calls.",
         tags: ["HVAC", "Plumbing", "Electrical", "Landscaping"],
       },

@@ -164,6 +164,20 @@
   line-height: 1.75;
 }
 
+.cityPageLink {
+  display: inline-flex;
+  margin-top: 0.85rem;
+  color: var(--carolina);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.cityPageLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .tagsBlock {
   position: relative;
   z-index: 1;

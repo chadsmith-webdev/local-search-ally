@@ -26,6 +26,11 @@ export default function ServiceAreasCities({ content }) {
 
               <div className={styles.copyBlock}>
                 <p className={styles.cardBody}>{card.body}</p>
+                {card.href ? (
+                  <Link href={card.href} className={styles.cityPageLink}>
+                    View {card.city} page
+                  </Link>
+                ) : null}
               </div>
 
               <div className={styles.tagsBlock}>

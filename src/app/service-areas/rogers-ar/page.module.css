@@ -1,0 +1,159 @@
+.main {
+  display: block;
+}
+
+.heroSection,
+.section,
+.ctaSection {
+  padding: clamp(3rem, 7vw, 6rem) var(--page-gutter);
+}
+
+.heroSection {
+  border-bottom: 1px solid var(--border);
+}
+
+.contentWrap {
+  width: min(100%, 72rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--carolina);
+}
+
+.heroTitle,
+.sectionTitle,
+.ctaTitle {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3.7rem);
+}
+
+.lede {
+  width: min(100%, 54rem);
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.section {
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionTitle,
+.ctaTitle {
+  font-size: clamp(1.55rem, 3.4vw, 2.4rem);
+}
+
+.bodyCopy {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.list {
+  display: grid;
+  gap: 0.8rem;
+  margin-left: 1.25rem;
+  color: var(--muted);
+}
+
+.steps {
+  display: grid;
+  gap: 1rem;
+}
+
+.stepCard {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  background: linear-gradient(
+    135deg,
+    rgba(123, 175, 212, 0.08),
+    rgba(123, 175, 212, 0.02)
+  );
+  display: grid;
+  gap: 0.45rem;
+}
+
+.stepLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  color: var(--carolina);
+  font-weight: 700;
+}
+
+.faqGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.faqItem {
+  padding: 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  display: grid;
+  gap: 0.55rem;
+}
+
+.ctaSection {
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(123, 175, 212, 0.15),
+      transparent 55%
+    ),
+    var(--surface);
+}
+
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 0.65rem;
+  padding: 0.75rem 1rem;
+  transition: filter 0.2s ease;
+}
+
+.ctaPrimary {
+  border: 1px solid rgba(123, 175, 212, 0.35);
+  color: var(--carolina);
+}
+
+.ctaSecondary {
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+}
+
+.ctaPrimary:hover,
+.ctaSecondary:hover {
+  filter: brightness(1.08);
+}
+
+.citationList {
+  display: grid;
+  gap: 0.6rem;
+  color: var(--muted);
+  margin-left: 1.25rem;
+}
