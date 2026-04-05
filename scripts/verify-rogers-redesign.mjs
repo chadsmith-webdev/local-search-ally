@@ -60,4 +60,34 @@ assert.match(
   "Problem section should gain a dedicated editorial layout block.",
 );
 
-console.log("Hero, brief, and problem checks passed.");
+assert.match(
+  pageJs,
+  /className=\{styles\.fitStructured\}/,
+  "Built-for-Rogers section should use a dedicated structured wrapper.",
+);
+
+assert.match(
+  pageJs,
+  /className=\{styles\.processRail\}/,
+  "Process section should use a connected rail or timeline wrapper.",
+);
+
+assert.match(
+  pageJs,
+  /className=\{styles\.proofEditorial\}/,
+  "Proof section should use an editorial wrapper distinct from the structured sections.",
+);
+
+assert.match(
+  css,
+  /\.processRail\s*\{[\s\S]*?display:\s*grid;[\s\S]*?(grid-template-columns|grid-auto-flow):/,
+  "Process rail should be laid out as one connected system, not isolated cards.",
+);
+
+assert.match(
+  css,
+  /\.proofEditorial\s*\{[\s\S]*?padding:[\s\S]*?background:/,
+  "Proof section should get its own editorial treatment rather than reusing the existing proof panel styling.",
+);
+
+console.log("Hero, brief, problem, and middle-section checks passed.");

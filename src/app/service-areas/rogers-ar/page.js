@@ -247,38 +247,40 @@ export default function RogersServiceAreaPage() {
         </section>
 
         <section className='section'>
-          <div className={`container ${styles.fitSection}`}>
-            <div className={styles.sectionIntro}>
-              <p className={styles.sectionEyebrow}>Built for Rogers</p>
-              <h2 className={styles.sectionTitle}>
-                Made for home service trades, not generic businesses
-              </h2>
-              <p className={styles.bodyCopy}>
-                I work with home service trades in Northwest Arkansas, including
-                Rogers. The work is centered on visibility that supports calls,
-                not vague reports.
-              </p>
-            </div>
+          <div className='container'>
+            <div className={styles.fitStructured}>
+              <div className={styles.sectionIntro}>
+                <p className={styles.sectionEyebrow}>Built for Rogers</p>
+                <h2 className={styles.sectionTitle}>
+                  Made for home service trades, not generic businesses
+                </h2>
+                <p className={styles.bodyCopy}>
+                  I work with home service trades in Northwest Arkansas,
+                  including Rogers. The work is centered on visibility that
+                  supports calls, not vague reports.
+                </p>
+              </div>
 
-            <div className={styles.fitGrid}>
-              <article className={styles.surfaceCard}>
-                <p className={styles.cardLabel}>Common fits</p>
-                <div className={styles.tradeChips}>
-                  {tradeList.map((trade) => (
-                    <span key={trade} className={styles.tradeChip}>
-                      {trade}
-                    </span>
+              <div className={styles.fitGrid}>
+                <article className={styles.surfaceCard}>
+                  <p className={styles.cardLabel}>Common fits</p>
+                  <div className={styles.tradeChips}>
+                    {tradeList.map((trade) => (
+                      <span key={trade} className={styles.tradeChip}>
+                        {trade}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+
+                <div className={styles.focusGrid}>
+                  {focusAreas.map((area) => (
+                    <article key={area.title} className={styles.surfaceCard}>
+                      <p className={styles.cardTitle}>{area.title}</p>
+                      <p className={styles.bodyCopy}>{area.body}</p>
+                    </article>
                   ))}
                 </div>
-              </article>
-
-              <div className={styles.focusGrid}>
-                {focusAreas.map((area) => (
-                  <article key={area.title} className={styles.surfaceCard}>
-                    <p className={styles.cardTitle}>{area.title}</p>
-                    <p className={styles.bodyCopy}>{area.body}</p>
-                  </article>
-                ))}
               </div>
             </div>
           </div>
@@ -292,8 +294,8 @@ export default function RogersServiceAreaPage() {
                 Three steps from invisible to getting calls
               </h2>
             </div>
-            <div className={styles.steps}>
-              <article className={styles.stepCard}>
+            <div className={styles.processRail}>
+              <article className={styles.processNode}>
                 <p className={styles.stepLabel}>Step 01</p>
                 <h3 className={styles.stepTitle}>Audit</h3>
                 <p className={styles.bodyCopy}>
@@ -302,7 +304,7 @@ export default function RogersServiceAreaPage() {
                   holds the top spots.
                 </p>
               </article>
-              <article className={styles.stepCard}>
+              <article className={styles.processNode}>
                 <p className={styles.stepLabel}>Step 02</p>
                 <h3 className={styles.stepTitle}>Fix Priority Gaps</h3>
                 <p className={styles.bodyCopy}>
@@ -310,7 +312,7 @@ export default function RogersServiceAreaPage() {
                   clarity, and lead paths that make calling easy.
                 </p>
               </article>
-              <article className={styles.stepCard}>
+              <article className={styles.processNode}>
                 <p className={styles.stepLabel}>Step 03</p>
                 <h3 className={styles.stepTitle}>Grow and Track</h3>
                 <p className={styles.bodyCopy}>
@@ -323,25 +325,37 @@ export default function RogersServiceAreaPage() {
         </section>
 
         <section className='section'>
-          <div className={`container ${styles.proofSection}`}>
-            <div className={styles.sectionIntro}>
-              <p className={styles.sectionEyebrow}>Why Rogers matters</p>
-              <h2 className={styles.sectionTitle}>
-                The search behavior is already there
-              </h2>
-              <p className={styles.bodyCopy}>
-                Rogers is one of the most active home service markets in
-                Northwest Arkansas. More homeowners search before they call, and
-                those searches often happen on mobile the moment a problem shows
-                up.
-              </p>
-            </div>
-            <div className={styles.proofPanel}>
-              <ul className={styles.citationList}>
-                {citationStats.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+          <div className='container'>
+            <div className={styles.proofEditorial}>
+              <div className={styles.sectionIntro}>
+                <p className={styles.sectionEyebrow}>Why Rogers matters</p>
+                <h2 className={styles.sectionTitle}>
+                  The search behavior is already there
+                </h2>
+              </div>
+
+              <div className={styles.proofLead}>
+                <p className={styles.proofStatement}>
+                  Rogers homeowners already search when something breaks. The
+                  businesses that look local, credible, and easy to call are the
+                  ones that win the first conversation.
+                </p>
+                <p className={styles.bodyCopy}>
+                  Rogers is one of the most active home service markets in
+                  Northwest Arkansas. More homeowners search before they call,
+                  and those searches often happen on mobile the moment a problem
+                  shows up.
+                </p>
+              </div>
+
+              <div className={styles.proofPanel}>
+                <p className={styles.cardLabel}>What the data says</p>
+                <ul className={styles.citationList}>
+                  {citationStats.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
