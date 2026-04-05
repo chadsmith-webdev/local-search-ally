@@ -305,6 +305,10 @@
   padding-top: clamp(2.6rem, 5vw, 4rem);
 }
 
+.faqSectionWrap {
+  padding-bottom: clamp(2.1rem, 4.5vw, 3.3rem);
+}
+
 .briefSection .heroPanel {
   width: 100%;
   max-width: 560px;
@@ -417,8 +421,8 @@
 }
 
 .ctaSection {
-  padding: var(--section-spacing) var(--page-gutter)
-    calc(var(--section-spacing) * 1.15);
+  padding: clamp(2.4rem, 5vw, 3.6rem) var(--page-gutter)
+    calc(var(--section-spacing) * 1.05);
   border-top: 1px solid var(--border);
   background:
     radial-gradient(
@@ -434,6 +438,7 @@
   margin: 0 auto;
   text-align: center;
   justify-items: center;
+  gap: 1.15rem;
 }
 
 @keyframes fadeUp {
@@ -462,6 +467,15 @@
 }
 
 @media (max-width: 720px) {
+  .faqSectionWrap {
+    padding-bottom: clamp(1.4rem, 5vw, 2.1rem);
+  }
+
+  .ctaSection {
+    padding-top: clamp(1.8rem, 7vw, 2.5rem);
+    padding-bottom: clamp(2.1rem, 7vw, 2.9rem);
+  }
+
   .hero {
     padding-top: calc(var(--section-spacing) * 1.1);
   }

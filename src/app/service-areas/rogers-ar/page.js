@@ -324,7 +324,7 @@ export default function RogersServiceAreaPage() {
           </div>
         </section>
 
-        <section className='section'>
+        <section className={`section ${styles.faqSectionWrap}`}>
           <div className={`container ${styles.faqSection}`}>
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>FAQ</p>
