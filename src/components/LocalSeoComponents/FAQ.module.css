@@ -74,6 +74,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: flex-start;
 }
 
 .faqItem {
@@ -87,6 +88,9 @@
     rgba(15, 15, 15, 0.2) 100%
   );
   position: relative;
+  /* shrink to content on wide viewports so boxes match question length */
+  display: inline-block;
+  width: auto;
 }
 
 .faqItem::before {
@@ -128,7 +132,7 @@
 }
 
 .question {
-  width: 100%;
+  width: auto;
   padding: 24px;
   background: transparent;
   border: none;
@@ -258,15 +262,21 @@
   .question {
     padding: 20px;
     font-size: 0.95rem;
+    width: 100%;
   }
 
   .answer {
     padding: 0 20px;
+    width: 100%;
   }
 
   .answer p {
     font-size: 0.95rem;
     max-width: 100%;
+  }
+  .faqItem {
+    display: block;
+    width: 100%;
   }
 }
 
