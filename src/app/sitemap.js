@@ -19,7 +19,7 @@ export default function sitemap() {
       priority: 1.0,
     },
     {
-      url: `${siteConfig.url}/audit`,
+      url: `${siteConfig.url}/services/audit`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,

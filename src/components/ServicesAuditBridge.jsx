@@ -49,7 +49,7 @@ export default function ServicesAuditBridge() {
         </motion.p>
 
         <motion.div variants={fadeUp} className={styles.ctaWrap}>
-          <Link href='/audit' className={styles.cta}>
+          <Link href='/services/audit' className={styles.cta}>
             Run Your Free SEO Audit →
           </Link>
           <p className={styles.zeroFriction}>

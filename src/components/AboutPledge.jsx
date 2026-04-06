@@ -82,7 +82,7 @@ export default function AboutPledge() {
               <Link href='/contact' className={styles.btnPrimary}>
                 Start With a Free Conversation
               </Link>
-              <Link href='/audit' className={styles.btnSecondary}>
+              <Link href='/services/audit' className={styles.btnSecondary}>
                 Or run the free SEO audit first →
               </Link>
             </div>

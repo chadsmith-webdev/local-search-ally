@@ -69,7 +69,7 @@ export default function Footer() {
                 <Link href='/services#reputation'>Reputation</Link>
               </li>
               <li>
-                <Link href='/audit'>Free SEO Audit</Link>
+                <Link href='/services/audit'>Free SEO Audit</Link>
               </li>
             </ul>
           </div>

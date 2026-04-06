@@ -26,7 +26,7 @@ export const serviceAreasLandingContent = {
       "I help home service trades get found at that level across Northwest Arkansas, starting with the cities where visibility actually turns into calls.",
     ],
     primaryCta: {
-      href: "/audit",
+      href: "/services/audit",
       text: "Run Your Free Audit",
     },
     secondaryCta: {
@@ -161,7 +161,7 @@ export const serviceAreasLandingContent = {
     h2: "Find out if your city is working for you, or against you.",
     body: "Enter your business name and city. I'll run a live audit across 7 sections and show you exactly where you stand in under 90 seconds. No pitch. No signup.",
     primary: {
-      href: "/audit",
+      href: "/services/audit",
       text: "Run Your Free Audit",
     },
     secondary: {

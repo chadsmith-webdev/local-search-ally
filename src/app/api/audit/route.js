@@ -72,20 +72,92 @@ const MOCK_RESULT = {
   business_name: "Test Business",
   overall_score: 64,
   overall_label: "Needs Work",
-  summary: "Your local visibility is being held back by a thin Google Business Profile and missing technical schema.",
+  summary:
+    "Your local visibility is being held back by a thin Google Business Profile and missing technical schema.",
   has_website: true,
   score_bucket: "Needs Work",
   sections: [
-    { id: "gbp", name: "Google Business Profile", score: 4, status: "red", headline: "Missing critical photo and post engagement", finding: "Your profile only has 3 photos and hasn't been posted to in 6 months. Google rewards active profiles with higher Map Pack rankings.", priority_action: "Upload 10+ high-res project photos this week." },
-    { id: "reviews", name: "Reviews", score: 7, status: "yellow", headline: "Solid rating but slow response rate", finding: "You have a 4.8 star rating, which is great, but 40% of reviews have no owner response. This signals neglect to potential customers.", priority_action: "Reply to all outstanding reviews from the last 90 days." },
-    { id: "onpage", name: "On-Page SEO", score: 5, status: "yellow", headline: "Generic title tags aren't targeting your city", finding: "Your homepage title currently just says 'Home'. It should lead with your primary trade and service city to rank for local intent.", priority_action: "Update homepage title to '[Trade] in [City] | [Business Name]'." },
-    { id: "technical", name: "Technical SEO", score: 3, status: "red", headline: "No LocalBusiness schema detected", finding: "Search engines are guessing what you do. Adding structured data tells Google exactly where you are and what services you offer.", priority_action: "Implement LocalBusiness JSON-LD schema markup." },
-    { id: "citations", name: "Local Citations", score: 8, status: "green", headline: "Consistent NAP across major directories", finding: "Your name, address, and phone number are consistent on Yelp, Angi, and the BBB. This builds strong foundational trust.", priority_action: "Monitor for new duplicate listings monthly." },
-    { id: "backlinks", name: "Backlinks", score: 4, status: "red", headline: "Lacking local authority signals", finding: "You have very few links from other local businesses or industry-specific sites. This makes it hard to outrank established competitors.", priority_action: "Reach out to 3 local partners for a 'Recommended' link." },
-    { id: "competitors", name: "Competitor Comparison", score: 6, status: "yellow", headline: "Overtaken by competitors with more photos", finding: "The top 3 results have an average of 45 photos vs your 3. In local SEO, visual proof is a major ranking factor.", priority_action: "Systematically add 2 project photos per project completed." }
+    {
+      id: "gbp",
+      name: "Google Business Profile",
+      score: 4,
+      status: "red",
+      headline: "Missing critical photo and post engagement",
+      finding:
+        "Your profile only has 3 photos and hasn't been posted to in 6 months. Google rewards active profiles with higher Map Pack rankings.",
+      priority_action: "Upload 10+ high-res project photos this week.",
+    },
+    {
+      id: "reviews",
+      name: "Reviews",
+      score: 7,
+      status: "yellow",
+      headline: "Solid rating but slow response rate",
+      finding:
+        "You have a 4.8 star rating, which is great, but 40% of reviews have no owner response. This signals neglect to potential customers.",
+      priority_action:
+        "Reply to all outstanding reviews from the last 90 days.",
+    },
+    {
+      id: "onpage",
+      name: "On-Page SEO",
+      score: 5,
+      status: "yellow",
+      headline: "Generic title tags aren't targeting your city",
+      finding:
+        "Your homepage title currently just says 'Home'. It should lead with your primary trade and service city to rank for local intent.",
+      priority_action:
+        "Update homepage title to '[Trade] in [City] | [Business Name]'.",
+    },
+    {
+      id: "technical",
+      name: "Technical SEO",
+      score: 3,
+      status: "red",
+      headline: "No LocalBusiness schema detected",
+      finding:
+        "Search engines are guessing what you do. Adding structured data tells Google exactly where you are and what services you offer.",
+      priority_action: "Implement LocalBusiness JSON-LD schema markup.",
+    },
+    {
+      id: "citations",
+      name: "Local Citations",
+      score: 8,
+      status: "green",
+      headline: "Consistent NAP across major directories",
+      finding:
+        "Your name, address, and phone number are consistent on Yelp, Angi, and the BBB. This builds strong foundational trust.",
+      priority_action: "Monitor for new duplicate listings monthly.",
+    },
+    {
+      id: "backlinks",
+      name: "Backlinks",
+      score: 4,
+      status: "red",
+      headline: "Lacking local authority signals",
+      finding:
+        "You have very few links from other local businesses or industry-specific sites. This makes it hard to outrank established competitors.",
+      priority_action:
+        "Reach out to 3 local partners for a 'Recommended' link.",
+    },
+    {
+      id: "competitors",
+      name: "Competitor Comparison",
+      score: 6,
+      status: "yellow",
+      headline: "Overtaken by competitors with more photos",
+      finding:
+        "The top 3 results have an average of 45 photos vs your 3. In local SEO, visual proof is a major ranking factor.",
+      priority_action:
+        "Systematically add 2 project photos per project completed.",
+    },
   ],
-  top_3_actions: ["Upload 10+ photos to GBP", "Implement Schema markup", "Fix homepage title tags"],
-  competitor_names: ["Competitor A", "Competitor B", "Competitor C"]
+  top_3_actions: [
+    "Upload 10+ photos to GBP",
+    "Implement Schema markup",
+    "Fix homepage title tags",
+  ],
+  competitor_names: ["Competitor A", "Competitor B", "Competitor C"],
 };
 
 async function callClaude(input) {
@@ -119,17 +191,25 @@ async function callClaude(input) {
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
       // If payment/credit error, return mock in development/demo
-      if (res.status === 402 || (err.error?.message?.includes("credit") || err.error?.message?.includes("balance"))) {
-        console.warn("Anthropic credits exhausted. Falling back to mock result for demo.");
+      if (
+        res.status === 402 ||
+        err.error?.message?.includes("credit") ||
+        err.error?.message?.includes("balance")
+      ) {
+        console.warn(
+          "Anthropic credits exhausted. Falling back to mock result for demo.",
+        );
         return { ...MOCK_RESULT, business_name: input.businessName };
       }
-      throw new Error(err.error?.message || `Anthropic API error ${res.status}`);
+      throw new Error(
+        err.error?.message || `Anthropic API error ${res.status}`,
+      );
     }
 
     const data = await res.json();
     const text = data.content
-      .filter(b => b.type === "text")
-      .map(b => b.text)
+      .filter((b) => b.type === "text")
+      .map((b) => b.text)
       .join("");
 
     const cleaned = text
@@ -141,14 +221,20 @@ async function callClaude(input) {
   } catch (err) {
     clearTimeout(timer);
     console.error("Audit API Error:", err);
-    
+
     // In demo environment, almost any failure should fallback to mock to keep the UX alive
-    if (process.env.NODE_ENV !== "production" || err.message.includes("credit") || err.message.includes("balance")) {
+    if (
+      process.env.NODE_ENV !== "production" ||
+      err.message.includes("credit") ||
+      err.message.includes("balance")
+    ) {
       return { ...MOCK_RESULT, business_name: input.businessName };
     }
 
     if (err.name === "AbortError") {
-      throw new Error("The audit took too long — try again, it usually completes.");
+      throw new Error(
+        "The audit took too long — try again, it usually completes.",
+      );
     }
     if (err instanceof SyntaxError) {
       throw new Error("Could not parse audit results. Please try again.");
@@ -161,21 +247,29 @@ async function notifySlack(result, input, source) {
   const webhookUrl = process.env.SLACK_WEBHOOK_URL;
   if (!webhookUrl) return;
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://localsearchally.com";
-  const scoreEmoji = result.overall_score >= 70 ? "🟢" : result.overall_score >= 50 ? "🟡" : "🔴";
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://localsearchally.com";
+  const scoreEmoji =
+    result.overall_score >= 70
+      ? "🟢"
+      : result.overall_score >= 50
+        ? "🟡"
+        : "🔴";
 
   await fetch(webhookUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       text: "📊 New audit submitted",
-      blocks: [{
-        type: "section",
-        text: {
-          type: "mrkdwn",
-          text: `*${result.business_name}* — ${input.primaryTrade} in ${input.serviceCity}\n${scoreEmoji} Score: *${result.overall_score}/100* (${result.score_bucket})\n<${siteUrl}/audit|View audit tool>`,
+      blocks: [
+        {
+          type: "section",
+          text: {
+            type: "mrkdwn",
+            text: `*${result.business_name}* — ${input.primaryTrade} in ${input.serviceCity}\n${scoreEmoji} Score: *${result.overall_score}/100* (${result.score_bucket})\n<${siteUrl}/services/audit|View audit tool>`,
+          },
         },
-      }],
+      ],
     }),
   }).catch(() => {}); // fire-and-forget, never block the response
 }
@@ -189,8 +283,15 @@ export async function POST(req) {
   }
 
   // Basic validation
-  if (!input.businessName?.trim() || !input.primaryTrade || !input.serviceCity?.trim()) {
-    return Response.json({ message: "Missing required fields" }, { status: 400 });
+  if (
+    !input.businessName?.trim() ||
+    !input.primaryTrade ||
+    !input.serviceCity?.trim()
+  ) {
+    return Response.json(
+      { message: "Missing required fields" },
+      { status: 400 },
+    );
   }
   if (!input.noWebsite && !input.websiteUrl?.trim()) {
     return Response.json({ message: "Website URL required" }, { status: 400 });
@@ -202,7 +303,7 @@ export async function POST(req) {
     async start(controller) {
       const send = (event, data) => {
         controller.enqueue(
-          encoder.encode(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`)
+          encoder.encode(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`),
         );
       };
 
@@ -219,17 +320,18 @@ export async function POST(req) {
         // Stream sections with a stagger for progressive reveal
         for (const section of result.sections || []) {
           send("section", section);
-          await new Promise(r => setTimeout(r, 150));
+          await new Promise((r) => setTimeout(r, 150));
         }
 
         send("complete", result);
 
         // Non-blocking Slack notification
         notifySlack(result, input).catch(() => {});
-
       } catch (err) {
         clearInterval(heartbeat);
-        send("error", { message: err.message || "Audit failed. Please try again." });
+        send("error", {
+          message: err.message || "Audit failed. Please try again.",
+        });
       } finally {
         controller.close();
       }
@@ -240,7 +342,7 @@ export async function POST(req) {
     headers: {
       "Content-Type": "text/event-stream",
       "Cache-Control": "no-cache",
-      "Connection": "keep-alive",
+      Connection: "keep-alive",
       "X-Accel-Buffering": "no", // Disable Nginx buffering on Vercel
     },
   });

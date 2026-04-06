@@ -137,7 +137,7 @@ export default function BlogClient({ posts }) {
               I do. See where you stand first — 90-second scored audit, no email
               required.
             </p>
-            <Link href='/audit' className={styles.ctaBtn}>
+            <Link href='/services/audit' className={styles.ctaBtn}>
               Run Your Free Audit →
             </Link>
             <p className={styles.ctaNote}>

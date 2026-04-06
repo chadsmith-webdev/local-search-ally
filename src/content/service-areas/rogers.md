@@ -151,7 +151,7 @@ Supporting CTA: Start With a Free Conversation
 - Add LocalBusiness schema on page with service area set to Rogers, AR
 - Add FAQPage schema matching the FAQ section above
 - Include internal links to:
-  - /audit
+  - /services/audit
   - /services
   - /service-areas
   - /contact
