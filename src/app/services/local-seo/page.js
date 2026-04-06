@@ -3,6 +3,7 @@ import Problem from "@/components/LocalSeoComponents/Problem";
 import Solution from "@/components/LocalSeoComponents/Solution";
 import Process from "@/components/LocalSeoComponents/Process";
 import Proof from "@/components/LocalSeoComponents/Proof";
+import SignalMapDiagram from "@/components/SignalMapDiagram";
 import FAQ from "@/components/LocalSeoComponents/FAQ";
 import FinalCTA from "@/components/FinalCTASection";
 
@@ -178,6 +179,7 @@ export default function LocalSEOPage() {
       <Problem />
       <Solution />
       <Process />
+      <SignalMapDiagram />
       <Proof />
       <FAQ />
       <FinalCTA />
