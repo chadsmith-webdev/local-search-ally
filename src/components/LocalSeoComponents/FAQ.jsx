@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import styles from "./FAQ.module.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
+  const [announce, setAnnounce] = useState("");
+  const shouldReduceMotion = useReducedMotion();
 
   const faqs = [
     {
@@ -40,8 +42,10 @@ export default function FAQ() {
     },
   ];
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toggleFAQ = (index, id, question) => {
+    const willOpen = openIndex !== index;
+    setOpenIndex(willOpen ? index : null);
+    setAnnounce(willOpen ? `${question} expanded` : `${question} collapsed`);
   };
 
   const fadeUp = {
@@ -71,40 +75,72 @@ export default function FAQ() {
         </motion.div>
 
         <div className={styles.faqList}>
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial='hidden'
-              whileInView='visible'
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className={`${styles.faqItem} ${openIndex === index ? styles.active : ""}`}
-            >
-              <button
-                className={`${styles.question} ${
-                  openIndex === index ? styles.active : ""
-                }`}
-                onClick={() => toggleFAQ(index)}
-                aria-expanded={openIndex === index}
+          {faqs.map((faq, index) => {
+            const id = faq.question
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/(^-|-$)/g, "");
+
+            const motionItemProps = shouldReduceMotion
+              ? {}
+              : {
+                  initial: "hidden",
+                  whileInView: "visible",
+                  viewport: { once: true },
+                  variants: fadeUp,
+                };
+
+            return (
+              <motion.div
+                key={id}
+                {...motionItemProps}
+                className={`${styles.faqItem} ${openIndex === index ? styles.active : ""}`}
               >
-                <span>{faq.question}</span>
-                <span className={styles.icon}>+</span>
-              </button>
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className={styles.answer}
-                  >
-                    <p>{faq.answer}</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                <button
+                  id={`faq-header-${id}`}
+                  className={`${styles.question} ${openIndex === index ? styles.active : ""}`}
+                  onClick={() => toggleFAQ(index, id, faq.question)}
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-panel-${id}`}
+                >
+                  <span>{faq.question}</span>
+                  <span className={styles.icon} aria-hidden>
+                    +
+                  </span>
+                </button>
+
+                <AnimatePresence>
+                  {openIndex === index &&
+                    (shouldReduceMotion ? (
+                      <div
+                        id={`faq-panel-${id}`}
+                        role='region'
+                        aria-labelledby={`faq-header-${id}`}
+                        className={styles.answer}
+                      >
+                        <p>{faq.answer}</p>
+                      </div>
+                    ) : (
+                      <motion.div
+                        id={`faq-panel-${id}`}
+                        role='region'
+                        aria-labelledby={`faq-header-${id}`}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className={styles.answer}
+                      >
+                        <p>{faq.answer}</p>
+                      </motion.div>
+                    ))}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+        <div aria-live='polite' className={styles.srOnly}>
+          {announce}
         </div>
       </div>
     </section>
