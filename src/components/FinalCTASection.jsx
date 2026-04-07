@@ -69,7 +69,7 @@ export default function FinalCTASection() {
               <path d='M3 8h10M9 4l4 4-4 4' />
             </svg>
           </Link>
-          <Link href='/audit' className={styles.secondaryBtn}>
+          <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.secondaryBtn}>
             Run the free SEO audit first
           </Link>
         </motion.div>

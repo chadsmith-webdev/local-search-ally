@@ -19,12 +19,6 @@ export default function sitemap() {
       priority: 1.0,
     },
     {
-      url: `${siteConfig.url}/audit`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
       url: `${siteConfig.url}/blog`,
       lastModified: new Date(),
       changeFrequency: "weekly",

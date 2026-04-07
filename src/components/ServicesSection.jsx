@@ -180,7 +180,7 @@ export default function ServicesSection() {
                 ))}
               </div>
             </div>
-            <Link href='/audit' className={styles.cardCta}>
+            <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.cardCta}>
               Run your free audit
               <svg
                 width='15'

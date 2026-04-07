@@ -186,7 +186,7 @@ export default async function BlogPost({ params }) {
           <Link href='/blog' className={styles.navBack}>
             ← Back to Blog
           </Link>
-          <Link href='/audit' className={styles.navCta}>
+          <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.navCta}>
             Run Free Audit →
           </Link>
         </div>

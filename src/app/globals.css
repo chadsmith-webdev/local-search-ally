@@ -30,8 +30,8 @@
   --border-strong: rgba(255, 255, 255, 0.12);
 
   /* Spacing */
-  --page-gutter: clamp(2rem, 10vw, 10rem);
-  --section-spacing: clamp(4rem, 6vw, 8rem);
+  --page-gutter: clamp(1.5rem, 6vw, 5rem);
+  --section-spacing: clamp(4rem, 8vw, 10rem);
 
   /* Gradient */
   --gradient-cta: linear-gradient(135deg, #7bafd4 0%, #3a5570 100%);
@@ -429,6 +429,16 @@ textarea {
   width: 100%;
   padding-top: var(--section-spacing);
   padding-bottom: var(--section-spacing);
+}
+
+/* Standard width for premium content sections — matching original 1200px */
+.container-cinematic {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
 }
 
 /* Centered content container — max-width + horizontal gutter */
