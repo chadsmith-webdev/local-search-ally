@@ -1,6 +1,7 @@
 "use client";
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import styles from "./GbpHero.module.css";
+import GbpHeroSVG from "./GbpHeroSVG";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -14,12 +15,13 @@ const fadeUp = {
 export default function GbpHero() {
   return (
     <section className={styles.hero}>
+      <GbpHeroSVG />
       <div className={styles.container}>
         <LazyMotion features={domAnimation}>
           <m.div
             className={styles.content}
-            initial="hidden"
-            whileInView="visible"
+            initial='hidden'
+            whileInView='visible'
             viewport={{ once: true }}
           >
             <m.h1 className={styles.heading} variants={fadeUp} custom={0}>
@@ -38,40 +40,40 @@ export default function GbpHero() {
               Transparent process. No contracts.
             </m.p>
             <m.a
-              href="#contact"
+              href='#contact'
               className={styles.cta}
               variants={fadeUp}
               custom={3}
               tabIndex={0}
-              aria-label="Start With a Free Conversation"
+              aria-label='Start With a Free Conversation'
             >
-              Start With a Free Conversation <span aria-hidden="true">→</span>
+              Start With a Free Conversation <span aria-hidden='true'>→</span>
             </m.a>
             <m.div className={styles.trustStat} variants={fadeUp} custom={4}>
               <svg
-                width="22"
-                height="22"
-                viewBox="0 0 22 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                focusable="false"
+                width='22'
+                height='22'
+                viewBox='0 0 22 22'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+                aria-hidden='true'
+                focusable='false'
                 style={{ marginRight: 8 }}
               >
                 <circle
-                  cx="11"
-                  cy="11"
-                  r="10"
-                  stroke="#7bafd4"
-                  strokeWidth="2"
-                  fill="none"
+                  cx='11'
+                  cy='11'
+                  r='10'
+                  stroke='#7bafd4'
+                  strokeWidth='2'
+                  fill='none'
                 />
                 <path
-                  d="M7 11.5l2.5 2.5 5-5"
-                  stroke="#7bafd4"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  d='M7 11.5l2.5 2.5 5-5'
+                  stroke='#7bafd4'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 />
               </svg>
               <span>
@@ -81,15 +83,14 @@ export default function GbpHero() {
               <span className={styles.trustSource}>Backlinko</span>
             </m.div>
             <m.a
-              href="tel:+14793808626"
+              href='tel:+14793808626'
               className={styles.callLink}
               variants={fadeUp}
               custom={5}
               tabIndex={0}
-              aria-label="Call Local Search Ally"
+              aria-label='Call Local Search Ally'
             >
-              Or call{" "}
-              <span className={styles.phoneNumber}>(479) 380-8626</span>
+              Or call <span className={styles.phoneNumber}>(479) 380-8626</span>
             </m.a>
           </m.div>
         </LazyMotion>

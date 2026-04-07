@@ -3,6 +3,7 @@ import GbpProblem from "@/components/GbpComponents/Problem";
 import GbpSolution from "@/components/GbpComponents/Solution";
 import GbpProcess from "@/components/GbpComponents/Process";
 import GbpProof from "@/components/GbpComponents/Proof";
+import GbpHowItWorks from "@/components/GbpComponents/HowItWorks";
 import GbpFAQ from "@/components/GbpComponents/FAQ";
 import FinalCTA from "@/components/FinalCTASection";
 
@@ -129,6 +130,7 @@ export default function GbpPage() {
       <GbpProblem />
       <GbpSolution />
       <GbpProcess />
+      <GbpHowItWorks />
       <GbpProof />
       <GbpFAQ />
       <FinalCTA />
