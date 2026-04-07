@@ -3,29 +3,93 @@
 import { motion, useReducedMotion } from "framer-motion";
 import styles from "./SignalMapDiagram.module.css";
 
+const SIGNALS = [
+  {
+    id: "findability",
+    label: "Findability",
+    sub: "GBP & citations",
+    icon: (
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M10 2a6 6 0 0 0-6 6c0 4 6 10 6 10s6-6 6-10a6 6 0 0 0-6-6Z" />
+        <circle cx="10" cy="8" r="2" />
+      </svg>
+    ),
+    position: "topLeft",
+  },
+  {
+    id: "relevance",
+    label: "Relevance",
+    sub: "Service pages & keywords",
+    icon: (
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="9" cy="9" r="6" />
+        <path d="m17 17-3.5-3.5" />
+      </svg>
+    ),
+    position: "topRight",
+  },
+  {
+    id: "trust",
+    label: "Trust",
+    sub: "Reviews & photos",
+    icon: (
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M10 2l2.4 4.8 5.3.8-3.85 3.75.9 5.25L10 14l-4.75 2.58.9-5.25L2.3 7.6l5.3-.8Z" />
+      </svg>
+    ),
+    position: "bottomLeft",
+  },
+  {
+    id: "conversion",
+    label: "Conversion",
+    sub: "CTAs & click-to-call",
+    icon: (
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M3 5a2 2 0 0 1 2-2h1.5l2 4.5-1.5 1a10 10 0 0 0 4.5 4.5l1-1.5L17 13.5V15a2 2 0 0 1-2 2 12 12 0 0 1-12-12Z" />
+      </svg>
+    ),
+    position: "bottomRight",
+  },
+];
+
 export default function SignalMapDiagram() {
   const shouldReduce = useReducedMotion();
-  const fadeUp = {
+
+  const sectionFade = {
     hidden: { opacity: 0, y: shouldReduce ? 0 : 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  const centerReveal = {
+    hidden: { opacity: 0, scale: shouldReduce ? 1 : 0.7 },
     visible: {
       opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      scale: 1,
+      transition: { duration: 0.5, ease: [0.2, 0.8, 0.2, 1], delay: 0.2 },
     },
   };
 
+  const cardVariants = {
+    topLeft:     { hidden: { opacity: 0, x: shouldReduce ? 0 : -24, y: shouldReduce ? 0 : -24 }, visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.5, ease: "easeOut", delay: 0.35 } } },
+    topRight:    { hidden: { opacity: 0, x: shouldReduce ? 0 :  24, y: shouldReduce ? 0 : -24 }, visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.5, ease: "easeOut", delay: 0.45 } } },
+    bottomLeft:  { hidden: { opacity: 0, x: shouldReduce ? 0 : -24, y: shouldReduce ? 0 :  24 }, visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.5, ease: "easeOut", delay: 0.55 } } },
+    bottomRight: { hidden: { opacity: 0, x: shouldReduce ? 0 :  24, y: shouldReduce ? 0 :  24 }, visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.5, ease: "easeOut", delay: 0.65 } } },
+  };
+
   return (
-    <section className={styles.section} aria-labelledby='signal-map-heading'>
+    <section className={styles.section} aria-labelledby="signal-map-heading">
       <div className={styles.container}>
+
+        {/* Header */}
         <motion.div
           className={styles.header}
-          initial='hidden'
-          whileInView='visible'
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          variants={fadeUp}
+          variants={sectionFade}
         >
           <span className={styles.eyebrow}>The Mechanism</span>
-          <h2 className={styles.heading} id='signal-map-heading'>
+          <h2 className={styles.heading} id="signal-map-heading">
             How Local SEO Works
           </h2>
           <p className={styles.lead}>
@@ -34,220 +98,41 @@ export default function SignalMapDiagram() {
           </p>
         </motion.div>
 
+        {/* Diagram */}
         <motion.div
-          className={styles.card}
-          initial='hidden'
-          whileInView='visible'
+          className={styles.diagramWrap}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          variants={{
-            hidden: { opacity: 0, y: shouldReduce ? 0 : 16 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.6, ease: "easeOut", delay: 0.1 },
-            },
-          }}
+          variants={{ hidden: {}, visible: {} }}
         >
-          <span className={styles.bracketBL} aria-hidden='true' />
-          <span className={styles.bracketBR} aria-hidden='true' />
-          <div className={styles.svgWrap}>
-            <svg viewBox='0 0 800 360' className={styles.svg} role='img'>
-              <defs>
-                <linearGradient id='g1' x1='0' x2='1'>
-                  <stop offset='0%' stopColor='#7bafd4' />
-                  <stop offset='100%' stopColor='#4a6b8a' />
-                </linearGradient>
-              </defs>
+          {/* Connector lines drawn in CSS — no SVG coordinates */}
+          <span className={`${styles.line} ${styles.lineTL}`} aria-hidden="true" />
+          <span className={`${styles.line} ${styles.lineTR}`} aria-hidden="true" />
+          <span className={`${styles.line} ${styles.lineBL}`} aria-hidden="true" />
+          <span className={`${styles.line} ${styles.lineBR}`} aria-hidden="true" />
 
-              {/* center: your business */}
-              <g className={styles.centerGroup} transform='translate(400,180)'>
-                <circle
-                  r='46'
-                  fill='#141414'
-                  stroke='url(#g1)'
-                  strokeWidth='3'
-                />
-                <text
-                  x='0'
-                  y='6'
-                  fill='#f0f0f0'
-                  fontSize='14'
-                  fontWeight='600'
-                  textAnchor='middle'
-                >
-                  You
-                </text>
-              </g>
+          {/* Signal cards */}
+          {SIGNALS.map((s) => (
+            <motion.div
+              key={s.id}
+              className={`${styles.signalCard} ${styles[s.position]}`}
+              variants={cardVariants[s.position]}
+            >
+              <span className={styles.signalIcon}>{s.icon}</span>
+              <strong className={styles.signalLabel}>{s.label}</strong>
+              <span className={styles.signalSub}>{s.sub}</span>
+            </motion.div>
+          ))}
 
-              {/* four signals */}
-              <g className={styles.signal} transform='translate(160,80)'>
-                <rect
-                  x='-44'
-                  y='-36'
-                  width='88'
-                  height='72'
-                  rx='10'
-                  fill='#141414'
-                  stroke='#2e3a4d'
-                />
-                <text
-                  x='0'
-                  y='6'
-                  fill='#7bafd4'
-                  fontSize='13'
-                  fontWeight='600'
-                  textAnchor='middle'
-                >
-                  Findability
-                </text>
-                <text
-                  x='0'
-                  y='24'
-                  fill='#888888'
-                  fontSize='11'
-                  textAnchor='middle'
-                >
-                  GBP & citations
-                </text>
-                <path
-                  d='M80,100 L320,160'
-                  stroke='#7bafd4'
-                  strokeWidth='2'
-                  fill='none'
-                  markerEnd='url(#arrow)'
-                />
-              </g>
-
-              <g className={styles.signal} transform='translate(640,80)'>
-                <rect
-                  x='-44'
-                  y='-36'
-                  width='88'
-                  height='72'
-                  rx='10'
-                  fill='#141414'
-                  stroke='#2e3a4d'
-                />
-                <text
-                  x='0'
-                  y='6'
-                  fill='#7bafd4'
-                  fontSize='13'
-                  fontWeight='600'
-                  textAnchor='middle'
-                >
-                  Relevance
-                </text>
-                <text
-                  x='0'
-                  y='24'
-                  fill='#888888'
-                  fontSize='11'
-                  textAnchor='middle'
-                >
-                  Service pages & keywords
-                </text>
-                <path
-                  d='M480,100 L440,160'
-                  stroke='#7bafd4'
-                  strokeWidth='2'
-                  fill='none'
-                  markerEnd='url(#arrow)'
-                />
-              </g>
-
-              <g className={styles.signal} transform='translate(160,300)'>
-                <rect
-                  x='-44'
-                  y='-36'
-                  width='88'
-                  height='72'
-                  rx='10'
-                  fill='#141414'
-                  stroke='#2e3a4d'
-                />
-                <text
-                  x='0'
-                  y='6'
-                  fill='#7bafd4'
-                  fontSize='13'
-                  fontWeight='600'
-                  textAnchor='middle'
-                >
-                  Trust
-                </text>
-                <text
-                  x='0'
-                  y='24'
-                  fill='#888888'
-                  fontSize='11'
-                  textAnchor='middle'
-                >
-                  Reviews & photos
-                </text>
-                <path
-                  d='M80,260 L320,200'
-                  stroke='#7bafd4'
-                  strokeWidth='2'
-                  fill='none'
-                  markerEnd='url(#arrow)'
-                />
-              </g>
-
-              <g className={styles.signal} transform='translate(640,300)'>
-                <rect
-                  x='-44'
-                  y='-36'
-                  width='88'
-                  height='72'
-                  rx='10'
-                  fill='#141414'
-                  stroke='#2e3a4d'
-                />
-                <text
-                  x='0'
-                  y='6'
-                  fill='#7bafd4'
-                  fontSize='13'
-                  fontWeight='600'
-                  textAnchor='middle'
-                >
-                  Conversion
-                </text>
-                <text
-                  x='0'
-                  y='24'
-                  fill='#888888'
-                  fontSize='11'
-                  textAnchor='middle'
-                >
-                  CTAs & click-to-call
-                </text>
-                <path
-                  d='M480,260 L440,200'
-                  stroke='#7bafd4'
-                  strokeWidth='2'
-                  fill='none'
-                  markerEnd='url(#arrow)'
-                />
-              </g>
-
-              <defs>
-                <marker
-                  id='arrow'
-                  markerWidth='8'
-                  markerHeight='8'
-                  refX='6'
-                  refY='4'
-                  orient='auto'
-                  markerUnits='strokeWidth'
-                >
-                  <path d='M0,0 L8,4 L0,8 L2,4 z' fill='#7bafd4' />
-                </marker>
-              </defs>
-            </svg>
-          </div>
+          {/* Center node */}
+          <motion.div className={styles.center} variants={centerReveal}>
+            <span className={styles.centerRing} aria-hidden="true" />
+            <span className={styles.centerRing2} aria-hidden="true" />
+            <span className={styles.centerLabel}>Google<br />Map Pack</span>
+          </motion.div>
         </motion.div>
+
       </div>
     </section>
   );

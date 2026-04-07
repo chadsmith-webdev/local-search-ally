@@ -167,27 +167,218 @@
   z-index: 2;
 }
 
-/* ─── SVG container ──────────────────────────────────────────────────────── */
-.svgWrap {
-  width: 100%;
-  overflow: hidden;
+/* ─── Diagram grid ───────────────────────────────────────────────────────── */
+.diagramWrap {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "topLeft    . topRight"
+    ".         center     ."
+    "bottomLeft . bottomRight";
+  grid-template-columns: 1fr 140px 1fr;
+  grid-template-rows: auto 140px auto;
+  gap: 32px 24px;
+  align-items: center;
+  justify-items: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ─── Signal cards ───────────────────────────────────────────────────────── */
+.signalCard {
   display: flex;
-  justify-content: center;
-}
-
-.svg {
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   width: 100%;
-  max-width: 820px;
-  height: auto;
-  display: block;
+  max-width: 180px;
+  padding: 20px 16px;
+  background: rgba(8, 10, 13, 0.85);
+  border: 1px solid rgba(123, 175, 212, 0.18);
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.6);
 }
 
-.centerGroup text {
-  font-family: var(--font-ui);
+.signalCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 16px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--carolina), transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
-.signal text {
+.signalCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(123, 175, 212, 0.35);
+  box-shadow:
+    0 8px 32px -4px rgba(0, 0, 0, 0.7),
+    0 0 24px rgba(123, 175, 212, 0.08);
+}
+
+.signalCard:hover::before {
+  opacity: 1;
+}
+
+.topLeft {
+  grid-area: topLeft;
+  justify-self: end;
+}
+.topRight {
+  grid-area: topRight;
+  justify-self: start;
+}
+.bottomLeft {
+  grid-area: bottomLeft;
+  justify-self: end;
+}
+.bottomRight {
+  grid-area: bottomRight;
+  justify-self: start;
+}
+
+.signalIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--carolina);
+  flex-shrink: 0;
+}
+
+.signalIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.signalLabel {
   font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.signalSub {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+/* ─── Connector lines ────────────────────────────────────────────────────── */
+.line {
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(123, 175, 212, 0.4),
+    transparent
+  );
+  height: 1px;
+  pointer-events: none;
+  z-index: 0;
+  transform-origin: center center;
+}
+
+/* Each line is sized and angled to connect its corner card to the center */
+.lineTL {
+  width: 42%;
+  top: calc(33% - 0.5px);
+  left: 20%;
+  transform: rotate(-28deg);
+}
+
+.lineTR {
+  width: 42%;
+  top: calc(33% - 0.5px);
+  right: 20%;
+  transform: rotate(28deg);
+}
+
+.lineBL {
+  width: 42%;
+  bottom: calc(33% - 0.5px);
+  left: 20%;
+  transform: rotate(28deg);
+}
+
+.lineBR {
+  width: 42%;
+  bottom: calc(33% - 0.5px);
+  right: 20%;
+  transform: rotate(-28deg);
+}
+
+/* ─── Center node ────────────────────────────────────────────────────────── */
+.center {
+  grid-area: center;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid var(--carolina);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(123, 175, 212, 0.12) 0%,
+    rgba(2, 2, 3, 0.95) 70%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 32px rgba(123, 175, 212, 0.15),
+    inset 0 0 24px rgba(123, 175, 212, 0.06);
+  z-index: 1;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.7);
+    opacity: 0;
+  }
+}
+
+.centerRing,
+.centerRing2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid var(--carolina);
+  animation: ringPulse 2.6s ease-out infinite;
+  pointer-events: none;
+}
+
+.centerRing2 {
+  animation-delay: 1.3s;
+}
+
+.centerLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--carolina);
+  text-align: center;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
@@ -197,7 +388,28 @@
     border-radius: 10px;
   }
 
-  .svg {
-    max-width: 360px;
+  .diagramWrap {
+    grid-template-columns: 1fr 100px 1fr;
+    grid-template-rows: auto 100px auto;
+    gap: 20px 12px;
+  }
+
+  .signalCard {
+    max-width: 140px;
+    padding: 14px 10px;
+    gap: 4px;
+  }
+
+  .center {
+    width: 88px;
+    height: 88px;
+  }
+
+  .centerLabel {
+    font-size: 0.5625rem;
+  }
+
+  .line {
+    display: none;
   }
 }
