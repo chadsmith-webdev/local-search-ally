@@ -1,9 +1,11 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  /* Full viewport minus the fixed navbar (72px) so content centers vertically */
+  height: calc(100vh - 72px);
   display: flex;
   align-items: center;
-  padding-top: 72px;
+  justify-content: center;
+  padding-top: 0;
   overflow: hidden;
   background: var(--bg);
 }

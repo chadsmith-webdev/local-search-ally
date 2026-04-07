@@ -91,10 +91,7 @@
 }
 
 .author h4 {
-  font-family:
-    Helvetica Neue,
-    Arial,
-    sans-serif;
+  font-family: var(--font-ui);
   font-size: 1rem;
   font-weight: 600;
   color: #7bafd4;
@@ -129,7 +126,7 @@
 }
 
 .statNumber {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 2.5rem;
   font-weight: 700;
   color: #7bafd4;
@@ -152,10 +149,7 @@
 }
 
 .commitment h3 {
-  font-family:
-    Helvetica Neue,
-    Arial,
-    sans-serif;
+  font-family: var(--font-ui);
   font-size: 1.3rem;
   font-weight: 600;
   color: #f0f0f0;

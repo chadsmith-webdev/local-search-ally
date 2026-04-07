@@ -12,7 +12,7 @@
 }
 
 .heading {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 6vw, 2.8rem);
   font-weight: 700;
   line-height: 1.2;
@@ -49,10 +49,7 @@
 }
 
 .whatItem h3 {
-  font-family:
-    Helvetica Neue,
-    Arial,
-    sans-serif;
+  font-family: var(--font-ui);
   font-size: 1.2rem;
   font-weight: 600;
   color: #7bafd4;

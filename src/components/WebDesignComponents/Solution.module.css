@@ -123,10 +123,7 @@
 }
 
 .whatItem h4 {
-  font-family:
-    Helvetica Neue,
-    Arial,
-    sans-serif;
+  font-family: var(--font-ui);
   font-size: 1.1rem;
   font-weight: 600;
   color: #7bafd4;
@@ -149,10 +146,7 @@
 }
 
 .transparency h3 {
-  font-family:
-    Helvetica Neue,
-    Arial,
-    sans-serif;
+  font-family: var(--font-ui);
   font-size: 1.3rem;
   font-weight: 600;
   color: #f0f0f0;

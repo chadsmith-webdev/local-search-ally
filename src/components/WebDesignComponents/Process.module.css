@@ -118,9 +118,7 @@
 }
 
 .stepNumber {
-  font-family:
-    JetBrains Mono,
-    monospace;
+  font-family: var(--font-mono);
   font-size: 3.5rem;
   font-weight: 700;
   color: rgba(123, 175, 212, 0.15);
@@ -131,10 +129,7 @@
 }
 
 .stepTitle {
-  font-family:
-    Helvetica Neue,
-    Arial,
-    sans-serif;
+  font-family: var(--font-ui);
   font-size: 1.5rem;
   font-weight: 600;
   color: #7bafd4;
@@ -161,10 +156,7 @@
 }
 
 .timeline h3 {
-  font-family:
-    Helvetica Neue,
-    Arial,
-    sans-serif;
+  font-family: var(--font-ui);
   font-size: 1.3rem;
   font-weight: 600;
   color: #f0f0f0;
