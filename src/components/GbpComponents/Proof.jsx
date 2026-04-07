@@ -22,6 +22,7 @@ export default function Proof() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>Why It Works</span>
           <h2 className={styles.heading}>Results You Can See</h2>
           <p className={styles.intro}>
             Better visibility in Google Maps. Higher ratings. More phone calls.

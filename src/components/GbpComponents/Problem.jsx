@@ -22,6 +22,7 @@ export default function Problem() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>The Problem</span>
           <h2 className={styles.heading}>
             Your Google Business Profile Is Costing You Calls
           </h2>

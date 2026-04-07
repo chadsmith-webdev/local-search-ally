@@ -22,6 +22,7 @@ export default function Solution() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <span className={styles.eyebrow}>The Fix</span>
           <h2 className={styles.heading}>
             Complete Google Business Profile Optimization
           </h2>

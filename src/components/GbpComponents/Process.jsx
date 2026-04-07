@@ -54,7 +54,8 @@ export default function Process() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <h2 className={styles.heading}>How We Get You Into the Map Pack</h2>
+          <span className={styles.eyebrow}>The Process</span>
+          <h2 className={styles.heading}>How I Get You Into the Map Pack</h2>
           <p className={styles.intro}>A simple 3-step process that works.</p>
         </motion.div>
 
