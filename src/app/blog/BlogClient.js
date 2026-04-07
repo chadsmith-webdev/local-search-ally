@@ -55,8 +55,8 @@ function PostCard({ post, index }) {
             <Image
               src={post.image}
               alt={post.title}
-              width={640}
-              height={208}
+              fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               className={styles.cardImg}
             />
           ) : (
@@ -137,7 +137,10 @@ export default function BlogClient({ posts }) {
               I do. See where you stand first — 90-second scored audit, no email
               required.
             </p>
-            <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.ctaBtn}>
+            <Link
+              href='https://audit.localsearchally.com/free-local-seo-audit'
+              className={styles.ctaBtn}
+            >
               Run Your Free Audit →
             </Link>
             <p className={styles.ctaNote}>
