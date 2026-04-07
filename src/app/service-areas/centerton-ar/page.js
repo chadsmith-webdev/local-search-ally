@@ -176,7 +176,7 @@ export default function CentertonServiceAreaPage() {
                   exponentially harder to achieve.
                 </p>
                 <div className={styles.heroActions}>
-                  <Link href='/services/audit' className={styles.primaryBtn}>
+                  <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.primaryBtn}>
                     Run Your Free Audit
                   </Link>
                   <Link href='/contact' className={styles.secondaryBtn}>
@@ -405,7 +405,7 @@ export default function CentertonServiceAreaPage() {
               seven local SEO sections and show you exactly where you stand.
             </p>
             <div className={styles.heroActions}>
-              <Link href='/services/audit' className={styles.primaryBtn}>
+              <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.primaryBtn}>
                 Run Your Free Audit
               </Link>
               <Link href='/contact' className={styles.secondaryBtn}>

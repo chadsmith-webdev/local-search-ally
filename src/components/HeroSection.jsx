@@ -55,7 +55,7 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div variants={fadeUp} className={styles.ctas}>
-            <Link href='/services/audit' className={styles.btnPrimary}>
+            <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.btnPrimary}>
               See Where You Stand — It's Free
             </Link>
             <Link href='#how-it-works' className={styles.btnSecondary}>

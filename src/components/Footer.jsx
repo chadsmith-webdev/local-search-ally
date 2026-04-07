@@ -69,7 +69,7 @@ export default function Footer() {
                 <Link href='/services#reputation'>Reputation</Link>
               </li>
               <li>
-                <Link href='/services/audit'>Free SEO Audit</Link>
+                <Link href='https://audit.localsearchally.com/free-local-seo-audit'>Free SEO Audit</Link>
               </li>
             </ul>
           </div>

@@ -166,7 +166,7 @@ export default function ContactClient() {
             {/* Not ready? */}
             <div className={styles.auditNudge}>
               <span>Not ready to talk yet?</span>
-              <Link href='/services/audit' className={styles.auditLink}>
+              <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.auditLink}>
                 Run the free SEO audit first →
               </Link>
             </div>

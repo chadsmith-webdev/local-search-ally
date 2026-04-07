@@ -17,7 +17,10 @@ export default function FreeAuditHero() {
             Profile. You get an honest assessment of what's working, what's
             broken, and the highest-impact wins you can make immediately.
           </p>
-          <a href='#audit' className={styles.cta}>
+          <a
+            href='https://audit.localsearchally.com/free-local-seo-audit'
+            className={styles.cta}
+          >
             Run Your Free Audit →
           </a>
         </div>
