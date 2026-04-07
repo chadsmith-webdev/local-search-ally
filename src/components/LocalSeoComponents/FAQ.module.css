@@ -87,6 +87,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 640px;
+  width: 100%;
 }
 
 .faqItem {
@@ -142,7 +144,7 @@
 }
 
 .question {
-  width: auto;
+  width: 100%;
   padding: 24px;
   background: transparent;
   border: none;
@@ -195,7 +197,7 @@
 }
 
 .question.active .icon {
-  transform: rotate(180deg);
+  transform: rotate(45deg);
 }
 
 .question:active {

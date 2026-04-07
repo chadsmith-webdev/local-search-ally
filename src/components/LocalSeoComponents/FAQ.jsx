@@ -114,7 +114,7 @@ export default function FAQ() {
                       aria-hidden
                     >
                       <path
-                        d='M6 9l6 6 6-6'
+                        d='M12 5v14M5 12h14'
                         stroke='currentColor'
                         strokeWidth='2'
                         strokeLinecap='round'
