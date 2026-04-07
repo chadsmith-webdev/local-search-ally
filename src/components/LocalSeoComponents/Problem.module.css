@@ -22,6 +22,19 @@
   pointer-events: none;
 }
 
+/* Tech grid overlay */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(123, 175, 212, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(123, 175, 212, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .container {
   composes: container-cinematic from global;
   display: flex;
@@ -191,7 +204,7 @@
 }
 
 .statNumber {
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-size: 3.5rem;
   font-weight: 700;
   color: var(--carolina, #7bafd4);
