@@ -41,9 +41,6 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--carolina, #7bafd4);
-  background: rgba(123, 175, 212, 0.12);
-  border-radius: 100px;
-  padding: 3px 10px;
 }
 
 /* ── Post header ───────────────────────────────────────────────────────────── */

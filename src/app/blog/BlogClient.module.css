@@ -63,14 +63,24 @@
 }
 
 .eyebrow {
-  display: inline-block;
-  font-family: var(--font-ui, sans-serif);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina, #7bafd4);
-  margin-bottom: 1.25rem;
+  color: var(--carolina);
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--carolina);
+  opacity: 0.6;
 }
 
 .h1 {

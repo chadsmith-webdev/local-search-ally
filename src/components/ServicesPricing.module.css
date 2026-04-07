@@ -14,14 +14,24 @@
 
 /* ── Shared eyebrow ── */
 .eyebrow {
-  display: block;
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--muted);
-  margin-bottom: 1rem;
+  color: var(--carolina);
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--carolina);
+  opacity: 0.6;
 }
 
 /* ── Left: Pricing ── */
