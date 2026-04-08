@@ -1,15 +1,17 @@
 .section {
-  padding: 100px 24px;
+  padding: var(--section-spacing, 100px) 0;
   background: var(--bg);
 }
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  composes: container-cinematic from global;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 .header {
-  margin-bottom: 48px;
+  margin-bottom: 0;
 }
 
 .eyebrow {
@@ -24,6 +26,7 @@
   gap: 0.625rem;
   margin-bottom: 8px;
 }
+
 .eyebrow::before {
   content: "";
   display: inline-block;
@@ -44,15 +47,56 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 16px;
+  max-width: 640px;
+  width: 100%;
 }
 
 .item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(123, 175, 212, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 28, 42, 0.4) 0%,
+    rgba(15, 15, 15, 0.2) 100%
+  );
+  position: relative;
 }
 
-.item:first-child {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+.item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--carolina, #7bafd4) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  z-index: 1;
+}
+
+.item:hover {
+  border-color: rgba(123, 175, 212, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 58, 82, 0.6) 0%,
+    rgba(20, 28, 42, 0.4) 100%
+  );
+}
+
+.item:hover::before {
+  opacity: 1;
+}
+
+.itemOpen {
+  border-color: rgba(123, 175, 212, 0.5);
+}
+
+.itemOpen::before {
+  opacity: 1;
 }
 
 .question {
@@ -61,7 +105,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 22px 0;
+  padding: 22px 24px;
   background: none;
   border: none;
   cursor: pointer;
@@ -98,11 +142,12 @@
 }
 
 .iconOpen {
-  transform: rotate(180deg);
+  transform: rotate(45deg);
 }
 
 .answer {
   overflow: hidden;
+  padding: 0 24px;
 }
 
 .answer p {

@@ -80,7 +80,7 @@ export default function FAQ() {
                 key={id}
                 custom={i}
                 {...motionItemProps}
-                className={styles.item}
+                className={`${styles.item} ${isOpen ? styles.itemOpen : ""}`}
                 role="listitem"
               >
                 <button
@@ -92,8 +92,8 @@ export default function FAQ() {
                 >
                   <span>{item.q}</span>
                   <span className={`${styles.icon} ${isOpen ? styles.iconOpen : ""}`} aria-hidden="true">
-                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                      <path d="M4 6l4 4 4-4" />
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                      <path d="M10 4v12M4 10h12" />
                     </svg>
                   </span>
                 </button>

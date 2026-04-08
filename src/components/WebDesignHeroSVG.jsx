@@ -8,7 +8,7 @@ export default function WebDesignHeroSVG() {
       focusable="false"
       style={{
         position: "absolute",
-        right: "max(0px, 6vw)",
+        left: "max(0px, 6vw)",
         bottom: "max(0px, 6vw)",
         width: "min(480px, 55vw)",
         height: "auto",
