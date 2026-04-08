@@ -2,7 +2,7 @@
 title: "How I Built the Local Search Ally Website, Part 3: The SEO Foundation"
 date: "2026-03-25"
 description: "How localsearchally.com was built for local search from day one — schema markup, service area pages, FAQ rich results, sitemap, and everything in between."
-image: "/images/case-study-seo.webp"
+image: "/images/case-study-seo.png"
 tags: ["case study", "local seo", "schema markup", "part 3"]
 ---
 
@@ -46,6 +46,9 @@ The schema includes:
 - ~ Price range indicator
 
 Think of it like a very detailed business registration form that Google reads before deciding how to display the business in search results. Without it, Google has to infer everything from page content. With it, you're telling Google directly.
+ 
+![Diagnostic diagram of LocalBusiness Schema JSON-LD structure](/images/schema-markup-nodes.png)  
+*A technical diagnostic diagram showing the connectivity between LocalBusiness, Address, and ServiceArea JSON-LD nodes.*
 
 ---
 
@@ -58,6 +61,9 @@ The FAQ schema marks these up as `FAQPage` structured data so Google can pull th
 The initial implementation had a bug worth documenting: the schema was rendering twice — once from the root layout and once from the services page — causing a "Duplicate FAQPage" error in Google's Rich Results Test. The fix was moving the FAQ schema out of the global layout and onto the specific pages that display the FAQ content.
 
 **Test result after fix:** All four schema types valid — Breadcrumbs, FAQ, Local Business, Organization.
+ 
+![Cinematic mockup of Google FAQ Rich Results](/images/rich-results-faq-mockup.png)  
+*A cinematic mockup showing how FAQ schema renders as interactive rich results directly in Google search results.*
 
 ---
 
@@ -83,6 +89,9 @@ Each location page includes:
 - ~ City-specific CTA — "Get a Free Bentonville Audit"
 
 The nearby city links are deliberate — they create an internal linking mesh between all six location pages, which distributes page authority and helps Google understand the geographic relationship between them.
+ 
+![Visualization of the internal linking mesh between service area pages](/images/internal-linking-mesh.png)  
+*A visual representation of the internal linking "mesh" strategy used to distribute authority between service area location pages.*
 
 ---
 
