@@ -44,19 +44,19 @@ export default function HeroSection() {
           </motion.span>
 
           <motion.h1 variants={fadeUp} className={styles.h1}>
-            The best contractor in <em>NWA</em> shouldn't be the hardest to
-            find.
+            Is invisibility hiding you from{" "}
+            <em>3.9 billion</em> daily local searches?
           </motion.h1>
 
           <motion.p variants={fadeUp} className={styles.subhead}>
-            If your phone goes quiet while less experienced competitors stay
-            busy, the problem isn't your work — it's your visibility. I help NWA
-            home service trades show up on Google when it matters most.
+            46% of all Google searches are looking for a local pro nearby. If
+            you&rsquo;re not in the Map Pack, those calls are going to someone
+            else — and you&rsquo;ll never know what you missed.
           </motion.p>
 
           <motion.div variants={fadeUp} className={styles.ctas}>
             <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.btnPrimary}>
-              See Where You Stand — It's Free
+              See Where You Stand — It&rsquo;s Free
             </Link>
             <Link href='#how-it-works' className={styles.btnSecondary}>
               How it works →

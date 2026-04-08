@@ -13,6 +13,24 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
+const PROBLEMS = [
+  {
+    id: "ghost",
+    tag: "The Ghost Business",
+    body: "No Google Business Profile means missing the #1 tool for local visibility. To nearly half your potential customers, you simply don't exist.",
+  },
+  {
+    id: "trust",
+    tag: "The Trust Gap",
+    body: "Poor engagement or missing reviews tell Google your business might not be active. Active businesses respond to reviews. Invisible ones don't.",
+  },
+  {
+    id: "trap",
+    tag: "The Search Trap",
+    body: "When your name, address, and phone number aren't consistent across the web, search engines lose confidence in your data — and rank your competitors instead.",
+  },
+];
+
 const results = [
   {
     num: "1",
@@ -29,38 +47,36 @@ export default function ProblemSection() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        {/* Left: headline + body */}
+        {/* Left: headline + problems */}
         <motion.div
           className={styles.left}
           variants={stagger}
-          initial='hidden'
-          whileInView='visible'
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.span variants={fadeUp} className={styles.eyebrow}>
-            The Real Problem
+            The Visibility Problem
           </motion.span>
 
           <motion.h2 variants={fadeUp} className={styles.h2}>
-            Your competitors aren't better. They're just{" "}
-            <em>easier to find.</em>
+            Invisibility is the silent thief of{" "}
+            <em>NWA small business.</em>
           </motion.h2>
 
-          <motion.div variants={fadeUp} className={styles.body}>
-            <p>
-              You've spent years building a reputation on quality work and
-              word-of-mouth. But word-of-mouth only reaches so far.
-            </p>
-            <p>
-              When a homeowner in Rogers needs an HVAC company at 9pm, or a new
-              family in Bentonville is searching for a plumber they can trust —
-              they go to Google. They click one of the first three results, pick
-              up the phone, and that's it.
-            </p>
-            <p>
-              If you're not there, you don't exist to them. The job goes to
-              someone else — and you never even knew it was available.
-            </p>
+          <motion.p variants={fadeUp} className={styles.intro}>
+            You&rsquo;ve spent years mastering your trade. But while
+            you&rsquo;re out in the field, three invisible problems are keeping
+            new customers from finding you.
+          </motion.p>
+
+          <motion.div variants={stagger} className={styles.problems}>
+            {PROBLEMS.map((p) => (
+              <motion.div key={p.id} variants={fadeUp} className={styles.problem}>
+                <span className={styles.problemTag}>{p.tag}</span>
+                <p className={styles.problemBody}>{p.body}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
 
@@ -68,8 +84,8 @@ export default function ProblemSection() {
         <motion.div
           className={styles.right}
           variants={stagger}
-          initial='hidden'
-          whileInView='visible'
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
         >
           {/* Scenario */}
@@ -77,16 +93,16 @@ export default function ProblemSection() {
             <p className={styles.scenarioLabel}>Real scenario · 9:14pm</p>
             <p className={styles.scenarioText}>
               A homeowner in Rogers searches{" "}
-              <strong>"HVAC repair near me"</strong> on her phone. Three
-              companies appear in the Map Pack. She calls the first one, books
-              the job, and leaves a five-star review — for someone else.
+              <strong>&ldquo;HVAC repair near me&rdquo;</strong> on her phone.
+              Three companies appear in the Map Pack. She calls the first one,
+              books the job, and leaves a five-star review — for someone else.
             </p>
           </motion.div>
 
           {/* Search result mockup */}
           <motion.div variants={fadeUp} className={styles.mockup}>
             <p className={styles.mockupLabel}>
-              Google Map Pack · "HVAC repair Rogers AR"
+              Google Map Pack · &ldquo;HVAC repair Rogers AR&rdquo;
             </p>
             {results.map((r) => (
               <div

@@ -44,15 +44,16 @@ export default function HowItWorksSection() {
       >
         {/* Header */}
         <motion.div className={styles.header} variants={fadeUp}>
-          <span className={styles.eyebrow}>How It Works</span>
+          <span className={styles.eyebrow}>Your Roadmap</span>
           <h2 className={styles.h2}>
-            Three steps. No retainer lock-in.
+            Three steps. No lock-in.
             <br />
             No guesswork.
           </h2>
           <p className={styles.lead}>
-            I keep the process simple because complicated marketing plans rarely
-            get executed. Here&rsquo;s exactly what working together looks like.
+            I keep it simple because complicated plans don&rsquo;t get
+            executed. Here&rsquo;s exactly what it looks like to go from
+            invisible to found.
           </p>
         </motion.div>
 

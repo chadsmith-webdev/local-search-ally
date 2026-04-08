@@ -1,21 +1,20 @@
 import HeroSection from "@/components/HeroSection";
-import ProblemSection from "@/components/ProblemSection";
 import StakesSection from "@/components/StakesSection";
-import SuccessSection from "@/components/SuccessSection";
+import ProblemSection from "@/components/ProblemSection";
+import ServicesSection from "@/components/ServicesSection";
 import GuideSection from "@/components/GuideSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import ServicesSection from "@/components/ServicesSection";
-import StatsSection from "@/components/StatsSection";
+import FAQSection from "@/components/FAQSection";
 import FinalCTASection from "@/components/FinalCTASection";
 
 export const metadata = {
   title: "Local SEO for NWA Contractors | Local Search Ally",
   description:
-    "97% of people use Google to find a local contractor. If you're not in the results, the call goes to whoever is. Free audit for NWA home service trades.",
+    "46% of Google searches have local intent. If you're not in the Map Pack, those calls are going to someone else. Free visibility audit for NWA home service trades.",
   openGraph: {
     title: "Local SEO for NWA Contractors | Local Search Ally",
     description:
-      "97% of people use Google to find a local contractor. If you're not in the results, the call goes to whoever is.",
+      "46% of Google searches have local intent. If you're not in the Map Pack, those calls are going to someone else.",
     url: "https://localsearchally.com",
   },
 };
@@ -56,18 +55,17 @@ export default function Page() {
   return (
     <>
       <script
-        type='application/ld+json'
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main>
         <HeroSection />
-        <ProblemSection />
         <StakesSection />
-        <SuccessSection />
+        <ProblemSection />
+        <ServicesSection />
         <GuideSection />
         <HowItWorksSection />
-        <ServicesSection />
-        <StatsSection />
+        <FAQSection />
         <FinalCTASection />
       </main>
     </>

@@ -67,29 +67,28 @@ export default function GuideSection() {
             </motion.span>
 
             <motion.h2 className={styles.h2} variants={fadeUp}>
-              I&rsquo;m Chad. I help NWA contractors
+              I&rsquo;m Chad. I specialize in Local SEO
               <br />
-              get found by the people who need them.
+              for NWA home service trades.
             </motion.h2>
 
             <motion.div className={styles.body} variants={container}>
               <motion.p className={styles.p} variants={fadeUp}>
-                I started Local Search Ally because I kept seeing the same
-                thing: skilled, honest tradespeople losing work to competitors
-                who were just easier to find online. Not better. Just more
-                visible.
+                Not general marketing. Not e-commerce. Local SEO specifically
+                for HVAC, plumbing, roofing, and electrical businesses in
+                Northwest Arkansas — because each trade has a different version
+                of the visibility problem, and generic fixes don&rsquo;t work.
               </motion.p>
               <motion.p className={styles.p} variants={fadeUp}>
-                I focus exclusively on home service trades in Northwest Arkansas
-                — HVAC, plumbing, roofing, electrical, landscaping, remodeling.
-                I know the market, the search patterns, and what it actually
-                takes to rank in Rogers, Bentonville, Fayetteville, and the
-                surrounding areas.
+                I built a 10-point SEO audit that shows you exactly where your
+                business is losing visibility online. Not a generic score —
+                it&rsquo;s built to surface the specific gaps that keep trade
+                businesses off the first page in their service area.
               </motion.p>
               <motion.p className={styles.p} variants={fadeUp}>
-                I do this work myself — no outsourcing, no junior staff learning
-                on your dime. You get one person who knows your business and is
-                accountable for results.
+                Every fix I make — your Google Business Profile, your service
+                pages, your citation consistency across directories — is pointed
+                at one thing: getting the right customer to call you first.
               </motion.p>
             </motion.div>
 

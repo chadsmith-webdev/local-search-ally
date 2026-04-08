@@ -43,14 +43,15 @@ export default function FinalCTASection() {
         {/* Headline */}
         <motion.div className={styles.headlineBlock} variants={container}>
           <motion.h2 className={styles.h2} variants={fadeUp}>
-            The best contractor in NWA
+            Stop losing jobs to contractors
             <br />
-            shouldn&rsquo;t be the hardest to find.
+            with less experience and more visibility.
           </motion.h2>
           <motion.p className={styles.sub} variants={fadeUp}>
-            Let&rsquo;s talk about where you stand and what&rsquo;s worth fixing
-            first. No pitch, no pressure — just an honest look at your local
-            visibility and a clear answer on whether I can help.
+            Your reputation is earned in the field. Let me make sure
+            it&rsquo;s visible online. No pitch, no pressure — just an honest
+            look at your local visibility and a clear answer on whether I can
+            help.
           </motion.p>
         </motion.div>
 

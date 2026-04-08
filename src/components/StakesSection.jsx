@@ -11,62 +11,32 @@ const fadeUp = {
 
 const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.12 } },
 };
 
-const OUTCOMES = [
+const TIERS = [
   {
-    icon: (
-      <svg
-        viewBox='0 0 18 18'
-        fill='none'
-        stroke='currentColor'
-        strokeWidth='1.75'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-      >
-        <path d='M9 1v2M9 15v2M1 9h2M15 9h2' />
-        <circle cx='9' cy='9' r='4' />
-        <path d='M2.2 2.2l1.4 1.4M14.4 14.4l1.4 1.4M14.4 3.6l-1.4 1.4M3.6 14.4l-1.4 1.4' />
-      </svg>
-    ),
-    title: "Lost calls you never knew existed",
-    body: "Jobs go to whoever shows up first in Google. If that's not you, those calls aren't going to voicemail — they're going to a competitor.",
+    num: "8.5B",
+    label: "Daily Google Searches",
+    sub: "Every day, people turn to Google for answers.",
+    width: "100%",
+    active: false,
   },
   {
-    icon: (
-      <svg
-        viewBox='0 0 18 18'
-        fill='none'
-        stroke='currentColor'
-        strokeWidth='1.75'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-      >
-        <path d='M16 12s-3-2-7-2-7 2-7 2' />
-        <circle cx='9' cy='7' r='3' />
-        <path d='M9 10v2' />
-      </svg>
-    ),
-    title: "Referrals can only go so far",
-    body: "Word-of-mouth built your business. It won't scale it. When referrals slow down — and they will — you need search to fill the gap.",
+    num: "3.91B",
+    pct: "46%",
+    label: "Have Local Intent",
+    sub: "Nearly half are searching for a business or service near them.",
+    width: "76%",
+    active: false,
   },
   {
-    icon: (
-      <svg
-        viewBox='0 0 18 18'
-        fill='none'
-        stroke='currentColor'
-        strokeWidth='1.75'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-      >
-        <polyline points='1 12 5 8 8 11 11 6 17 9' />
-        <line x1='17' y1='14' x2='1' y2='14' />
-      </svg>
-    ),
-    title: "Competitors gain ground you can't recover overnight",
-    body: "Every month a competitor builds reviews, rankings, and recognition, the gap gets harder to close. Rankings take time. The longer you wait, the more time it takes.",
+    num: "3.12B",
+    pct: "80%",
+    label: "Take Action Within 24 Hours",
+    sub: "Local searchers are ready to buy. They call, visit, or book — today.",
+    width: "54%",
+    active: true,
   },
 ];
 
@@ -76,62 +46,89 @@ export default function StakesSection() {
       <motion.div
         className={styles.inner}
         variants={container}
-        initial='hidden'
-        whileInView='visible'
-        viewport={{ once: true, amount: 0.2 }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
       >
         {/* Header */}
         <motion.div className={styles.header} variants={fadeUp}>
-          <span className={styles.eyebrow}>The Cost of Staying Invisible</span>
+          <span className={styles.eyebrow}>The Math of Local Search</span>
           <h2 className={styles.h2}>
-            Every month you&rsquo;re not showing up,
+            The numbers behind why{" "}
             <br />
-            someone else is getting your calls.
+            visibility is everything.
           </h2>
           <p className={styles.lead}>
-            It&rsquo;s not dramatic. It&rsquo;s just math. A homeowner in
-            Fayetteville needs an HVAC tech today. They open Google, click one
-            of the top three results, and make a call. If you&rsquo;re not in
-            those results, you don&rsquo;t get a chance to compete.
+            This isn&rsquo;t abstract marketing. It&rsquo;s what&rsquo;s
+            happening right now — in Rogers, Bentonville, Fayetteville, and
+            every city in NWA.
           </p>
         </motion.div>
 
-        {/* Failure outcome cards */}
-        <motion.div className={styles.cards} variants={container}>
-          {OUTCOMES.map((item) => (
+        {/* Funnel */}
+        <motion.div className={styles.funnel} variants={container}>
+          {TIERS.map((tier, i) => (
             <motion.div
-              key={item.title}
-              className={styles.card}
+              key={tier.label}
+              className={styles.tierWrap}
+              style={{ width: tier.width }}
               variants={fadeUp}
             >
-              <div className={styles.iconWrap}>{item.icon}</div>
-              <p className={styles.cardTitle}>{item.title}</p>
-              <p className={styles.cardBody}>{item.body}</p>
+              <div
+                className={`${styles.tierBlock} ${tier.active ? styles.tierActive : ""}`}
+              >
+                <div className={styles.tierLeft}>
+                  <span className={styles.tierNum}>{tier.num}</span>
+                  {tier.pct && (
+                    <span className={styles.tierPct}>{tier.pct}</span>
+                  )}
+                </div>
+                <div className={styles.tierRight}>
+                  <p className={styles.tierLabel}>{tier.label}</p>
+                  <p className={styles.tierSub}>{tier.sub}</p>
+                </div>
+              </div>
+              {i < TIERS.length - 1 && (
+                <div className={styles.connector}>
+                  <svg
+                    width="16"
+                    height="20"
+                    viewBox="0 0 16 20"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M8 1v14M3 11l5 6 5-6" />
+                  </svg>
+                </div>
+              )}
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Bottom: transition + early CTA */}
+        {/* Narrative callout */}
         <motion.div className={styles.bottom} variants={fadeUp}>
           <p className={styles.bottomText}>
-            <strong>It doesn&rsquo;t have to stay that way.</strong> I work with
-            home service trades in NWA to close the visibility gap — fixing what
-            holds them back in search, so the right customers can actually find
-            them.
+            For an HVAC company in Rogers or a plumber in Bentonville, the
+            difference between a busy schedule and a quiet phone isn&rsquo;t
+            the quality of your work —{" "}
+            <strong>it&rsquo;s whether you show up when they search.</strong>
           </p>
-          <Link href='/audit' className={styles.cta}>
-            Get an honest assessment
+          <Link href="/audit" className={styles.cta}>
+            See where you stand
             <svg
-              width='16'
-              height='16'
-              viewBox='0 0 16 16'
-              fill='none'
-              stroke='currentColor'
-              strokeWidth='1.75'
-              strokeLinecap='round'
-              strokeLinejoin='round'
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              <path d='M3 8h10M9 4l4 4-4 4' />
+              <path d="M3 8h10M9 4l4 4-4 4" />
             </svg>
           </Link>
         </motion.div>

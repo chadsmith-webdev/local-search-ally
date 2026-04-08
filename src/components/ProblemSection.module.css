@@ -72,14 +72,61 @@
   color: var(--carolina);
 }
 
-.body {
+.intro {
   font-family: var(--font-ui);
   font-size: 1.0625rem;
   color: var(--muted);
   line-height: 1.8;
+}
+
+/* ─── Problem bullets ───────────────────────────────── */
+.problems {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.problem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.problem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 77, 77, 0.5),
+    rgba(255, 77, 77, 0.1)
+  );
+}
+
+.problemTag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ff6b6b;
+  opacity: 0.9;
+}
+
+.problemBody {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 /* ─── Right: scenario + stat ───────────────────────── */
