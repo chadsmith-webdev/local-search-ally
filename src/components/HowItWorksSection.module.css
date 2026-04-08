@@ -84,13 +84,13 @@
   position: relative;
 }
 
-/* Connector line between steps */
+/* Connector line between steps — spans circle 1 center to circle 3 center */
 .steps::before {
   content: "";
   position: absolute;
-  top: 28px; /* vertically centered on step number */
-  left: calc(33.333% - 20px);
-  right: calc(33.333% - 20px);
+  top: 28px; /* vertically centered on 56px step number circles */
+  left: 28px; /* center of circle 1 */
+  right: calc(33.333% - 28px); /* center of circle 3 from the right */
   height: 1px;
   background: linear-gradient(
     90deg,
