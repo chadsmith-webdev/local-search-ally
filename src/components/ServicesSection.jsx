@@ -93,6 +93,25 @@ const SERVICES = [
       "Monitoring",
     ],
   },
+  {
+    icon: (
+      <svg
+        viewBox='0 0 22 22'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='1.75'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+      >
+        <path d='M4 6h14M4 10h10M4 14h12M4 18h8' />
+        <circle cx='17' cy='16' r='3' />
+        <path d='M19.5 18.5l2 2' />
+      </svg>
+    ),
+    title: "Citation Building & Management",
+    desc: "Inconsistent business listings quietly hurt your Google rankings. I audit, fix, and build your citations across 50+ directories so Google trusts your name, address, and phone number — and ranks you accordingly.",
+    tags: ["NAP Consistency", "50+ Directories", "Audit & Cleanup", "Ongoing Monitoring"],
+  },
 ];
 
 const AUDIT = {
@@ -128,14 +147,15 @@ export default function ServicesSection() {
         <motion.div className={styles.header} variants={fadeUp}>
           <span className={styles.eyebrow}>What I Do</span>
           <h2 className={styles.h2}>
-            One person. Four services.
+            One person. Five services.
             <br />
             All pointed at the same goal.
           </h2>
           <p className={styles.lead}>
             I don&rsquo;t hand your work off. I do the SEO, build the websites,
-            manage the GBP, and help you collect reviews — because they all work
-            together, and they work best when one person owns all of it.
+            manage the GBP, fix your citations, and help you collect reviews —
+            because they all work together, and they work best when one person
+            owns all of it.
           </p>
         </motion.div>
 
