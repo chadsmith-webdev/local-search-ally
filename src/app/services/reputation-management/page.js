@@ -2,6 +2,7 @@ import ReputationHero from "@/components/ReputationHero";
 import ReputationProblem from "@/components/ReputationComponents/Problem";
 import ReputationSolution from "@/components/ReputationComponents/Solution";
 import ReputationProcess from "@/components/ReputationComponents/Process";
+import ReputationHowItWorks from "@/components/ReputationComponents/HowItWorks";
 import ReputationProof from "@/components/ReputationComponents/Proof";
 import ReputationFAQ from "@/components/ReputationComponents/FAQ";
 import FinalCTA from "@/components/FinalCTASection";
@@ -128,6 +129,7 @@ export default function ReputationPage() {
       <ReputationProblem />
       <ReputationSolution />
       <ReputationProcess />
+      <ReputationHowItWorks />
       <ReputationProof />
       <ReputationFAQ />
       <FinalCTA />

@@ -1,98 +1,128 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import styles from "./FAQ.module.css";
-import { motion, AnimatePresence } from "framer-motion";
+
+const FAQS = [
+  {
+    q: "Do reviews actually affect my Google ranking?",
+    a: "Yes — significantly. Google uses review volume, rating, recency, and response rate as local ranking signals. A contractor with 50 reviews at 4.8 stars will consistently outrank a competitor with 12 reviews at 4.2, even if everything else is equal. Reviews are one of the most direct levers you have.",
+  },
+  {
+    q: "How do I get customers to leave reviews without being pushy?",
+    a: "The timing and method matter more than the ask itself. Most customers are happy to leave a review — they just don't think to do it. A simple, personal text 24 hours after the job is done converts far better than a generic email blast or an awkward in-person request. I'll set up the exact sequence.",
+  },
+  {
+    q: "What should I do about a negative review?",
+    a: "Respond calmly and professionally — always. A thoughtful response to a negative review actually improves perception for everyone who reads it afterward. I'll give you templates for the most common negative scenarios, and coaching on how to respond to anything unusual. What you should never do is ignore it or get defensive.",
+  },
+  {
+    q: "How often will I get reports on my reviews?",
+    a: "Monthly. I'll send you a report showing new review count, current average rating, response rate, and how your profile compares to the previous month. If anything critical comes in — a 1-star review, a spike in negative feedback — I'll flag it sooner.",
+  },
+  {
+    q: "Will you respond to reviews for me?",
+    a: "That depends on the plan. At the base level, I provide templates and coaching so you respond with confidence in your own voice. Higher-tier work includes done-for-you response management where I draft and post responses on your behalf. Either way, the goal is that no review goes unanswered.",
+  },
+  {
+    q: "Can you guarantee my rating will increase?",
+    a: "No — and anyone who promises that is lying to you. What I can guarantee is a consistent, ethical process that gives you the best possible chance of improvement. If the work is good and the system is in place, ratings tend to move in the right direction. But I will never fabricate reviews or make promises tied to a specific number.",
+  },
+];
 
 export default function FAQ() {
+  const shouldReduceMotion = useReducedMotion();
   const [openIndex, setOpenIndex] = useState(null);
+  const [announcement, setAnnouncement] = useState("");
 
-  const faqs = [
-    {
-      question: "Why do reviews matter so much?",
-      answer:
-        "Reviews serve as social proof. When someone searches for your service and sees a 4.8-star business next to a 3.2-star competitor, they call the 4.8-star business first. Reviews directly impact conversion rates and call volume.",
-    },
-    {
-      question: "What if I have some negative reviews?",
-      answer:
-        "Everyone has negative reviews if they do enough work. What matters is how you respond. I'll help you respond professionally within 24-48 hours, which shows future customers that you stand behind your work and take concerns seriously.",
-    },
-    {
-      question: "Can you remove fake or unfair reviews?",
-      answer:
-        "I cannot remove reviews, but I can help you report clearly fake or unfair ones to the platform. Most platforms have removal processes. More importantly, good reviews crowd out bad ones, so our focus is on generating more legitimate reviews from happy customers.",
-    },
-    {
-      question: "How long until I see more reviews?",
-      answer:
-        "With a good request system in place, you'll typically see 5-15 new reviews in the first month from happy customers you already know. After 3-6 months of consistent requesting, most contractors reach 30-50+ reviews on their main platforms.",
-    },
-  ];
+  function toggle(i) {
+    const next = openIndex === i ? null : i;
+    setOpenIndex(next);
+    setAnnouncement(next !== null ? `Answer expanded for: ${FAQS[i].q}` : "Answer collapsed");
+  }
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
+  const motionItemProps = shouldReduceMotion
+    ? {}
+    : {
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: { once: true },
+        variants: {
+          hidden: { opacity: 0, y: 16 },
+          visible: (i) => ({
+            opacity: 1, y: 0,
+            transition: { duration: 0.5, ease: "easeOut", delay: i * 0.07 },
+          }),
+        },
+      };
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-labelledby="faq-heading">
       <div className={styles.container}>
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={fadeUp}
-        >
-          <h2 className={styles.heading}>Common Questions</h2>
-          <p className={styles.intro}>
-            Everything you need to know about building your online reputation.
-          </p>
-        </motion.div>
+        <div className={styles.header}>
+          <span className={styles.eyebrow}>Questions</span>
+          <h2 className={styles.heading} id="faq-heading">Common Questions About Reputation Management</h2>
+        </div>
 
-        <div className={styles.faqList}>
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial='hidden'
-              whileInView='visible'
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className={styles.faqItem}
-            >
-              <button
-                className={`${styles.question} ${
-                  openIndex === index ? styles.active : ""
-                }`}
-                onClick={() => toggleFAQ(index)}
-                aria-expanded={openIndex === index}
+        <div className={styles.list} role="list">
+          {FAQS.map((item, i) => {
+            const id = item.q
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/(^-|-$)/g, "");
+            const panelId = `faq-panel-${id}`;
+            const btnId = `faq-btn-${id}`;
+            const isOpen = openIndex === i;
+
+            return (
+              <motion.div
+                key={id}
+                custom={i}
+                {...motionItemProps}
+                className={styles.item}
+                role="listitem"
               >
-                <span>{faq.question}</span>
-                <span className={styles.icon}>+</span>
-              </button>
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className={styles.answer}
-                  >
-                    <p>{faq.answer}</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                <button
+                  id={btnId}
+                  className={styles.question}
+                  onClick={() => toggle(i)}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                >
+                  <span>{item.q}</span>
+                  <span className={`${styles.icon} ${isOpen ? styles.iconOpen : ""}`} aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                      <path d="M4 6l4 4 4-4" />
+                    </svg>
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={btnId}
+                      key="panel"
+                      initial={shouldReduceMotion ? { opacity: 0 } : { scaleY: 0, opacity: 0 }}
+                      animate={shouldReduceMotion ? { opacity: 1 } : { scaleY: 1, opacity: 1 }}
+                      exit={shouldReduceMotion ? { opacity: 0 } : { scaleY: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                      style={{ transformOrigin: "top" }}
+                      className={styles.answer}
+                    >
+                      <p>{item.a}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <div className={styles.srOnly} role="status" aria-live="polite" aria-atomic="true">
+          {announcement}
         </div>
       </div>
     </section>
