@@ -13,14 +13,24 @@
 }
 
 .eyebrow {
-  display: block;
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 600;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
-  margin-bottom: 12px;
+  color: var(--carolina, #7bafd4);
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 8px;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--carolina, #7bafd4);
+  opacity: 0.6;
 }
 
 .heading {
@@ -125,7 +135,11 @@
   grid-column: 1 / -1;
   margin-top: 40px;
   padding: 40px;
-  background: radial-gradient(circle at center, rgba(123, 175, 212, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle at center,
+    rgba(123, 175, 212, 0.1) 0%,
+    transparent 70%
+  );
   border: 1px dashed rgba(123, 175, 212, 0.2);
   border-radius: 16px;
   display: flex;
@@ -147,16 +161,29 @@
   transform: translate(-50%, -50%);
   width: 120%;
   height: 120%;
-  background: radial-gradient(circle at center, rgba(123, 175, 212, 0.2) 0%, transparent 60%);
+  background: radial-gradient(
+    circle at center,
+    rgba(123, 175, 212, 0.2) 0%,
+    transparent 60%
+  );
   border-radius: 50%;
   z-index: -1;
   animation: pulseHub 3s infinite ease-in-out;
 }
 
 @keyframes pulseHub {
-  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
-  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
-  100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.3;
+  }
 }
 
 .hubContent {

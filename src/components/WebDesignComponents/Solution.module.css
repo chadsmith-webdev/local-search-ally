@@ -13,14 +13,24 @@
 }
 
 .eyebrow {
-  display: block;
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 600;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
-  margin-bottom: 12px;
+  color: var(--carolina, #7bafd4);
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 8px;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--carolina, #7bafd4);
+  opacity: 0.6;
 }
 
 .heading {
@@ -144,7 +154,9 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .whatItem:hover {
