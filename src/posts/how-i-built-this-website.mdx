@@ -2,7 +2,7 @@
 title: "How I Built the Local Search Ally Website, Part 1: The Stack, Design & Pages"
 date: "2026-03-13"
 description: "A behind-the-scenes look at building localsearchally.com from scratch — every tech decision, design choice, and page documented transparently."
-image: "/images/case-study-hero.webp"
+image: "/images/case-study-hero.png"
 tags: ["case study", "web development", "next.js", "part 1"]
 ---
 
@@ -37,6 +37,9 @@ I chose Next.js 15. The reasoning was straightforward: React is the skill that o
 **Blog system: MDX** — Markdown files with the ability to embed React components. Each post lives as a `.mdx` file in a `src/posts` folder. Next.js reads those files at build time and generates pages automatically. No database, no CMS, no plugins to maintain. Version-controlled blog posts are a feature, not a limitation.
 
 **Time to first deploy: about 30 minutes** from `npx create-next-app` to live URL.
+ 
+![Diagnostic diagram of the website tech stack](/images/tech-stack-layers.png)  
+*A technical diagnostic diagram illustrating the site's vertical stack: Next.js 15 (Core), MDX (Content Layer), and Vercel (Hosting Infrastructure).*
 
 ---
 
@@ -54,6 +57,9 @@ The colors came from a personal place. I grew up in North Carolina and the Carol
 - **Surface `#141414`** — card and navbar backgrounds. Creates subtle depth without harsh contrast.
 
 The dark theme sets the site apart from the sea of light-background agency sites. It also makes the accent colors hit harder.
+ 
+![Technical diagnostic of the brand color palette](/images/brand-color-rivalry.png)  
+*A visual diagnostic study of the brand's primary color system, showcasing the contrast between Carolina Blue and Duke Blue against a deep charcoal background.*
 
 ### Typography
 
@@ -133,6 +139,9 @@ Written in plain English. No legal maze, just honest documentation of what data 
 ### Service Area Pages
 
 Six dynamic location pages generated from a single template — Siloam Springs, Bentonville, Rogers, Springdale, Fayetteville, and Fort Smith. Each page targets "[service] + [city]" searches with localized content and city-specific CTAs. Built with Next.js dynamic routes so adding a new city is a one-line data change.
+ 
+![Cinematic 3D map of the website architecture](/images/site-architecture-map.png)  
+*A cinematic 3D architectural map visualizing the site's structure, showing the relationship between the core pages and the dynamic service area templates.*
 
 ---
 
