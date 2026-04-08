@@ -237,3 +237,29 @@
     gap: 1rem;
   }
 }
+
+.learnMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  color: var(--carolina, #7bafd4);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(123, 175, 212, 0.3);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.learnMore:hover,
+.learnMore:focus-visible {
+  color: #f0f0f0;
+  border-color: rgba(240, 240, 240, 0.4);
+}
+
+.learnMore:focus-visible {
+  outline: 2px solid var(--carolina, #7bafd4);
+  outline-offset: 4px;
+  border-radius: 2px;
+}

@@ -85,6 +85,26 @@ function IconReputation() {
   );
 }
 
+function IconCitation() {
+  return (
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+    >
+      <rect x='2' y='3' width='14' height='14' rx='2' />
+      <path d='M6 7h6M6 10h6M6 13h4' />
+      <path d='M16 8h4M18 6v4' />
+      <circle cx='18' cy='18' r='3' />
+      <path d='m21 21-1.5-1.5' />
+    </svg>
+  );
+}
+
 // ── Service data ──────────────────────────────────────────────────────────────
 
 const SERVICES = [
@@ -186,6 +206,29 @@ const SERVICES = [
     aside: null,
     cta: null,
   },
+  {
+    number: "05",
+    icon: <IconCitation />,
+    label: "Citation Building",
+    headline: "Your business information needs to match everywhere Google looks",
+    hook: "If your phone number is different on Yelp than it is on Bing, Google has to decide which one to trust. It usually doesn't — it ranks you lower instead.",
+    body: "Citations are mentions of your business name, address, and phone number across directories and platforms. When those details are consistent everywhere — core directories, trade platforms, and local sources — Google treats you as a verified, trustworthy business. When they aren't, rankings suffer quietly. Most contractors have no idea how many incorrect listings are out there under their name.",
+    groups: null,
+    bullets: [
+      "Full citation audit — every directory your business appears on, correct or not",
+      "NAP cleanup — fix wrong phone numbers, old addresses, and duplicate listings",
+      "Core directory build — Yelp, Bing Places, Apple Maps, BBB, Facebook",
+      "Trade platform submissions — Angi, HomeAdvisor, Houzz, and others relevant to your trade",
+      "Ongoing monitoring — catch drift before it damages your rankings",
+      "Monthly report showing citation count, accuracy score, and changes",
+    ],
+    outcome:
+      "After this, Google's signals agree — and your local rankings reflect it.",
+    aside: null,
+    softCTA:
+      "I include a citation audit in the free strategy call — you'll see exactly how inconsistent your listings are before committing to anything.",
+    cta: "/services/citation-building",
+  },
 ];
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -285,6 +328,15 @@ export default function ServicesDetail() {
                 <motion.p variants={fadeUp} className={styles.outcome}>
                   {service.outcome}
                 </motion.p>
+              )}
+
+              {/* Link to dedicated service page */}
+              {service.cta && (
+                <motion.div variants={fadeUp}>
+                  <Link href={service.cta} className={styles.learnMore}>
+                    See how citation building works →
+                  </Link>
+                </motion.div>
               )}
             </div>
           </motion.div>
