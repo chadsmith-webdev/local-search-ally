@@ -37,14 +37,9 @@ export default function ServicesPageFinalCTA() {
 
         <motion.p variants={fadeUp} className={styles.body}>
           If you&rsquo;re in NWA and you do great work but you&rsquo;re not
-          getting found — that&rsquo;s fixable. It&rsquo;s usually not as
-          complicated as it looks from the outside. Let&rsquo;s talk about
-          what&rsquo;s actually happening and whether I can help.
-        </motion.p>
-
-        <motion.p variants={fadeUp} className={styles.reframe}>
-          Most people leave with a clearer picture of what to do, even if they
-          don&rsquo;t hire me.
+          getting found — that&rsquo;s fixable. Most people leave with a
+          clearer picture of what to do, even if they don&rsquo;t hire me.
+          It&rsquo;s usually not as complicated as it looks from the outside.
         </motion.p>
 
         <motion.div variants={fadeUp} className={styles.ctaGroup}>

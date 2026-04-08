@@ -72,11 +72,11 @@ export default function ServicesPageHero() {
               nothing changed in search. I get it.
             </p>
             <p>
-              What I do is different in one way that actually matters: I tie
-              everything together. Your website, your Google Business Profile,
-              your reviews — they&rsquo;re not separate problems. They feed each
-              other. When they&rsquo;re all working, you show up. When one is
-              broken, the others suffer.
+              Your website, your Google Business Profile, your reviews —
+              they&rsquo;re not separate problems. They feed each other. When
+              they&rsquo;re all working, you show up. When one is broken, the
+              others suffer. Most businesses fix them one at a time, with
+              different vendors, and wonder why nothing sticks.
             </p>
             <p>
               I&rsquo;ve built websites and done the SEO for the same

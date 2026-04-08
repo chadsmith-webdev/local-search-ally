@@ -14,21 +14,33 @@ const container = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
+function IconCheck() {
+  return (
+    <svg
+      viewBox='0 0 10 10'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.75'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+    >
+      <polyline points='2 5 4.5 7.5 8.5 2.5' />
+    </svg>
+  );
+}
+
 const GUARANTEES = [
   {
-    icon: "✕",
     text: "No long-term contracts — if it's not working, you can leave",
   },
   {
-    icon: "◎",
-    text: "Every engagement starts with a free strategy call",
+    text: "Every project starts with a free strategy call",
   },
   {
-    icon: "#",
     text: "I'll give you a number in the first call — not a range, an actual number",
   },
   {
-    icon: "~",
     text: "Most clients run 1–3 services — I'll tell you which one to start with",
   },
 ];
@@ -42,7 +54,7 @@ const STEPS = [
   {
     n: "2",
     title: "Fix First",
-    desc: "We focus on the highest-impact gaps — the things currently costing you the most calls.",
+    desc: "I focus on the highest-impact gaps — the things currently costing you the most calls.",
   },
   {
     n: "3",
@@ -64,7 +76,7 @@ export default function ServicesPricing() {
         {/* Left: Pricing commitments */}
         <div className={styles.left}>
           <motion.span variants={fadeUp} className={styles.eyebrow}>
-            Pricing
+            How Pricing Works
           </motion.span>
           <motion.h2 variants={fadeUp} className={styles.h2}>
             Honest pricing.{" "}
@@ -83,8 +95,8 @@ export default function ServicesPricing() {
                 variants={fadeUp}
                 className={styles.guarantee}
               >
-                <span className={styles.guaranteeIcon} aria-hidden='true'>
-                  {g.icon}
+                <span className={styles.guaranteeIcon}>
+                  <IconCheck />
                 </span>
                 <p>{g.text}</p>
               </motion.li>
