@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -71,10 +72,13 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        {/* Desktop CTA */}
-        <Link href='/contact' className={`${styles.cta} ${styles.desktopCta}`}>
-          Let's Talk — It's Free
-        </Link>
+        {/* Desktop phone CTA */}
+        <a
+          href='tel:+14793808626'
+          className={`${styles.phone} ${styles.desktopCta}`}
+        >
+          (479) 380-8626
+        </a>
 
         {/* Mobile menu button */}
         <button
@@ -126,6 +130,9 @@ export default function Navbar() {
             {link.label}
           </Link>
         ))}
+        <a href='tel:+14793808626' className={styles.mobilePhone}>
+          (479) 380-8626
+        </a>
         <Link
           href='/contact'
           className={styles.mobileCta}

@@ -73,7 +73,7 @@
   color: var(--text);
 }
 
-.cta {
+.phone {
   font-family: var(--font-ui);
   font-size: 0.875rem;
   font-weight: 600;
@@ -82,13 +82,14 @@
   border: 1px solid rgba(123, 175, 212, 0.3);
   border-radius: 6px;
   padding: 0.5rem 1rem;
+  white-space: nowrap;
   transition:
     border-color 0.2s ease,
     color 0.2s ease,
     background 0.2s ease;
 }
 
-.cta:hover {
+.phone:hover {
   border-color: var(--carolina);
   background: rgba(123, 175, 212, 0.08);
 }
@@ -131,10 +132,19 @@
   color: var(--text);
 }
 
+.mobileMenu .mobilePhone {
+  color: var(--carolina);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.01em;
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+  margin-top: 0.5rem;
+}
+
 .mobileMenu .mobileCta {
   color: var(--carolina);
   font-weight: 600;
-  margin-top: 0.5rem;
   border-top: 1px solid var(--border);
   padding-top: 1.25rem;
 }
