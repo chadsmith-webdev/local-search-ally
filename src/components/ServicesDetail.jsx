@@ -141,7 +141,8 @@ const SERVICES = [
     ],
     outcome:
       "After this, you rank for the searches that used to go to your competitors.",
-    cta: null,
+    cta: "/services/local-seo",
+    ctaLabel: "See how local SEO works",
   },
   {
     number: "02",
@@ -162,7 +163,8 @@ const SERVICES = [
       "After this, you have a site that ranks and converts. Not one or the other.",
     aside:
       "Starts with a 1-hour kickoff call. Most sites are live in 3–4 weeks.",
-    cta: null,
+    cta: "/services/web-design",
+    ctaLabel: "See how web design works",
   },
   {
     number: "03",
@@ -184,7 +186,8 @@ const SERVICES = [
     aside: null,
     softCTA:
       "I audit your GBP as part of the free strategy call — you'll know exactly what's missing before you decide anything.",
-    cta: null,
+    cta: "/services/gbp-optimization",
+    ctaLabel: "See how GBP optimization works",
   },
   {
     number: "04",
@@ -204,13 +207,15 @@ const SERVICES = [
     outcome:
       "Most clients add 5–10 new reviews per month within 60 days of setup.",
     aside: null,
-    cta: null,
+    cta: "/services/reputation-management",
+    ctaLabel: "See how reputation management works",
   },
   {
     number: "05",
     icon: <IconCitation />,
     label: "Citation Building",
-    headline: "Your business information needs to match everywhere Google looks",
+    headline:
+      "Your business information needs to match everywhere Google looks",
     hook: "If your phone number is different on Yelp than it is on Bing, Google has to decide which one to trust. It usually doesn't — it ranks you lower instead.",
     body: "Citations are mentions of your business name, address, and phone number across directories and platforms. When those details are consistent everywhere — core directories, trade platforms, and local sources — Google treats you as a verified, trustworthy business. When they aren't, rankings suffer quietly. Most contractors have no idea how many incorrect listings are out there under their name.",
     groups: null,
@@ -228,6 +233,7 @@ const SERVICES = [
     softCTA:
       "I include a citation audit in the free strategy call — you'll see exactly how inconsistent your listings are before committing to anything.",
     cta: "/services/citation-building",
+    ctaLabel: "See how citation building works",
   },
 ];
 
@@ -334,7 +340,7 @@ export default function ServicesDetail() {
               {service.cta && (
                 <motion.div variants={fadeUp}>
                   <Link href={service.cta} className={styles.learnMore}>
-                    See how citation building works →
+                    {service.ctaLabel} →
                   </Link>
                 </motion.div>
               )}
