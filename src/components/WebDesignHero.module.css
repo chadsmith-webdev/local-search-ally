@@ -1,137 +1,174 @@
 .hero {
-  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--bg);
+  background: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);
+  position: relative;
   overflow: hidden;
 }
 
 .hero::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
   background: radial-gradient(
-    ellipse 70% 50% at 50% 40%,
-    rgba(123, 175, 212, 0.06) 0%,
+    circle at 100% 0%,
+    rgba(123, 175, 212, 0.1),
     transparent 70%
   );
   pointer-events: none;
-  z-index: 0;
 }
 
 .container {
   position: relative;
   z-index: 2;
-  width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 120px 24px 80px;
+  padding: 120px var(--page-gutter, 40px) 80px var(--page-gutter, 40px);
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  max-width: 640px;
+  gap: 24px;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
+  line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--text);
-  line-height: 1.1;
-  margin-bottom: 20px;
+  color: #f0f0f0;
+  margin: 0;
 }
 
 .colorSpan {
-  color: var(--carolina);
+  color: #7bafd4;
 }
 
 .subheading {
-  font-family: var(--font-ui);
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: var(--text);
-  line-height: 1.7;
-  margin-bottom: 16px;
-  max-width: 560px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #7bafd4;
+  margin: 0 auto;
+  font-weight: 500;
+  max-width: 600px;
 }
 
 .description {
-  font-family: var(--font-ui);
   font-size: 1rem;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 32px;
-  max-width: 540px;
+  line-height: 1.8;
+  color: #f0f0f0;
+  margin: 0 auto;
+  max-width: 650px;
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--font-ui);
+  gap: 8px;
+  padding: 14px 28px;
+  background-color: transparent;
+  border: 2px solid #7bafd4;
+  border-radius: 6px;
+  color: #7bafd4;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--bg);
-  background: var(--carolina);
-  padding: 14px 32px;
-  border-radius: 8px;
   text-decoration: none;
-  margin-bottom: 28px;
-  transition: filter 0.2s ease, transform 0.15s ease;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  width: fit-content;
+  margin: 16px auto 0 auto;
+  box-shadow: 0 2px 16px 0 rgba(123, 175, 212, 0.08);
 }
 
-.cta:hover {
-  filter: brightness(1.1);
-  transform: translateY(-1px);
+.cta:hover,
+.cta:active {
+  background-color: rgba(123, 175, 212, 0.13);
+  border-color: #f0f0f0;
+  color: #f0f0f0;
+  box-shadow: 0 4px 24px 0 rgba(123, 175, 212, 0.13);
 }
 
 .cta:focus-visible {
-  outline: 2px solid var(--carolina);
-  outline-offset: 3px;
+  outline: 2px solid #7bafd4;
+  outline-offset: 4px;
 }
 
 .trustStat {
   display: flex;
   align-items: center;
-  font-family: var(--font-ui);
-  font-size: 0.875rem;
-  color: var(--muted);
-  line-height: 1.5;
-  gap: 0;
-  margin-bottom: 0;
+  gap: 8px;
+  color: #b6d6ec;
+  font-size: 1rem;
+  margin: 18px auto 0 auto;
+  background: rgba(123, 175, 212, 0.07);
+  border-radius: 5px;
+  padding: 8px 18px 8px 10px;
+  font-weight: 500;
+  box-shadow: 0 1px 8px 0 rgba(123, 175, 212, 0.07);
 }
-
 .trustStat strong {
-  color: var(--carolina);
-  font-weight: 600;
+  color: #7bafd4;
+  font-weight: 700;
+}
+.trustSource {
+  font-size: 0.85em;
+  color: #7bafd4;
+  margin-left: 8px;
+  opacity: 0.7;
 }
 
 .callLink {
   display: none;
   align-items: center;
-  gap: 8px;
-  margin-top: 24px;
-  text-decoration: none;
-  font-family: var(--font-ui);
+  gap: 6px;
+  color: #7bafd4;
   font-size: 1rem;
-  color: var(--carolina);
-  transition: opacity 0.15s ease;
-}
-
-.callLink:hover {
-  opacity: 0.8;
-}
-
-.phoneNumber {
   font-weight: 600;
+  text-decoration: none;
+  margin: 10px auto 0 auto;
+  transition: color 0.2s;
+}
+.callLink:hover,
+.callLink:focus-visible {
+  color: #f0f0f0;
+  text-decoration: underline;
+}
+.phoneNumber {
+  font-family: var(--font-mono, monospace);
+  font-size: 1em;
+  margin-left: 2px;
+}
+
+@media (max-width: 600px) {
+  .callLink {
+    display: inline-flex;
+  }
 }
 
 @media (max-width: 768px) {
-  .callLink {
-    display: flex;
+  .container {
+    padding: 60px 24px;
+  }
+
+  .heading {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .subheading {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
   }
 }
