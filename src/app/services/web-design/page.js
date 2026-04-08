@@ -2,6 +2,7 @@ import WebDesignHero from "@/components/WebDesignHero";
 import WebDesignProblem from "@/components/WebDesignComponents/Problem";
 import WebDesignSolution from "@/components/WebDesignComponents/Solution";
 import WebDesignProcess from "@/components/WebDesignComponents/Process";
+import WebDesignHowItWorks from "@/components/WebDesignComponents/HowItWorks";
 import WebDesignProof from "@/components/WebDesignComponents/Proof";
 import WebDesignFAQ from "@/components/WebDesignComponents/FAQ";
 import FinalCTA from "@/components/FinalCTASection";
@@ -143,6 +144,7 @@ export default function WebDesignPage() {
       <WebDesignProblem />
       <WebDesignSolution />
       <WebDesignProcess />
+      <WebDesignHowItWorks />
       <WebDesignProof />
       <WebDesignFAQ />
       <FinalCTA />

@@ -1,133 +1,121 @@
 "use client";
 
-import styles from "./Solution.module.css";
 import { motion } from "framer-motion";
+import styles from "./Solution.module.css";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 export default function Solution() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-labelledby="solution-heading">
       <div className={styles.container}>
         <motion.div
-          initial='hidden'
-          whileInView='visible'
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
+          className={styles.header}
         >
-          <span className={styles.eyebrow}>The Build</span>
-          <h2 className={styles.heading}>A Website That Actually Works</h2>
-          <p className={styles.intro}>
-            I build custom websites on Next.js — fast, mobile-first, and
-            optimized to convert visitors into calls.
-          </p>
+          <span className={styles.eyebrow}>The Fix</span>
+          <h2 className={styles.heading} id="solution-heading">A Website Built to Convert — Not Just Look Good</h2>
         </motion.div>
 
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={fadeUp}
-          className={styles.answerFirst}
-        >
-          <h3>Websites as a conversion engine, not a brochure.</h3>
-          <p>
-            Your website is your 24/7 salesman. It needs to load in under 3
-            seconds, look perfect on phones, clearly show what you do, and have
-            an obvious next step (call, form, booking). Everything else is
-            distraction.
-          </p>
-        </motion.div>
+        <div className={styles.grid}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            transition={{ delay: 0.1 }}
+            className={styles.left}
+          >
+            <div className={styles.answerFirst}>
+              <p>
+                Most contractor websites are built by designers who don't
+                understand SEO, or by SEO people who can't design. I do both.
+                Every page is custom-coded, mobile-first, and built to
+                generate calls — not win a design award.
+              </p>
+            </div>
 
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={fadeUp}
-          className={styles.what}
-        >
-          <h3>What You Get</h3>
+            <div className={styles.transparency}>
+              <h3 className={styles.transparencyHeading}>What I will never do</h3>
+              <ul className={styles.transparencyList}>
+                <li>Use a drag-and-drop template and call it custom</li>
+                <li>Build a site that can't be found on Google</li>
+                <li>Lock you into a hosting contract you can't leave</li>
+                <li>Deliver a "pretty" site that doesn't convert</li>
+              </ul>
+            </div>
+          </motion.div>
 
-          <div className={styles.whatItem}>
-            <h4>1. Custom Design Built for Your Customers</h4>
-            <p>
-              No templates. Every site is designed from scratch for your
-              business, your market, and your customers. The design is clean,
-              professional, and focused on one thing: making people comfortable
-              calling you.
-            </p>
-          </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            transition={{ delay: 0.2 }}
+            className={styles.right}
+          >
+            <h3 className={styles.whatHeading}>What's included</h3>
+            <div className={styles.whatGrid}>
+              <div className={styles.whatItem}>
+                <div className={styles.whatIcon}>
+                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="2" y="3" width="14" height="12" rx="2" />
+                    <path d="M9 15v2M5 17h8" />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Custom Design &amp; Code</h4>
+                  <p>No templates. Built on Next.js for speed, SEO, and flexibility. Your site, your brand, your code.</p>
+                </div>
+              </div>
 
-          <div className={styles.whatItem}>
-            <h4>2. Mobile-First & Fast</h4>
-            <p>
-              Built on Next.js with optimized images, lazy loading, and minimal
-              code. Pages load in under 2 seconds on both desktop and mobile.
-              Google ranks fast sites higher. Your customers don't bounce from
-              slow loading.
-            </p>
-          </div>
+              <div className={styles.whatItem}>
+                <div className={styles.whatIcon}>
+                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="4" y="1" width="10" height="16" rx="2" />
+                    <path d="M9 14h.01" />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Mobile-First Build</h4>
+                  <p>Phone experience designed first. Fast load times, click-to-call buttons, and thumb-friendly navigation.</p>
+                </div>
+              </div>
 
-          <div className={styles.whatItem}>
-            <h4>3. SEO Built In</h4>
-            <p>
-              Every page has clear H1/H2 structure, optimized meta tags, schema
-              markup, mobile responsiveness, and fast load times. I'm not
-              building a separate "SEO thing" — it's baked into every page. Your
-              site ranks on Google because it's built right.
-            </p>
-          </div>
+              <div className={styles.whatItem}>
+                <div className={styles.whatIcon}>
+                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <circle cx="9" cy="9" r="6" />
+                    <path d="M13.5 13.5L17 17" />
+                  </svg>
+                </div>
+                <div>
+                  <h4>SEO Built In</h4>
+                  <p>Proper heading structure, meta tags, fast Core Web Vitals, structured data, and local keyword targeting from day one.</p>
+                </div>
+              </div>
 
-          <div className={styles.whatItem}>
-            <h4>4. One Clear Call-to-Action Per Page</h4>
-            <p>
-              Hero page? "Call us." Service page? "Schedule a free estimate."
-              Contact page? Easy form. No confusion. No fluff. Visitors know
-              exactly what to do next, and the path to calling you is
-              frictionless.
-            </p>
-          </div>
-
-          <div className={styles.whatItem}>
-            <h4>5. Easy to Update</h4>
-            <p>
-              You can updating service descriptions, testimonials, photos, and
-              contact information without touching code. Content changes are
-              yours to own. I handle the technical parts.
-            </p>
-          </div>
-
-          <div className={styles.whatItem}>
-            <h4>6. Deployed on Vercel</h4>
-            <p>
-              Every site runs on Vercel's global CDN — meaning it's fast
-              everywhere, secure, and automatically scaled. No server
-              management. No downtime. Just reliability.
-            </p>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={fadeUp}
-          className={styles.transparency}
-        >
-          <h3>You own it. I just build it.</h3>
-          <p>
-            Your domain. Your data. Your website. I build it, deploy it, and
-            show you how to manage it. You're never locked in or dependent on me
-            for basic updates. I'm here to help, but you own the asset.
-          </p>
-        </motion.div>
+              <div className={styles.whatItem}>
+                <div className={styles.whatIcon}>
+                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M16.5 12.69v2.34a1.56 1.56 0 0 1-1.7 1.56 15.44 15.44 0 0 1-6.73-2.4" />
+                    <path d="M3.4 3.6A15.2 15.2 0 0 0 8.07 8.27" />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Lead-Gen Focus</h4>
+                  <p>Every page has one clear goal: get the visitor to call, book, or fill out a form. No dead ends.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
