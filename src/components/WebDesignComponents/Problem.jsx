@@ -94,11 +94,22 @@ export default function Problem() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
-            className={styles.statHighlight}
+            className={styles.statistic}
+            aria-label='Web presence statistic'
           >
-            <div className={styles.statNumber}>61%</div>
-            <p>of consumers are more likely to contact a local business that has a website.</p>
-            <span className={styles.statSource}>BrightLocal</span>
+            <div className={styles.statHighlight} aria-hidden='true'>
+              <div className={styles.statNumber}>61%</div>
+              <div className={styles.statLabel}>
+                of consumers more likely to contact a business with a website
+              </div>
+            </div>
+            <p>
+              Without a website, you lose every potential customer who tries
+              to look you up before calling. A site that loads fast, ranks
+              locally, and has a clear call-to-action is the difference
+              between getting the job and losing it.
+            </p>
+            <p className={styles.source}>BrightLocal</p>
           </motion.div>
         </div>
       </div>

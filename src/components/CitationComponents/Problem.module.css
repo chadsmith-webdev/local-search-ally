@@ -2,7 +2,6 @@
   padding: var(--section-spacing, 100px) 0;
   background: var(--bg, #0a0a0a);
   position: relative;
-  overflow: hidden;
 }
 
 /* Subtle upward glow from bottom */
@@ -85,7 +84,17 @@
 
 /* Grid Container */
 .contentGrid {
-  display: contents;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 60px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 .problems {
@@ -179,7 +188,8 @@
   );
   border: 1px solid rgba(123, 175, 212, 0.25);
   border-radius: 12px;
-  position: relative;
+  position: sticky;
+  top: 120px;
   overflow: hidden;
 }
 

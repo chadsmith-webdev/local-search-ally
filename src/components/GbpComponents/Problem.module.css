@@ -2,7 +2,6 @@
   padding: var(--section-spacing, 100px) 0;
   background: var(--bg, #0a0a0a);
   position: relative;
-  overflow: hidden;
 }
 
 .section::after {
@@ -37,7 +36,7 @@
   composes: container-cinematic from global;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 48px;
   position: relative;
   z-index: 1;
 }
@@ -90,7 +89,8 @@
   );
   border: 1px solid rgba(123, 175, 212, 0.25);
   border-radius: 12px;
-  position: relative;
+  position: sticky;
+  top: 120px;
   overflow: hidden;
 }
 
@@ -155,7 +155,17 @@
 
 /* Card grid */
 .contentGrid {
-  display: contents;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 60px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 .problems {
@@ -240,16 +250,51 @@
 }
 
 @media (max-width: 768px) {
-  .statistic {
+  .section {
+    padding: 60px 24px;
+  }
+
+  .container {
+    gap: 40px;
+  }
+
+  .problems {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .problem {
     padding: 24px;
   }
-  .statistic p {
-    font-size: 1rem;
-  }
+
   .heading {
     font-size: clamp(1.5rem, 5vw, 2rem);
   }
+
   .intro {
     font-size: 1rem;
+  }
+
+  .statistic {
+    padding: 24px;
+  }
+
+  .statistic p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .problems {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .problem {
+    padding: 18px;
+  }
+
+  .statistic {
+    padding: 18px;
   }
 }

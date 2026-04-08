@@ -316,57 +316,52 @@
 }
 
 .commitment {
+  background: var(--bg);
+  border: 1px solid rgba(123, 175, 212, 0.15);
+  border-radius: 12px;
   padding: 40px;
-  background: linear-gradient(
-    135deg,
-    rgba(123, 175, 212, 0.08) 0%,
-    rgba(26, 58, 82, 0.08) 100%
-  );
-  border: 1px solid rgba(123, 175, 212, 0.2);
-  border-radius: 8px;
 }
 
-.commitment h3 {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
+.commitmentHeading {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--text, #f0f0f0);
-  margin: 0 0 24px 0;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
 }
 
 .list {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
 
-.list li {
+@media (max-width: 600px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.listItem {
+  font-family: var(--font-ui);
   font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text, #f0f0f0);
+  color: var(--text);
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
+  line-height: 1.5;
 }
 
 .checkmark {
-  color: var(--carolina, #7bafd4);
-  font-weight: 700;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.checkmark svg {
-  width: 100%;
-  height: 100%;
+  margin-top: 2px;
 }
 
 @media (max-width: 768px) {
@@ -388,13 +383,5 @@
 
   .commitment {
     padding: 24px;
-  }
-
-  .commitment h3 {
-    font-size: 1.1rem;
-  }
-
-  .list li {
-    font-size: 0.95rem;
   }
 }

@@ -140,72 +140,22 @@ export default function Proof() {
           variants={fadeUp}
           className={styles.commitment}
         >
-          <h3>What You Can Count On</h3>
+          <h3 className={styles.commitmentHeading}>My commitments to you</h3>
           <ul className={styles.list}>
-            <li>
-              <span className={styles.checkmark}>
-                <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                >
-                  <polyline points='2 9 7 14 16 4' />
+            {[
+              "I will never claim results I haven't achieved.",
+              "I will tell you if something is outside my skill set.",
+              "I will never lock you into a contract.",
+              "I will communicate clearly and often.",
+            ].map((item) => (
+              <li key={item} className={styles.listItem}>
+                <svg className={styles.checkmark} viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <circle cx="9" cy="9" r="8" stroke="var(--carolina)" strokeWidth="1.2" />
+                  <path d="M5.5 9l2.5 2.5 4.5-5" stroke="var(--carolina)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </span>
-              I never claim results I haven't achieved
-            </li>
-            <li>
-              <span className={styles.checkmark}>
-                <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                >
-                  <polyline points='2 9 7 14 16 4' />
-                </svg>
-              </span>
-              Monthly reports showing exactly what changed
-            </li>
-            <li>
-              <span className={styles.checkmark}>
-                <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                >
-                  <polyline points='2 9 7 14 16 4' />
-                </svg>
-              </span>
-              Direct access — you're talking to me, not a team
-            </li>
-            <li>
-              <span className={styles.checkmark}>
-                <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                >
-                  <polyline points='2 9 7 14 16 4' />
-                </svg>
-              </span>
-              Honest assessment about what's possible in your market
-            </li>
-            <li>
-              <span className={styles.checkmark}>✓</span>
-              No contracts — stop anytime if it's not working
-            </li>
+                {item}
+              </li>
+            ))}
           </ul>
         </motion.div>
       </div>

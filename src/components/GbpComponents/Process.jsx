@@ -1,136 +1,141 @@
 "use client";
 
-import styles from "./Process.module.css";
 import { motion } from "framer-motion";
+import styles from "./Process.module.css";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 export default function Process() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
-  const steps = [
-    {
-      number: "01",
-      title: "Profile Audit",
-      description:
-        "I go through every field, photo, review, and category in your GBP against Google's ranking criteria. You get a plain-language report showing exactly what's incomplete, incorrect, or missing — and what I'm going to fix first.",
-    },
-    {
-      number: "02",
-      title: "Optimization Launch",
-      description:
-        "I fix the priority gaps: business information verified, categories corrected, description rewritten with local keywords, high-quality photos uploaded, review request system set up, and services list built out.",
-    },
-    {
-      number: "03",
-      title: "Ongoing Management",
-      description:
-        "Monthly posts, photo updates, review monitoring and responses, Q&A management, and performance tracking. Your profile stays fresh and competitive while you focus on the work.",
-    },
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-labelledby="gbp-process-heading">
       <div className={styles.container}>
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={fadeUp}
-          className={styles.header}
-        >
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className={styles.header}>
           <div className={styles.eyebrowContainer}>
-            <span className={styles.eyebrow}>Strategic Engineering</span>
-            <span className={styles.statusNode}>
-              <span className={styles.pulsingNode}></span>
-              LIVE_SYSTEM
-            </span>
+            <span className={styles.eyebrow}>The Process</span>
+            <div className={styles.statusNode} aria-hidden="true">
+              <span className={styles.pulsingNode} />
+              <span className={styles.statusText}>LIVE_SYSTEM</span>
+            </div>
           </div>
-          <h2 className={styles.heading}>The GBP Optimization Engine</h2>
+          <h2 className={styles.heading} id="gbp-process-heading">The GBP Optimization Engine</h2>
           <p className={styles.intro}>
-            A precise, repeatable process built for Northwest Arkansas home
-            service trades. Every step targets the factors Google uses to rank
-            local businesses.
+            Three phases targeting the factors Google actually uses to rank local
+            businesses. Every step is documented and reported — you always know where things stand.
           </p>
         </motion.div>
 
         <div className={styles.grid}>
-          {/* Main Steps Column */}
           <motion.div
-            initial='hidden'
-            whileInView='visible'
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            variants={containerVariants}
+            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.2 } } }}
             className={styles.mainSteps}
           >
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                variants={fadeUp}
-                className={`${styles.step} glass-premium hud-frame`}
-              >
-                <div className={styles.stepHeader}>
-                  <span className={styles.stepTag}>STG-0{index + 1}</span>
-                  <div className={styles.stepNumber}>{step.number}</div>
-                </div>
-                <h3 className={styles.stepTitle}>{step.title}</h3>
-                <p className={styles.stepDescription}>{step.description}</p>
-                <div className='bracket-bottom'></div>
-                <div className='bracket-right'></div>
-              </motion.div>
-            ))}
+            <motion.div variants={fadeUp} className={`${styles.step} glass-premium hud-frame`}>
+              <div className={styles.stepHeader}>
+                <span className={styles.stepTag}>STG-01</span>
+                <h3 className={styles.stepTitle}>Profile Audit</h3>
+              </div>
+              <p className={styles.stepDesc}>
+                I go through every field, photo, review, and category in your GBP
+                against Google's ranking criteria. You get a plain-language report
+                showing what's incomplete, incorrect, or missing — and what gets fixed first.
+              </p>
+              <ul className={styles.stepList}>
+                <li>GBP audit against Google's local ranking factors</li>
+                <li>Category and attribute review</li>
+                <li>Photo and review quality assessment</li>
+                <li>Competitor profile comparison</li>
+              </ul>
+            </motion.div>
+
+            <motion.div variants={fadeUp} className={`${styles.step} glass-premium hud-frame`}>
+              <div className={styles.stepHeader}>
+                <span className={styles.stepTag}>STG-02</span>
+                <h3 className={styles.stepTitle}>Optimization Launch</h3>
+              </div>
+              <p className={styles.stepDesc}>
+                Starting with the highest-impact gaps. Business information verified,
+                categories corrected, description rewritten with local keywords,
+                high-quality photos uploaded, and review request system configured.
+              </p>
+              <ul className={styles.stepList}>
+                <li>Business info verification and corrections</li>
+                <li>Category and description optimization</li>
+                <li>Photo upload and geo-tagging</li>
+                <li>Review request process setup and templates</li>
+              </ul>
+            </motion.div>
+
+            <motion.div variants={fadeUp} className={`${styles.step} glass-premium hud-frame`}>
+              <div className={styles.stepHeader}>
+                <span className={styles.stepTag}>STG-03</span>
+                <h3 className={styles.stepTitle}>Ongoing Management</h3>
+              </div>
+              <p className={styles.stepDesc}>
+                Monthly posts, photo updates, review monitoring and responses,
+                Q&amp;A management, and performance tracking. Your profile stays
+                active and competitive while you focus on the work.
+              </p>
+              <ul className={styles.stepList}>
+                <li>Monthly Google Posts and photo updates</li>
+                <li>Review monitoring and response drafts</li>
+                <li>Q&amp;A and spam monitoring</li>
+                <li>Monthly performance and visibility report</li>
+              </ul>
+            </motion.div>
           </motion.div>
 
-          {/* Sidebar Timeline Column */}
           <motion.aside
-            initial='hidden'
-            whileInView='visible'
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
-            className={`${styles.sidebar} glass-premium hud-frame`}
+            className={styles.sidebar}
+            aria-label="GBP optimization timeline"
           >
-            <div className={styles.sidebarHeader}>
-              <h3 className={styles.sidebarTitle}>Deployment Timeline</h3>
-              <span className={styles.sidebarSub}>ESTIMATED_VELOCITY</span>
-            </div>
-
-            <div className={styles.timelineList}>
-              {[
-                { label: "Week 1", text: "Audit & Baseline Report" },
-                { label: "Weeks 1–2", text: "Profile Optimization Launch" },
-                { label: "Weeks 2–4", text: "Photos & Keyword Strategy" },
-                { label: "30–60 Days", text: "Review System Active" },
-                { label: "60–90 Days", text: "Map Pack Signal Growth" },
-                { label: "Ongoing", text: "Monthly Posts & Management" },
-              ].map((item, idx) => (
-                <div key={idx} className={styles.timelineItem}>
-                  <div className={styles.timelineNode}>
-                    <div className={styles.pulsingNode}></div>
-                    <div className={styles.timelineLine}></div>
-                  </div>
-                  <div className={styles.timelineContent}>
-                    <span className={styles.timelineLabel}>{item.label}</span>
-                    <p className={styles.timelineText}>{item.text}</p>
-                  </div>
+            <h3 className={styles.sidebarHeading}>Timeline</h3>
+            <ol className={styles.timeline}>
+              <li className={styles.timelineItem}>
+                <span className={styles.timelineDot} aria-hidden="true" />
+                <div>
+                  <span className={styles.timelineTag}>Week 1</span>
+                  <p className={styles.timelineDesc}>Audit complete — baseline report delivered</p>
                 </div>
-              ))}
-            </div>
+              </li>
+              <li className={styles.timelineItem}>
+                <span className={styles.timelineDot} aria-hidden="true" />
+                <div>
+                  <span className={styles.timelineTag}>Weeks 1–2</span>
+                  <p className={styles.timelineDesc}>Profile optimization launched, photos uploaded</p>
+                </div>
+              </li>
+              <li className={styles.timelineItem}>
+                <span className={styles.timelineDot} aria-hidden="true" />
+                <div>
+                  <span className={styles.timelineTag}>30–60 Days</span>
+                  <p className={styles.timelineDesc}>Review system active, Map Pack signal growth begins</p>
+                </div>
+              </li>
+              <li className={styles.timelineItem}>
+                <span className={styles.timelineDot} aria-hidden="true" />
+                <div>
+                  <span className={styles.timelineTag}>60–90 Days</span>
+                  <p className={styles.timelineDesc}>Rankings solidify, review count building consistently</p>
+                </div>
+              </li>
+              <li className={styles.timelineItem}>
+                <span className={styles.timelineDot} aria-hidden="true" />
+                <div>
+                  <span className={styles.timelineTag}>Ongoing</span>
+                  <p className={styles.timelineDesc}>Monthly posts, reports, and profile management</p>
+                </div>
+              </li>
+            </ol>
           </motion.aside>
         </div>
       </div>

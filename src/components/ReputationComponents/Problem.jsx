@@ -91,11 +91,21 @@ export default function Problem() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
-            className={styles.statHighlight}
+            className={styles.statistic}
+            aria-label='Review trust statistic'
           >
-            <div className={styles.statNumber}>88%</div>
-            <p>of consumers trust online reviews as much as personal recommendations — yet most contractors have fewer than 10.</p>
-            <span className={styles.statSource}>Think With Google</span>
+            <div className={styles.statHighlight} aria-hidden='true'>
+              <div className={styles.statNumber}>88%</div>
+              <div className={styles.statLabel}>
+                of consumers trust online reviews as much as personal recommendations
+              </div>
+            </div>
+            <p>
+              Most contractors have fewer than 10 reviews. The ones at the
+              top of the Map Pack have dozens — and they keep coming in.
+              The gap isn't quality of work. It's a system for asking.
+            </p>
+            <p className={styles.source}>Think With Google</p>
           </motion.div>
         </div>
       </div>

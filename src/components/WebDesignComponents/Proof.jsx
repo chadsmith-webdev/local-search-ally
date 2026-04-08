@@ -36,17 +36,9 @@ export default function Proof() {
                   <path d="M10 16h.01" />
                 </svg>
               </div>
-              <h3>Mobile Speed</h3>
-              <p>88% of local mobile searches lead to a call or visit within 24 hours. A fast, phone-optimized site captures that intent before it goes elsewhere.</p>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className={styles.centralHub} aria-label="Lead generation result">
-              <div className={styles.hubCore} aria-hidden="true" />
-              <div className={styles.hubPulse} aria-hidden="true" />
-              <div className={styles.hubContent}>
-                <span className={styles.hubLabel}>LEADS</span>
-                <span className={styles.hubSub}>GENERATED</span>
-                <span className={styles.hubMeta}>CONVERSION_ACTIVE</span>
+              <div className={styles.pillarContent}>
+                <h3>Mobile Speed</h3>
+                <p>88% of local mobile searches lead to a call or visit within 24 hours. A fast, phone-optimized site captures that intent before it goes elsewhere.</p>
               </div>
             </motion.div>
 
@@ -57,18 +49,33 @@ export default function Proof() {
                   <path d="M13.5 13.5L18 18" />
                 </svg>
               </div>
-              <h3>SEO Foundation</h3>
-              <p>Proper heading hierarchy, meta tags, structured data, and fast Core Web Vitals. Every page is built to rank for the services you offer in the cities you serve.</p>
+              <div className={styles.pillarContent}>
+                <h3>SEO Foundation</h3>
+                <p>Proper heading hierarchy, meta tags, structured data, and fast Core Web Vitals. Every page is built to rank for the services you offer in the cities you serve.</p>
+              </div>
             </motion.div>
 
-            <motion.div variants={fadeUp} className={`${styles.pillar} ${styles.pillarBottom}`} tabIndex={0}>
+            <motion.div variants={fadeUp} className={styles.pillar} tabIndex={0}>
               <div className={styles.pillarIcon} aria-hidden="true">
                 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 3H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h5.5l3.5 3.5 3.5-3.5H18a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z" />
                 </svg>
               </div>
-              <h3>Clear Conversion Paths</h3>
-              <p>Every page has one job: get the visitor to call, book, or submit a form. No dead ends, no confusion, no buried phone numbers.</p>
+              <div className={styles.pillarContent}>
+                <h3>Clear Conversion Paths</h3>
+                <p>Every page has one job: get the visitor to call, book, or submit a form. No dead ends, no confusion, no buried phone numbers.</p>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeUp} className={styles.centralHub} aria-label="Lead generation result">
+              <div className={styles.hubCore}>
+                <div className={styles.hubPulse}></div>
+                <div className={styles.hubContent}>
+                  <span className={styles.hubTag}>TARGET_DESTINATION</span>
+                  <div className={styles.hubTitle}>LEADS GENERATED</div>
+                  <div className={styles.hubStatus}>CONVERSION_ACTIVE</div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </motion.div>

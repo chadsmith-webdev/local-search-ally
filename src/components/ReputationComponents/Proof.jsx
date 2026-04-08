@@ -35,17 +35,9 @@ export default function Proof() {
                   <path d="M10 2l2.6 6h6.4l-5.2 3.8 2 6L10 14l-5.8 3.8 2-6L1 8h6.4z" />
                 </svg>
               </div>
-              <h3>Review Volume</h3>
-              <p>More reviews signal more customers served. Low counts make you invisible regardless of quality.</p>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className={styles.centralHub} aria-label="Trusted reputation result">
-              <div className={styles.hubCore} aria-hidden="true" />
-              <div className={styles.hubPulse} aria-hidden="true" />
-              <div className={styles.hubContent}>
-                <span className={styles.hubLabel}>TRUSTED</span>
-                <span className={styles.hubSub}>REPUTATION</span>
-                <span className={styles.hubMeta}>VISIBILITY_ACHIEVED</span>
+              <div className={styles.pillarContent}>
+                <h3>Review Volume</h3>
+                <p>More reviews signal more customers served. Low counts make you invisible regardless of quality.</p>
               </div>
             </motion.div>
 
@@ -56,18 +48,33 @@ export default function Proof() {
                   <path d="M10 6v4l3 2" />
                 </svg>
               </div>
-              <h3>Rating Quality</h3>
-              <p>4.7+ with recent reviews outranks 4.2 with old ones. Recency matters as much as the number.</p>
+              <div className={styles.pillarContent}>
+                <h3>Rating Quality</h3>
+                <p>4.7+ with recent reviews outranks 4.2 with old ones. Recency matters as much as the number.</p>
+              </div>
             </motion.div>
 
-            <motion.div variants={fadeUp} className={`${styles.pillar} ${styles.pillarBottom}`} tabIndex={0}>
+            <motion.div variants={fadeUp} className={styles.pillar} tabIndex={0}>
               <div className={styles.pillarIcon} aria-hidden="true">
                 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 3H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h5.5l3.5 3.5 3.5-3.5H18a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z" />
                 </svg>
               </div>
-              <h3>Response Rate</h3>
-              <p>Owners who respond to reviews — good and bad — signal trust and engagement that Google rewards.</p>
+              <div className={styles.pillarContent}>
+                <h3>Response Rate</h3>
+                <p>Owners who respond to reviews — good and bad — signal trust and engagement that Google rewards.</p>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeUp} className={styles.centralHub} aria-label="Trusted reputation result">
+              <div className={styles.hubCore}>
+                <div className={styles.hubPulse}></div>
+                <div className={styles.hubContent}>
+                  <span className={styles.hubTag}>TARGET_DESTINATION</span>
+                  <div className={styles.hubTitle}>TRUSTED REPUTATION</div>
+                  <div className={styles.hubStatus}>VISIBILITY_ACHIEVED</div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </motion.div>
