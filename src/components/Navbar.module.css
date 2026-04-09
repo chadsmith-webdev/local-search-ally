@@ -119,19 +119,23 @@
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 10px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-4px);
-  background: var(--surface2);
-  border: 1px solid var(--border-strong);
-  border-radius: 10px;
-  padding: 0.375rem;
+  padding-top: 10px;
   min-width: 190px;
   opacity: 0;
   pointer-events: none;
   transition:
     opacity 0.15s ease,
     transform 0.15s ease;
+}
+
+.dropdownInner {
+  background: var(--surface2);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 0.375rem;
 }
 
 .dropdownParent:hover .dropdown {

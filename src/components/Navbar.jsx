@@ -88,11 +88,13 @@ export default function Navbar() {
                     </svg>
                   </Link>
                   <div className={styles.dropdown}>
-                    {link.children.map((child) => (
-                      <Link key={child.href} href={child.href} className={styles.dropdownItem}>
-                        {child.label}
-                      </Link>
-                    ))}
+                    <div className={styles.dropdownInner}>
+                      {link.children.map((child) => (
+                        <Link key={child.href} href={child.href} className={styles.dropdownItem}>
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </li>
               ) : (
