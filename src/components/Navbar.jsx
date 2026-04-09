@@ -8,8 +8,14 @@ const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Service Areas", href: "/service-areas" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Blog", href: "/blog" },
-  { label: "Resources", href: "/resources" },
+  {
+    label: "Resources",
+    href: "/resources",
+    children: [
+      { label: "Downloads & Guides", href: "/resources" },
+      { label: "Blog", href: "/blog" },
+    ],
+  },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -65,11 +71,36 @@ export default function Navbar() {
         {/* Desktop links */}
         <nav aria-label='Main navigation'>
           <ul className={styles.links}>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
+            {navLinks.map((link) =>
+              link.children ? (
+                <li key={link.href} className={styles.dropdownParent}>
+                  <Link href={link.href} className={styles.dropdownTrigger}>
+                    {link.label}
+                    <svg
+                      viewBox='0 0 10 10'
+                      fill='none'
+                      stroke='currentColor'
+                      strokeWidth='1.5'
+                      strokeLinecap='round'
+                      aria-hidden='true'
+                    >
+                      <path d='M2 3.5l3 3 3-3' />
+                    </svg>
+                  </Link>
+                  <div className={styles.dropdown}>
+                    {link.children.map((child) => (
+                      <Link key={child.href} href={child.href} className={styles.dropdownItem}>
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <Link href={link.href}>{link.label}</Link>
+                </li>
+              )
+            )}
           </ul>
         </nav>
 
@@ -122,15 +153,33 @@ export default function Navbar() {
         className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}
         aria-hidden={!menuOpen}
       >
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={() => setMenuOpen(false)}
-          >
-            {link.label}
-          </Link>
-        ))}
+        {navLinks.map((link) =>
+          link.children ? (
+            <div key={link.href} className={styles.mobileGroup}>
+              <Link href={link.href} onClick={() => setMenuOpen(false)}>
+                {link.label}
+              </Link>
+              {link.children.map((child) => (
+                <Link
+                  key={child.href}
+                  href={child.href}
+                  className={styles.mobileSubItem}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {child.label}
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          )
+        )}
         <a href='tel:+14793808626' className={styles.mobilePhone}>
           (479) 380-8626
         </a>
