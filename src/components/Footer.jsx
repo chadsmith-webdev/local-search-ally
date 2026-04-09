@@ -69,6 +69,9 @@ export default function Footer() {
                 <Link href='/services#reputation'>Reputation</Link>
               </li>
               <li>
+                <Link href='/services/citation-building'>Citation Building</Link>
+              </li>
+              <li>
                 <Link href='https://audit.localsearchally.com/free-local-seo-audit'>Free SEO Audit</Link>
               </li>
             </ul>
@@ -83,6 +86,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link href='/blog'>Blog</Link>
+              </li>
+              <li>
+                <Link href='/resources'>Resources</Link>
               </li>
               <li>
                 <Link href='/portfolio'>Portfolio</Link>
