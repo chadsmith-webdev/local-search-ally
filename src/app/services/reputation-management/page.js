@@ -77,10 +77,12 @@ const serviceSchema = {
     "Bentonville, AR",
     "Fayetteville, AR",
     "Springdale, AR",
+    "Siloam Springs, AR",
   ],
   provider: {
     "@type": "LocalBusiness",
     name: "Local Search Ally",
+    url: "https://localsearchally.com",
     telephone: "+14793808626",
   },
 };

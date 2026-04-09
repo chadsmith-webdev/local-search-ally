@@ -82,6 +82,7 @@ const serviceSchema = {
   provider: {
     "@type": "LocalBusiness",
     name: "Local Search Ally",
+    url: "https://localsearchally.com",
     telephone: "+14793808626",
   },
 };
