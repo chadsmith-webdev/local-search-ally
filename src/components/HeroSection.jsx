@@ -1,14 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import styles from "./HeroSection.module.css";
-
-const HeroScene = dynamic(() => import("./HeroScene"), {
-  ssr: false,
-  loading: () => <div className={styles.sceneFallback} />,
-});
+import SearchFunnel from "./SearchFunnel";
 
 const container = {
   hidden: {},
@@ -68,9 +63,9 @@ export default function HeroSection() {
           </motion.p>
         </motion.div>
 
-        {/* Right: 3D scene */}
+        {/* Right: search funnel graphic */}
         <div className={styles.sceneCol} aria-hidden='true'>
-          <HeroScene />
+          <SearchFunnel />
         </div>
       </div>
     </section>
