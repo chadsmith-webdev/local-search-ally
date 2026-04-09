@@ -59,7 +59,7 @@ const DEMOS = [
       "Short booking form that works on a phone with one thumb",
       "FAQ pages targeting common HVAC questions people actually Google",
     ],
-    url: null,
+    url: "https://demo-hvac-iota.vercel.app/",
     accent: "#7bafd4",
     icon: (
       <svg
