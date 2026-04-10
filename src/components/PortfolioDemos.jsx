@@ -91,7 +91,7 @@ const DEMOS = [
       "Service descriptions that explain what\u2019s involved, not just what it costs",
       "Project gallery section to show real residential work",
     ],
-    url: null,
+    url: "https://demo-electric-ecru.vercel.app/",
     accent: "#7bafd4",
     icon: (
       <svg
