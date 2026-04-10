@@ -118,7 +118,7 @@ const DEMOS = [
       "Financing section for full replacement jobs",
       "Service area pages for Bentonville, Rogers, Fayetteville, and surrounding NWA communities",
     ],
-    url: "https://demo-roofing-delta.vercel.app/",
+    url: "https://demo-roofer.vercel.app/",
     accent: "#7bafd4",
     icon: (
       <svg
