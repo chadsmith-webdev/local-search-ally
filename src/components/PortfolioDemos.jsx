@@ -177,7 +177,7 @@ const DEMOS = [
       "Quote request form that qualifies leads by project type and zip code",
       "Google Business Profile integration with photo strategy",
     ],
-    url: null,
+    url: "https://demo-landscaping-ten.vercel.app/",
     accent: "#7bafd4",
     icon: (
       <svg
