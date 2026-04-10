@@ -27,7 +27,7 @@ const DEMOS = [
       "Emergency service page structured for high-intent, middle-of-the-night searches",
       "Google Business Profile integration with review prompts",
     ],
-    url: "https://plumber-demo-v2.netlify.app/",
+    url: "https://demo-plumber-nine.vercel.app/",
     accent: "#7bafd4",
     icon: (
       <svg
