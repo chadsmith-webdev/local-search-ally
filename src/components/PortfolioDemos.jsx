@@ -147,7 +147,7 @@ const DEMOS = [
       "\u201cOur Process\u201d page that answers the questions clients are afraid to ask",
       "Local testimonials and review prompts tied to Google Business Profile",
     ],
-    url: null,
+    url: "https://demo-remodeling.vercel.app/",
     accent: "#7bafd4",
     icon: (
       <svg
