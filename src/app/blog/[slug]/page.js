@@ -32,9 +32,6 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const { metadata } = getPostBySlug(slug);
   const url = `${SITE_URL}/blog/${slug}`;
-  const ogImage = metadata.image
-    ? `${SITE_URL}${metadata.image}`
-    : `${SITE_URL}/images/og-default.png`;
 
   return {
     title: metadata.title,
@@ -47,13 +44,11 @@ export async function generateMetadata({ params }) {
       type: "article",
       publishedTime: metadata.date,
       authors: ["Chad Smith"],
-      images: [{ url: ogImage, width: 1200, height: 630, alt: metadata.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: metadata.title,
       description: metadata.description,
-      images: [ogImage],
     },
   };
 }
