@@ -119,14 +119,18 @@
 }
 
 .bioAvatar {
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--carolina, #7bafd4);
+  flex-shrink: 0;
 }
 
 .bioAvatarImg {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
