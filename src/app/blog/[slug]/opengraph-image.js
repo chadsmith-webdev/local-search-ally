@@ -34,6 +34,8 @@ export default async function OGImage({ params }) {
       {featureImage && (
         <img
           src={featureImage}
+          width={1200}
+          height={630}
           style={{
             position: "absolute",
             inset: 0,
