@@ -29,7 +29,7 @@ export default function AboutOrigin() {
           <motion.div className={styles.photoCol} variants={fadeUp}>
             <div className={styles.photoFrame}>
               <Image
-                src='/images/chad.avif'
+                src='/images/chadsmith-profile.png'
                 alt='Chad Smith — founder of Local Search Ally, Siloam Springs AR'
                 fill
                 sizes='(max-width: 900px) 100vw, 440px'

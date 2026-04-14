@@ -36,7 +36,7 @@ export default function GuideSection() {
           <motion.div className={styles.photoWrap} variants={fadeUp}>
             <div className={styles.photoFrame}>
               <Image
-                src='/images/chad.avif'
+                src='/images/chadsmith-profile.png'
                 alt='Chad Smith — Local Search Ally, Siloam Springs AR'
                 fill
                 sizes='(max-width: 960px) 140px, 380px'

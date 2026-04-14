@@ -129,7 +129,7 @@ export default async function BlogPost({ params }) {
         <div className={styles.byline}>
           <div className={styles.bylineAvatar}>
             <Image
-              src='/images/chad.avif'
+              src='/images/chadsmith-profile.png'
               alt='Chad Smith'
               width={36}
               height={36}
@@ -159,7 +159,7 @@ export default async function BlogPost({ params }) {
         <div className={styles.bio}>
           <div className={styles.bioAvatar}>
             <Image
-              src='/images/chad.avif'
+              src='/images/chadsmith-profile.png'
               alt='Chad Smith'
               width={64}
               height={64}
@@ -181,7 +181,10 @@ export default async function BlogPost({ params }) {
           <Link href='/blog' className={styles.navBack}>
             ← Back to Blog
           </Link>
-          <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.navCta}>
+          <Link
+            href='https://audit.localsearchally.com/free-local-seo-audit'
+            className={styles.navCta}
+          >
             Run Free Audit →
           </Link>
         </div>
