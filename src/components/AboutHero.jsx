@@ -37,10 +37,11 @@ export default function AboutHero() {
           </motion.h1>
 
           <motion.p variants={fadeUp} className={styles.subhead}>
-            Most home service trades run on referrals. The problem with
-            referrals is that they&rsquo;re invisible to Google — and there are
-            only so many of them. I kept watching great contractors lose calls
-            to competitors who had worse work but a better Google presence.
+            Home service trades almost everywhere run on referrals. The problem
+            with referrals is that they&rsquo;re invisible to Google — and
+            there are only so many of them. I saw this pattern repeatedly in
+            the contractor world: great work, terrible visibility. I moved to
+            NWA to fix it here.
           </motion.p>
 
           <motion.p variants={fadeUp} className={styles.subhead}>

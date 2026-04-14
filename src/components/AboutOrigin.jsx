@@ -71,15 +71,15 @@ export default function AboutOrigin() {
               <motion.p variants={fadeUp}>
                 Before Local Search Ally, I spent time in real estate
                 wholesaling. That put me in regular contact with contractors —
-                HVAC techs, plumbers, roofers, tile guys — across NWA. And I
-                kept noticing the same thing: the most skilled people I worked
-                with were the hardest to find online. Websites from 2014, Google
-                Business Profiles with no photos, zero reviews.
+                HVAC techs, plumbers, roofers, tile guys. And I kept noticing
+                the same thing: the most skilled people I worked with were the
+                hardest to find online. Websites from 2014, Google Business
+                Profiles with no photos, zero reviews.
               </motion.p>
               <motion.p variants={fadeUp}>
-                When someone searched &ldquo;HVAC repair Rogers AR,&rdquo; those
-                guys didn&rsquo;t show up. Not because the work wasn&rsquo;t
-                there — because the online presence wasn&rsquo;t.
+                When someone searched for an HVAC tech or a plumber in their
+                area, those guys didn&rsquo;t show up. Not because the work
+                wasn&rsquo;t there — because the online presence wasn&rsquo;t.
               </motion.p>
               <motion.p variants={fadeUp}>
                 I started digging into why. Turns out local search has a
