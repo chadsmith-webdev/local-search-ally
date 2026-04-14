@@ -163,6 +163,19 @@
   background: rgba(255, 255, 255, 0.05);
 }
 
+/* Mobile phone icon in sticky bar */
+.mobilePhoneBtn {
+  display: none;
+  color: var(--carolina);
+  padding: 0.375rem;
+  line-height: 0;
+  transition: opacity 0.2s ease;
+}
+
+.mobilePhoneBtn:hover {
+  opacity: 0.75;
+}
+
 /* Mobile menu toggle */
 .menuBtn {
   display: none;
@@ -240,6 +253,12 @@
   }
 
   .menuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobilePhoneBtn {
     display: flex;
     align-items: center;
     justify-content: center;

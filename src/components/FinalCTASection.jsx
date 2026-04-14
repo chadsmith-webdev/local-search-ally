@@ -37,7 +37,7 @@ export default function FinalCTASection() {
             <path d='M5 1v4l2 2' />
             <circle cx='5' cy='5' r='4' />
           </svg>
-          Free · No obligation · 30 minutes
+          Free · No obligation · 2 minutes
         </motion.span>
 
         {/* Headline */}
@@ -57,8 +57,8 @@ export default function FinalCTASection() {
 
         {/* CTAs */}
         <motion.div className={styles.ctas} variants={fadeUp}>
-          <Link href='/contact' className={styles.primaryBtn}>
-            Let&rsquo;s Talk — It&rsquo;s Free
+          <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.primaryBtn}>
+            Run Your Free SEO Audit
             <svg
               viewBox='0 0 16 16'
               fill='none'
@@ -69,9 +69,6 @@ export default function FinalCTASection() {
             >
               <path d='M3 8h10M9 4l4 4-4 4' />
             </svg>
-          </Link>
-          <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.secondaryBtn}>
-            Run the free SEO audit first
           </Link>
         </motion.div>
 
