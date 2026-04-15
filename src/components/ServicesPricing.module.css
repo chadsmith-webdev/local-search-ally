@@ -85,6 +85,7 @@
     rgba(123, 175, 212, 0.06) 0%,
     var(--surface) 60%
   );
+  padding-top: 2.75rem;
 }
 
 /* ── Badge ── */
