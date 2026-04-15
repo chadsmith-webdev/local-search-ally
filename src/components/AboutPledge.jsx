@@ -82,7 +82,7 @@ export default function AboutPledge() {
               <Link href='/contact' className={styles.btnPrimary}>
                 Start With a Free Conversation
               </Link>
-              <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.btnSecondary}>
+              <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.btnSecondary}>
                 Or run the free SEO audit first →
               </Link>
             </div>

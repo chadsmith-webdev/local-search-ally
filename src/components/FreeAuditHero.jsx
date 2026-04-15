@@ -18,7 +18,7 @@ export default function FreeAuditHero() {
             broken, and the highest-impact wins you can make immediately.
           </p>
           <a
-            href='https://audit.localsearchally.com/free-local-seo-audit'
+            href={process.env.NEXT_PUBLIC_AUDIT_URL}
             className={styles.cta}
           >
             Run Your Free Audit →

@@ -72,7 +72,7 @@ export default function Footer() {
                 <Link href='/services/citation-building'>Citation Building</Link>
               </li>
               <li>
-                <Link href='https://audit.localsearchally.com/free-local-seo-audit'>Free SEO Audit</Link>
+                <Link href={process.env.NEXT_PUBLIC_AUDIT_URL}>Free SEO Audit</Link>
               </li>
             </ul>
           </div>

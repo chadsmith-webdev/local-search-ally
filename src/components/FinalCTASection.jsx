@@ -57,7 +57,7 @@ export default function FinalCTASection() {
 
         {/* CTAs */}
         <motion.div className={styles.ctas} variants={fadeUp}>
-          <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.primaryBtn}>
+          <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.primaryBtn}>
             Run Your Free SEO Audit
             <svg
               viewBox='0 0 16 16'

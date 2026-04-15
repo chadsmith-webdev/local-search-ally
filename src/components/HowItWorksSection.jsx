@@ -98,7 +98,7 @@ export default function HowItWorksSection() {
               you&rsquo;re locked in.
             </p>
           </div>
-          <Link href='https://audit.localsearchally.com/free-local-seo-audit' className={styles.auditCta}>
+          <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.auditCta}>
             Start with the free audit
             <svg
               width='15'

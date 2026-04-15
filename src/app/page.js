@@ -11,6 +11,9 @@ export const metadata = {
   title: "Local SEO for NWA Contractors | Local Search Ally",
   description:
     "46% of Google searches have local intent. If you're not in the Map Pack, those calls are going to someone else. Free visibility audit for NWA home service trades.",
+  alternates: {
+    canonical: "https://localsearchally.com",
+  },
   openGraph: {
     title: "Local SEO for NWA Contractors | Local Search Ally",
     description:

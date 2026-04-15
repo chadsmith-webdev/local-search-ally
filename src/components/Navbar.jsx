@@ -207,7 +207,7 @@ export default function Navbar() {
           (479) 380-8626
         </a>
         <Link
-          href='https://audit.localsearchally.com/free-local-seo-audit'
+          href={process.env.NEXT_PUBLIC_AUDIT_URL}
           className={styles.mobileCta}
           onClick={() => setMenuOpen(false)}
         >

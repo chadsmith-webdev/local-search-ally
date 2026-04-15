@@ -139,7 +139,7 @@ export default function BlogClient({ posts }) {
               required.
             </p>
             <Link
-              href='https://audit.localsearchally.com/free-local-seo-audit'
+              href={process.env.NEXT_PUBLIC_AUDIT_URL}
               className={styles.ctaBtn}
             >
               Run Your Free Audit →
