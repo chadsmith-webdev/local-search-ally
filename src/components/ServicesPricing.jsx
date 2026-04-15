@@ -30,18 +30,59 @@ function IconCheck() {
   );
 }
 
-const GUARANTEES = [
+const TIERS = [
   {
-    text: "No long-term contracts — if it's not working, you can leave",
+    name: "Visibility",
+    price: "$497",
+    period: "/month",
+    description:
+      "For trades that have a decent website but aren't showing up in the Map Pack.",
+    features: [
+      "Google Business Profile full audit + optimization",
+      "GBP management — posts, photos, Q&A",
+      "Citation cleanup (top 15 directories)",
+      "Monthly visibility report in plain English",
+      "Review request process — templates + guidance",
+    ],
+    cta: "Start With a Free Call",
+    href: "/contact",
+    recommended: false,
   },
   {
-    text: "Every project starts with a free strategy call",
+    name: "Growth",
+    price: "$797",
+    period: "/month",
+    description:
+      "For trades ready to rank above competitors and turn search into calls.",
+    features: [
+      "Everything in Visibility",
+      "On-page SEO for up to 3 service pages/month",
+      "Keyword strategy — what to rank for, in which cities",
+      "Monthly competitor tracking",
+      "1 local content piece per month",
+      "Priority email access",
+    ],
+    cta: "Start With a Free Call",
+    href: "/contact",
+    recommended: true,
   },
   {
-    text: "I'll give you a number in the first call — not a range, an actual number",
-  },
-  {
-    text: "Most clients run 1–3 services — I'll tell you which one to start with",
+    name: "Full Stack",
+    price: "$1,197",
+    period: "/month",
+    description:
+      "For trades that want everything — found online, a website that converts, and a reputation that sells.",
+    features: [
+      "Everything in Growth",
+      "Website hosting + maintenance",
+      "Up to 2 website updates per month",
+      "1 blog post written and published monthly",
+      "Reputation monitoring + response guidance",
+      "Quarterly strategy call (recorded)",
+    ],
+    cta: "Start With a Free Call",
+    href: "/contact",
+    recommended: false,
   },
 ];
 
@@ -53,14 +94,21 @@ const STEPS = [
   },
   {
     n: "2",
-    title: "Fix First",
-    desc: "I focus on the highest-impact gaps — the things currently costing you the most calls.",
+    title: "Fix Priority Gaps",
+    desc: "I focus on the highest-impact gaps first — local relevance, on-page clarity, and lead paths that support calls.",
   },
   {
     n: "3",
-    title: "Track & Adjust",
+    title: "Grow and Track",
     desc: "I monitor rankings, calls, and GBP activity monthly and tell you what moved and why.",
   },
+];
+
+const GUARANTEES = [
+  "No long-term contracts — cancel any time",
+  "I'll tell you which plan to start with on the first call",
+  "Additional NWA service locations add at $297/month",
+  "Pay annually and get 2 months free",
 ];
 
 export default function ServicesPricing() {
@@ -71,66 +119,97 @@ export default function ServicesPricing() {
         variants={container}
         initial='hidden'
         whileInView='visible'
-        viewport={{ once: true, amount: 0.15 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
-        {/* Left: Pricing commitments */}
-        <div className={styles.left}>
-          <motion.span variants={fadeUp} className={styles.eyebrow}>
-            How Pricing Works
-          </motion.span>
-          <motion.h2 variants={fadeUp} className={styles.h2}>
+        {/* Header */}
+        <motion.div variants={fadeUp} className={styles.header}>
+          <span className={styles.eyebrow}>Pricing</span>
+          <h2 className={styles.h2}>
             Honest pricing.{" "}
-            <span className='text-carolina'>No long-term contracts.</span>
-          </motion.h2>
-          <motion.p variants={fadeUp} className={styles.lead}>
-            I don&rsquo;t publish prices because every business is different —
-            an HVAC company covering five cities needs more than a solo
-            electrician covering one. What I can tell you is this:
-          </motion.p>
+            <span className={styles.accent}>No long-term contracts.</span>
+          </h2>
+          <p className={styles.lead}>
+            Every plan is month-to-month. If it&rsquo;s not working, you can
+            leave. Most clients start on Growth — I&rsquo;ll tell you if
+            something different makes more sense for where you are.
+          </p>
+        </motion.div>
 
-          <motion.ul variants={container} className={styles.guaranteeList}>
-            {GUARANTEES.map((g) => (
-              <motion.li
-                key={g.text}
-                variants={fadeUp}
-                className={styles.guarantee}
-              >
-                <span className={styles.guaranteeIcon}>
-                  <IconCheck />
-                </span>
-                <p>{g.text}</p>
-              </motion.li>
-            ))}
-          </motion.ul>
+        {/* Pricing cards */}
+        <motion.div variants={container} className={styles.cards}>
+          {TIERS.map((tier) => (
+            <motion.div
+              key={tier.name}
+              variants={fadeUp}
+              className={
+                tier.recommended
+                  ? `${styles.card} ${styles.cardRecommended}`
+                  : styles.card
+              }
+            >
+              {tier.recommended && (
+                <div className={styles.badge}>Most Popular</div>
+              )}
 
-          <motion.div variants={fadeUp} className={styles.ctaWrap}>
-            <Link href='/contact' className={styles.cta}>
-              Book a Free 30-Minute Strategy Call →
-            </Link>
-          </motion.div>
-        </div>
+              <div className={styles.cardTop}>
+                <h3 className={styles.tierName}>{tier.name}</h3>
+                <div className={styles.priceRow}>
+                  <span className={styles.price}>{tier.price}</span>
+                  <span className={styles.period}>{tier.period}</span>
+                </div>
+                <p className={styles.tierDesc}>{tier.description}</p>
+              </div>
 
-        {/* Right: How It Works */}
-        <div className={styles.right}>
-          <motion.span variants={fadeUp} className={styles.eyebrow}>
-            How It Works
-          </motion.span>
-          <motion.div variants={container} className={styles.steps}>
+              <ul className={styles.featureList}>
+                {tier.features.map((f) => (
+                  <li key={f} className={styles.feature}>
+                    <span className={styles.checkIcon}>
+                      <IconCheck />
+                    </span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className={styles.cardCta}>
+                <Link
+                  href={tier.href}
+                  className={
+                    tier.recommended ? styles.ctaPrimary : styles.ctaSecondary
+                  }
+                >
+                  {tier.cta} →
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Fine print / guarantees */}
+        <motion.ul variants={fadeUp} className={styles.guaranteeList}>
+          {GUARANTEES.map((g) => (
+            <li key={g} className={styles.guarantee}>
+              <span className={styles.guaranteeDot} aria-hidden='true' />
+              {g}
+            </li>
+          ))}
+        </motion.ul>
+
+        {/* How It Works */}
+        <motion.div variants={fadeUp} className={styles.stepsBlock}>
+          <span className={styles.eyebrow}>How It Works</span>
+          <div className={styles.steps}>
             {STEPS.map((step) => (
-              <motion.div
-                key={step.n}
-                variants={fadeUp}
-                className={styles.step}
-              >
+              <div key={step.n} className={styles.step}>
                 <div className={styles.stepNum}>{step.n}</div>
                 <div className={styles.stepContent}>
                   <h3 className={styles.stepTitle}>{step.title}</h3>
                   <p className={styles.stepDesc}>{step.desc}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );

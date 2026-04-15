@@ -21,6 +21,15 @@ const fadeUp = {
   },
 };
 
+// h1 animates y only — opacity stays 1 so it's visible on first paint (LCP)
+const fadeUpNoOpacity = {
+  hidden: { y: 20 },
+  visible: {
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function HeroSection() {
   return (
     <section className={styles.hero}>
@@ -38,7 +47,7 @@ export default function HeroSection() {
             NWA Contractor SEO
           </motion.span>
 
-          <motion.h1 variants={fadeUp} className={styles.h1}>
+          <motion.h1 variants={fadeUpNoOpacity} className={styles.h1}>
             Is invisibility hiding you from{" "}
             <em>3.12 billion</em> daily local searches?
           </motion.h1>

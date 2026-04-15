@@ -2,17 +2,19 @@ import { siteConfig } from "@/lib/metadata";
 
 export default function robots() {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
-    sitemap: `${siteConfig.url}/sitemap.xml`,
-    host: siteConfig.url,
-    other: [
+    rules: [
+      // Main crawler rules — allow all indexable content
       {
-        name: "IndexNow",
-        value: `${siteConfig.url}/indexnow-72bc29c911304f96ba476049493d4a6e.txt`,
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/"],
       },
+      // Explicit allow for AI search crawlers
+      { userAgent: "GPTBot", allow: "/" },
+      { userAgent: "OAI-SearchBot", allow: "/" },
+      { userAgent: "PerplexityBot", allow: "/" },
+      { userAgent: "ClaudeBot", allow: "/" },
     ],
+    sitemap: `${siteConfig.url}/sitemap.xml`,
   };
 }

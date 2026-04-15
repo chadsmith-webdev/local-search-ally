@@ -70,6 +70,9 @@ export default function FinalCTASection() {
               <path d='M3 8h10M9 4l4 4-4 4' />
             </svg>
           </Link>
+          <Link href='/contact' className={styles.secondaryBtn}>
+            Prefer to talk first? Book a free strategy call →
+          </Link>
         </motion.div>
 
         {/* Trust line */}

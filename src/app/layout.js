@@ -3,11 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { siteConfig } from "@/lib/metadata";
-import {
-  Bricolage_Grotesque,
-  Space_Grotesk,
-  JetBrains_Mono,
-} from "next/font/google";
+import { Bricolage_Grotesque, Space_Grotesk } from "next/font/google";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -19,11 +15,21 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-ui",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500"],
-});
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#020203",
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://localsearchally.com/#website",
+  name: "Local Search Ally",
+  url: "https://localsearchally.com",
+  description: "Local SEO and web development for NWA home service trades.",
+  publisher: { "@id": "https://localsearchally.com/#localbusiness" },
+};
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -53,10 +59,13 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang='en'
-      data-scroll-behavior='smooth'
-      className={`${bricolage.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      className={`${bricolage.variable} ${spaceGrotesk.variable}`}
     >
       <body>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <Navbar />
         <main className='flex-1 min-h-screen'>{children}</main>
         <Footer />

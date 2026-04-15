@@ -24,13 +24,20 @@ export const metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
+  "@id": "https://localsearchally.com/#localbusiness",
   name: "Local Search Ally",
   description:
     "Local SEO and web development for NWA home service trades — HVAC, plumbing, roofing, electrical, landscaping, and remodeling.",
   url: "https://localsearchally.com",
   telephone: "+14793808626",
-  founder: { "@type": "Person", name: "Chad Smith" },
+  image: "https://localsearchally.com/icon.png",
+  founder: {
+    "@type": "Person",
+    "@id": "https://localsearchally.com/about#chad-smith",
+    name: "Chad Smith",
+    url: "https://localsearchally.com/about",
+  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Siloam Springs",
@@ -38,7 +45,12 @@ const jsonLd = {
     postalCode: "72761",
     addressCountry: "US",
   },
-  openingHours: ["Mo-Fr 08:00-18:00", "Sa 10:00-14:00", "Su 14:00-18:00"],
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "36.18808",
+    longitude: "-94.54064",
+  },
+  openingHours: ["Mo-Fr 08:00-18:00", "Sa 09:00-12:00", "Su 14:00-18:00"],
   areaServed: [
     { "@type": "City", name: "Rogers", containedInPlace: { "@type": "State", name: "Arkansas" } },
     { "@type": "City", name: "Bentonville", containedInPlace: { "@type": "State", name: "Arkansas" } },

@@ -4,12 +4,321 @@
 }
 
 .inner {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ── Eyebrow ── */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--carolina);
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 1rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--carolina);
+  opacity: 0.6;
+}
+
+/* ── Header ── */
+.header {
+  max-width: 640px;
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.accent {
+  color: var(--carolina);
+}
+
+.lead {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(240, 240, 240, 0.65);
+}
+
+/* ── Pricing cards ── */
+.cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
   align-items: start;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.cardRecommended {
+  border-color: rgba(123, 175, 212, 0.45);
+  background: linear-gradient(
+    160deg,
+    rgba(123, 175, 212, 0.06) 0%,
+    var(--surface) 60%
+  );
+}
+
+/* ── Badge ── */
+.badge {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--carolina);
+  color: #0a0a0a;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.875rem;
+  border-radius: 0 0 6px 6px;
+  white-space: nowrap;
+}
+
+/* ── Card top ── */
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tierName {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  line-height: 1;
+}
+
+.period {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.tierDesc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.55);
+  margin-top: 0.25rem;
+}
+
+/* ── Feature list ── */
+.featureList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  flex: 1;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(240, 240, 240, 0.8);
+}
+
+.checkIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--carolina);
+  margin-top: 0.15em;
+}
+
+/* ── Card CTA ── */
+.cardCta {
+  margin-top: auto;
+}
+
+.ctaPrimary {
+  display: block;
+  text-align: center;
+  padding: 0.875rem 1.25rem;
+  background: var(--carolina);
+  color: #0a0a0a;
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.ctaPrimary:hover {
+  opacity: 0.88;
+}
+
+.ctaSecondary {
+  display: block;
+  text-align: center;
+  padding: 0.875rem 1.25rem;
+  background: transparent;
+  color: var(--carolina);
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid rgba(123, 175, 212, 0.3);
+  border-radius: 6px;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.ctaSecondary:hover {
+  background: rgba(123, 175, 212, 0.07);
+  border-color: rgba(123, 175, 212, 0.55);
+}
+
+/* ── Guarantee list (fine print) ── */
+.guaranteeList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface2);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.guarantee {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.85rem;
+  color: rgba(240, 240, 240, 0.6);
+}
+
+.guaranteeDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--carolina);
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* ── How It Works ── */
+.stepsBlock {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 2.5rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.stepNum {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(123, 175, 212, 0.4);
+  width: 20px;
+  flex-shrink: 0;
+  line-height: 1.6;
+  padding-top: 0.1em;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.stepTitle {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.stepDesc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.55);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .guaranteeList {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .cards {
+    max-width: 100%;
+  }
 }
 
 /* ── Shared eyebrow ── */

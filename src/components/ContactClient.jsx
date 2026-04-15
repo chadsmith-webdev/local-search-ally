@@ -317,7 +317,8 @@ export default function ContactClient() {
           <div className={styles.mapWrap}>
             <iframe
               title='Local Search Ally — Siloam Springs, AR'
-              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52287.20!2d-94.5424!3d36.1881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c8f1e3b1b1b1b1%3A0x0!2sSiloam%20Springs%2C%20AR!5e0!3m2!1sen!2sus!4v1'
+              {/* TODO: Replace this src with the real embed code from your GBP dashboard → Share → Embed a map */}
+              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52287.20!2d-94.5424!3d36.1881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c8eebc1f40dc85%3A0x8ee36e5810090b13!2sSiloam%20Springs%2C%20AR!5e0!3m2!1sen!2sus!4v1'
               width='100%'
               height='100%'
               style={{ border: 0 }}

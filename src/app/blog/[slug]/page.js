@@ -62,17 +62,26 @@ export default async function BlogPost({ params }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": url,
     headline: metadata.title,
     description: metadata.description,
     url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
     datePublished: metadata.date,
+    dateModified: metadata.dateModified || metadata.date,
+    image: {
+      "@type": "ImageObject",
+      url: metadata.image ? `${SITE_URL}${metadata.image}` : `${SITE_URL}/og-default.png`,
+    },
     author: {
       "@type": "Person",
+      "@id": `${SITE_URL}/about#chad-smith`,
       name: "Chad Smith",
       url: `${SITE_URL}/about`,
     },
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#localbusiness`,
       name: "Local Search Ally",
       url: SITE_URL,
       logo: {
@@ -80,12 +89,16 @@ export default async function BlogPost({ params }) {
         url: `${SITE_URL}/icon.png`,
       },
     },
-    ...(metadata.image && {
-      image: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}${metadata.image}`,
-      },
-    }),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: metadata.title, item: url },
+    ],
   };
 
   return (
@@ -93,6 +106,10 @@ export default async function BlogPost({ params }) {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <div className={styles.inner}>
@@ -182,7 +199,7 @@ export default async function BlogPost({ params }) {
             ← Back to Blog
           </Link>
           <Link
-            href='https://audit.localsearchally.com/free-local-seo-audit'
+            href={process.env.NEXT_PUBLIC_AUDIT_URL}
             className={styles.navCta}
           >
             Run Free Audit →

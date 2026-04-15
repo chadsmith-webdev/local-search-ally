@@ -13,7 +13,7 @@ This file gives Claude Code the context needed to work on the Local Search Ally 
 **Phone:** (479) 380-8626  
 **Focus:** Local SEO and web development for NWA home service trades (HVAC, plumbing, roofing, electrical, landscaping, remodeling)
 
-This is a redesign of the primary marketing and lead-generation website. The site's job is to turn invisible contractors into found ones — and to convert visitors into booked strategy calls.
+This is the primary marketing and lead-generation website. The site's job is to turn invisible contractors into found ones — and to convert visitors into booked strategy calls. The redesign is complete — work from the current codebase, do not rewrite from scratch.
 
 ---
 
@@ -132,25 +132,22 @@ const HeroScene = dynamic(() => import("@/components/HeroScene"), {
 
 ---
 
-## Redesign Scope & Starting Point
+## Codebase Status
 
-This is an active redesign — the existing code is being rebuilt, not patched. When in doubt, write it fresh rather than extending old code.
+The redesign is complete. The current codebase is the production site. Do not rewrite or rebuild components unless explicitly asked. Extend and edit what exists.
 
-### What to keep
+### Stable — do not rewrite
 
-- `src/posts/` — MDX blog content is good, preserve all files
-- `src/app/api/` — API routes may be reusable, review before rewriting
-- `src/app/audit/` — SEO audit tool, keep and improve
-- `src/app/blog/` — Blog routing, review and clean up
-- `globals.css` — Keep, but audit for unused styles
-- `layout.js` — Keep root layout, update with new design tokens
-- `robots.js`, `sitemap.js`, `manifest.json` — Keep, these are correct
-
-### What to rebuild
-
-- `page.js` + `HomeClient.js` — Full homepage redesign
-- `src/components/` — Rebuild components from scratch using the design system below
-- `src/lib/` — Review utilities; keep what works, rewrite what doesn't
+- `src/posts/` — MDX blog content, preserve all files
+- `src/app/api/` — API routes
+- `src/app/audit/` — SEO audit tool
+- `src/app/blog/` — Blog routing
+- `globals.css` — Global styles and design tokens
+- `layout.js` — Root layout
+- `robots.js`, `sitemap.js`, `manifest.json` — Correct, leave alone
+- `page.js` + `HomeClient.js` — Homepage, complete
+- `src/components/` — Components, complete
+- `src/lib/` — Utilities, complete
 
 ### File naming conventions going forward
 

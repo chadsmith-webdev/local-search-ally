@@ -41,11 +41,31 @@ const jsonLd = {
     },
     openingHours: ["Mo-Fr 08:00-18:00", "Sa 10:00-14:00", "Su 14:00-18:00"],
     areaServed: [
-      { "@type": "City", name: "Rogers", containedInPlace: { "@type": "State", name: "Arkansas" } },
-      { "@type": "City", name: "Bentonville", containedInPlace: { "@type": "State", name: "Arkansas" } },
-      { "@type": "City", name: "Fayetteville", containedInPlace: { "@type": "State", name: "Arkansas" } },
-      { "@type": "City", name: "Springdale", containedInPlace: { "@type": "State", name: "Arkansas" } },
-      { "@type": "City", name: "Siloam Springs", containedInPlace: { "@type": "State", name: "Arkansas" } },
+      {
+        "@type": "City",
+        name: "Rogers",
+        containedInPlace: { "@type": "State", name: "Arkansas" },
+      },
+      {
+        "@type": "City",
+        name: "Bentonville",
+        containedInPlace: { "@type": "State", name: "Arkansas" },
+      },
+      {
+        "@type": "City",
+        name: "Fayetteville",
+        containedInPlace: { "@type": "State", name: "Arkansas" },
+      },
+      {
+        "@type": "City",
+        name: "Springdale",
+        containedInPlace: { "@type": "State", name: "Arkansas" },
+      },
+      {
+        "@type": "City",
+        name: "Siloam Springs",
+        containedInPlace: { "@type": "State", name: "Arkansas" },
+      },
       { "@type": "AdministrativeArea", name: "Northwest Arkansas" },
     ],
   },
@@ -55,38 +75,56 @@ const jsonLd = {
     itemListElement: [
       {
         "@type": "Offer",
+        name: "Visibility Plan",
+        price: "497",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "RecurringChargeSpecification",
+          billingDuration: "P1M",
+          price: "497",
+          priceCurrency: "USD",
+        },
         itemOffered: {
           "@type": "Service",
-          name: "Local SEO",
+          name: "Visibility — Local SEO Starter",
           description:
-            "Keyword research, on-page optimization, citation building, and monthly reporting for NWA home service trades.",
+            "Google Business Profile optimization and management, citation cleanup, and monthly visibility reporting for NWA home service trades.",
         },
       },
       {
         "@type": "Offer",
+        name: "Growth Plan",
+        price: "797",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "RecurringChargeSpecification",
+          billingDuration: "P1M",
+          price: "797",
+          priceCurrency: "USD",
+        },
         itemOffered: {
           "@type": "Service",
-          name: "Web Design & Development",
+          name: "Growth — Local SEO + On-Page",
           description:
-            "Mobile-first, SEO-built websites for home service trade businesses in Northwest Arkansas.",
+            "Full local SEO including on-page optimization for service pages, keyword strategy, competitor tracking, and local content for NWA contractors.",
         },
       },
       {
         "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Google Business Profile Management",
-          description:
-            "Full GBP audit, photo strategy, post management, and Q&A for NWA contractors.",
+        name: "Full Stack Plan",
+        price: "1197",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "RecurringChargeSpecification",
+          billingDuration: "P1M",
+          price: "1197",
+          priceCurrency: "USD",
         },
-      },
-      {
-        "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Reputation Management",
+          name: "Full Stack — SEO + Web + Reputation",
           description:
-            "Review request process, response templates, and monitoring for home service trade businesses.",
+            "Complete local marketing management: SEO, website maintenance, monthly blog content, and reputation monitoring for NWA home service trade businesses.",
         },
       },
     ],
