@@ -65,7 +65,7 @@ export default function ContactClient() {
 
   const calendlyUrl =
     process.env.NEXT_PUBLIC_CALENDLY_URL ||
-    "https://calendly.com/localsearchally";
+    "https://calendly.com/smithchadlamont/30min";
 
   return (
     <main className={styles.main}>
@@ -166,7 +166,10 @@ export default function ContactClient() {
             {/* Not ready? */}
             <div className={styles.auditNudge}>
               <span>Not ready to talk yet?</span>
-              <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.auditLink}>
+              <Link
+                href={process.env.NEXT_PUBLIC_AUDIT_URL}
+                className={styles.auditLink}
+              >
                 Run the free SEO audit first →
               </Link>
             </div>
