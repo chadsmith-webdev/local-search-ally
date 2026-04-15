@@ -317,15 +317,14 @@ export default function ContactClient() {
           <div className={styles.mapWrap}>
             <iframe
               title='Local Search Ally — Siloam Springs, AR'
-              {/* TODO: Replace this src with the real embed code from your GBP dashboard → Share → Embed a map */}
-              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52287.20!2d-94.5424!3d36.1881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c8eebc1f40dc85%3A0x8ee36e5810090b13!2sSiloam%20Springs%2C%20AR!5e0!3m2!1sen!2sus!4v1'
-              width='100%'
-              height='100%'
+              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d422350.52122955065!2d-93.43012432863902!3d34.20735172392202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x59767d37d304d07%3A0x22840e8d33c46a03!2sLocal%20Search%20Ally!5e0!3m2!1sen!2sus!4v1776282450355!5m2!1sen!2sus'
+              width='600'
+              height='450'
               style={{ border: 0 }}
-              allowFullScreen
+              allowFullScreen=''
               loading='lazy'
               referrerPolicy='no-referrer-when-downgrade'
-            />
+            ></iframe>
           </div>
         </motion.div>
       </div>

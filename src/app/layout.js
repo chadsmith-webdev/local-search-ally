@@ -3,7 +3,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { siteConfig } from "@/lib/metadata";
-import { Bricolage_Grotesque, Space_Grotesk } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  Space_Grotesk,
+  JetBrains_Mono,
+} from "next/font/google";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -13,6 +17,12 @@ const bricolage = Bricolage_Grotesque({
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-ui",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
 });
 
 export const viewport = {
@@ -59,7 +69,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang='en'
-      className={`${bricolage.variable} ${spaceGrotesk.variable}`}
+      className={`${bricolage.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
       <body>
         <script

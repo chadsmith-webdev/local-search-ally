@@ -91,6 +91,7 @@ const faqItems = [
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://localsearchally.com/#localbusiness",
   name: "Local Search Ally",
   url: "https://localsearchally.com",
   telephone: "+14793808626",
@@ -111,6 +112,7 @@ const localBusinessJsonLd = {
     addressLocality: "Siloam Springs",
     addressRegion: "AR",
     addressCountry: "US",
+    postalCode: "72761",
   },
 };
 
