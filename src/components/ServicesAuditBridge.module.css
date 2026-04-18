@@ -8,7 +8,7 @@
   margin: 0 auto;
   background: rgba(123, 175, 212, 0.04);
   border: 1px solid rgba(123, 175, 212, 0.2);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 3rem 3.5rem;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@
   height: 60px;
   border-top: 2px solid rgba(123, 175, 212, 0.5);
   border-left: 2px solid rgba(123, 175, 212, 0.5);
-  border-radius: 12px 0 0 0;
+  border-radius: var(--radius-lg) 0 0 0;
 }
 
 .cornerBR {
@@ -38,7 +38,7 @@
   height: 60px;
   border-bottom: 2px solid rgba(123, 175, 212, 0.5);
   border-right: 2px solid rgba(123, 175, 212, 0.5);
-  border-radius: 0 0 12px 0;
+  border-radius: 0 0 var(--radius-lg) 0;
 }
 
 .eyebrow {
@@ -102,7 +102,7 @@
   font-family: var(--font-ui);
   font-size: 0.9rem;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
   transition:
     filter 0.2s,

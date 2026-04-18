@@ -118,7 +118,7 @@
 .stepNum {
   width: 56px;
   height: 56px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   border: 1px solid rgba(123, 175, 212, 0.25);
   background: var(--surface);
   display: flex;
@@ -133,7 +133,7 @@
   content: "";
   position: absolute;
   inset: -4px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   border: 1px dashed rgba(123, 175, 212, 0.12);
 }
 
@@ -181,7 +181,7 @@
   align-items: center;
   gap: 0.875rem;
   padding: 1.25rem 1.75rem;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--border);
   background: var(--surface);
   flex: 1;
@@ -212,7 +212,7 @@
 .noteIcon {
   width: 32px;
   height: 32px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   background: rgba(123, 175, 212, 0.08);
   border: 1px solid rgba(123, 175, 212, 0.15);
   display: flex;

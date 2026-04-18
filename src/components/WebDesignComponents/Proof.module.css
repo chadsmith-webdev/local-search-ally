@@ -72,7 +72,7 @@
   padding: 30px;
   background: rgba(20, 28, 42, 0.4);
   border: 1px solid rgba(123, 175, 212, 0.15);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -141,7 +141,7 @@
     transparent 70%
   );
   border: 1px dashed rgba(123, 175, 212, 0.2);
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,7 +166,7 @@
     rgba(123, 175, 212, 0.2) 0%,
     transparent 60%
   );
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   z-index: -1;
   animation: pulseHub 3s infinite ease-in-out;
 }
@@ -240,7 +240,7 @@
     rgba(15, 15, 15, 0.4) 100%
   );
   border: 1px solid rgba(123, 175, 212, 0.2);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   text-align: center;
   transition: all 0.3s ease-out;
   position: relative;
@@ -304,7 +304,7 @@
 .commitment {
   background: var(--bg);
   border: 1px solid rgba(123, 175, 212, 0.15);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 40px;
 }
 

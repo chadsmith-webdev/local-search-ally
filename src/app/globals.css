@@ -14,9 +14,9 @@
   --steel: #3a5570;
 
   /* Deep Dark Palette */
-  --bg: #020203;
-  --surface: #080a0d;
-  --surface2: #0e1217;
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --surface2: #1e1e1e;
   --text: #f8f9fa;
   --muted: #6c757d;
 
@@ -28,6 +28,15 @@
   /* Borders */
   --border: rgba(255, 255, 255, 0.06);
   --border-strong: rgba(255, 255, 255, 0.12);
+
+  /* Border radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 100px;
+  --radius-full: 50%;
 
   /* Spacing */
   --page-gutter: clamp(1.5rem, 6vw, 5rem);
@@ -77,7 +86,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--surface2);
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
 }
 
 /* Selection */
@@ -152,12 +161,12 @@ textarea {
   font-size: 0.875em;
   background: var(--surface);
   padding: 0.15em 0.4em;
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   color: var(--carolina);
 }
 .prose pre {
   background: var(--surface);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   padding: 1.25rem;
   overflow-x: auto;
   margin: 1.5rem 0;
@@ -323,7 +332,7 @@ textarea {
   width: 4px;
   height: 4px;
   background: var(--carolina);
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   box-shadow: 0 0 8px var(--carolina);
   animation: pulse-node 2s ease-in-out infinite;
 }

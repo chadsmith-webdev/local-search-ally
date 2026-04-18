@@ -78,7 +78,7 @@
 .transparency {
   background: var(--bg);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   padding: 24px;
 }
 
@@ -149,7 +149,7 @@
 .whatItem {
   background: var(--bg);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   padding: 20px;
   display: flex;
   flex-direction: column;

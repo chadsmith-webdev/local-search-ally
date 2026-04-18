@@ -38,7 +38,7 @@
   padding: 28px;
   background: rgba(20, 28, 42, 0.5);
   border: 1px solid rgba(123, 175, 212, 0.15);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   transition: all 0.3s ease-out;
 }
 

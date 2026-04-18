@@ -14,7 +14,7 @@
 
 .featureImage {
   margin-bottom: 2.5rem;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -77,7 +77,7 @@
 .bylineAvatar {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   overflow: hidden;
   border: 2px solid var(--carolina, #7bafd4);
   flex-shrink: 0;
@@ -114,14 +114,14 @@
   margin-top: 3.5rem;
   padding: 24px;
   background: var(--surface, #141414);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   border-left: 3px solid var(--carolina, #7bafd4);
 }
 
 .bioAvatar {
   width: 64px;
   height: 64px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   overflow: hidden;
   border: 2px solid var(--carolina, #7bafd4);
   flex-shrink: 0;
@@ -194,7 +194,7 @@
   color: #1e2a3a;
   background: linear-gradient(135deg, #7bafd4 0%, #4a6b8a 100%);
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
   transition: filter 0.2s ease;
 }

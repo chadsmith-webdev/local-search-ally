@@ -30,7 +30,7 @@
 .card {
   background: var(--surface);
   border: 1px solid rgba(123, 175, 212, 0.1);
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
   transition:
@@ -124,7 +124,7 @@
 .featureDot {
   width: 4px;
   height: 4px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: var(--carolina);
   opacity: 0.6;
   flex-shrink: 0;

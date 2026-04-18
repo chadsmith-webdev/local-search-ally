@@ -99,7 +99,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--border);
 }

@@ -111,7 +111,7 @@
   gap: 1.25rem;
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   padding: 1.5rem;
 }
 
@@ -147,7 +147,7 @@
   gap: 0.6rem;
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
 }
 
@@ -165,7 +165,7 @@
   display: block;
   width: 5px;
   height: 5px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: var(--carolina);
   flex-shrink: 0;
   margin-top: 0.45em;
@@ -189,7 +189,7 @@
   padding: 1rem 1.25rem;
   background: rgba(123, 175, 212, 0.06);
   border: 1px solid rgba(123, 175, 212, 0.2);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
 }
 
 .softCTAIcon {
@@ -261,5 +261,5 @@
 .learnMore:focus-visible {
   outline: 2px solid var(--carolina, #7bafd4);
   outline-offset: 4px;
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
 }

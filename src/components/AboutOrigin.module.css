@@ -32,7 +32,7 @@
 .photoFrame {
   position: relative;
   width: 100%;
-  border-radius: 18px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
   aspect-ratio: 4 / 5;
   border: 1px solid var(--border-strong);
@@ -42,7 +42,7 @@
   content: "";
   position: absolute;
   inset: -2px;
-  border-radius: 20px;
+  border-radius: var(--radius-xl);
   background: linear-gradient(
     135deg,
     rgba(123, 175, 212, 0.2),
@@ -57,7 +57,7 @@
   z-index: 1;
   object-fit: cover;
   object-position: center top;
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   display: block;
 }
 

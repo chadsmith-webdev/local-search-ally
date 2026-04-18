@@ -99,7 +99,7 @@
     rgba(15, 30, 42, 0.3) 100%
   );
   border-left: 4px solid var(--carolina, #7bafd4);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
 }
 
 .answerFirst h3 {
@@ -150,7 +150,7 @@
   padding: 28px;
   background: var(--bg);
   border: 1px solid rgba(123, 175, 212, 0.15);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   transition:
     border-color 0.3s ease-out,
     background 0.3s ease-out,
@@ -207,7 +207,7 @@
   );
   border: 1px solid rgba(123, 175, 212, 0.25);
   border-left: 3px solid var(--carolina);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   position: relative;
 }
 

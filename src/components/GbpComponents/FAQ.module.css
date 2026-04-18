@@ -87,7 +87,7 @@
 
 .faqItem {
   border: 1px solid rgba(123,175,212,0.2);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   transition: all 0.3s ease-out;
   background: linear-gradient(135deg, rgba(20,28,42,0.4) 0%, rgba(15,15,15,0.2) 100%);
@@ -140,7 +140,7 @@
 .question:focus-visible {
   outline: 3px solid var(--carolina, #7bafd4);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
 }
 
 .question span:first-child { flex: 1; }

@@ -103,7 +103,7 @@
   background: var(--carolina);
   text-decoration: none;
   padding: 0.875rem 1.875rem;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   border: none;
   letter-spacing: -0.01em;
   transition:
@@ -132,7 +132,7 @@
   color: var(--text);
   text-decoration: none;
   padding: 0.875rem 1.625rem;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: transparent;
   transition:
@@ -179,7 +179,7 @@
 .trustDot {
   width: 3px;
   height: 3px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: var(--border-strong);
 }
 

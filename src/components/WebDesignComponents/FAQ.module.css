@@ -54,7 +54,7 @@
 
 .item {
   border: 1px solid rgba(123, 175, 212, 0.2);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   transition: all 0.3s ease-out;
   background: linear-gradient(
@@ -125,7 +125,7 @@
 .question:focus-visible {
   outline: 2px solid var(--carolina);
   outline-offset: 2px;
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
 }
 
 .icon {

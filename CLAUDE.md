@@ -244,8 +244,8 @@ Write as Chad — one person talking to one person. Plain-spoken, honest, direct
 
 ### Typography
 
-- **Display / headings:** Georgia or Fraunces — serif, weight 700
-- **Body / UI:** Helvetica Neue, Arial, or Urbanist — sans-serif, weight 400
+- **Display / headings:** Bricolage Grotesque — serif, weight 700
+- **Body / UI:** Space Grotesk — sans-serif, weight 400
 - **Data / metrics / scores:** JetBrains Mono — monospace, weight 400–500 (tool UIs and dashboards only)
 - **Labels / eyebrows:** Same sans-serif, weight 600, uppercase, 0.15em letter-spacing
 - Heading letter-spacing: −0.02em

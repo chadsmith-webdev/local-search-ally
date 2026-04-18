@@ -118,7 +118,7 @@
     rgba(15, 15, 15, 0.3) 100%
   );
   border: 1px solid rgba(123, 175, 212, 0.2);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   transition: all 0.3s ease-out;
   position: relative;
 }
@@ -135,7 +135,7 @@
     var(--carolina, #7bafd4) 0%,
     transparent 100%
   );
-  border-radius: 8px 8px 0 0;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
   opacity: 0;
   transition: opacity 0.3s ease-out;
 }
@@ -198,7 +198,7 @@
     rgba(26, 58, 82, 0.1) 100%
   );
   border: 1px solid rgba(123, 175, 212, 0.25);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   position: sticky;
   top: 120px;
   overflow: hidden;

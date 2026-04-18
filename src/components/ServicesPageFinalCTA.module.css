@@ -98,7 +98,7 @@
   font-family: var(--font-ui);
   font-size: 0.95rem;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
   transition:
     filter 0.2s,

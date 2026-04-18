@@ -38,7 +38,7 @@
   padding: 32px;
   background: linear-gradient(135deg, #141414 0%, #1e1e1e 100%);
   border: 1px solid rgba(123, 175, 212, 0.2);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   position: relative;
   transition: all 0.3s ease-out;
 }
