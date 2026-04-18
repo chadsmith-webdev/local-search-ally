@@ -76,8 +76,13 @@ export default function RootLayout({ children }) {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <a href='#main-content' className='skip-link'>
+          Skip to main content
+        </a>
         <Navbar />
-        <main className='flex-1 min-h-screen'>{children}</main>
+        <main id='main-content' className='flex-1 min-h-screen'>
+          {children}
+        </main>
         <Footer />
         <GoogleAnalytics gaId='G-SGQ98MEHWZ' />
       </body>
