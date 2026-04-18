@@ -65,10 +65,6 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: var(--bg);
   color: var(--text);
@@ -443,13 +439,14 @@ textarea {
   --color-carolina-dark: #4d8cb9;
   --color-slate: #1a222e;
   --color-steel: #3a5570;
-  --color-cyan-accent: #00f2ff;
-  --color-surface: #080a0d;
-  --color-surface-2: #0e1217;
-  --color-bg: #020203;
+  --color-surface: #141414;
+  --color-surface-2: #1e1e1e;
+  --color-bg: #0a0a0a;
   --color-text: #f8f9fa;
   --color-muted: #6c757d;
   --color-red: #ff4d4d;
+  --color-yellow: #ffcc00;
+  --color-green: #00ff88;
 
   --font-family-serif: var(--font-display);
   --font-family-sans: var(--font-ui);

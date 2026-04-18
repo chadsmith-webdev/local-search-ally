@@ -69,6 +69,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang='en'
+      data-scroll-behavior='smooth'
       className={`${bricolage.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
       <body>
