@@ -1,14 +1,42 @@
-.inner {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
 }
 
-.header {
-  max-width: 760px;
+/* Faint horizontal rule at top */
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--page-gutter);
+  right: var(--page-gutter);
+  height: 1px;
+  background: var(--border);
+}
+
+.inner {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Header ─────────────────────────────────────────── */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 600px;
 }
 
 .eyebrow {
@@ -32,155 +60,203 @@
   opacity: 0.6;
 }
 
-.h2,
-.ctaTitle {
+.h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 3vw, 2.35rem);
-  line-height: 1.14;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.875rem, 3.5vw, 2.875rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--text);
 }
 
-.subhead,
-.ctaBody,
-.stepBody,
-.note {
-  color: rgba(248, 249, 250, 0.78);
-  line-height: 1.8;
+.lead {
+  font-family: var(--font-ui);
+  font-size: 1.0625rem;
+  color: var(--muted);
+  line-height: 1.75;
 }
 
+/* ─── Steps row ──────────────────────────────────────── */
 .steps {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+/* Connector line between steps */
+.steps::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  right: calc(33.333% - 28px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(123, 175, 212, 0.3) 0%,
+    rgba(123, 175, 212, 0.15) 50%,
+    rgba(123, 175, 212, 0.3) 100%
+  );
+  z-index: 0;
 }
 
 .step {
-  padding: 1.25rem;
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.stepNum {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 2rem 0 0;
   position: relative;
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(123, 175, 212, 0.28);
-  background: linear-gradient(
-    180deg,
-    rgba(123, 175, 212, 0.18) 0%,
-    rgba(123, 175, 212, 0.07) 100%
-  );
-  color: var(--carolina);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 10px 28px rgba(0, 0, 0, 0.18);
-  overflow: hidden;
+  z-index: 1;
 }
 
-.stepNum::before {
-  content: "";
-  position: absolute;
-  inset: -14px auto auto -14px;
-  width: 40px;
-  height: 40px;
+.step:last-child {
+  padding-right: 0;
+}
+
+/* ─── Step number badge ──────────────────────────────── */
+.stepNum {
+  width: 56px;
+  height: 56px;
   border-radius: var(--radius-full);
-  background: radial-gradient(
-    circle,
-    rgba(123, 175, 212, 0.28) 0%,
-    transparent 72%
-  );
-  pointer-events: none;
+  border: 1px solid rgba(123, 175, 212, 0.25);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
 }
 
 .stepNum::after {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
-  pointer-events: none;
+  inset: -4px;
+  border-radius: var(--radius-full);
+  border: 1px dashed rgba(123, 175, 212, 0.12);
+}
+
+.stepNumText {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--carolina);
+  line-height: 1;
+}
+
+/* ─── Step content ───────────────────────────────────── */
+.stepBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
 }
 
 .stepTitle {
-  margin-top: 0.85rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-
-.stepBody {
-  margin-top: 0.45rem;
-}
-
-.ctaCard {
-  margin-top: 0.25rem;
-  padding: 1.4rem;
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(123, 175, 212, 0.22);
-  background: linear-gradient(
-    135deg,
-    rgba(123, 175, 212, 0.14) 0%,
-    rgba(255, 255, 255, 0.02) 45%,
-    rgba(255, 255, 255, 0.01) 100%
-  );
-}
-
-.ctaBody {
-  margin-top: 0.7rem;
-  max-width: 760px;
-}
-
-.ctas {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.primaryBtn,
-.secondaryBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.9rem 1.25rem;
-  border-radius: var(--radius-lg);
-  text-decoration: none;
-  font-weight: 800;
-}
-
-.primaryBtn {
-  background: var(--carolina);
-  color: #020203;
-}
-
-.secondaryBtn {
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-display);
+  font-size: 1.1875rem;
+  font-weight: 700;
   color: var(--text);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.stepDesc {
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ─── Bottom note + CTA row ──────────────────────────── */
+.noteRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .note {
-  margin-top: 0.9rem;
-  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  flex: 1;
+  min-width: 260px;
 }
 
-@media (min-width: 900px) {
+.auditCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--carolina);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition:
+    gap 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.auditCta:hover {
+  opacity: 0.75;
+  gap: 0.75rem;
+}
+
+.noteIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: rgba(123, 175, 212, 0.08);
+  border: 1px solid rgba(123, 175, 212, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.noteIcon svg {
+  width: 15px;
+  height: 15px;
+  color: var(--carolina);
+}
+
+.noteText {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.noteText strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ─── Responsive ────────────────────────────────────── */
+@media (max-width: 900px) {
   .steps {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
-  .ctas {
+  .steps::before {
+    display: none;
+  }
+
+  .step {
+    padding-right: 0;
     flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 
-  .primaryBtn,
-  .secondaryBtn {
-    min-width: 240px;
+  .stepBody {
+    padding-top: 0.25rem;
   }
 }
