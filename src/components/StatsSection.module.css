@@ -169,7 +169,7 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
   .stats {
     grid-template-columns: 1fr;
     gap: 2rem;

@@ -291,7 +291,7 @@
 }
 
 /* ─── Responsive ─────────────────────────────────────── */
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   .card {
     grid-template-columns: 1fr;
   }
@@ -318,7 +318,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .content {
     padding: 1.5rem;
   }

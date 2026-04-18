@@ -137,7 +137,7 @@
   font-style: italic;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .ctaPrimary {
     width: 100%;
     justify-content: center;

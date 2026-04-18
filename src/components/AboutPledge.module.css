@@ -207,7 +207,7 @@
 }
 
 /* ── Mobile ── */
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .ctaBlock {
     padding: 2rem 1.5rem;
   }

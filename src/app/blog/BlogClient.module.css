@@ -336,7 +336,7 @@
 
 /* ── Mobile ────────────────────────────────────────────────────────────────── */
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .ctaBox {
     padding: 3rem 1.5rem;
     border-radius: var(--radius-xl);

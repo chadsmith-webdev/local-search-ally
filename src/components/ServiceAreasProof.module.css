@@ -90,7 +90,7 @@
   color: rgba(248, 249, 250, 0.82);
 }
 
-@media (min-width: 960px) {
+@media (min-width: 900px) {
   .problemBlock {
     grid-template-columns: 0.7fr 1.3fr;
     align-items: center;

@@ -162,7 +162,7 @@
   letter-spacing: 0.05em;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .ctas {
     width: 100%;
     flex-direction: column;

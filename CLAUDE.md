@@ -285,15 +285,15 @@ Write as Chad — one person talking to one person. Plain-spoken, honest, direct
 
 ## Site Structure
 
-| Page      | Path         | Purpose                             |
-| --------- | ------------ | ----------------------------------- |
-| Homepage  | `/`          | Primary conversion page             |
-| Services  | `/services`  | Full service breakdown with pricing |
-| Portfolio | `/portfolio` | Demo builds and sample work         |
-| Blog      | `/blog`      | Educational content, no email gate  |
-| About     | `/about`     | Chad's story and values             |
-| Contact   | `/contact`   | Strategy call booking (Calendly)    |
-| Locations | `/locations` | NWA service areas                   |
+| Page          | Path             | Purpose                             |
+| ------------- | ---------------- | ----------------------------------- |
+| Homepage      | `/`              | Primary conversion page             |
+| Services      | `/services`      | Full service breakdown with pricing |
+| Portfolio     | `/portfolio`     | Demo builds and sample work         |
+| Blog          | `/blog`          | Educational content, no email gate  |
+| About         | `/about`         | Chad's story and values             |
+| Contact       | `/contact`       | Strategy call booking (Calendly)    |
+| Service Areas | `/service-areas` | NWA service areas                   |
 
 ---
 

@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
 :root {
+  /* Breakpoints (reference only — use these values in @media queries)
+     --bp-sm:  600px   Mobile → small tablet
+     --bp-md:  768px   Tablet
+     --bp-lg:  900px   Large tablet / small desktop
+     --bp-xl:  1024px  Desktop
+  */
+
   /* Fonts */
   --font-display: "Bricolage Grotesque", serif;
   --font-ui: "Space Grotesk", sans-serif;

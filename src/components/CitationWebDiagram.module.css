@@ -311,7 +311,7 @@
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .diagramWrap {
     grid-template-columns: 1fr 100px 1fr;
     grid-template-rows: auto 100px auto;

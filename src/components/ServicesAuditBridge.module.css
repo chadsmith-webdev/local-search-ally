@@ -120,7 +120,7 @@
   letter-spacing: 0.01em;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .card {
     padding: 2rem 1.5rem;
   }
