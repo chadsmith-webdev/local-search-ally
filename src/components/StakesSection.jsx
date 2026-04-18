@@ -46,16 +46,15 @@ export default function StakesSection() {
       <motion.div
         className={styles.inner}
         variants={container}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: true, amount: 0.15 }}
       >
         {/* Header */}
         <motion.div className={styles.header} variants={fadeUp}>
           <span className={styles.eyebrow}>The Math of Local Search</span>
           <h2 className={styles.h2}>
-            The numbers behind why{" "}
-            <br />
+            The numbers behind why <br />
             visibility is everything.
           </h2>
           <p className={styles.lead}>
@@ -91,16 +90,16 @@ export default function StakesSection() {
               {i < TIERS.length - 1 && (
                 <div className={styles.connector}>
                   <svg
-                    width="16"
-                    height="20"
-                    viewBox="0 0 16 20"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                    width='16'
+                    height='20'
+                    viewBox='0 0 16 20'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='1.5'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                   >
-                    <path d="M8 1v14M3 11l5 6 5-6" />
+                    <path d='M8 1v14M3 11l5 6 5-6' />
                   </svg>
                 </div>
               )}
@@ -112,23 +111,23 @@ export default function StakesSection() {
         <motion.div className={styles.bottom} variants={fadeUp}>
           <p className={styles.bottomText}>
             For an HVAC company in Rogers or a plumber in Bentonville, the
-            difference between a busy schedule and a quiet phone isn&rsquo;t
-            the quality of your work —{" "}
+            difference between a busy schedule and a quiet phone isn&rsquo;t the
+            quality of your work —{" "}
             <strong>it&rsquo;s whether you show up when they search.</strong>
           </p>
-          <Link href="/audit" className={styles.cta}>
+          <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.cta}>
             See where you stand
             <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.75"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              width='16'
+              height='16'
+              viewBox='0 0 16 16'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='1.75'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             >
-              <path d="M3 8h10M9 4l4 4-4 4" />
+              <path d='M3 8h10M9 4l4 4-4 4' />
             </svg>
           </Link>
         </motion.div>
