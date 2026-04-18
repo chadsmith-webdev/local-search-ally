@@ -114,11 +114,19 @@ export default function BlogClient({ posts }) {
       {/* Post grid */}
       <section className={styles.gridSection}>
         <div className={styles.inner}>
-          <div className={styles.grid}>
-            {posts.map((post, i) => (
-              <PostCard key={post.slug} post={post} index={i} />
-            ))}
-          </div>
+          {posts.length > 0 ? (
+            <div className={styles.grid}>
+              {posts.map((post, i) => (
+                <PostCard key={post.slug} post={post} index={i} />
+              ))}
+            </div>
+          ) : (
+            <div className={styles.emptyState}>
+              <p className={styles.emptyText}>
+                No posts yet — check back soon.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 

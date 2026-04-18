@@ -109,6 +109,23 @@
   margin: 0 auto;
 }
 
+/* ── Empty state ────────────────────────────────────────────────────────────── */
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+}
+
+.emptyText {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  color: var(--muted);
+}
+
 /* ── Post grid ─────────────────────────────────────────────────────────────── */
 
 .gridSection {

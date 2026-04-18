@@ -268,9 +268,14 @@ export default function ContactClient() {
                     className={styles.btnSubmit}
                     disabled={formState === FORM_STATES.LOADING}
                   >
-                    {formState === FORM_STATES.LOADING
-                      ? "Sending…"
-                      : "Send message"}
+                    {formState === FORM_STATES.LOADING ? (
+                      <>
+                        <span className={styles.spinner} aria-hidden='true' />
+                        Sending…
+                      </>
+                    ) : (
+                      "Send message"
+                    )}
                   </button>
 
                   <p className={styles.formNote}>
