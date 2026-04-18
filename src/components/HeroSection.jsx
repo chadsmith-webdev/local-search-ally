@@ -2,8 +2,13 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import styles from "./HeroSection.module.css";
-import SearchFunnel from "./SearchFunnel";
+
+const SearchFunnel3D = dynamic(() => import("./SearchFunnel3D"), {
+  ssr: false,
+  loading: () => <div className={styles.sceneFallback} />,
+});
 
 const container = {
   hidden: {},
@@ -48,8 +53,8 @@ export default function HeroSection() {
           </motion.span>
 
           <motion.h1 variants={fadeUpNoOpacity} className={styles.h1}>
-            Is invisibility hiding you from{" "}
-            <em>3.12 billion</em> daily local searches?
+            Is invisibility hiding you from <em>3.12 billion</em> daily local
+            searches?
           </motion.h1>
 
           <motion.p variants={fadeUp} className={styles.subhead}>
@@ -59,7 +64,10 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div variants={fadeUp} className={styles.ctas}>
-            <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.btnPrimary}>
+            <Link
+              href={process.env.NEXT_PUBLIC_AUDIT_URL}
+              className={styles.btnPrimary}
+            >
               See Where You Stand — It&rsquo;s Free
             </Link>
             <Link href='#how-it-works' className={styles.btnSecondary}>
@@ -72,9 +80,9 @@ export default function HeroSection() {
           </motion.p>
         </motion.div>
 
-        {/* Right: search funnel graphic */}
+        {/* Right: 3D search funnel */}
         <div className={styles.sceneCol} aria-hidden='true'>
-          <SearchFunnel />
+          <SearchFunnel3D />
         </div>
       </div>
     </section>
