@@ -1,6 +1,9 @@
 .hero {
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   padding: calc(var(--section-spacing) * 1.5) var(--page-gutter)
     var(--section-spacing);
 }
