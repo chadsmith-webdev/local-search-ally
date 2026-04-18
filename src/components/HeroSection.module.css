@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   padding-top: 0;
-  overflow: hidden;
   background: var(--bg);
 }
 
@@ -14,12 +13,12 @@
 .hero::before {
   content: "";
   position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 65%;
-  height: 70%;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 50%;
   background: radial-gradient(
-    ellipse,
+    ellipse at 80% 20%,
     rgba(123, 175, 212, 0.07) 0%,
     transparent 70%
   );
@@ -181,6 +180,7 @@
 .sceneCol {
   height: 520px;
   position: relative;
+  overflow: visible;
 }
 
 .sceneFallback {
