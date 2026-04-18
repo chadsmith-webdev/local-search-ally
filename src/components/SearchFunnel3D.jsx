@@ -193,7 +193,7 @@ function FunnelLabels() {
     <>
       {/* Tier 1 — Global Searches */}
       <Html
-        position={[2.4, 1.4, 0]}
+        position={[0, 1.35, 0]}
         center
         distanceFactor={6}
         className={styles.labelWrap}
@@ -206,7 +206,7 @@ function FunnelLabels() {
 
       {/* Tier 2 — Local Intent */}
       <Html
-        position={[1.8, -0.1, 0]}
+        position={[0, -0.1, 0]}
         center
         distanceFactor={6}
         className={styles.labelWrap}
@@ -219,7 +219,7 @@ function FunnelLabels() {
 
       {/* Tier 3 — Conversions */}
       <Html
-        position={[1.2, -1.5, 0]}
+        position={[0, -1.5, 0]}
         center
         distanceFactor={6}
         className={styles.labelWrap}
@@ -247,6 +247,7 @@ function FunnelScene() {
         distance={5}
       />
 
+      <group rotation={[-0.65, 0, 0]}>
       <RotatingGroup>
         {/* Tier 1 — widest (Global Searches) */}
         <FunnelTier
@@ -296,6 +297,7 @@ function FunnelScene() {
 
       {/* Labels stay facing camera (outside rotation group) */}
       <FunnelLabels />
+      </group>
     </>
   );
 }
@@ -309,10 +311,10 @@ export default function SearchFunnel3D() {
       role='img'
     >
       <Canvas
-        camera={{ position: [0, 0.5, 6], fov: 40 }}
+        camera={{ position: [0, -0.5, 5], fov: 42 }}
         dpr={[1, 1.5]}
         gl={{ antialias: true, alpha: true }}
-        style={{ pointerEvents: "none" }}
+        style={{ pointerEvents: "none", flex: 1 }}
       >
         <Suspense fallback={null}>
           <FunnelScene />

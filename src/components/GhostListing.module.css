@@ -1,0 +1,269 @@
+/* ── Wrapper ──────────────────────────────────────────── */
+.wrapper {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+.card {
+  width: 100%;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 0 40px rgba(0, 0, 0, 0.6),
+    0 -1px 0 rgba(123, 175, 212, 0.3) inset;
+}
+
+/* ── Browser chrome ───────────────────────────────────── */
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #1a1a1a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.googleText {
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 1;
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 5px 12px;
+}
+
+.searchIcon {
+  color: #555;
+  flex-shrink: 0;
+}
+
+.searchQuery {
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+  font-size: 12px;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Card body: listings left + map right ─────────────── */
+.cardBody {
+  display: flex;
+  align-items: stretch;
+}
+
+/* ── Listings panel (left) ────────────────────────────── */
+.listingsPanel {
+  flex: 1;
+  min-width: 0;
+  padding: 4px 0;
+}
+
+/* ── Map panel (right) ────────────────────────────────── */
+.mapPanel {
+  width: 43%;
+  flex-shrink: 0;
+  position: relative;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  background: #0d1117;
+}
+
+/* ── Individual listing ───────────────────────────────── */
+.listing {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.listingNum {
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  color: #7bafd4;
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  padding-top: 1px;
+}
+
+.listingNumGhost {
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  padding-top: 1px;
+}
+
+.listingContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.listingName {
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: #7bafd4;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listingRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stars {
+  display: flex;
+  gap: 1px;
+  line-height: 1;
+}
+
+.starFilled {
+  color: #fbbc04;
+  font-size: 10px;
+}
+
+.starEmpty {
+  color: #444;
+  font-size: 10px;
+}
+
+.ratingNum {
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+  font-size: 11px;
+  color: #aaa;
+}
+
+.reviewCount {
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+  font-size: 11px;
+  color: #666;
+}
+
+.listingMeta {
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+  font-size: 11px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.listingPhone {
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+  font-size: 11px;
+  color: #7bafd4;
+}
+
+.dot {
+  color: #555;
+}
+
+/* ── Divider ──────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 0 12px;
+}
+
+/* ── Ghost slot ───────────────────────────────────────── */
+.ghostSlot {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: flex-start;
+  background: rgba(255, 0, 0, 0.03);
+}
+
+@keyframes ghostPulse {
+  0%, 100% { opacity: 0.07; }
+  50%       { opacity: 0.14; }
+}
+
+.skeletonBar {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  animation: ghostPulse 2.5s ease-in-out infinite;
+}
+
+.skeletonName   { width: 78%; height: 11px; }
+.skeletonRating { width: 52%; height: 9px; }
+.skeletonMeta   { width: 82%; height: 9px; }
+.skeletonPhone  { width: 44%; height: 9px; }
+
+.ghostLabel {
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.18);
+  margin-top: 3px;
+}
+
+/* ── Card footer ──────────────────────────────────────── */
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+  font-size: 11px;
+  color: #444;
+}
+
+/* ── Stat line ────────────────────────────────────────── */
+.statLine {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #444;
+  margin-top: 14px;
+  text-align: center;
+}
+
+/* ── Ghost ring animation ─────────────────────────────── */
+@keyframes ghostRing {
+  0%   { r: 13; opacity: 0.22; }
+  100% { r: 26; opacity: 0; }
+}
+
+.ghostRing {
+  animation: ghostRing 2s ease-out infinite;
+}

@@ -46,7 +46,7 @@
   padding-left: var(--page-gutter);
   padding-right: var(--page-gutter);
   display: grid;
-  grid-template-columns: 58% 42%;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
   position: relative;
@@ -178,9 +178,9 @@
 
 /* ─── Right column: 3D scene ────────────────────────── */
 .sceneCol {
-  height: 520px;
-  position: relative;
-  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sceneFallback {
