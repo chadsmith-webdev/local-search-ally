@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./HeroSection.module.css";
-import GhostListing from "./GhostListing";
 
 const container = {
   hidden: {},
@@ -75,10 +75,22 @@ export default function HeroSection() {
           </motion.p>
         </motion.div>
 
-        {/* Right: ghost listing */}
-        <div className={styles.sceneCol}>
-          <GhostListing />
-        </div>
+        {/* Right: cinematic hero image */}
+        <motion.div
+          className={styles.sceneCol}
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+        >
+          <Image
+            src="/images/hero-map-pack-ghost.png"
+            alt="Google Map Pack showing 3 ranked contractors and a ghosted 4th slot labeled 'Not in the Map Pack'"
+            width={600}
+            height={600}
+            priority
+            className={styles.heroImage}
+          />
+        </motion.div>
       </div>
     </section>
   );
