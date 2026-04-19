@@ -188,7 +188,6 @@
   height: auto;
   border-radius: 16px;
   background-color: var(--bg);
-  filter: drop-shadow(0 0 40px rgba(123, 175, 212, 0.2));
 }
 
 .sceneFallback {
