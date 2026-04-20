@@ -97,7 +97,7 @@ One pillar \+ four cluster posts per month. Build the trunk first, then fill in 
 
 | Month | Pillar | Cluster Posts |
 | :---- | :---- | :---- |
-| Month 1 | Local SEO for Contractors (Pillar 1\) | HVAC Local SEO · Plumber Local SEO · Roofing Local SEO · Electrician Local SEO |
+| Month 1 | ✅ Local SEO for Contractors (Pillar 1\) | HVAC Local SEO · Plumber Local SEO · Roofing Local SEO · Electrician Local SEO |
 | Month 2 | Google Reviews Guide (Pillar 2\) | HVAC Reviews · Plumber Reviews · Roofer Reviews · Electrician Reviews |
 | Month 3 | GBP Complete Guide (Pillar 3\) | HVAC GBP · Plumber GBP · Roofer GBP · Electrician GBP |
 | Month 4 | NWA Local (one per city) | Not Showing Up posts for each trade |
@@ -119,11 +119,11 @@ These are the highest-leverage changes on the site right now. Under 20 minutes o
 
 | Fix | Page | Time | Expected Impact |
 | :---- | :---- | :---- | :---- |
-| Rewrite title tag | Google Reviews post | 2 min | CTR lift from existing page 1 ranking |
-| Add meta description | Google Reviews post | 5 min | Currently auto-generated — Google picks random snippet |
-| Rewrite title tag | GBP Optimization post | 2 min | Better keyword alignment |
-| Add meta description | GBP Optimization post | 5 min | CTR ready when it hits page 1 |
-| Add internal link (Reviews → GBP) | Google Reviews post | 5 min | Push GBP post from pos 20 → page 1 |
+| ✅ Rewrite title tag | Google Reviews post | 2 min | CTR lift from existing page 1 ranking |
+| ✅ Add meta description | Google Reviews post | 5 min | Currently auto-generated — Google picks random snippet |
+| ✅ Rewrite title tag | GBP Optimization post | 2 min | Better keyword alignment |
+| ✅ Add meta description | GBP Optimization post | 5 min | CTR ready when it hits page 1 |
+| ✅ Add internal link (Reviews → GBP) | Google Reviews post | 5 min | Push GBP post from pos 20 → page 1 |
 
 ## **Recommended Title Tags**
 

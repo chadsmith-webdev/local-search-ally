@@ -16,6 +16,11 @@
       "sourceType": "github",
       "computedHash": "40f156d4e5f94c560128a46a5118170ad3515d7f12edbe80cfc461d9af46c606"
     },
+    "blog": {
+      "source": "agricidaniel/claude-blog",
+      "sourceType": "github",
+      "computedHash": "bd40cb301a7e43172cb568d546bb4b29714e08afd726a5d442303ede85b84d12"
+    },
     "frontend-design": {
       "source": "anthropics/claude-code",
       "sourceType": "github",
@@ -40,6 +45,11 @@
       "source": "borghei/claude-skills",
       "sourceType": "github",
       "computedHash": "af3884d295b03ab4bdce99b024dbd3d71d4dd982f5824d1485e896d7be48f862"
+    },
+    "nano-banana-2": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "215c4dc55d2c3a9f3b740dad0c00d51cc9450c6266595d414eb720ae3e96a8d2"
     },
     "seo-content-writer": {
       "source": "aaron-he-zhu/seo-geo-claude-skills",

@@ -48,8 +48,8 @@ export default function HeroSection() {
           </motion.span>
 
           <motion.h1 variants={fadeUpNoOpacity} className={styles.h1}>
-            Is invisibility hiding you from <em>3.12 billion</em> daily local
-            searches?
+            Is invisibility hiding you from <em>3.12 billion</em>
+            daily local searches?
           </motion.h1>
 
           <motion.p variants={fadeUp} className={styles.subhead}>
@@ -83,7 +83,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
         >
           <Image
-            src="/images/hero-map-pack-ghost.png"
+            src='/images/hero-map-pack-ghost.png'
             alt="Google Map Pack showing 3 ranked contractors and a ghosted 4th slot labeled 'Not in the Map Pack'"
             width={600}
             height={600}
