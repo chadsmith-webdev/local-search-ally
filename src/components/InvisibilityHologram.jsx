@@ -8,7 +8,54 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 import styles from "./InvisibilityHologram.module.css";
 
-/* ─── Bloom post-processing ───────────────────────────── */
+/* ─── Perlin noise (classic 3D) ───────────────────────── */
+const PERM = new Uint8Array(512);
+const GRAD3 = [
+  [1,1,0],[-1,1,0],[1,-1,0],[-1,-1,0],
+  [1,0,1],[-1,0,1],[1,0,-1],[-1,0,-1],
+  [0,1,1],[0,-1,1],[0,1,-1],[0,-1,-1],
+];
+
+(function initPerm() {
+  const p = [];
+  for (let i = 0; i < 256; i++) p[i] = i;
+  for (let i = 255; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [p[i], p[j]] = [p[j], p[i]];
+  }
+  for (let i = 0; i < 512; i++) PERM[i] = p[i & 255];
+})();
+
+function fade(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
+function lerp(a, b, t) { return a + t * (b - a); }
+function dot3(g, x, y, z) { return g[0] * x + g[1] * y + g[2] * z; }
+
+function perlin3(x, y, z) {
+  const X = Math.floor(x) & 255;
+  const Y = Math.floor(y) & 255;
+  const Z = Math.floor(z) & 255;
+  x -= Math.floor(x);
+  y -= Math.floor(y);
+  z -= Math.floor(z);
+  const u = fade(x), v = fade(y), w = fade(z);
+
+  const A  = PERM[X] + Y, AA = PERM[A] + Z, AB = PERM[A + 1] + Z;
+  const B  = PERM[X + 1] + Y, BA = PERM[B] + Z, BB = PERM[B + 1] + Z;
+
+  return lerp(
+    lerp(
+      lerp(dot3(GRAD3[PERM[AA] % 12], x, y, z),
+           dot3(GRAD3[PERM[BA] % 12], x - 1, y, z), u),
+      lerp(dot3(GRAD3[PERM[AB] % 12], x, y - 1, z),
+           dot3(GRAD3[PERM[BB] % 12], x - 1, y - 1, z), u), v),
+    lerp(
+      lerp(dot3(GRAD3[PERM[AA + 1] % 12], x, y, z - 1),
+           dot3(GRAD3[PERM[BA + 1] % 12], x - 1, y, z - 1), u),
+      lerp(dot3(GRAD3[PERM[AB + 1] % 12], x, y - 1, z - 1),
+           dot3(GRAD3[PERM[BB + 1] % 12], x - 1, y - 1, z - 1), u), v), w);
+}
+
+/* ─── Bloom post-processing (cranked) ─────────────────── */
 function BloomEffect() {
   const { gl, scene, camera, size } = useThree();
   const composerRef = useRef();
@@ -22,9 +69,9 @@ function BloomEffect() {
 
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(size.width, size.height),
-      0.8,   // strength — visible halo around wireframe
-      0.9,   // radius — wide atmospheric spread
-      0.25   // threshold — catch emissive wireframe + points
+      0.9,   // strength — peaks glow into dark areas
+      0.85,  // radius — wide atmospheric spread
+      0.22   // threshold — catch emissive peaks
     );
     composer.addPass(bloomPass);
 
@@ -44,12 +91,26 @@ function BloomEffect() {
   return null;
 }
 
-/* ─── Wireframe terrain — vast topographic landscape ──── */
+/* ─── Shared displacement function ────────────────────── */
+function displace(origX, origY, time) {
+  /* Smooth sine waves for base terrain */
+  const wave1 = Math.sin(origX * 0.5 + time * 0.4) * 0.5;
+  const wave2 = Math.sin(origY * 0.6 + time * 0.3) * 0.4;
+  const wave3 = Math.sin((origX + origY) * 0.35 + time * 0.55) * 0.35;
+
+  /* Perlin noise for erratic energy field texture */
+  const n1 = perlin3(origX * 0.25, origY * 0.25, time * 0.3) * 1.2;
+  const n2 = perlin3(origX * 0.5 + 50, origY * 0.5 + 50, time * 0.5) * 0.5;
+  const n3 = perlin3(origX * 1.0 + 100, origY * 1.0, time * 0.8) * 0.2;
+
+  return (wave1 + wave2 + wave3 + n1 + n2 + n3) * 0.45;
+}
+
+/* ─── Wireframe terrain — erratic energy field ────────── */
 function CloakMesh() {
   const meshRef = useRef();
   const geoRef = useRef();
 
-  /* Cache original positions for wave displacement */
   const originalPositions = useMemo(() => {
     const geo = new THREE.PlaneGeometry(18, 18, 80, 80);
     return new Float32Array(geo.attributes.position.array);
@@ -62,28 +123,17 @@ function CloakMesh() {
     const positions = geoRef.current.attributes.position.array;
     const count = positions.length / 3;
 
-    /* Multi-frequency noise displacement for breathing terrain */
     for (let i = 0; i < count; i++) {
       const ix = i * 3;
       const iy = i * 3 + 1;
       const iz = i * 3 + 2;
 
-      const origX = originalPositions[ix];
-      const origY = originalPositions[iy];
-
-      const wave1 = Math.sin(origX * 0.5 + time * 0.4) * 0.6;
-      const wave2 = Math.sin(origY * 0.6 + time * 0.3) * 0.5;
-      const wave3 = Math.sin((origX + origY) * 0.35 + time * 0.55) * 0.4;
-      const wave4 = Math.sin(origX * 1.0 + origY * 0.8 + time * 0.9) * 0.2;
-      const wave5 = Math.cos(origX * 1.8 - origY * 1.2 + time * 0.7) * 0.12;
-
-      positions[iz] = (wave1 + wave2 + wave3 + wave4 + wave5) * 0.5;
+      positions[iz] = displace(originalPositions[ix], originalPositions[iy], time);
     }
 
     geoRef.current.attributes.position.needsUpdate = true;
     geoRef.current.computeVertexNormals();
 
-    /* Very slow Y rotation — breathing data field */
     meshRef.current.rotation.z = 0.2 + time * 0.015;
   });
 
@@ -93,29 +143,27 @@ function CloakMesh() {
       <meshStandardMaterial
         color="#0a1520"
         emissive="#7bafd4"
-        emissiveIntensity={1.4}
+        emissiveIntensity={1.5}
         wireframe
         transparent
         opacity={0.4}
-        roughness={0.5}
-        metalness={0.5}
+        roughness={0.4}
+        metalness={0.6}
       />
     </mesh>
   );
 }
 
-/* ─── Vertex point cloud — glowing data nodes ─────────── */
+/* ─── Vertex point cloud — bright star nodes ──────────── */
 function VertexPoints() {
   const ref = useRef();
-  const meshGeoRef = useRef();
 
-  /* Generate matching grid positions for vertex dots */
-  const positions = useMemo(() => {
+  const originalPositions = useMemo(() => {
     const geo = new THREE.PlaneGeometry(18, 18, 80, 80);
     return new Float32Array(geo.attributes.position.array);
   }, []);
 
-  const count = positions.length / 3;
+  const count = originalPositions.length / 3;
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
@@ -123,27 +171,15 @@ function VertexPoints() {
     const time = clock.getElapsedTime();
     const pos = ref.current.geometry.attributes.position.array;
 
-    /* Sync displacement with CloakMesh */
     for (let i = 0; i < count; i++) {
       const ix = i * 3;
       const iy = i * 3 + 1;
       const iz = i * 3 + 2;
 
-      const origX = positions[ix];
-      const origY = positions[iy];
-
-      const wave1 = Math.sin(origX * 0.5 + time * 0.4) * 0.6;
-      const wave2 = Math.sin(origY * 0.6 + time * 0.3) * 0.5;
-      const wave3 = Math.sin((origX + origY) * 0.35 + time * 0.55) * 0.4;
-      const wave4 = Math.sin(origX * 1.0 + origY * 0.8 + time * 0.9) * 0.2;
-      const wave5 = Math.cos(origX * 1.8 - origY * 1.2 + time * 0.7) * 0.12;
-
-      pos[iz] = (wave1 + wave2 + wave3 + wave4 + wave5) * 0.5;
+      pos[iz] = displace(originalPositions[ix], originalPositions[iy], time);
     }
 
     ref.current.geometry.attributes.position.needsUpdate = true;
-
-    /* Match CloakMesh rotation */
     ref.current.rotation.z = 0.2 + time * 0.015;
   });
 
@@ -152,16 +188,16 @@ function VertexPoints() {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          array={new Float32Array(positions)}
+          array={new Float32Array(originalPositions)}
           count={count}
           itemSize={3}
         />
       </bufferGeometry>
       <pointsMaterial
-        color="#7bafd4"
-        size={0.06}
+        color="#b0daf5"
+        size={0.08}
         transparent
-        opacity={0.9}
+        opacity={0.85}
         sizeAttenuation
       />
     </points>
@@ -216,7 +252,7 @@ function AtmosphericParticles() {
   );
 }
 
-/* ─── Main export: cinematic HUD-wrapped hologram ─────── */
+/* ─── Main export: Digital Architect hologram ─────────── */
 export default function InvisibilityHologram() {
   return (
     <div className={styles.hud}>
@@ -230,6 +266,9 @@ export default function InvisibilityHologram() {
 
       {/* Atmospheric haze — pool of light */}
       <div className={styles.glow} />
+
+      {/* CRT scanline overlay */}
+      <div className={styles.scanlines} />
 
       {/* Vertical scan bar */}
       <div className={styles.scanBar} />
