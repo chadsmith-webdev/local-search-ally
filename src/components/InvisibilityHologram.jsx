@@ -52,7 +52,7 @@ function CloakMesh() {
   });
 
   return (
-    <mesh ref={meshRef} rotation={[-Math.PI / 3.5, 0, 0.2]}>
+    <mesh ref={meshRef} rotation={[-Math.PI / 3.5, 0, 0.2]} scale={0.58} position={[-0.15, 0.2, 0]}>
       <planeGeometry ref={geoRef} args={[6, 6, 64, 64]} />
       <meshBasicMaterial
         color="#7bafd4"
@@ -124,7 +124,7 @@ function ScanRing() {
   });
 
   return (
-    <mesh ref={ref} rotation={[-Math.PI / 3.5, 0, 0.2]} position={[0, 0, -0.1]}>
+    <mesh ref={ref} rotation={[-Math.PI / 3.5, 0, 0.2]} position={[-0.15, 0.2, -0.1]} scale={0.58}>
       <ringGeometry args={[2.6, 2.75, 64]} />
       <meshBasicMaterial
         color="#7bafd4"
@@ -171,7 +171,7 @@ export default function InvisibilityHologram() {
 
       {/* 3D Canvas */}
       <Canvas
-        camera={{ position: [0, 0, 4.5], fov: 50 }}
+        camera={{ position: [0, 0, 6], fov: 40 }}
         className={styles.canvas}
         gl={{ alpha: true, antialias: true }}
         dpr={[1, 2]}
