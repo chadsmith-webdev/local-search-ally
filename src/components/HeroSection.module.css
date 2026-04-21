@@ -116,7 +116,7 @@
   align-items: center;
   justify-content: center;
   background: var(--carolina);
-  color: #1a222e;
+  color: var(--bg);
   border-radius: var(--radius-md);
   padding: 1rem 2rem;
   font-family: var(--font-ui);

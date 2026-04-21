@@ -99,7 +99,7 @@
   font-family: var(--font-ui);
   font-size: 1rem;
   font-weight: 700;
-  color: #0a0a0a;
+  color: var(--bg);
   background: var(--carolina);
   text-decoration: none;
   padding: 0.875rem 1.875rem;

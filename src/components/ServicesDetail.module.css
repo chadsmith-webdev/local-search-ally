@@ -254,7 +254,7 @@
 
 .learnMore:hover,
 .learnMore:focus-visible {
-  color: #f0f0f0;
+  color: var(--text);
   border-color: rgba(240, 240, 240, 0.4);
 }
 

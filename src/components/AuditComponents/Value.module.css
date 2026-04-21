@@ -17,14 +17,14 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #f0f0f0;
+  color: var(--text);
   margin: 0 0 16px 0;
 }
 
 .intro {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #f0f0f0;
+  color: var(--text);
   margin: 0;
 }
 
@@ -51,7 +51,7 @@
   font-family: var(--font-ui);
   font-size: 1.1rem;
   font-weight: 600;
-  color: #7bafd4;
+  color: var(--carolina);
   margin: 0 0 12px 0;
   letter-spacing: -0.01em;
 }
@@ -59,7 +59,7 @@
 .whyItem p {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #b0b0b0;
+  color: var(--muted);
   margin: 0;
 }
 
@@ -74,12 +74,12 @@
 .note p {
   font-size: 1rem;
   line-height: 1.8;
-  color: #f0f0f0;
+  color: var(--text);
   margin: 0;
 }
 
 .note strong {
-  color: #7bafd4;
+  color: var(--carolina);
   font-weight: 600;
 }
 

@@ -108,7 +108,7 @@
   align-items: center;
   padding: 0.85rem 1.75rem;
   background: var(--carolina);
-  color: #020203;
+  color: var(--bg);
   font-family: var(--font-ui);
   font-size: 0.9rem;
   font-weight: 700;

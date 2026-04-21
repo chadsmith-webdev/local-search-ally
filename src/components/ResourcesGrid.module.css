@@ -176,7 +176,7 @@
 .downloadBtn:hover {
   background: var(--carolina);
   border-color: var(--carolina);
-  color: #020203;
+  color: var(--bg);
 }
 
 .downloadBtn svg {

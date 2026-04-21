@@ -119,7 +119,7 @@
 
 .primaryBtn {
   background: var(--carolina);
-  color: #1a222e;
+  color: var(--bg);
   font-size: 0.9375rem;
   font-weight: 700;
   box-shadow: 0 0 32px rgba(123, 175, 212, 0.3);

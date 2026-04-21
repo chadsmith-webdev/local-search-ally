@@ -95,7 +95,7 @@
   left: 50%;
   transform: translateX(-50%);
   background: var(--carolina);
-  color: #0a0a0a;
+  color: var(--bg);
   font-family: var(--font-ui);
   font-size: 0.7rem;
   font-weight: 700;
@@ -186,7 +186,7 @@
   text-align: center;
   padding: 0.875rem 1.25rem;
   background: var(--carolina);
-  color: #0a0a0a;
+  color: var(--bg);
   font-family: var(--font-ui);
   font-size: 0.875rem;
   font-weight: 700;

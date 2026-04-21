@@ -117,7 +117,7 @@
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ff6b6b;
+  color: var(--red, #ff4d4d);
   opacity: 0.9;
 }
 

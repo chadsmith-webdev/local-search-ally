@@ -22,7 +22,7 @@
 .preview {
   position: relative;
   overflow: hidden;
-  background: #040609;
+  background: var(--bg);
   padding: 3rem 2.5rem;
   display: flex;
   align-items: center;
@@ -261,7 +261,7 @@
   font-family: var(--font-ui);
   font-size: 1rem;
   font-weight: 700;
-  color: #040609;
+  color: var(--bg);
   background: var(--carolina);
   text-decoration: none;
   padding: 0.875rem 1.875rem;

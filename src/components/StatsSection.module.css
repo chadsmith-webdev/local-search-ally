@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   /* Slate navy deep background — distinct from all other sections */
-  background: #0d1520;
+  background: var(--bg);
 }
 
 /* Radial glow centered behind the stats */

@@ -46,18 +46,18 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #f0f0f0;
+  color: var(--text);
   margin: 0;
 }
 
 .colorSpan {
-  color: #7bafd4;
+  color: var(--carolina);
 }
 
 .subheading {
   font-size: 1.25rem;
   line-height: 1.6;
-  color: #7bafd4;
+  color: var(--carolina);
   margin: 0 auto;
   font-weight: 500;
   max-width: 600px;
@@ -66,7 +66,7 @@
 .description {
   font-size: 1rem;
   line-height: 1.8;
-  color: #f0f0f0;
+  color: var(--text);
   margin: 0 auto;
   max-width: 650px;
 }
@@ -79,7 +79,7 @@
   background-color: transparent;
   border: 2px solid #7bafd4;
   border-radius: var(--radius-sm);
-  color: #7bafd4;
+  color: var(--carolina);
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -93,8 +93,8 @@
 .cta:hover,
 .cta:active {
   background-color: rgba(123, 175, 212, 0.13);
-  border-color: #f0f0f0;
-  color: #f0f0f0;
+  border-color: var(--text);
+  color: var(--text);
   box-shadow: 0 4px 24px 0 rgba(123, 175, 212, 0.13);
 }
 
@@ -107,7 +107,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #b6d6ec;
+  color: var(--carolina-light, #b6d6ec);
   font-size: 1rem;
   margin: 18px auto 0 auto;
   background: rgba(123, 175, 212, 0.07);
@@ -117,12 +117,12 @@
   box-shadow: 0 1px 8px 0 rgba(123, 175, 212, 0.07);
 }
 .trustStat strong {
-  color: #7bafd4;
+  color: var(--carolina);
   font-weight: 700;
 }
 .trustSource {
   font-size: 0.85em;
-  color: #7bafd4;
+  color: var(--carolina);
   margin-left: 8px;
   opacity: 0.7;
 }
@@ -131,7 +131,7 @@
   display: none;
   align-items: center;
   gap: 6px;
-  color: #7bafd4;
+  color: var(--carolina);
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -140,7 +140,7 @@
 }
 .callLink:hover,
 .callLink:focus-visible {
-  color: #f0f0f0;
+  color: var(--text);
   text-decoration: underline;
 }
 .phoneNumber {
