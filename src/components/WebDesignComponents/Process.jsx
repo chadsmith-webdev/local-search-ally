@@ -35,7 +35,7 @@ export default function Process() {
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.2 } } }}
             className={styles.mainSteps}
           >
-            <motion.div variants={fadeUp} className={`${styles.step} glass-premium hud-frame`}>
+            <motion.div variants={fadeUp} className={`${styles.step} hud-frame`}>
               <div className={styles.stepHeader}>
                 <span className={styles.stepTag}>STG-01</span>
                 <h3 className={styles.stepTitle}>Discovery &amp; Architecture</h3>
@@ -53,7 +53,7 @@ export default function Process() {
               </ul>
             </motion.div>
 
-            <motion.div variants={fadeUp} className={`${styles.step} glass-premium hud-frame`}>
+            <motion.div variants={fadeUp} className={`${styles.step} hud-frame`}>
               <div className={styles.stepHeader}>
                 <span className={styles.stepTag}>STG-02</span>
                 <h3 className={styles.stepTitle}>Design &amp; Build</h3>
@@ -71,7 +71,7 @@ export default function Process() {
               </ul>
             </motion.div>
 
-            <motion.div variants={fadeUp} className={`${styles.step} glass-premium hud-frame`}>
+            <motion.div variants={fadeUp} className={`${styles.step} hud-frame`}>
               <div className={styles.stepHeader}>
                 <span className={styles.stepTag}>STG-03</span>
                 <h3 className={styles.stepTitle}>Launch &amp; Optimize</h3>

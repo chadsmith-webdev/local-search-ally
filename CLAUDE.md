@@ -263,9 +263,8 @@ Never recreate these in component CSS Modules. Use them directly in JSX.
 These utility classes are defined in `globals.css` — use them, don't rewrite:
 
 ```
-.glass            /* Subtle glassmorphism */
-.glass-strong     /* Heavy glass — nav, modals */
-.glass-premium    /* Animated premium glass — feature cards */
+.glass-module     /* HUD glass — floating elements only (modals, tooltips, dropdowns, panels) */
+.module-header    /* Mono label for glass-module panel headers */
 .tech-grid        /* Dot/line grid background texture */
 .hud-frame        /* Corner bracket decoration */
 .pulsing-node     /* Animated dot indicator */
