@@ -93,6 +93,9 @@
 .h1 em {
   font-style: normal;
   color: var(--carolina);
+  text-shadow:
+    0 0 10px rgba(123, 175, 212, 0.6),
+    0 0 30px rgba(123, 175, 212, 0.2);
 }
 
 .subhead {
