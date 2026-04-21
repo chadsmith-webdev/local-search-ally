@@ -86,7 +86,6 @@
 }
 
 .faqItem {
-  border: 1px solid rgba(123,175,212,0.2);
   border-radius: var(--radius-sm);
   overflow: hidden;
   transition: all 0.3s ease-out;
@@ -109,13 +108,11 @@
 }
 
 .faqItem:hover {
-  border-color: rgba(123,175,212,0.4);
   background: linear-gradient(135deg, rgba(26,58,82,0.6) 0%, rgba(20,28,42,0.4) 100%);
 }
 
 .faqItem:hover::before { opacity: 1; }
 
-.faqItem.active { border-color: rgba(123,175,212,0.5); }
 .faqItem.active::before { opacity: 1; }
 
 .question {

@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(npx next:*)",
+      "Bash(grep -l \"generateMetadata\\\\|openGraph\" src/app/**/page.js src/app/page.js src/app/layout.js)",
+      "Bash(head -15 src/posts/*.mdx)",
+      "mcp__claude_ai_Vercel__list_teams",
+      "mcp__claude_ai_Vercel__list_deployments",
+      "mcp__claude_ai_Vercel__get_runtime_logs",
+      "mcp__claude_ai_Vercel__get_deployment_build_logs",
+      "Bash(npm install:*)",
+      "Bash(node scripts/generate-pdfs.mjs)",
+      "Bash(node --input-type=module --eval \"import\\('/Users/chadsmith/local-search-ally/scripts/generate-pdfs.mjs'\\).catch\\(e => { console.error\\(e.message\\); process.exit\\(1\\) }\\)\")",
+      "Bash(node --check /Users/chadsmith/local-search-ally/scripts/generate-pdfs.mjs)",
+      "Bash(node -e \"import\\('@react-pdf/renderer'\\).then\\(m => console.log\\(Object.keys\\(m\\)\\)\\)\")",
+      "Read(//mnt/**)",
+      "Bash(git -C /Users/chadsmith/local-search-ally status .claude/skills/local-search-ally-brand/references/BRAND.md)",
+      "Bash(git -C /Users/chadsmith/local-search-ally add .claude/skills/local-search-ally-brand/references/BRAND.md)",
+      "Bash(git -C /Users/chadsmith/local-search-ally commit -m ':*)",
+      "Bash(git -C /Users/chadsmith/local-search-ally push origin main)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}

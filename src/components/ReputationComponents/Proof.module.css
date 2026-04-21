@@ -70,8 +70,7 @@
 
 .pillar {
   padding: 30px;
-  background: rgba(20, 28, 42, 0.4);
-  border: 1px solid rgba(123, 175, 212, 0.15);
+  background: var(--surface);
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
@@ -94,7 +93,7 @@
 
 .pillar:hover {
   background: rgba(26, 58, 82, 0.6);
-  border-color: rgba(123, 175, 212, 0.4);
+  box-shadow: 0 0 20px rgba(123, 175, 212, 0.08);
   transform: translateY(-5px);
 }
 
@@ -140,7 +139,6 @@
     rgba(123, 175, 212, 0.1) 0%,
     transparent 70%
   );
-  border: 1px dashed rgba(123, 175, 212, 0.2);
   border-radius: var(--radius-xl);
   display: flex;
   justify-content: center;
@@ -239,7 +237,6 @@
     rgba(20, 28, 42, 0.6) 0%,
     rgba(15, 15, 15, 0.4) 100%
   );
-  border: 1px solid rgba(123, 175, 212, 0.2);
   border-radius: var(--radius-md);
   text-align: center;
   transition: all 0.3s ease-out;
@@ -260,12 +257,12 @@
 }
 
 .statBox:hover {
-  border-color: rgba(123, 175, 212, 0.4);
   background: linear-gradient(
     135deg,
     rgba(26, 58, 82, 0.7) 0%,
     rgba(20, 28, 42, 0.5) 100%
   );
+  box-shadow: 0 0 20px rgba(123, 175, 212, 0.08);
   transform: translateY(-4px);
 }
 
@@ -302,8 +299,7 @@
 }
 
 .commitment {
-  background: var(--bg);
-  border: 1px solid rgba(123, 175, 212, 0.15);
+  background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 40px;
 }
