@@ -20,7 +20,7 @@
   width: 18px;
   height: 18px;
   pointer-events: none;
-  z-index: 5;
+  z-index: 6;
 }
 
 /* Top-left bracket */
@@ -75,19 +75,45 @@
   z-index: 0;
 }
 
-/* ── CRT scanline overlay — hardware terminal feel ────── */
+/* ── CRT scanline overlay — hardware terminal texture ─── */
 .scanlines {
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(
     to bottom,
     transparent 0px,
-    transparent 3px,
-    rgba(0, 0, 0, 0.1) 3px,
-    rgba(0, 0, 0, 0.1) 4px
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 3px
   );
   pointer-events: none;
   z-index: 3;
+}
+
+/* ── Chromatic aberration — CRT lens glitch ───────────── */
+.chromatic {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  filter:
+    drop-shadow(2px 0px 0px rgba(255, 0, 0, 0.08))
+    drop-shadow(-2px 0px 0px rgba(0, 0, 255, 0.08));
+  mix-blend-mode: screen;
+  opacity: 0;
+  animation: chromaticPulse 8s ease-in-out infinite;
+}
+
+@keyframes chromaticPulse {
+  0%, 100% { opacity: 0; }
+  15%      { opacity: 0; }
+  16%      { opacity: 1; }
+  22%      { opacity: 1; }
+  23%      { opacity: 0; }
+  60%      { opacity: 0; }
+  61%      { opacity: 0.7; }
+  64%      { opacity: 0.7; }
+  65%      { opacity: 0; }
 }
 
 /* ── 3D Canvas layer — fills entire container ─────────── */
@@ -110,7 +136,7 @@
     0 0 8px rgba(123, 175, 212, 0.4),
     0 0 20px rgba(123, 175, 212, 0.15),
     0 0 40px rgba(123, 175, 212, 0.06);
-  z-index: 4;
+  z-index: 5;
   animation: scanSweep 6s ease-in-out infinite;
   pointer-events: none;
 }
@@ -134,10 +160,11 @@
   text-shadow:
     0 0 6px rgba(123, 175, 212, 0.5),
     0 0 14px rgba(123, 175, 212, 0.15);
-  z-index: 5;
+  z-index: 6;
   pointer-events: none;
   white-space: nowrap;
   line-height: 1;
+  transition: opacity 0.3s ease;
 }
 
 .labelTL {
@@ -194,7 +221,7 @@
     rgba(123, 175, 212, 0.2) 80%,
     transparent 100%
   );
-  z-index: 5;
+  z-index: 6;
   pointer-events: none;
 }
 
@@ -212,6 +239,6 @@
     rgba(123, 175, 212, 0.15) 70%,
     transparent 100%
   );
-  z-index: 5;
+  z-index: 6;
   pointer-events: none;
 }

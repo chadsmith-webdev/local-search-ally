@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo, useEffect } from "react";
+import { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
@@ -55,7 +55,7 @@ function perlin3(x, y, z) {
            dot3(GRAD3[PERM[BB + 1] % 12], x - 1, y - 1, z - 1), u), v), w);
 }
 
-/* ─── Bloom post-processing (cranked) ─────────────────── */
+/* ─── Bloom post-processing ───────────────────────────── */
 function BloomEffect() {
   const { gl, scene, camera, size } = useThree();
   const composerRef = useRef();
@@ -69,9 +69,9 @@ function BloomEffect() {
 
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(size.width, size.height),
-      0.9,   // strength — peaks glow into dark areas
-      0.85,  // radius — wide atmospheric spread
-      0.22   // threshold — catch emissive peaks
+      1.1,   // strength — bright peaks bleed into slate
+      0.9,   // radius — wide atmospheric spread
+      0.45   // threshold — doubled: only hottest peaks bloom
     );
     composer.addPass(bloomPass);
 
@@ -91,19 +91,24 @@ function BloomEffect() {
   return null;
 }
 
-/* ─── Shared displacement function ────────────────────── */
+/* ─── Shared displacement with high-frequency jitter ──── */
 function displace(origX, origY, time) {
-  /* Smooth sine waves for base terrain */
+  /* Base terrain — smooth sine waves */
   const wave1 = Math.sin(origX * 0.5 + time * 0.4) * 0.5;
   const wave2 = Math.sin(origY * 0.6 + time * 0.3) * 0.4;
   const wave3 = Math.sin((origX + origY) * 0.35 + time * 0.55) * 0.35;
 
-  /* Perlin noise for erratic energy field texture */
+  /* Perlin noise for erratic energy field */
   const n1 = perlin3(origX * 0.25, origY * 0.25, time * 0.3) * 1.2;
   const n2 = perlin3(origX * 0.5 + 50, origY * 0.5 + 50, time * 0.5) * 0.5;
   const n3 = perlin3(origX * 1.0 + 100, origY * 1.0, time * 0.8) * 0.2;
 
-  return (wave1 + wave2 + wave3 + n1 + n2 + n3) * 0.45;
+  /* High-frequency data jitter — rapid vibration */
+  const jitter = Math.sin(origX * 8.0 + time * 12.0) *
+                 Math.cos(origY * 6.5 + time * 9.0) * 0.06 +
+                 Math.sin((origX * 12.0 + origY * 11.0) + time * 18.0) * 0.025;
+
+  return (wave1 + wave2 + wave3 + n1 + n2 + n3 + jitter) * 0.45;
 }
 
 /* ─── Wireframe terrain — erratic energy field ────────── */
@@ -143,7 +148,7 @@ function CloakMesh() {
       <meshStandardMaterial
         color="#0a1520"
         emissive="#7bafd4"
-        emissiveIntensity={1.5}
+        emissiveIntensity={1.6}
         wireframe
         transparent
         opacity={0.4}
@@ -252,8 +257,35 @@ function AtmosphericParticles() {
   );
 }
 
-/* ─── Main export: Digital Architect hologram ─────────── */
+/* ─── Dynamic data heartbeat hook ─────────────────────── */
+function useDynamicData() {
+  const [latency, setLatency] = useState("12ms");
+  const [scanId, setScanId] = useState("0x7B");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      /* Latency: fluctuate between 8–18ms */
+      const ms = 8 + Math.floor(Math.random() * 11);
+      setLatency(`${ms}ms`);
+
+      /* Scan ID: random hex suffix */
+      const hex = Math.floor(Math.random() * 255)
+        .toString(16)
+        .toUpperCase()
+        .padStart(2, "0");
+      setScanId(`0x${hex}`);
+    }, 2800);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return { latency, scanId };
+}
+
+/* ─── Main export: Atmospheric Hardware hologram ─────── */
 export default function InvisibilityHologram() {
+  const { latency, scanId } = useDynamicData();
+
   return (
     <div className={styles.hud}>
       {/* Corner bracket helpers (bottom) */}
@@ -270,6 +302,9 @@ export default function InvisibilityHologram() {
       {/* CRT scanline overlay */}
       <div className={styles.scanlines} />
 
+      {/* Chromatic aberration overlay */}
+      <div className={styles.chromatic} />
+
       {/* Vertical scan bar */}
       <div className={styles.scanBar} />
 
@@ -282,10 +317,10 @@ export default function InvisibilityHologram() {
         NODE_MAP: 3-PACK
       </span>
       <span className={`${styles.label} ${styles.labelBL}`}>
-        LATENCY: 12ms
+        LATENCY: {latency}
       </span>
       <span className={`${styles.label} ${styles.labelBR}`}>
-        SCAN_ID: 0x7B
+        SCAN_ID: {scanId}
       </span>
 
       {/* 3D Canvas — fills entire HUD container */}
