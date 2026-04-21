@@ -21,6 +21,7 @@
   height: 18px;
   pointer-events: none;
   z-index: 6;
+  animation: dataPulse 3s ease-in-out infinite;
 }
 
 /* Top-left bracket */
@@ -55,35 +56,28 @@
   border-right: 2px solid #7bafd4;
 }
 
-/* ── Atmospheric haze — pool of light ─────────────────── */
+/* ── Background haze — hologram illuminates container ─── */
 .glow {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -45%);
-  width: 110%;
-  height: 110%;
+  inset: 0;
   background: radial-gradient(
-    ellipse at 50% 40%,
+    circle,
     rgba(123, 175, 212, 0.15) 0%,
-    rgba(123, 175, 212, 0.08) 25%,
-    rgba(123, 175, 212, 0.03) 50%,
     transparent 70%
   );
-  filter: blur(12px);
   pointer-events: none;
   z-index: 0;
 }
 
-/* ── CRT scanline overlay — hardware terminal texture ─── */
+/* ── Terminal scanlines — hardware diagnostic texture ─── */
 .scanlines {
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(
-    to bottom,
+    0deg,
     rgba(0, 0, 0, 0) 0px,
     rgba(0, 0, 0, 0) 2px,
-    rgba(123, 175, 212, 0.03) 3px
+    rgba(123, 175, 212, 0.05) 3px
   );
   pointer-events: none;
   z-index: 3;
@@ -115,13 +109,16 @@
   65%      { opacity: 0; }
 }
 
-/* ── 3D Canvas layer — fills entire container ─────────── */
+/* ── 3D Canvas layer — holographic light bleed ────────── */
 .canvas {
   position: absolute !important;
   inset: 0;
   z-index: 1;
   width: 100% !important;
   height: 100% !important;
+  filter:
+    drop-shadow(0 0 12px rgba(123, 175, 212, 0.6))
+    brightness(1.2);
 }
 
 /* ── Scan bar — vertical sweep ────────────────────────── */
@@ -169,6 +166,7 @@
 .labelTL {
   top: 10px;
   left: 12px;
+  animation: dataPulse 3s ease-in-out infinite;
 }
 
 .labelTR {
@@ -202,6 +200,11 @@
 }
 
 @keyframes statusPulse {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
+
+@keyframes dataPulse {
   0%, 100% { opacity: 0.4; }
   50%      { opacity: 1; }
 }
