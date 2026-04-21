@@ -22,9 +22,9 @@ function BloomEffect() {
 
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(size.width, size.height),
-      0.6,   // strength — soft halo, not overpowering
-      0.8,   // radius — wide spread for atmospheric glow
-      0.35   // threshold — only brightest parts bloom
+      0.8,   // strength — visible halo around wireframe
+      0.9,   // radius — wide atmospheric spread
+      0.25   // threshold — catch emissive wireframe + points
     );
     composer.addPass(bloomPass);
 
@@ -39,29 +39,30 @@ function BloomEffect() {
     if (composerRef.current) {
       composerRef.current.render();
     }
-  }, 1); // priority 1 — runs after default render
+  }, 1);
 
   return null;
 }
 
-/* ─── Wireframe terrain mesh — emissive holographic ───── */
+/* ─── Wireframe terrain — vast topographic landscape ──── */
 function CloakMesh() {
   const meshRef = useRef();
   const geoRef = useRef();
 
+  /* Cache original positions for wave displacement */
   const originalPositions = useMemo(() => {
-    const geo = new THREE.PlaneGeometry(5, 5, 64, 64);
+    const geo = new THREE.PlaneGeometry(18, 18, 80, 80);
     return new Float32Array(geo.attributes.position.array);
   }, []);
 
   useFrame(({ clock }) => {
-    if (!geoRef.current) return;
+    if (!geoRef.current || !meshRef.current) return;
 
     const time = clock.getElapsedTime();
     const positions = geoRef.current.attributes.position.array;
     const count = positions.length / 3;
-    const displacementScale = 0.35;
 
+    /* Multi-frequency noise displacement for breathing terrain */
     for (let i = 0; i < count; i++) {
       const ix = i * 3;
       const iy = i * 3 + 1;
@@ -70,32 +71,32 @@ function CloakMesh() {
       const origX = originalPositions[ix];
       const origY = originalPositions[iy];
 
-      const wave1 = Math.sin(origX * 1.2 + time * 0.6) * 0.4;
-      const wave2 = Math.sin(origY * 1.5 + time * 0.4) * 0.3;
-      const wave3 = Math.sin((origX + origY) * 0.8 + time * 0.8) * 0.25;
-      const wave4 = Math.sin(origX * 2.5 + origY * 2.0 + time * 1.2) * 0.12;
+      const wave1 = Math.sin(origX * 0.5 + time * 0.4) * 0.6;
+      const wave2 = Math.sin(origY * 0.6 + time * 0.3) * 0.5;
+      const wave3 = Math.sin((origX + origY) * 0.35 + time * 0.55) * 0.4;
+      const wave4 = Math.sin(origX * 1.0 + origY * 0.8 + time * 0.9) * 0.2;
+      const wave5 = Math.cos(origX * 1.8 - origY * 1.2 + time * 0.7) * 0.12;
 
-      positions[iz] = (wave1 + wave2 + wave3 + wave4) * displacementScale;
+      positions[iz] = (wave1 + wave2 + wave3 + wave4 + wave5) * 0.5;
     }
 
     geoRef.current.attributes.position.needsUpdate = true;
     geoRef.current.computeVertexNormals();
 
-    if (meshRef.current) {
-      meshRef.current.rotation.z = time * 0.05;
-    }
+    /* Very slow Y rotation — breathing data field */
+    meshRef.current.rotation.z = 0.2 + time * 0.015;
   });
 
   return (
-    <mesh ref={meshRef} rotation={[-Math.PI / 3.5, 0, 0.2]} scale={0.58} position={[-0.15, 0.2, 0]}>
-      <planeGeometry ref={geoRef} args={[6, 6, 64, 64]} />
+    <mesh ref={meshRef} rotation={[-Math.PI / 2.6, 0, 0.2]} position={[0, -0.8, 0]}>
+      <planeGeometry ref={geoRef} args={[18, 18, 80, 80]} />
       <meshStandardMaterial
         color="#0a1520"
         emissive="#7bafd4"
-        emissiveIntensity={1.2}
+        emissiveIntensity={1.4}
         wireframe
         transparent
-        opacity={0.6}
+        opacity={0.4}
         roughness={0.5}
         metalness={0.5}
       />
@@ -103,17 +104,81 @@ function CloakMesh() {
   );
 }
 
-/* ─── Ambient particles ───────────────────────────────── */
-function Particles() {
+/* ─── Vertex point cloud — glowing data nodes ─────────── */
+function VertexPoints() {
   const ref = useRef();
-  const count = 60;
+  const meshGeoRef = useRef();
+
+  /* Generate matching grid positions for vertex dots */
+  const positions = useMemo(() => {
+    const geo = new THREE.PlaneGeometry(18, 18, 80, 80);
+    return new Float32Array(geo.attributes.position.array);
+  }, []);
+
+  const count = positions.length / 3;
+
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+
+    const time = clock.getElapsedTime();
+    const pos = ref.current.geometry.attributes.position.array;
+
+    /* Sync displacement with CloakMesh */
+    for (let i = 0; i < count; i++) {
+      const ix = i * 3;
+      const iy = i * 3 + 1;
+      const iz = i * 3 + 2;
+
+      const origX = positions[ix];
+      const origY = positions[iy];
+
+      const wave1 = Math.sin(origX * 0.5 + time * 0.4) * 0.6;
+      const wave2 = Math.sin(origY * 0.6 + time * 0.3) * 0.5;
+      const wave3 = Math.sin((origX + origY) * 0.35 + time * 0.55) * 0.4;
+      const wave4 = Math.sin(origX * 1.0 + origY * 0.8 + time * 0.9) * 0.2;
+      const wave5 = Math.cos(origX * 1.8 - origY * 1.2 + time * 0.7) * 0.12;
+
+      pos[iz] = (wave1 + wave2 + wave3 + wave4 + wave5) * 0.5;
+    }
+
+    ref.current.geometry.attributes.position.needsUpdate = true;
+
+    /* Match CloakMesh rotation */
+    ref.current.rotation.z = 0.2 + time * 0.015;
+  });
+
+  return (
+    <points ref={ref} rotation={[-Math.PI / 2.6, 0, 0.2]} position={[0, -0.8, 0]}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          array={new Float32Array(positions)}
+          count={count}
+          itemSize={3}
+        />
+      </bufferGeometry>
+      <pointsMaterial
+        color="#7bafd4"
+        size={0.06}
+        transparent
+        opacity={0.9}
+        sizeAttenuation
+      />
+    </points>
+  );
+}
+
+/* ─── Ambient atmospheric particles ───────────────────── */
+function AtmosphericParticles() {
+  const ref = useRef();
+  const count = 90;
 
   const positions = useMemo(() => {
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
-      arr[i * 3] = (Math.random() - 0.5) * 6;
-      arr[i * 3 + 1] = (Math.random() - 0.5) * 6;
-      arr[i * 3 + 2] = (Math.random() - 0.5) * 3;
+      arr[i * 3] = (Math.random() - 0.5) * 16;
+      arr[i * 3 + 1] = (Math.random() - 0.5) * 10;
+      arr[i * 3 + 2] = (Math.random() - 0.5) * 6;
     }
     return arr;
   }, []);
@@ -124,8 +189,8 @@ function Particles() {
     const pos = ref.current.geometry.attributes.position.array;
 
     for (let i = 0; i < count; i++) {
-      pos[i * 3 + 1] += Math.sin(time * 0.3 + i) * 0.001;
-      pos[i * 3 + 2] += Math.cos(time * 0.2 + i * 0.5) * 0.0008;
+      pos[i * 3 + 1] += Math.sin(time * 0.2 + i * 0.7) * 0.002;
+      pos[i * 3 + 2] += Math.cos(time * 0.15 + i * 0.4) * 0.001;
     }
     ref.current.geometry.attributes.position.needsUpdate = true;
   });
@@ -142,40 +207,16 @@ function Particles() {
       </bufferGeometry>
       <pointsMaterial
         color="#7bafd4"
-        size={0.025}
+        size={0.03}
         transparent
-        opacity={0.35}
+        opacity={0.25}
         sizeAttenuation
       />
     </points>
   );
 }
 
-/* ─── Scan ring — HUD overlay ─────────────────────────── */
-function ScanRing() {
-  const ref = useRef();
-
-  useFrame(({ clock }) => {
-    if (!ref.current) return;
-    const time = clock.getElapsedTime();
-    ref.current.rotation.z = time * 0.15;
-    ref.current.material.opacity = 0.1 + Math.sin(time * 0.8) * 0.05;
-  });
-
-  return (
-    <mesh ref={ref} rotation={[-Math.PI / 3.5, 0, 0.2]} position={[-0.15, 0.2, -0.1]} scale={0.58}>
-      <ringGeometry args={[2.6, 2.75, 64]} />
-      <meshBasicMaterial
-        color="#7bafd4"
-        transparent
-        opacity={0.12}
-        side={THREE.DoubleSide}
-      />
-    </mesh>
-  );
-}
-
-/* ─── Main export: HUD-wrapped emissive hologram ──────── */
+/* ─── Main export: cinematic HUD-wrapped hologram ─────── */
 export default function InvisibilityHologram() {
   return (
     <div className={styles.hud}>
@@ -187,7 +228,7 @@ export default function InvisibilityHologram() {
       <div className={styles.hudHeader} />
       <div className={styles.hudFooter} />
 
-      {/* Radial glow — hologram illuminating the space */}
+      {/* Atmospheric haze — pool of light */}
       <div className={styles.glow} />
 
       {/* Vertical scan bar */}
@@ -208,25 +249,25 @@ export default function InvisibilityHologram() {
         SCAN_ID: 0x7B
       </span>
 
-      {/* 3D Canvas */}
+      {/* 3D Canvas — fills entire HUD container */}
       <Canvas
-        camera={{ position: [0, 0, 6], fov: 40 }}
+        camera={{ position: [0, 5, 9], fov: 75 }}
         className={styles.canvas}
         gl={{
           alpha: true,
           antialias: true,
           toneMapping: THREE.ACESFilmicToneMapping,
-          toneMappingExposure: 1.2,
+          toneMappingExposure: 1.3,
         }}
         dpr={[1, 2]}
       >
-        {/* Minimal ambient light so MeshStandardMaterial is visible */}
-        <ambientLight intensity={0.15} />
-        <pointLight position={[0, 2, 4]} intensity={0.3} color="#7bafd4" />
+        <ambientLight intensity={0.12} />
+        <pointLight position={[0, 6, 8]} intensity={0.4} color="#7bafd4" />
+        <pointLight position={[-5, 3, 2]} intensity={0.15} color="#5a8fb4" />
 
         <CloakMesh />
-        <Particles />
-        <ScanRing />
+        <VertexPoints />
+        <AtmosphericParticles />
         <BloomEffect />
       </Canvas>
     </div>
