@@ -69,9 +69,9 @@ function BloomEffect() {
 
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(size.width, size.height),
-      1.1,   // strength — bright peaks bleed into slate
-      0.9,   // radius — wide atmospheric spread
-      0.45   // threshold — doubled: only hottest peaks bloom
+      1.0,   // strength — peaks bleed into surrounding slate
+      0.8,   // radius — atmospheric spread
+      0.65   // threshold — only the absolute hottest vertices bloom
     );
     composer.addPass(bloomPass);
 
@@ -108,7 +108,10 @@ function displace(origX, origY, time) {
                  Math.cos(origY * 6.5 + time * 9.0) * 0.06 +
                  Math.sin((origX * 12.0 + origY * 11.0) + time * 18.0) * 0.025;
 
-  return (wave1 + wave2 + wave3 + n1 + n2 + n3 + jitter) * 0.45;
+  /* Per-frame random micro-jitter — live energy field instability */
+  const randomJitter = (Math.random() - 0.5) * 0.02;
+
+  return (wave1 + wave2 + wave3 + n1 + n2 + n3 + jitter + randomJitter) * 0.45;
 }
 
 /* ─── Wireframe terrain — erratic energy field ────────── */
@@ -146,14 +149,14 @@ function CloakMesh() {
     <mesh ref={meshRef} rotation={[-Math.PI / 2.6, 0, 0.2]} position={[0, -0.8, 0]}>
       <planeGeometry ref={geoRef} args={[18, 18, 80, 80]} />
       <meshStandardMaterial
-        color="#0a1520"
+        color="#060d14"
         emissive="#7bafd4"
-        emissiveIntensity={1.6}
+        emissiveIntensity={0.8}
         wireframe
         transparent
-        opacity={0.4}
-        roughness={0.4}
-        metalness={0.6}
+        opacity={0.18}
+        roughness={0.3}
+        metalness={0.7}
       />
     </mesh>
   );
@@ -199,10 +202,10 @@ function VertexPoints() {
         />
       </bufferGeometry>
       <pointsMaterial
-        color="#b0daf5"
-        size={0.08}
+        color="#d4eaf8"
+        size={0.11}
         transparent
-        opacity={0.85}
+        opacity={0.9}
         sizeAttenuation
       />
     </points>
