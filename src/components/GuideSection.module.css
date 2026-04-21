@@ -156,7 +156,7 @@
   height: 20px;
   border-radius: var(--radius-full);
   background: rgba(123, 175, 212, 0.1);
-  border: 1px solid rgba(123, 175, 212, 0.25);
+
   display: flex;
   align-items: center;
   justify-content: center;

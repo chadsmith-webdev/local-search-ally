@@ -29,17 +29,18 @@
 /* ── Card ─────────────────────────────────────────────── */
 .card {
   background: var(--surface);
-  border: 1px solid rgba(123, 175, 212, 0.1);
+
   border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
   transition:
-    border-color 0.25s ease,
+    background 0.25s ease,
     transform 0.25s ease;
 }
 
 .card:hover {
-  border-color: rgba(123, 175, 212, 0.28);
+  background: rgba(123, 175, 212, 0.03);
+  box-shadow: 0 0 20px rgba(123, 175, 212, 0.06);
   transform: translateY(-3px);
 }
 

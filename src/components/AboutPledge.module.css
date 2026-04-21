@@ -104,7 +104,7 @@
   height: 22px;
   border-radius: var(--radius-full);
   background: rgba(123, 175, 212, 0.12);
-  border: 1px solid rgba(123, 175, 212, 0.3);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,7 +123,6 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 3rem;
-  border: 1px solid var(--border-strong);
   border-radius: var(--radius-xl);
   background: var(--surface2);
   position: relative;

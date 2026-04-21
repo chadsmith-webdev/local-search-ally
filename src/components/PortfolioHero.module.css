@@ -97,7 +97,7 @@
 
 .bridge {
   background: rgba(123, 175, 212, 0.04);
-  border: 1px solid rgba(123, 175, 212, 0.12);
+
   border-radius: var(--radius-lg);
   padding: 1.5rem 2rem;
 }

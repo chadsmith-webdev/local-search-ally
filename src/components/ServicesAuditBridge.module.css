@@ -7,7 +7,7 @@
   max-width: 760px;
   margin: 0 auto;
   background: rgba(123, 175, 212, 0.04);
-  border: 1px solid rgba(123, 175, 212, 0.2);
+
   border-radius: var(--radius-lg);
   padding: 3rem 3.5rem;
   display: flex;

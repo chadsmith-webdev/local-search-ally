@@ -9,7 +9,7 @@
 
 .card {
   background: rgba(123, 175, 212, 0.04);
-  border: 1px solid rgba(123, 175, 212, 0.14);
+
   border-radius: var(--radius-xl);
   padding: 2.5rem 3rem;
   display: flex;
