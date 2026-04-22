@@ -154,7 +154,7 @@ function CloakMesh() {
         emissiveIntensity={0.8}
         wireframe
         transparent
-        opacity={0.18}
+        opacity={0.6}
         roughness={0.3}
         metalness={0.7}
       />
@@ -202,10 +202,10 @@ function VertexPoints() {
         />
       </bufferGeometry>
       <pointsMaterial
-        color="#d4eaf8"
-        size={0.11}
+        color="#e8f4ff"
+        size={0.13}
         transparent
-        opacity={0.9}
+        opacity={1.0}
         sizeAttenuation
       />
     </points>
@@ -299,8 +299,32 @@ export default function InvisibilityHologram() {
       <div className={styles.hudHeader} />
       <div className={styles.hudFooter} />
 
-      {/* Atmospheric haze — pool of light */}
+      {/* Atmospheric haze — sits behind canvas */}
       <div className={styles.glow} />
+
+      {/* Canvas wrapper — clips the 3D scene + applies glow filter */}
+      <div className={styles.canvasWrap}>
+        <Canvas
+          camera={{ position: [0, 5, 9], fov: 75 }}
+          className={styles.canvas}
+          gl={{
+            alpha: true,
+            antialias: true,
+            toneMapping: THREE.ACESFilmicToneMapping,
+            toneMappingExposure: 1.3,
+          }}
+          dpr={[1, 2]}
+        >
+          <ambientLight intensity={0.12} />
+          <pointLight position={[0, 6, 8]} intensity={0.4} color="#7bafd4" />
+          <pointLight position={[-5, 3, 2]} intensity={0.15} color="#5a8fb4" />
+
+          <CloakMesh />
+          <VertexPoints />
+          <AtmosphericParticles />
+          <BloomEffect />
+        </Canvas>
+      </div>
 
       {/* CRT scanline overlay */}
       <div className={styles.scanlines} />
@@ -311,42 +335,22 @@ export default function InvisibilityHologram() {
       {/* Vertical scan bar */}
       <div className={styles.scanBar} />
 
-      {/* Micro-labels: diagnostic readouts */}
-      <span className={`${styles.label} ${styles.labelTL}`}>
-        <span className={styles.statusDot} />
-        CLOAK_STATUS: ACTIVE
-      </span>
-      <span className={`${styles.label} ${styles.labelTR}`}>
-        NODE_MAP: 3-PACK
-      </span>
-      <span className={`${styles.label} ${styles.labelBL}`}>
-        LATENCY: {latency}
-      </span>
-      <span className={`${styles.label} ${styles.labelBR}`}>
-        SCAN_ID: {scanId}
-      </span>
-
-      {/* 3D Canvas — fills entire HUD container */}
-      <Canvas
-        camera={{ position: [0, 5, 9], fov: 75 }}
-        className={styles.canvas}
-        gl={{
-          alpha: true,
-          antialias: true,
-          toneMapping: THREE.ACESFilmicToneMapping,
-          toneMappingExposure: 1.3,
-        }}
-        dpr={[1, 2]}
-      >
-        <ambientLight intensity={0.12} />
-        <pointLight position={[0, 6, 8]} intensity={0.4} color="#7bafd4" />
-        <pointLight position={[-5, 3, 2]} intensity={0.15} color="#5a8fb4" />
-
-        <CloakMesh />
-        <VertexPoints />
-        <AtmosphericParticles />
-        <BloomEffect />
-      </Canvas>
+      {/* Data labels — highest z-index overlay */}
+      <div className={styles.labelOverlay}>
+        <span className={`${styles.label} ${styles.labelTL}`}>
+          <span className={styles.statusDot} />
+          CLOAK_STATUS: ACTIVE
+        </span>
+        <span className={`${styles.label} ${styles.labelTR}`}>
+          NODE_MAP: 3-PACK
+        </span>
+        <span className={`${styles.label} ${styles.labelBL}`}>
+          LATENCY: {latency}
+        </span>
+        <span className={`${styles.label} ${styles.labelBR}`}>
+          SCAN_ID: {scanId}
+        </span>
+      </div>
     </div>
   );
 }
