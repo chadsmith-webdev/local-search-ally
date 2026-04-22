@@ -91,27 +91,37 @@ function BloomEffect() {
   return null;
 }
 
-/* ─── Shared displacement with high-frequency jitter ──── */
+
+/* ─── Tunable peak parameters ─────────────────────────── */
+const PEAK_HEIGHT = 4.5;   // How tall the central mountain rises
+const PEAK_SPREAD = 3.8;   // How wide the Gaussian bell — lower = sharper
+const RIPPLE_SPEED = 0.6;  // Outward ripple animation speed
+const RIPPLE_AMP = 0.15;   // Ripple wave amplitude
+
+/* ─── Gaussian + ripple displacement ──────────────────── */
 function displace(origX, origY, time) {
-  /* Base terrain — smooth sine waves */
-  const wave1 = Math.sin(origX * 0.5 + time * 0.4) * 0.5;
-  const wave2 = Math.sin(origY * 0.6 + time * 0.3) * 0.4;
-  const wave3 = Math.sin((origX + origY) * 0.35 + time * 0.55) * 0.35;
+  /* Distance from center of mesh (0,0) */
+  const dist = Math.sqrt(origX * origX + origY * origY);
 
-  /* Perlin noise for erratic energy field */
-  const n1 = perlin3(origX * 0.25, origY * 0.25, time * 0.3) * 1.2;
-  const n2 = perlin3(origX * 0.5 + 50, origY * 0.5 + 50, time * 0.5) * 0.5;
-  const n3 = perlin3(origX * 1.0 + 100, origY * 1.0, time * 0.8) * 0.2;
+  /* Gaussian bell curve — peaks at center, flat at edges */
+  const gaussian = PEAK_HEIGHT * Math.exp(-(dist * dist) / (2 * PEAK_SPREAD * PEAK_SPREAD));
 
-  /* High-frequency data jitter — rapid vibration */
+  /* Outward breathing ripple from center */
+  const ripple = RIPPLE_AMP * Math.sin(dist * 1.2 - time * RIPPLE_SPEED) *
+                 Math.exp(-dist * 0.15);
+
+  /* Subtle Perlin texture on the surface — adds organic grain */
+  const texture = perlin3(origX * 0.3, origY * 0.3, time * 0.2) * 0.3;
+
+  /* High-frequency edge noise — only visible near the flat edges */
+  const edgeFactor = Math.max(0, 1 - gaussian / PEAK_HEIGHT);
+  const edgeNoise = perlin3(origX * 0.5 + 50, origY * 0.5 + 50, time * 0.4) * 0.25 * edgeFactor;
+
+  /* Micro-jitter — live energy field instability */
   const jitter = Math.sin(origX * 8.0 + time * 12.0) *
-                 Math.cos(origY * 6.5 + time * 9.0) * 0.06 +
-                 Math.sin((origX * 12.0 + origY * 11.0) + time * 18.0) * 0.025;
+                 Math.cos(origY * 6.5 + time * 9.0) * 0.03 * edgeFactor;
 
-  /* Per-frame random micro-jitter — live energy field instability */
-  const randomJitter = (Math.random() - 0.5) * 0.02;
-
-  return (wave1 + wave2 + wave3 + n1 + n2 + n3 + jitter + randomJitter) * 0.45;
+  return gaussian + ripple + texture + edgeNoise + jitter;
 }
 
 /* ─── Wireframe terrain — erratic energy field ────────── */
@@ -162,7 +172,7 @@ function CloakMesh() {
   );
 }
 
-/* ─── Vertex point cloud — bright star nodes ──────────── */
+/* ─── Vertex point cloud — heat-map star nodes ────────── */
 function VertexPoints() {
   const ref = useRef();
 
@@ -173,21 +183,34 @@ function VertexPoints() {
 
   const count = originalPositions.length / 3;
 
+  /* Pre-allocate color array for heat map */
+  const colors = useMemo(() => new Float32Array(count * 3), [count]);
+
   useFrame(({ clock }) => {
     if (!ref.current) return;
 
     const time = clock.getElapsedTime();
     const pos = ref.current.geometry.attributes.position.array;
+    const colorAttr = ref.current.geometry.attributes.color;
 
     for (let i = 0; i < count; i++) {
       const ix = i * 3;
       const iy = i * 3 + 1;
       const iz = i * 3 + 2;
 
-      pos[iz] = displace(originalPositions[ix], originalPositions[iy], time);
+      const z = displace(originalPositions[ix], originalPositions[iy], time);
+      pos[iz] = z;
+
+      /* Heat map: height → brightness */
+      const intensity = Math.min(1, Math.max(0.3, z / PEAK_HEIGHT));
+      /* Base blue (0.48, 0.69, 0.82) → bright white (1,1,1) based on height */
+      colors[ix] = 0.48 + intensity * 0.52;     // R
+      colors[iy] = 0.69 + intensity * 0.31;     // G
+      colors[iz] = 0.82 + intensity * 0.18;     // B
     }
 
     ref.current.geometry.attributes.position.needsUpdate = true;
+    if (colorAttr) colorAttr.needsUpdate = true;
     ref.current.rotation.z = 0.2 + time * 0.015;
   });
 
@@ -200,13 +223,19 @@ function VertexPoints() {
           count={count}
           itemSize={3}
         />
+        <bufferAttribute
+          attach="attributes-color"
+          array={colors}
+          count={count}
+          itemSize={3}
+        />
       </bufferGeometry>
       <pointsMaterial
-        color="#e8f4ff"
-        size={0.10}
+        size={0.12}
         transparent
-        opacity={0.85}
+        opacity={0.9}
         sizeAttenuation
+        vertexColors
       />
     </points>
   );
