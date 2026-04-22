@@ -93,7 +93,7 @@ function BloomEffect() {
 
 
 /* ─── Tunable peak parameters ─────────────────────────── */
-const PEAK_HEIGHT = 4.5;   // How tall the central mountain rises
+const PEAK_HEIGHT = 6.2;   // How tall the central mountain rises
 const PEAK_SPREAD = 3.8;   // How wide the Gaussian bell — lower = sharper
 const RIPPLE_SPEED = 0.6;  // Outward ripple animation speed
 const RIPPLE_AMP = 0.15;   // Ripple wave amplitude
@@ -156,12 +156,12 @@ function CloakMesh() {
   });
 
   return (
-    <mesh ref={meshRef} rotation={[-Math.PI / 2.6, 0, 0.2]} position={[0, -0.8, 0]} scale={[0.85, 0.85, 0.85]}>
+    <mesh ref={meshRef} rotation={[-Math.PI / 2.6, 0, 0.2]} position={[0, 1.0, 0]} scale={[0.85, 0.85, 0.85]}>
       <planeGeometry ref={geoRef} args={[18, 18, 80, 80]} />
       <meshStandardMaterial
         color="#060d14"
         emissive="#7bafd4"
-        emissiveIntensity={0.7}
+        emissiveIntensity={1.0}
         wireframe
         transparent
         opacity={0.3}
@@ -215,7 +215,7 @@ function VertexPoints() {
   });
 
   return (
-    <points ref={ref} rotation={[-Math.PI / 2.6, 0, 0.2]} position={[0, -0.8, 0]} scale={[0.85, 0.85, 0.85]}>
+    <points ref={ref} rotation={[-Math.PI / 2.6, 0, 0.2]} position={[0, 1.0, 0]} scale={[0.85, 0.85, 0.85]}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
@@ -334,7 +334,7 @@ export default function InvisibilityHologram() {
       {/* Canvas wrapper — clips the 3D scene + applies glow filter */}
       <div className={styles.canvasWrap}>
         <Canvas
-          camera={{ position: [0, 9, 21], fov: 50 }}
+          camera={{ position: [0, 11, 22], fov: 50 }}
           className={styles.canvas}
           gl={{
             alpha: true,
