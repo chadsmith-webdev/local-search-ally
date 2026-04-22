@@ -146,7 +146,7 @@ function CloakMesh() {
   });
 
   return (
-    <mesh ref={meshRef} rotation={[-Math.PI / 2.6, 0, 0.2]} position={[0, -0.8, 0]}>
+    <mesh ref={meshRef} rotation={[-Math.PI / 2.6, 0, 0.2]} position={[0, -0.8, 0]} scale={[0.85, 0.85, 0.85]}>
       <planeGeometry ref={geoRef} args={[18, 18, 80, 80]} />
       <meshStandardMaterial
         color="#060d14"
@@ -192,7 +192,7 @@ function VertexPoints() {
   });
 
   return (
-    <points ref={ref} rotation={[-Math.PI / 2.6, 0, 0.2]} position={[0, -0.8, 0]}>
+    <points ref={ref} rotation={[-Math.PI / 2.6, 0, 0.2]} position={[0, -0.8, 0]} scale={[0.85, 0.85, 0.85]}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
