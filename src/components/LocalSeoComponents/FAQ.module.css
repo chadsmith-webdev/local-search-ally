@@ -227,20 +227,12 @@
 }
 
 .ctaButton {
-  display: inline-block;
+  composes: btn-secondary from global;
   padding: 10px 14px;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(123, 175, 212, 0.14);
-  color: var(--text, #f0f0f0);
-  background: transparent;
-  text-decoration: none;
-  transition:
-    background 0.15s ease,
-    transform 0.12s ease;
 }
 
 .ctaButton:hover {
-  background: rgba(123, 175, 212, 0.06);
+  background: var(--carolina-dim);
   transform: translateY(-1px);
 }
 

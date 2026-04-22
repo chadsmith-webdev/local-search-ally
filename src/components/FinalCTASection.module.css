@@ -93,26 +93,13 @@
 }
 
 .primaryBtn {
-  display: inline-flex;
-  align-items: center;
+  composes: btn-primary from global;
   gap: 0.625rem;
-  font-family: var(--font-ui);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--bg);
-  background: var(--carolina);
-  text-decoration: none;
   padding: 0.875rem 1.875rem;
-  border-radius: var(--radius-md);
-  border: none;
-  letter-spacing: -0.01em;
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
 }
 
 .primaryBtn:hover {
-  opacity: 0.9;
+  filter: brightness(1.1);
   transform: translateY(-1px);
 }
 
@@ -123,26 +110,15 @@
 }
 
 .secondaryBtn {
-  display: inline-flex;
-  align-items: center;
+  composes: btn-secondary from global;
   gap: 0.5rem;
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--text);
-  text-decoration: none;
   padding: 0.875rem 1.625rem;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: transparent;
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease;
 }
 
 .secondaryBtn:hover {
-  border-color: rgba(123, 175, 212, 0.3);
-  color: var(--carolina);
+  background: var(--carolina-dim);
+  border-color: var(--carolina);
+  color: var(--text);
 }
 
 /* ─── Trust line (phone + no-obligation note) ────────── */

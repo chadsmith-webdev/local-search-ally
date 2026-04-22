@@ -115,25 +115,8 @@
 }
 
 .btnPrimary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--gradient-cta);
-  color: var(--bg);
-  border: none;
-  border-radius: var(--radius-sm);
+  composes: btn-primary from global;
   padding: 1rem 2rem;
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 0 32px rgba(123, 175, 212, 0.3);
-  transition:
-    filter 0.2s ease,
-    transform 0.15s ease,
-    box-shadow 0.2s ease;
 }
 
 .btnPrimary:hover {
@@ -147,24 +130,8 @@
 }
 
 .btnSecondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  color: var(--carolina);
-  border: 1px solid rgba(123, 175, 212, 0.4);
-  border-radius: var(--radius-sm);
+  composes: btn-secondary from global;
   padding: 1rem 1.75rem;
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  white-space: nowrap;
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease,
-    background 0.2s ease;
 }
 
 .btnSecondary:hover {

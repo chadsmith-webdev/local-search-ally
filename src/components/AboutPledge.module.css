@@ -174,18 +174,7 @@
 
 /* Buttons */
 .btnPrimary {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.85rem 1.75rem;
-  background: var(--carolina);
-  color: var(--bg);
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  transition: filter 0.2s ease;
-  white-space: nowrap;
+  composes: btn-primary from global;
 }
 
 .btnPrimary:hover {

@@ -131,27 +131,12 @@
 
 .primaryBtn,
 .secondaryBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   min-width: 220px;
-  padding: 1rem 1.75rem;
-  border-radius: var(--radius-md);
-  font-family: var(--font-ui);
-  text-decoration: none;
-  white-space: nowrap;
 }
 
 .primaryBtn {
-  background: var(--carolina);
-  color: #020203;
-  font-size: 0.9375rem;
-  font-weight: 700;
-  box-shadow: 0 0 32px rgba(123, 175, 212, 0.3);
-  transition:
-    filter 0.2s ease,
-    transform 0.15s ease,
-    box-shadow 0.2s ease;
+  composes: btn-primary from global;
+  padding: 1rem 1.75rem;
 }
 
 .primaryBtn:hover {
@@ -165,31 +150,18 @@
 }
 
 .secondaryBtn {
-  background: rgba(123, 175, 212, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  color: rgba(248, 249, 250, 0.95);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease,
-    background 0.2s ease;
+  composes: btn-secondary from global;
+  padding: 1rem 1.75rem;
 }
 
 .secondaryBtn:hover {
-  border-color: rgba(123, 175, 212, 0.62);
-  color: var(--carolina);
-  background: rgba(123, 175, 212, 0.1);
+  background: var(--carolina-dim);
+  border-color: var(--carolina);
+  color: var(--text);
 }
 
 .secondaryBtn:active {
   transform: scale(0.985);
-}
-
-.primaryBtn:focus-visible,
-.secondaryBtn:focus-visible {
-  outline: 2px solid var(--carolina);
-  outline-offset: 3px;
 }
 
 .trust {

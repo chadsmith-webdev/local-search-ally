@@ -305,19 +305,8 @@
 }
 
 .ctaBtn {
-  display: inline-block;
-  background: var(--carolina, #7bafd4);
-  color: #000;
-  font-family: var(--font-ui, sans-serif);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  composes: btn-primary from global;
   padding: 0.9rem 2.25rem;
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  transition:
-    filter 0.2s ease,
-    transform 0.2s ease;
 }
 
 .ctaBtn:hover {

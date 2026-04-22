@@ -72,35 +72,15 @@
 }
 
 .cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  background-color: transparent;
-  border: 2px solid #7bafd4;
-  border-radius: var(--radius-sm);
-  color: var(--carolina);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-  width: fit-content;
+  composes: btn-secondary from global;
   margin: 16px auto 0 auto;
-  box-shadow: 0 2px 16px 0 rgba(123, 175, 212, 0.08);
 }
 
 .cta:hover,
 .cta:active {
-  background-color: rgba(123, 175, 212, 0.13);
-  border-color: var(--text);
+  background: var(--carolina-dim);
+  border-color: var(--carolina);
   color: var(--text);
-  box-shadow: 0 4px 24px 0 rgba(123, 175, 212, 0.13);
-}
-
-.cta:focus-visible {
-  outline: 2px solid #7bafd4;
-  outline-offset: 4px;
 }
 
 .trustStat {
