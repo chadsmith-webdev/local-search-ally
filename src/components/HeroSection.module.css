@@ -118,13 +118,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--carolina);
+  background: var(--gradient-cta);
   color: var(--bg);
-  border-radius: var(--radius-md);
+  border: none;
+  border-radius: var(--radius-sm);
   padding: 1rem 2rem;
   font-family: var(--font-ui);
   font-size: 0.9375rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-decoration: none;
   white-space: nowrap;
   box-shadow: 0 0 32px rgba(123, 175, 212, 0.3);
@@ -149,13 +151,14 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
+  color: var(--carolina);
+  border: 1px solid rgba(123, 175, 212, 0.4);
+  border-radius: var(--radius-sm);
   padding: 1rem 1.75rem;
   font-family: var(--font-ui);
   font-size: 0.9375rem;
   font-weight: 600;
+  letter-spacing: 0.05em;
   text-decoration: none;
   white-space: nowrap;
   transition:
@@ -165,9 +168,9 @@
 }
 
 .btnSecondary:hover {
-  border-color: rgba(123, 175, 212, 0.4);
-  color: var(--carolina);
-  background: rgba(123, 175, 212, 0.04);
+  background: var(--carolina-dim);
+  border-color: var(--carolina);
+  color: var(--text);
 }
 
 /* ─── Trust line ────────────────────────────────────── */

@@ -15,7 +15,7 @@ any code or copy.
 **Audit tool:** audit.localsearchally.com
 **Phone:** (479) 380-8626
 **Focus:** Local SEO and web development for NWA home service trades (HVAC,
-plumbing, roofing, electrical, landscaping, remodeling)
+plumbing, roofing, electrical, landscaping, remodeling, etc.)
 
 This is the primary marketing and lead-generation website. The site's job is
 to turn invisible contractors into found ones — and to convert visitors into

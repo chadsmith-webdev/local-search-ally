@@ -64,6 +64,8 @@ The Local Search Ally website is a technical command center. It bridges the gap 
 
 > **Exception:** Floating HUD elements (modals, tooltips, dropdowns, glass panels) may use a subtle Carolina-tinted `1px solid` border. This is part of the glass HUD system — not a layout border. See Section 04.
 
+> **Exception:** The hero HUD container (`InvisibilityHologram`) uses a `1px solid` border with L-shaped corner brackets as part of the diagnostic terminal aesthetic. This is a deliberate design choice — not a layout border.
+
 ### Typography
 
 | Context                    | Font                    | Weight  | Example                     |
@@ -195,10 +197,32 @@ The hero element of the diagnostic page is a 3D hologram of the client's current
 }
 ```
 
-### CTA Button (outline style, low-pressure)
+### CTA Buttons
+
+**Primary CTA** — gradient fill, high-contrast, used for the single most important action on a page:
 
 ```css
 .btn-primary {
+  background: var(--gradient-cta); /* linear-gradient(135deg, #7bafd4 0%, #3a5570 100%) */
+  border: none;
+  color: #0a0a0a;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+```
+
+**Secondary CTA** — outline style, low-pressure, used for supporting actions:
+
+```css
+.btn-secondary {
   background: transparent;
   border: 1px solid rgba(123, 175, 212, 0.4);
   color: var(--carolina);
@@ -210,7 +234,7 @@ The hero element of the diagnostic page is a 3D hologram of the client's current
   border-radius: 6px;
   transition: all 0.2s;
 }
-.btn-primary:hover {
+.btn-secondary:hover {
   background: var(--carolina-dim);
   border-color: var(--carolina);
   color: var(--text);
