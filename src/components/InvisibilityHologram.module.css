@@ -2,7 +2,8 @@
 .hud {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
+  min-height: 380px;
   border: 1px solid #3a5570;
   border-radius: 4px;
   background: rgba(10, 10, 10, 0.6);
@@ -192,12 +193,12 @@
 }
 
 .labelBL {
-  bottom: 15px;
+  bottom: 20px;
   left: 12px;
 }
 
 .labelBR {
-  bottom: 15px;
+  bottom: 20px;
   right: 12px;
   text-align: right;
 }

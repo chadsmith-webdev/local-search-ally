@@ -305,7 +305,7 @@ export default function InvisibilityHologram() {
       {/* Canvas wrapper — clips the 3D scene + applies glow filter */}
       <div className={styles.canvasWrap}>
         <Canvas
-          camera={{ position: [0, 7, 19], fov: 50 }}
+          camera={{ position: [0, 9, 21], fov: 50 }}
           className={styles.canvas}
           gl={{
             alpha: true,
