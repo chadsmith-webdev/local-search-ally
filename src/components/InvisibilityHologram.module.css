@@ -75,7 +75,9 @@
   inset: 4px;
   overflow: hidden;
   z-index: 1;
-  filter: drop-shadow(0 0 15px rgba(123, 175, 212, 0.5));
+  filter:
+    drop-shadow(0 0 15px rgba(123, 175, 212, 0.6))
+    brightness(1.2);
 }
 
 /* ── 3D Canvas layer — fills wrapper ──────────────────── */
