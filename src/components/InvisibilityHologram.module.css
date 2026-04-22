@@ -92,9 +92,9 @@
   inset: 0;
   background: repeating-linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0) 0px,
-    rgba(0, 0, 0, 0) 2px,
-    rgba(123, 175, 212, 0.04) 3px
+    transparent 0px,
+    transparent 2px,
+    rgba(123, 175, 212, 0.05) 3px
   );
   pointer-events: none;
   z-index: 5;
@@ -190,12 +190,12 @@
 }
 
 .labelBL {
-  bottom: 10px;
+  bottom: 15px;
   left: 12px;
 }
 
 .labelBR {
-  bottom: 10px;
+  bottom: 15px;
   right: 12px;
   text-align: right;
 }

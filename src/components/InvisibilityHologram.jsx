@@ -151,10 +151,10 @@ function CloakMesh() {
       <meshStandardMaterial
         color="#060d14"
         emissive="#7bafd4"
-        emissiveIntensity={0.8}
+        emissiveIntensity={0.7}
         wireframe
         transparent
-        opacity={0.4}
+        opacity={0.3}
         roughness={0.3}
         metalness={0.7}
       />
@@ -305,7 +305,7 @@ export default function InvisibilityHologram() {
       {/* Canvas wrapper — clips the 3D scene + applies glow filter */}
       <div className={styles.canvasWrap}>
         <Canvas
-          camera={{ position: [0, 6, 12], fov: 65 }}
+          camera={{ position: [0, 6, 14], fov: 60 }}
           className={styles.canvas}
           gl={{
             alpha: true,
