@@ -53,7 +53,7 @@ export default function HeroSection() {
           </motion.span>
 
           <motion.h1 variants={fadeUpNoOpacity} className={styles.h1}>
-            Is invisibility hiding you from <em>3.12 billion</em>
+            Is invisibility hiding you from <em>3.12 billion</em>{' '}
             daily local searches?
           </motion.h1>
 
