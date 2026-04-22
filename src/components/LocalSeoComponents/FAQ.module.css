@@ -227,7 +227,25 @@
 }
 
 .ctaButton {
-  composes: btn-secondary from global;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--carolina);
+  border: 1px solid rgba(123, 175, 212, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 0.875rem 1.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
   padding: 10px 14px;
 }
 
