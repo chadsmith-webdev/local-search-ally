@@ -71,7 +71,7 @@ function BloomEffect() {
       new THREE.Vector2(size.width, size.height),
       1.0,   // strength — peaks bleed into surrounding slate
       0.8,   // radius — atmospheric spread
-      0.65   // threshold — only the absolute hottest vertices bloom
+      0.85   // threshold — only the absolute hottest vertices bloom
     );
     composer.addPass(bloomPass);
 
@@ -161,7 +161,7 @@ function CloakMesh() {
       <meshStandardMaterial
         color="#060d14"
         emissive="#7bafd4"
-        emissiveIntensity={1.0}
+        emissiveIntensity={0.6}
         wireframe
         transparent
         opacity={0.3}
@@ -233,7 +233,7 @@ function VertexPoints() {
       <pointsMaterial
         size={0.12}
         transparent
-        opacity={0.9}
+        opacity={0.65}
         sizeAttenuation
         vertexColors
       />
