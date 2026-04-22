@@ -154,7 +154,7 @@ function CloakMesh() {
         emissiveIntensity={0.8}
         wireframe
         transparent
-        opacity={0.6}
+        opacity={0.4}
         roughness={0.3}
         metalness={0.7}
       />
@@ -203,9 +203,9 @@ function VertexPoints() {
       </bufferGeometry>
       <pointsMaterial
         color="#e8f4ff"
-        size={0.13}
+        size={0.10}
         transparent
-        opacity={1.0}
+        opacity={0.85}
         sizeAttenuation
       />
     </points>
@@ -305,7 +305,7 @@ export default function InvisibilityHologram() {
       {/* Canvas wrapper — clips the 3D scene + applies glow filter */}
       <div className={styles.canvasWrap}>
         <Canvas
-          camera={{ position: [0, 5, 9], fov: 75 }}
+          camera={{ position: [0, 6, 12], fov: 65 }}
           className={styles.canvas}
           gl={{
             alpha: true,
