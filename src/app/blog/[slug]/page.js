@@ -110,6 +110,18 @@ export default async function BlogPost({ params }) {
     ],
   };
 
+  const faqJsonLd = metadata.faqs?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: metadata.faqs.map(({ question, answer }) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: { "@type": "Answer", text: answer },
+        })),
+      }
+    : null;
+
   return (
     <div className={styles.page}>
       <script
@@ -120,6 +132,12 @@ export default async function BlogPost({ params }) {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       <div className={styles.inner}>
         {/* Feature Image */}
