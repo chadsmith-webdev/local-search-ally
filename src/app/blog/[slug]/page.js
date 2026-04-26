@@ -44,11 +44,20 @@ export async function generateMetadata({ params }) {
       type: "article",
       publishedTime: metadata.date,
       authors: ["Chad Smith"],
+      siteName: "Local Search Ally",
+      images: [
+        {
+          url: metadata.image ? `${SITE_URL}${metadata.image}` : `${SITE_URL}/og-default.png`,
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: metadata.title,
       description: metadata.description,
+      images: [metadata.image ? `${SITE_URL}${metadata.image}` : `${SITE_URL}/og-default.png`],
     },
   };
 }
