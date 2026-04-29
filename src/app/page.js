@@ -215,6 +215,36 @@ const faqJsonLd = {
   ],
 };
 
+const howToJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How Local Search Ally improves contractor visibility on Google",
+  description:
+    "A three-step process to take NWA home service trades from invisible to ranked in the Google Map Pack.",
+  totalTime: "P30D",
+  dateModified: "2026-04-29",
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Audit",
+      text: "Review your local visibility, service pages, and competitor presence to find the highest-impact gaps — what's holding you back and what's easiest to fix first.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Fix Priority Gaps",
+      text: "Improve what matters most first: local relevance, on-page clarity, Google Business Profile completeness, and lead paths that support calls from real customers.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "Grow and Track",
+      text: "Monitor progress and adjust based on what's working. Monthly reports show rankings, calls, and actions taken — no mystery, no jargon.",
+    },
+  ],
+};
+
 export default function Page() {
   return (
     <>
@@ -225,6 +255,10 @@ export default function Page() {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
       <main>
         <HeroSection />
