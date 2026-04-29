@@ -39,7 +39,11 @@ const jsonLd = {
   description:
     "Founder of Local Search Ally, helping NWA home service trades rank on Google with no contracts and radical transparency.",
   url: "https://localsearchally.com/about",
-  sameAs: ["https://www.linkedin.com/in/chadsmith/"],
+  sameAs: [
+    "https://www.linkedin.com/in/chadsmith_localsearchallly",
+    "https://www.facebook.com/localsearchally",
+    "https://www.youtube.com/@chadsmith_localsearchally",
+  ],
   knowsAbout: [
     "Local SEO",
     "Google Business Profile optimization",
@@ -76,6 +80,11 @@ const orgJsonLd = {
     addressCountry: "US",
   },
   areaServed: "Northwest Arkansas",
+  sameAs: [
+    "https://www.linkedin.com/in/chadsmith_localsearchallly",
+    "https://www.facebook.com/localsearchally",
+    "https://www.youtube.com/@chadsmith_localsearchally",
+  ],
   knowsAbout: [
     "Local SEO",
     "Google Business Profile optimization",

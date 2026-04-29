@@ -86,6 +86,11 @@ const jsonLd = {
     "Web Development",
     "Contractor Marketing",
   ],
+  sameAs: [
+    "https://www.linkedin.com/in/chadsmith_localsearchallly",
+    "https://www.facebook.com/localsearchally",
+    "https://www.youtube.com/@chadsmith_localsearchally",
+  ],
 };
 
 const faqJsonLd = {
