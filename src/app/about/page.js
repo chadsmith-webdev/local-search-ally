@@ -39,6 +39,50 @@ const jsonLd = {
   description:
     "Founder of Local Search Ally, helping NWA home service trades rank on Google with no contracts and radical transparency.",
   url: "https://localsearchally.com/about",
+  sameAs: ["https://www.linkedin.com/in/chadsmith/"],
+  knowsAbout: [
+    "Local SEO",
+    "Google Business Profile optimization",
+    "Citation building",
+    "NAP consistency",
+    "Map Pack ranking",
+    "Web design for contractors",
+    "Reputation management",
+    "Northwest Arkansas contractor marketing",
+  ],
+};
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://localsearchally.com/#organization",
+  name: "Local Search Ally",
+  url: "https://localsearchally.com",
+  dateModified: "2026-04-29",
+  description:
+    "One-person local SEO and web development service in Siloam Springs, AR, helping NWA home service trades — HVAC, plumbing, roofing, electrical, and remodeling — get found on Google. No contracts, month-to-month.",
+  telephone: "+14793808626",
+  email: "chad@localsearchally.com",
+  founder: {
+    "@type": "Person",
+    name: "Chad Smith",
+    url: "https://localsearchally.com/about",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Siloam Springs",
+    addressRegion: "AR",
+    postalCode: "72761",
+    addressCountry: "US",
+  },
+  areaServed: "Northwest Arkansas",
+  knowsAbout: [
+    "Local SEO",
+    "Google Business Profile optimization",
+    "Citation building",
+    "Web design for home service trades",
+    "Map Pack ranking",
+  ],
 };
 
 export default function AboutPage() {
@@ -47,6 +91,10 @@ export default function AboutPage() {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
       <AboutHero />
       <AboutOrigin />
