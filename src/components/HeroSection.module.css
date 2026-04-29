@@ -177,6 +177,24 @@
   color: var(--text);
 }
 
+/* ─── AEO product overview (always visible to crawlers) ── */
+.overview {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 540px;
+  border-left: 2px solid rgba(123, 175, 212, 0.25);
+  padding-left: 0.875rem;
+  opacity: 0.75;
+}
+
+.overview time {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
 /* ─── Trust line ────────────────────────────────────── */
 .trust {
   font-family: var(--font-mono);

@@ -5,10 +5,9 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import styles from "./HeroSection.module.css";
 
-const InvisibilityHologram = dynamic(
-  () => import("./InvisibilityHologram"),
-  { ssr: false }
-);
+const InvisibilityHologram = dynamic(() => import("./InvisibilityHologram"), {
+  ssr: false,
+});
 
 const container = {
   hidden: {},
@@ -53,14 +52,23 @@ export default function HeroSection() {
           </motion.span>
 
           <motion.h1 variants={fadeUpNoOpacity} className={styles.h1}>
-            Is invisibility hiding you from <em>3.12 billion</em>{' '}
-            daily local searches?
+            Is invisibility hiding you from <em>3.12 billion</em> daily local
+            searches?
           </motion.h1>
 
           <motion.p variants={fadeUp} className={styles.subhead}>
             46% of all Google searches are looking for a local pro nearby. If
             you&rsquo;re not in the Map Pack, those calls are going to someone
             else — and you&rsquo;ll never know what you missed.
+          </motion.p>
+
+          {/* AEO: 50-word product overview — always in DOM for crawler extraction */}
+          <motion.p variants={fadeUp} className={styles.overview}>
+            Local Search Ally is a one-person local SEO and web development
+            service in Siloam Springs, AR, helping NWA home service trades —
+            HVAC, plumbing, roofing, electrical, and remodeling — get found on
+            Google and into the Map Pack. Month-to-month, no contracts.{" "}
+            <time dateTime='2026-04-29'>Last updated: April 2026.</time>
           </motion.p>
 
           <motion.div variants={fadeUp} className={styles.ctas}>
