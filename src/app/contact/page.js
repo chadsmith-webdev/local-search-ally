@@ -18,6 +18,7 @@ export const metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
+  dateModified: "2026-04-29",
   name: "Contact Local Search Ally",
   description:
     "Contact Chad Smith for Local SEO services in Northwest Arkansas.",

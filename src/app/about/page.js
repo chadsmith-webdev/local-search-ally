@@ -21,6 +21,7 @@ export const metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  dateModified: "2026-04-29",
   name: "Chad Smith",
   jobTitle: "Founder",
   worksFor: {

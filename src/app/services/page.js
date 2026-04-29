@@ -25,6 +25,7 @@ export const metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
+  dateModified: "2026-04-29",
   name: "Local SEO & Web Design for NWA Contractors",
   description:
     "Local SEO, web design, Google Business Profile optimization, and reputation management for home service trade businesses in Northwest Arkansas.",

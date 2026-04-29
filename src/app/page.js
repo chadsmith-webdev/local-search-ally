@@ -27,6 +27,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   "@id": "https://localsearchally.com/#localbusiness",
   name: "Local Search Ally",
+  dateModified: "2026-04-29",
   description:
     "Local SEO and web development for NWA home service trades — HVAC, plumbing, roofing, electrical, landscaping, and remodeling.",
   url: "https://localsearchally.com",
