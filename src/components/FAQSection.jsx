@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import styles from "./FAQSection.module.css";
 
 const fadeUp = {
@@ -42,33 +42,32 @@ function FAQItem({ item, index }) {
         <span className={styles.questionText}>{item.q}</span>
         <span className={`${styles.icon} ${open ? styles.iconOpen : ""}`}>
           <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.75"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            width='16'
+            height='16'
+            viewBox='0 0 16 16'
+            fill='none'
+            stroke='currentColor'
+            strokeWidth='1.75'
+            strokeLinecap='round'
+            strokeLinejoin='round'
           >
-            <path d="M4 6l4 4 4-4" />
+            <path d='M4 6l4 4 4-4' />
           </svg>
         </span>
       </button>
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            key="answer"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.28, ease: "easeInOut" }}
-            className={styles.answerWrap}
-          >
-            <p className={styles.answer}>{item.a}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Answer is always in the DOM so crawlers and AI engines can read it.
+          Height/opacity animate for the visual accordion only. */}
+      <motion.div
+        className={styles.answerWrap}
+        initial={false}
+        animate={
+          open ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
+        }
+        transition={{ duration: 0.28, ease: "easeInOut" }}
+        aria-hidden={!open}
+      >
+        <p className={styles.answer}>{item.a}</p>
+      </motion.div>
     </motion.div>
   );
 }
@@ -79,8 +78,8 @@ export default function FAQSection() {
       <motion.div
         className={styles.inner}
         variants={container}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div className={styles.header} variants={fadeUp}>
