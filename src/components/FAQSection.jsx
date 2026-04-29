@@ -120,7 +120,17 @@ function FAQItem({ item, index }) {
   );
 }
 
-export default function FAQSection() {
+export default function FAQSection({
+  faqs = FAQS,
+  eyebrow = "Common Questions",
+  heading = (
+    <>
+      Frequently asked about
+      <br />
+      local visibility.
+    </>
+  ),
+}) {
   return (
     <section className={styles.section}>
       <motion.div
@@ -131,16 +141,12 @@ export default function FAQSection() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div className={styles.header} variants={fadeUp}>
-          <span className={styles.eyebrow}>Common Questions</span>
-          <h2 className={styles.h2}>
-            Frequently asked about
-            <br />
-            local visibility.
-          </h2>
+          <span className={styles.eyebrow}>{eyebrow}</span>
+          <h2 className={styles.h2}>{heading}</h2>
         </motion.div>
 
         <div className={styles.list}>
-          {FAQS.map((item, i) => (
+          {faqs.map((item, i) => (
             <FAQItem key={i} item={item} index={i} />
           ))}
         </div>

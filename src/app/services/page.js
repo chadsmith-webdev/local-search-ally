@@ -3,6 +3,64 @@ import ServicesDetail from "@/components/ServicesDetail";
 import ServicesAuditBridge from "@/components/ServicesAuditBridge";
 import ServicesPricing from "@/components/ServicesPricing";
 import ServicesPageFinalCTA from "@/components/ServicesPageFinalCTA";
+import FAQSection from "@/components/FAQSection";
+
+const SERVICES_FAQS = [
+  {
+    q: "What services does Local Search Ally offer?",
+    a: "Local Search Ally offers local SEO, Google Business Profile optimization, web design, reputation management, and citation building — all for NWA home service trades. Plans start at $497/month with no long-term contracts.",
+  },
+  {
+    q: "Do I need all these services or can I start with just one?",
+    a: "You can start with a single service. Most NWA contractors begin with GBP optimization or a full local SEO plan, then add web or reputation management as they see results. There's no minimum commitment.",
+  },
+  {
+    q: "What is included in the local SEO service?",
+    a: "Local SEO includes Google Business Profile management, NAP citation cleanup, on-page optimization for service pages, keyword strategy for NWA searches, and monthly reports showing rankings, calls, and actions taken.",
+  },
+  {
+    q: "What does Google Business Profile management actually involve?",
+    a: "It means keeping your profile fully filled out, posting weekly updates, responding to every review, uploading photos, and selecting the right categories — the ongoing activity that signals to Google your business is active.",
+  },
+  {
+    q: "What does web design include and how long does it take?",
+    a: "Web design starts at $799 and includes a mobile-first, SEO-built site optimized for local search and lead generation. Most contractor sites are completed in 3–4 weeks. No templates — built to convert searches into calls.",
+  },
+  {
+    q: "How does reputation management work?",
+    a: "Reputation management starts at $99/month and includes a review request process, response templates, and monitoring. It helps NWA contractors generate consistent new reviews without chasing customers manually.",
+  },
+  {
+    q: "Are there long-term contracts for any of the services?",
+    a: "No. Every service is month-to-month. You can cancel any time. There are no setup fees, no cancellation penalties, and no retainer lock-in. You stay because the results are there — not because you're obligated.",
+  },
+  {
+    q: "How much does local SEO cost for a small contractor?",
+    a: "The Visibility plan starts at $497/month covering GBP management, citation cleanup, and monthly reporting. Growth is $797/month and adds on-page SEO and keyword strategy. Full Stack is $1,197/month.",
+  },
+  {
+    q: "What trades do you work with in Northwest Arkansas?",
+    a: "HVAC, plumbing, roofing, electrical, landscaping, and remodeling. These home service trades share the same local search patterns and benefit most from Map Pack visibility and GBP optimization in NWA.",
+  },
+  {
+    q: "How do I know which service plan is right for my business?",
+    a: "Start with the free SEO audit at audit.localsearchally.com. It shows where you stand today — GBP completeness, citation gaps, and competitor visibility. That usually makes the right starting point obvious.",
+  },
+];
+
+const servicesFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  dateModified: "2026-04-29",
+  mainEntity: SERVICES_FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
 
 export const metadata = {
   title: "Services — Local Search Ally | NWA Contractor SEO & Web Design",
@@ -139,11 +197,26 @@ export default function ServicesPage() {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesFaqJsonLd) }}
+      />
       <main>
         <ServicesPageHero />
         <ServicesDetail />
         <ServicesAuditBridge />
         <ServicesPricing />
+        <FAQSection
+          faqs={SERVICES_FAQS}
+          eyebrow='Services FAQ'
+          heading={
+            <>
+              Common questions about
+              <br />
+              working with Local Search Ally.
+            </>
+          }
+        />
         <ServicesPageFinalCTA />
       </main>
     </>
