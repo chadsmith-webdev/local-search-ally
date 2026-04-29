@@ -70,6 +70,34 @@
   color: var(--text);
 }
 
+.social {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  opacity: 0.65;
+}
+
+.socialLink:hover {
+  color: var(--carolina);
+  opacity: 1;
+}
+
+.socialLink:focus-visible {
+  outline: 2px solid var(--carolina);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 .col h4 {
   font-family: var(--font-ui);
   font-size: 0.6875rem;
