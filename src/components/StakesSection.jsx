@@ -19,6 +19,7 @@ const TIERS = [
     num: "8.5B",
     label: "Daily Google Searches",
     sub: "Every day, people turn to Google for answers.",
+    source: "Google Search Statistics",
     width: "100%",
     active: false,
   },
@@ -27,6 +28,7 @@ const TIERS = [
     pct: "46%",
     label: "Have Local Intent",
     sub: "Nearly half are searching for a business or service near them.",
+    source: "Search Engine Roundtable",
     width: "76%",
     active: false,
   },
@@ -35,6 +37,7 @@ const TIERS = [
     pct: "80%",
     label: "Take Action Within 24 Hours",
     sub: "Local searchers are ready to buy. They call, visit, or book — today.",
+    source: "Think With Google",
     width: "54%",
     active: true,
   },
@@ -85,6 +88,7 @@ export default function StakesSection() {
                 <div className={styles.tierRight}>
                   <p className={styles.tierLabel}>{tier.label}</p>
                   <p className={styles.tierSub}>{tier.sub}</p>
+                  <cite className={styles.tierSource}>{tier.source}</cite>
                 </div>
               </div>
               {i < TIERS.length - 1 && (
