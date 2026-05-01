@@ -30,7 +30,7 @@ const focusAreas = [
 
 const bellaVistaSignals = [
   "Established community with older housing stock that drives steady demand for maintenance and replacement.",
-  "Homeowners here expect professional contractors with polished online presence and strong reviews.",
+  "Homeowners here expect professional contractors with a polished website, strong GBP, and real reviews.",
   "Trust and reputation matter more than price — homeowners are willing to invest in quality.",
   "Predictable, year-round demand from HVAC, roofing, plumbing, electrical, and remodeling work.",
 ];
@@ -85,7 +85,7 @@ const faqItems = [
   {
     question: "What is the first step?",
     answer:
-      "Run the free audit. You get a clear baseline across seven local SEO sections before we talk about next steps.",
+      "Run the free audit. You get a clear baseline across seven local SEO sections then reach out and we can talk through what makes sense.",
   },
 ];
 
@@ -177,7 +177,10 @@ export default function BellaVistaServiceAreaPage() {
                   calls to contractors who did the work to show up.
                 </p>
                 <div className={styles.heroActions}>
-                  <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.primaryBtn}>
+                  <Link
+                    href={process.env.NEXT_PUBLIC_AUDIT_URL}
+                    className={styles.primaryBtn}
+                  >
                     Run Your Free Audit
                   </Link>
                   <Link href='/contact' className={styles.secondaryBtn}>
@@ -185,7 +188,7 @@ export default function BellaVistaServiceAreaPage() {
                   </Link>
                 </div>
                 <p className={styles.trust}>
-                  No pitch. No signup. Real findings in about 90 seconds.
+                  No pitch, no signup — results in about 90 seconds.
                 </p>
               </div>
             </div>
@@ -213,7 +216,7 @@ export default function BellaVistaServiceAreaPage() {
                   <p className={styles.panelCopy}>
                     Percent of consumers say quality of website affects
                     perception of the business. In Bella Vista, a polished
-                    online presence is expected.
+                    website and GBP are expected.
                   </p>
                 </div>
               </div>
@@ -409,7 +412,10 @@ export default function BellaVistaServiceAreaPage() {
               seven local SEO sections and show you exactly where you stand.
             </p>
             <div className={styles.heroActions}>
-              <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.primaryBtn}>
+              <Link
+                href={process.env.NEXT_PUBLIC_AUDIT_URL}
+                className={styles.primaryBtn}
+              >
                 Run Your Free Audit
               </Link>
               <Link href='/contact' className={styles.secondaryBtn}>

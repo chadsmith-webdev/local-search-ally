@@ -85,7 +85,7 @@ const faqItems = [
   {
     question: "What is the first step?",
     answer:
-      "Run the free audit. You get a clear baseline across seven local SEO sections before we talk about next steps.",
+      "Run the free audit. You get a clear baseline across seven local SEO sections then reach out and we can talk through what makes sense.",
   },
 ];
 
@@ -186,7 +186,7 @@ export default function CentertonServiceAreaPage() {
                   </Link>
                 </div>
                 <p className={styles.trust}>
-                  No pitch. No signup. Real findings in about 90 seconds.
+                  No pitch, no signup — results in about 90 seconds.
                 </p>
               </div>
             </div>

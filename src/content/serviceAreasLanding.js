@@ -33,7 +33,7 @@ export const serviceAreasLandingContent = {
       href: "/contact",
       text: "Start With a Free Conversation",
     },
-    trust: "No pitch. No signup. Real findings in about 90 seconds.",
+    trust: "No pitch, no signup — results in about 90 seconds.",
   },
   cities: {
     eyebrow: "Cities I Serve",
@@ -61,7 +61,7 @@ export const serviceAreasLandingContent = {
         city: "Bentonville",
         county: "Benton County",
         href: "/service-areas/bentonville-ar",
-        body: "Higher-income households mean higher service ticket value. Homeowners here search before they call, and they read reviews. A polished online presence is table stakes.",
+        body: "Higher-income households mean higher service ticket value. Homeowners here search before they call, and they read reviews. A polished website and GBP are table stakes.",
         tags: ["HVAC", "Remodeling", "Landscaping", "Electrical"],
       },
       {

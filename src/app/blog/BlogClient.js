@@ -59,6 +59,7 @@ function PostCard({ post, index }) {
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               style={{ objectFit: "cover" }}
               className={styles.cardImg}
+              priority={index === 0}
             />
           ) : (
             <div className={styles.cardImageFallback} aria-hidden='true' />

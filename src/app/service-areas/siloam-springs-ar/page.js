@@ -78,7 +78,7 @@ const faqItems = [
   {
     question: "What if I already have a website?",
     answer:
-      "We start with an audit to see where the biggest gaps are. Sometimes it's GBP and service-page clarity. Sometimes it's site structure and the path visitors take to call. Most of the time, it's a combination.",
+      "I start with an audit to see where the biggest gaps are. Sometimes it's GBP and service-page clarity. Sometimes it's site structure and the path visitors take to call. Most of the time, it's a combination.",
   },
   {
     question: "Are there contracts or hidden fees?",
@@ -88,7 +88,7 @@ const faqItems = [
   {
     question: "What's the first step?",
     answer:
-      "Run the free audit. It takes about 10 minutes and you get a clear baseline across seven local SEO sections. Then we can talk about what comes next if we're a good fit.",
+      "Run the free audit. It takes about 10 minutes and you get a clear baseline across seven local SEO sections. Then let's talk about what comes next if there's a good fit.",
   },
 ];
 
@@ -174,7 +174,10 @@ export default function SiloamSpringsServiceAreaPage() {
                   that match what people actually type.
                 </p>
                 <div className={styles.heroActions}>
-                  <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.primaryBtn}>
+                  <Link
+                    href={process.env.NEXT_PUBLIC_AUDIT_URL}
+                    className={styles.primaryBtn}
+                  >
                     Run Your Free Audit
                   </Link>
                   <Link href='/contact' className={styles.secondaryBtn}>
@@ -182,7 +185,7 @@ export default function SiloamSpringsServiceAreaPage() {
                   </Link>
                 </div>
                 <p className={styles.trust}>
-                  No pitch. No signup. Real findings in about 90 seconds.
+                  No pitch, no signup — results in about 90 seconds.
                 </p>
               </div>
             </div>
@@ -399,7 +402,10 @@ export default function SiloamSpringsServiceAreaPage() {
               seven local SEO sections and show you exactly where you stand.
             </p>
             <div className={styles.heroActions}>
-              <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.primaryBtn}>
+              <Link
+                href={process.env.NEXT_PUBLIC_AUDIT_URL}
+                className={styles.primaryBtn}
+              >
                 Run Your Free Audit
               </Link>
               <Link href='/contact' className={styles.secondaryBtn}>

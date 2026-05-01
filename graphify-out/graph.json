@@ -6001,7 +6001,7 @@
       "label": "TermsPage()",
       "file_type": "code",
       "source_file": "src/app/terms/page.js",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "terms_page_termspage",
       "community": 71,
       "norm_label": "termspage()"
@@ -20714,7 +20714,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/terms/page.js",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_src": "src_app_terms_page_js",
       "_tgt": "terms_page_termspage",

@@ -128,10 +128,7 @@ without being asked.
 | Terms             | `/terms`                        | Terms of service                    |
 | SEO Audit Tool    | `audit.localsearchally.com/...` | Standalone subdomain — external     |
 
-**Nav discrepancy note:** The homepage uses the updated nav (Services, Service
-Areas, Portfolio, Resources, Blog, About, Contact). The services and about
-pages still reflect an older nav without Resources or Service Areas. These
-pages are due for a nav update to match the homepage.
+**Nav discrepancy note:** Resolved — the nav is defined in a single shared `Navbar.jsx` rendered by the root layout. All pages use: Services, Service Areas, Portfolio, Resources, Blog, About, Contact.
 
 **About page copy note:** Copy updated May 2026 and aligned with the current
 brand reference in `.claude/skills/`. Banned phrases removed, founder story

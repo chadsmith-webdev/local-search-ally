@@ -31,7 +31,7 @@ const focusAreas = [
 const bentonvilleSignals = [
   "Higher-income homeowners who invest in quality contractors — not price shoppers.",
   "Research-heavy market where Google reviews are decision-drivers.",
-  "Online presence is table stakes. A polished website, full Google Business Profile, and strong reviews are expected.",
+  "A polished website, full Google Business Profile, and strong reviews are expected — not optional.",
   "Mix of newer subdivisions and established neighborhoods creates consistent demand across remodeling, upgrades, and maintenance.",
 ];
 
@@ -85,7 +85,7 @@ const faqItems = [
   {
     question: "What is the first step?",
     answer:
-      "Run the free audit. You get a clear baseline across seven local SEO sections before we talk about next steps.",
+      "Run the free audit. You get a clear baseline across seven local SEO sections then reach out and we can talk through what makes sense.",
   },
 ];
 
@@ -169,11 +169,15 @@ export default function BentonvilleServiceAreaPage() {
                   I help Bentonville home service trades show up where calls
                   start: Google Maps, city + service searches, and service pages
                   that match what people actually type. Bentonville homeowners
-                  research heavily. Reviews matter. Online presence is table
-                  stakes. I make sure you show up clearly in all three.
+                  research heavily. Reviews matter. Your website, GBP, and
+                  service pages need to be sharp. I make sure you show up
+                  clearly in all three.
                 </p>
                 <div className={styles.heroActions}>
-                  <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.primaryBtn}>
+                  <Link
+                    href={process.env.NEXT_PUBLIC_AUDIT_URL}
+                    className={styles.primaryBtn}
+                  >
                     Run Your Free Audit
                   </Link>
                   <Link href='/contact' className={styles.secondaryBtn}>
@@ -181,7 +185,7 @@ export default function BentonvilleServiceAreaPage() {
                   </Link>
                 </div>
                 <p className={styles.trust}>
-                  No pitch. No signup. Real findings in about 90 seconds.
+                  No pitch, no signup — results in about 90 seconds.
                 </p>
               </div>
             </div>
@@ -201,8 +205,8 @@ export default function BentonvilleServiceAreaPage() {
                   This is not a market where a thin Google Business Profile and
                   outdated website slide by quietly. Bentonville homeowners
                   research. They compare. They read reviews. When demand spikes,
-                  the businesses with stronger local signals and better online
-                  presence get calls first.
+                  the businesses with stronger local signals — better GBP,
+                  sharper service pages, more reviews — get calls first.
                 </p>
                 <div className={styles.briefStat}>
                   <span className={styles.panelNumber}>3</span>
@@ -406,7 +410,10 @@ export default function BentonvilleServiceAreaPage() {
               seven local SEO sections and show you exactly where you stand.
             </p>
             <div className={styles.heroActions}>
-              <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.primaryBtn}>
+              <Link
+                href={process.env.NEXT_PUBLIC_AUDIT_URL}
+                className={styles.primaryBtn}
+              >
                 Run Your Free Audit
               </Link>
               <Link href='/contact' className={styles.secondaryBtn}>
