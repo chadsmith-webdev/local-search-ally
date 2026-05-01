@@ -14,8 +14,6 @@ faq:
     answer: "LazyMotion allows for loading only the necessary parts of the Framer Motion library, like the domAnimation bundle. This significantly reduces the initial JavaScript bundle size, leading to faster page loads and better performance for users on mobile job sites."
 ---
 
-import Image from "next/image";
-
 [← Read Part 3: The SEO Foundation](/blog/local-search-ally-seo-foundation)
 
 A website can look great and still fail the person using it. In Part 4 of this build series, I'm digging into the "invisible" work - the refinements that moved the site from "finished" to "professional."
@@ -32,12 +30,7 @@ When you're building for home service trades, "pretty" doesn't pay the bills. Th
 
 ## Why was the page load "feeling" slow?
 
-<Image
-  src='/images/web-performance-audit.png'
-  alt='LCP comparison showing 5.7s before and 2.5s after extracting the H1 from a Framer Motion wrapper'
-  width={800}
-  height={450}
-/>
+![LCP comparison showing 5.7s before and 2.5s after extracting the H1 from a Framer Motion wrapper](/images/web-performance-audit.png)
 
 The service pages were beautiful, but the data said otherwise. Lighthouse was reporting a Largest Contentful Paint (LCP) of 5.7 seconds. In the world of search rankings, anything over 2.5 seconds is a problem.
 
@@ -53,12 +46,7 @@ Slow LCP scores often result from hiding primary headings during initial render.
 
 ## How do you hit 100/100 for Accessibility?
 
-<Image
-  src='/images/accessibility-score-100.png'
-  alt='Lighthouse accessibility audit showing a perfect 100/100 score after fixing heading hierarchy, color contrast, and ARIA labels'
-  width={800}
-  height={450}
-/>
+![Lighthouse accessibility audit showing a perfect 100/100 score after fixing heading hierarchy, color contrast, and ARIA labels](/images/accessibility-score-100.png)
 
 Accessibility (A11y) isn't just a "nice to have." It's about ensuring every NWA contractor, regardless of their device or ability, can read the site. I audited the initial build and found three specific failures that I had to fix.
 
@@ -80,12 +68,7 @@ I've found that the more "complex" you try to make a UI, the easier it is to bre
 
 ## Re-thinking the Motion System
 
-<Image
-  src='/images/web-performance-audit.png'
-  alt='Technical visualization of the motion system optimization using LazyMotion with the domAnimation bundle'
-  width={800}
-  height={450}
-/>
+![Technical visualization of the motion system optimization using LazyMotion with the domAnimation bundle](/images/web-performance-audit.png)
 
 Animations should feel like the site breathing, not performing a show. My initial setup used `whileInView` for everything. While it looked cool, it felt "finicky" as elements would re-trigger every time you scrolled up and down.
 
@@ -97,12 +80,7 @@ Many developers over-animate their sites, which can cause motion sickness or jus
 
 ## The Philosophy: Guide vs. Hero
 
-<Image
-  src='/images/contractor-hero-ui.png'
-  alt="Isometric view of a contractor website hero section featuring the 'Let's Talk — It's Free' CTA button in Carolina Blue"
-  width={800}
-  height={450}
-/>
+![Isometric view of a contractor website hero section featuring the Let's Talk CTA button in Carolina Blue](/images/contractor-hero-ui.png)
 
 Every UI decision on this site is filtered through one question: "Does this make the contractor feel like the hero?"
 
