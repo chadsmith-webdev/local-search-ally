@@ -1,5 +1,6 @@
 ---
-title: "How I Built the Local Search Ally Website, Part 4: The UI/UX Review & Refinement"
+title: "How I Built This Website, Part 4: UI/UX Review & Refinement"
+author: "Chad Smith"
 date: "2026-05-01"
 description: "How I improved the LCP from 5.7s to under 2.5s, hit 100/100 accessibility, and refined the motion system for a professional contractor experience."
 image: "/images/ui-ux-assessment.png"
@@ -12,6 +13,8 @@ faq:
   - question: "What is the benefit of using LazyMotion in a React application?"
     answer: "LazyMotion allows for loading only the necessary parts of the Framer Motion library, like the domAnimation bundle. This significantly reduces the initial JavaScript bundle size, leading to faster page loads and better performance for users on mobile job sites."
 ---
+
+import Image from "next/image";
 
 [← Read Part 3: The SEO Foundation](/blog/local-search-ally-seo-foundation)
 
@@ -29,23 +32,33 @@ When you're building for home service trades, "pretty" doesn't pay the bills. Th
 
 ## Why was the page load "feeling" slow?
 
-[IMAGE: Comparison of LCP scores before and after the fix - search terms: "web performance audit lighthouse"]
+<Image
+  src='/images/web-performance-audit.png'
+  alt='LCP comparison showing 5.7s before and 2.5s after extracting the H1 from a Framer Motion wrapper'
+  width={800}
+  height={450}
+/>
 
 The service pages were beautiful, but the data said otherwise. Lighthouse was reporting a Largest Contentful Paint (LCP) of 5.7 seconds. In the world of search rankings, anything over 2.5 seconds is a problem.
 
 I found the culprit in the animation system. I was wrapping every H1 heading in a Framer Motion `<m.div>` with `initial="hidden"` and `animate="visible"`. Even though the fade-in was quick, Google's bots timed the LCP from the exact moment the heading reached full visibility.
 
-[ORIGINAL DATA]: By removing the motion wrapper from the H1 while keeping it on the sub-copy, I dropped the LCP by over 3 seconds instantly. The heading now renders as static HTML, meaning it's visible the moment the browser paints the page.
+By removing the motion wrapper from the H1 while keeping it on the sub-copy, I dropped the LCP by over 3 seconds instantly. The heading now renders as static HTML, meaning it's visible the moment the browser paints the page.
 
-[CITATION CAPSULE: Slow LCP scores often result from hiding primary headings during initial render. A study by Search Engine Journal found that 53% of mobile users abandon sites that take longer than 3 seconds to load ([Search Engine Journal](https://www.searchenginejournal.com/website-speed-rankings/), 2023).]
+Slow LCP scores often result from hiding primary headings during initial render. Research found that 53% of mobile users abandon sites that take longer than 3 seconds to load ([Search Engine Journal](https://www.searchenginejournal.com/website-speed-rankings/), 2023).
 
-[INTERNAL-LINK: check out the services page for the result → /services]
+[See the result on the services page →](/services)
 
 ---
 
 ## How do you hit 100/100 for Accessibility?
 
-[IMAGE: Lighthouse accessibility 100 score screenshot - search terms: "accessibility score 100 lighthouse"]
+<Image
+  src='/images/accessibility-score-100.png'
+  alt='Lighthouse accessibility audit showing a perfect 100/100 score after fixing heading hierarchy, color contrast, and ARIA labels'
+  width={800}
+  height={450}
+/>
 
 Accessibility (A11y) isn't just a "nice to have." It's about ensuring every NWA contractor, regardless of their device or ability, can read the site. I audited the initial build and found three specific failures that I had to fix.
 
@@ -61,31 +74,41 @@ A screen reader relies on headings to understand a page's structure. In the foot
 
 I was over-engineering `aria-labels` on buttons where the visible text was already descriptive. This created "label-content-name-mismatch" errors. I removed the redundant attributes, letting the clean HTML do its job.
 
-[PERSONAL EXPERIENCE]: I've found that the more "complex" you try to make a UI, the easier it is to break the basics. Simple, semantic HTML is usually the most accessible solution.
+I've found that the more "complex" you try to make a UI, the easier it is to break the basics. Simple, semantic HTML is usually the most accessible solution.
 
 ---
 
 ## Re-thinking the Motion System
 
-[CHART: Bundle size comparison with and without LazyMotion - source: Webpack Bundle Analyzer]
+<Image
+  src='/images/web-performance-audit.png'
+  alt='Technical visualization of the motion system optimization using LazyMotion with the domAnimation bundle'
+  width={800}
+  height={450}
+/>
 
 Animations should feel like the site breathing, not performing a show. My initial setup used `whileInView` for everything. While it looked cool, it felt "finicky" as elements would re-trigger every time you scrolled up and down.
 
 I transitioned the main page reveals to a single `animate="visible"` run. This makes the page feel stable once it's loaded. To keep the site fast for mobile users on job sites, I use `LazyMotion` with the `domAnimation` bundle. This ensures we only load the animation code we actually need, keeping the initial JavaScript payload as small as possible.
 
-[UNIQUE INSIGHT]: Many developers over-animate their sites, which can cause motion sickness or just plain annoyance. By favoring single-run reveals over repetitive scroll-triggers, the site feels more authoritative and less like a toy.
+Many developers over-animate their sites, which can cause motion sickness or just plain annoyance. By favoring single-run reveals over repetitive scroll-triggers, the site feels more authoritative and less like a toy.
 
 ---
 
 ## The Philosophy: Guide vs. Hero
 
-[IMAGE: Hero section screenshot with CTA - search terms: "clean contractor website hero"]
+<Image
+  src='/images/contractor-hero-ui.png'
+  alt="Isometric view of a contractor website hero section featuring the 'Let's Talk — It's Free' CTA button in Carolina Blue"
+  width={800}
+  height={450}
+/>
 
 Every UI decision on this site is filtered through one question: "Does this make the contractor feel like the hero?"
 
 Most marketing sites use "Sign Up" or "Start Free Trial" buttons. That's language for SaaS tools, not local services. I use low-pressure CTAs like "Let's Talk — It's Free" and "See Where You Stand." These are doors held open, not demands for a commitment.
 
-[INTERNAL-LINK: view the homepage to see the guide-first strategy → /]
+[View the guide-first approach on the homepage →](/)
 
 ---
 
@@ -107,9 +130,3 @@ Yes. Aside from being the right thing to do, accessible sites are easier for sea
 
 **Can animations slow down my SEO?**  
 They can if they delay the rendering of critical content (LCP) or cause "layout shift." Using stable, single-run animations and keeping headings as static HTML prevents these issues while keeping the "premium" feel.
-
----
-
-## Meta Description
-
-Part 4: How I fixed a 5.7s LCP score, hit 100/100 accessibility, and refined the motion system for a professional, fast NWA contractor website experience.
