@@ -34,7 +34,7 @@ export default function AboutOrigin() {
                 fill
                 sizes='(max-width: 900px) 100vw, 440px'
                 className={styles.photo}
-                priority={false}
+                priority={true}
               />
             </div>
             <div className={styles.locationTag}>
@@ -79,7 +79,8 @@ export default function AboutOrigin() {
               <motion.p variants={fadeUp}>
                 When someone searched for an HVAC tech or a plumber in their
                 area, those guys didn&rsquo;t show up. Not because the work
-                wasn&rsquo;t there — because the online presence wasn&rsquo;t.
+                wasn&rsquo;t there — because the website or GBP listing
+                wasn&rsquo;t.
               </motion.p>
               <motion.p variants={fadeUp}>
                 I started digging into why. Turns out local search has a
