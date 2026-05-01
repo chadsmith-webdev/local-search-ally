@@ -18,12 +18,7 @@ export default function LocalSeoHero() {
       <LocalSeoHeroSVG />
       <div className={styles.container}>
         <LazyMotion features={domAnimation}>
-          <m.div
-            className={styles.content}
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true }}
-          >
+          <m.div className={styles.content} initial='hidden' animate='visible'>
             <m.h1 className={styles.heading} variants={fadeUp} custom={0}>
               Get Found on <span className={styles.colorSpan}>Google</span>
             </m.h1>
@@ -89,7 +84,7 @@ export default function LocalSeoHero() {
               variants={fadeUp}
               custom={5}
               tabIndex={0}
-              aria-label='Call Local Search Ally'
+              aria-label='Call Local Search Ally at (479) 380-8626'
             >
               <svg
                 width='20'

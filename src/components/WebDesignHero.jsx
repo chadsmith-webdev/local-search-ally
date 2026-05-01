@@ -21,8 +21,7 @@ export default function WebDesignHero() {
           <m.div
             className={styles.content}
             initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true }}
+            animate="visible"
           >
             <m.h1 className={styles.heading} variants={fadeUp} custom={0}>
               A Website That{" "}

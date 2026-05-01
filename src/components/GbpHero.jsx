@@ -21,8 +21,7 @@ export default function GbpHero() {
           <m.div
             className={styles.content}
             initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true }}
+            animate="visible"
           >
             <m.h1 className={styles.heading} variants={fadeUp} custom={0}>
               Show Up First on{" "}

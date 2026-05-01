@@ -110,7 +110,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className={styles.col}>
-            <h4>Services</h4>
+            <h3>Services</h3>
             <ul>
               <li>
                 <Link href='/services#local-seo'>Local SEO</Link>
@@ -139,7 +139,7 @@ export default function Footer() {
 
           {/* Company */}
           <div className={styles.col}>
-            <h4>Company</h4>
+            <h3>Company</h3>
             <ul>
               <li>
                 <Link href='/about'>About</Link>
