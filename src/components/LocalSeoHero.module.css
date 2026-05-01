@@ -142,7 +142,7 @@
   text-decoration: underline;
 }
 .phoneNumber {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-ui);
   font-size: 1em;
   margin-left: 2px;
 }

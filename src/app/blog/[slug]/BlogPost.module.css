@@ -99,7 +99,7 @@
 }
 
 .bylineMeta {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-ui);
   font-size: 0.72rem;
   color: #555;
   margin: 0;
@@ -186,7 +186,7 @@
 }
 
 .navCta {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-ui);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.1em;

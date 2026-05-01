@@ -63,9 +63,9 @@
 }
 
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--carolina);
@@ -196,7 +196,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-ui);
   font-size: 0.55rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -249,7 +249,7 @@
 }
 
 .cardReadTime {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-ui);
   font-size: 0.6rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -257,7 +257,7 @@
 }
 
 .cardCta {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-ui);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -334,7 +334,7 @@
 }
 
 .ctaNote {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-ui);
   font-size: 0.6rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;

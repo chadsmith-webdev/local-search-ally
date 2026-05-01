@@ -45,12 +45,16 @@
 
 .step:hover {
   border-color: rgba(123, 175, 212, 0.4);
-  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-hover, #242424) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--surface) 0%,
+    var(--surface-hover, #242424) 100%
+  );
   transform: translateY(-4px);
 }
 
 .stepNumber {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 3.5rem;
   font-weight: 700;
   color: rgba(123, 175, 212, 0.15);

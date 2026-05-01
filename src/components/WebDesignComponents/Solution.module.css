@@ -13,9 +13,9 @@
 }
 
 .eyebrow {
-  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-family: var(--font-ui);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--carolina, #7bafd4);

@@ -40,9 +40,9 @@
 
 /* ─── Section label ──────────────────────────────────── */
 .label {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: rgba(123, 175, 212, 0.6);
@@ -116,7 +116,7 @@
 
 /* ─── Source attribution ─────────────────────────────── */
 .statSource {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.625rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;

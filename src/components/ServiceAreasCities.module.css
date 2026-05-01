@@ -12,9 +12,9 @@
 }
 
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--carolina);
@@ -142,7 +142,7 @@
 
 .county {
   color: rgba(248, 249, 250, 0.56);
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.09em;
@@ -151,7 +151,7 @@
 
 .badge {
   color: var(--carolina);
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -194,7 +194,7 @@
 
 .tagsLabel {
   margin-bottom: 0.7rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -210,7 +210,7 @@
 
 .tag {
   color: rgba(248, 249, 250, 0.82);
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.7rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
