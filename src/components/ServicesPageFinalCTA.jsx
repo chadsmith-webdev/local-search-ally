@@ -46,7 +46,7 @@ export default function ServicesPageFinalCTA() {
           <Link href='/contact' className={styles.ctaPrimary}>
             Book a Free 30-Minute Strategy Call →
           </Link>
-          <p className={styles.ctaMicro}>No pitch. No pressure.</p>
+          <p className={styles.ctaMicro}>Month-to-month. No contracts.</p>
         </motion.div>
 
         <motion.div variants={fadeUp} className={styles.transparency}>
