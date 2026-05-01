@@ -38,7 +38,7 @@ const faqSchema = {
       name: "What is local SEO and why does it matter for contractors?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Local SEO is the practice of optimizing your online presence to rank higher in local search results — particularly on Google Maps and Google Search for location-specific queries. According to research from Think With Google, 46% of all Google searches have local intent, and 78% of local mobile searches result in an offline purchase. For home service contractors, local SEO is essential because homeowners searching 'plumber near me' or 'HVAC repair in Rogers' are actively looking to hire — they're not just browsing. If you're not visible in those top results, a competitor is getting that call instead.",
+        text: "Local SEO is the practice of optimizing your website, Google Business Profile, and local citations to rank higher in local search results — particularly on Google Maps and Google Search for location-specific queries. According to research from Think With Google, 46% of all Google searches have local intent, and 78% of local mobile searches result in an offline purchase. For home service contractors, local SEO is essential because homeowners searching 'plumber near me' or 'HVAC repair in Rogers' are actively looking to hire — they're not just browsing. If you're not visible in those top results, a competitor is getting that call instead.",
       },
     },
     {

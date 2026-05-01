@@ -18,7 +18,7 @@ export default function How() {
       number: "01",
       title: "You Fill Out the Form",
       description:
-        "Tell me about your business, service area, and current online presence.",
+        "Tell me about your business, service area, and where you currently stand on Google.",
     },
     {
       number: "02",

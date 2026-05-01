@@ -256,8 +256,8 @@ export default function BellaVistaServiceAreaPage() {
                 <p className={styles.bodyCopy}>
                   Bella Vista homeowners expect to find contractors online. They
                   expect to see reviews. They expect a professional website. If
-                  your online presence is weak, you look less trustworthy than a
-                  competitor with a polished profile and good reviews.
+                  your website and GBP are weak, you look less trustworthy than
+                  a competitor with a polished profile and good reviews.
                   Perception matters as much as reality.
                 </p>
               </div>

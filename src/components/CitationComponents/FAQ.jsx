@@ -18,7 +18,7 @@ export default function FAQ() {
     {
       question: "How many citations do I need to rank locally?",
       answer:
-        "There's no magic number. What matters is being listed consistently in the directories Google actually checks — which is a specific set of core platforms plus trade-specific and local directories. For most NWA home service contractors, building and cleaning up 50-100 quality citations across the right platforms is sufficient to remove citation inconsistency as a ranking barrier. I don't pad numbers with low-quality directories that Google ignores. I focus on what moves the needle.",
+        "There's no magic number. What matters is being listed consistently in the directories Google actually checks — which is a specific set of core platforms plus trade-specific and local directories. For most NWA home service contractors, building and cleaning up 50-100 quality citations across the right platforms is sufficient to remove citation inconsistency as a ranking barrier. I don't pad numbers with low-quality directories that Google ignores. I focus on what actually works.",
     },
     {
       question: "What happens if my NAP is wrong on some directories?",

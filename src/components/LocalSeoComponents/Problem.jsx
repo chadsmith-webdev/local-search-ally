@@ -188,10 +188,10 @@ export default function Problem() {
               </div>
               <h3>Lost Leads to Bigger Companies</h3>
               <p>
-                National franchises and larger companies dominate search results
-                in your market. They spend money on Google Ads. You can't
-                compete with that budget. But you can rank locally without
-                paying per click.
+                National franchises and larger companies push to the top of
+                search results in your market. They spend money on Google Ads.
+                You can't compete with that budget. But you can rank locally
+                without paying per click.
               </p>
             </motion.div>
           </motion.div>

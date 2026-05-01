@@ -6091,7 +6091,7 @@
       "label": "BlogClient()",
       "file_type": "code",
       "source_file": "src/app/blog/BlogClient.js",
-      "source_location": "L87",
+      "source_location": "L88",
       "id": "blog_blogclient_blogclient",
       "community": 37,
       "norm_label": "blogclient()"
@@ -20798,7 +20798,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/blog/BlogClient.js",
-      "source_location": "L87",
+      "source_location": "L88",
       "weight": 1.0,
       "_src": "src_app_blog_blogclient_js",
       "_tgt": "blog_blogclient_blogclient",

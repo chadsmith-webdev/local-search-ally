@@ -13,7 +13,7 @@ export default function FAQ() {
     {
       question: "What is local SEO and why does it matter for contractors?",
       answer:
-        "Local SEO optimizes your online presence to rank higher in local search results — especially Google Maps and local search. According to Think With Google, 46% of all Google searches have local intent, and 78% of local mobile searches result in an offline purchase. For contractors, if you're not visible in top results, competitors are getting those calls instead.",
+        "Local SEO optimizes your website, Google Business Profile, and local citations to rank higher in local search results — especially Google Maps and local search. According to Think With Google, 46% of all Google searches have local intent, and 78% of local mobile searches result in an offline purchase. For contractors, if you're not visible in top results, competitors are getting those calls instead.",
     },
     {
       question: "How long does it take to rank in the Google Map Pack?",

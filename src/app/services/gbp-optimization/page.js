@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: "Google Business Profile Optimization for Contractors",
     description:
-      "Dominate Google Maps in your area. Expert Google Business Profile optimization to get into the map pack and drive local calls.",
+      "Get into Google's Map Pack. Expert Google Business Profile optimization that helps NWA contractors show up where homeowners search and calls start.",
     url: "https://localsearchally.com/services/gbp-optimization",
     siteName: "Local Search Ally",
     locale: "en_US",
