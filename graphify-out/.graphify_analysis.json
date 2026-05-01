@@ -1,0 +1,735 @@
+{
+  "communities": {
+    "0": [
+      "apple_business_nwa_contractors_doc",
+      "concept_ai_overviews",
+      "concept_apple_maps",
+      "concept_contractor_website",
+      "concept_google_business_profile",
+      "concept_google_reviews",
+      "concept_hvac_seo",
+      "concept_local_seo",
+      "concept_map_pack",
+      "concept_nap_citations",
+      "concept_nwa_market",
+      "concept_plumbing_seo",
+      "concept_review_text_quality",
+      "concept_roofing_seo",
+      "concept_schema_markup",
+      "concept_service_area_pages",
+      "contractor_google_reviews_nwa_doc",
+      "five_things_contractor_websites_need_doc",
+      "gbp_ai_overviews_doc",
+      "gbp_optimization_guide_doc",
+      "how_to_get_in_the_map_pack_doc",
+      "how_to_get_more_google_reviews_doc",
+      "local_search_ally_seo_foundation_doc",
+      "local_seo_for_contractors_doc",
+      "local_seo_for_hvac_companies_doc",
+      "local_seo_for_plumbers_doc",
+      "local_seo_for_roofing_companies_doc",
+      "rogers_service_area_doc",
+      "what_are_citations_doc",
+      "why_contractors_lose_jobs_doc"
+    ],
+    "1": [
+      "app_blog_page_js",
+      "app_blog_slug_opengraph_image_js",
+      "app_blog_slug_page_js",
+      "app_llms_txt_route_js",
+      "app_sitemap_js",
+      "app_sitemap_sitemap",
+      "blog_page_blogpage",
+      "lib_posts_calculatereadtime",
+      "lib_posts_getallposts",
+      "lib_posts_getpostbyslug",
+      "lib_posts_js",
+      "llms_txt_route_get",
+      "slug_opengraph_image_generatestaticparams",
+      "slug_opengraph_image_ogimage",
+      "slug_page_blogpost",
+      "slug_page_generatemetadata",
+      "slug_page_generatestaticparams"
+    ],
+    "2": [
+      "components_invisibilityhologram_atmosphericparticles",
+      "components_invisibilityhologram_bloomeffect",
+      "components_invisibilityhologram_cloakmesh",
+      "components_invisibilityhologram_displace",
+      "components_invisibilityhologram_dot3",
+      "components_invisibilityhologram_fade",
+      "components_invisibilityhologram_invisibilityhologram",
+      "components_invisibilityhologram_jsx",
+      "components_invisibilityhologram_lerp",
+      "components_invisibilityhologram_perlin3",
+      "components_invisibilityhologram_usedynamicdata",
+      "components_invisibilityhologram_vertexpoints"
+    ],
+    "3": [
+      "components_searchfunnel3d_bottomglow",
+      "components_searchfunnel3d_funnellabels",
+      "components_searchfunnel3d_funnelscene",
+      "components_searchfunnel3d_funneltier",
+      "components_searchfunnel3d_jsx",
+      "components_searchfunnel3d_particles",
+      "components_searchfunnel3d_rotatinggroup",
+      "components_searchfunnel3d_searchfunnel3d",
+      "components_searchfunnel3d_tierring",
+      "components_searchfunnel3d_usecountup"
+    ],
+    "4": [
+      "app_api_subscribe_route_js",
+      "lib_emails_email1html",
+      "lib_emails_email2html",
+      "lib_emails_email3html",
+      "lib_emails_email4html",
+      "lib_emails_footer",
+      "lib_emails_js",
+      "lib_emails_logoblock",
+      "subscribe_route_post"
+    ],
+    "5": [
+      "apple_icon_img",
+      "concept_local_search_ally_brand",
+      "concept_nextjs_stack",
+      "concept_storybrand_framework",
+      "how_i_built_this_website_doc",
+      "icon0_svg_img",
+      "icon1_img",
+      "local_search_ally_brand_identity_doc"
+    ],
+    "6": [
+      "components_servicesdetail_iconcitation",
+      "components_servicesdetail_icongbp",
+      "components_servicesdetail_iconreputation",
+      "components_servicesdetail_iconseo",
+      "components_servicesdetail_iconweb",
+      "components_servicesdetail_jsx",
+      "components_servicesdetail_servicesdetail"
+    ],
+    "7": [
+      "components_ghostlisting_fadeup",
+      "components_ghostlisting_ghostlisting",
+      "components_ghostlisting_ghostslot",
+      "components_ghostlisting_jsx",
+      "components_ghostlisting_listing",
+      "components_ghostlisting_nwamap",
+      "components_ghostlisting_starrating"
+    ],
+    "8": [
+      "components_ui_typography_jsx",
+      "ui_typography_body",
+      "ui_typography_eyebrow",
+      "ui_typography_h1",
+      "ui_typography_h2"
+    ],
+    "9": [
+      "app_blog_blogclient_js",
+      "blog_blogclient_blogclient",
+      "blog_blogclient_postcard",
+      "blog_blogclient_readingprogress"
+    ],
+    "10": [
+      "components_gbpchecklistclient_checkicon",
+      "components_gbpchecklistclient_gbpchecklistclient",
+      "components_gbpchecklistclient_jsx",
+      "components_gbpchecklistclient_logosvg"
+    ],
+    "11": [
+      "components_searchfunnel_funnelparticle",
+      "components_searchfunnel_jsx",
+      "components_searchfunnel_searchfunnel",
+      "components_searchfunnel_usecountup"
+    ],
+    "12": [
+      "components_ui_layout_jsx",
+      "ui_layout_container",
+      "ui_layout_section",
+      "ui_layout_stack"
+    ],
+    "13": [
+      "app_service_areas_rogers_ar_page_js",
+      "rogers_ar_page_generatemetadata",
+      "rogers_ar_page_rogersserviceareapage"
+    ],
+    "14": [
+      "app_service_areas_springdale_ar_page_js",
+      "springdale_ar_page_generatemetadata",
+      "springdale_ar_page_springdaleserviceareapage"
+    ],
+    "15": [
+      "app_service_areas_bentonville_ar_page_js",
+      "bentonville_ar_page_bentonvilleserviceareapage",
+      "bentonville_ar_page_generatemetadata"
+    ],
+    "16": [
+      "app_service_areas_centerton_ar_page_js",
+      "centerton_ar_page_centertonserviceareapage",
+      "centerton_ar_page_generatemetadata"
+    ],
+    "17": [
+      "app_service_areas_siloam_springs_ar_page_js",
+      "siloam_springs_ar_page_generatemetadata",
+      "siloam_springs_ar_page_siloamspringsserviceareapage"
+    ],
+    "18": [
+      "app_service_areas_fayetteville_ar_page_js",
+      "fayetteville_ar_page_fayettevilleserviceareapage",
+      "fayetteville_ar_page_generatemetadata"
+    ],
+    "19": [
+      "app_service_areas_cave_springs_ar_page_js",
+      "cave_springs_ar_page_cavespringsserviceareapage",
+      "cave_springs_ar_page_generatemetadata"
+    ],
+    "20": [
+      "app_service_areas_bella_vista_ar_page_js",
+      "bella_vista_ar_page_bellavistaserviceareapage",
+      "bella_vista_ar_page_generatemetadata"
+    ],
+    "21": [
+      "app_service_areas_lowell_ar_page_js",
+      "lowell_ar_page_generatemetadata",
+      "lowell_ar_page_lowellserviceareapage"
+    ],
+    "22": [
+      "components_statssection_jsx",
+      "components_statssection_statitem",
+      "components_statssection_statssection"
+    ],
+    "23": [
+      "components_resourcesgrid_downloadicon",
+      "components_resourcesgrid_jsx",
+      "components_resourcesgrid_resourcesgrid"
+    ],
+    "24": [
+      "components_servicespricing_iconcheck",
+      "components_servicespricing_jsx",
+      "components_servicespricing_servicespricing"
+    ],
+    "25": [
+      "components_portfoliodemos_democard",
+      "components_portfoliodemos_jsx",
+      "components_portfoliodemos_portfoliodemos"
+    ],
+    "26": [
+      "components_faqsection_faqitem",
+      "components_faqsection_faqsection",
+      "components_faqsection_jsx"
+    ],
+    "27": [
+      "components_ui_cards_jsx",
+      "ui_cards_glasscard",
+      "ui_cards_surfacecard"
+    ],
+    "28": [
+      "components_ui_buttons_jsx",
+      "ui_buttons_outlinebtn",
+      "ui_buttons_primarybtn"
+    ],
+    "29": [
+      "app_layout_js",
+      "app_layout_rootlayout"
+    ],
+    "30": [
+      "app_apple_icon_appleicon",
+      "app_apple_icon_js"
+    ],
+    "31": [
+      "app_page_js",
+      "app_page_page"
+    ],
+    "32": [
+      "app_icon_icon",
+      "app_icon_js"
+    ],
+    "33": [
+      "app_opengraph_image_js",
+      "app_opengraph_image_ogimage"
+    ],
+    "34": [
+      "app_robots_js",
+      "app_robots_robots"
+    ],
+    "35": [
+      "app_indexnow_72bc29c911304f96ba476049493d4a6e_route_js",
+      "indexnow_72bc29c911304f96ba476049493d4a6e_route_get"
+    ],
+    "36": [
+      "app_contact_page_js",
+      "contact_page_contactpage"
+    ],
+    "37": [
+      "app_service_areas_page_js",
+      "service_areas_page_serviceareaspage"
+    ],
+    "38": [
+      "app_privacy_page_js",
+      "privacy_page_privacypage"
+    ],
+    "39": [
+      "app_resources_page_js",
+      "resources_page_resourcespage"
+    ],
+    "40": [
+      "app_terms_page_js",
+      "terms_page_termspage"
+    ],
+    "41": [
+      "about_page_aboutpage",
+      "app_about_page_js"
+    ],
+    "42": [
+      "app_blog_opengraph_image_js",
+      "blog_opengraph_image_ogimage"
+    ],
+    "43": [
+      "app_portfolio_page_js",
+      "portfolio_page_portfoliopage"
+    ],
+    "44": [
+      "app_api_contact_route_js",
+      "contact_route_post"
+    ],
+    "45": [
+      "app_api_cron_email_sequence_route_js",
+      "email_sequence_route_get"
+    ],
+    "46": [
+      "app_api_indexnow_route_js",
+      "indexnow_route_post"
+    ],
+    "47": [
+      "app_services_page_js",
+      "services_page_servicespage"
+    ],
+    "48": [
+      "app_services_citation_building_page_js",
+      "citation_building_page_citationbuildingpage"
+    ],
+    "49": [
+      "app_services_web_design_page_js",
+      "web_design_page_webdesignpage"
+    ],
+    "50": [
+      "app_services_reputation_management_page_js",
+      "reputation_management_page_reputationpage"
+    ],
+    "51": [
+      "app_services_gbp_optimization_page_js",
+      "gbp_optimization_page_gbppage"
+    ],
+    "52": [
+      "app_services_local_seo_page_js",
+      "local_seo_page_localseopage"
+    ],
+    "53": [
+      "app_gbp_checklist_page_js",
+      "gbp_checklist_page_gbpchecklistpage"
+    ],
+    "54": [
+      "components_citationhero_citationhero",
+      "components_citationhero_jsx"
+    ],
+    "55": [
+      "components_gbpherosvg_gbpherosvg",
+      "components_gbpherosvg_jsx"
+    ],
+    "56": [
+      "components_serviceareasprocess_jsx",
+      "components_serviceareasprocess_serviceareasprocess"
+    ],
+    "57": [
+      "components_herosection_herosection",
+      "components_herosection_jsx"
+    ],
+    "58": [
+      "components_portfoliohonesty_jsx",
+      "components_portfoliohonesty_portfoliohonesty"
+    ],
+    "59": [
+      "components_contactclient_contactclient",
+      "components_contactclient_jsx"
+    ],
+    "60": [
+      "components_successsection_jsx",
+      "components_successsection_successsection"
+    ],
+    "61": [
+      "components_abouthero_abouthero",
+      "components_abouthero_jsx"
+    ],
+    "62": [
+      "components_localseohero_jsx",
+      "components_localseohero_localseohero"
+    ],
+    "63": [
+      "components_webdesignherosvg_jsx",
+      "components_webdesignherosvg_webdesignherosvg"
+    ],
+    "64": [
+      "components_servicessection_jsx",
+      "components_servicessection_servicessection"
+    ],
+    "65": [
+      "components_finalctasection_finalctasection",
+      "components_finalctasection_jsx"
+    ],
+    "66": [
+      "components_footer_footer",
+      "components_footer_jsx"
+    ],
+    "67": [
+      "components_serviceareasproof_jsx",
+      "components_serviceareasproof_serviceareasproof"
+    ],
+    "68": [
+      "components_serviceareascities_jsx",
+      "components_serviceareascities_serviceareascities"
+    ],
+    "69": [
+      "components_reputationhero_jsx",
+      "components_reputationhero_reputationhero"
+    ],
+    "70": [
+      "components_resourceshero_jsx",
+      "components_resourceshero_resourceshero"
+    ],
+    "71": [
+      "components_citationwebdiagram_citationwebdiagram",
+      "components_citationwebdiagram_jsx"
+    ],
+    "72": [
+      "components_gbphero_gbphero",
+      "components_gbphero_jsx"
+    ],
+    "73": [
+      "components_servicesauditbridge_jsx",
+      "components_servicesauditbridge_servicesauditbridge"
+    ],
+    "74": [
+      "components_localseoherosvg_jsx",
+      "components_localseoherosvg_localseoherosvg"
+    ],
+    "75": [
+      "components_stakessection_jsx",
+      "components_stakessection_stakessection"
+    ],
+    "76": [
+      "components_aboutdifference_aboutdifference",
+      "components_aboutdifference_jsx"
+    ],
+    "77": [
+      "components_servicespagefinalcta_jsx",
+      "components_servicespagefinalcta_servicespagefinalcta"
+    ],
+    "78": [
+      "components_navbar_jsx",
+      "components_navbar_navbar"
+    ],
+    "79": [
+      "components_serviceareashero_jsx",
+      "components_serviceareashero_serviceareashero"
+    ],
+    "80": [
+      "components_webdesignhero_jsx",
+      "components_webdesignhero_webdesignhero"
+    ],
+    "81": [
+      "components_portfoliocraft_jsx",
+      "components_portfoliocraft_portfoliocraft"
+    ],
+    "82": [
+      "components_freeaudithero_freeaudithero",
+      "components_freeaudithero_jsx"
+    ],
+    "83": [
+      "components_guidesection_guidesection",
+      "components_guidesection_jsx"
+    ],
+    "84": [
+      "components_reputationherosvg_jsx",
+      "components_reputationherosvg_reputationherosvg"
+    ],
+    "85": [
+      "components_portfoliohero_jsx",
+      "components_portfoliohero_portfoliohero"
+    ],
+    "86": [
+      "components_resourcesfeatured_jsx",
+      "components_resourcesfeatured_resourcesfeatured"
+    ],
+    "87": [
+      "components_aboutpledge_aboutpledge",
+      "components_aboutpledge_jsx"
+    ],
+    "88": [
+      "components_signalmapdiagram_jsx",
+      "components_signalmapdiagram_signalmapdiagram"
+    ],
+    "89": [
+      "components_aboutorigin_aboutorigin",
+      "components_aboutorigin_jsx"
+    ],
+    "90": [
+      "components_problemsection_jsx",
+      "components_problemsection_problemsection"
+    ],
+    "91": [
+      "components_servicespagehero_jsx",
+      "components_servicespagehero_servicespagehero"
+    ],
+    "92": [
+      "components_citationherosvg_citationherosvg",
+      "components_citationherosvg_jsx"
+    ],
+    "93": [
+      "components_howitworkssection_howitworkssection",
+      "components_howitworkssection_jsx"
+    ],
+    "94": [
+      "components_localseocomponents_proof_jsx",
+      "localseocomponents_proof_proof"
+    ],
+    "95": [
+      "components_localseocomponents_faq_jsx",
+      "localseocomponents_faq_faq"
+    ],
+    "96": [
+      "components_localseocomponents_problem_jsx",
+      "localseocomponents_problem_problem"
+    ],
+    "97": [
+      "components_localseocomponents_process_jsx",
+      "localseocomponents_process_process"
+    ],
+    "98": [
+      "components_localseocomponents_solution_jsx",
+      "localseocomponents_solution_solution"
+    ],
+    "99": [
+      "components_webdesigncomponents_proof_jsx",
+      "webdesigncomponents_proof_proof"
+    ],
+    "100": [
+      "components_webdesigncomponents_faq_jsx",
+      "webdesigncomponents_faq_faq"
+    ],
+    "101": [
+      "components_webdesigncomponents_problem_jsx",
+      "webdesigncomponents_problem_problem"
+    ],
+    "102": [
+      "components_webdesigncomponents_process_jsx",
+      "webdesigncomponents_process_process"
+    ],
+    "103": [
+      "components_webdesigncomponents_solution_jsx",
+      "webdesigncomponents_solution_solution"
+    ],
+    "104": [
+      "components_webdesigncomponents_howitworks_jsx",
+      "webdesigncomponents_howitworks_howitworks"
+    ],
+    "105": [
+      "components_gbpcomponents_proof_jsx",
+      "gbpcomponents_proof_proof"
+    ],
+    "106": [
+      "components_gbpcomponents_faq_jsx",
+      "gbpcomponents_faq_faq"
+    ],
+    "107": [
+      "components_gbpcomponents_problem_jsx",
+      "gbpcomponents_problem_problem"
+    ],
+    "108": [
+      "components_gbpcomponents_process_jsx",
+      "gbpcomponents_process_process"
+    ],
+    "109": [
+      "components_gbpcomponents_solution_jsx",
+      "gbpcomponents_solution_solution"
+    ],
+    "110": [
+      "components_gbpcomponents_howitworks_jsx",
+      "gbpcomponents_howitworks_howitworks"
+    ],
+    "111": [
+      "components_reputationcomponents_proof_jsx",
+      "reputationcomponents_proof_proof"
+    ],
+    "112": [
+      "components_reputationcomponents_faq_jsx",
+      "reputationcomponents_faq_faq"
+    ],
+    "113": [
+      "components_reputationcomponents_problem_jsx",
+      "reputationcomponents_problem_problem"
+    ],
+    "114": [
+      "components_reputationcomponents_process_jsx",
+      "reputationcomponents_process_process"
+    ],
+    "115": [
+      "components_reputationcomponents_solution_jsx",
+      "reputationcomponents_solution_solution"
+    ],
+    "116": [
+      "components_reputationcomponents_howitworks_jsx",
+      "reputationcomponents_howitworks_howitworks"
+    ],
+    "117": [
+      "auditcomponents_cta_cta",
+      "components_auditcomponents_cta_jsx"
+    ],
+    "118": [
+      "auditcomponents_how_how",
+      "components_auditcomponents_how_jsx"
+    ],
+    "119": [
+      "auditcomponents_what_what",
+      "components_auditcomponents_what_jsx"
+    ],
+    "120": [
+      "auditcomponents_value_value",
+      "components_auditcomponents_value_jsx"
+    ],
+    "121": [
+      "citationcomponents_proof_proof",
+      "components_citationcomponents_proof_jsx"
+    ],
+    "122": [
+      "citationcomponents_faq_faq",
+      "components_citationcomponents_faq_jsx"
+    ],
+    "123": [
+      "citationcomponents_problem_problem",
+      "components_citationcomponents_problem_jsx"
+    ],
+    "124": [
+      "citationcomponents_process_process",
+      "components_citationcomponents_process_jsx"
+    ],
+    "125": [
+      "citationcomponents_solution_solution",
+      "components_citationcomponents_solution_jsx"
+    ],
+    "126": [
+      "content_serviceareaslanding_js"
+    ],
+    "127": [
+      "lib_metadata_js"
+    ]
+  },
+  "cohesion": {},
+  "god_nodes": [
+    {
+      "id": "gbp_optimization_guide_doc",
+      "label": "Google Business Profile Optimization Guide for Contractors",
+      "degree": 12
+    },
+    {
+      "id": "local_seo_for_contractors_doc",
+      "label": "Local SEO for Contractors: The Complete Guide",
+      "degree": 12
+    },
+    {
+      "id": "how_to_get_more_google_reviews_doc",
+      "label": "How to Get More Google Reviews as a Contractor",
+      "degree": 10
+    },
+    {
+      "id": "how_to_get_in_the_map_pack_doc",
+      "label": "How to Get Into the Google Map Pack",
+      "degree": 9
+    },
+    {
+      "id": "local_seo_for_hvac_companies_doc",
+      "label": "Local SEO for HVAC Companies",
+      "degree": 8
+    },
+    {
+      "id": "local_seo_for_roofing_companies_doc",
+      "label": "Local SEO for Roofing Companies",
+      "degree": 8
+    },
+    {
+      "id": "local_seo_for_plumbers_doc",
+      "label": "Local SEO for Plumbers",
+      "degree": 8
+    },
+    {
+      "id": "contractor_google_reviews_nwa_doc",
+      "label": "Contractor Google Reviews NWA: Specific Reviews Over Star Ratings",
+      "degree": 7
+    },
+    {
+      "id": "lib_posts_getallposts",
+      "label": "getAllPosts()",
+      "degree": 6
+    },
+    {
+      "id": "what_are_citations_doc",
+      "label": "What Are Citations and Why NWA Contractors Need Them",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "sitemap()",
+      "target": "getAllPosts()",
+      "source_files": [
+        "app/sitemap.js",
+        "lib/posts.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `sitemap()` unexpectedly reaches hub `getAllPosts()`"
+    },
+    {
+      "source": "GET()",
+      "target": "getAllPosts()",
+      "source_files": [
+        "app/llms.txt/route.js",
+        "lib/posts.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `GET()` unexpectedly reaches hub `getAllPosts()`"
+    },
+    {
+      "source": "BlogPage()",
+      "target": "getAllPosts()",
+      "source_files": [
+        "app/blog/page.js",
+        "lib/posts.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `BlogPage()` unexpectedly reaches hub `getAllPosts()`"
+    },
+    {
+      "source": "generateStaticParams()",
+      "target": "getAllPosts()",
+      "source_files": [
+        "app/blog/[slug]/page.js",
+        "lib/posts.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `generateStaticParams()` unexpectedly reaches hub `getAllPosts()`"
+    },
+    {
+      "source": "generateStaticParams()",
+      "target": "getAllPosts()",
+      "source_files": [
+        "app/blog/[slug]/opengraph-image.js",
+        "lib/posts.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `generateStaticParams()` unexpectedly reaches hub `getAllPosts()`"
+    }
+  ]
+}

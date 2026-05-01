@@ -1,0 +1,1613 @@
+{
+  "nodes": [
+    {
+      "id": "local_seo_for_hvac_companies_doc",
+      "label": "Local SEO for HVAC Companies",
+      "file_type": "document",
+      "source_file": "src/posts/local-seo-for-hvac-companies.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-20",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "gbp_optimization_guide_doc",
+      "label": "Google Business Profile Optimization Guide for Contractors",
+      "file_type": "document",
+      "source_file": "src/posts/how-to-optimize-your-google-business-profile-as-a-contractor.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-18",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "what_are_citations_doc",
+      "label": "What Are Citations and Why NWA Contractors Need Them",
+      "file_type": "document",
+      "source_file": "src/posts/what-are-citations.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-24",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "local_seo_for_contractors_doc",
+      "label": "Local SEO for Contractors: The Complete Guide",
+      "file_type": "document",
+      "source_file": "src/posts/local-seo-for-contractors.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-18",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "local_seo_for_roofing_companies_doc",
+      "label": "Local SEO for Roofing Companies",
+      "file_type": "document",
+      "source_file": "src/posts/local-seo-for-roofing-companies.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-29",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "why_contractors_lose_jobs_doc",
+      "label": "Why Contractors Lose Jobs to Less-Skilled Competitors",
+      "file_type": "document",
+      "source_file": "src/posts/why-contractors-lose-jobs-to-less-skilled-competitors.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-11",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "contractor_google_reviews_nwa_doc",
+      "label": "Contractor Google Reviews NWA: Specific Reviews Over Star Ratings",
+      "file_type": "document",
+      "source_file": "src/posts/contractor-google-reviews-nwa.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-13",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "apple_business_nwa_contractors_doc",
+      "label": "Apple Business: What NWA Contractors Need to Know",
+      "file_type": "document",
+      "source_file": "src/posts/apple-business-what-NWA-contractors-need-to-know.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-12",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "local_search_ally_brand_identity_doc",
+      "label": "Local Search Ally Website Build Part 2: Brand Identity",
+      "file_type": "document",
+      "source_file": "src/posts/local-search-ally-brand-identity.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-20",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "how_i_built_this_website_doc",
+      "label": "How I Built the Local Search Ally Website Part 1: Stack and Design",
+      "file_type": "document",
+      "source_file": "src/posts/how-i-built-this-website.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-13",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "five_things_contractor_websites_need_doc",
+      "label": "5 Things Contractor Websites Need to Get Calls",
+      "file_type": "document",
+      "source_file": "src/posts/5-things-contractor-websites-need.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-01",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "local_seo_for_plumbers_doc",
+      "label": "Local SEO for Plumbers",
+      "file_type": "document",
+      "source_file": "src/posts/local-seo-for-plumbers.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-25",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "how_to_get_more_google_reviews_doc",
+      "label": "How to Get More Google Reviews as a Contractor",
+      "file_type": "document",
+      "source_file": "src/posts/how-to-get-more-google-reviews-as-a-contractor.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-16",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "local_search_ally_seo_foundation_doc",
+      "label": "Local Search Ally Website Build Part 3: SEO Foundation",
+      "file_type": "document",
+      "source_file": "src/posts/local-search-ally-seo-foundation.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-25",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "gbp_ai_overviews_doc",
+      "label": "GBP Feeds Google AI Overviews in 40% of Local Searches",
+      "file_type": "document",
+      "source_file": "src/posts/gbp-ai-overviews.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-17",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "how_to_get_in_the_map_pack_doc",
+      "label": "How to Get Into the Google Map Pack",
+      "file_type": "document",
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-05",
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "rogers_service_area_doc",
+      "label": "Rogers AR Local SEO Service Area Page",
+      "file_type": "document",
+      "source_file": "src/content/service-areas/rogers.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "concept_google_business_profile",
+      "label": "Google Business Profile (GBP)",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_map_pack",
+      "label": "Google Map Pack (Local 3-Pack)",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_local_seo",
+      "label": "Local SEO",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_nap_citations",
+      "label": "NAP Citations and Directory Consistency",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_google_reviews",
+      "label": "Google Reviews and Reputation Signals",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_nwa_market",
+      "label": "Northwest Arkansas (NWA) Home Service Market",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_ai_overviews",
+      "label": "Google AI Overviews in Local Search",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_apple_maps",
+      "label": "Apple Maps and Apple Business Platform",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_contractor_website",
+      "label": "Contractor Website Conversion and Design",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_local_search_ally_brand",
+      "label": "Local Search Ally Brand Identity",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_schema_markup",
+      "label": "Schema Markup and Structured Data (LocalBusiness JSON-LD)",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_service_area_pages",
+      "label": "Local Service Area Landing Pages",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_hvac_seo",
+      "label": "HVAC Local SEO and Seasonal Strategy",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_plumbing_seo",
+      "label": "Plumbing Local SEO and Emergency Search",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_roofing_seo",
+      "label": "Roofing Local SEO and Storm Damage Search",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_review_text_quality",
+      "label": "Review Text Quality and AI Semantic Extraction",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_nextjs_stack",
+      "label": "Next.js 15 + MDX + Vercel Tech Stack",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_storybrand_framework",
+      "label": "StoryBrand Framework for Contractor Marketing",
+      "file_type": "document",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "apple_icon_img",
+      "label": "Apple Icon - Local Search Ally Location Pin Logo",
+      "file_type": "image",
+      "source_file": "src/app/apple-icon.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "icon1_img",
+      "label": "Icon1 - Local Search Ally Location Pin Logo Variant",
+      "file_type": "image",
+      "source_file": "src/app/icon1.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Chad Smith",
+      "contributor": null
+    },
+    {
+      "id": "icon0_svg_img",
+      "label": "Icon0 SVG - Local Search Ally LSA Pin Icon",
+      "file_type": "image",
+      "source_file": "src/app/icon0.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Chad Smith",
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "local_seo_for_hvac_companies_doc",
+      "target": "local_seo_for_contractors_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-hvac-companies.mdx",
+      "source_location": "If you want the full picture first, start with the complete guide to local SEO for contractors",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_hvac_companies_doc",
+      "target": "gbp_optimization_guide_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-hvac-companies.mdx",
+      "source_location": "link to GBP optimization guide",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_hvac_companies_doc",
+      "target": "concept_hvac_seo",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-hvac-companies.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_hvac_companies_doc",
+      "target": "concept_google_business_profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-hvac-companies.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_hvac_companies_doc",
+      "target": "concept_map_pack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-hvac-companies.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_hvac_companies_doc",
+      "target": "concept_nwa_market",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-hvac-companies.mdx",
+      "source_location": "NWA HVAC demand, Rogers, Bentonville, Fayetteville, Springdale",
+      "weight": 0.9
+    },
+    {
+      "source": "gbp_optimization_guide_doc",
+      "target": "what_are_citations_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-optimize-your-google-business-profile-as-a-contractor.mdx",
+      "source_location": "Here's why NAP consistency matters and how to find your citation problems",
+      "weight": 1
+    },
+    {
+      "source": "gbp_optimization_guide_doc",
+      "target": "how_to_get_more_google_reviews_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-optimize-your-google-business-profile-as-a-contractor.mdx",
+      "source_location": "The contractor Google reviews guide covers the full system",
+      "weight": 1
+    },
+    {
+      "source": "gbp_optimization_guide_doc",
+      "target": "concept_google_business_profile",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-optimize-your-google-business-profile-as-a-contractor.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "gbp_optimization_guide_doc",
+      "target": "concept_map_pack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-optimize-your-google-business-profile-as-a-contractor.mdx",
+      "source_location": "biggest lever you can pull to get into that Map Pack",
+      "weight": 1
+    },
+    {
+      "source": "gbp_optimization_guide_doc",
+      "target": "concept_nap_citations",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-optimize-your-google-business-profile-as-a-contractor.mdx",
+      "source_location": "your business name, address, and phone — needs to match exactly",
+      "weight": 1
+    },
+    {
+      "source": "what_are_citations_doc",
+      "target": "how_to_get_in_the_map_pack_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/what-are-citations.mdx",
+      "source_location": "Citations are one of the core ranking factors for the Google Map Pack",
+      "weight": 1
+    },
+    {
+      "source": "what_are_citations_doc",
+      "target": "apple_business_nwa_contractors_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/what-are-citations.mdx",
+      "source_location": "Here's what NWA contractors need to know about Apple Business",
+      "weight": 1
+    },
+    {
+      "source": "what_are_citations_doc",
+      "target": "concept_nap_citations",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/what-are-citations.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "what_are_citations_doc",
+      "target": "concept_google_business_profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/what-are-citations.mdx",
+      "source_location": "Google Business Profile acts as the central source of truth",
+      "weight": 1
+    },
+    {
+      "source": "what_are_citations_doc",
+      "target": "concept_nwa_market",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/what-are-citations.mdx",
+      "source_location": "NWA contractors, Rogers, Bentonville",
+      "weight": 0.9
+    },
+    {
+      "source": "local_seo_for_contractors_doc",
+      "target": "gbp_optimization_guide_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-contractors.mdx",
+      "source_location": "I wrote a full step-by-step breakdown in the Google Business Profile optimization guide",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_contractors_doc",
+      "target": "how_to_get_more_google_reviews_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-contractors.mdx",
+      "source_location": "reviews guide referenced inline",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_contractors_doc",
+      "target": "local_seo_for_hvac_companies_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-contractors.mdx",
+      "source_location": "I've gone deeper for HVAC companies",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_contractors_doc",
+      "target": "local_seo_for_plumbers_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-contractors.mdx",
+      "source_location": "I've gone deeper for plumbers",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_contractors_doc",
+      "target": "gbp_ai_overviews_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-contractors.mdx",
+      "source_location": "your GBP now feeds Google's AI Overviews",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_contractors_doc",
+      "target": "concept_local_seo",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-contractors.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_contractors_doc",
+      "target": "concept_google_business_profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-contractors.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_contractors_doc",
+      "target": "concept_map_pack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-contractors.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_contractors_doc",
+      "target": "concept_nap_citations",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-contractors.mdx",
+      "source_location": "Citations (your business info listed consistently across the web)",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_contractors_doc",
+      "target": "concept_google_reviews",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-contractors.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_roofing_companies_doc",
+      "target": "local_seo_for_contractors_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-roofing-companies.mdx",
+      "source_location": "start with the complete guide to local SEO for contractors",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_roofing_companies_doc",
+      "target": "gbp_optimization_guide_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-roofing-companies.mdx",
+      "source_location": "The GBP optimization guide for contractors walks through the full setup",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_roofing_companies_doc",
+      "target": "how_to_get_more_google_reviews_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-roofing-companies.mdx",
+      "source_location": "The contractor Google reviews guide covers the system for getting more",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_roofing_companies_doc",
+      "target": "concept_roofing_seo",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-roofing-companies.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_roofing_companies_doc",
+      "target": "concept_map_pack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-roofing-companies.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_roofing_companies_doc",
+      "target": "concept_google_business_profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-roofing-companies.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "why_contractors_lose_jobs_doc",
+      "target": "how_to_get_in_the_map_pack_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/why-contractors-lose-jobs-to-less-skilled-competitors.mdx",
+      "source_location": "Here's exactly how the Map Pack works and what affects your position",
+      "weight": 1
+    },
+    {
+      "source": "why_contractors_lose_jobs_doc",
+      "target": "local_seo_for_contractors_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/why-contractors-lose-jobs-to-less-skilled-competitors.mdx",
+      "source_location": "The complete local SEO guide for contractors breaks down each of these pieces",
+      "weight": 1
+    },
+    {
+      "source": "why_contractors_lose_jobs_doc",
+      "target": "concept_map_pack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/why-contractors-lose-jobs-to-less-skilled-competitors.mdx",
+      "source_location": "The top three results on a local search get the overwhelming majority of clicks",
+      "weight": 1
+    },
+    {
+      "source": "why_contractors_lose_jobs_doc",
+      "target": "concept_contractor_website",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/why-contractors-lose-jobs-to-less-skilled-competitors.mdx",
+      "source_location": "A fast, mobile-friendly site with real photos and clear service information",
+      "weight": 1
+    },
+    {
+      "source": "contractor_google_reviews_nwa_doc",
+      "target": "gbp_optimization_guide_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/contractor-google-reviews-nwa.mdx",
+      "source_location": "What goes into a Google Business Profile setup for NWA contractors",
+      "weight": 1
+    },
+    {
+      "source": "contractor_google_reviews_nwa_doc",
+      "target": "how_to_get_in_the_map_pack_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/contractor-google-reviews-nwa.mdx",
+      "source_location": "How the Google Map Pack works for NWA home service trades",
+      "weight": 1
+    },
+    {
+      "source": "contractor_google_reviews_nwa_doc",
+      "target": "how_to_get_more_google_reviews_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/contractor-google-reviews-nwa.mdx",
+      "source_location": "How to set up a review request process for your trade business",
+      "weight": 1
+    },
+    {
+      "source": "contractor_google_reviews_nwa_doc",
+      "target": "concept_google_reviews",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/contractor-google-reviews-nwa.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "contractor_google_reviews_nwa_doc",
+      "target": "concept_ai_overviews",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/contractor-google-reviews-nwa.mdx",
+      "source_location": "AI Overviews appearing in more than 13% of all Google searches",
+      "weight": 1
+    },
+    {
+      "source": "contractor_google_reviews_nwa_doc",
+      "target": "concept_review_text_quality",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/contractor-google-reviews-nwa.mdx",
+      "source_location": "Google's AI is reading the text inside your reviews",
+      "weight": 1
+    },
+    {
+      "source": "apple_business_nwa_contractors_doc",
+      "target": "concept_apple_maps",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/apple-business-what-NWA-contractors-need-to-know.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "apple_business_nwa_contractors_doc",
+      "target": "concept_google_business_profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/apple-business-what-NWA-contractors-need-to-know.mdx",
+      "source_location": "Google Business Profile is your storefront on Main Street",
+      "weight": 1
+    },
+    {
+      "source": "apple_business_nwa_contractors_doc",
+      "target": "concept_nwa_market",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/apple-business-what-NWA-contractors-need-to-know.mdx",
+      "source_location": "NWA contractors, local search splitting across platforms",
+      "weight": 1
+    },
+    {
+      "source": "local_search_ally_brand_identity_doc",
+      "target": "how_i_built_this_website_doc",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-search-ally-brand-identity.mdx",
+      "source_location": "← Read Part 1: The Stack, Design & Pages",
+      "weight": 1
+    },
+    {
+      "source": "local_search_ally_brand_identity_doc",
+      "target": "concept_local_search_ally_brand",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-search-ally-brand-identity.mdx",
+      "source_location": "Logo, Fonts & Brand Identity",
+      "weight": 1
+    },
+    {
+      "source": "how_i_built_this_website_doc",
+      "target": "concept_nextjs_stack",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-i-built-this-website.mdx",
+      "source_location": "Next.js 15, MDX, Vercel",
+      "weight": 1
+    },
+    {
+      "source": "how_i_built_this_website_doc",
+      "target": "concept_storybrand_framework",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-i-built-this-website.mdx",
+      "source_location": "Donald Miller's StoryBrand framework",
+      "weight": 1
+    },
+    {
+      "source": "how_i_built_this_website_doc",
+      "target": "concept_local_search_ally_brand",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-i-built-this-website.mdx",
+      "source_location": "Carolina Blue, Duke Blue, Fraunces + Urbanist",
+      "weight": 1
+    },
+    {
+      "source": "local_search_ally_seo_foundation_doc",
+      "target": "local_search_ally_brand_identity_doc",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-search-ally-seo-foundation.mdx",
+      "source_location": "← Read Part 2: Logo, Fonts & Brand Identity",
+      "weight": 1
+    },
+    {
+      "source": "local_search_ally_seo_foundation_doc",
+      "target": "concept_schema_markup",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-search-ally-seo-foundation.mdx",
+      "source_location": "ProfessionalService schema, FAQPage structured data",
+      "weight": 1
+    },
+    {
+      "source": "local_search_ally_seo_foundation_doc",
+      "target": "concept_service_area_pages",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-search-ally-seo-foundation.mdx",
+      "source_location": "Six dynamic location pages targeting NWA contractor searches",
+      "weight": 1
+    },
+    {
+      "source": "local_search_ally_seo_foundation_doc",
+      "target": "concept_local_seo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-search-ally-seo-foundation.mdx",
+      "source_location": "SEO as Architecture, Not Paint",
+      "weight": 1
+    },
+    {
+      "source": "gbp_ai_overviews_doc",
+      "target": "gbp_optimization_guide_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/gbp-ai-overviews.mdx",
+      "source_location": "the GBP optimization guide for contractors walks through all of it",
+      "weight": 1
+    },
+    {
+      "source": "gbp_ai_overviews_doc",
+      "target": "local_seo_for_contractors_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/gbp-ai-overviews.mdx",
+      "source_location": "the complete guide for contractors covers how GBP fits with reviews, citations",
+      "weight": 1
+    },
+    {
+      "source": "gbp_ai_overviews_doc",
+      "target": "concept_ai_overviews",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/gbp-ai-overviews.mdx",
+      "source_location": "AI Overviews appearing in 40.16% of local business searches",
+      "weight": 1
+    },
+    {
+      "source": "gbp_ai_overviews_doc",
+      "target": "concept_google_business_profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/gbp-ai-overviews.mdx",
+      "source_location": "GBP data is one of the primary sources AI Overviews pull from",
+      "weight": 1
+    },
+    {
+      "source": "gbp_ai_overviews_doc",
+      "target": "concept_review_text_quality",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/gbp-ai-overviews.mdx",
+      "source_location": "reviews — specifically the content of them — what you're actually known for",
+      "weight": 1
+    },
+    {
+      "source": "how_to_get_in_the_map_pack_doc",
+      "target": "gbp_optimization_guide_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": "How to Optimize Your Google Business Profile as a Contractor",
+      "weight": 1
+    },
+    {
+      "source": "how_to_get_in_the_map_pack_doc",
+      "target": "how_to_get_more_google_reviews_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": "I covered it here — review system",
+      "weight": 1
+    },
+    {
+      "source": "how_to_get_in_the_map_pack_doc",
+      "target": "what_are_citations_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": "I covered how to find and fix this in What Are Citations",
+      "weight": 1
+    },
+    {
+      "source": "how_to_get_in_the_map_pack_doc",
+      "target": "five_things_contractor_websites_need_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": "Here's what your site actually needs",
+      "weight": 1
+    },
+    {
+      "source": "how_to_get_in_the_map_pack_doc",
+      "target": "concept_map_pack",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "how_to_get_in_the_map_pack_doc",
+      "target": "concept_google_business_profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": "It pulls from Google Business Profiles, not from websites directly",
+      "weight": 1
+    },
+    {
+      "source": "how_to_get_in_the_map_pack_doc",
+      "target": "concept_nap_citations",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": "Citations: how consistently your business information appears across the web",
+      "weight": 1
+    },
+    {
+      "source": "five_things_contractor_websites_need_doc",
+      "target": "how_to_get_in_the_map_pack_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/5-things-contractor-websites-need.mdx",
+      "source_location": "here's how it works — Map Pack link",
+      "weight": 1
+    },
+    {
+      "source": "five_things_contractor_websites_need_doc",
+      "target": "concept_contractor_website",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/5-things-contractor-websites-need.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "five_things_contractor_websites_need_doc",
+      "target": "concept_map_pack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/5-things-contractor-websites-need.mdx",
+      "source_location": "GBP signal — having review content on your site reinforces your Google Business Profile",
+      "weight": 1
+    },
+    {
+      "source": "five_things_contractor_websites_need_doc",
+      "target": "concept_nwa_market",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/5-things-contractor-websites-need.mdx",
+      "source_location": "Rogers, Bentonville, Fayetteville, Springdale, Siloam Springs",
+      "weight": 0.9
+    },
+    {
+      "source": "local_seo_for_plumbers_doc",
+      "target": "local_seo_for_contractors_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-plumbers.mdx",
+      "source_location": "start with the complete guide to local SEO for contractors",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_plumbers_doc",
+      "target": "gbp_optimization_guide_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-plumbers.mdx",
+      "source_location": "The GBP optimization guide for contractors walks through the full category setup",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_plumbers_doc",
+      "target": "how_to_get_more_google_reviews_doc",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-plumbers.mdx",
+      "source_location": "The contractor Google reviews guide has the full system",
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_plumbers_doc",
+      "target": "concept_plumbing_seo",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-plumbers.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_plumbers_doc",
+      "target": "concept_map_pack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-plumbers.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "local_seo_for_plumbers_doc",
+      "target": "concept_google_business_profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-seo-for-plumbers.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "how_to_get_more_google_reviews_doc",
+      "target": "concept_google_reviews",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-more-google-reviews-as-a-contractor.mdx",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "how_to_get_more_google_reviews_doc",
+      "target": "concept_map_pack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-more-google-reviews-as-a-contractor.mdx",
+      "source_location": "High Numerical Google Ratings as the 6th most important Map Pack factor",
+      "weight": 1
+    },
+    {
+      "source": "how_to_get_more_google_reviews_doc",
+      "target": "concept_review_text_quality",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-more-google-reviews-as-a-contractor.mdx",
+      "source_location": "Quantity of Native Google Reviews with Text is the 9th most important Map Pack ranking factor",
+      "weight": 1
+    },
+    {
+      "source": "how_to_get_more_google_reviews_doc",
+      "target": "concept_ai_overviews",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-more-google-reviews-as-a-contractor.mdx",
+      "source_location": "82% of consumers read AI-generated summaries",
+      "weight": 1
+    },
+    {
+      "source": "rogers_service_area_doc",
+      "target": "concept_service_area_pages",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/content/service-areas/rogers.md",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "rogers_service_area_doc",
+      "target": "concept_nwa_market",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/content/service-areas/rogers.md",
+      "source_location": "Rogers AR home service trades, HVAC, plumbing, roofing, electrical",
+      "weight": 1
+    },
+    {
+      "source": "rogers_service_area_doc",
+      "target": "concept_local_seo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/content/service-areas/rogers.md",
+      "source_location": "local SEO Rogers AR",
+      "weight": 1
+    },
+    {
+      "source": "rogers_service_area_doc",
+      "target": "concept_map_pack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/content/service-areas/rogers.md",
+      "source_location": "Google's Map Pack shows three businesses per local search",
+      "weight": 1
+    },
+    {
+      "source": "apple_icon_img",
+      "target": "concept_local_search_ally_brand",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/app/apple-icon.png",
+      "source_location": "Location pin logo: dark navy background, Carolina blue circle head, white needle stem",
+      "weight": 1
+    },
+    {
+      "source": "icon1_img",
+      "target": "concept_local_search_ally_brand",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/app/icon1.png",
+      "source_location": "Location pin logo variant: same Carolina blue pin on dark navy",
+      "weight": 1
+    },
+    {
+      "source": "icon0_svg_img",
+      "target": "concept_local_search_ally_brand",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/app/icon0.svg",
+      "source_location": "LSA pin icon — XMP metadata title: Local - lsa-pin-icon, created 2026-03-21 by Chad",
+      "weight": 1
+    },
+    {
+      "source": "apple_icon_img",
+      "target": "icon1_img",
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/app/apple-icon.png",
+      "source_location": "Both are the same Local Search Ally location pin logo in PNG format at different sizes",
+      "weight": 0.95
+    },
+    {
+      "source": "apple_icon_img",
+      "target": "icon0_svg_img",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/app/apple-icon.png",
+      "source_location": "Same pin icon, different format — SVG wraps embedded PNG raster",
+      "weight": 0.9
+    },
+    {
+      "source": "concept_google_business_profile",
+      "target": "concept_map_pack",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": "It pulls from Google Business Profiles — GBP is the primary lever for Map Pack ranking",
+      "weight": 1
+    },
+    {
+      "source": "concept_nap_citations",
+      "target": "concept_map_pack",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": "Citations build Prominence — one of Google's three Map Pack ranking factors",
+      "weight": 1
+    },
+    {
+      "source": "concept_google_reviews",
+      "target": "concept_map_pack",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": "Reviews are one of the strongest prominence signals Google reads",
+      "weight": 1
+    },
+    {
+      "source": "concept_ai_overviews",
+      "target": "concept_google_business_profile",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/gbp-ai-overviews.mdx",
+      "source_location": "GBP data is what Google's AI uses to generate AI Overview recommendations",
+      "weight": 1
+    },
+    {
+      "source": "concept_review_text_quality",
+      "target": "concept_google_reviews",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/contractor-google-reviews-nwa.mdx",
+      "source_location": "Review text specificity is the mechanism by which Google reviews affect AI rankings",
+      "weight": 1
+    },
+    {
+      "source": "concept_hvac_seo",
+      "target": "concept_local_seo",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/posts/local-seo-for-hvac-companies.mdx",
+      "source_location": "HVAC local SEO is a trade-specific application of local SEO principles",
+      "weight": 0.95
+    },
+    {
+      "source": "concept_plumbing_seo",
+      "target": "concept_local_seo",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/posts/local-seo-for-plumbers.mdx",
+      "source_location": "Plumbing local SEO is a trade-specific application of local SEO principles",
+      "weight": 0.95
+    },
+    {
+      "source": "concept_roofing_seo",
+      "target": "concept_local_seo",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/posts/local-seo-for-roofing-companies.mdx",
+      "source_location": "Roofing local SEO is a trade-specific application of local SEO principles",
+      "weight": 0.95
+    },
+    {
+      "source": "concept_apple_maps",
+      "target": "concept_local_seo",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/posts/apple-business-what-NWA-contractors-need-to-know.mdx",
+      "source_location": "Apple Maps is a secondary local search platform complementary to Google",
+      "weight": 0.85
+    },
+    {
+      "source": "concept_service_area_pages",
+      "target": "concept_local_seo",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/posts/local-search-ally-seo-foundation.mdx",
+      "source_location": "Service area pages are a core tactic in local SEO strategy",
+      "weight": 0.9
+    },
+    {
+      "source": "concept_schema_markup",
+      "target": "concept_local_seo",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/posts/local-search-ally-seo-foundation.mdx",
+      "source_location": "LocalBusiness schema markup is a foundational local SEO technical element",
+      "weight": 0.85
+    },
+    {
+      "source": "concept_contractor_website",
+      "target": "concept_map_pack",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx",
+      "source_location": "Website supports GBP ranking — Google looks at site to confirm what you do and where",
+      "weight": 0.8
+    },
+    {
+      "source": "concept_local_search_ally_brand",
+      "target": "concept_nwa_market",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/posts/local-search-ally-brand-identity.mdx",
+      "source_location": "Local Search Ally brand built specifically to serve NWA home service trades",
+      "weight": 0.9
+    },
+    {
+      "source": "concept_storybrand_framework",
+      "target": "concept_contractor_website",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/posts/how-i-built-this-website.mdx",
+      "source_location": "StoryBrand framework was used to structure the contractor-facing website homepage",
+      "weight": 0.8
+    },
+    {
+      "source": "local_seo_for_hvac_companies_doc",
+      "target": "local_seo_for_plumbers_doc",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/posts/local-seo-for-hvac-companies.mdx",
+      "source_location": "Both are trade-specific local SEO posts with identical structure: GBP, reviews, service areas, NWA",
+      "weight": 0.9
+    },
+    {
+      "source": "local_seo_for_hvac_companies_doc",
+      "target": "local_seo_for_roofing_companies_doc",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/posts/local-seo-for-hvac-companies.mdx",
+      "source_location": "Both are trade-specific local SEO posts with identical structure",
+      "weight": 0.9
+    },
+    {
+      "source": "local_seo_for_plumbers_doc",
+      "target": "local_seo_for_roofing_companies_doc",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/posts/local-seo-for-plumbers.mdx",
+      "source_location": "Both are trade-specific local SEO posts with identical structure",
+      "weight": 0.9
+    },
+    {
+      "source": "contractor_google_reviews_nwa_doc",
+      "target": "how_to_get_more_google_reviews_doc",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/posts/contractor-google-reviews-nwa.mdx",
+      "source_location": "Both focus on Google review strategy; NWA post expands on AI semantic angle",
+      "weight": 0.85
+    },
+    {
+      "source": "gbp_ai_overviews_doc",
+      "target": "contractor_google_reviews_nwa_doc",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/posts/gbp-ai-overviews.mdx",
+      "source_location": "Both cover AI reading GBP/review content for local ranking; overlapping concepts",
+      "weight": 0.8
+    },
+    {
+      "source": "why_contractors_lose_jobs_doc",
+      "target": "local_seo_for_contractors_doc",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/posts/why-contractors-lose-jobs-to-less-skilled-competitors.mdx",
+      "source_location": "Same target audience; why-contractors-lose frames the problem, contractors guide solves it",
+      "weight": 0.75
+    },
+    {
+      "source": "how_i_built_this_website_doc",
+      "target": "local_search_ally_brand_identity_doc",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/posts/how-i-built-this-website.mdx",
+      "source_location": "Part 1 and Part 2 of the same case study series",
+      "weight": 0.95
+    },
+    {
+      "source": "local_search_ally_brand_identity_doc",
+      "target": "local_search_ally_seo_foundation_doc",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/posts/local-search-ally-brand-identity.mdx",
+      "source_location": "Part 2 and Part 3 of the same case study series",
+      "weight": 0.95
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "nwa_contractor_local_seo_content_cluster",
+      "label": "NWA Contractor Local SEO Content Cluster",
+      "nodes": [
+        "local_seo_for_contractors_doc",
+        "local_seo_for_hvac_companies_doc",
+        "local_seo_for_plumbers_doc",
+        "local_seo_for_roofing_companies_doc",
+        "why_contractors_lose_jobs_doc",
+        "rogers_service_area_doc"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/posts/local-seo-for-contractors.mdx"
+    },
+    {
+      "id": "local_search_ranking_signals",
+      "label": "Local Search Ranking Signal Framework",
+      "nodes": [
+        "concept_google_business_profile",
+        "concept_nap_citations",
+        "concept_google_reviews",
+        "concept_map_pack",
+        "concept_ai_overviews",
+        "concept_service_area_pages"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/how-to-get-in-the-map-pack.mdx"
+    },
+    {
+      "id": "lsa_website_case_study_series",
+      "label": "Local Search Ally Website Build Case Study (Parts 1-3)",
+      "nodes": [
+        "how_i_built_this_website_doc",
+        "local_search_ally_brand_identity_doc",
+        "local_search_ally_seo_foundation_doc"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/posts/local-search-ally-seo-foundation.mdx"
+    },
+    {
+      "id": "gbp_optimization_content_cluster",
+      "label": "GBP Optimization and AI Overviews Content Cluster",
+      "nodes": [
+        "gbp_optimization_guide_doc",
+        "gbp_ai_overviews_doc",
+        "contractor_google_reviews_nwa_doc",
+        "how_to_get_more_google_reviews_doc",
+        "concept_google_business_profile",
+        "concept_review_text_quality"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/posts/gbp-ai-overviews.mdx"
+    },
+    {
+      "id": "lsa_brand_assets",
+      "label": "Local Search Ally Brand Icon Assets",
+      "nodes": [
+        "apple_icon_img",
+        "icon1_img",
+        "icon0_svg_img",
+        "concept_local_search_ally_brand"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "src/app/apple-icon.png"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

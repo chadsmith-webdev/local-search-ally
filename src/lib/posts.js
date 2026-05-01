@@ -1,8 +1,8 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
-const postsDir = path.join(process.cwd(), 'src/posts')
+const postsDir = path.join(process.cwd(), "src/posts");
 
 function calculateReadTime(content) {
   const wordsPerMinute = 200;
@@ -12,22 +12,27 @@ function calculateReadTime(content) {
 }
 
 export function getAllPosts() {
-  const files = fs.readdirSync(postsDir)
+  const files = fs.readdirSync(postsDir);
 
   return files
-    .filter((file) => file.endsWith('.mdx'))
-    .map((file) => {
-      const slug = file.replace('.mdx', '')
-      const raw = fs.readFileSync(path.join(postsDir, file), 'utf8')
-      const { data, content } = matter(raw)
-      return { slug, readTime: calculateReadTime(content), ...data }
+    .filter((file) => file.endsWith(".mdx"))
+    .flatMap((file) => {
+      try {
+        const slug = file.replace(".mdx", "");
+        const raw = fs.readFileSync(path.join(postsDir, file), "utf8");
+        const { data, content } = matter(raw);
+        return [{ slug, readTime: calculateReadTime(content), ...data }];
+      } catch (err) {
+        console.error(`[getAllPosts] Failed to load ${file}:`, err.message);
+        return [];
+      }
     })
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
 export function getPostBySlug(slug) {
-  const filePath = path.join(postsDir, `${slug}.mdx`)
-  const raw = fs.readFileSync(filePath, 'utf8')
-  const { data, content } = matter(raw)
-  return { slug, metadata: data, content }
+  const filePath = path.join(postsDir, `${slug}.mdx`);
+  const raw = fs.readFileSync(filePath, "utf8");
+  const { data, content } = matter(raw);
+  return { slug, metadata: data, content };
 }
