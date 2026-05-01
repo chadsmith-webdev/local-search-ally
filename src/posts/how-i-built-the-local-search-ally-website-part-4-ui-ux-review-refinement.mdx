@@ -15,14 +15,15 @@ faq:
 
 [← Read Part 3: The SEO Foundation](/blog/local-search-ally-seo-foundation)
 
-A website can look great and still fail the person using it. In Part 4 of this build series, I'm digging into the "invisible" work - the refinements that moved the site from "finished" to "professional." 
+A website can look great and still fail the person using it. In Part 4 of this build series, I'm digging into the "invisible" work - the refinements that moved the site from "finished" to "professional."
 
 When you're building for home service trades, "pretty" doesn't pay the bills. The site needs to load instantly on a job site, be readable in direct sunlight, and work for everyone, regardless of how they navigate the web.
 
 > **Key Takeaways**
-> *   Moving H1 headings out of motion wrappers reduced LCP from 5.7s to under 2.5s ([Google Developers](https://developers.google.com/publisher-tag/guides/ad-speed-metrics), 2024).
-> *   Accessibility scores reached 100/100 by fixing heading hierarchy and color contrast.
-> *   Refined motion systems use `LazyMotion` to keep bundle sizes small for mobile users.
+>
+> - Moving H1 headings out of motion wrappers reduced LCP from 5.7s to under 2.5s ([Google Developers](https://developers.google.com/publisher-tag/guides/ad-speed-metrics), 2024).
+> - Accessibility scores reached 100/100 by fixing heading hierarchy and color contrast.
+> - Refined motion systems use `LazyMotion` to keep bundle sizes small for mobile users.
 
 ---
 
@@ -30,9 +31,9 @@ When you're building for home service trades, "pretty" doesn't pay the bills. Th
 
 [IMAGE: Comparison of LCP scores before and after the fix - search terms: "web performance audit lighthouse"]
 
-The service pages were beautiful, but the data said otherwise. Lighthouse was reporting a Largest Contentful Paint (LCP) of 5.7 seconds. In the world of search rankings, anything over 2.5 seconds is a problem. 
+The service pages were beautiful, but the data said otherwise. Lighthouse was reporting a Largest Contentful Paint (LCP) of 5.7 seconds. In the world of search rankings, anything over 2.5 seconds is a problem.
 
-I found the culprit in the animation system. I was wrapping every H1 heading in a Framer Motion `<m.div>` with `initial="hidden"` and `animate="visible"`. Even though the fade-in was quick, Google's bots timed the LCP from the exact moment the heading reached full visibility. 
+I found the culprit in the animation system. I was wrapping every H1 heading in a Framer Motion `<m.div>` with `initial="hidden"` and `animate="visible"`. Even though the fade-in was quick, Google's bots timed the LCP from the exact moment the heading reached full visibility.
 
 [ORIGINAL DATA]: By removing the motion wrapper from the H1 while keeping it on the sub-copy, I dropped the LCP by over 3 seconds instantly. The heading now renders as static HTML, meaning it's visible the moment the browser paints the page.
 
@@ -49,12 +50,15 @@ I found the culprit in the animation system. I was wrapping every H1 heading in 
 Accessibility (A11y) isn't just a "nice to have." It's about ensuring every NWA contractor, regardless of their device or ability, can read the site. I audited the initial build and found three specific failures that I had to fix.
 
 ### 1. The Color Contrast Gap
+
 I was using a muted gray (`#6c757d`) for secondary text on our dark background. It looked "clean," but it failed WCAG AA contrast standards. I shifted the value to `#7a838d`, which provides enough contrast for readability without losing that secondary, subtle feel.
 
 ### 2. Broken Heading Hierarchy
+
 A screen reader relies on headings to understand a page's structure. In the footer, I had jumped from H2 straight to H4. I corrected this to use H3, ensuring a logical, semantic flow from top to bottom.
 
 ### 3. Redundant Label Mismatches
+
 I was over-engineering `aria-labels` on buttons where the visible text was already descriptive. This created "label-content-name-mismatch" errors. I removed the redundant attributes, letting the clean HTML do its job.
 
 [PERSONAL EXPERIENCE]: I've found that the more "complex" you try to make a UI, the easier it is to break the basics. Simple, semantic HTML is usually the most accessible solution.
@@ -77,9 +81,9 @@ I transitioned the main page reveals to a single `animate="visible"` run. This m
 
 [IMAGE: Hero section screenshot with CTA - search terms: "clean contractor website hero"]
 
-Every UI decision on this site is filtered through one question: "Does this make the contractor feel like the hero?" 
+Every UI decision on this site is filtered through one question: "Does this make the contractor feel like the hero?"
 
-Most marketing sites use "Sign Up" or "Start Free Trial" buttons. That's language for SaaS tools, not local services. I use low-pressure CTAs like "Let's Talk — It's Free" and "See Where You Stand." These are doors held open, not demands for a commitment. 
+Most marketing sites use "Sign Up" or "Start Free Trial" buttons. That's language for SaaS tools, not local services. I use low-pressure CTAs like "Let's Talk — It's Free" and "See Where You Stand." These are doors held open, not demands for a commitment.
 
 [INTERNAL-LINK: view the homepage to see the guide-first strategy → /]
 
@@ -107,4 +111,5 @@ They can if they delay the rendering of critical content (LCP) or cause "layout 
 ---
 
 ## Meta Description
+
 Part 4: How I fixed a 5.7s LCP score, hit 100/100 accessibility, and refined the motion system for a professional, fast NWA contractor website experience.
