@@ -62,15 +62,6 @@ export default function HeroSection() {
             else — and you&rsquo;ll never know what you missed.
           </motion.p>
 
-          {/* AEO: 50-word product overview — always in DOM for crawler extraction */}
-          <motion.p variants={fadeUp} className={styles.overview}>
-            Local Search Ally is a one-person local SEO and web development
-            service in Siloam Springs, AR, helping NWA home service trades —
-            HVAC, plumbing, roofing, electrical, and remodeling — get found on
-            Google and into the Map Pack. Month-to-month, no contracts.{" "}
-            <time dateTime='2026-04-29'>Last updated: April 2026.</time>
-          </motion.p>
-
           <motion.div variants={fadeUp} className={styles.ctas}>
             <Link
               href={process.env.NEXT_PUBLIC_AUDIT_URL}
@@ -85,6 +76,15 @@ export default function HeroSection() {
 
           <motion.p variants={fadeUp} className={styles.trust}>
             No contracts. No retainers. Just honest local SEO.
+          </motion.p>
+
+          {/* AEO: 50-word product overview — always in DOM for crawler extraction */}
+          <motion.p variants={fadeUp} className={styles.overview}>
+            Local Search Ally is a one-person local SEO and web development
+            service in Siloam Springs, AR, helping NWA home service trades —
+            HVAC, plumbing, roofing, electrical, and remodeling — get found on
+            Google and into the Map Pack. Month-to-month, no contracts.{" "}
+            <time dateTime='2026-04-29'>Last updated: April 2026.</time>
           </motion.p>
         </motion.div>
 

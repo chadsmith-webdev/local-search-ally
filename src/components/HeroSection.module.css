@@ -198,11 +198,13 @@
 
 /* ─── Trust line ────────────────────────────────────── */
 .trust {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.75rem;
+  font-weight: 600;
   color: var(--muted);
   opacity: 0.7;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 /* ─── Right column: 3D scene ────────────────────────── */
