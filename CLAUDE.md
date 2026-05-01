@@ -133,10 +133,9 @@ Areas, Portfolio, Resources, Blog, About, Contact). The services and about
 pages still reflect an older nav without Resources or Service Areas. These
 pages are due for a nav update to match the homepage.
 
-**About page copy note:** The current about page copy is outdated. It
-references the old story framing ("proving it works on my own projects for
-years") and the old timeline. When editing or rewriting the about page, use
-the updated founder story from the brand reference in `.claude/skills/`.
+**About page copy note:** Copy updated May 2026 and aligned with the current
+brand reference in `.claude/skills/`. Banned phrases removed, founder story
+reflects the current real estate wholesaling → NWA contractor visibility framing.
 
 ---
 
