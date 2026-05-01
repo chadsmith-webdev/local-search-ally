@@ -13,9 +13,9 @@
 
 /* ── Eyebrow ── */
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--carolina);
@@ -251,7 +251,6 @@
   padding: 1.25rem 1.5rem;
   background: var(--surface2);
   border-radius: var(--radius-md);
-
 }
 
 .guarantee {
@@ -345,9 +344,9 @@
 
 /* ── Shared eyebrow ── */
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--carolina);

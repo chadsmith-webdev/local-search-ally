@@ -53,7 +53,7 @@ export default function ServicesPageHero() {
           </motion.div>
 
           <motion.p variants={fadeUp} className={styles.trust}>
-            No pitch. No pressure. No contracts.
+            Month-to-month. No contracts.
           </motion.p>
         </motion.div>
 
