@@ -1,5 +1,5 @@
 "use client";
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { m } from "framer-motion";
 import styles from "./CitationHero.module.css";
 import CitationHeroSVG from "./CitationHeroSVG";
 
@@ -22,8 +22,7 @@ export default function CitationHero() {
             Google Can't Trust What It Can't{" "}
             <span className={styles.colorSpan}>Verify</span>
           </h1>
-          <LazyMotion features={domAnimation}>
-            <m.div initial='hidden' animate='visible'>
+          <m.div initial='hidden' animate='visible'>
               <m.p className={styles.subheading} variants={fadeUp} custom={0}>
                 If your business name, address, or phone number is wrong — or
                 missing — across directories, Google has no reason to trust your
@@ -107,7 +106,6 @@ export default function CitationHero() {
                 <span className={styles.phoneNumber}>(479) 380-8626</span>
               </m.a>
             </m.div>
-          </LazyMotion>
         </div>
       </div>
     </section>

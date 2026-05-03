@@ -19,26 +19,8 @@ const jsonLd = {
   name: "Service Areas | Local Search Ally",
   description: serviceAreasLandingContent.metadata.description,
   url: serviceAreasLandingContent.metadata.canonical,
-  author: {
-    "@type": "Person",
-    name: "Chad Smith",
-    worksFor: {
-      "@type": "LocalBusiness",
-      name: "Local Search Ally",
-      url: "https://www.localsearchally.com",
-      telephone: "+14793808626",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Siloam Springs",
-        addressRegion: "AR",
-        addressCountry: "US",
-      },
-    },
-  },
-  areaServed: serviceAreasLandingContent.cities.cards.map((card) => ({
-    "@type": "City",
-    name: `${card.city}, AR`,
-  })),
+  author: { "@id": "https://www.localsearchally.com/about#chad-smith" },
+  publisher: { "@id": "https://www.localsearchally.com/#localbusiness" },
 };
 
 export default function ServiceAreasPage() {
@@ -48,18 +30,16 @@ export default function ServiceAreasPage() {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main>
-        <ServiceAreasHero content={serviceAreasLandingContent.hero} />
-        <ServiceAreasCities content={serviceAreasLandingContent.cities} />
-        <ServiceAreasProof
-          problem={serviceAreasLandingContent.problem}
-          trades={serviceAreasLandingContent.trades}
-        />
-        <ServiceAreasProcess
-          content={serviceAreasLandingContent.process}
-          cta={serviceAreasLandingContent.cta}
-        />
-      </main>
+      <ServiceAreasHero content={serviceAreasLandingContent.hero} />
+      <ServiceAreasCities content={serviceAreasLandingContent.cities} />
+      <ServiceAreasProof
+        problem={serviceAreasLandingContent.problem}
+        trades={serviceAreasLandingContent.trades}
+      />
+      <ServiceAreasProcess
+        content={serviceAreasLandingContent.process}
+        cta={serviceAreasLandingContent.cta}
+      />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MotionProvider from "@/components/MotionProvider";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { siteConfig } from "@/lib/metadata";
 import { Bricolage_Grotesque, Space_Grotesk } from "next/font/google";
@@ -83,11 +84,13 @@ export default function RootLayout({ children }) {
         <a href='#main-content' className='skip-link'>
           Skip to main content
         </a>
-        <Navbar />
-        <main id='main-content' className='flex-1 min-h-screen'>
-          {children}
-        </main>
-        <Footer />
+        <MotionProvider>
+          <Navbar />
+          <main id='main-content' className='flex-1 min-h-screen'>
+            {children}
+          </main>
+          <Footer />
+        </MotionProvider>
         <GoogleAnalytics gaId='G-SGQ98MEHWZ' />
       </body>
     </html>

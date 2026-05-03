@@ -1,5 +1,5 @@
 "use client";
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { m } from "framer-motion";
 import styles from "./ReputationHero.module.css";
 import ReputationHeroSVG from "./ReputationHeroSVG";
 
@@ -22,8 +22,7 @@ export default function ReputationHero() {
             Build a Reputation That{" "}
             <span className={styles.colorSpan}>Wins Jobs</span>
           </h1>
-          <LazyMotion features={domAnimation}>
-            <m.div initial='hidden' animate='visible'>
+          <m.div initial='hidden' animate='visible'>
               <m.p className={styles.subheading} variants={fadeUp} custom={0}>
                 88% of consumers trust online reviews as much as personal
                 recommendations. If you don't have them — or they're thin —
@@ -89,7 +88,6 @@ export default function ReputationHero() {
                 <span className={styles.phoneNumber}>(479) 380-8626</span>
               </m.a>
             </m.div>
-          </LazyMotion>
         </div>
       </div>
     </section>

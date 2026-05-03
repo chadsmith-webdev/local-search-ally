@@ -1,5 +1,5 @@
 "use client";
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { m } from "framer-motion";
 import styles from "./LocalSeoHero.module.css";
 import LocalSeoHeroSVG from "./LocalSeoHeroSVG";
 
@@ -21,8 +21,7 @@ export default function LocalSeoHero() {
           <h1 className={styles.heading}>
             Get Found on <span className={styles.colorSpan}>Google</span>
           </h1>
-          <LazyMotion features={domAnimation}>
-            <m.div initial='hidden' animate='visible'>
+          <m.div initial='hidden' animate='visible'>
               <m.p className={styles.subheading} variants={fadeUp} custom={0}>
                 Local SEO that turns "searching nearby" into "calling you." 78%
                 of local mobile searches result in an offline purchase. If
@@ -106,7 +105,6 @@ export default function LocalSeoHero() {
                 <span className={styles.phoneNumber}>(479) 380-8626</span>
               </m.a>
             </m.div>
-          </LazyMotion>
         </div>
       </div>
     </section>
