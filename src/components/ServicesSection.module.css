@@ -1,173 +1,109 @@
+/* ─── ServicesSection ──────────────────────────────────── */
 .section {
-  padding-top: var(--section-spacing);
-  padding-bottom: var(--section-spacing);
-  position: relative;
-  overflow: hidden;
+  padding: 7rem 0;
   background: var(--surface);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .inner {
   max-width: 1200px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--page-gutter);
-  padding-right: var(--page-gutter);
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-  position: relative;
-  z-index: 1;
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
 }
 
-/* ─── Header ─────────────────────────────────────────── */
 .header {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  max-width: 600px;
+  max-width: 620px;
+  margin-bottom: 3.5rem;
 }
 
-.eyebrow {
+.sectionTag {
   font-family: var(--font-ui);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--carolina);
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-}
-
-.eyebrow::before {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: var(--carolina);
-  opacity: 0.6;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.875rem, 3.5vw, 2.875rem);
+  font-size: clamp(2rem, 3.5vw, 2.875rem);
   font-weight: 700;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.025em;
   color: var(--text);
+  margin-bottom: 1rem;
 }
 
 .lead {
   font-family: var(--font-ui);
-  font-size: 1.0625rem;
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
-/* ─── Service grid ───────────────────────────────────── */
-/* 2 cols × 2 rows, with the last card spanning full width */
+/* ─── 2x2 grid ──────────────────────────────────────────── */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
+  margin-bottom: 3rem;
 }
 
-/* ─── Individual service card ─────────────────────────── */
+/* ─── Service card ──────────────────────────────────────── */
 .card {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 2rem 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 2.25rem;
-  border-radius: var(--radius-lg);
-  background: var(--bg);
-  position: relative;
-  overflow: hidden;
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease;
-  cursor: default;
-  text-decoration: none;
+  gap: 0.875rem;
+  transition: border-color 0.25s ease;
 }
 
 .card:hover {
-  background: rgba(123, 175, 212, 0.03);
-  box-shadow: 0 0 20px rgba(123, 175, 212, 0.06);
-  transform: translateY(-2px);
+  border-color: rgba(123, 175, 212, 0.25);
 }
 
-/* Top accent line – carolina on hover */
-.card::before {
-  content: "";
+/* HUD corners */
+.corner {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--carolina), rgba(123, 175, 212, 0.3));
+  width: 14px;
+  height: 14px;
+  border-color: var(--carolina);
+  border-style: solid;
   opacity: 0;
   transition: opacity 0.25s ease;
 }
 
-.card:hover::before {
-  opacity: 1;
+.card:hover .corner {
+  opacity: 0.7;
 }
 
-/* ─── Featured card (audit) — spans both columns ─────── */
-.cardFeatured {
-  grid-column: 1 / -1;
-  flex-direction: row;
-  align-items: center;
-  gap: 3rem;
-  padding: 2.25rem 2.75rem;
-  border-color: rgba(123, 175, 212, 0.18);
-  background: linear-gradient(
-    135deg,
-    rgba(123, 175, 212, 0.06) 0%,
-    var(--bg) 60%
-  );
+.tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+.cardId {
+  font-family: var(--font-ui);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.5;
 }
 
-.cardFeatured::before {
-  opacity: 1;
-}
-
-.cardFeatured:hover {
-  box-shadow: 0 0 25px rgba(123, 175, 212, 0.08);
-}
-
-/* ─── Card icon ──────────────────────────────────────── */
-.iconWrap {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: rgba(123, 175, 212, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.iconWrap svg {
-  width: 22px;
-  height: 22px;
-  color: var(--carolina);
-}
-
-/* ─── Card text block ────────────────────────────────── */
-.cardBody {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-  flex: 1;
-}
-
-.cardTitle {
+.cardName {
   font-family: var(--font-display);
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text);
-  letter-spacing: -0.015em;
   line-height: 1.25;
 }
 
@@ -176,92 +112,97 @@
   font-size: 0.9375rem;
   color: var(--muted);
   line-height: 1.7;
+  flex: 1;
 }
 
-/* ─── Tag list ───────────────────────────────────────── */
-.tags {
+.cardOutcome {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.25rem;
-}
-
-.tag {
+  align-items: flex-start;
+  gap: 0.625rem;
   font-family: var(--font-ui);
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 0.25rem 0.625rem;
-  border-radius: var(--radius-xs);
-  border: 1px solid var(--border);
-  background: var(--surface);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--carolina);
+  line-height: 1.45;
 }
 
-/* ─── Featured card CTA link ─────────────────────────── */
-.cardCta {
-  display: inline-flex;
+.outcomePip {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--carolina);
+  margin-top: 5px;
+  box-shadow: 0 0 6px rgba(123, 175, 212, 0.6);
+}
+
+.cardLink {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2px;
+  align-self: flex-start;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.cardLink:hover {
+  color: var(--carolina);
+  border-color: rgba(123, 175, 212, 0.4);
+}
+
+/* ─── Footer ────────────────────────────────────────────── */
+.footer {
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 2rem;
+}
+
+.pricing {
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.pricing strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.allServices {
   font-family: var(--font-ui);
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--carolina);
   text-decoration: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition:
-    gap 0.2s ease,
-    opacity 0.2s ease;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease;
 }
 
-.cardCta:hover {
-  gap: 0.75rem;
-  opacity: 0.8;
+.allServices:hover {
+  opacity: 0.75;
 }
 
-/* ─── Bottom link ────────────────────────────────────── */
-.bottom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.servicesLink {
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  color: var(--muted);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition:
-    color 0.2s ease,
-    gap 0.2s ease;
-}
-
-.servicesLink:hover {
-  color: var(--carolina);
-  gap: 0.75rem;
-}
-
-.servicesLink svg {
-  width: 14px;
-  height: 14px;
-}
-
-/* ─── Responsive ────────────────────────────────────── */
+/* ─── Responsive ────────────────────────────────────────── */
 @media (max-width: 768px) {
+  .section {
+    padding: 5rem 0;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }
 
-  .cardFeatured {
-    grid-column: 1;
+  .footer {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
-    padding: 2rem;
   }
 }

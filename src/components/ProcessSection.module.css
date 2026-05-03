@@ -1,0 +1,216 @@
+/* ─── ProcessSection ───────────────────────────────────── */
+.section {
+  padding: 7rem 0;
+  background: var(--bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+.header {
+  max-width: 600px;
+  margin-bottom: 4rem;
+}
+
+.sectionTag {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--carolina);
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.875rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+/* ─── Timeline ──────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Horizontal connector line */
+.connectorLine {
+  position: absolute;
+  top: 22px; /* vertically aligns with the center of the step nodes */
+  left: calc(33.333% / 2);
+  right: calc(33.333% / 2);
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(123, 175, 212, 0.4),
+    rgba(123, 175, 212, 0.15)
+  );
+  z-index: 0;
+}
+
+/* ─── Individual step ───────────────────────────────────── */
+.step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stepNode {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--carolina);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nodePulse {
+  position: absolute;
+  inset: -6px;
+  border: 1px solid rgba(123, 175, 212, 0.2);
+  animation: expand 2.5s ease-in-out infinite;
+}
+
+@keyframes expand {
+  0% { transform: scale(0.9); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+.stepNum {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--carolina);
+  letter-spacing: 0.05em;
+}
+
+.stepId {
+  font-family: var(--font-ui);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.45;
+  margin-top: 0.25rem;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.stepBody {
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ─── No lock-in note ───────────────────────────────────── */
+.noLockIn {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 2.5rem;
+}
+
+.lockInPip {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00ff88;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+  flex-shrink: 0;
+}
+
+/* ─── CTA ───────────────────────────────────────────────── */
+.ctas {
+  display: flex;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-cta);
+  color: var(--bg);
+  border: none;
+  padding: 1rem 2rem;
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 32px rgba(123, 175, 212, 0.3);
+  transition: filter 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btnPrimary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 0 52px rgba(123, 175, 212, 0.5);
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 5rem 0;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .connectorLine {
+    display: none;
+  }
+
+  .step {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .stepNode {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  .stepId {
+    display: none;
+  }
+}

@@ -1,23 +1,23 @@
 import HeroSection from "@/components/HeroSection";
-import StakesSection from "@/components/StakesSection";
-import ProblemSection from "@/components/ProblemSection";
+import LostCallsSection from "@/components/LostCallsSection";
+import DiagnosticSection from "@/components/DiagnosticSection";
+import AuthoritySection from "@/components/AuthoritySection";
 import ServicesSection from "@/components/ServicesSection";
-import GuideSection from "@/components/GuideSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
+import ProcessSection from "@/components/ProcessSection";
 import FAQSection from "@/components/FAQSection";
 import FinalCTASection from "@/components/FinalCTASection";
 
 export const metadata = {
   title: "Local SEO for NWA Contractors | Local Search Ally",
   description:
-    "46% of Google searches have local intent. If you're not in the Map Pack, those calls are going to someone else. Free visibility audit for NWA home service trades.",
+    "Your competitor is in the Google Map Pack. You're not. Local Search Ally gets NWA HVAC, plumbing, roofing, and electrical contractors into the top 3. Free audit — no email required.",
   alternates: {
     canonical: "https://www.localsearchally.com",
   },
   openGraph: {
     title: "Local SEO for NWA Contractors | Local Search Ally",
     description:
-      "46% of Google searches have local intent. If you're not in the Map Pack, those calls are going to someone else.",
+      "Your competitor is in the Google Map Pack. You're not. Free visibility audit for NWA home service trades.",
     url: "https://www.localsearchally.com",
   },
 };
@@ -27,7 +27,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   "@id": "https://www.localsearchally.com/#localbusiness",
   name: "Local Search Ally",
-  dateModified: "2026-04-29",
+  dateModified: "2026-05-03",
   description:
     "Local SEO and web development for NWA home service trades — HVAC, plumbing, roofing, electrical, landscaping, and remodeling.",
   url: "https://www.localsearchally.com",
@@ -98,7 +98,7 @@ const jsonLd = {
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  dateModified: "2026-04-29",
+  dateModified: "2026-05-03",
   mainEntity: [
     {
       "@type": "Question",
@@ -235,12 +235,12 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <HeroSection />
-      <StakesSection />
-      <ProblemSection />
+      <LostCallsSection />
+      <DiagnosticSection />
+      <AuthoritySection />
       <ServicesSection />
-      <GuideSection />
-      <HowItWorksSection />
-      <FAQSection />
+      <ProcessSection />
+      <FAQSection heading="Common questions about local SEO for NWA contractors." />
       <FinalCTASection />
     </>
   );
