@@ -5,13 +5,13 @@ export const metadata = {
   description:
     "Let's talk about your local SEO. Book a free strategy call or send a message to Chad Smith in Siloam Springs, AR. No pitch, no pressure.",
   alternates: {
-    canonical: "https://localsearchally.com/contact",
+    canonical: "https://www.localsearchally.com/contact",
   },
   openGraph: {
     title: "Contact Chad Smith | Local Search Ally",
     description:
       "One person in Siloam Springs helping NWA contractors stop being invisible online. No contracts. No black box marketing.",
-    url: "https://localsearchally.com/contact",
+    url: "https://www.localsearchally.com/contact",
   },
 };
 
@@ -22,7 +22,7 @@ const jsonLd = {
   name: "Contact Local Search Ally",
   description:
     "Contact Chad Smith for Local SEO services in Northwest Arkansas.",
-  url: "https://localsearchally.com/contact",
+  url: "https://www.localsearchally.com/contact",
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+14793808626",

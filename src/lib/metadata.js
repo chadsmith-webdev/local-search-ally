@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Local Search Ally | Local SEO & Web Dev for NWA Contractors",
-  url: "https://localsearchally.com",
+  url: "https://www.localsearchally.com",
   description: "Local SEO and web development for NWA contractors. I help you rank higher on Google, get more calls, and win more jobs. Based in Siloam Springs, AR.",
   twitterHandle: "@localsearchally",
   googleVerification: "",

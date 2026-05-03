@@ -25,7 +25,7 @@ const jsonLd = {
     worksFor: {
       "@type": "LocalBusiness",
       name: "Local Search Ally",
-      url: "https://localsearchally.com",
+      url: "https://www.localsearchally.com",
       telephone: "+14793808626",
       address: {
         "@type": "PostalAddress",

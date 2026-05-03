@@ -10,7 +10,7 @@ export const metadata = {
     title: "Terms of Service | Local Search Ally",
     description:
       "Terms governing use of localsearchally.com and Local Search Ally services.",
-    url: "https://localsearchally.com/terms",
+    url: "https://www.localsearchally.com/terms",
   },
   robots: { index: false },
 };

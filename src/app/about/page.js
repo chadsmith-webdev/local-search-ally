@@ -8,39 +8,28 @@ export const metadata = {
   description:
     "Local Search Ally is Chad Smith, based in Siloam Springs, AR. I help NWA home service trades get found on Google — no contracts, radical transparency, and work you can actually see.",
   alternates: {
-    canonical: "https://localsearchally.com/about",
+    canonical: "https://www.localsearchally.com/about",
   },
   openGraph: {
     title: "About Chad Smith | Local Search Ally",
     description:
       "One person in Siloam Springs helping NWA contractors stop being invisible online. No contracts. No black box marketing.",
-    url: "https://localsearchally.com/about",
+    url: "https://www.localsearchally.com/about",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  dateModified: "2026-04-29",
+  "@id": "https://www.localsearchally.com/about#chad-smith",
   name: "Chad Smith",
   jobTitle: "Founder",
-  worksFor: {
-    "@type": "LocalBusiness",
-    name: "Local Search Ally",
-    url: "https://localsearchally.com",
-    telephone: "+14793808626",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Siloam Springs",
-      addressRegion: "AR",
-      addressCountry: "US",
-    },
-  },
+  worksFor: { "@id": "https://www.localsearchally.com/#localbusiness" },
   description:
     "Founder of Local Search Ally, helping NWA home service trades rank on Google with no contracts and radical transparency.",
-  url: "https://localsearchally.com/about",
+  url: "https://www.localsearchally.com/about",
   sameAs: [
-    "https://www.linkedin.com/in/chadsmith_localsearchallly",
+    "https://www.linkedin.com/in/chadsmith_localsearchally",
     "https://www.facebook.com/localsearchally",
     "https://www.youtube.com/@chadsmith_localsearchally",
   ],
@@ -58,20 +47,15 @@ const jsonLd = {
 
 const orgJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://localsearchally.com/#organization",
+  "@type": "ProfessionalService",
+  "@id": "https://www.localsearchally.com/#localbusiness",
   name: "Local Search Ally",
-  url: "https://localsearchally.com",
-  dateModified: "2026-04-29",
+  url: "https://www.localsearchally.com",
   description:
     "One-person local SEO and web development service in Siloam Springs, AR, helping NWA home service trades — HVAC, plumbing, roofing, electrical, and remodeling — get found on Google. No contracts, month-to-month.",
   telephone: "+14793808626",
   email: "chad@localsearchally.com",
-  founder: {
-    "@type": "Person",
-    name: "Chad Smith",
-    url: "https://localsearchally.com/about",
-  },
+  founder: { "@id": "https://www.localsearchally.com/about#chad-smith" },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Siloam Springs",
@@ -79,9 +63,9 @@ const orgJsonLd = {
     postalCode: "72761",
     addressCountry: "US",
   },
-  areaServed: "Northwest Arkansas",
+  areaServed: { "@type": "AdministrativeArea", name: "Northwest Arkansas" },
   sameAs: [
-    "https://www.linkedin.com/in/chadsmith_localsearchallly",
+    "https://www.linkedin.com/in/chadsmith_localsearchally",
     "https://www.facebook.com/localsearchally",
     "https://www.youtube.com/@chadsmith_localsearchally",
   ],

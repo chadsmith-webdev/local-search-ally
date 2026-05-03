@@ -9,13 +9,13 @@ export const metadata = {
   description:
     "Demo builds for NWA home service trades — plumbing, HVAC, electrical, roofing, remodeling, and landscaping. Real work you can click through and judge for yourself.",
   alternates: {
-    canonical: "https://localsearchally.com/portfolio",
+    canonical: "https://www.localsearchally.com/portfolio",
   },
   openGraph: {
     title: "Portfolio — Local Search Ally",
     description:
       "Demo contractor websites built to rank on Google and convert visitors into calls. Click through five trade-specific builds for NWA home service businesses.",
-    url: "https://localsearchally.com/portfolio",
+    url: "https://www.localsearchally.com/portfolio",
     siteName: "Local Search Ally",
     locale: "en_US",
     type: "website",
@@ -28,14 +28,14 @@ const jsonLd = {
   name: "Portfolio — Local Search Ally",
   description:
     "Demo websites for NWA home service trades: plumbing, HVAC, electrical, roofing, remodeling, and landscaping.",
-  url: "https://localsearchally.com/portfolio",
+  url: "https://www.localsearchally.com/portfolio",
   author: {
     "@type": "Person",
     name: "Chad Smith",
     worksFor: {
       "@type": "LocalBusiness",
       name: "Local Search Ally",
-      url: "https://localsearchally.com",
+      url: "https://www.localsearchally.com",
       telephone: "+14793808626",
     },
   },

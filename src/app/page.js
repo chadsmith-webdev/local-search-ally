@@ -12,33 +12,28 @@ export const metadata = {
   description:
     "46% of Google searches have local intent. If you're not in the Map Pack, those calls are going to someone else. Free visibility audit for NWA home service trades.",
   alternates: {
-    canonical: "https://localsearchally.com",
+    canonical: "https://www.localsearchally.com",
   },
   openGraph: {
     title: "Local SEO for NWA Contractors | Local Search Ally",
     description:
       "46% of Google searches have local intent. If you're not in the Map Pack, those calls are going to someone else.",
-    url: "https://localsearchally.com",
+    url: "https://www.localsearchally.com",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://localsearchally.com/#localbusiness",
+  "@id": "https://www.localsearchally.com/#localbusiness",
   name: "Local Search Ally",
   dateModified: "2026-04-29",
   description:
     "Local SEO and web development for NWA home service trades — HVAC, plumbing, roofing, electrical, landscaping, and remodeling.",
-  url: "https://localsearchally.com",
+  url: "https://www.localsearchally.com",
   telephone: "+14793808626",
-  image: "https://localsearchally.com/icon.png",
-  founder: {
-    "@type": "Person",
-    "@id": "https://localsearchally.com/about#chad-smith",
-    name: "Chad Smith",
-    url: "https://localsearchally.com/about",
-  },
+  image: "https://www.localsearchally.com/icon.png",
+  founder: { "@id": "https://www.localsearchally.com/about#chad-smith" },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Siloam Springs",
@@ -87,7 +82,7 @@ const jsonLd = {
     "Contractor Marketing",
   ],
   sameAs: [
-    "https://www.linkedin.com/in/chadsmith_localsearchallly",
+    "https://www.linkedin.com/in/chadsmith_localsearchally",
     "https://www.facebook.com/localsearchally",
     "https://www.youtube.com/@chadsmith_localsearchally",
   ],
@@ -221,36 +216,6 @@ const faqJsonLd = {
   ],
 };
 
-const howToJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  name: "How Local Search Ally improves contractor visibility on Google",
-  description:
-    "A three-step process to take NWA home service trades from invisible to ranked in the Google Map Pack.",
-  totalTime: "P30D",
-  dateModified: "2026-04-29",
-  step: [
-    {
-      "@type": "HowToStep",
-      position: 1,
-      name: "Audit",
-      text: "Review your local visibility, service pages, and competitor presence to find the highest-impact gaps — what's holding you back and what's easiest to fix first.",
-    },
-    {
-      "@type": "HowToStep",
-      position: 2,
-      name: "Fix Priority Gaps",
-      text: "Improve what matters most first: local relevance, on-page clarity, Google Business Profile completeness, and lead paths that support calls from real customers.",
-    },
-    {
-      "@type": "HowToStep",
-      position: 3,
-      name: "Grow and Track",
-      text: "Monitor progress and adjust based on what's working. Monthly reports show rankings, calls, and actions taken — no mystery, no jargon.",
-    },
-  ],
-};
-
 export default function Page() {
   return (
     <>
@@ -262,20 +227,14 @@ export default function Page() {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
-      />
-      <main>
-        <HeroSection />
-        <StakesSection />
-        <ProblemSection />
-        <ServicesSection />
-        <GuideSection />
-        <HowItWorksSection />
-        <FAQSection />
-        <FinalCTASection />
-      </main>
+      <HeroSection />
+      <StakesSection />
+      <ProblemSection />
+      <ServicesSection />
+      <GuideSection />
+      <HowItWorksSection />
+      <FAQSection />
+      <FinalCTASection />
     </>
   );
 }

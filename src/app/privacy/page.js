@@ -10,7 +10,7 @@ export const metadata = {
     title: "Privacy Policy | Local Search Ally",
     description:
       "How Local Search Ally collects, uses, and stores your information.",
-    url: "https://localsearchally.com/privacy",
+    url: "https://www.localsearchally.com/privacy",
   },
   robots: { index: false },
 };

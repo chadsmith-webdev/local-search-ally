@@ -1,7 +1,6 @@
 import { siteConfig } from "@/lib/metadata";
 
-const INDEXNOW_KEY =
-  process.env.INDEXNOW_KEY || "72bc29c911304f96ba476049493d4a6e";
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY;
 const INDEXNOW_API = "https://api.indexnow.org/indexnow";
 
 export async function POST(request) {

@@ -17,13 +17,13 @@ export const metadata = {
     title: "Reputation Management for Contractors",
     description:
       "Reviews affect rankings and customer trust. I'll help you build a system that brings in positive reviews from happy customers.",
-    url: "https://localsearchally.com/services/reputation-management",
+    url: "https://www.localsearchally.com/services/reputation-management",
     siteName: "Local Search Ally",
     locale: "en_US",
     type: "website",
   },
   alternates: {
-    canonical: "https://localsearchally.com/services/reputation-management",
+    canonical: "https://www.localsearchally.com/services/reputation-management",
   },
 };
 
@@ -82,7 +82,7 @@ const serviceSchema = {
   provider: {
     "@type": "LocalBusiness",
     name: "Local Search Ally",
-    url: "https://localsearchally.com",
+    url: "https://www.localsearchally.com",
     telephone: "+14793808626",
   },
 };
@@ -95,19 +95,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://localsearchally.com",
+      item: "https://www.localsearchally.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://localsearchally.com/services",
+      item: "https://www.localsearchally.com/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Reputation Management",
-      item: "https://localsearchally.com/services/reputation-management",
+      item: "https://www.localsearchally.com/services/reputation-management",
     },
   ],
 };

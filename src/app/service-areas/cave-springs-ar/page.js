@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 
-const pageUrl = "https://localsearchally.com/service-areas/cave-springs-ar";
+const pageUrl = "https://www.localsearchally.com/service-areas/cave-springs-ar";
 
 const tradeList = [
   "HVAC",
@@ -92,9 +92,9 @@ const faqItems = [
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://localsearchally.com/#localbusiness",
+  "@id": "https://www.localsearchally.com/#localbusiness",
   name: "Local Search Ally",
-  url: "https://localsearchally.com",
+  url: "https://www.localsearchally.com",
   telephone: "+14793808626",
   description:
     "Local SEO and web design for home service trades in Northwest Arkansas.",

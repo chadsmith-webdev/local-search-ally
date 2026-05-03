@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -12,7 +13,7 @@ const InvisibilityHologram = dynamic(() => import("./InvisibilityHologram"), {
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -35,6 +36,12 @@ const fadeUpNoOpacity = {
 };
 
 export default function HeroSection() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.matchMedia("(min-width: 900px)").matches);
+  }, []);
+
   return (
     <section className={styles.hero}>
       <div className={styles.grid} aria-hidden='true' />
@@ -88,15 +95,17 @@ export default function HeroSection() {
           </motion.p>
         </motion.div>
 
-        {/* Right: 3D invisibility hologram */}
-        <motion.div
-          className={styles.sceneCol}
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-        >
-          <InvisibilityHologram />
-        </motion.div>
+        {/* Right: 3D invisibility hologram — desktop only, not imported on mobile */}
+        {isDesktop && (
+          <motion.div
+            className={styles.sceneCol}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+          >
+            <InvisibilityHologram />
+          </motion.div>
+        )}
       </div>
     </section>
   );

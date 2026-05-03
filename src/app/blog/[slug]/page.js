@@ -4,7 +4,7 @@ import { getPostBySlug, getAllPosts } from "@/lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import styles from "./BlogPost.module.css";
 
-const SITE_URL = "https://localsearchally.com";
+const SITE_URL = "https://www.localsearchally.com";
 
 const mdxComponents = {
   img: ({ src, alt }) => (

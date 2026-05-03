@@ -70,13 +70,13 @@ export const metadata = {
     title: "Services — Local Search Ally",
     description:
       "Four services that work together — SEO, web, GBP, and reputation — for NWA contractors who are tired of being invisible online.",
-    url: "https://localsearchally.com/services",
+    url: "https://www.localsearchally.com/services",
     siteName: "Local Search Ally",
     locale: "en_US",
     type: "website",
   },
   alternates: {
-    canonical: "https://localsearchally.com/services",
+    canonical: "https://www.localsearchally.com/services",
   },
 };
 
@@ -90,7 +90,7 @@ const jsonLd = {
   provider: {
     "@type": "LocalBusiness",
     name: "Local Search Ally",
-    url: "https://localsearchally.com",
+    url: "https://www.localsearchally.com",
     telephone: "+14793808626",
     address: {
       "@type": "PostalAddress",

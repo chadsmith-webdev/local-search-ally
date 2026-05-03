@@ -5,12 +5,12 @@ export const metadata = {
   title: "Blog | Local Search Ally",
   description: "Local SEO tips and contractor marketing strategies from Local Search Ally.",
   alternates: {
-    canonical: "https://localsearchally.com/blog",
+    canonical: "https://www.localsearchally.com/blog",
   },
   openGraph: {
     title: "Blog | Local Search Ally",
     description: "Local SEO tips and contractor marketing strategies from Local Search Ally.",
-    url: "https://localsearchally.com/blog",
+    url: "https://www.localsearchally.com/blog",
     siteName: "Local Search Ally",
     type: "website",
   },
@@ -24,13 +24,13 @@ export default function BlogPage() {
     "@type": "CollectionPage",
     name: "Blog | Local Search Ally",
     description: "Local SEO tips and contractor marketing strategies from Local Search Ally.",
-    url: "https://localsearchally.com/blog",
+    url: "https://www.localsearchally.com/blog",
     mainEntity: {
       "@type": "ItemList",
       itemListElement: posts.map((post, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `https://localsearchally.com/blog/${post.slug}`,
+        url: `https://www.localsearchally.com/blog/${post.slug}`,
         name: post.title,
       })),
     },

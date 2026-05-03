@@ -8,13 +8,13 @@ export const metadata = {
   description:
     "Free guides and reports on local SEO for NWA home service trades. No email required. Download the Invisibility Report to see what's costing you calls on Google.",
   alternates: {
-    canonical: "https://localsearchally.com/resources",
+    canonical: "https://www.localsearchally.com/resources",
   },
   openGraph: {
     title: "Free Resources for NWA Contractors | Local Search Ally",
     description:
       "Free guides and reports based on real NWA contractor visibility audits. No email gate — just useful.",
-    url: "https://localsearchally.com/resources",
+    url: "https://www.localsearchally.com/resources",
   },
 };
 
@@ -24,11 +24,11 @@ const jsonLd = {
   name: "Free Resources — Local Search Ally",
   description:
     "Free local SEO guides and reports for NWA home service trade owners.",
-  url: "https://localsearchally.com/resources",
+  url: "https://www.localsearchally.com/resources",
   publisher: {
     "@type": "Person",
     name: "Chad Smith",
-    url: "https://localsearchally.com/about",
+    url: "https://www.localsearchally.com/about",
   },
   hasPart: [
     {
@@ -36,7 +36,7 @@ const jsonLd = {
       name: "The Invisibility Report: NWA Edition",
       description:
         "Anonymized visibility audits of NWA contractors, showing the three most common local SEO gaps and how to check for them.",
-      url: "https://localsearchally.com/downloads/invisibility-report.pdf",
+      url: "https://www.localsearchally.com/downloads/invisibility-report.pdf",
       encodingFormat: "application/pdf",
     },
     {
@@ -44,7 +44,7 @@ const jsonLd = {
       name: "NWA Contractor Local SEO Checklist",
       description:
         "A 20-point self-audit checklist covering GBP, website, citations, reviews, and content for NWA home service trade owners.",
-      url: "https://localsearchally.com/downloads/local-seo-checklist.pdf",
+      url: "https://www.localsearchally.com/downloads/local-seo-checklist.pdf",
       encodingFormat: "application/pdf",
     },
     {
@@ -52,7 +52,7 @@ const jsonLd = {
       name: "Google Business Profile Optimization Checklist",
       description:
         "A step-by-step GBP audit covering all seven sections: basic info, hours, services, photos, posts, reviews, and Q&A.",
-      url: "https://localsearchally.com/downloads/gbp-optimization-checklist.pdf",
+      url: "https://www.localsearchally.com/downloads/gbp-optimization-checklist.pdf",
       encodingFormat: "application/pdf",
     },
     {
@@ -60,7 +60,7 @@ const jsonLd = {
       name: "5 Reasons Your Phone Isn't Ringing",
       description:
         "A diagnostic guide identifying the five most common local visibility gaps costing NWA contractors calls every day.",
-      url: "https://localsearchally.com/downloads/5-reasons-phone-not-ringing.pdf",
+      url: "https://www.localsearchally.com/downloads/5-reasons-phone-not-ringing.pdf",
       encodingFormat: "application/pdf",
     },
   ],

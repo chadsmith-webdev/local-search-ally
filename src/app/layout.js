@@ -31,15 +31,24 @@ export const viewport = {
   themeColor: "#020203",
 };
 
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://localsearchally.com/#website",
-  name: "Local Search Ally",
-  url: "https://localsearchally.com",
-  description: "Local SEO and web development for NWA home service trades.",
-  publisher: { "@id": "https://localsearchally.com/#localbusiness" },
-};
+const websiteJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.localsearchally.com/#website",
+    name: "Local Search Ally",
+    url: "https://www.localsearchally.com",
+    description: "Local SEO and web development for NWA home service trades.",
+    publisher: { "@id": "https://www.localsearchally.com/#localbusiness" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://www.localsearchally.com/#localbusiness",
+    name: "Local Search Ally",
+    url: "https://www.localsearchally.com",
+  },
+];
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),

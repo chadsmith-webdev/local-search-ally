@@ -4,7 +4,7 @@ export async function GET() {
   const posts = getAllPosts();
 
   const postList = posts
-    .map((p) => `- ${p.title} — https://localsearchally.com/blog/${p.slug}`)
+    .map((p) => `- ${p.title} — https://www.localsearchally.com/blog/${p.slug}`)
     .join("\n");
 
   const body = `# Local Search Ally
@@ -16,11 +16,11 @@ Local Search Ally is a one-person local SEO and web development service run by C
 
 ## Founder
 Chad Smith — Local SEO specialist, Siloam Springs, AR
-About page: https://localsearchally.com/about
+About page: https://www.localsearchally.com/about
 
 ## Contact
 Phone: (479) 380-8626
-Contact page: https://localsearchally.com/contact
+Contact page: https://www.localsearchally.com/contact
 
 ## Service Area
 Northwest Arkansas — Rogers, Bentonville, Fayetteville, Springdale, Siloam Springs, Centerton, Bella Vista, Cave Springs, Lowell
@@ -45,29 +45,29 @@ Northwest Arkansas — Rogers, Bentonville, Fayetteville, Springdale, Siloam Spr
 - I will communicate clearly and often.
 
 ## Canonical Pages
-- Homepage: https://localsearchally.com
-- Services: https://localsearchally.com/services
-- Local SEO: https://localsearchally.com/services/local-seo
-- Web Design: https://localsearchally.com/services/web-design
-- GBP Optimization: https://localsearchally.com/services/gbp-optimization
-- Reputation: https://localsearchally.com/services/reputation-management
-- Citations: https://localsearchally.com/services/citation-building
-- About: https://localsearchally.com/about
-- Contact: https://localsearchally.com/contact
-- Portfolio: https://localsearchally.com/portfolio
-- Blog: https://localsearchally.com/blog
+- Homepage: https://www.localsearchally.com
+- Services: https://www.localsearchally.com/services
+- Local SEO: https://www.localsearchally.com/services/local-seo
+- Web Design: https://www.localsearchally.com/services/web-design
+- GBP Optimization: https://www.localsearchally.com/services/gbp-optimization
+- Reputation: https://www.localsearchally.com/services/reputation-management
+- Citations: https://www.localsearchally.com/services/citation-building
+- About: https://www.localsearchally.com/about
+- Contact: https://www.localsearchally.com/contact
+- Portfolio: https://www.localsearchally.com/portfolio
+- Blog: https://www.localsearchally.com/blog
 - Free SEO Audit Tool: https://audit.localsearchally.com
 
 ## Service Area Pages
-- Rogers, AR: https://localsearchally.com/service-areas/rogers-ar
-- Bentonville, AR: https://localsearchally.com/service-areas/bentonville-ar
-- Fayetteville, AR: https://localsearchally.com/service-areas/fayetteville-ar
-- Springdale, AR: https://localsearchally.com/service-areas/springdale-ar
-- Siloam Springs, AR: https://localsearchally.com/service-areas/siloam-springs-ar
-- Centerton, AR: https://localsearchally.com/service-areas/centerton-ar
-- Bella Vista, AR: https://localsearchally.com/service-areas/bella-vista-ar
-- Cave Springs, AR: https://localsearchally.com/service-areas/cave-springs-ar
-- Lowell, AR: https://localsearchally.com/service-areas/lowell-ar
+- Rogers, AR: https://www.localsearchally.com/service-areas/rogers-ar
+- Bentonville, AR: https://www.localsearchally.com/service-areas/bentonville-ar
+- Fayetteville, AR: https://www.localsearchally.com/service-areas/fayetteville-ar
+- Springdale, AR: https://www.localsearchally.com/service-areas/springdale-ar
+- Siloam Springs, AR: https://www.localsearchally.com/service-areas/siloam-springs-ar
+- Centerton, AR: https://www.localsearchally.com/service-areas/centerton-ar
+- Bella Vista, AR: https://www.localsearchally.com/service-areas/bella-vista-ar
+- Cave Springs, AR: https://www.localsearchally.com/service-areas/cave-springs-ar
+- Lowell, AR: https://www.localsearchally.com/service-areas/lowell-ar
 
 ## Blog Posts
 ${postList}

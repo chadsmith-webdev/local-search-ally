@@ -4,7 +4,7 @@ import { getPostBySlug, getAllPosts } from "@/lib/posts";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const SITE_URL = "https://localsearchally.com";
+const SITE_URL = "https://www.localsearchally.com";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();

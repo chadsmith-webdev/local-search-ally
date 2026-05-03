@@ -18,13 +18,13 @@ export const metadata = {
     title: "Local SEO for NWA Contractors | Get into the Google Map Pack",
     description:
       "Get found by homeowners searching on Google. Local SEO optimization for HVAC, plumbing, electrical, roofing, and landscaping contractors in Northwest Arkansas.",
-    url: "https://localsearchally.com/services/local-seo",
+    url: "https://www.localsearchally.com/services/local-seo",
     siteName: "Local Search Ally",
     locale: "en_US",
     type: "website",
   },
   alternates: {
-    canonical: "https://localsearchally.com/services/local-seo",
+    canonical: "https://www.localsearchally.com/services/local-seo",
   },
 };
 
@@ -122,7 +122,7 @@ const serviceSchema = {
   provider: {
     "@type": "LocalBusiness",
     name: "Local Search Ally",
-    url: "https://localsearchally.com",
+    url: "https://www.localsearchally.com",
     telephone: "+14793808626",
     address: {
       "@type": "PostalAddress",
@@ -143,19 +143,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://localsearchally.com",
+      item: "https://www.localsearchally.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://localsearchally.com/services",
+      item: "https://www.localsearchally.com/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Local SEO",
-      item: "https://localsearchally.com/services/local-seo",
+      item: "https://www.localsearchally.com/services/local-seo",
     },
   ],
 };

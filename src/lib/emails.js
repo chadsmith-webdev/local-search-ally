@@ -108,7 +108,7 @@ function footer(includeUnsubscribe = false) {
   return `
     <hr style="${dividerStyles}" />
     <div style="${footerStyles}">
-      <p style="margin:0 0 6px">Chad Smith &middot; Local Search Ally &middot; <a href="https://localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
+      <p style="margin:0 0 6px">Chad Smith &middot; Local Search Ally &middot; <a href="https://www.localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
       <p style="margin:0 0 6px"><a href="tel:+14793808626" style="color:#6c757d">(479) 380-8626</a></p>
       ${includeUnsubscribe ? `<p style="margin:12px 0 0">You're receiving this because you downloaded the GBP Checklist for Home Services at localsearchally.com. <a href="{{unsubscribe_url}}" style="color:#6c757d">Unsubscribe</a></p>` : ''}
     </div>
@@ -131,7 +131,7 @@ export function email1Html(firstName) {
       <p style="${pStyles}">Hi ${firstName},</p>
       <p style="${pStyles}">Here it is.</p>
 
-      <a href="https://localsearchally.com/downloads/gbp-checklist.pdf" style="${buttonStyles}">Download Your GBP Checklist &rarr;</a>
+      <a href="https://www.localsearchally.com/downloads/gbp-checklist.pdf" style="${buttonStyles}">Download Your GBP Checklist &rarr;</a>
 
       <p style="${pStyles}">It's 7 sections, 44 items. You can run through it in about 20 minutes.</p>
       <p style="${pStyles}">A few things worth knowing before you start:</p>
@@ -146,7 +146,7 @@ export function email1Html(firstName) {
 
       <p style="${pStyles}">If anything in there raises a question, reply to this email. I read every one.</p>
 
-      <p style="${pStyles}">&mdash; Chad<br />Local Search Ally<br /><a href="https://localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
+      <p style="${pStyles}">&mdash; Chad<br />Local Search Ally<br /><a href="https://www.localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
 
       ${footer()}
     </div>
@@ -190,7 +190,7 @@ export function email2Html(firstName) {
 
       <p style="${pStyles}">&mdash; Chad</p>
 
-      <p style="${mutedPStyles}">P.S. &mdash; If you want me to pull a quick look at your profile and tell you what's actually missing, that's what the free audit is for. No pitch involved. &rarr; <a href="https://localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
+      <p style="${mutedPStyles}">P.S. &mdash; If you want me to pull a quick look at your profile and tell you what's actually missing, that's what the free audit is for. No pitch involved. &rarr; <a href="https://www.localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
 
       ${footer()}
     </div>
@@ -232,7 +232,7 @@ export function email3Html(firstName) {
 
       <p style="${pStyles}">No contract. No pitch. Just an honest look at what's happening and what I'd do about it.</p>
 
-      <p style="${pStyles}">&rarr; <a href="https://localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
+      <p style="${pStyles}">&rarr; <a href="https://www.localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
 
       <p style="${pStyles}">&mdash; Chad</p>
 
@@ -276,11 +276,11 @@ export function email4Html(firstName) {
 
       <p style="${pStyles}">No sales pitch at the end. If there's nothing I can help you with, I'll say so.</p>
 
-      <p style="${pStyles}">If you want one: &rarr; <a href="https://localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
+      <p style="${pStyles}">If you want one: &rarr; <a href="https://www.localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
 
       <p style="${pStyles}">If you don't, no hard feelings. Keep the checklist. Use it.</p>
 
-      <p style="${pStyles}">&mdash; Chad<br />Local Search Ally &middot; <a href="tel:+14793808626" style="${linkStyles}">(479) 380-8626</a><br /><a href="https://localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
+      <p style="${pStyles}">&mdash; Chad<br />Local Search Ally &middot; <a href="tel:+14793808626" style="${linkStyles}">(479) 380-8626</a><br /><a href="https://www.localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
 
       ${footer(true)}
     </div>

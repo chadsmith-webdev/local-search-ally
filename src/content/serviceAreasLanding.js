@@ -8,12 +8,12 @@ export const serviceAreasLandingContent = {
       title: "Service Areas | Local Search Ally",
       description:
         "Local SEO for home service trades across Northwest Arkansas. See the cities I serve and run a free audit in under 90 seconds.",
-      url: "https://localsearchally.com/service-areas",
+      url: "https://www.localsearchally.com/service-areas",
       siteName: "Local Search Ally",
       locale: "en_US",
       type: "website",
     },
-    canonical: "https://localsearchally.com/service-areas",
+    canonical: "https://www.localsearchally.com/service-areas",
   },
   hero: {
     eyebrow: "Where I Work",

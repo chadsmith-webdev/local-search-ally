@@ -18,13 +18,13 @@ export const metadata = {
     title: "Citation Building & Management for NWA Contractors | Local Search Ally",
     description:
       "Inconsistent business listings hurt your Google rankings. I audit, fix, and build citations across the directories that matter — Yelp, Angi, HomeAdvisor, Bing, Apple Maps, and more.",
-    url: "https://localsearchally.com/services/citation-building",
+    url: "https://www.localsearchally.com/services/citation-building",
     siteName: "Local Search Ally",
     locale: "en_US",
     type: "website",
   },
   alternates: {
-    canonical: "https://localsearchally.com/services/citation-building",
+    canonical: "https://www.localsearchally.com/services/citation-building",
   },
 };
 
@@ -122,7 +122,7 @@ const serviceSchema = {
   provider: {
     "@type": "LocalBusiness",
     name: "Local Search Ally",
-    url: "https://localsearchally.com",
+    url: "https://www.localsearchally.com",
     telephone: "+14793808626",
     address: {
       "@type": "PostalAddress",
@@ -143,19 +143,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://localsearchally.com",
+      item: "https://www.localsearchally.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://localsearchally.com/services",
+      item: "https://www.localsearchally.com/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Citation Building & Management",
-      item: "https://localsearchally.com/services/citation-building",
+      item: "https://www.localsearchally.com/services/citation-building",
     },
   ],
 };

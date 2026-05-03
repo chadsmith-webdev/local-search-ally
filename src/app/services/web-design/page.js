@@ -17,13 +17,13 @@ export const metadata = {
     title: "Contractor Website Design Built for Leads",
     description:
       "A website that actually converts visitors into phone calls. Mobile-first design, clear CTAs, and built-in SEO. For HVAC, plumbing, electrical, roofing, and landscaping contractors.",
-    url: "https://localsearchally.com/services/web-design",
+    url: "https://www.localsearchally.com/services/web-design",
     siteName: "Local Search Ally",
     locale: "en_US",
     type: "website",
   },
   alternates: {
-    canonical: "https://localsearchally.com/services/web-design",
+    canonical: "https://www.localsearchally.com/services/web-design",
   },
 };
 
@@ -94,7 +94,7 @@ const serviceSchema = {
   provider: {
     "@type": "LocalBusiness",
     name: "Local Search Ally",
-    url: "https://localsearchally.com",
+    url: "https://www.localsearchally.com",
     telephone: "+14793808626",
   },
 };
@@ -108,19 +108,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://localsearchally.com",
+      item: "https://www.localsearchally.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://localsearchally.com/services",
+      item: "https://www.localsearchally.com/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Web Design",
-      item: "https://localsearchally.com/services/web-design",
+      item: "https://www.localsearchally.com/services/web-design",
     },
   ],
 };

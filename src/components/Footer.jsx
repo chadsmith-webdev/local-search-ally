@@ -53,7 +53,7 @@ export default function Footer() {
             <div className={styles.social} aria-label='Social profiles'>
               {/* LinkedIn */}
               <a
-                href='https://www.linkedin.com/in/chadsmith_localsearchallly'
+                href='https://www.linkedin.com/in/chadsmith_localsearchally'
                 target='_blank'
                 rel='noopener noreferrer'
                 className={styles.socialLink}

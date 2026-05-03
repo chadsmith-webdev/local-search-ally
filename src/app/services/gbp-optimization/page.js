@@ -17,13 +17,13 @@ export const metadata = {
     title: "Google Business Profile Optimization for Contractors",
     description:
       "Get into Google's Map Pack. Expert Google Business Profile optimization that helps NWA contractors show up where homeowners search and calls start.",
-    url: "https://localsearchally.com/services/gbp-optimization",
+    url: "https://www.localsearchally.com/services/gbp-optimization",
     siteName: "Local Search Ally",
     locale: "en_US",
     type: "website",
   },
   alternates: {
-    canonical: "https://localsearchally.com/services/gbp-optimization",
+    canonical: "https://www.localsearchally.com/services/gbp-optimization",
   },
 };
 
@@ -82,7 +82,7 @@ const serviceSchema = {
   provider: {
     "@type": "LocalBusiness",
     name: "Local Search Ally",
-    url: "https://localsearchally.com",
+    url: "https://www.localsearchally.com",
     telephone: "+14793808626",
   },
 };
@@ -95,19 +95,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://localsearchally.com",
+      item: "https://www.localsearchally.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://localsearchally.com/services",
+      item: "https://www.localsearchally.com/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "GBP Optimization",
-      item: "https://localsearchally.com/services/gbp-optimization",
+      item: "https://www.localsearchally.com/services/gbp-optimization",
     },
   ],
 };
