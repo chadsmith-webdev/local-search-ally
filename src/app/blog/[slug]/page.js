@@ -68,19 +68,25 @@ export default async function BlogPost({ params }) {
   const readTime = Math.ceil(content.trim().split(/\s+/).length / 200);
   const url = `${SITE_URL}/blog/${slug}`;
 
+  const wordCount = content.trim().split(/\s+/).length;
+
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "@id": url,
     headline: metadata.title,
     description: metadata.description,
     url,
+    inLanguage: "en-US",
+    wordCount,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     datePublished: metadata.date,
     dateModified: metadata.dateModified || metadata.date,
     image: {
       "@type": "ImageObject",
       url: metadata.image ? `${SITE_URL}${metadata.image}` : `${SITE_URL}/og-default.png`,
+      width: 1200,
+      height: 630,
     },
     author: {
       "@type": "Person",
