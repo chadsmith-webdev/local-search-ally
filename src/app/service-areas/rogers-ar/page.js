@@ -114,6 +114,11 @@ const localBusinessJsonLd = {
     addressCountry: "US",
     postalCode: "72761",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "36.18808",
+    longitude: "-94.54064",
+  },
 };
 
 const faqJsonLd = {
