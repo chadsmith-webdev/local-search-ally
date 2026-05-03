@@ -145,7 +145,7 @@ export default async function BlogPost({ params }) {
           <div className={styles.featureImage}>
             <Image
               src={metadata.image}
-              alt={metadata.title}
+              alt={metadata.imageAlt || `Featured image for ${metadata.title}`}
               width={1200}
               height={630}
               className={styles.featureImg}

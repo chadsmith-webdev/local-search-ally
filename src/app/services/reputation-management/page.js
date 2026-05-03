@@ -11,8 +11,6 @@ export const metadata = {
   title: "Reputation Management for Contractors | NWA | Local Search Ally",
   description:
     "Build your online reputation with a proven review strategy. Increase positive reviews, manage responses, and build customer trust. For NWA contractors.",
-  keywords:
-    "reputation management, review management, online reviews, customer reviews, NWA contractor reviews",
   openGraph: {
     title: "Reputation Management for Contractors",
     description:

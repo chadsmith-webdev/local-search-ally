@@ -34,6 +34,7 @@ export default function sitemap() {
     { url: `${BASE}/service-areas/bella-vista-ar`, lastModified: new Date("2026-04-15") },
     { url: `${BASE}/service-areas/cave-springs-ar`, lastModified: new Date("2026-04-15") },
     { url: `${BASE}/service-areas/lowell-ar`, lastModified: new Date("2026-04-15") },
+    { url: `${BASE}/gbp-checklist`, lastModified: new Date("2026-04-27") },
   ];
 
   return [...staticUrls, ...blogUrls];

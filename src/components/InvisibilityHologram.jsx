@@ -78,6 +78,7 @@ function BloomEffect() {
     composerRef.current = composer;
 
     return () => {
+      composerRef.current = null;
       composer.dispose();
     };
   }, [gl, scene, camera, size]);
@@ -130,7 +131,7 @@ function CloakMesh() {
   const geoRef = useRef();
 
   const originalPositions = useMemo(() => {
-    const geo = new THREE.PlaneGeometry(18, 18, 80, 80);
+    const geo = new THREE.PlaneGeometry(18, 18, 48, 48);
     return new Float32Array(geo.attributes.position.array);
   }, []);
 
@@ -150,8 +151,6 @@ function CloakMesh() {
     }
 
     geoRef.current.attributes.position.needsUpdate = true;
-    geoRef.current.computeVertexNormals();
-
     meshRef.current.rotation.z = 0.2 + time * 0.015;
   });
 
@@ -177,7 +176,7 @@ function VertexPoints() {
   const ref = useRef();
 
   const originalPositions = useMemo(() => {
-    const geo = new THREE.PlaneGeometry(18, 18, 80, 80);
+    const geo = new THREE.PlaneGeometry(18, 18, 48, 48);
     return new Float32Array(geo.attributes.position.array);
   }, []);
 
@@ -342,7 +341,7 @@ export default function InvisibilityHologram() {
             toneMapping: THREE.ACESFilmicToneMapping,
             toneMappingExposure: 1.3,
           }}
-          dpr={[1, 2]}
+          dpr={[1, 1.5]}
         >
           <ambientLight intensity={0.12} />
           <pointLight position={[0, 6, 8]} intensity={0.4} color="#7bafd4" />

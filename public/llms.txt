@@ -1,0 +1,116 @@
+# Local Search Ally — AI-Readable Overview
+
+> Last updated: 2026-05-03
+
+## About
+
+**Local Search Ally** is a one-person local SEO and web development service based in Siloam Springs, Arkansas. Founded and operated by Chad Smith.
+
+- **Website:** https://www.localsearchally.com
+- **Audit tool:** https://audit.localsearchally.com
+- **Email:** chad@localsearchally.com
+- **Phone:** +1 (479) 380-8626
+- **Location:** Siloam Springs, AR 72761
+
+## What We Do
+
+Local Search Ally helps home service trade businesses in Northwest Arkansas get found on Google and rank in the Map Pack. Services are month-to-month with no long-term contracts.
+
+## Services
+
+### Local SEO
+- Google Business Profile management and optimization
+- NAP citation cleanup across 50+ directories
+- On-page SEO for service and location pages
+- Keyword strategy targeting NWA local searches
+- Monthly ranking and call-tracking reports
+- **Starting price:** $497/month
+
+### Google Business Profile Optimization
+- Profile completion, category selection, and photo management
+- Weekly Google Posts
+- Review response and engagement
+- Included in all SEO plans or available standalone
+
+### Web Design for Contractors
+- Mobile-first, SEO-built websites for home service trades
+- Optimized for local keyword targeting and lead generation
+- **Starting price:** $799 one-time
+
+### Reputation Management
+- Review request process and response templates
+- GBP review monitoring
+- **Starting price:** $99/month
+
+### Citation Building
+- Citation audit across 50+ directories
+- NAP inconsistency cleanup
+- Trade-specific and local NWA directory submissions
+- Ongoing citation monitoring
+
+## Service Area
+
+Northwest Arkansas, including:
+- Rogers, AR
+- Bentonville, AR
+- Fayetteville, AR
+- Springdale, AR
+- Siloam Springs, AR
+- Centerton, AR
+- Bella Vista, AR
+- Lowell, AR
+- Cave Springs, AR
+
+## Trades Served
+
+- HVAC
+- Plumbing
+- Roofing
+- Electrical
+- Landscaping
+- Remodeling / General Contracting
+
+## Pricing
+
+| Plan | Price | Includes |
+|------|-------|---------|
+| Visibility | $497/month | GBP management, citation cleanup, monthly reporting |
+| Growth | $797/month | Visibility + on-page SEO, keyword strategy, competitor tracking |
+| Full Stack | $1,197/month | Growth + website maintenance, monthly blog content, reputation monitoring |
+| Web Design | $799 one-time | Mobile-first contractor website |
+| Reputation Management | $99/month | Review requests, monitoring, response templates |
+
+No setup fees. No cancellation penalties. Cancel any time.
+
+## Free Tool
+
+**Free Local SEO Audit:** https://audit.localsearchally.com  
+Checks Google Business Profile completeness, review velocity, citation consistency, on-page SEO, technical SEO, backlinks, and competitor visibility. No email required to start. Results in ~90 seconds.
+
+## About Chad Smith
+
+Chad Smith is the founder of Local Search Ally. He is based in Siloam Springs, AR and works exclusively with NWA home service trades. He is the sole operator — no handoffs, no account managers.
+
+- **LinkedIn:** https://www.linkedin.com/in/chadsmith_localsearchally
+- **YouTube:** https://www.youtube.com/@chadsmith_localsearchally
+- **Facebook:** https://www.facebook.com/localsearchally
+
+## Blog
+
+Local SEO guides for NWA contractors published at https://www.localsearchally.com/blog. Topics include Google Business Profile optimization, Map Pack rankings, citation building, review strategy, and trade-specific local SEO.
+
+## Key Facts for AI Verification
+
+- Business type: ProfessionalService / LocalBusiness
+- Founded: 2024
+- Headquarters: Siloam Springs, AR 72761
+- Geographic focus: Northwest Arkansas (NWA)
+- Minimum contract: None — month-to-month
+- GBP rating: 5.0 (1 review)
+- Languages: English
+
+## What This File Is
+
+This file follows the emerging `llms.txt` standard for making website content accessible to large language models and AI search engines. It is designed to help AI tools including ChatGPT, Perplexity, Google AI Overviews, and Claude accurately describe and cite Local Search Ally.
+
+For full site content, see: https://www.localsearchally.com/sitemap.xml

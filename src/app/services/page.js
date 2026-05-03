@@ -83,51 +83,11 @@ export const metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  dateModified: "2026-04-29",
+  "@id": "https://www.localsearchally.com/services#service",
   name: "Local SEO & Web Design for NWA Contractors",
   description:
     "Local SEO, web design, Google Business Profile optimization, and reputation management for home service trade businesses in Northwest Arkansas.",
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Local Search Ally",
-    url: "https://www.localsearchally.com",
-    telephone: "+14793808626",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Siloam Springs",
-      addressRegion: "AR",
-      addressCountry: "US",
-    },
-    openingHours: ["Mo-Fr 08:00-18:00", "Sa 10:00-14:00", "Su 14:00-18:00"],
-    areaServed: [
-      {
-        "@type": "City",
-        name: "Rogers",
-        containedInPlace: { "@type": "State", name: "Arkansas" },
-      },
-      {
-        "@type": "City",
-        name: "Bentonville",
-        containedInPlace: { "@type": "State", name: "Arkansas" },
-      },
-      {
-        "@type": "City",
-        name: "Fayetteville",
-        containedInPlace: { "@type": "State", name: "Arkansas" },
-      },
-      {
-        "@type": "City",
-        name: "Springdale",
-        containedInPlace: { "@type": "State", name: "Arkansas" },
-      },
-      {
-        "@type": "City",
-        name: "Siloam Springs",
-        containedInPlace: { "@type": "State", name: "Arkansas" },
-      },
-      { "@type": "AdministrativeArea", name: "Northwest Arkansas" },
-    ],
-  },
+  provider: { "@id": "https://www.localsearchally.com/#localbusiness" },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "NWA Contractor Marketing Services",
@@ -201,24 +161,22 @@ export default function ServicesPage() {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesFaqJsonLd) }}
       />
-      <main>
-        <ServicesPageHero />
-        <ServicesDetail />
-        <ServicesAuditBridge />
-        <ServicesPricing />
-        <FAQSection
-          faqs={SERVICES_FAQS}
-          eyebrow='Services FAQ'
-          heading={
-            <>
-              Common questions about
-              <br />
-              working with Local Search Ally.
-            </>
-          }
-        />
-        <ServicesPageFinalCTA />
-      </main>
+      <ServicesPageHero />
+      <ServicesDetail />
+      <ServicesAuditBridge />
+      <ServicesPricing />
+      <FAQSection
+        faqs={SERVICES_FAQS}
+        eyebrow='Services FAQ'
+        heading={
+          <>
+            Common questions about
+            <br />
+            working with Local Search Ally.
+          </>
+        }
+      />
+      <ServicesPageFinalCTA />
     </>
   );
 }

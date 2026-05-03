@@ -86,6 +86,13 @@ const jsonLd = {
     "https://www.facebook.com/localsearchally",
     "https://www.youtube.com/@chadsmith_localsearchally",
   ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    bestRating: "5",
+    ratingCount: "1",
+    reviewCount: "1",
+  },
 };
 
 const faqJsonLd = {

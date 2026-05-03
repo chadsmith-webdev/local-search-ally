@@ -12,8 +12,6 @@ export const metadata = {
     "Local SEO for NWA Contractors | Google Rankings & Map Pack Visibility",
   description:
     "Get found by homeowners searching on Google. I optimize your local visibility, Google Business Profile, and rankings in the map pack. No contracts. Transparent process.",
-  keywords:
-    "local SEO NWA, Google rankings, map pack, contractor SEO, home service SEO, Google Business Profile optimization",
   openGraph: {
     title: "Local SEO for NWA Contractors | Get into the Google Map Pack",
     description:

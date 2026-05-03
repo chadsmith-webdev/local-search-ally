@@ -159,6 +159,16 @@ export default function Footer() {
               <li>
                 <Link href='/contact'>Contact</Link>
               </li>
+              <li>
+                {/* TODO: replace YOUR_PLACE_ID with GBP Place ID from Business Profile Manager */}
+                <a
+                  href='https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Leave a Review ↗
+                </a>
+              </li>
             </ul>
           </div>
         </div>

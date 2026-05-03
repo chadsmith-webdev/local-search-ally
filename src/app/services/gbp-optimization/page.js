@@ -11,8 +11,6 @@ export const metadata = {
   title: "Google Business Profile Optimization | NWA | Local Search Ally",
   description:
     "Get into the Google Map Pack with expert GBP optimization. Complete profile optimization, photo strategy, and review management for NWA contractors.",
-  keywords:
-    "Google Business Profile optimization, map pack, GBP management, local business optimization, NWA",
   openGraph: {
     title: "Google Business Profile Optimization for Contractors",
     description:

@@ -11,8 +11,6 @@ export const metadata = {
   title: "Contractor Website Design & Development | NWA | Local Search Ally",
   description:
     "Custom website design built for lead generation, not vanity. Mobile-optimized, SEO-ready, and designed to convert. No templates. Direct phone calls and booking forms.",
-  keywords:
-    "contractor website design, home service web design, HVAC website, plumbing website, NWA web design, lead generation website",
   openGraph: {
     title: "Contractor Website Design Built for Leads",
     description:

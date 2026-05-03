@@ -3,11 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { siteConfig } from "@/lib/metadata";
-import {
-  Bricolage_Grotesque,
-  Space_Grotesk,
-  JetBrains_Mono,
-} from "next/font/google";
+import { Bricolage_Grotesque, Space_Grotesk } from "next/font/google";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -19,11 +15,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-ui",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500"],
-});
+
 
 export const viewport = {
   width: "device-width",
@@ -79,9 +71,11 @@ export default function RootLayout({ children }) {
     <html
       lang='en'
       data-scroll-behavior='smooth'
-      className={`${bricolage.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      className={`${bricolage.variable} ${spaceGrotesk.variable}`}
     >
       <body>
+        <link rel='preconnect' href='https://www.googletagmanager.com' />
+        <link rel='preconnect' href='https://www.google-analytics.com' />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}

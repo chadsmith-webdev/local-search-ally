@@ -12,8 +12,6 @@ export const metadata = {
     "Citation Building & Management for NWA Contractors | NAP Consistency",
   description:
     "Inconsistent business listings are silently hurting your local rankings. I audit, clean, and build citations across 50+ directories so Google trusts your business. No contracts. Transparent reporting.",
-  keywords:
-    "citation building NWA, NAP consistency, local citations, directory listings, local SEO citations, contractor citations Arkansas",
   openGraph: {
     title: "Citation Building & Management for NWA Contractors | Local Search Ally",
     description:
@@ -119,19 +117,7 @@ const serviceSchema = {
       containedInPlace: { "@type": "State", name: "Arkansas" },
     },
   ],
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Local Search Ally",
-    url: "https://www.localsearchally.com",
-    telephone: "+14793808626",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Siloam Springs",
-      addressRegion: "AR",
-      postalCode: "72761",
-      addressCountry: "US",
-    },
-  },
+  provider: { "@id": "https://www.localsearchally.com/#localbusiness" },
 };
 
 // Breadcrumb Schema
