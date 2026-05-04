@@ -24,8 +24,8 @@ const MUTED = "#555555";
 
 export async function loadFonts() {
   try {
-    const UA =
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
+    // IE6 UA — predates WOFF, so Google Fonts returns TTF which Satori supports
+    const UA = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)";
 
     const [displayCss, uiCss] = await Promise.all([
       fetch(
