@@ -20,7 +20,7 @@ export default function FinalCTASection() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
         >
-          FINAL_CALL_TO_ACTION
+          GET STARTED
         </motion.span>
 
         <motion.h2
@@ -29,7 +29,8 @@ export default function FinalCTASection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65, ease: "easeOut", delay: 0.1 }}
         >
-          The contractor who ranks #1 in your city<br />
+          The contractor who ranks #1 in your city
+          <br />
           <em>is getting your calls right now.</em>
         </motion.h2>
 
@@ -40,8 +41,8 @@ export default function FinalCTASection() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
         >
           The free audit takes 90 seconds and tells you exactly where you stand.
-          No email required. No sales call triggered automatically. Just an honest
-          look at your visibility — and what it would take to fix it.
+          No email required. No sales call triggered automatically. Just an
+          honest look at your visibility — and what it would take to fix it.
         </motion.p>
 
         <motion.div
@@ -67,7 +68,8 @@ export default function FinalCTASection() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          (479) 380-8626 &nbsp;·&nbsp; Siloam Springs, AR &nbsp;·&nbsp; I answer my own phone.
+          (479) 380-8626 &nbsp;·&nbsp; Siloam Springs, AR &nbsp;·&nbsp; I answer
+          my own phone.
         </motion.p>
       </div>
     </section>
