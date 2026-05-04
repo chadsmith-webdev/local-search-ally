@@ -97,6 +97,32 @@ const jsonLd = {
   priceRange: "$$",
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.localsearchally.com/about#chad-smith",
+  name: "Chad Smith",
+  jobTitle: "Local SEO Specialist",
+  url: "https://www.localsearchally.com/about",
+  telephone: "+14793808626",
+  worksFor: {
+    "@id": "https://www.localsearchally.com/#localbusiness",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Siloam Springs",
+    addressRegion: "AR",
+    addressCountry: "US",
+  },
+  knowsAbout: [
+    "Local SEO",
+    "Google Business Profile Optimization",
+    "Citation Building",
+    "Contractor Marketing",
+    "Northwest Arkansas",
+  ],
+};
+
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -235,6 +261,10 @@ export default function Page() {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
       <HeroSection />
       <LostCallsSection />
