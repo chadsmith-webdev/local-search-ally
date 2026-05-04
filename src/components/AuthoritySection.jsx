@@ -65,7 +65,7 @@ export default function AuthoritySection() {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
           >
-            OPERATOR_PROFILE
+            WHO I AM
           </motion.span>
 
           <motion.h2
@@ -74,8 +74,7 @@ export default function AuthoritySection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           >
-            One specialist. One market.{" "}
-            <em>All in.</em>
+            One specialist. One market. <em>All in.</em>
           </motion.h2>
 
           <motion.p
@@ -117,7 +116,9 @@ export default function AuthoritySection() {
                 initial='hidden'
                 animate={inView ? "visible" : "hidden"}
               >
-                <span className={styles.pledgeCheck} aria-hidden='true'>✓</span>
+                <span className={styles.pledgeCheck} aria-hidden='true'>
+                  ✓
+                </span>
                 <span>{pledge}</span>
               </motion.div>
             ))}

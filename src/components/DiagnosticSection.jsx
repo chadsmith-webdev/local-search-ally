@@ -52,14 +52,14 @@ export default function DiagnosticSection() {
     <section className={styles.section} ref={ref} id='diagnostic'>
       <div className={styles.inner}>
         <div className={styles.header}>
-          <span className={styles.sectionTag}>SYSTEM_DIAGNOSTIC</span>
+          <span className={styles.sectionTag}>THREE FIXABLE PROBLEMS</span>
           <h2 className={styles.h2}>
             Why NWA contractors disappear from Google
           </h2>
           <p className={styles.lead}>
             It&rsquo;s not your service quality. It&rsquo;s not your reviews.
-            It&rsquo;s three fixable infrastructure failures that most contractors
-            don&rsquo;t know they have.
+            It&rsquo;s three fixable infrastructure failures that most
+            contractors don&rsquo;t know they have.
           </p>
         </div>
 
@@ -78,17 +78,31 @@ export default function DiagnosticSection() {
               {/* Panel header bar */}
               <div className={styles.panelHeader}>
                 <span className={styles.systemId}>{d.id}</span>
-                <span className={`${styles.statusChip} ${styles[`chip_${d.statusType}`]}`}>
+                <span
+                  className={`${styles.statusChip} ${styles[`chip_${d.statusType}`]}`}
+                >
                   <span className={styles.statusDot} aria-hidden='true' />
                   {d.status}
                 </span>
               </div>
 
               {/* HUD corner brackets */}
-              <span className={`${styles.corner} ${styles.tl}`} aria-hidden='true' />
-              <span className={`${styles.corner} ${styles.tr}`} aria-hidden='true' />
-              <span className={`${styles.corner} ${styles.bl}`} aria-hidden='true' />
-              <span className={`${styles.corner} ${styles.br}`} aria-hidden='true' />
+              <span
+                className={`${styles.corner} ${styles.tl}`}
+                aria-hidden='true'
+              />
+              <span
+                className={`${styles.corner} ${styles.tr}`}
+                aria-hidden='true'
+              />
+              <span
+                className={`${styles.corner} ${styles.bl}`}
+                aria-hidden='true'
+              />
+              <span
+                className={`${styles.corner} ${styles.br}`}
+                aria-hidden='true'
+              />
 
               {/* Panel body */}
               <div className={styles.panelBody}>
