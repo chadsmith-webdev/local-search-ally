@@ -10,7 +10,7 @@ import FinalCTASection from "@/components/FinalCTASection";
 export const metadata = {
   title: "Local SEO for NWA Contractors | Local Search Ally",
   description:
-    "Your competitor is in the Google Map Pack. You're not. Local Search Ally gets NWA HVAC, plumbing, roofing, and electrical contractors into the top 3. Free audit — no email required.",
+    "Your competitor is in the Map Pack. You're not. I get NWA HVAC, plumbing, roofing, and electrical contractors into the top 3. Free audit — no email required.",
   alternates: {
     canonical: "https://www.localsearchally.com",
   },
@@ -242,7 +242,7 @@ export default function Page() {
       <AuthoritySection />
       <ServicesSection />
       <ProcessSection />
-      <FAQSection heading="Common questions about local SEO for NWA contractors." />
+      <FAQSection heading='Common questions about local SEO for NWA contractors.' />
       <FinalCTASection />
     </>
   );

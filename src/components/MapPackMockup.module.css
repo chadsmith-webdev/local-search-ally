@@ -1,0 +1,289 @@
+/* ─── Panel ────────────────────────────────────────── */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 520px;
+  box-shadow:
+    0 0 0 1px rgba(123, 175, 212, 0.06),
+    0 24px 64px rgba(0, 0, 0, 0.55);
+}
+
+/* ─── Search bar ──────────────────────────────────── */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem 1rem;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+}
+
+.searchIcon {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.searchQuery {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--text);
+  flex: 1;
+  letter-spacing: 0.01em;
+}
+
+.searchX {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1;
+}
+
+/* ─── Pack header ─────────────────────────────────── */
+.packHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 1rem;
+  background: rgba(123, 175, 212, 0.04);
+  border-bottom: 1px solid var(--border);
+}
+
+.packLabel {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--carolina);
+}
+
+.packDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--carolina);
+  opacity: 0.7;
+  animation: packPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes packPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ─── Results list ────────────────────────────────── */
+.results {
+  display: flex;
+  flex-direction: column;
+}
+
+.result {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+
+/* ─── Rank pin ────────────────────────────────────── */
+.rankPin {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(123, 175, 212, 0.1);
+  border: 1px solid rgba(123, 175, 212, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.rankNum {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--carolina);
+}
+
+/* ─── Result body ─────────────────────────────────── */
+.resultBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.resultName {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Rating row ──────────────────────────────────── */
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ratingNum {
+  font-family: var(--font-ui);
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--carolina);
+}
+
+.stars {
+  font-size: 0.7rem;
+  color: var(--carolina);
+  letter-spacing: 1px;
+}
+
+.starHalf {
+  opacity: 0.45;
+}
+
+.reviewCount {
+  font-family: var(--font-ui);
+  font-size: 0.725rem;
+  color: var(--muted);
+}
+
+/* ─── Meta row ────────────────────────────────────── */
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.statusOpen {
+  font-family: var(--font-ui);
+  font-size: 0.725rem;
+  font-weight: 500;
+  color: var(--green);
+}
+
+.statusClosed {
+  font-family: var(--font-ui);
+  font-size: 0.725rem;
+  font-weight: 500;
+  color: var(--red);
+}
+
+.metaDot {
+  color: var(--muted);
+  font-size: 0.725rem;
+}
+
+.category {
+  font-family: var(--font-ui);
+  font-size: 0.725rem;
+  color: var(--muted);
+}
+
+/* ─── Not ranked header ───────────────────────────── */
+.notRankedHeader {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  background: rgba(255, 77, 77, 0.06);
+  border-top: 1px solid rgba(255, 77, 77, 0.18);
+  border-bottom: 1px solid rgba(255, 77, 77, 0.12);
+}
+
+.notRankedHeader span {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--red);
+  opacity: 0.85;
+}
+
+/* ─── Not ranked result ───────────────────────────── */
+.notRankedResult {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 77, 77, 0.035);
+  border-left: 3px solid rgba(255, 77, 77, 0.45);
+  align-items: flex-start;
+}
+
+.notRankedPin {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.notRankedPin span {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--red);
+  opacity: 0.75;
+}
+
+.notRankedName {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(248, 249, 250, 0.4);
+}
+
+.notFoundBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-ui);
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--red);
+}
+
+.notFoundDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+  animation: blink 1.6s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.notRankedSub {
+  font-family: var(--font-ui);
+  font-size: 0.725rem;
+  color: var(--muted);
+  opacity: 0.55;
+}
