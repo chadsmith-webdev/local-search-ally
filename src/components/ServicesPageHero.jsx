@@ -34,7 +34,8 @@ export default function ServicesPageHero() {
           </motion.span>
 
           <motion.h1 variants={fadeUp} className={styles.h1}>
-            Done right, once, <em>by one person who answers the phone.</em>
+            Local SEO &amp; Web Design{" "}
+            <em>for NWA Contractors.</em>
           </motion.h1>
 
           <motion.p variants={fadeUp} className={styles.subhead}>

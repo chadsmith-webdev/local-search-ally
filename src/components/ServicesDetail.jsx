@@ -114,7 +114,7 @@ const SERVICES = [
     label: "Local SEO",
     headline: "Get found when someone in NWA searches your trade",
     hook: "Right now, someone in Rogers or Fayetteville is searching \u201cHVAC repair near me\u201d or \u201cplumber Bentonville\u201d \u2014 and your competitor\u2019s name is showing up instead of yours. That\u2019s a call you didn\u2019t get.",
-    body: "Local SEO is how I fix that. I look at what keywords your customers actually use, make sure your service pages say the right things in the right way, and build the citation and link signals that tell Google you're a real, established business in this area. 46% of Google searches have local intent — and the businesses in the top 3 positions get the overwhelming majority of those clicks.",
+    body: "Local SEO is how I fix that. I look at what keywords your customers actually use, make sure your service pages say the right things in the right way, and build the citation and link signals that tell Google you're a real, established business in this area. 46% of Google searches have local intent — and the top 3 positions capture 54.4% of all clicks.",
     groups: [
       {
         label: "Find",
@@ -171,7 +171,7 @@ const SERVICES = [
     icon: <IconGBP />,
     label: "Google Business Profile",
     headline: "Your Map Pack listing works as hard as your best referral",
-    hook: "51% of local searches end on the Map Pack — the three businesses that show up before organic results. If your profile isn't fully optimized, you're not competing for those spots.",
+    hook: "42% of people searching for a local service click a Map Pack result — one of the three spots that show up above organic results. If your profile isn't fully optimized, you're not competing for those spots.",
     body: "I audit your entire GBP and fix what's wrong. Then I keep it active — posts, photos, Q&A. An active, complete profile tells Google you're a legitimate, operating business. That's what it takes to hold a Map Pack position. If you have no posts since last winter, three photos of your van, and a description that says \"We do all types of plumbing\" — that's a GBP that's working against you.",
     groups: null,
     bullets: [
@@ -195,7 +195,7 @@ const SERVICES = [
     label: "Reputation Management",
     headline: "Reviews are the first thing a new customer checks",
     hook: "A contractor with 12 four-star reviews loses jobs to a competitor with 47, even when the first contractor does better work. The problem isn't the quality of your work. It's that you don't have a simple system for asking.",
-    body: "I build you one. A short, low-friction process you can run yourself — or hand to whoever finishes the job. Most of my clients send their first review request within 48 hours of setup. I also give you response templates so new reviews get acknowledged (Google notices), and I monitor for anything worth a real response.",
+    body: "I build you one. A short, low-friction process you can run yourself — or hand to whoever finishes the job. Simple enough to use after every job without thinking about it. I also give you response templates so new reviews get acknowledged (Google notices), and I monitor for anything worth a real response.",
     groups: null,
     bullets: [
       "Review request process built for trade businesses — post-job timing and messaging",
@@ -205,7 +205,7 @@ const SERVICES = [
       "Monthly monitoring and flagging",
     ],
     outcome:
-      "Most clients add 5–10 new reviews per month within 60 days of setup.",
+      "47% of consumers won't use a business with fewer than 20 reviews. A consistent ask process is how you get there.",
     aside: null,
     cta: "/services/reputation-management",
     ctaLabel: "See how reputation management works",

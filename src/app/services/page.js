@@ -63,9 +63,9 @@ const servicesFaqJsonLd = {
 };
 
 export const metadata = {
-  title: "Services — Local Search Ally | NWA Contractor SEO & Web Design",
+  title: "NWA Contractor SEO & Web Design Services | Local Search Ally",
   description:
-    "Local SEO, web design, Google Business Profile management, and reputation management for NWA home service trades. One person. No handoffs. No long-term contracts.",
+    "Local SEO, web design, Google Business Profile management, and reputation management for NWA home service trades. No handoffs. No long-term contracts.",
   openGraph: {
     title: "Services — Local Search Ally",
     description:
@@ -80,10 +80,30 @@ export const metadata = {
   },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.localsearchally.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://www.localsearchally.com/services",
+    },
+  ],
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://www.localsearchally.com/services#service",
+  dateModified: "2026-05-04",
   name: "Local SEO & Web Design for NWA Contractors",
   description:
     "Local SEO, web design, Google Business Profile optimization, and reputation management for home service trade businesses in Northwest Arkansas.",
@@ -155,6 +175,10 @@ export default function ServicesPage() {
     <>
       <script
         type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <script
@@ -172,7 +196,7 @@ export default function ServicesPage() {
           <>
             Common questions about
             <br />
-            working with Local Search Ally.
+            local SEO for NWA contractors.
           </>
         }
       />

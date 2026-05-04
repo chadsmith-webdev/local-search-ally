@@ -1,10 +1,15 @@
 import { ImageResponse } from "next/og";
 import { getPostBySlug, getAllPosts } from "@/lib/posts";
+import { loadFonts, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og";
 
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+export const runtime = "edge";
+export const size = OG_SIZE;
+export const contentType = OG_CONTENT_TYPE;
 
 const SITE_URL = "https://www.localsearchally.com";
+const CAROLINA = "#7BAFD4";
+const SLATE = "#012169";
+const TEXT = "#f0f0f0";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -15,9 +20,23 @@ export default async function OGImage({ params }) {
   const { slug } = await params;
   const { metadata } = getPostBySlug(slug);
 
-  const featureImage = metadata.image
-    ? `${SITE_URL}${metadata.image}`
-    : null;
+  const featureImage = metadata.image ? `${SITE_URL}${metadata.image}` : null;
+  const fonts = await loadFonts();
+  const displayFont =
+    fonts.length > 0 ? "'Bricolage Grotesque'" : "system-ui, sans-serif";
+  const uiFont =
+    fonts.length > 1 ? "'Space Grotesk'" : "system-ui, sans-serif";
+
+  const imageOptions = { ...OG_SIZE };
+  if (fonts.length > 0) imageOptions.fonts = fonts;
+
+  // Shrink font size for long titles
+  const titleFontSize =
+    metadata.title && metadata.title.length > 80
+      ? "36px"
+      : metadata.title && metadata.title.length > 55
+      ? "42px"
+      : "48px";
 
   return new ImageResponse(
     <div
@@ -30,7 +49,7 @@ export default async function OGImage({ params }) {
         overflow: "hidden",
       }}
     >
-      {/* Feature image */}
+      {/* Feature image background */}
       {featureImage && (
         <img
           src={featureImage}
@@ -45,7 +64,8 @@ export default async function OGImage({ params }) {
           }}
         />
       )}
-      {/* Dark gradient overlay — heavier at bottom for text legibility */}
+
+      {/* Dark gradient overlay — heavier at bottom */}
       <div
         style={{
           position: "absolute",
@@ -55,6 +75,7 @@ export default async function OGImage({ params }) {
           display: "flex",
         }}
       />
+
       {/* Left accent bar */}
       <div
         style={{
@@ -63,10 +84,11 @@ export default async function OGImage({ params }) {
           top: 0,
           width: "8px",
           height: "100%",
-          backgroundColor: "#7BAFD4",
+          backgroundColor: CAROLINA,
           display: "flex",
         }}
       />
+
       {/* Bottom bar */}
       <div
         style={{
@@ -75,10 +97,11 @@ export default async function OGImage({ params }) {
           left: 0,
           width: "100%",
           height: "4px",
-          backgroundColor: "#7BAFD4",
+          backgroundColor: CAROLINA,
           display: "flex",
         }}
       />
+
       {/* Logo — top left */}
       <div
         style={{
@@ -107,7 +130,7 @@ export default async function OGImage({ params }) {
               left: "22px",
               width: "4px",
               height: "11px",
-              backgroundColor: "#f0f0f0",
+              backgroundColor: TEXT,
               display: "flex",
             }}
           />
@@ -117,18 +140,27 @@ export default async function OGImage({ params }) {
               width: "19px",
               height: "19px",
               borderRadius: "50%",
-              backgroundColor: "#7BAFD4",
+              backgroundColor: CAROLINA,
               top: "8px",
               left: "15px",
               display: "flex",
             }}
           />
         </div>
-        <div style={{ display: "flex", color: "#f0f0f0", fontSize: "20px", fontWeight: "800" }}>
-          Local Search{" "}
-          <span style={{ color: "#7BAFD4", marginLeft: "6px" }}>Ally</span>
+        <div
+          style={{
+            display: "flex",
+            color: TEXT,
+            fontFamily: displayFont,
+            fontSize: "20px",
+            fontWeight: 700,
+          }}
+        >
+          Local Search
+          <span style={{ color: CAROLINA, marginLeft: "6px" }}>Ally</span>
         </div>
       </div>
+
       {/* Blog badge — top right */}
       <div
         style={{
@@ -138,9 +170,10 @@ export default async function OGImage({ params }) {
           display: "flex",
           backgroundColor: "rgba(20,20,20,0.75)",
           border: "1px solid rgba(123,175,212,0.4)",
-          color: "#7BAFD4",
+          color: CAROLINA,
+          fontFamily: uiFont,
           fontSize: "14px",
-          fontWeight: "700",
+          fontWeight: 600,
           letterSpacing: "3px",
           padding: "8px 16px",
           borderRadius: "6px",
@@ -148,24 +181,24 @@ export default async function OGImage({ params }) {
       >
         BLOG
       </div>
+
       {/* Post title — bottom */}
       <div
         style={{
           position: "absolute",
           bottom: "72px",
-          left: "80px",
-          right: "80px",
+          left: "88px",
+          right: "88px",
           display: "flex",
-          flexDirection: "column",
-          gap: "16px",
         }}
       >
         <div
           style={{
             display: "flex",
-            color: "#f0f0f0",
-            fontSize: "48px",
-            fontWeight: "800",
+            color: TEXT,
+            fontFamily: displayFont,
+            fontSize: titleFontSize,
+            fontWeight: 700,
             lineHeight: 1.15,
           }}
         >
@@ -173,6 +206,6 @@ export default async function OGImage({ params }) {
         </div>
       </div>
     </div>,
-    { ...size },
+    imageOptions
   );
 }
