@@ -10,19 +10,16 @@ const steps = [
     num: "01",
     title: "Free Audit",
     body: "Run the audit at audit.localsearchally.com. In 90 seconds you get a score, a gap list, and the three things most likely to move your ranking. No email required.",
-    id: "AUDIT_INIT",
   },
   {
     num: "02",
-    title: "We Talk",
-    body: "If the audit shows I can help, we schedule a 30-minute call. I tell you exactly what I\u2019d fix, in what order, and what it costs. No pitch, no pressure.",
-    id: "CONSULT_CALL",
+    title: "A Quick Call",
+    body: "If the audit shows I can help, I schedule a 30-minute call. I tell you exactly what I\u2019d fix, in what order, and what it costs. No pitch, no pressure.",
   },
   {
     num: "03",
     title: "I Get to Work",
-    body: "Month-to-month. You get a clear progress report every 30 days — rankings, GBP call clicks, and what I did that month. You can stop any time. Most clients don\u2019t.",
-    id: "EXECUTION",
+    body: "Month-to-month. You get a clear progress report every 30 days \u2014 rankings, GBP call clicks, and what I did that month. You can stop any time. Most clients don\u2019t.",
   },
 ];
 
@@ -34,7 +31,7 @@ export default function ProcessSection() {
     <section className={styles.section} ref={ref} id='how-it-works'>
       <div className={styles.inner}>
         <div className={styles.header}>
-          <span className={styles.sectionTag}>ENGAGEMENT_PROTOCOL</span>
+          <span className={styles.sectionTag}>HOW IT WORKS</span>
           <h2 className={styles.h2}>Three steps. No lock-in.</h2>
         </div>
 
@@ -54,7 +51,6 @@ export default function ProcessSection() {
                 <span className={styles.stepNum}>{step.num}</span>
                 <div className={styles.nodePulse} aria-hidden='true' />
               </div>
-              <div className={styles.stepId}>{step.id}</div>
               <h3 className={styles.stepTitle}>{step.title}</h3>
               <p className={styles.stepBody}>{step.body}</p>
             </motion.div>

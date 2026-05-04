@@ -12,7 +12,7 @@ const services = [
     description:
       "Complete profile buildout, category selection, photo strategy, weekly posting, and review response management.",
     outcome: "Get into the Map Pack and stay there.",
-    href: "/services/google-business-profile",
+    href: "/services/gbp-optimization",
   },
   {
     id: "CITATION_BUILD",
@@ -47,7 +47,11 @@ const containerVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
 };
 
 export default function ServicesSection() {
@@ -58,7 +62,7 @@ export default function ServicesSection() {
     <section className={styles.section} ref={ref} id='services'>
       <div className={styles.inner}>
         <div className={styles.header}>
-          <span className={styles.sectionTag}>SERVICE_MODULES</span>
+          <span className={styles.sectionTag}>HOW I FIX IT</span>
           <h2 className={styles.h2}>What I actually do</h2>
           <p className={styles.lead}>
             Each service targets a specific failure point. Together they close
@@ -73,14 +77,29 @@ export default function ServicesSection() {
           animate={inView ? "visible" : "hidden"}
         >
           {services.map((svc) => (
-            <motion.div key={svc.id} className={styles.card} variants={cardVariants}>
+            <motion.div
+              key={svc.id}
+              className={styles.card}
+              variants={cardVariants}
+            >
               {/* HUD corner brackets */}
-              <span className={`${styles.corner} ${styles.tl}`} aria-hidden='true' />
-              <span className={`${styles.corner} ${styles.tr}`} aria-hidden='true' />
-              <span className={`${styles.corner} ${styles.bl}`} aria-hidden='true' />
-              <span className={`${styles.corner} ${styles.br}`} aria-hidden='true' />
+              <span
+                className={`${styles.corner} ${styles.tl}`}
+                aria-hidden='true'
+              />
+              <span
+                className={`${styles.corner} ${styles.tr}`}
+                aria-hidden='true'
+              />
+              <span
+                className={`${styles.corner} ${styles.bl}`}
+                aria-hidden='true'
+              />
+              <span
+                className={`${styles.corner} ${styles.br}`}
+                aria-hidden='true'
+              />
 
-              <div className={styles.cardId}>{svc.id}</div>
               <h3 className={styles.cardName}>{svc.name}</h3>
               <p className={styles.cardDesc}>{svc.description}</p>
               <div className={styles.cardOutcome}>
@@ -96,7 +115,8 @@ export default function ServicesSection() {
 
         <div className={styles.footer}>
           <p className={styles.pricing}>
-            Starting at <strong>$497/month</strong> · No setup fees · No contracts
+            Starting at <strong>$497/month</strong> · No setup fees · No
+            contracts
           </p>
           <Link href='/services' className={styles.allServices}>
             See all services and pricing →
