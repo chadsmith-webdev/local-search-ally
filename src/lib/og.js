@@ -24,48 +24,23 @@ const MUTED = "#555555";
 
 export async function loadFonts() {
   try {
-    // IE6 UA — predates WOFF, so Google Fonts returns TTF which Satori supports
-    const UA = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)";
-
-    const [displayCss, uiCss] = await Promise.all([
-      fetch(
-        "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&display=swap",
-        { headers: { "User-Agent": UA } },
-      ).then((r) => r.text()),
-      fetch(
-        "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap",
-        { headers: { "User-Agent": UA } },
-      ).then((r) => r.text()),
-    ]);
-
-    // Get the last src url match — the Latin subset
-    const displayUrls = [...displayCss.matchAll(/src:\s*url\(([^)]+)\)/g)];
-    const uiUrls = [...uiCss.matchAll(/src:\s*url\(([^)]+)\)/g)];
-    const displayUrl = displayUrls[displayUrls.length - 1]?.[1];
-    const uiUrl = uiUrls[uiUrls.length - 1]?.[1];
+    const base = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
     const [displayData, uiData] = await Promise.all([
-      displayUrl ? fetch(displayUrl).then((r) => r.arrayBuffer()) : null,
-      uiUrl ? fetch(uiUrl).then((r) => r.arrayBuffer()) : null,
+      fetch(
+        `${base}/fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf`,
+      ).then((r) => r.arrayBuffer()),
+      fetch(`${base}/fonts/SpaceGrotesk-VariableFont_wght.ttf`).then((r) =>
+        r.arrayBuffer(),
+      ),
     ]);
 
-    const fonts = [];
-    if (displayData)
-      fonts.push({
-        name: "Bricolage Grotesque",
-        data: displayData,
-        style: "normal",
-        weight: 700,
-      });
-    if (uiData)
-      fonts.push({
-        name: "Space Grotesk",
-        data: uiData,
-        style: "normal",
-        weight: 600,
-      });
-
-    return fonts;
+    return [
+      { name: "Bricolage Grotesque", data: displayData, style: "normal", weight: 700 },
+      { name: "Space Grotesk", data: uiData, style: "normal", weight: 600 },
+    ];
   } catch {
     return [];
   }
