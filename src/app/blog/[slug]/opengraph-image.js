@@ -2,7 +2,6 @@ import { ImageResponse } from "next/og";
 import { getPostBySlug, getAllPosts } from "@/lib/posts";
 import { loadFonts, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og";
 
-export const runtime = "edge";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 
@@ -24,8 +23,7 @@ export default async function OGImage({ params }) {
   const fonts = await loadFonts();
   const displayFont =
     fonts.length > 0 ? "'Bricolage Grotesque'" : "system-ui, sans-serif";
-  const uiFont =
-    fonts.length > 1 ? "'Space Grotesk'" : "system-ui, sans-serif";
+  const uiFont = fonts.length > 1 ? "'Space Grotesk'" : "system-ui, sans-serif";
 
   const imageOptions = { ...OG_SIZE };
   if (fonts.length > 0) imageOptions.fonts = fonts;
@@ -35,8 +33,8 @@ export default async function OGImage({ params }) {
     metadata.title && metadata.title.length > 80
       ? "36px"
       : metadata.title && metadata.title.length > 55
-      ? "42px"
-      : "48px";
+        ? "42px"
+        : "48px";
 
   return new ImageResponse(
     <div
@@ -206,6 +204,6 @@ export default async function OGImage({ params }) {
         </div>
       </div>
     </div>,
-    imageOptions
+    imageOptions,
   );
 }
