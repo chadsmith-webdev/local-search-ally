@@ -28,13 +28,16 @@ export function loadFonts() {
   try {
     const fontsDir = join(process.cwd(), "public/fonts");
     const displayData = readFileSync(
-      join(fontsDir, "BricolageGrotesque_24pt_Condensed-Bold.ttf"),
+      join(fontsDir, "BricolageGrotesque-Bold.ttf"),
     );
-    const uiData = readFileSync(
-      join(fontsDir, "SpaceGrotesk-Bold.ttf"),
-    );
+    const uiData = readFileSync(join(fontsDir, "SpaceGrotesk-Bold.ttf"));
     return [
-      { name: "Bricolage Grotesque", data: displayData, style: "normal", weight: 700 },
+      {
+        name: "Bricolage Grotesque",
+        data: displayData,
+        style: "normal",
+        weight: 700,
+      },
       { name: "Space Grotesk", data: uiData, style: "normal", weight: 700 },
     ];
   } catch {
