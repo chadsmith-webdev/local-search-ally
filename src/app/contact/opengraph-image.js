@@ -1,6 +1,5 @@
 import { buildOGImage, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og";
 
-export const runtime = "edge";
 export const alt = "Contact Local Search Ally — Start a Free Conversation";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;

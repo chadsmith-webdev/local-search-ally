@@ -12,6 +12,8 @@
  */
 
 import { ImageResponse } from "next/og";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 export const OG_SIZE = { width: 1200, height: 630 };
 export const OG_CONTENT_TYPE = "image/png";
@@ -22,21 +24,15 @@ const BG = "#0a0a0a";
 const TEXT = "#f0f0f0";
 const MUTED = "#555555";
 
-export async function loadFonts() {
+export function loadFonts() {
   try {
-    const base = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-
-    const [displayData, uiData] = await Promise.all([
-      fetch(
-        `${base}/fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf`,
-      ).then((r) => r.arrayBuffer()),
-      fetch(`${base}/fonts/SpaceGrotesk-VariableFont_wght.ttf`).then((r) =>
-        r.arrayBuffer(),
-      ),
-    ]);
-
+    const fontsDir = join(process.cwd(), "public/fonts");
+    const displayData = readFileSync(
+      join(fontsDir, "BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf"),
+    );
+    const uiData = readFileSync(
+      join(fontsDir, "SpaceGrotesk-VariableFont_wght.ttf"),
+    );
     return [
       { name: "Bricolage Grotesque", data: displayData, style: "normal", weight: 700 },
       { name: "Space Grotesk", data: uiData, style: "normal", weight: 600 },
@@ -54,7 +50,7 @@ export async function buildOGImage({
   eyebrow,
   cta,
 }) {
-  const fonts = await loadFonts();
+  const fonts = loadFonts();
   const displayFont =
     fonts.length > 0 ? "'Bricolage Grotesque'" : "system-ui, sans-serif";
   const uiFont = fonts.length > 1 ? "'Space Grotesk'" : "system-ui, sans-serif";

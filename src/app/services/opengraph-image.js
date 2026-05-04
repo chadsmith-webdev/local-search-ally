@@ -1,6 +1,5 @@
 import { buildOGImage, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og";
 
-export const runtime = "edge";
 export const alt =
   "Local Search Ally Services — Local SEO and web development for NWA contractors";
 export const size = OG_SIZE;
