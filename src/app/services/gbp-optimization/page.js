@@ -8,7 +8,7 @@ import GbpFAQ from "@/components/GbpComponents/FAQ";
 import FinalCTA from "@/components/FinalCTASection";
 
 export const metadata = {
-  title: "Google Business Profile Optimization | NWA | Local Search Ally",
+  title: "Google Business Profile Optimization for NWA Contractors",
   description:
     "Get into the Google Map Pack with expert GBP optimization. Complete profile optimization, photo strategy, and review management for NWA contractors.",
   openGraph: {
@@ -67,22 +67,40 @@ const faqSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://www.localsearchally.com/services/gbp-optimization#service",
   name: "Google Business Profile Optimization",
   description:
     "Expert GBP optimization to get into the Google Map Pack. Includes photo strategy, review management, and profile optimization.",
+  serviceType: "Google Business Profile Optimization",
+  dateModified: "2026-05-04",
   areaServed: [
-    "Rogers, AR",
-    "Bentonville, AR",
-    "Fayetteville, AR",
-    "Springdale, AR",
-    "Siloam Springs, AR",
+    {
+      "@type": "City",
+      name: "Siloam Springs",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Rogers",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Bentonville",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Fayetteville",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Springdale",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
   ],
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Local Search Ally",
-    url: "https://www.localsearchally.com",
-    telephone: "+14793808626",
-  },
+  provider: { "@id": "https://www.localsearchally.com/#localbusiness" },
 };
 
 const breadcrumbSchema = {

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./FAQ.module.css";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -28,7 +28,7 @@ export default function FAQ() {
     {
       question: "How long until I see results from GBP optimization?",
       answer:
-        "Changes typically appear in Google within 1–2 weeks. Ranking improvements in the Map Pack usually take 30–90 days, as Google measures consistency and builds confidence in your profile over time. Most of my clients see measurable movement in map visibility within 60 days. Markets with less competition can move faster.",
+        "Changes typically appear in Google within 1–2 weeks. Ranking improvements in the Map Pack usually take 30–90 days, as Google measures consistency and builds confidence in your profile over time. Markets with less competition move faster; heavily contested trades take longer.",
     },
     {
       question: "Do reviews really affect my rankings?",
@@ -38,7 +38,7 @@ export default function FAQ() {
     {
       question: "Will this guarantee I get into the Map Pack?",
       answer:
-        "No. I won't guarantee specific rankings — anyone who does is selling you something. What I guarantee is transparency: you'll see every change made, why it was made, and how it's performing. I focus on the factors Google weighs most heavily. If results aren't moving, I'll tell you directly and we'll adjust. You'll never wonder what's happening with your profile.",
+        "No. I won't guarantee specific rankings — anyone who does is selling you something. What I guarantee is transparency: you'll see every change made, why it was made, and how it's performing. I focus on the factors Google weighs most heavily. If results aren't moving, I'll tell you directly and I'll adjust. You'll never wonder what's happening with your profile.",
     },
   ];
 
@@ -67,7 +67,7 @@ export default function FAQ() {
           variants={fadeUp}
         >
           <span className={styles.eyebrow}>Questions</span>
-          <h2 className={styles.heading}>Common Questions</h2>
+          <h2 className={styles.heading}>GBP Optimization Questions for NWA Contractors</h2>
           <p className={styles.intro}>
             Everything you need to know about Google Business Profile
             optimization for home service contractors in Northwest Arkansas.
@@ -124,33 +124,33 @@ export default function FAQ() {
                   </span>
                 </button>
 
-                <AnimatePresence>
-                  {openIndex === index &&
-                    (shouldReduceMotion ? (
-                      <div
-                        id={`faq-panel-${id}`}
-                        role='region'
-                        aria-labelledby={`faq-header-${id}`}
-                        className={styles.answer}
-                      >
-                        <p>{faq.answer}</p>
-                      </div>
-                    ) : (
-                      <motion.div
-                        id={`faq-panel-${id}`}
-                        role='region'
-                        aria-labelledby={`faq-header-${id}`}
-                        initial={{ opacity: 0, scaleY: 0 }}
-                        animate={{ opacity: 1, scaleY: 1 }}
-                        exit={{ opacity: 0, scaleY: 0 }}
-                        transition={{ duration: 0.22, ease: "easeOut" }}
-                        style={{ transformOrigin: "top" }}
-                        className={styles.answer}
-                      >
-                        <p>{faq.answer}</p>
-                      </motion.div>
-                    ))}
-                </AnimatePresence>
+                {shouldReduceMotion ? (
+                  <div
+                    id={`faq-panel-${id}`}
+                    role='region'
+                    aria-labelledby={`faq-header-${id}`}
+                    className={styles.answer}
+                    style={openIndex !== index ? { display: "none" } : undefined}
+                  >
+                    <p>{faq.answer}</p>
+                  </div>
+                ) : (
+                  <motion.div
+                    id={`faq-panel-${id}`}
+                    role='region'
+                    aria-labelledby={`faq-header-${id}`}
+                    className={styles.answer}
+                    initial={false}
+                    animate={openIndex === index ? "open" : "closed"}
+                    variants={{
+                      open: { height: "auto", opacity: 1 },
+                      closed: { height: 0, opacity: 0 },
+                    }}
+                    transition={{ duration: 0.22, ease: "easeOut" }}
+                  >
+                    <p>{faq.answer}</p>
+                  </motion.div>
+                )}
               </motion.div>
             );
           })}

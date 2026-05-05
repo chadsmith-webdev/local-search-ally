@@ -19,8 +19,8 @@ export default function GbpHero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.heading}>
-            Show Up First on{" "}
-            <span className={styles.colorSpan}>Google Maps</span>
+            GBP Optimization for{" "}
+            <span className={styles.colorSpan}>NWA Contractors</span>
           </h1>
           <LazyMotion features={domAnimation}>
             <m.div initial='hidden' animate='visible'>
@@ -36,7 +36,7 @@ export default function GbpHero() {
                 Transparent process. No contracts.
               </m.p>
               <m.a
-                href='#contact'
+                href='#get-started'
                 className={styles.cta}
                 variants={fadeUp}
                 custom={2}

@@ -21,7 +21,7 @@ export default function Solution() {
             variants={fadeUp}
           >
             <span className={styles.eyebrow}>The Fix</span>
-            <h2 className={styles.heading}>Here’s How I Fix It</h2>
+            <h2 className={styles.heading}>How GBP Optimization Works for NWA Contractors</h2>
             <p className={styles.intro}>
               I audit every part of your Google Business Profile against
               Google’s ranking factors, then fix what’s holding you back —
@@ -54,7 +54,7 @@ export default function Solution() {
           variants={fadeUp}
           className={styles.what}
         >
-          <h3>What I Actually Optimize</h3>
+          <h3>What GBP Optimization Actually Includes</h3>
           <div className={styles.whatGrid}>
             <div className={styles.whatItem}>
               <h4>1. Profile Completeness &amp; Accuracy</h4>

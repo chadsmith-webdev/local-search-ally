@@ -192,17 +192,17 @@ export default function Problem() {
             aria-label='Local search statistic'
           >
             <div className={styles.statHighlight} aria-hidden='true'>
-              <div className={styles.statNumber}>51%</div>
+              <div className={styles.statNumber}>97%</div>
               <div className={styles.statLabel}>
-                of consumers use Google Maps for local search
+                of consumers use Google to evaluate local businesses
               </div>
             </div>
             <p>
-              More than half the people looking for your service are using
-              Google Maps — not the website results. If your profile is weak,
-              you're invisible to more than half your potential customers.
+              Nearly every person searching for your service checks Google
+              before they call. If your profile is incomplete, out of date, or
+              buried in results, you're invisible to almost all of them.
             </p>
-            <p className={styles.source}>Backlinko, "Local SEO Statistics"</p>
+            <p className={styles.source}>BrightLocal, "Local Consumer Review Survey"</p>
           </motion.div>
         </div>
       </div>

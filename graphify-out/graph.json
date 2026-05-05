@@ -6550,7 +6550,7 @@
       "label": "CitationBuildingPage()",
       "file_type": "code",
       "source_file": "src/app/services/citation-building/page.js",
-      "source_location": "L149",
+      "source_location": "L150",
       "id": "citation_building_page_citationbuildingpage",
       "community": 79,
       "norm_label": "citationbuildingpage()"
@@ -21932,7 +21932,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/services/citation-building/page.js",
-      "source_location": "L149",
+      "source_location": "L150",
       "weight": 1.0,
       "_src": "src_app_services_citation_building_page_js",
       "_tgt": "citation_building_page_citationbuildingpage",
