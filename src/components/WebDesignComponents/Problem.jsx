@@ -63,7 +63,7 @@ export default function Problem() {
                 </svg>
               </div>
               <h3>Slow and Outdated</h3>
-              <p>A site that takes 5+ seconds to load loses over half its visitors. Google penalizes slow pages in search rankings. If your site was built years ago and hasn't been touched, it's hurting you.</p>
+              <p>Google's own data shows 53% of mobile visitors abandon a site that takes more than 3 seconds to load — before they ever see your phone number. Slow sites get buried in rankings too.</p>
             </motion.div>
 
             <motion.div variants={fadeUp} className={styles.problem} tabIndex={0} role="group" aria-label="Not mobile-friendly">

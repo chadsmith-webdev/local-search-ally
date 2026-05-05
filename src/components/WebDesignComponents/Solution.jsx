@@ -20,7 +20,7 @@ export default function Solution() {
           className={styles.header}
         >
           <span className={styles.eyebrow}>The Fix</span>
-          <h2 className={styles.heading} id="solution-heading">A Website Built to Convert — Not Just Look Good</h2>
+          <h2 className={styles.heading} id="solution-heading">How Web Design Works for NWA Contractors</h2>
         </motion.div>
 
         <div className={styles.grid}>

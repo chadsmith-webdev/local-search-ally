@@ -8,9 +8,9 @@ import WebDesignFAQ from "@/components/WebDesignComponents/FAQ";
 import FinalCTA from "@/components/FinalCTASection";
 
 export const metadata = {
-  title: "Contractor Website Design & Development | NWA | Local Search Ally",
+  title: "Contractor Website Design for NWA | Local Search Ally",
   description:
-    "Custom website design built for lead generation, not vanity. Mobile-optimized, SEO-ready, and designed to convert. No templates. Direct phone calls and booking forms.",
+    "Custom website design built for lead generation, not vanity. Mobile-first, SEO-ready, and built to convert. No templates. No contracts.",
   openGraph: {
     title: "Contractor Website Design Built for Leads",
     description:
@@ -77,24 +77,40 @@ const faqSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://www.localsearchally.com/services/web-design#service",
   name: "Custom Website Design for Contractors",
   description:
     "Custom-built contractor websites optimized for lead generation, mobile, and local SEO. No templates. Built on Next.js with fast load times.",
   serviceType: "Web Design & Development",
+  dateModified: "2026-05-05",
   areaServed: [
-    "Siloam Springs, AR",
-    "Rogers, AR",
-    "Bentonville, AR",
-    "Fayetteville, AR",
-    "Springdale, AR",
-    "Northwest Arkansas",
+    {
+      "@type": "City",
+      name: "Siloam Springs",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Rogers",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Bentonville",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Fayetteville",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Springdale",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
   ],
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Local Search Ally",
-    url: "https://www.localsearchally.com",
-    telephone: "+14793808626",
-  },
+  provider: { "@id": "https://www.localsearchally.com/#localbusiness" },
 };
 
 // Breadcrumb Schema

@@ -19,8 +19,8 @@ export default function WebDesignHero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.heading}>
-            A Website That{" "}
-            <span className={styles.colorSpan}>Gets the Phone to Ring</span>
+            Web Design for{" "}
+            <span className={styles.colorSpan}>NWA Contractors</span>
           </h1>
           <LazyMotion features={domAnimation}>
             <m.div initial='hidden' animate='visible'>
@@ -36,7 +36,7 @@ export default function WebDesignHero() {
                 from day one. No templates. No contracts.
               </m.p>
               <m.a
-                href='#contact'
+                href='#get-started'
                 className={styles.cta}
                 variants={fadeUp}
                 custom={2}
