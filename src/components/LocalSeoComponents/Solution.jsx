@@ -22,7 +22,7 @@ export default function Solution() {
             variants={fadeUp}
           >
             <span className={styles.eyebrow}>The Strategy</span>
-            <h2 className={styles.heading}>Here's How I Fix It</h2>
+            <h2 className={styles.heading}>How Local SEO Works for NWA Contractors</h2>
             <p className={styles.intro}>
               I use a proven 3-step process focused on what actually moves
               rankings on Google: your Google Business Profile, local
@@ -54,7 +54,7 @@ export default function Solution() {
           variants={fadeUp}
           className={styles.what}
         >
-          <h3>What I Actually Do</h3>
+          <h3>What the Work Actually Includes</h3>
           <div className={styles.whatGrid}>
             <div className={styles.whatItem}>
               <h4>1. Optimize Your Google Business Profile</h4>

@@ -8,10 +8,9 @@ import FAQ from "@/components/LocalSeoComponents/FAQ";
 import FinalCTA from "@/components/FinalCTASection";
 
 export const metadata = {
-  title:
-    "Local SEO for NWA Contractors | Google Rankings & Map Pack Visibility",
+  title: "Local SEO for NWA Contractors | Map Pack Visibility",
   description:
-    "Get found by homeowners searching on Google. I optimize your local visibility, Google Business Profile, and rankings in the map pack. No contracts. Transparent process.",
+    "Get found by homeowners searching on Google. I optimize your Google Business Profile, local citations, and rankings in the Map Pack. No contracts.",
   openGraph: {
     title: "Local SEO for NWA Contractors | Get into the Google Map Pack",
     description:
@@ -44,7 +43,7 @@ const faqSchema = {
       name: "How long does it take to rank in the Google Map Pack?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Map Pack visibility typically improves within 30-90 days with consistent optimization. The timeline depends on how competitive your market is, how optimized your Google Business Profile currently is, and the strength of your local citations. I focus on the highest-impact factors first: verifying and optimizing your GBP, building citations in the right directories, and improving your on-page SEO for local keywords. Most of my clients see movement in search visibility within the first 60 days.",
+        text: "Map Pack visibility typically improves within 30–90 days with consistent optimization. Timeline depends on how competitive your trade is in your city, how complete your GBP currently is, and the state of your local citations. I prioritize highest-impact factors first: GBP optimization, citation building, and on-page SEO for your service pages.",
       },
     },
     {
@@ -86,10 +85,12 @@ const faqSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://www.localsearchally.com/services/local-seo#service",
   name: "Local SEO for Contractors",
   description:
     "Local SEO optimization for home service contractors in Northwest Arkansas. Includes Google Business Profile optimization, local citation building, on-page SEO, and monthly reporting.",
   serviceType: "Search Engine Optimization",
+  dateModified: "2026-05-04",
   areaServed: [
     {
       "@type": "City",
@@ -117,19 +118,7 @@ const serviceSchema = {
       containedInPlace: { "@type": "State", name: "Arkansas" },
     },
   ],
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Local Search Ally",
-    url: "https://www.localsearchally.com",
-    telephone: "+14793808626",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Siloam Springs",
-      addressRegion: "AR",
-      postalCode: "72761",
-      addressCountry: "US",
-    },
-  },
+  provider: { "@id": "https://www.localsearchally.com/#localbusiness" },
 };
 
 // Breadcrumb Schema

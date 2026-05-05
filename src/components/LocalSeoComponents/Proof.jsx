@@ -23,7 +23,7 @@ export default function Proof() {
           variants={fadeUp}
         >
           <span className={styles.eyebrow}>The Mechanics</span>
-          <h2 className={styles.heading}>The Mechanism of Visibility</h2>
+          <h2 className={styles.heading}>The Mechanics of Local SEO Visibility</h2>
           <p className={styles.intro}>
             Visibility isn't random. It's the result of three specific engineering
             blocks working in sync to power your business into the Map Pack.
@@ -86,7 +86,7 @@ export default function Proof() {
                 <div className={styles.hubContent}>
                   <span className={styles.hubTag}>TARGET_DESTINATION</span>
                   <div className={styles.hubTitle}>GOOGLE MAP PACK</div>
-                  <div className={styles.hubStatus}>DOMINANCE_ACHIEVED</div>
+                  <div className={styles.hubStatus}>VISIBILITY_ACHIEVED</div>
                 </div>
               </div>
             </div>

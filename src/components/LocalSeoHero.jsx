@@ -19,7 +19,8 @@ export default function LocalSeoHero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.heading}>
-            Get Found on <span className={styles.colorSpan}>Google</span>
+            Local SEO for{" "}
+            <span className={styles.colorSpan}>NWA Contractors</span>
           </h1>
           <m.div initial='hidden' animate='visible'>
               <m.p className={styles.subheading} variants={fadeUp} custom={0}>

@@ -52,7 +52,7 @@ export default function FinalCTASection() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
         >
           <Link
-            href={process.env.NEXT_PUBLIC_AUDIT_URL}
+            href={process.env.NEXT_PUBLIC_AUDIT_URL || "https://audit.localsearchally.com"}
             className={styles.btnPrimary}
           >
             Run Your Free Audit →

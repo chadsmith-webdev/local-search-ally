@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./FAQ.module.css";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -18,7 +18,7 @@ export default function FAQ() {
     {
       question: "How long does it take to rank in the Google Map Pack?",
       answer:
-        "Map Pack visibility typically improves within 30-90 days with consistent optimization. Timeline depends on market competitiveness, current GBP optimization, and local citation strength. I prioritize highest-impact factors first: GBP optimization, citation building, and on-page SEO. Most clients see movement in search visibility within 60 days.",
+        "Map Pack visibility typically improves within 30–90 days with consistent optimization. Timeline depends on how competitive your trade is in your city, how complete your GBP currently is, and the state of your local citations. I prioritize highest-impact factors first: GBP optimization, citation building, and on-page SEO for your service pages.",
     },
     {
       question: "What is a Google Business Profile and why is it critical?",
@@ -38,7 +38,7 @@ export default function FAQ() {
     {
       question: "Will this guarantee I rank #1?",
       answer:
-        "No. Anyone promising guaranteed #1 rankings is selling false hope. What I guarantee is transparency: I'll show exactly what I'm doing, why, and how it's performing. I focus on factors that actually move rankings (GBP, citations, on-page relevance, reviews). If something isn't working, I'll tell you and we'll adjust. You'll never wonder what's happening.",
+        "No. Anyone promising guaranteed #1 rankings is selling false hope. What I guarantee is transparency: I'll show exactly what I'm doing, why, and how it's performing. I focus on factors that actually move rankings (GBP, citations, on-page relevance, reviews). If something isn't working, I'll tell you and I'll adjust. You'll never wonder what's happening.",
     },
   ];
 
@@ -67,7 +67,7 @@ export default function FAQ() {
           variants={fadeUp}
         >
           <span className={styles.eyebrow}>Questions</span>
-          <h2 className={styles.heading}>Common Questions</h2>
+          <h2 className={styles.heading}>Local SEO Questions for NWA Contractors</h2>
           <p className={styles.intro}>
             Everything you need to know about local SEO and how I approach it
             for contractors in Northwest Arkansas.
@@ -124,33 +124,33 @@ export default function FAQ() {
                   </span>
                 </button>
 
-                <AnimatePresence>
-                  {openIndex === index &&
-                    (shouldReduceMotion ? (
-                      <div
-                        id={`faq-panel-${id}`}
-                        role='region'
-                        aria-labelledby={`faq-header-${id}`}
-                        className={styles.answer}
-                      >
-                        <p>{faq.answer}</p>
-                      </div>
-                    ) : (
-                      <motion.div
-                        id={`faq-panel-${id}`}
-                        role='region'
-                        aria-labelledby={`faq-header-${id}`}
-                        initial={{ opacity: 0, scaleY: 0 }}
-                        animate={{ opacity: 1, scaleY: 1 }}
-                        exit={{ opacity: 0, scaleY: 0 }}
-                        transition={{ duration: 0.22, ease: "easeOut" }}
-                        style={{ transformOrigin: "top" }}
-                        className={styles.answer}
-                      >
-                        <p>{faq.answer}</p>
-                      </motion.div>
-                    ))}
-                </AnimatePresence>
+                {shouldReduceMotion ? (
+                  <div
+                    id={`faq-panel-${id}`}
+                    role='region'
+                    aria-labelledby={`faq-header-${id}`}
+                    className={styles.answer}
+                    style={openIndex !== index ? { display: "none" } : undefined}
+                  >
+                    <p>{faq.answer}</p>
+                  </div>
+                ) : (
+                  <motion.div
+                    id={`faq-panel-${id}`}
+                    role='region'
+                    aria-labelledby={`faq-header-${id}`}
+                    className={styles.answer}
+                    initial={false}
+                    animate={openIndex === index ? "open" : "closed"}
+                    variants={{
+                      open: { height: "auto", opacity: 1 },
+                      closed: { height: 0, opacity: 0 },
+                    }}
+                    transition={{ duration: 0.22, ease: "easeOut" }}
+                  >
+                    <p>{faq.answer}</p>
+                  </motion.div>
+                )}
               </motion.div>
             );
           })}
