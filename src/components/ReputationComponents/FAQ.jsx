@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import styles from "./FAQ.module.css";
 
 const FAQS = [
@@ -98,24 +98,33 @@ export default function FAQ() {
                   </span>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      id={panelId}
-                      role="region"
-                      aria-labelledby={btnId}
-                      key="panel"
-                      initial={shouldReduceMotion ? { opacity: 0 } : { scaleY: 0, opacity: 0 }}
-                      animate={shouldReduceMotion ? { opacity: 1 } : { scaleY: 1, opacity: 1 }}
-                      exit={shouldReduceMotion ? { opacity: 0 } : { scaleY: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                      style={{ transformOrigin: "top" }}
-                      className={styles.answer}
-                    >
-                      <p>{item.a}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {shouldReduceMotion ? (
+                  <div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={btnId}
+                    className={styles.answer}
+                    style={!isOpen ? { display: "none" } : undefined}
+                  >
+                    <p>{item.a}</p>
+                  </div>
+                ) : (
+                  <motion.div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={btnId}
+                    className={styles.answer}
+                    initial={false}
+                    animate={isOpen ? "open" : "closed"}
+                    variants={{
+                      open: { height: "auto", opacity: 1 },
+                      closed: { height: 0, opacity: 0 },
+                    }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                  >
+                    <p>{item.a}</p>
+                  </motion.div>
+                )}
               </motion.div>
             );
           })}

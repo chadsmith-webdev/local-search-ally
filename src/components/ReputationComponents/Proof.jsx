@@ -87,9 +87,9 @@ export default function Proof() {
           className={styles.stats}
         >
           <motion.div variants={fadeUp} className={styles.statBox}>
-            <span className={styles.statNumber}>88%</span>
-            <p className={styles.statLabel}>of consumers trust online reviews as much as personal recommendations</p>
-            <span className={styles.statSource}>Think With Google</span>
+            <span className={styles.statNumber}>47%</span>
+            <p className={styles.statLabel}>of consumers won't use a business with fewer than 20 reviews</p>
+            <span className={styles.statSource}>BrightLocal 2026</span>
           </motion.div>
           <motion.div variants={fadeUp} className={styles.statBox}>
             <span className={styles.statNumber}>100%</span>

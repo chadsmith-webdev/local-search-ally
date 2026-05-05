@@ -95,9 +95,9 @@ export default function Problem() {
             aria-label='Review trust statistic'
           >
             <div className={styles.statHighlight} aria-hidden='true'>
-              <div className={styles.statNumber}>88%</div>
+              <div className={styles.statNumber}>47%</div>
               <div className={styles.statLabel}>
-                of consumers trust online reviews as much as personal recommendations
+                of consumers won't use a business with fewer than 20 reviews
               </div>
             </div>
             <p>
@@ -105,7 +105,7 @@ export default function Problem() {
               top of the Map Pack have dozens — and they keep coming in.
               The gap isn't quality of work. It's a system for asking.
             </p>
-            <p className={styles.source}>Think With Google</p>
+            <p className={styles.source}>BrightLocal, 2026</p>
           </motion.div>
         </div>
       </div>

@@ -8,7 +8,7 @@ import ReputationFAQ from "@/components/ReputationComponents/FAQ";
 import FinalCTA from "@/components/FinalCTASection";
 
 export const metadata = {
-  title: "Reputation Management for Contractors | NWA | Local Search Ally",
+  title: "Reputation Management for NWA Contractors | Reviews",
   description:
     "Build your online reputation with a proven review strategy. Increase positive reviews, manage responses, and build customer trust. For NWA contractors.",
   openGraph: {
@@ -34,7 +34,7 @@ const faqSchema = {
       name: "Do reviews affect my Google rankings?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Google includes review quantity and rating as ranking factors. More positive reviews and a higher overall rating improve your visibility in the map pack. Reviews also influence customer trust — 46% of consumers read reviews before making a decision.",
+        text: "Yes. Google includes review quantity and rating as ranking factors. More positive reviews and a higher overall rating improve your visibility in the map pack. Reviews also influence customer trust — 47% of consumers won't use a business with fewer than 20 reviews (BrightLocal, 2026).",
       },
     },
     {
@@ -67,22 +67,40 @@ const faqSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://www.localsearchally.com/services/reputation-management#service",
   name: "Reputation Management for Contractors",
   description:
     "Review management and reputation building for contractors. Includes review request strategy and response management.",
+  serviceType: "Online Reputation Management",
+  dateModified: "2026-05-05",
   areaServed: [
-    "Rogers, AR",
-    "Bentonville, AR",
-    "Fayetteville, AR",
-    "Springdale, AR",
-    "Siloam Springs, AR",
+    {
+      "@type": "City",
+      name: "Siloam Springs",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Rogers",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Bentonville",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Fayetteville",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Springdale",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
   ],
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Local Search Ally",
-    url: "https://www.localsearchally.com",
-    telephone: "+14793808626",
-  },
+  provider: { "@id": "https://www.localsearchally.com/#localbusiness" },
 };
 
 const breadcrumbSchema = {

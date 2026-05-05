@@ -19,14 +19,14 @@ export default function ReputationHero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.heading}>
-            Build a Reputation That{" "}
-            <span className={styles.colorSpan}>Wins Jobs</span>
+            Reputation Management for{" "}
+            <span className={styles.colorSpan}>NWA Contractors</span>
           </h1>
           <m.div initial='hidden' animate='visible'>
               <m.p className={styles.subheading} variants={fadeUp} custom={0}>
-                88% of consumers trust online reviews as much as personal
-                recommendations. If you don't have them — or they're thin —
-                you're losing jobs to contractors who do.
+                47% of consumers won't use a business with fewer than 20
+                reviews. If your count is thin, you're invisible to nearly half
+                the homeowners who find your competitors.
               </m.p>
               <m.p className={styles.description} variants={fadeUp} custom={2}>
                 I build a review system that fits your workflow: request
@@ -35,7 +35,7 @@ export default function ReputationHero() {
                 No contracts.
               </m.p>
               <m.a
-                href='#contact'
+                href='#get-started'
                 className={styles.cta}
                 variants={fadeUp}
                 custom={2}
@@ -72,10 +72,10 @@ export default function ReputationHero() {
                   />
                 </svg>
                 <span>
-                  <strong>88%</strong> of consumers trust online reviews as much
-                  as personal recommendations
+                  <strong>47%</strong> of consumers won't use a business with
+                  fewer than 20 reviews
                 </span>
-                <span className={styles.trustSource}>Think With Google</span>
+                <span className={styles.trustSource}>BrightLocal 2026</span>
               </m.div>
               <m.a
                 href='tel:+14793808626'
