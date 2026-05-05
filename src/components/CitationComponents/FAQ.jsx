@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./FAQ.module.css";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -67,7 +67,7 @@ export default function FAQ() {
           variants={fadeUp}
         >
           <span className={styles.eyebrow}>Questions</span>
-          <h2 className={styles.heading}>Common Questions</h2>
+          <h2 className={styles.heading}>Citation Building Questions for NWA Contractors</h2>
           <p className={styles.intro}>
             Everything you need to know about citation building, NAP
             consistency, and how I approach it for contractors in Northwest
@@ -125,33 +125,33 @@ export default function FAQ() {
                   </span>
                 </button>
 
-                <AnimatePresence>
-                  {openIndex === index &&
-                    (shouldReduceMotion ? (
-                      <div
-                        id={`faq-cit-panel-${id}`}
-                        role='region'
-                        aria-labelledby={`faq-cit-header-${id}`}
-                        className={styles.answer}
-                      >
-                        <p>{faq.answer}</p>
-                      </div>
-                    ) : (
-                      <motion.div
-                        id={`faq-cit-panel-${id}`}
-                        role='region'
-                        aria-labelledby={`faq-cit-header-${id}`}
-                        initial={{ opacity: 0, scaleY: 0 }}
-                        animate={{ opacity: 1, scaleY: 1 }}
-                        exit={{ opacity: 0, scaleY: 0 }}
-                        transition={{ duration: 0.22, ease: "easeOut" }}
-                        style={{ transformOrigin: "top" }}
-                        className={styles.answer}
-                      >
-                        <p>{faq.answer}</p>
-                      </motion.div>
-                    ))}
-                </AnimatePresence>
+                {shouldReduceMotion ? (
+                  <div
+                    id={`faq-cit-panel-${id}`}
+                    role='region'
+                    aria-labelledby={`faq-cit-header-${id}`}
+                    className={styles.answer}
+                    style={openIndex !== index ? { display: "none" } : undefined}
+                  >
+                    <p>{faq.answer}</p>
+                  </div>
+                ) : (
+                  <motion.div
+                    id={`faq-cit-panel-${id}`}
+                    role='region'
+                    aria-labelledby={`faq-cit-header-${id}`}
+                    className={styles.answer}
+                    initial={false}
+                    animate={openIndex === index ? "open" : "closed"}
+                    variants={{
+                      open: { height: "auto", opacity: 1 },
+                      closed: { height: 0, opacity: 0 },
+                    }}
+                    transition={{ duration: 0.22, ease: "easeOut" }}
+                  >
+                    <p>{faq.answer}</p>
+                  </motion.div>
+                )}
               </motion.div>
             );
           })}

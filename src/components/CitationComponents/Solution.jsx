@@ -22,7 +22,7 @@ export default function Solution() {
             variants={fadeUp}
           >
             <span className={styles.eyebrow}>The Strategy</span>
-            <h2 className={styles.heading}>Here's How I Fix It</h2>
+            <h2 className={styles.heading}>How Citation Building Works for NWA Contractors</h2>
             <p className={styles.intro}>
               I use a four-step process to find every listing your business has
               online, clean up what's wrong, fill the gaps, and keep it
@@ -55,7 +55,7 @@ export default function Solution() {
           variants={fadeUp}
           className={styles.what}
         >
-          <h3>What I Actually Do</h3>
+          <h3>What Citation Building Actually Includes</h3>
           <div className={styles.whatGrid}>
             <div className={styles.whatItem}>
               <h4>1. Full Citation Audit</h4>

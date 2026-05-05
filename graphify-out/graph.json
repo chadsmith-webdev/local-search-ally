@@ -6694,7 +6694,7 @@
       "label": "LocalSEOPage()",
       "file_type": "code",
       "source_file": "src/app/services/local-seo/page.js",
-      "source_location": "L161",
+      "source_location": "L150",
       "id": "local_seo_page_localseopage",
       "community": 83,
       "norm_label": "localseopage()"
@@ -22076,7 +22076,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/services/local-seo/page.js",
-      "source_location": "L161",
+      "source_location": "L150",
       "weight": 1.0,
       "_src": "src_app_services_local_seo_page_js",
       "_tgt": "local_seo_page_localseopage",

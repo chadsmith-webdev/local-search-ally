@@ -44,7 +44,7 @@ export default function Problem() {
             The Challenge
           </span>
           <h2 className={styles.heading} id='citation-problem-heading'>
-            The Inconsistency Problem
+            The Citation Inconsistency Problem
           </h2>
           <p className={styles.intro}>
             You've been in business for years. But online, your listing looks

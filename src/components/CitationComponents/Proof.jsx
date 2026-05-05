@@ -23,7 +23,7 @@ export default function Proof() {
           variants={fadeUp}
         >
           <span className={styles.eyebrow}>The Mechanics</span>
-          <h2 className={styles.heading}>The Mechanism of Local Trust</h2>
+          <h2 className={styles.heading}>The Mechanics of Citation Building</h2>
           <p className={styles.intro}>
             Trust isn't built overnight. It's built by sending consistent,
             verified signals across the platforms Google uses to confirm your

@@ -19,8 +19,8 @@ export default function CitationHero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.heading}>
-            Google Can't Trust What It Can't{" "}
-            <span className={styles.colorSpan}>Verify</span>
+            Citation Building for{" "}
+            <span className={styles.colorSpan}>NWA Contractors</span>
           </h1>
           <m.div initial='hidden' animate='visible'>
               <m.p className={styles.subheading} variants={fadeUp} custom={0}>
@@ -35,7 +35,7 @@ export default function CitationHero() {
                 going forward. All transparent. All tracked. No contracts.
               </m.p>
               <m.a
-                href='#contact'
+                href='#get-started'
                 className={styles.cta}
                 variants={fadeUp}
                 custom={2}

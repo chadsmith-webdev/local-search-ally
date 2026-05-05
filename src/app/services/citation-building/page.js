@@ -8,10 +8,9 @@ import FAQ from "@/components/CitationComponents/FAQ";
 import FinalCTA from "@/components/FinalCTASection";
 
 export const metadata = {
-  title:
-    "Citation Building & Management for NWA Contractors | NAP Consistency",
+  title: "Citation Building for NWA Contractors | NAP Consistency",
   description:
-    "Inconsistent business listings are silently hurting your local rankings. I audit, clean, and build citations across 50+ directories so Google trusts your business. No contracts. Transparent reporting.",
+    "Inconsistent listings hurt your local rankings. I audit, fix, and build citations across 50+ directories for NWA contractors. No contracts.",
   openGraph: {
     title: "Citation Building & Management for NWA Contractors | Local Search Ally",
     description:
@@ -86,10 +85,12 @@ const faqSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://www.localsearchally.com/services/citation-building#service",
   name: "Citation Building & Management for Contractors",
   description:
     "Citation audit, cleanup, and building for home service contractors in Northwest Arkansas. Includes NAP consistency fixes across 50+ directories, trade-specific platform submissions, and ongoing citation monitoring.",
   serviceType: "Local Citation Building",
+  dateModified: "2026-05-04",
   areaServed: [
     {
       "@type": "City",
