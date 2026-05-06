@@ -1,11 +1,11 @@
 export const serviceAreasLandingContent = {
   metadata: {
     title:
-      "Service Areas | Local SEO for NWA Home Service Trades | Local Search Ally",
+      "NWA Local SEO Service Areas | Local Search Ally",
     description:
-      "Local SEO and web design for home service trades in Siloam Springs, Rogers, Bentonville, Fayetteville, Springdale, Bella Vista, Centerton, Lowell, and Cave Springs.",
+      "Local SEO and web design for NWA home service trades. Siloam Springs, Rogers, Bentonville, Fayetteville, Springdale, Bella Vista, and more.",
     openGraph: {
-      title: "Service Areas | Local Search Ally",
+      title: "Local SEO for NWA Home Service Trades | Service Areas",
       description:
         "Local SEO for home service trades across Northwest Arkansas. See the cities I serve and run a free audit in under 90 seconds.",
       url: "https://www.localsearchally.com/service-areas",
@@ -138,7 +138,7 @@ export const serviceAreasLandingContent = {
     eyebrow: "How It Works",
     h2: "Three steps from invisible to getting calls from search",
     subhead:
-      "The free audit is step zero. It shows you where you actually stand before we talk about anything else.",
+      "The free audit is step zero. It shows you where you actually stand before I recommend anything.",
     steps: [
       {
         num: "01",

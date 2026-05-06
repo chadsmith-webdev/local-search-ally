@@ -6586,7 +6586,7 @@
       "label": "WebDesignPage()",
       "file_type": "code",
       "source_file": "src/app/services/web-design/page.js",
-      "source_location": "L126",
+      "source_location": "L142",
       "id": "web_design_page_webdesignpage",
       "community": 80,
       "norm_label": "webdesignpage()"
@@ -21968,7 +21968,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/services/web-design/page.js",
-      "source_location": "L126",
+      "source_location": "L142",
       "weight": 1.0,
       "_src": "src_app_services_web_design_page_js",
       "_tgt": "web_design_page_webdesignpage",
