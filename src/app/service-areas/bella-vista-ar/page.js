@@ -43,10 +43,9 @@ const citationStats = [
 
 export function generateMetadata() {
   return {
-    title:
-      "Local SEO in Bella Vista, AR for Home Service Trades | Local Search Ally",
+    title: "Local SEO for Bella Vista Trades | Local Search Ally",
     description:
-      "Local SEO and web design for Bella Vista home service trades. I help HVAC, plumbing, roofing, electrical, and remodeling contractors show up in Google Maps and turn searches into booked calls.",
+      "Local SEO for Bella Vista home service trades. Established community, older homes, trust-focused buyers — I help you show up clearly and get called first.",
     alternates: {
       canonical: pageUrl,
     },
@@ -58,6 +57,12 @@ export function generateMetadata() {
       siteName: "Local Search Ally",
       locale: "en_US",
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Local SEO in Bella Vista, AR | Local Search Ally",
+      description:
+        "Bella Vista local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
     },
   };
 }
@@ -85,7 +90,7 @@ const faqItems = [
   {
     question: "What is the first step?",
     answer:
-      "Run the free audit. You get a clear baseline across seven local SEO sections then reach out and we can talk through what makes sense.",
+      "Run the free audit. You get a clear baseline across seven local SEO sections then reach out and I can talk through what makes sense.",
   },
 ];
 
@@ -135,6 +140,31 @@ const faqJsonLd = {
   })),
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.localsearchally.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Service Areas",
+      item: "https://www.localsearchally.com/service-areas",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Bella Vista",
+      item: pageUrl,
+    },
+  ],
+};
+
 export default function BellaVistaServiceAreaPage() {
   return (
     <>
@@ -147,6 +177,10 @@ export default function BellaVistaServiceAreaPage() {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <main className={styles.main}>
         <section className={styles.hero}>
@@ -207,8 +241,8 @@ export default function BellaVistaServiceAreaPage() {
                 <p className={styles.panelLabel}>Bella Vista local brief</p>
                 <h2 className={styles.briefTitle}>
                   Bella Vista homeowners search for trusted contractors. Weak
-                  visibility means losing work to competitors with better online
-                  presence.
+                  visibility means losing work to competitors with stronger
+                  search visibility.
                 </h2>
                 <p className={styles.panelCopy}>
                   Bella Vista is an established, affluent community with homes

@@ -493,6 +493,63 @@ Only use these — never fabricate or invent sources.
 | 30% of consumers say a business's website affects their decision to recommend it        | BrightLocal              |
 | 20% of consumers say a business's website affects their decision to leave a review      | BrightLocal              |
 
+Local SEO Stats
+
+| 97% of consumers read reviews for local businesses | (Local Consumer Review Survey, 2026) |
+| Customers are 70% more likely to visit and 50% more likely to consider purchasing from businesses with a complete Business Profile | (Google) |
+| 62% of consumers would avoid using a business if they found incorrect information online | (Local Business Discovery and Trust Report, 2023) | 
+| 94% of high-performing brands have a dedicated local marketing strategy, compared to 60% of average-performing brands | (Brand Beacon Report, 2024). |
+| 45% of consumers use ChatGPT or other generative AI tools for local business recommendations | (Local Consumer Review Survey, 2026) |
+| 80% of US consumers search online for local businesses on a weekly basis, and 32% search for them daily | (SOCi Consumer Behavior Index, 2024). |
+| Close to half (46%) of consumers said they ‘always’ or ‘often’ add ‘near me’ to their local search queries. | (Consumer Search Behavior, 2025). |
+| Local search queries show the following types of results in Google’s first ten organic results: - Business websites (47%) - Directories (31%) - Business mentions (16%) - Forums and discussions (7%) 
+| (Business Listings Visibility Study, 2024) |
+| 61% of consumers use business information sites (like Google, Yelp, Tripadvisor, Better Business Bureau) to find information about a local business that is new to them or that they have not used before | (Local Business Discovery and Trust Report, 2023). |
+| 72% of consumers use Google to search for local business information, but this drops to 61% for 18-24 year olds | (SOCi Consumer Behavior Index, 2024). |
+| Consumers most trust Google (66%), Google Maps (45%), business websites (36%), Facebook (32%), and Yelp (32%) for local business information | (Local Business Discovery and Trust Report, 2023). |
+| 45% of consumers default to Google for local searches, 15% Google Maps, 8% Safari | (Consumer Search Behavior, 2025). |
+| One in five consumers conduct local searches directly within maps (Google, Apple, and Bing) | (Consumer Search Behavior, 2025). |
+| 42% of searchers click on Google map pack results for local queries | (Backlinko, 2024). |
+| 62% of consumers would avoid using a business if they found incorrect information online | (Local Business Discovery and Trust Report, 2023). |
+| 47% of consumers would look for an alternative business nearby if the one they intended on visiting was closed | (SOCi Consumer Behavior Index, 2024). |
+| Customers are 2.7 times more likely to consider a business reputable if they find a complete Business Profile on Google Search and Maps. |(Google). |
+| Customers are 70% more likely to visit and 50% more likely to consider purchasing from businesses with a complete Business Profile. | (Google). |
+| Only 68% of business contact information on ChatGPT and Perplexity matches details on Google Business Profiles. | (SOCi Local Visibility Index, 2026). |
+| 21% of ChatGPT users switch to Google to verify information after making local searches. | (Sagapixel, How Users Find & Choose Local Services Using ChatGPT). |
+| Google Business Profile factors have the biggest impact on local pack rankings, while on-page factors have the strongest influence on local organic rankings. | (Local Search Ranking Factors, 2025). |
+| According to experts, Local Pack rankings are most influenced by:
+
+- Primary GBP category
+- Proximity of address to the searcher
+- Keywords in the GBP business title |
+  (Local Search Ranking Factors, 2025). |
+  | Local organic rankings are most influenced by:
+- Dedicated pages for each service
+- Geographic keyword relevance of content
+- Quality / authority of inbound links |
+  (Local Search Ranking Factors, 2025). |
+  | 97% of consumers read reviews for local businesses | (Local Consumer Review Survey, 2026). |
+  | 71% of consumers use Google to read local business reviews | (Local Consumer Review Survey, 2026). |
+  | 67% of consumers told us that they ‘often’ or ‘always’ go on to look at business reviews after conducting a local business search. | (Consumer Search Behavior, 2025). |
+
+* 37% of US consumers use Instagram to find local business reviews, and 29% use TikTok as alternative local business review platforms (Local Consumer Review Survey, 2026).
+* 54% of consumers visit a business’s website after reading positive reviews. (Local Consumer Review Survey, 2026).
+* Recommended local businesses have an average of 4.3 stars on ChatGPT, 4.1 on Perplexity, and 3.9 on Gemini. (SOCi Local Visibility Index, 2026).
+* 94% of high-performing brands have a dedicated local marketing strategy, compared to 60% of average-performing brands (Brand Beacon Report, 2024).
+* 86% of local marketers say their clients are aware of how new developments in search could impact their business visibility and rankings (Local Marketing Industry Survey, 2024).
+* Marketers believe the most valuable local SEO services are 1) Google Business Profile management (76%), 2) Content creation (53%), 3) Citation building/cleanup (43%) (Local Marketing Industry Survey, 2024).
+* Despite 89% of SMBs saying they invest in organic SEO, only 40% of them say they have a dedicated business website. (SMB Marketing Report, 2025).
+* Just 35% of SMBs have a Google Business Profile (SMB Marketing Report, 2025).
+* 45% of consumers use ChatGPT or other generative AI tools for local business recommendations (Local Consumer Review Survey, 2026).
+* Visibility in local recommendations by ChatGPT are 30x harder to achieve than ranking in Google’s local search results (SOCi Local Visibility Index, 2026).
+* Less than half of businesses that lead in Google local search results also appear in AI local recommendations (SOCi Local Visibility Index, 2026).
+* ChatGPT Search shows business websites for 58% of its local search sources, followed by business mentions (27%) and online directories (15%) (Uncovering ChatGPT Search Sources, 2024).
+* According to experts, local AI search visibility factors are most influenced by 1) Presence on expert-curated ‘Best Of’ lists, 2) Dedicated pages for each service, 3) Prominence on key industry-relevant domains (Local Search Ranking Factors, 2025).
+* 75% of ChatGPT users use keywords instead of natural language when looking for local services (Sagapixel, How Users Find & Choose Local Services Using ChatGPT).
+* ChatGPT users look at an average of 3.7 local businesses from results. Only 27% looked at just one business (Sagapixel, How Users Find & Choose Local Services Using ChatGPT).
+* When looking for local businesses 39% of ChatGPT users click to visit a business website. (Sagapixel, How Users Find & Choose Local Services Using ChatGPT).
+*
+
 ---
 
 ## Ideal Customer Profile
@@ -525,7 +582,7 @@ outcome promises ("get more calls").
 
 Use this framing everywhere. Do not use older versions.
 
-1. **Audit** — Review local visibility, service pages, and competitor presence
+1. **Audit** — Review local visibility, service pages, competitor presence, and AI
    to find the highest-impact gaps.
 2. **Fix Priority Gaps** — Improve what matters first: local relevance,
    on-page clarity, and lead paths that support calls.
