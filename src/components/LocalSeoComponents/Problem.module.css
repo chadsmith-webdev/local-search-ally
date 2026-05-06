@@ -1,6 +1,6 @@
 .section {
-  padding: var(--space-section, 100px) 0;
-  background: var(--color-bg, #0a0a0a);
+  padding: var(--section-gap, 100px) 0;
+  background: var(--bg, #0a0a0a);
   position: relative;
 }
 
@@ -49,7 +49,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -61,7 +61,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-brand, #7bafd4);
+  background: var(--carolina, #7bafd4);
   opacity: 0.6;
 }
 
@@ -71,14 +71,14 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   margin: 0 0 16px 0;
 }
 
 .intro {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   margin: 0;
 }
 
@@ -125,7 +125,7 @@
   height: 2px;
   background: linear-gradient(
     90deg,
-    var(--color-brand, #7bafd4) 0%,
+    var(--carolina, #7bafd4) 0%,
     transparent 100%
   );
   border-radius: var(--radius-md) var(--radius-md) 0 0;
@@ -150,7 +150,7 @@
   width: 36px;
   height: 36px;
   margin-bottom: 12px;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,7 +165,7 @@
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   margin: 0 0 8px 0;
   letter-spacing: -0.01em;
 }
@@ -173,7 +173,7 @@
 .problem p {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--color-text-muted, #b0b0b0);
+  color: var(--muted, #b0b0b0);
   margin: 0;
 }
 
@@ -199,7 +199,7 @@
   height: 100%;
   background: linear-gradient(
     180deg,
-    var(--color-brand, #7bafd4) 0%,
+    var(--carolina, #7bafd4) 0%,
     transparent 100%
   );
 }
@@ -213,14 +213,14 @@
   font-family: var(--font-mono);
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   line-height: 1;
   margin-bottom: 8px;
 }
 
 .statLabel {
   font-size: 1rem;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   line-height: 1.4;
   font-weight: 500;
 }
@@ -228,7 +228,7 @@
 .statistic p {
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   margin: 0 0 16px 0;
 }
 
@@ -237,12 +237,12 @@
 }
 
 .statistic .source {
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
 }
 
 .source {
   font-size: 0.85rem;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   font-style: italic;
   margin: 0 !important;
 }

@@ -1,6 +1,6 @@
 .section {
   padding: 100px 24px;
-  background: var(--color-bg);
+  background: var(--bg);
 }
 
 .container {
@@ -25,7 +25,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .statusNode {
@@ -42,7 +42,7 @@
   width: 6px;
   height: 6px;
   border-radius: var(--radius-full);
-  background: var(--color-brand);
+  background: var(--carolina);
   animation: pulse 2s ease-in-out infinite;
   display: block;
   flex-shrink: 0;
@@ -57,7 +57,7 @@
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.1em;
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .heading {
@@ -65,14 +65,14 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--text);
   margin-bottom: 16px;
 }
 
 .intro {
   font-family: var(--font-ui);
   font-size: 1.125rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   line-height: 1.7;
   max-width: 600px;
 }
@@ -100,7 +100,7 @@
 .step {
   padding: 28px;
   border-radius: var(--radius-md);
-  background: var(--color-surface);
+  background: var(--surface);
 }
 
 .stepHeader {
@@ -114,7 +114,7 @@
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.12em;
-  color: var(--color-brand);
+  color: var(--carolina);
   background: rgba(123, 175, 212, 0.1);
   border: 1px solid rgba(123, 175, 212, 0.2);
   border-radius: var(--radius-xs);
@@ -126,13 +126,13 @@
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--text);
 }
 
 .stepDesc {
   font-family: var(--font-ui);
   font-size: 0.9375rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   line-height: 1.65;
   margin-bottom: 16px;
 }
@@ -149,7 +149,7 @@
 .stepList li {
   font-family: var(--font-ui);
   font-size: 0.875rem;
-  color: var(--color-text);
+  color: var(--text);
   padding-left: 18px;
   position: relative;
   line-height: 1.5;
@@ -159,13 +159,13 @@
   content: "→";
   position: absolute;
   left: 0;
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .sidebar {
   position: sticky;
   top: 120px;
-  background: var(--color-surface);
+  background: var(--surface);
   border-radius: var(--radius-md);
   padding: 28px;
 }
@@ -176,7 +176,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--muted);
   margin-bottom: 20px;
 }
 
@@ -210,8 +210,8 @@
   width: 12px;
   height: 12px;
   border-radius: var(--radius-full);
-  background: var(--color-brand);
-  border: 2px solid var(--color-surface);
+  background: var(--carolina);
+  border: 2px solid var(--surface);
   flex-shrink: 0;
   margin-top: 3px;
   position: relative;
@@ -223,7 +223,7 @@
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.08em;
-  color: var(--color-brand);
+  color: var(--carolina);
   margin-bottom: 4px;
   text-transform: uppercase;
 }
@@ -231,7 +231,7 @@
 .timelineDesc {
   font-family: var(--font-ui);
   font-size: 0.8125rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   line-height: 1.5;
   margin: 0;
 }

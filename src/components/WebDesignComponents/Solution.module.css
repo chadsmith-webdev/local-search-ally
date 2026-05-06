@@ -1,6 +1,6 @@
 .section {
   padding: 100px 24px;
-  background: var(--color-surface);
+  background: var(--surface);
 }
 
 .container {
@@ -18,7 +18,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -29,7 +29,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-brand, #7bafd4);
+  background: var(--carolina, #7bafd4);
   opacity: 0.6;
 }
 
@@ -38,7 +38,7 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--text);
   max-width: 640px;
 }
 
@@ -63,20 +63,20 @@
 }
 
 .answerFirst {
-  border-left: 3px solid var(--color-brand);
+  border-left: 3px solid var(--carolina);
   padding-left: 20px;
 }
 
 .answerFirst p {
   font-family: var(--font-ui);
   font-size: 1.125rem;
-  color: var(--color-text);
+  color: var(--text);
   line-height: 1.75;
   margin: 0;
 }
 
 .transparency {
-  background: var(--color-bg);
+  background: var(--bg);
   border-radius: var(--radius-md);
   padding: 24px;
 }
@@ -87,7 +87,7 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--muted);
   margin-bottom: 14px;
 }
 
@@ -103,7 +103,7 @@
 .transparencyList li {
   font-family: var(--font-ui);
   font-size: 0.9375rem;
-  color: var(--color-text);
+  color: var(--text);
   padding-left: 20px;
   position: relative;
   line-height: 1.5;
@@ -113,7 +113,7 @@
   content: "×";
   position: absolute;
   left: 0;
-  color: var(--color-status-error, #ff4d4d);
+  color: var(--status-red, #ff4d4d);
   font-weight: 700;
 }
 
@@ -129,7 +129,7 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--muted);
   margin-bottom: 4px;
 }
 
@@ -146,7 +146,7 @@
 }
 
 .whatItem {
-  background: var(--color-bg);
+  background: var(--bg);
   border-radius: var(--radius-md);
   padding: 20px;
   display: flex;
@@ -166,7 +166,7 @@
 .whatIcon {
   width: 28px;
   height: 28px;
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .whatIcon svg {
@@ -178,14 +178,14 @@
   font-family: var(--font-ui);
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--text);
   margin: 0;
 }
 
 .whatItem p {
   font-family: var(--font-ui);
   font-size: 0.875rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   line-height: 1.6;
   margin: 0;
 }

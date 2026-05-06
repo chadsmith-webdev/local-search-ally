@@ -1,8 +1,8 @@
 /* ─── Section shell ──────────────────────────────────────────────────────── */
 .section {
   position: relative;
-  padding: var(--space-section) 0;
-  background: var(--color-surface);
+  padding: var(--section-gap) 0;
+  background: var(--surface);
   overflow: hidden;
 }
 
@@ -62,7 +62,7 @@
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--carolina);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -73,7 +73,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-brand);
+  background: var(--carolina);
   opacity: 0.6;
 }
 
@@ -83,7 +83,7 @@
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--text);
   margin: 0;
 }
 
@@ -91,7 +91,7 @@
   font-family: var(--font-ui);
   font-size: 1.1rem;
   line-height: 1.7;
-  color: var(--color-text-muted);
+  color: var(--muted);
   max-width: 520px;
   margin: 0 auto;
   text-align: center;
@@ -121,7 +121,7 @@
   position: absolute;
   width: 18px;
   height: 18px;
-  border: 1px solid var(--color-brand);
+  border: 1px solid var(--carolina);
   opacity: 0.35;
   pointer-events: none;
   z-index: 2;
@@ -148,7 +148,7 @@
   right: 0;
   width: 18px;
   height: 18px;
-  border: 1px solid var(--color-brand);
+  border: 1px solid var(--carolina);
   border-top: 0;
   border-left: 0;
   opacity: 0.35;
@@ -162,7 +162,7 @@
   left: 0;
   width: 18px;
   height: 18px;
-  border: 1px solid var(--color-brand);
+  border: 1px solid var(--carolina);
   border-top: 0;
   border-right: 0;
   opacity: 0.35;
@@ -215,7 +215,7 @@
   left: 16px;
   right: 16px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-brand), transparent);
+  background: linear-gradient(90deg, transparent, var(--carolina), transparent);
   opacity: 0;
   transition: opacity 0.25s ease;
 }
@@ -252,7 +252,7 @@
 .signalIcon {
   width: 32px;
   height: 32px;
-  color: var(--color-brand);
+  color: var(--carolina);
   flex-shrink: 0;
 }
 
@@ -265,14 +265,14 @@
   font-family: var(--font-ui);
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--text);
   letter-spacing: 0.01em;
 }
 
 .signalSub {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   letter-spacing: 0.04em;
   line-height: 1.4;
 }
@@ -328,7 +328,7 @@
   width: 120px;
   height: 120px;
   border-radius: var(--radius-full);
-  border: 2px solid var(--color-brand);
+  border: 2px solid var(--carolina);
   background: radial-gradient(
     ellipse at center,
     rgba(123, 175, 212, 0.12) 0%,
@@ -362,7 +362,7 @@
   width: 100%;
   height: 100%;
   border-radius: var(--radius-full);
-  border: 1px solid var(--color-brand);
+  border: 1px solid var(--carolina);
   animation: ringPulse 2.6s ease-out infinite;
   pointer-events: none;
 }
@@ -377,7 +377,7 @@
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--carolina);
   text-align: center;
   line-height: 1.4;
   position: relative;

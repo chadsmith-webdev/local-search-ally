@@ -11,7 +11,7 @@
 .source {
   font-family: var(--font-mono);
   font-size: 0.5rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   letter-spacing: 0.12em;
   text-align: center;
   margin-top: 0.5rem;
@@ -41,7 +41,7 @@
   font-family: var(--font-mono);
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--text);
   line-height: 1;
   letter-spacing: -0.02em;
 }
@@ -50,7 +50,7 @@
   font-family: var(--font-mono);
   font-size: 0.55rem;
   font-weight: 500;
-  color: var(--color-brand);
+  color: var(--carolina);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   line-height: 1;

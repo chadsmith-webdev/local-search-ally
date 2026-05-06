@@ -1,6 +1,6 @@
 .section {
-  padding: var(--space-section, 100px) 0;
-  background: var(--color-bg);
+  padding: var(--section-gap, 100px) 0;
+  background: var(--bg);
   position: relative;
   overflow: hidden;
 }
@@ -37,7 +37,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -49,7 +49,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-brand, #7bafd4);
+  background: var(--carolina, #7bafd4);
   opacity: 0.6;
 }
 
@@ -59,14 +59,14 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   margin: 0 0 16px 0;
 }
 
 .intro {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   margin: 0;
   max-width: 600px;
 }
@@ -86,7 +86,7 @@
 
 .pillar {
   padding: 30px;
-  background: var(--color-surface);
+  background: var(--surface);
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
@@ -103,7 +103,7 @@
   left: 0;
   width: 2px;
   height: 0;
-  background: var(--color-brand, #7bafd4);
+  background: var(--carolina, #7bafd4);
   transition: height 0.4s ease;
 }
 
@@ -120,7 +120,7 @@
 .pillarIcon {
   width: 40px;
   height: 40px;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   opacity: 0.8;
 }
 
@@ -128,7 +128,7 @@
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   margin: 0 0 8px 0;
   letter-spacing: -0.01em;
 }
@@ -136,7 +136,7 @@
 .pillarContent p {
   font-size: 0.85rem;
   line-height: 1.5;
-  color: var(--color-text-muted, #888888);
+  color: var(--muted, #888888);
   margin: 0;
 }
 
@@ -198,7 +198,7 @@
   font-family: var(--font-mono, monospace);
   font-size: 0.65rem;
   letter-spacing: 0.2em;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   opacity: 0.8;
   display: block;
   margin-bottom: 8px;
@@ -208,7 +208,7 @@
   font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   letter-spacing: 0.05em;
   margin-bottom: 4px;
   text-shadow: 0 0 20px rgba(123, 175, 212, 0.3);
@@ -217,7 +217,7 @@
 .hubStatus {
   font-family: var(--font-mono, monospace);
   font-size: 0.75rem;
-  color: var(--color-status-success); /* Success green */
+  color: var(--status-green); /* Success green */
   letter-spacing: 0.1em;
   font-weight: 600;
 }
@@ -274,7 +274,7 @@
   height: 2px;
   background: linear-gradient(
     90deg,
-    var(--color-brand, #7bafd4) 0%,
+    var(--carolina, #7bafd4) 0%,
     transparent 100%
   );
   opacity: 0;
@@ -299,7 +299,7 @@
   font-family: var(--font-mono);
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   margin: 0 0 8px 0;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -307,13 +307,13 @@
 
 .statBox p {
   font-size: 0.95rem;
-  color: var(--color-text-muted, #b0b0b0);
+  color: var(--muted, #b0b0b0);
   margin: 0;
   line-height: 1.5;
 }
 
 .commitment {
-  background: var(--color-surface);
+  background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 40px;
 }
@@ -324,7 +324,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--muted);
   margin-bottom: 20px;
 }
 
@@ -346,7 +346,7 @@
 .listItem {
   font-family: var(--font-ui);
   font-size: 1rem;
-  color: var(--color-text);
+  color: var(--text);
   display: flex;
   align-items: flex-start;
   gap: 10px;

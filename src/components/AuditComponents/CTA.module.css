@@ -21,14 +21,14 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--text);
   margin: 0;
 }
 
 .description {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: var(--color-text-muted);
+  color: var(--muted);
   margin: 0;
 }
 
@@ -38,10 +38,10 @@
   justify-content: center;
   gap: 8px;
   padding: 14px 28px;
-  background-color: var(--color-brand);
+  background-color: var(--carolina);
   border: 2px solid #7bafd4;
   border-radius: var(--radius-sm);
-  color: var(--color-bg);
+  color: var(--bg);
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -52,9 +52,9 @@
 }
 
 .cta:hover {
-  background-color: var(--color-text);
-  border-color: var(--color-text);
-  color: var(--color-bg);
+  background-color: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
 }
 
 .cta:focus-visible {

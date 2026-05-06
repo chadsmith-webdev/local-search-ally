@@ -4,8 +4,8 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--space-section) * 1.5) var(--space-page-gutter)
-    var(--space-section);
+  padding: calc(var(--section-gap) * 1.5) var(--page-gutter)
+    var(--section-gap);
 }
 
 .grid {
@@ -58,7 +58,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--carolina);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -69,7 +69,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-brand);
+  background: var(--carolina);
   opacity: 0.6;
 }
 
@@ -79,18 +79,18 @@
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.03em;
-  color: var(--color-text);
+  color: var(--text);
   max-width: 780px;
 }
 
 .h1 em {
   font-style: normal;
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .subhead {
   font-size: clamp(1rem, 2vw, 1.15rem);
-  color: var(--color-text-muted);
+  color: var(--muted);
   line-height: 1.7;
   max-width: 560px;
 }
@@ -108,7 +108,7 @@
   align-items: center;
   justify-content: center;
   background: var(--gradient-cta);
-  color: var(--color-bg);
+  color: var(--bg);
   border: none;
   border-radius: var(--radius-sm);
   padding: 0.875rem 1.75rem;
@@ -136,7 +136,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: var(--color-brand);
+  color: var(--carolina);
   border: 1px solid rgba(123, 175, 212, 0.4);
   border-radius: var(--radius-sm);
   padding: 0.875rem 1.75rem;
@@ -154,14 +154,14 @@
 }
 
 .btnSecondary:hover {
-  background: var(--color-brand-dim);
-  border-color: var(--color-brand);
-  color: var(--color-text);
+  background: var(--carolina-dim);
+  border-color: var(--carolina);
+  color: var(--text);
 }
 
 .trust {
   font-size: 0.8rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   letter-spacing: 0.02em;
 }
 
@@ -186,7 +186,7 @@
 }
 
 .bridgeInner p:last-child {
-  color: var(--color-text);
+  color: var(--text);
   font-weight: 500;
 }
 

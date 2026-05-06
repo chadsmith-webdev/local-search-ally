@@ -1,16 +1,16 @@
 .section {
-  padding-top: var(--space-section);
-  padding-bottom: var(--space-section);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
   position: relative;
-  background: var(--color-bg);
+  background: var(--bg);
 }
 
 .inner {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding-left: var(--space-page-gutter);
-  padding-right: var(--space-page-gutter);
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
 }
 
 .wrapper {
@@ -33,7 +33,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--carolina);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -44,7 +44,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-brand);
+  background: var(--carolina);
   opacity: 0.6;
 }
 
@@ -54,18 +54,18 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.025em;
-  color: var(--color-text);
+  color: var(--text);
 }
 
 .h2 em {
   font-style: normal;
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .lead {
   font-family: var(--font-ui);
   font-size: 1.0625rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   line-height: 1.7;
 }
 
@@ -83,8 +83,8 @@
   align-items: flex-start;
   gap: 1.25rem;
   padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--color-border);
-  background: var(--color-surface);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
   transition: background 0.2s ease;
 }
 
@@ -93,14 +93,14 @@
 }
 
 .item:hover {
-  background: var(--color-surface-2);
+  background: var(--surface2);
 }
 
 .itemDot {
   width: 6px;
   height: 6px;
   border-radius: var(--radius-full);
-  background: var(--color-brand);
+  background: var(--carolina);
   flex-shrink: 0;
   margin-top: 0.55rem;
 }
@@ -115,20 +115,20 @@
   font-family: var(--font-ui);
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--text);
 }
 
 .itemBody {
   font-family: var(--font-ui);
   font-size: 0.9rem;
   line-height: 1.65;
-  color: var(--color-text-muted);
+  color: var(--muted);
 }
 
 /* ── Divider ── */
 .divider {
   height: 1px;
-  background: var(--color-border);
+  background: var(--border);
 }
 
 .h2Section {
@@ -137,7 +137,7 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.025em;
-  color: var(--color-text);
+  color: var(--text);
 }
 
 /* ── Two-column: Agency + Startup ── */
@@ -159,7 +159,7 @@
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--text);
 }
 
 .body {
@@ -172,7 +172,7 @@
   font-family: var(--font-ui);
   font-size: 1rem;
   line-height: 1.75;
-  color: var(--color-text-muted);
+  color: var(--muted);
 }
 
 /* ── Mobile ── */

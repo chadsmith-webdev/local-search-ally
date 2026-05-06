@@ -4,8 +4,8 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--space-section) * 1.5) var(--space-page-gutter)
-    var(--space-section);
+  padding: calc(var(--section-gap) * 1.5) var(--page-gutter)
+    var(--section-gap);
 }
 
 .grid {
@@ -54,7 +54,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--carolina);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -65,7 +65,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-brand);
+  background: var(--carolina);
   opacity: 0.6;
 }
 
@@ -74,7 +74,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-brand);
+  background: var(--carolina);
   opacity: 0.6;
 }
 
@@ -84,19 +84,19 @@
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.03em;
-  color: var(--color-text);
+  color: var(--text);
   max-width: 680px;
 }
 
 .h1 em {
   font-style: normal;
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .subhead {
   font-family: var(--font-ui);
   font-size: clamp(1rem, 1.5vw, 1.125rem);
   line-height: 1.7;
-  color: var(--color-text-muted);
+  color: var(--muted);
   max-width: 560px;
 }

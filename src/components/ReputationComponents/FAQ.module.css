@@ -1,6 +1,6 @@
 .section {
-  padding: var(--space-section, 100px) 0;
-  background: var(--color-bg);
+  padding: var(--section-gap, 100px) 0;
+  background: var(--bg);
 }
 
 .container {
@@ -20,7 +20,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -32,7 +32,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-brand, #7bafd4);
+  background: var(--carolina, #7bafd4);
   opacity: 0.6;
 }
 
@@ -41,7 +41,7 @@
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--text);
 }
 
 .list {
@@ -73,7 +73,7 @@
   height: 2px;
   background: linear-gradient(
     90deg,
-    var(--color-brand, #7bafd4) 0%,
+    var(--carolina, #7bafd4) 0%,
     transparent 100%
   );
   opacity: 0;
@@ -111,17 +111,17 @@
   font-family: var(--font-ui);
   font-size: 1.0625rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--text);
   line-height: 1.4;
   transition: color 0.15s ease;
 }
 
 .question:hover {
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .question:focus-visible {
-  outline: 2px solid var(--color-brand);
+  outline: 2px solid var(--carolina);
   outline-offset: 2px;
   border-radius: var(--radius-xs);
 }
@@ -130,7 +130,7 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: var(--color-brand);
+  color: var(--carolina);
   transition: transform 0.25s ease;
 }
 
@@ -151,7 +151,7 @@
 .answer p {
   font-family: var(--font-ui);
   font-size: 1rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   line-height: 1.7;
   padding-bottom: 22px;
   margin: 0;

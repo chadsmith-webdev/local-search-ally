@@ -1,2450 +1,1238 @@
-/* ============================================================
-
-   LOCAL SEARCH ALLY — DESIGN TOKENS
-
-   tokens.css
-
-   ARCHITECTURE RULES:
-
-   1. This file contains ONLY custom properties (variables).
-
-   2. No selectors other than :root belong here.
-
-   3. components.css consumes these tokens — never raw hex values.
-
-   4. Adding a new token here is the ONLY approved way to introduce
-
-      a new color, size, or spacing value to the system.
-
-   5. If you find yourself writing a hex value in components.css,
-
-      stop and add a token here first.
-
-   ============================================================ */
-
 @import "tailwindcss";
 
-:root {
-
-  /* ──────────────────────────────────────────────────────────
-
-     FONTS
-
-     Two families max. Display = headings/hero. UI = everything
-
-     else. Mono = code only.
-
-  ────────────────────────────────────────────────────────── */
-
-  --font-display : "Bricolage Grotesque", serif;
-
-  --font-ui      : "Space Grotesk", sans-serif;
-
-  --font-mono    : "JetBrains Mono", monospace;
-
-  /* ──────────────────────────────────────────────────────────
-
-     TYPE SCALE — Major Third (×1.25)
-
-     Base: 1rem (16px). Each step = previous × 1.25.
-
-     Use these tokens for ALL font-size declarations.
-
-     Never write a raw rem/px font-size in components.css.
-
-     Step  |  Token         |  Value   |  px equiv
-
-     -------+----------------+----------+-----------
-
-      -2   |  --text-xs     |  0.64rem |  ~10px
-
-      -1   |  --text-sm     |  0.8rem  |  ~13px
-
-       0   |  --text-base   |  1rem    |   16px
-
-      +1   |  --text-md     |  1.25rem |   20px
-
-      +2   |  --text-lg     |  1.563rem|   25px
-
-      +3   |  --text-xl     |  1.953rem|   31px
-
-      +4   |  --text-2xl    |  2.441rem|   39px
-
-      +5   |  --text-3xl    |  3.052rem|   49px
-
-  ────────────────────────────────────────────────────────── */
-
-  --text-xs   : 0.64rem;
-
-  --text-sm   : 0.8rem;
-
-  --text-base : 1rem;
-
-  --text-md   : 1.25rem;
-
-  --text-lg   : 1.563rem;
-
-  --text-xl   : 1.953rem;
-
-  --text-2xl  : 2.441rem;
-
-  --text-3xl  : 3.052rem;
-
-  /* Fluid display sizes — used for hero/section headings only.
-
-     clamp(min, preferred, max). Do not use for body text.     */
-
-  --text-hero    : clamp(2.441rem, 6vw, 3.815rem);
-
-  --text-heading : clamp(1.953rem, 4vw, 2.441rem);
-
-  --text-subhead : clamp(1.25rem,  3vw, 1.563rem);
-
-  /* Line heights */
-
-  --leading-tight  : 1.2;
-
-  --leading-snug   : 1.35;
-
-  --leading-normal : 1.6;
-
-  --leading-loose  : 1.8;
-
-  /* Letter spacing */
-
-  --tracking-tight  : -0.02em;
-
-  --tracking-normal : -0.01em;
-
-  --tracking-wide   : 0.05em;
-
-  --tracking-widest : 0.15em;
-
-  /* Font weights */
-
-  --weight-normal : 400;
-
-  --weight-medium : 500;
-
-  --weight-bold   : 600;
-
-  --weight-black  : 700;
-
-  /* ──────────────────────────────────────────────────────────
-
-     COLOR — BRAND PALETTE
-
-     These are raw color values. Use semantic aliases below
-
-     in components — never reference these directly in
-
-     components.css unless building a new semantic alias.
-
-  ────────────────────────────────────────────────────────── */
-
-  /* Carolina blue ramp */
-
-  --carolina-50  : rgba(123, 175, 212, 0.08);  /* tint — hover bg, dim fills */
-
-  --carolina-100 : rgba(123, 175, 212, 0.15);  /* subtle bg                  */
-
-  --carolina-200 : rgba(123, 175, 212, 0.4);   /* border emphasis            */
-
-  --carolina-400 : #7bafd4;                    /* brand primary              */
-
-  --carolina-600 : #4d8cb9;                    /* dark variant               */
-
-  --carolina-800 : #2e6a96;                    /* deepest — use sparingly    */
-
-  /* Slate/steel ramp — structural, backgrounds, borders */
-
-  --slate-900 : #0a0a0a;   /* page background                   */
-
-  --slate-800 : #141414;   /* surface (cards, panels)           */
-
-  --slate-700 : #1a222e;   /* brand dark / glass base           */
-
-  --slate-600 : #1e1e1e;   /* surface-2 (nested surfaces)       */
-
-  --slate-500 : #3a5570;   /* steel — borders, dividers         */
-
-  --slate-400 : #4a5568;   /* muted borders                     */
-
-  /* Text ramp */
-
-  --ink-100 : #f8f9fa;   /* primary text — on dark bg          */
-
-  --ink-400 : #a0aab4;   /* secondary text — labels, captions  */
-
-  --ink-600 : #7a838d;   /* tertiary — metadata, timestamps    */
-
-  /* Status colors — foreground on dark surface ONLY.
-
-     Never use as background with dark text.               */
-
-  --status-red    : #ff4d4d;
-
-  --status-yellow : #ffcc00;
-
-  --status-green  : #00ff88;
-
-  /* Border values */
-
-  --border-subtle : rgba(255, 255, 255, 0.06);
-
-  --border-base   : rgba(255, 255, 255, 0.12);
-
-  --border-strong : rgba(255, 255, 255, 0.2);
-
-  --border-brand  : var(--carolina-400);
-
-  /* ──────────────────────────────────────────────────────────
-
-     COLOR — SEMANTIC ALIASES
-
-     Reference THESE in components.css, not the raw palette.
-
-     This is the layer that makes the system refactorable —
-
-     swap a brand color here and every component updates.
-
-  ────────────────────────────────────────────────────────── */
-
-  /* Backgrounds */
-
-  --color-bg         : var(--slate-900);   /* page root             */
-
-  --color-surface    : var(--slate-800);   /* cards, panels         */
-
-  --color-surface-2  : var(--slate-600);   /* nested surfaces       */
-
-  --color-overlay    : var(--slate-700);   /* modals, dropdowns     */
-
-  /* Text */
-
-  --color-text         : var(--ink-100);   /* primary — always use this for body  */
-
-  --color-text-muted   : var(--ink-400);   /* secondary labels — never body copy  */
-
-  --color-text-subtle  : var(--ink-600);   /* metadata only — fails 4.5:1, use sparingly */
-
-  --color-text-brand   : var(--carolina-400);
-
-  --color-text-brand-dark : var(--carolina-600);
-
-  /* Interactive / brand */
-
-  --color-brand        : var(--carolina-400);
-
-  --color-brand-dark   : var(--carolina-600);
-
-  --color-brand-dim    : var(--carolina-50);
-
-  --color-brand-border : var(--carolina-200);
-
-  /* Status — TEXT color on dark surface */
-
-  --color-status-success : var(--status-green);
-
-  --color-status-warning : var(--status-yellow);
-
-  --color-status-error   : var(--status-red);
-
-  /* Borders */
-
-  --color-border         : var(--border-subtle);
-
-  --color-border-strong  : var(--border-base);
-
-  --color-border-brand   : var(--border-brand);
-
-  /* Gradients */
-
-  --gradient-cta   : linear-gradient(135deg, var(--carolina-400) 0%, var(--slate-500) 100%);
-
-  --gradient-cyber : linear-gradient(90deg, transparent, var(--carolina-400), transparent);
-
-  --gradient-glow  : radial-gradient(ellipse at top, rgba(123, 175, 212, 0.15) 0%, transparent 60%);
-
-  /* ──────────────────────────────────────────────────────────
-
-     SPACING SCALE
-
-     Base unit: 0.25rem (4px). All spacing is a multiple.
-
-     Use these tokens for padding, margin, and gap.
-
-     Never write raw px spacing in components.css.
-
-     Token      |  Value   |  px
-
-     -----------+----------+------
-
-     --space-1  |  0.25rem |   4px
-
-     --space-2  |  0.5rem  |   8px
-
-     --space-3  |  0.75rem |  12px
-
-     --space-4  |  1rem    |  16px
-
-     --space-5  |  1.25rem |  20px
-
-     --space-6  |  1.5rem  |  24px
-
-     --space-8  |  2rem    |  32px
-
-     --space-10 |  2.5rem  |  40px
-
-     --space-12 |  3rem    |  48px
-
-     --space-16 |  4rem    |  64px
-
-  ────────────────────────────────────────────────────────── */
-
-  --space-1  : 0.25rem;
-
-  --space-2  : 0.5rem;
-
-  --space-3  : 0.75rem;
-
-  --space-4  : 1rem;
-
-  --space-5  : 1.25rem;
-
-  --space-6  : 1.5rem;
-
-  --space-8  : 2rem;
-
-  --space-10 : 2.5rem;
-
-  --space-12 : 3rem;
-
-  --space-16 : 4rem;
-
-  /* Layout-level spacing — fluid via clamp() */
-
-  --space-page-gutter  : clamp(1.5rem, 6vw, 5rem);
-
-  --space-section      : clamp(4rem, 8vw, 10rem);
-
-  --space-section-sm   : clamp(2rem, 4vw, 5rem);
-
-  /* ──────────────────────────────────────────────────────────
-
-     BORDER RADIUS
-
-     Use these names — never raw px values in components.css.
-
-  ────────────────────────────────────────────────────────── */
-
-  --radius-xs   : 4px;
-
-  --radius-sm   : 6px;
-
-  --radius-md   : 8px;
-
-  --radius-lg   : 12px;
-
-  --radius-xl   : 16px;
-
-  --radius-pill : 100px;
-
-  --radius-full : 50%;
-
-  /* ──────────────────────────────────────────────────────────
-
-     ELEVATION (box-shadow)
-
-     Conveys depth for floating elements — not decoration.
-
-     sm = tooltips, md = dropdowns/popovers, lg = modals.
-
-  ────────────────────────────────────────────────────────── */
-
-  --shadow-sm  : 0 2px 8px rgba(0, 0, 0, 0.4);
-
-  --shadow-md  : 0 4px 24px rgba(0, 0, 0, 0.5);
-
-  --shadow-lg  : 0 8px 48px rgba(0, 0, 0, 0.6);
-
-  --shadow-glow: 0 0 32px rgba(123, 175, 212, 0.3);
-
-  --shadow-glow-lg: 0 0 52px rgba(123, 175, 212, 0.5);
-
-  /* ──────────────────────────────────────────────────────────
-
-     MOTION
-
-     All animation values come from here.
-
-     Components never write raw ms or cubic-bezier values.
-
-  ────────────────────────────────────────────────────────── */
-
-  --duration-fast    : 0.15s;
-
-  --duration-base    : 0.2s;
-
-  --duration-slow    : 0.3s;
-
-  --ease-out         : ease-out;
-
-  --ease-in-out      : ease-in-out;
-
-  --ease-spring      : cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  /* ──────────────────────────────────────────────────────────
-
-     BREAKPOINTS — reference only
-
-     Use these values in @media queries. Do not assign to
-
-     layout properties — CSS custom properties cannot be used
-
-     inside @media() expressions.
-
-     --bp-sm  : 600px    mobile → small tablet
-
-     --bp-md  : 768px    tablet
-
-     --bp-lg  : 900px    large tablet / small desktop
-
-     --bp-xl  : 1024px   desktop
-
-  ────────────────────────────────────────────────────────── */
-
-  /* ──────────────────────────────────────────────────────────
-
-     Z-INDEX SCALE
-
-     Named layers — never write a raw z-index in components.
-
-  ────────────────────────────────────────────────────────── */
-
-  --z-below    : -1;
-
-  --z-base     : 0;
-
-  --z-raised   : 10;
-
-  --z-dropdown : 100;
-
-  --z-sticky   : 200;
-
-  --z-modal    : 300;
-
-  --z-toast    : 400;
-
-  --z-skip     : 9999;
-
-}
-
-/* ──────────────────────────────────────────────────────────
-
-   TAILWIND v4 THEME BRIDGE
-
-   Registers brand tokens as Tailwind utility classes.
-
-   e.g. text-brand, bg-surface, border-brand-border
-
-   Keep in sync with :root above.
-
-────────────────────────────────────────────────────────── */
-
-@theme {
-
-  /* Colors */
-
-  --color-brand         : #7bafd4;
-
-  --color-brand-dark    : #4d8cb9;
-
-  --color-bg            : #0a0a0a;
-
-  --color-surface       : #141414;
-
-  --color-surface-2     : #1e1e1e;
-
-  --color-overlay       : #1a222e;
-
-  --color-steel         : #3a5570;
-
-  --color-text          : #f8f9fa;
-
-  --color-text-muted    : #a0aab4;
-
-  --color-text-subtle   : #7a838d;
-
-  --color-status-success: #00ff88;
-
-  --color-status-warning: #ffcc00;
-
-  --color-status-error  : #ff4d4d;
-
-  /* Fonts */
-
-  --font-family-display : var(--font-display);
-
-  --font-family-sans    : var(--font-ui);
-
-  --font-family-mono    : var(--font-mono);
-
-}
-
 /* ============================================================
-
-   LOCAL SEARCH ALLY — COMPONENTS
-
-   components.css
-
-   ARCHITECTURE RULES:
-
-   1. Import tokens.css BEFORE this file. Always.
-
-   2. Every value here must reference a token from tokens.css.
-
-      No raw hex, px, rem, or ms values — only var(--token).
-
-   3. Each component block starts with a banner comment that
-
-      defines: what it is, when to use it, what NOT to override.
-
-   4. States are always defined in this order where applicable:
-
-      default → hover → focus-visible → active → disabled → error
-
+   LOCAL SEARCH ALLY — Design System v2
+   Built for: NWA contractor audience
+   Aesthetic: Editorial industrial — credible, direct, minimal
+   
+   STRUCTURE
+   1.  Fonts
+   2.  Color tokens
+   3.  Type scale
+   4.  Spacing & layout tokens
+   5.  Border & radius tokens
+   6.  Animation tokens
+   7.  Base resets
+   8.  Focus & accessibility
+   9.  Type styles (headings, body, prose)
+   10. Buttons
+   11. Cards
+   12. Form elements
+   13. Navigation
+   14. Layout utilities
+   15. Glass (floating layers only)
+   16. Prose (blog)
+   17. Animations
+   18. Tailwind @theme bridge
    ============================================================ */
 
-/* ──────────────────────────────────────────────────────────
+/* ─── 1. FONTS ───────────────────────────────────────────────────────────── */
 
-   BASE RESET & GLOBAL DEFAULTS
+/* ─── 2. COLOR TOKENS ────────────────────────────────────────────────────── */
 
-────────────────────────────────────────────────────────── */
+:root {
+  --font-display: "Bricolage Grotesque", serif; /* headings, display text */
+  --font-ui: "Space Grotesk", sans-serif; /* body, UI, buttons      */
+  --font-mono: "JetBrains Mono", monospace; /* code, labels, tags     */
+  /* --- Brand --- */
+  --carolina: #7bafd4; /* primary accent — links, CTAs, highlights    */
+  --carolina-dark: #4d8cb9; /* hover/active state of carolina               */
+  --carolina-dim: rgba(123, 175, 212, 0.08); /* subtle bg tint             */
+  --carolina-mid: rgba(123, 175, 212, 0.15); /* slightly more visible tint */
+  --slate: #1a222e; /* deep brand dark — used in glass backgrounds  */
+  --steel: #3a5570; /* mid brand — borders, dividers                */
+
+  /* --- Surface hierarchy (darkest → lightest) ---
+     Think of these like elevation layers on a table:
+     bg = the table surface, surface = a sheet of paper,
+     surface2 = a sticky note on top of that paper       */
+  --bg: #0a0a0a; /* page background — never use on components       */
+  --surface: #141414; /* default card / component background              */
+  --surface2: #1e1e1e; /* elevated component, input background             */
+  --surface3: #252525; /* highest elevation — active states, hover fills   */
+
+  /* --- Text ---
+     Use --text for anything a user must read.
+     Use --text-secondary for supporting context (timestamps, captions).
+     Never use --muted for anything interactive.                             */
+  --text: #f8f9fa; /* primary — all body copy, headings          */
+  --text-secondary: #b0b8c1; /* supporting text — passes 4.5:1 on --bg    */
+  --muted: #7a838d; /* metadata only — dates, labels, captions    */
+  /* contrast ~3.8:1 — never for body text      */
+
+  /* --- Borders ---
+     border = default divider (very subtle)
+     border-strong = visible edge (cards, inputs)
+     border-accent = brand-colored edge (focus, highlights)                  */
+  --border: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.13);
+  --border-accent: rgba(123, 175, 212, 0.4);
+
+  /* --- Status ---
+     Text-on-dark use only. Never use as background colors with dark text.   */
+  --status-green: #00c96b; /* success — 5.1:1 on --bg                    */
+  --status-yellow: #f5c000; /* warning — 8.9:1 on --bg                    */
+  --status-red: #ff4d4d; /* error   — 4.6:1 on --bg                    */
+
+  /* --- Gradient ---
+     Use for primary CTA buttons only. Not for backgrounds or decorative use. */
+  --gradient-cta: linear-gradient(135deg, #7bafd4 0%, #3a5570 100%);
+
+  /* ─── 3. TYPE SCALE ───────────────────────────────────────────────────────
+     Major Third ratio (1.25×) anchored at 1rem (16px).
+     
+     Use the named step, never hardcode font-size in components.
+     
+     --text-xs    10px   mono labels, legal footnotes
+     --text-sm    13px   captions, metadata, secondary UI
+     --text-base  16px   body copy (default)
+     --text-md    20px   large body, intro paragraphs
+     --text-lg    25px   small headings, card titles
+     --text-xl    31px   section subheadings
+     --text-2xl   39px   section headings
+     --text-3xl   49px   hero subheadings
+     --text-4xl   61px   hero display                                        */
+
+  --text-xs: 0.64rem; /* ~10px */
+  --text-sm: 0.8rem; /* ~13px */
+  --text-base: 1rem; /* 16px  */
+  --text-md: 1.25rem; /* 20px  */
+  --text-lg: 1.563rem; /* 25px  */
+  --text-xl: 1.953rem; /* 31px  */
+  --text-2xl: 2.441rem; /* 39px  */
+  --text-3xl: 3.052rem; /* 49px  */
+  --text-4xl: 3.815rem; /* 61px  */
+
+  /* Fluid display sizes — use for h1/hero only */
+  --text-display: clamp(2.441rem, 5vw, 3.815rem); /* h1 hero      */
+  --text-heading: clamp(1.953rem, 3.5vw, 2.441rem); /* h2 section   */
+  --text-subheading: clamp(1.563rem, 2.5vw, 1.953rem); /* h3           */
+
+  /* ─── 4. SPACING & LAYOUT ─────────────────────────────────────────────────
+     Spacing follows an 8px base grid.
+     
+     Use --space-* for component-internal gaps (padding, small margins).
+     Use --page-gutter for horizontal page breathing room.
+     Use --section-gap for vertical section rhythm.                          */
+
+  --space-1: 0.25rem; /* 4px  */
+  --space-2: 0.5rem; /* 8px  */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+
+  --page-gutter: clamp(1.25rem, 5vw, 4rem);
+  --section-gap: clamp(4rem, 8vw, 9rem);
+  --card-padding: clamp(1.25rem, 3vw, 2rem);
+
+  /* ─── 5. BORDER & RADIUS ──────────────────────────────────────────────────
+     Use the smallest radius that feels right for the component's scale.
+     
+     xs / sm  → inline elements (badges, code, tags)
+     md       → inputs, small buttons, chips
+     lg       → cards, panels
+     xl       → modals, large containers
+     pill     → pill buttons, status badges
+     full     → avatars, icon buttons                                        */
+
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 100px;
+  --radius-full: 50%;
+
+  /* ─── 6. ANIMATION ────────────────────────────────────────────────────────
+     Use these easing and duration values for all transitions.
+     Never define transition timing inline — reference these tokens.         */
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+}
+
+/* ─── 7. BASE RESETS ─────────────────────────────────────────────────────── */
 
 *,
-
 *::before,
-
 *::after {
-
   box-sizing: border-box;
-
   margin: 0;
-
   padding: 0;
-
 }
 
 html {
-
-  /* Prevent font size inflation on mobile */
-
+  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-
-  text-size-adjust: 100%;
-
 }
 
 body {
-
-  background-color  : var(--color-bg);
-
-  color             : var(--color-text);
-
-  font-family       : var(--font-ui);
-
-  font-size         : var(--text-base);
-
-  font-weight       : var(--weight-normal);
-
-  line-height       : var(--leading-normal);
-
-  letter-spacing    : var(--tracking-normal);
-
-  -webkit-font-smoothing : antialiased;
-
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-}
-
-/* Form element font inheritance — browsers don't do this by default */
-
-input,
-
-select,
-
-textarea,
-
-button {
-
-  font-family : inherit;
-
-  font-size   : inherit;
-
 }
 
 img,
-
 video,
-
 svg {
-
-  display   : block;
-
-  max-width : 100%;
-
+  display: block;
+  max-width: 100%;
 }
 
-/* ──────────────────────────────────────────────────────────
-
-   ACCESSIBILITY — GLOBAL
-
-   These rules must never be removed or overridden.
-
-────────────────────────────────────────────────────────── */
-
-/* Focus ring — full-opacity brand color, meets 3:1 for UI components.
-
-   Applied globally via :focus-visible so keyboard users always see it.
-
-   Do NOT reduce opacity or remove this rule.                          */
-
-:focus-visible {
-
-  outline        : 2px solid var(--color-brand);
-
-  outline-offset : 3px;
-
-  border-radius  : var(--radius-xs);
-
+input,
+select,
+textarea,
+button {
+  font-family: var(--font-ui);
+  font-size: inherit;
 }
 
-/* Skip-to-content — keyboard navigation shortcut.
-
-   Sits off-screen until focused. Required on every page.             */
-
-.skip-link {
-
-  position      : absolute;
-
-  top           : -100%;
-
-  left          : var(--space-4);
-
-  z-index       : var(--z-skip);
-
-  padding       : var(--space-3) var(--space-5);
-
-  background    : var(--color-brand);
-
-  color         : var(--color-bg);
-
-  font-family   : var(--font-ui);
-
-  font-size     : var(--text-sm);
-
-  font-weight   : var(--weight-bold);
-
-  border-radius : var(--radius-sm);
-
+a {
+  color: inherit;
   text-decoration: none;
+}
 
-  transition    : top var(--duration-fast) var(--ease-out);
+/* ─── 8. FOCUS & ACCESSIBILITY ───────────────────────────────────────────── */
 
+/* Global focus ring — full opacity, passes 3:1 for UI components */
+:focus-visible {
+  outline: 2px solid var(--carolina);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Skip-to-content — keyboard only */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 9999;
+  padding: var(--space-3) var(--space-5);
+  background: var(--carolina);
+  color: var(--bg);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: top var(--duration-fast) var(--ease-out);
 }
 
 .skip-link:focus {
-
   top: var(--space-4);
-
 }
 
-/* Reduced motion — kills all animations and transitions.
-
-   This rule must exist and must remain comprehensive.                 */
-
+/* Reduced motion — kill all animations and transitions */
 @media (prefers-reduced-motion: reduce) {
-
   *,
-
   *::before,
-
   *::after {
-
-    animation-duration       : 0.01ms !important;
-
-    animation-iteration-count: 1      !important;
-
-    transition-duration      : 0.01ms !important;
-
-    scroll-behavior          : auto   !important;
-
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-
 }
 
-/* Visually hidden — for screen reader labels that have no visual counterpart */
-
-.sr-only {
-
-  position   : absolute;
-
-  width      : 1px;
-
-  height     : 1px;
-
-  padding    : 0;
-
-  margin     : -1px;
-
-  overflow   : hidden;
-
-  clip       : rect(0, 0, 0, 0);
-
-  white-space: nowrap;
-
-  border     : 0;
-
-}
-
-/* ──────────────────────────────────────────────────────────
-
-   SCROLLBAR
-
-────────────────────────────────────────────────────────── */
-
-::-webkit-scrollbar       { width: 6px; }
-
-::-webkit-scrollbar-track { background: var(--color-bg); }
-
-::-webkit-scrollbar-thumb {
-
-  background    : var(--color-surface-2);
-
-  border-radius : var(--radius-xs);
-
-}
-
+/* Text selection */
 ::selection {
-
-  background: var(--carolina-100, rgba(123, 175, 212, 0.15));
-
+  background: rgba(123, 175, 212, 0.2);
+  color: var(--text);
 }
 
-/* ──────────────────────────────────────────────────────────
-
-   LAYOUT UTILITIES
-
-   Use these class names in JSX/HTML. Do not replicate these
-
-   rules inline — compose them.
-
-────────────────────────────────────────────────────────── */
-
-/* Full-width vertical rhythm wrapper for page sections */
-
-.section {
-
-  width          : 100%;
-
-  padding-top    : var(--space-section);
-
-  padding-bottom : var(--space-section);
-
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface2);
+  border-radius: var(--radius-xs);
 }
 
-.section--sm {
+/* ─── 9. TYPE STYLES ─────────────────────────────────────────────────────── */
 
-  padding-top    : var(--space-section-sm);
+/* --- Headings ---
+   Display headings use --font-display (Bricolage Grotesque).
+   All other text uses --font-ui (Space Grotesk).
+   Do not set font-family on headings inside components —
+   use these classes instead.                                                 */
 
-  padding-bottom : var(--space-section-sm);
-
-}
-
-/* Standard content container — max-width + fluid horizontal gutter */
-
-.container {
-
-  max-width    : 1200px;
-
-  width        : 100%;
-
-  margin-left  : auto;
-
-  margin-right : auto;
-
-  padding-left : var(--space-page-gutter);
-
-  padding-right: var(--space-page-gutter);
-
-}
-
-/* Narrow — text-heavy sections: blog posts, FAQs, legal */
-
-.container--narrow {
-
-  max-width    : 800px;
-
-  width        : 100%;
-
-  margin-left  : auto;
-
-  margin-right : auto;
-
-  padding-left : var(--space-page-gutter);
-
-  padding-right: var(--space-page-gutter);
-
-}
-
-/* Wide — data-heavy sections: portfolio grids, comparison tables */
-
-.container--wide {
-
-  max-width    : 1440px;
-
-  width        : 100%;
-
-  margin-left  : auto;
-
-  margin-right : auto;
-
-  padding-left : var(--space-page-gutter);
-
-  padding-right: var(--space-page-gutter);
-
-}
-
-/* ──────────────────────────────────────────────────────────
-
-   TYPOGRAPHY COMPONENTS
-
-   Heading classes: apply to the correct semantic element.
-
-   Do not use .heading-hero on an <h3>.
-
-   Do not use these for non-heading text — use body classes.
-
-────────────────────────────────────────────────────────── */
-
-.heading-hero {
-
-  font-family   : var(--font-display);
-
-  font-size     : var(--text-hero);
-
-  font-weight   : var(--weight-black);
-
-  line-height   : var(--leading-tight);
-
-  letter-spacing: var(--tracking-tight);
-
-  color         : var(--color-text);
-
+.heading-display {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text);
 }
 
 .heading-1 {
-
-  font-family   : var(--font-display);
-
-  font-size     : var(--text-heading);
-
-  font-weight   : var(--weight-black);
-
-  line-height   : var(--leading-tight);
-
-  letter-spacing: var(--tracking-tight);
-
-  color         : var(--color-text);
-
+  font-family: var(--font-display);
+  font-size: var(--text-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--text);
 }
 
 .heading-2 {
-
-  font-family   : var(--font-display);
-
-  font-size     : var(--text-subhead);
-
-  font-weight   : var(--weight-bold);
-
-  line-height   : var(--leading-snug);
-
-  letter-spacing: var(--tracking-tight);
-
-  color         : var(--color-text);
-
+  font-family: var(--font-display);
+  font-size: var(--text-subheading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 .heading-3 {
-
-  font-family   : var(--font-ui);
-
-  font-size     : var(--text-md);
-
-  font-weight   : var(--weight-bold);
-
-  line-height   : var(--leading-snug);
-
-  color         : var(--color-text);
-
+  font-family: var(--font-ui);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--text);
 }
 
-/* Body text — default is var(--text-base). Override size only. */
-
-.body-lg {
-
-  font-size  : var(--text-md);
-
-  line-height: var(--leading-loose);
-
-  color      : var(--color-text);
-
-}
-
-.body-base {
-
-  font-size  : var(--text-base);
-
-  line-height: var(--leading-normal);
-
-  color      : var(--color-text);
-
-}
-
-.body-sm {
-
-  font-size  : var(--text-sm);
-
-  line-height: var(--leading-normal);
-
-  color      : var(--color-text-muted);
-
-}
-
-/* Label — monospace eyebrow text above section headings.
-
-   Use ONLY for section labels. Not for body copy.        */
+/* --- Labels (mono, uppercase) ---
+   Use for section eyebrows, stat captions, UI tags.
+   Not for body copy or interactive labels.                                   */
 
 .label {
-
-  font-family   : var(--font-mono);
-
-  font-size     : var(--text-xs);
-
-  font-weight   : var(--weight-normal);
-
-  color         : var(--color-brand);
-
-  text-transform: uppercase;
-
-  letter-spacing: var(--tracking-widest);
-
-  opacity       : 0.7;
-
-}
-
-/* ──────────────────────────────────────────────────────────
-
-   BUTTONS
-
-   Use .btn as a base. Add a modifier: --primary, --secondary,
-
-   --ghost, --danger. Never override padding or font-size
-
-   on individual instances — adjust the token instead.
-
-   Composition pattern in JSX:
-
-     <button class="btn btn--primary">Get Started</button>
-
-     <a href="/contact" class="btn btn--secondary">Learn More</a>
-
-────────────────────────────────────────────────────────── */
-
-/* Base — shared structure for all button variants */
-
-.btn {
-
-  display        : inline-flex;
-
-  align-items    : center;
-
-  justify-content: center;
-
-  gap            : var(--space-2);
-
-  padding        : var(--space-3) var(--space-6);  /* 12px 24px */
-
-  font-family    : var(--font-ui);
-
-  font-size      : var(--text-sm);                 /* 0.8rem ~13px */
-
-  font-weight    : var(--weight-bold);
-
-  letter-spacing : var(--tracking-wide);
-
-  line-height    : 1;
-
-  text-decoration: none;
-
-  white-space    : nowrap;
-
-  cursor         : pointer;
-
-  border         : 1px solid transparent;
-
-  border-radius  : var(--radius-sm);
-
-  transition     :
-
-    filter          var(--duration-base) var(--ease-out),
-
-    transform       var(--duration-fast) var(--ease-out),
-
-    box-shadow      var(--duration-base) var(--ease-out),
-
-    background      var(--duration-base) var(--ease-out),
-
-    border-color    var(--duration-base) var(--ease-out),
-
-    color           var(--duration-base) var(--ease-out),
-
-    opacity         var(--duration-base) var(--ease-out);
-
-}
-
-/* Primary — gradient fill. The single most important action on a page.
-
-   Use once per viewport. Never on secondary actions.                   */
-
-.btn--primary {
-
-  background : var(--gradient-cta);
-
-  color      : var(--color-bg);
-
-  border-color: transparent;
-
-  box-shadow : var(--shadow-glow);
-
-}
-
-.btn--primary:hover {
-
-  filter    : brightness(1.1);
-
-  transform : translateY(-1px);
-
-  box-shadow: var(--shadow-glow-lg);
-
-}
-
-.btn--primary:focus-visible {
-
-  outline       : 2px solid var(--color-brand);
-
-  outline-offset: 3px;
-
-  filter        : brightness(1.1);
-
-}
-
-.btn--primary:active {
-
-  transform : translateY(0) scale(0.98);
-
-  filter    : brightness(0.95);
-
-  box-shadow: var(--shadow-glow);
-
-}
-
-.btn--primary:disabled,
-
-.btn--primary[aria-disabled="true"] {
-
-  opacity       : 0.38;
-
-  cursor        : not-allowed;
-
-  pointer-events: none;
-
-  box-shadow    : none;
-
-  filter        : none;
-
-  transform     : none;
-
-}
-
-/* Secondary — outline. Supporting actions alongside a primary button.
-
-   Can appear multiple times per viewport.                              */
-
-.btn--secondary {
-
-  background  : transparent;
-
-  color       : var(--color-brand);
-
-  border-color: var(--color-brand-border);
-
-}
-
-.btn--secondary:hover {
-
-  background  : var(--color-brand-dim);
-
-  border-color: var(--color-brand);
-
-  color       : var(--color-text);
-
-}
-
-.btn--secondary:focus-visible {
-
-  outline       : 2px solid var(--color-brand);
-
-  outline-offset: 3px;
-
-  background    : var(--color-brand-dim);
-
-}
-
-.btn--secondary:active {
-
-  transform  : scale(0.98);
-
-  background : var(--carolina-100, rgba(123, 175, 212, 0.15));
-
-}
-
-.btn--secondary:disabled,
-
-.btn--secondary[aria-disabled="true"] {
-
-  opacity       : 0.38;
-
-  cursor        : not-allowed;
-
-  pointer-events: none;
-
-}
-
-/* Ghost — no border, no background. Inline actions, icon buttons.
-
-   Never use as a primary CTA.                                      */
-
-.btn--ghost {
-
-  background  : transparent;
-
-  color       : var(--color-text-muted);
-
-  border-color: transparent;
-
-}
-
-.btn--ghost:hover {
-
-  background: var(--color-brand-dim);
-
-  color     : var(--color-text);
-
-}
-
-.btn--ghost:focus-visible {
-
-  outline       : 2px solid var(--color-brand);
-
-  outline-offset: 3px;
-
-}
-
-.btn--ghost:active  { transform: scale(0.97); }
-
-.btn--ghost:disabled,
-
-.btn--ghost[aria-disabled="true"] {
-
-  opacity       : 0.38;
-
-  cursor        : not-allowed;
-
-  pointer-events: none;
-
-}
-
-/* Danger — destructive actions only (delete, remove, cancel subscription).
-
-   Requires explicit user confirmation before triggering.                   */
-
-.btn--danger {
-
-  background  : transparent;
-
-  color       : var(--color-status-error);
-
-  border-color: rgba(255, 77, 77, 0.3);
-
-}
-
-.btn--danger:hover {
-
-  background  : rgba(255, 77, 77, 0.1);
-
-  border-color: var(--color-status-error);
-
-}
-
-.btn--danger:focus-visible {
-
-  outline       : 2px solid var(--color-status-error);
-
-  outline-offset: 3px;
-
-}
-
-.btn--danger:active { transform: scale(0.98); }
-
-.btn--danger:disabled,
-
-.btn--danger[aria-disabled="true"] {
-
-  opacity       : 0.38;
-
-  cursor        : not-allowed;
-
-  pointer-events: none;
-
-}
-
-/* Size modifiers — use when context requires a smaller/larger button.
-
-   Default (.btn alone) is medium.                                     */
-
-.btn--sm {
-
-  padding    : var(--space-2) var(--space-4);
-
-  font-size  : var(--text-xs);
-
-  border-radius: var(--radius-xs);
-
-}
-
-.btn--lg {
-
-  padding  : var(--space-4) var(--space-8);  /* 16px 32px */
-
-  font-size: var(--text-base);
-
-}
-
-/* ──────────────────────────────────────────────────────────
-
-   FORM INPUTS
-
-   All inputs share the .input base. Use modifiers for
-
-   specific types. Wrap label + input in .field.
-
-   Composition:
-
-     <div class="field">
-
-       <label class="field__label" for="email">Email</label>
-
-       <input class="input" id="email" type="email" />
-
-       <p class="field__hint">We'll never share your email.</p>
-
-     </div>
-
-────────────────────────────────────────────────────────── */
-
-/* Field wrapper — manages label/input/hint vertical rhythm */
-
-.field {
-
-  display       : flex;
-
-  flex-direction: column;
-
-  gap           : var(--space-2);
-
-}
-
-.field__label {
-
-  font-size  : var(--text-sm);
-
-  font-weight: var(--weight-bold);
-
-  color      : var(--color-text);
-
-  cursor     : pointer;
-
-}
-
-.field__hint {
-
-  font-size: var(--text-xs);
-
-  color    : var(--color-text-muted);
-
-}
-
-.field__error {
-
-  font-size: var(--text-xs);
-
-  color    : var(--color-status-error);
-
-}
-
-/* Base input — used for text, email, tel, url, number, search */
-
-.input {
-
-  width        : 100%;
-
-  padding      : var(--space-3) var(--space-4);   /* 12px 16px */
-
-  background   : var(--color-surface);
-
-  color        : var(--color-text);
-
-  font-family  : var(--font-ui);
-
-  font-size    : var(--text-base);
-
-  border       : 1px solid var(--color-border-strong);
-
-  border-radius: var(--radius-md);
-
-  outline      : none;
-
-  transition   :
-
-    border-color var(--duration-base) var(--ease-out),
-
-    box-shadow   var(--duration-base) var(--ease-out);
-
-  /* Prevent zoom on iOS — minimum 16px renders without zoom */
-
-}
-
-.input::placeholder {
-
-  color  : var(--color-text-subtle);
-
-  opacity: 1;
-
-}
-
-.input:hover {
-
-  border-color: var(--color-brand-border);
-
-}
-
-.input:focus {
-
-  border-color: var(--color-brand);
-
-  box-shadow  : 0 0 0 3px var(--color-brand-dim);
-
-  outline     : none;
-
-}
-
-.input:disabled {
-
-  opacity      : 0.38;
-
-  cursor       : not-allowed;
-
-  border-color : var(--color-border);
-
-}
-
-/* Error state — apply to .input when .field__error is shown */
-
-.input--error {
-
-  border-color: var(--color-status-error);
-
-}
-
-.input--error:focus {
-
-  border-color: var(--color-status-error);
-
-  box-shadow  : 0 0 0 3px rgba(255, 77, 77, 0.15);
-
-}
-
-/* Textarea — same rules as .input, height is explicit */
-
-.textarea {
-
-  composes  : input; /* if using CSS Modules — otherwise copy .input rules */
-
-  min-height: 120px;
-
-  resize    : vertical;
-
-}
-
-/* If not using CSS Modules, use .input on a <textarea> directly.
-
-   The only textarea-specific rule is min-height and resize.     */
-
-textarea.input {
-
-  min-height: 120px;
-
-  resize    : vertical;
-
-}
-
-/* Select — same visual as .input but with dropdown arrow */
-
-select.input {
-
-  appearance           : none;
-
-  -webkit-appearance   : none;
-
-  background-image     : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237a838d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
-  background-repeat    : no-repeat;
-
-  background-position  : right var(--space-4) center;
-
-  padding-right        : var(--space-10);
-
-}
-
-/* ──────────────────────────────────────────────────────────
-
-   STATUS BADGES
-
-   Inline indicators for state, category, or signal.
-
-   Use ONLY for status — not for decoration.
-
-   Usage rules:
-
-   - Success (green): active, live, complete, verified
-
-   - Warning (yellow): pending, expiring, needs attention
-
-   - Error (red): failed, expired, blocked, error
-
-   - Neutral: draft, inactive, unknown
-
-   - Brand: featured, new, highlighted
-
-   Never use a status badge as a navigation element.
-
-   Never use color alone — always include the text label.
-
-────────────────────────────────────────────────────────── */
-
-.badge {
-
-  display      : inline-flex;
-
-  align-items  : center;
-
-  gap          : var(--space-1);
-
-  padding      : var(--space-1) var(--space-3);
-
-  font-family  : var(--font-mono);
-
-  font-size    : var(--text-xs);
-
-  font-weight  : var(--weight-bold);
-
-  letter-spacing: var(--tracking-widest);
-
-  text-transform: uppercase;
-
-  border-radius: var(--radius-pill);
-
-  border       : 1px solid transparent;
-
-  white-space  : nowrap;
-
-}
-
-/* Success */
-
-.badge--success {
-
-  background  : rgba(0, 255, 136, 0.1);
-
-  color       : var(--color-status-success);
-
-  border-color: rgba(0, 255, 136, 0.2);
-
-}
-
-/* Warning */
-
-.badge--warning {
-
-  background  : rgba(255, 204, 0, 0.1);
-
-  color       : var(--color-status-warning);
-
-  border-color: rgba(255, 204, 0, 0.2);
-
-}
-
-/* Error */
-
-.badge--error {
-
-  background  : rgba(255, 77, 77, 0.1);
-
-  color       : var(--color-status-error);
-
-  border-color: rgba(255, 77, 77, 0.2);
-
-}
-
-/* Neutral — draft, inactive, unknown states */
-
-.badge--neutral {
-
-  background  : var(--color-surface-2);
-
-  color       : var(--color-text-muted);
-
-  border-color: var(--color-border-strong);
-
-}
-
-/* Brand — new features, highlights */
-
-.badge--brand {
-
-  background  : var(--color-brand-dim);
-
-  color       : var(--color-brand);
-
-  border-color: var(--color-brand-border);
-
-}
-
-/* Dot indicator — prepend to badge text for visual emphasis.
-
-   Always paired with text — never standalone.               */
-
-.badge__dot {
-
-  width        : 6px;
-
-  height       : 6px;
-
-  border-radius: var(--radius-full);
-
-  background   : currentColor;
-
-  flex-shrink  : 0;
-
-}
-
-/* ──────────────────────────────────────────────────────────
-
-   CARDS & SURFACES
-
-   Cards are bounded content containers.
-
-   .card is the base. Modifiers change surface depth.
-
-   Use .card for: service features, portfolio items, FAQ items,
-
-   stat blocks, testimonials.
-
-   Do NOT use .card for: full-width page sections (use .section),
-
-   navigation (use nav), forms (use .field wrappers).
-
-────────────────────────────────────────────────────────── */
-
-/* Base card — sits on --color-surface */
-
-.card {
-
-  background   : var(--color-surface);
-
-  border       : 1px solid var(--color-border);
-
-  border-radius: var(--radius-lg);
-
-  padding      : var(--space-6);
-
-  transition   : border-color var(--duration-base) var(--ease-out);
-
-}
-
-/* Elevated — for interactive cards (hover lifts) */
-
-.card--elevated {
-
-  background   : var(--color-surface);
-
-  border       : 1px solid var(--color-border);
-
-  border-radius: var(--radius-lg);
-
-  padding      : var(--space-6);
-
-  box-shadow   : var(--shadow-sm);
-
-  transition   :
-
-    border-color var(--duration-base) var(--ease-out),
-
-    box-shadow   var(--duration-base) var(--ease-out),
-
-    transform    var(--duration-fast) var(--ease-out);
-
-}
-
-.card--elevated:hover {
-
-  border-color: var(--color-brand-border);
-
-  box-shadow  : var(--shadow-md);
-
-  transform   : translateY(-2px);
-
-}
-
-/* Glass — for floating overlays: modals, tooltips, dropdowns, sticky panels.
-
-   Do NOT apply to inline content blocks — backdrop-filter creates a stacking
-
-   context that breaks children with position:fixed.                          */
-
-.card--glass {
-
-  background    : rgba(26, 34, 46, 0.85);
-
-  backdrop-filter      : blur(12px);
-
-  -webkit-backdrop-filter: blur(12px);
-
-  border        : 1px solid var(--color-brand-border);
-
-  border-radius : var(--radius-lg);
-
-  padding       : var(--space-6);
-
-  box-shadow    : inset 0 0 15px rgba(123, 175, 212, 0.05), var(--shadow-md);
-
-}
-
-/* Stat card — numeric metric display blocks */
-
-.card--stat {
-
-  background   : var(--color-surface);
-
-  border       : 1px solid var(--color-border);
-
-  border-radius: var(--radius-lg);
-
-  padding      : var(--space-6);
-
-  position     : relative;
-
-  overflow     : hidden;
-
-}
-
-.card--stat::before {
-
-  content     : "";
-
-  position    : absolute;
-
-  top         : 0;
-
-  left        : 0;
-
-  right       : 0;
-
-  height      : 2px;
-
-  background  : var(--gradient-cyber);
-
-  opacity     : 0.6;
-
-}
-
-/* Card sub-elements */
-
-.card__label {
-
-  font-family   : var(--font-mono);
-
-  font-size     : var(--text-xs);
-
-  color         : var(--color-brand);
-
-  text-transform: uppercase;
-
-  letter-spacing: var(--tracking-widest);
-
-  opacity       : 0.7;
-
-  margin-bottom : var(--space-2);
-
-}
-
-.card__title {
-
-  font-family: var(--font-display);
-
-  font-size  : var(--text-md);
-
-  font-weight: var(--weight-bold);
-
-  color      : var(--color-text);
-
-  margin-bottom: var(--space-2);
-
-}
-
-.card__body {
-
-  font-size  : var(--text-sm);
-
-  line-height: var(--leading-loose);
-
-  color      : var(--color-text-muted);
-
-}
-
-.card__stat-value {
-
-  font-family   : var(--font-display);
-
-  font-size     : var(--text-2xl);
-
-  font-weight   : var(--weight-black);
-
-  color         : var(--color-text);
-
-  line-height   : var(--leading-tight);
-
-  letter-spacing: var(--tracking-tight);
-
-}
-
-.card__stat-label {
-
-  font-size  : var(--text-xs);
-
-  color      : var(--color-text-muted);
-
-  margin-top : var(--space-1);
-
-}
-
-/* ──────────────────────────────────────────────────────────
-
-   NAVIGATION
-
-   .nav is the top-level wrapper. Handles layout only.
-
-   .nav__link handles state. .nav__cta is the right-side CTA.
-
-   Do NOT override .nav__link color directly — use the hover
-
-   and active states defined here.
-
-────────────────────────────────────────────────────────── */
-
-.nav {
-
-  position  : sticky;
-
-  top       : 0;
-
-  z-index   : var(--z-sticky);
-
-  width     : 100%;
-
-  background: rgba(10, 10, 10, 0.8);
-
-  backdrop-filter      : blur(12px);
-
-  -webkit-backdrop-filter: blur(12px);
-
-  border-bottom: 1px solid var(--color-border);
-
-}
-
-.nav__inner {
-
-  max-width  : 1200px;
-
-  margin     : 0 auto;
-
-  padding    : 0 var(--space-page-gutter);
-
-  height     : 64px;
-
-  display    : flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap        : var(--space-8);
-
-}
-
-.nav__logo {
-
-  font-family   : var(--font-display);
-
-  font-size     : var(--text-md);
-
-  font-weight   : var(--weight-black);
-
-  color         : var(--color-text);
-
-  text-decoration: none;
-
-  letter-spacing: var(--tracking-tight);
-
-  flex-shrink   : 0;
-
-}
-
-.nav__links {
-
-  display    : flex;
-
-  align-items: center;
-
-  gap        : var(--space-1);
-
-  list-style : none;
-
-}
-
-.nav__link {
-
-  font-size     : var(--text-sm);
-
-  font-weight   : var(--weight-medium);
-
-  color         : var(--color-text-muted);
-
-  text-decoration: none;
-
-  padding       : var(--space-2) var(--space-3);
-
-  border-radius : var(--radius-sm);
-
-  transition    : color var(--duration-fast) var(--ease-out),
-
-                  background var(--duration-fast) var(--ease-out);
-
-}
-
-.nav__link:hover {
-
-  color     : var(--color-text);
-
-  background: var(--color-brand-dim);
-
-}
-
-.nav__link:focus-visible {
-
-  outline       : 2px solid var(--color-brand);
-
-  outline-offset: 2px;
-
-  color         : var(--color-text);
-
-}
-
-/* Active — current page indicator */
-
-.nav__link--active {
-
-  color: var(--color-text);
-
-}
-
-.nav__link--active::after {
-
-  content     : "";
-
-  display     : block;
-
-  height      : 2px;
-
-  background  : var(--color-brand);
-
-  border-radius: var(--radius-pill);
-
-  margin-top  : 2px;
-
-}
-
-/* Right-side CTA — single action, uses .btn .btn--primary */
-
-.nav__cta {
-
-  flex-shrink: 0;
-
-}
-
-/* Mobile menu toggle — visible below 768px */
-
-.nav__toggle {
-
-  display : none;
-
-  padding : var(--space-2);
-
-  background: transparent;
-
-  border  : none;
-
-  color   : var(--color-text);
-
-  cursor  : pointer;
-
-  border-radius: var(--radius-sm);
-
-}
-
-.nav__toggle:focus-visible {
-
-  outline       : 2px solid var(--color-brand);
-
-  outline-offset: 2px;
-
-}
-
-@media (max-width: 768px) {
-
-  .nav__links { display: none; }
-
-  .nav__cta   { display: none; }
-
-  .nav__toggle{ display: flex; }
-
-  /* When mobile menu is open — toggled via JS by adding .is-open to .nav */
-
-  .nav.is-open .nav__links {
-
-    display       : flex;
-
-    flex-direction: column;
-
-    align-items   : flex-start;
-
-    position      : absolute;
-
-    top           : 64px;
-
-    left          : 0;
-
-    right         : 0;
-
-    background    : var(--color-overlay);
-
-    border-bottom : 1px solid var(--color-border);
-
-    padding       : var(--space-4) var(--space-page-gutter);
-
-    gap           : var(--space-1);
-
-  }
-
-  .nav.is-open .nav__cta {
-
-    display: flex;
-
-    padding: var(--space-4) var(--space-page-gutter);
-
-    background: var(--color-overlay);
-
-    width: 100%;
-
-  }
-
-  .nav.is-open .nav__cta .btn {
-
-    width: 100%;
-
-    justify-content: center;
-
-  }
-
-}
-
-/* ──────────────────────────────────────────────────────────
-
-   PROSE — rich text content (blog posts, service pages)
-
-   Apply .prose to the wrapper element of any server-rendered
-
-   or CMS-driven HTML content. Do NOT apply to UI components.
-
-────────────────────────────────────────────────────────── */
-
-.prose {
-
-  color      : var(--color-text);
-
-  font-family: var(--font-ui);
-
-  font-size  : var(--text-base);
-
-  line-height: var(--leading-loose);
-
-  max-width  : 72ch;
-
-}
-
-.prose h1,
-
-.prose h2,
-
-.prose h3,
-
-.prose h4 {
-
-  font-family  : var(--font-display);
-
-  font-weight  : var(--weight-black);
-
-  line-height  : var(--leading-tight);
-
-  color        : var(--color-text);
-
-  margin-top   : var(--space-8);
-
-  margin-bottom: var(--space-4);
-
-}
-
-.prose h1 { font-size: var(--text-heading); }
-
-.prose h2 { font-size: var(--text-subhead); }
-
-.prose h3 { font-size: var(--text-md); }
-
-.prose h4 { font-size: var(--text-base); }
-
-.prose p          { margin-bottom: var(--space-5); }
-
-.prose ul,
-
-.prose ol         { margin: 0 0 var(--space-5) var(--space-6); }
-
-.prose li         { margin-bottom: var(--space-2); }
-
-.prose a {
-
-  color          : var(--color-brand);
-
-  text-decoration: underline;
-
-  text-underline-offset: 3px;
-
-  transition     : color var(--duration-fast) var(--ease-out);
-
-}
-
-.prose a:hover        { color: var(--color-brand-dark); }
-
-.prose strong         { color: var(--color-text); font-weight: var(--weight-bold); }
-
-.prose blockquote {
-
-  border-left  : 3px solid var(--color-brand);
-
-  padding      : var(--space-3) 0 var(--space-3) var(--space-5);
-
-  margin       : var(--space-6) 0;
-
-  color        : var(--color-text-muted);
-
-  font-style   : italic;
-
-}
-
-.prose code {
-
-  font-family  : var(--font-mono);
-
-  font-size    : 0.875em;
-
-  background   : var(--color-surface);
-
-  color        : var(--color-brand);
-
-  padding      : 0.15em 0.4em;
-
-  border-radius: var(--radius-xs);
-
-}
-
-.prose pre {
-
-  background   : var(--color-surface);
-
-  border       : 1px solid var(--color-border);
-
-  border-radius: var(--radius-md);
-
-  padding      : var(--space-5);
-
-  overflow-x   : auto;
-
-  margin       : var(--space-6) 0;
-
-}
-
-.prose pre code {
-
-  background: none;
-
-  padding   : 0;
-
-  color     : var(--color-text);
-
-  font-size : var(--text-sm);
-
-}
-
-.prose hr {
-
-  border     : none;
-
-  border-top : 1px solid var(--color-border);
-
-  margin     : var(--space-10) 0;
-
-}
-
-/* ──────────────────────────────────────────────────────────
-
-   HUD / CYBER EFFECTS
-
-   Decorative elements that reinforce the brand aesthetic.
-
-   All optional — pages function fully without them.
-
-   Apply only to sections that intentionally use the theme.
-
-────────────────────────────────────────────────────────── */
-
-/* Tech grid background — hero sections, feature backgrounds */
-
-.tech-grid {
-
-  position        : relative;
-
-  background-image:
-
-    radial-gradient(circle, rgba(123, 175, 212, 0.12) 1px, transparent 1px),
-
-    linear-gradient(to right,  rgba(123, 175, 212, 0.04) 1px, transparent 1px),
-
-    linear-gradient(to bottom, rgba(123, 175, 212, 0.04) 1px, transparent 1px);
-
-  background-size :
-
-    32px 32px,
-
-    128px 128px,
-
-    128px 128px;
-
-  background-position: center center;
-
-}
-
-/* HUD frame — corner bracket decoration on image or card components.
-
-   Requires two child elements with classes .bracket-bl and .bracket-br
-
-   for the bottom corners.                                             */
-
-.hud-frame {
-
-  position: relative;
-
-  overflow: hidden;
-
-}
-
-.hud-frame::before,
-
-.hud-frame::after,
-
-.hud-frame .bracket-bl,
-
-.hud-frame .bracket-br {
-
-  content       : "";
-
-  position      : absolute;
-
-  width         : 16px;
-
-  height        : 16px;
-
-  border        : 1px solid var(--color-brand);
-
-  opacity       : 0.4;
-
-  z-index       : var(--z-raised);
-
-  pointer-events: none;
-
-}
-
-.hud-frame::before  { top: 0; left:  0; border-right:  none; border-bottom: none; }
-
-.hud-frame::after   { top: 0; right: 0; border-left:   none; border-bottom: none; }
-
-.hud-frame .bracket-bl { bottom: 0; left:  0; border-right: none; border-top: none; }
-
-.hud-frame .bracket-br { bottom: 0; right: 0; border-left:  none; border-top: none; }
-
-/* Pulsing node — decorative dot for stat blocks or feature callouts */
-
-.pulsing-node {
-
-  width        : 6px;
-
-  height       : 6px;
-
-  background   : var(--color-brand);
-
-  border-radius: var(--radius-full);
-
-  box-shadow   : 0 0 8px var(--color-brand);
-
-  animation    : pulse-node 2s var(--ease-in-out) infinite;
-
-}
-
-@keyframes pulse-node {
-
-  0%, 100% { opacity: 0.3; transform: scale(0.8); }
-
-  50%       { opacity: 1;   transform: scale(1.3); }
-
-}
-
-/* Scanning line — single instance per section, motion decorative only */
-
-.scanning-line {
-
-  position     : absolute;
-
-  left         : 0;
-
-  right        : 0;
-
-  height       : 2px;
-
-  background   : var(--gradient-cyber);
-
-  border-radius: var(--radius-xs);
-
-  opacity      : 0.4;
-
-  pointer-events: none;
-
-  will-change  : transform;
-
-  animation    : scanning 3s linear infinite;
-
-}
-
-@keyframes scanning {
-
-  from { transform: translateY(0); }
-
-  to   { transform: translateY(500px); }
-
-}
-
-/* Noise texture overlay — apply to .noise parent element.
-
-   Low opacity — preserves readability of content beneath.  */
-
-.noise {
-
-  position: relative;
-
-}
-
-.noise::before {
-
-  content          : "";
-
-  position         : absolute;
-
-  inset            : 0;
-
-  z-index          : var(--z-raised);
-
-  pointer-events   : none;
-
-  opacity          : 0.015;
-
-  background-image : url("/images/noise.svg");
-
-  filter           : contrast(120%) brightness(120%);
-
-}
-
-/* ──────────────────────────────────────────────────────────
-
-   ANIMATIONS — REUSABLE KEYFRAMES
-
-   Use these class names to apply entrance animations.
-
-   All respect prefers-reduced-motion via the global rule above.
-
-────────────────────────────────────────────────────────── */
-
-.animate-fade-up {
-
-  animation: fadeUp var(--duration-slow) var(--ease-out) both;
-
-}
-
-.animate-fade-in {
-
-  animation: fadeIn var(--duration-slow) var(--ease-out) both;
-
-}
-
-/* Stagger children — add data-delay="1" through "5" to stagger items */
-
-[data-delay="1"] { animation-delay: 0.1s; }
-
-[data-delay="2"] { animation-delay: 0.2s; }
-
-[data-delay="3"] { animation-delay: 0.3s; }
-
-[data-delay="4"] { animation-delay: 0.4s; }
-
-[data-delay="5"] { animation-delay: 0.5s; }
-
-@keyframes fadeUp {
-
-  from { opacity: 0; transform: translateY(16px); }
-
-  to   { opacity: 1; transform: translateY(0);    }
-
-}
-
-@keyframes fadeIn {
-
-  from { opacity: 0; }
-
-  to   { opacity: 1; }
-
-}
-
-@keyframes spin {
-
-  to { transform: rotate(360deg); }
-
-}
-
-/* Loading spinner — use on any element needing a spin state */
-
-.spin {
-
-  animation: spin 1s linear infinite;
-
-}
-
-/* ─── Blog index editorial intro ─────────────────────────────────────────────
-   Server-rendered section above BlogClient — visible to crawlers on first byte
-   ─────────────────────────────────────────────────────────────────────────── */
-.blog-intro-wrap {
-  width: 100%;
-  padding: clamp(3rem, 6vw, 5rem) var(--space-page-gutter) clamp(2rem, 4vw, 3rem);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.blog-intro-inner {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.blog-intro-label {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--color-brand);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  opacity: 0.7;
-  margin-bottom: 1rem;
+  color: var(--carolina);
+  opacity: 0.8;
 }
 
-.blog-intro-title {
+/* --- Body variants --- */
+
+.text-lead {
+  font-size: var(--text-md);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.text-body {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.text-small {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* --- Italic accent ---
+   Use inside headings for the italic brand voice ("Home Service *Contractors*") */
+em.accent {
+  font-style: italic;
+  color: var(--carolina);
+}
+
+/* ─── 10. BUTTONS ─────────────────────────────────────────────────────────
+   Canonical button styles. Compose these classes in JSX.
+   Only add layout overrides (width, margin) at the call site.
+   Never redefine padding, font-size, or color on a per-component basis.    */
+
+/* --- Shared button base --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.8125rem 1.625rem; /* 13px 26px */
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    filter var(--duration-base) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    opacity var(--duration-base) var(--ease-out);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--carolina);
+  outline-offset: 3px;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.38;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* --- Primary: gradient fill, single most important action per view --- */
+.btn-primary {
+  background: var(--gradient-cta);
+  color: var(--bg);
+  box-shadow: 0 0 24px rgba(123, 175, 212, 0.2);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 0 40px rgba(123, 175, 212, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+  filter: brightness(0.96);
+}
+
+/* --- Secondary: outline, supporting actions --- */
+.btn-secondary {
+  background: transparent;
+  color: var(--carolina);
+  border: 1px solid var(--border-accent);
+}
+
+.btn-secondary:hover {
+  background: var(--carolina-dim);
+  border-color: var(--carolina);
+  color: var(--text);
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+  background: var(--carolina-mid);
+}
+
+/* --- Ghost: minimal, inline actions, tertiary CTAs --- */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost:hover {
+  background: var(--surface2);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btn-ghost:active {
+  transform: scale(0.98);
+}
+
+/* --- Size modifiers --- */
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: var(--text-sm);
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: var(--text-md);
+}
+
+/* ─── 11. CARDS ────────────────────────────────────────────────────────────
+   Three card variants covering all current use cases.
+   Cards never define their own width — let the grid control that.          */
+
+/* --- Base card shared properties --- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--card-padding);
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    background var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+/* --- Default card: service cards, content blocks ---
+   Lifts slightly on hover to signal interactivity.                         */
+.card-default {
+  cursor: default;
+}
+
+.card-default:is(a, button),
+a.card-default,
+button.card-default {
+  cursor: pointer;
+}
+
+.card-default:is(a, button):hover,
+a.card-default:hover,
+button.card-default:hover {
+  border-color: var(--border-accent);
+  background: var(--surface2);
+  transform: translateY(-2px);
+}
+
+/* --- Stat card: KPI blocks, metrics, proof points ---
+   Has a top accent line using --carolina.                                  */
+.card-stat {
+  position: relative;
+  padding-top: calc(var(--card-padding) + var(--space-3));
+}
+
+.card-stat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--card-padding);
+  right: var(--card-padding);
+  height: 2px;
+  background: var(--gradient-cta);
+  border-radius: 0 0 var(--radius-xs) var(--radius-xs);
+}
+
+.card-stat-number {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: var(--text-2xl);
   font-weight: 700;
-  line-height: 1.15;
-  color: var(--color-text);
-  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: var(--space-2);
 }
 
-.blog-intro-body {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--color-text-muted);
-  margin-bottom: 1rem;
+.card-stat-label {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  line-height: 1.5;
 }
 
-.blog-intro-body a {
-  color: var(--color-brand);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.card-stat-source {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+  opacity: 0.6;
+  margin-top: var(--space-3);
 }
 
-.blog-intro-body a:hover {
-  color: var(--color-brand-dark);
+/* --- FAQ card: expandable Q&A ---
+   Minimal — open/close state managed by JS, style managed here.           */
+.card-faq {
+  border-radius: var(--radius-md);
+  padding: 0;
+  overflow: hidden;
 }
 
-/* ─── FAQ layout ─────────────────────────────────────────────────────────── */
-.faq-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
+.card-faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.card-faq-trigger:hover {
+  background: var(--surface2);
+}
+
+.card-faq-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--carolina);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.card-faq[aria-expanded="true"] .card-faq-icon {
+  transform: rotate(45deg);
+}
+
+.card-faq-body {
+  padding: 0 var(--space-6) var(--space-5);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  display: none;
+}
+
+.card-faq[aria-expanded="true"] .card-faq-body {
+  display: block;
+}
+
+/* ─── 12. FORM ELEMENTS ────────────────────────────────────────────────────
+   All form elements share a consistent height, border, and focus state.
+   Do not restyle individual form elements inside components.               */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  background: var(--surface2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  padding: 0.75rem 1rem;
+  width: 100%;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--muted);
+}
+
+.form-input:hover,
+.form-select:hover,
+.form-textarea:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--carolina);
+  background: var(--surface3);
+  box-shadow: 0 0 0 3px rgba(123, 175, 212, 0.12);
+}
+
+.form-input[aria-invalid="true"],
+.form-textarea[aria-invalid="true"] {
+  border-color: var(--status-red);
+  box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.12);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-hint {
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+
+.form-error {
+  font-size: var(--text-sm);
+  color: var(--status-red);
+}
+
+/* ─── 13. NAVIGATION ───────────────────────────────────────────────────────
+   Nav structure:
+   .nav-root            → outermost wrapper (position: fixed or sticky)
+   .nav-inner           → max-width container with flex layout
+   .nav-logo            → brand mark
+   .nav-links           → desktop link list
+   .nav-link            → individual nav link
+   .nav-link-active     → current page indicator
+   .nav-actions         → CTA + phone number cluster
+   .nav-mobile-toggle   → hamburger (mobile only)
+   
+   Mobile nav uses .glass-panel (see section 15).                           */
+
+.nav-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background var(--duration-base) var(--ease-out);
+}
+
+.nav-root.is-scrolled {
+  background: rgba(10, 10, 10, 0.96);
+  border-bottom-color: var(--border-strong);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+}
+
+@media (min-width: 900px) {
+  .nav-links {
+    display: flex;
+  }
+}
+
+.nav-link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out);
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: var(--surface2);
+}
+
+.nav-link-active {
+  color: var(--carolina);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.nav-phone {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.nav-phone:hover {
+  color: var(--text);
 }
 
 @media (min-width: 1024px) {
-  .faq-grid {
+  .nav-phone {
+    display: block;
+  }
+}
+
+.nav-mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.nav-mobile-toggle:hover {
+  background: var(--surface2);
+  border-color: var(--border-accent);
+  color: var(--text);
+}
+
+@media (min-width: 900px) {
+  .nav-mobile-toggle {
+    display: none;
+  }
+}
+
+/* Mobile nav drawer — uses glass-panel (section 15) */
+.nav-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  display: none;
+  flex-direction: column;
+  padding: 80px var(--page-gutter) var(--space-8);
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.nav-drawer.is-open {
+  display: flex;
+}
+
+.nav-drawer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.nav-drawer-link {
+  font-size: var(--text-xl);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-secondary);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.nav-drawer-link:hover,
+.nav-drawer-link:focus {
+  color: var(--text);
+}
+
+/* ─── 14. LAYOUT UTILITIES ─────────────────────────────────────────────────
+   Use these classes in JSX. Do not reach for Tailwind layout utilities
+   for page structure — use these instead for consistency.                  */
+
+/* Full-width section wrapper — handles vertical rhythm */
+.section {
+  width: 100%;
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+.section-sm {
+  padding-top: calc(var(--section-gap) * 0.5);
+  padding-bottom: calc(var(--section-gap) * 0.5);
+}
+
+/* Standard content container */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+}
+
+/* Narrow container for text-heavy sections */
+.container-narrow {
+  max-width: 760px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+}
+
+/* Divider line */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Vertical stack with consistent gap */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.stack-sm {
+  gap: var(--space-2);
+}
+.stack-lg {
+  gap: var(--space-8);
+}
+
+/* Grid systems */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-6);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-5);
+}
+
+/* FAQ two-column layout */
+.grid-faq {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 1024px) {
+  .grid-faq {
     grid-template-columns: 0.8fr 1.2fr;
   }
+}
+
+/* Blog index layout */
+.grid-blog {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .grid-blog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-blog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ─── 15. GLASS (FLOATING LAYERS ONLY) ────────────────────────────────────
+   .glass-panel is ONLY for elements that float above page content:
+   modals, tooltips, dropdowns, the mobile nav overlay.
+   
+   Do NOT apply to inline cards, stat blocks, or service panels.
+   Inline content uses var(--surface) and var(--border-strong).
+   
+   The backdrop-filter creates a new stacking context — any child with
+   position: fixed will behave unexpectedly inside a glass-panel.           */
+
+.glass-panel {
+  background: rgba(26, 34, 46, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-accent);
+}
+
+/* Glass header label — mono uppercase, used inside modals/panels */
+.glass-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--carolina);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+/* ─── 16. PROSE (BLOG CONTENT) ─────────────────────────────────────────────
+   Applied to the blog post container (.prose wrapper in JSX).
+   These styles reset for readability and don't bleed into UI components.   */
+
+.prose {
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  line-height: 1.8;
+  max-width: 680px;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 2.5rem 0 1rem;
+  color: var(--text);
+}
+
+.prose h1 {
+  font-size: var(--text-subheading);
+}
+.prose h2 {
+  font-size: var(--text-xl);
+}
+.prose h3 {
+  font-size: var(--text-lg);
+}
+.prose h4 {
+  font-size: var(--text-md);
+}
+
+.prose p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.prose ul,
+.prose ol {
+  margin: 0 0 1.5rem 1.5rem;
+  color: var(--text-secondary);
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose a {
+  color: var(--carolina);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.prose a:hover {
+  color: var(--carolina-dark);
+}
+
+.prose strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.prose em {
+  color: var(--text-secondary);
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--carolina);
+  padding: var(--space-2) 0 var(--space-2) var(--space-6);
+  margin: var(--space-6) 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--surface2);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-xs);
+  color: var(--carolina);
+  border: 1px solid var(--border);
+}
+
+.prose pre {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  overflow-x: auto;
+  margin: var(--space-6) 0;
+}
+
+.prose pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text);
+  font-size: var(--text-sm);
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--space-10) 0;
+}
+
+.prose img {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+  margin: var(--space-6) 0;
+}
+
+/* Blog intro block — server-rendered above blog list */
+.blog-intro {
+  width: 100%;
+  padding: clamp(3rem, 6vw, 5rem) var(--page-gutter) clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.blog-intro-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ─── 17. ANIMATIONS ─────────────────────────────────────────────────────── */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Utility classes for entrance animations */
+.animate-fade-up {
+  animation: fadeUp var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-slow) var(--ease-out) both;
+}
+
+/* Stagger helpers — add to children in a list */
+.stagger-1 {
+  animation-delay: 80ms;
+}
+.stagger-2 {
+  animation-delay: 160ms;
+}
+.stagger-3 {
+  animation-delay: 240ms;
+}
+.stagger-4 {
+  animation-delay: 320ms;
+}
+
+/* Pulsing status dot (online indicator, live badge) */
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--status-green);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 6px var(--status-green);
+  animation: pulse-dot 2s var(--ease-in-out) infinite;
+}
+
+/* ─── 18. TAILWIND @THEME BRIDGE ──────────────────────────────────────────
+   Registers brand values as Tailwind v4 utilities.
+   Keeping this in sync with :root is automatic via the var() references.   */
+
+@theme {
+  /* Colors */
+  --color-carolina: #7bafd4;
+  --color-carolina-dark: #4d8cb9;
+  --color-slate: #1a222e;
+  --color-steel: #3a5570;
+  --color-bg: #0a0a0a;
+  --color-surface: #141414;
+  --color-surface-2: #1e1e1e;
+  --color-surface-3: #252525;
+  --color-text: #f8f9fa;
+  --color-text-secondary: #b0b8c1;
+  --color-muted: #7a838d;
+  --color-status-green: #00c96b;
+  --color-status-yellow: #f5c000;
+  --color-status-red: #ff4d4d;
+
+  /* Typography */
+  --font-family-serif: "Bricolage Grotesque", serif;
+  --font-family-sans: "Space Grotesk", sans-serif;
+  --font-family-mono: "JetBrains Mono", monospace;
+
+  /* Type scale */
+  --font-size-xs: 0.64rem;
+  --font-size-sm: 0.8rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.25rem;
+  --font-size-lg: 1.563rem;
+  --font-size-xl: 1.953rem;
+  --font-size-2xl: 2.441rem;
+  --font-size-3xl: 3.052rem;
+  --font-size-4xl: 3.815rem;
+
+  /* Border radius */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
 }

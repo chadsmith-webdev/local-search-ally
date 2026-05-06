@@ -1,5 +1,5 @@
 .section {
-  padding: 0 var(--space-page-gutter) var(--space-section);
+  padding: 0 var(--page-gutter) var(--section-gap);
 }
 
 .inner {
@@ -49,7 +49,7 @@
 .iconWrap {
   width: 32px;
   height: 32px;
-  color: var(--color-brand);
+  color: var(--carolina);
   flex-shrink: 0;
 }
 
@@ -64,7 +64,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--color-text-muted);
+  color: var(--muted);
 }
 
 .railLine {
@@ -88,13 +88,13 @@
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.025em;
-  color: var(--color-text);
+  color: var(--text);
 }
 
 .hook {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: var(--color-text);
+  color: var(--text);
   font-weight: 500;
 }
 
@@ -127,7 +127,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--color-brand);
+  color: var(--carolina);
   padding-bottom: 0.4rem;
   border-bottom: 1px solid rgba(123, 175, 212, 0.2);
 }
@@ -166,7 +166,7 @@
   width: 5px;
   height: 5px;
   border-radius: var(--radius-full);
-  background: var(--color-brand);
+  background: var(--carolina);
   flex-shrink: 0;
   margin-top: 0.45em;
 }
@@ -174,7 +174,7 @@
 /* ── Aside ── */
 .aside {
   font-size: 0.8rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   font-family: var(--font-ui);
   letter-spacing: 0.01em;
   padding: 0.6rem 0.9rem;
@@ -193,7 +193,7 @@
 }
 
 .softCTAIcon {
-  color: var(--color-brand);
+  color: var(--carolina);
   font-size: 0.9rem;
   line-height: 1.7;
   flex-shrink: 0;
@@ -209,7 +209,7 @@
 .outcome {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-brand);
+  color: var(--carolina);
   padding-top: 0.25rem;
   border-top: 1px solid rgba(123, 175, 212, 0.15);
 }
@@ -243,7 +243,7 @@
   align-items: center;
   gap: 6px;
   margin-top: 20px;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
@@ -256,12 +256,12 @@
 
 .learnMore:hover,
 .learnMore:focus-visible {
-  color: var(--color-text);
+  color: var(--text);
   border-color: rgba(240, 240, 240, 0.4);
 }
 
 .learnMore:focus-visible {
-  outline: 2px solid var(--color-brand, #7bafd4);
+  outline: 2px solid var(--carolina, #7bafd4);
   outline-offset: 4px;
   border-radius: var(--radius-xs);
 }

@@ -2,19 +2,19 @@
 .section {
   background: linear-gradient(
     180deg,
-    var(--color-bg) 0%,
-    var(--color-surface) 50%,
-    var(--color-bg) 100%
+    var(--bg) 0%,
+    var(--surface) 50%,
+    var(--bg) 100%
   );
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   padding: 7rem 0;
 }
 
 .inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-page-gutter);
+  padding: 0 var(--page-gutter);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
@@ -34,7 +34,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--carolina);
   opacity: 0.7;
 }
 
@@ -44,25 +44,25 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--text);
 }
 
 .narrativeH2 em {
   font-style: normal;
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .narrativeBody {
   font-family: var(--font-ui);
   font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
-  color: var(--color-text-muted);
+  color: var(--muted);
   line-height: 1.75;
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
-  color: var(--color-brand);
+  color: var(--carolina);
   font-family: var(--font-ui);
   font-size: 0.9375rem;
   font-weight: 600;
@@ -78,8 +78,8 @@
 }
 
 .cta:hover {
-  color: var(--color-text);
-  border-color: var(--color-brand);
+  color: var(--text);
+  border-color: var(--carolina);
 }
 
 /* ─── Stat cards (right) ────────────────────────────────── */
@@ -90,16 +90,16 @@
 }
 
 .statCard {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-brand);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--carolina);
   padding: 1.5rem 1.75rem;
   transition: border-color 0.2s ease;
 }
 
 .statCard:hover {
-  border-color: var(--color-border-strong);
-  border-left-color: var(--color-brand-dark);
+  border-color: var(--border-strong);
+  border-left-color: var(--carolina-dark);
 }
 
 .statValue {
@@ -108,14 +108,14 @@
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
-  color: var(--color-brand);
+  color: var(--carolina);
   text-shadow: 0 0 32px rgba(123, 175, 212, 0.2);
 }
 
 .statLabel {
   font-family: var(--font-ui);
   font-size: 0.875rem;
-  color: var(--color-text);
+  color: var(--text);
   margin-top: 0.5rem;
   line-height: 1.5;
 }
@@ -123,7 +123,7 @@
 .statSource {
   font-family: var(--font-ui);
   font-size: 0.625rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 0.5rem;

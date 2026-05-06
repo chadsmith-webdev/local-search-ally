@@ -1,6 +1,6 @@
 .section {
-  padding: var(--space-section, 100px) 0;
-  background: var(--color-surface);
+  padding: var(--section-gap, 100px) 0;
+  background: var(--surface);
   position: relative;
   overflow: hidden;
 }
@@ -50,7 +50,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand, #7bafd4);
+  color: var(--carolina, #7bafd4);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -62,7 +62,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--color-brand, #7bafd4);
+  background: var(--carolina, #7bafd4);
   opacity: 0.6;
 }
 
@@ -72,14 +72,14 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   margin: 0 0 16px 0;
 }
 
 .intro {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   margin: 0;
 }
 
@@ -113,7 +113,7 @@
   height: 2px;
   background: linear-gradient(
     90deg,
-    var(--color-brand, #7bafd4) 0%,
+    var(--carolina, #7bafd4) 0%,
     transparent 100%
   );
   opacity: 0;
@@ -149,7 +149,7 @@
   gap: 16px;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--color-text, #f0f0f0);
+  color: var(--text, #f0f0f0);
   font-family: var(--font-display);
   letter-spacing: -0.01em;
   text-align: left;
@@ -157,7 +157,7 @@
 }
 
 .question:focus-visible {
-  outline: 3px solid var(--color-brand, #7bafd4);
+  outline: 3px solid var(--carolina, #7bafd4);
   outline-offset: 3px;
   border-radius: var(--radius-xs);
 }
@@ -167,11 +167,11 @@
 }
 
 .question:hover {
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .question.active {
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .icon {
@@ -181,7 +181,7 @@
   justify-content: center;
   width: 24px;
   height: 24px;
-  color: var(--color-brand);
+  color: var(--carolina);
   font-size: 1.5rem;
   font-weight: 300;
   line-height: 1;
@@ -207,7 +207,7 @@
 .answer p {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--color-text-muted);
+  color: var(--muted);
   margin: 0 0 24px 0;
   max-width: 72ch;
 }
@@ -221,7 +221,7 @@
 }
 
 .ctaText {
-  color: var(--color-text-muted);
+  color: var(--muted);
   font-size: 0.95rem;
   margin: 0;
 }
@@ -231,7 +231,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: var(--color-brand);
+  color: var(--carolina);
   border: 1px solid rgba(123, 175, 212, 0.4);
   border-radius: var(--radius-sm);
   padding: 0.875rem 1.75rem;
@@ -250,7 +250,7 @@
 }
 
 .ctaButton:hover {
-  background: var(--color-brand-dim);
+  background: var(--carolina-dim);
   transform: translateY(-1px);
 }
 

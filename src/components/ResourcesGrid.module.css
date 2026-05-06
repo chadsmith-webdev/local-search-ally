@@ -1,6 +1,6 @@
 .section {
-  padding: 0 var(--space-page-gutter) var(--space-section);
-  background: var(--color-bg);
+  padding: 0 var(--page-gutter) var(--section-gap);
+  background: var(--bg);
 }
 
 .inner {
@@ -24,7 +24,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--carolina);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -36,7 +36,7 @@
   display: inline-block;
   width: 20px;
   height: 1px;
-  background: var(--color-brand);
+  background: var(--carolina);
   opacity: 0.5;
 }
 
@@ -46,14 +46,14 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.15;
-  color: var(--color-text);
+  color: var(--text);
   max-width: 560px;
 }
 
 .subhead {
   font-family: var(--font-ui);
   font-size: 1rem;
-  color: var(--color-text-muted);
+  color: var(--muted);
   line-height: 1.6;
 }
 
@@ -68,7 +68,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  background: var(--color-surface);
+  background: var(--surface);
 
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -94,7 +94,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--carolina);
 }
 
 .cardTitle {
@@ -103,7 +103,7 @@
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.25;
-  color: var(--color-text);
+  color: var(--text);
   white-space: pre-line;
 }
 
@@ -111,7 +111,7 @@
   font-family: var(--font-ui);
   font-size: 0.9375rem;
   line-height: 1.7;
-  color: var(--color-text-muted);
+  color: var(--muted);
 }
 
 /* ─── Card bottom ────────────────────────────────────── */
@@ -120,7 +120,7 @@
   flex-direction: column;
   gap: 1rem;
   padding: 1.25rem 1.75rem 1.75rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--border);
 }
 
 /* Meta row */
@@ -159,7 +159,7 @@
   font-family: var(--font-ui);
   font-size: 0.9375rem;
   font-weight: 700;
-  color: var(--color-brand);
+  color: var(--carolina);
   background: transparent;
   border: 1px solid rgba(123, 175, 212, 0.3);
   border-radius: var(--radius-md);
@@ -174,9 +174,9 @@
 }
 
 .downloadBtn:hover {
-  background: var(--color-brand);
-  border-color: var(--color-brand);
-  color: var(--color-bg);
+  background: var(--carolina);
+  border-color: var(--carolina);
+  color: var(--bg);
 }
 
 .downloadBtn svg {
@@ -186,7 +186,7 @@
 }
 
 .downloadBtn:focus-visible {
-  outline: 2px solid var(--color-brand);
+  outline: 2px solid var(--carolina);
   outline-offset: 3px;
 }
 
