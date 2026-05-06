@@ -2,6 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import LostCallsSection from "@/components/LostCallsSection";
 import DiagnosticSection from "@/components/DiagnosticSection";
 import AuthoritySection from "@/components/AuthoritySection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import ServicesSection from "@/components/ServicesSection";
 import ProcessSection from "@/components/ProcessSection";
 import FAQSection from "@/components/FAQSection";
@@ -10,14 +11,14 @@ import FinalCTASection from "@/components/FinalCTASection";
 export const metadata = {
   title: "Local SEO for NWA Contractors | Local Search Ally",
   description:
-    "Your competitor is in the Map Pack. You're not. I get NWA HVAC, plumbing, roofing, and electrical contractors into the top 3. Free audit — no email required.",
+    "NWA home service contractors are invisible in the Google Map Pack — and losing calls because of it. I fix the three root causes: incomplete GBP, inconsistent citations, and weak local signals. No contracts. Free audit.",
   alternates: {
     canonical: "https://www.localsearchally.com",
   },
   openGraph: {
     title: "Local SEO for NWA Contractors | Local Search Ally",
     description:
-      "Your competitor is in the Google Map Pack. You're not. Free visibility audit for NWA home service trades.",
+      "NWA home service contractors are invisible in the Google Map Pack — and losing calls because of it. I fix the three root causes: incomplete GBP, inconsistent citations, and weak local signals. No contracts. Free audit.",
     url: "https://www.localsearchally.com",
   },
 };
@@ -248,6 +249,38 @@ const faqJsonLd = {
         text: "Run the free SEO audit at audit.localsearchally.com. It shows your current Map Pack visibility, GBP completeness, and top citation gaps — no email required, no sales call triggered automatically.",
       },
     },
+    {
+      "@type": "Question",
+      name: "What is the Google Map Pack and why do NWA contractors need to be in it?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Google Map Pack is the block of three local business listings that appears at the top of Google search results for queries like 'HVAC repair Rogers AR' or 'plumber near me.' Research shows 42% of local search clicks go to these three listings. Contractors outside the Map Pack get almost no organic search traffic from Google, regardless of how good their reviews are.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is Local Search Ally different from a digital marketing agency?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Local Search Ally is one person — Chad Smith — focused on one specialty: local SEO for NWA home service trades. There's no account manager, no generalist team, no PPC upsell. Every client gets direct access to Chad, a cell number that gets answered, and a monthly report written in plain English. No contracts, no setup fees, cancel anytime.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is local SEO worth the investment for a small home service company in Northwest Arkansas?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "For a trade business in NWA, local SEO is the highest-ROI marketing channel available. A single additional job per week from search — at average ticket prices for HVAC, plumbing, or roofing — covers the cost of local SEO many times over. Unlike paid ads, the results compound over time rather than stopping when the budget runs out.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can AI search tools like ChatGPT find my contracting business in Northwest Arkansas?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "AI tools like ChatGPT and Perplexity pull from Google Business Profiles, your website, and trusted directories when answering local service questions. If your GBP is incomplete or your citations are inconsistent, you're likely invisible to both traditional Google search and AI-generated recommendations. The same foundational fixes — complete profile, accurate citations, clear service pages — improve visibility in both.",
+      },
+    },
   ],
 };
 
@@ -268,8 +301,9 @@ export default function Page() {
       />
       <HeroSection />
       <LostCallsSection />
-      <DiagnosticSection />
       <AuthoritySection />
+      <DiagnosticSection />
+      <TestimonialsSection />
       <ServicesSection />
       <ProcessSection />
       <FAQSection heading='Common questions about local SEO for NWA contractors.' />

@@ -29,9 +29,9 @@ export default function FinalCTASection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65, ease: "easeOut", delay: 0.1 }}
         >
-          The contractor who ranks #1 in your city
+          Does your business show up
           <br />
-          <em>is getting your calls right now.</em>
+          <em>where it counts?</em>
         </motion.h2>
 
         <motion.p
@@ -52,7 +52,10 @@ export default function FinalCTASection() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
         >
           <Link
-            href={process.env.NEXT_PUBLIC_AUDIT_URL || "https://audit.localsearchally.com"}
+            href={
+              process.env.NEXT_PUBLIC_AUDIT_URL ||
+              "https://audit.localsearchally.com"
+            }
             className={styles.btnPrimary}
           >
             Run Your Free Audit →

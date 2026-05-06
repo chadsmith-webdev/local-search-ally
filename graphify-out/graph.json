@@ -5542,7 +5542,7 @@
       "label": "RootLayout()",
       "file_type": "code",
       "source_file": "src/app/layout.js",
-      "source_location": "L70",
+      "source_location": "L78",
       "id": "app_layout_rootlayout",
       "community": 62,
       "norm_label": "rootlayout()"
@@ -20864,7 +20864,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.js",
-      "source_location": "L70",
+      "source_location": "L78",
       "weight": 1.0,
       "_src": "src_app_layout_js",
       "_tgt": "app_layout_rootlayout",

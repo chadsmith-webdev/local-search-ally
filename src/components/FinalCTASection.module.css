@@ -103,6 +103,7 @@
   background: var(--gradient-cta);
   color: var(--bg);
   border: none;
+  border-radius: var(--radius-sm);
   padding: 1rem 2.25rem;
   font-family: var(--font-ui);
   font-size: 0.9375rem;
@@ -112,7 +113,10 @@
   white-space: nowrap;
   cursor: pointer;
   box-shadow: 0 0 40px rgba(123, 175, 212, 0.35);
-  transition: filter 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  transition:
+    filter 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
 }
 
 .btnPrimary:hover {
@@ -132,6 +136,7 @@
   background: transparent;
   color: var(--carolina);
   border: 1px solid rgba(123, 175, 212, 0.35);
+  border-radius: var(--radius-sm);
   padding: 1rem 2rem;
   font-family: var(--font-ui);
   font-size: 0.9375rem;
@@ -140,7 +145,9 @@
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .btnSecondary:hover {

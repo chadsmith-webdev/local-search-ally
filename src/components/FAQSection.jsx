@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./FAQSection.module.css";
 
@@ -11,7 +10,7 @@ const fadeUp = {
 
 const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.07 } },
 };
 
 const FAQS = [
@@ -25,7 +24,7 @@ const FAQS = [
   },
   {
     q: "I have good reviews. Why am I still not ranking?",
-    a: "Reviews are one signal, not the whole picture. Google also looks for engagement — responding to reviews, posting updates, keeping your profile active. An account with good reviews but no activity looks dormant to the algorithm. Active businesses respond. That signal matters.",
+    a: "Reviews are one signal, not the whole picture. Google also looks for engagement — responding to reviews, posting updates, keeping your profile active. An account with good reviews but no activity looks dormant to the algorithm.",
   },
   {
     q: "How much does local SEO cost for a contractor in Northwest Arkansas?",
@@ -49,7 +48,7 @@ const FAQS = [
   },
   {
     q: "Why does my competitor rank above me even though I have more reviews?",
-    a: "Reviews are one of many Map Pack signals. Competitors often outrank businesses with more reviews because they have a more complete GBP, stronger citation consistency, more relevant categories selected, or more engagement on their profile.",
+    a: "Competitors often outrank businesses with more reviews because they have a more complete GBP, stronger citation consistency, more relevant categories selected, or more engagement on their profile. Reviews are one of many Map Pack signals.",
   },
   {
     q: "What does Google Business Profile optimization actually involve?",
@@ -75,82 +74,64 @@ const FAQS = [
     q: "What is the first step to getting started with Local Search Ally?",
     a: "Run the free SEO audit at audit.localsearchally.com. It shows your current Map Pack visibility, GBP completeness, and top citation gaps — no email required, no sales call triggered automatically.",
   },
+  {
+    q: "What is the Google Map Pack and why do NWA contractors need to be in it?",
+    a: "The Google Map Pack is the block of three local business listings at the top of Google search results for queries like 'HVAC repair Rogers AR.' Research shows 42% of local search clicks go to these three listings. Contractors outside the Map Pack get almost no organic search traffic from Google.",
+  },
+  {
+    q: "How is Local Search Ally different from a digital marketing agency?",
+    a: "Local Search Ally is one person — Chad Smith — focused on one specialty: local SEO for NWA home service trades. There's no account manager, no generalist team, no PPC upsell. Every client gets direct access to Chad, a cell number that gets answered, and a monthly report written in plain English.",
+  },
+  {
+    q: "Is local SEO worth the investment for a small home service company in Northwest Arkansas?",
+    a: "For a trade business in NWA, local SEO is the highest-ROI marketing channel available. A single additional job per week from search covers the cost of local SEO many times over. Unlike paid ads, the results compound over time rather than stopping when the budget runs out.",
+  },
+  {
+    q: "Can AI search tools like ChatGPT find my contracting business in Northwest Arkansas?",
+    a: "AI tools like ChatGPT and Perplexity pull from Google Business Profiles, your website, and trusted directories when answering local service questions. The same foundational fixes — complete profile, accurate citations, clear service pages — improve visibility in both traditional Google search and AI-generated recommendations.",
+  },
 ];
-
-function FAQItem({ item, index }) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <motion.div variants={fadeUp} className={styles.item}>
-      <button
-        className={styles.question}
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-      >
-        <span className={styles.questionText}>{item.q}</span>
-        <span className={`${styles.icon} ${open ? styles.iconOpen : ""}`}>
-          <svg
-            width='16'
-            height='16'
-            viewBox='0 0 16 16'
-            fill='none'
-            stroke='currentColor'
-            strokeWidth='1.75'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-          >
-            <path d='M4 6l4 4 4-4' />
-          </svg>
-        </span>
-      </button>
-      {/* Answer is always in the DOM so crawlers and AI engines can read it.
-          Height/opacity animate for the visual accordion only. */}
-      <motion.div
-        className={styles.answerWrap}
-        initial={false}
-        animate={
-          open ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
-        }
-        transition={{ duration: 0.28, ease: "easeInOut" }}
-        aria-hidden={!open}
-      >
-        <p className={styles.answer}>{item.a}</p>
-      </motion.div>
-    </motion.div>
-  );
-}
 
 export default function FAQSection({
   faqs = FAQS,
   eyebrow = "Common Questions",
   heading = (
     <>
-      Frequently asked about
+      Everything you want to know
       <br />
-      local visibility.
+      about local SEO.
     </>
   ),
 }) {
   return (
     <section className={styles.section}>
-      <motion.div
-        className={styles.inner}
-        variants={container}
-        initial='hidden'
-        whileInView='visible'
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <motion.div className={styles.header} variants={fadeUp}>
+      <div className={styles.inner}>
+        <motion.div
+          className={styles.header}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <span className={styles.eyebrow}>{eyebrow}</span>
           <h2 className={styles.h2}>{heading}</h2>
         </motion.div>
 
-        <div className={styles.list}>
+        <motion.div
+          className={styles.grid}
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {faqs.map((item, i) => (
-            <FAQItem key={i} item={item} index={i} />
+            <motion.div key={i} className={styles.item} variants={fadeUp}>
+              <h3 className={styles.question}>{item.q}</h3>
+              <p className={styles.answer}>{item.a}</p>
+            </motion.div>
           ))}
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

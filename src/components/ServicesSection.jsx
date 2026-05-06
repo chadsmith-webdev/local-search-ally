@@ -82,24 +82,6 @@ export default function ServicesSection() {
               className={styles.card}
               variants={cardVariants}
             >
-              {/* HUD corner brackets */}
-              <span
-                className={`${styles.corner} ${styles.tl}`}
-                aria-hidden='true'
-              />
-              <span
-                className={`${styles.corner} ${styles.tr}`}
-                aria-hidden='true'
-              />
-              <span
-                className={`${styles.corner} ${styles.bl}`}
-                aria-hidden='true'
-              />
-              <span
-                className={`${styles.corner} ${styles.br}`}
-                aria-hidden='true'
-              />
-
               <h3 className={styles.cardName}>{svc.name}</h3>
               <p className={styles.cardDesc}>{svc.description}</p>
               <div className={styles.cardOutcome}>

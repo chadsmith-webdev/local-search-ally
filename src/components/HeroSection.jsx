@@ -39,7 +39,9 @@ export default function HeroSection() {
         {/* Left: content */}
         <div className={styles.content}>
           {/* Eyebrow sits above H1 — static so it appears in correct order */}
-          <span className={styles.eyebrow}>LOCAL SEO · NORTHWEST ARKANSAS</span>
+          <span className={styles.eyebrow}>
+            MAP PACK SPECIALIST · NORTHWEST ARKANSAS
+          </span>
 
           {/* H1 is outside the stagger container — renders on first paint for LCP */}
           <h1 className={styles.h1}>

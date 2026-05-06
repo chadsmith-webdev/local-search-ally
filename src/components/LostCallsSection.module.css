@@ -91,6 +91,7 @@
 
 .statCard {
   background: var(--bg);
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   border-left: 3px solid var(--carolina);
   padding: 1.5rem 1.75rem;

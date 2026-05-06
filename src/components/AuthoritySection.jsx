@@ -5,22 +5,6 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import styles from "./AuthoritySection.module.css";
 
-const pledges = [
-  "I will never take credit for results I didn\u2019t produce.",
-  "I will tell you if local SEO isn\u2019t your biggest problem.",
-  "I will never lock you into a contract you can\u2019t leave.",
-  "I will give you my cell number and actually answer it.",
-];
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: "easeOut", delay: i * 0.1 },
-  }),
-};
-
 export default function AuthoritySection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -36,25 +20,22 @@ export default function AuthoritySection() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <div className={styles.photoWrap}>
-            <div className={styles.hudBracket} aria-hidden='true'>
-              <span className={styles.tl} />
-              <span className={styles.tr} />
-              <span className={styles.bl} />
-              <span className={styles.br} />
-            </div>
             <Image
               src='/images/chadsmith-profile.png'
               alt='Chad Smith — Local Search Ally, Siloam Springs AR'
-              width={400}
-              height={480}
+              width={260}
+              height={312}
               className={styles.photo}
             />
-            <div className={styles.locationTag}>
-              <span className={styles.locationDot} aria-hidden='true' />
-              <span>Siloam Springs, AR</span>
+            <div className={styles.photoIdentity}>
+              <span className={styles.photoName}>Chad Smith</span>
+              <span className={styles.photoTitle}>Local SEO Specialist</span>
+              <div className={styles.locationTag}>
+                <span className={styles.locationDot} aria-hidden='true' />
+                <span>Based in Siloam Springs, AR</span>
+              </div>
             </div>
           </div>
-          <div className={styles.specTag}>SPECIALIST_NOT_AGENCY</div>
         </motion.div>
 
         {/* Right: editorial copy */}
@@ -65,7 +46,7 @@ export default function AuthoritySection() {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
           >
-            WHO I AM
+            WHO IS LOCAL SEARCH ALLY
           </motion.span>
 
           <motion.h2
@@ -83,11 +64,12 @@ export default function AuthoritySection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
-            I moved to Siloam Springs because NWA is one of the fastest-growing
-            metro areas in the country — and most of the contractors here are
-            invisible online. Not because they&rsquo;re bad at their trade.
-            Because nobody has built the local SEO infrastructure this market
-            actually needs.
+            You&rsquo;re good at your trade. Your customers know it. But when
+            someone in Rogers or Bentonville searches for your exact service
+            tonight, it&rsquo;s not you they find &mdash; it&rsquo;s someone
+            with a complete Google profile and consistent listings. That gap has
+            nothing to do with skill. It&rsquo;s a visibility problem, and
+            it&rsquo;s fixable.
           </motion.p>
 
           <motion.p
@@ -96,33 +78,15 @@ export default function AuthoritySection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
           >
-            I&rsquo;m not a marketing agency. I don&rsquo;t have 200 clients and
-            an account manager who doesn&rsquo;t know your name. I have one area
-            of expertise — local SEO for home service trades — and I apply it
-            specifically to the NWA market. Every business I work with gets my
-            direct attention, my direct phone number, and a monthly report that
-            tells them exactly what moved and why.
+            I moved to Siloam Springs specifically because NWA is one of the
+            fastest-growing metro areas in the country &mdash; and the local SEO
+            infrastructure most contractors here need simply doesn&rsquo;t exist
+            yet. I&rsquo;m not a marketing agency with 200 clients and an
+            account manager who doesn&rsquo;t know your name. One market, one
+            specialty. Every business I work with gets my direct attention, my
+            cell number, and a monthly report that tells them exactly what moved
+            and why.
           </motion.p>
-
-          {/* Pledges */}
-          <div className={styles.pledges}>
-            <div className={styles.pledgesLabel}>MY COMMITMENTS TO YOU</div>
-            {pledges.map((pledge, i) => (
-              <motion.div
-                key={i}
-                className={styles.pledge}
-                custom={i}
-                variants={fadeUp}
-                initial='hidden'
-                animate={inView ? "visible" : "hidden"}
-              >
-                <span className={styles.pledgeCheck} aria-hidden='true'>
-                  ✓
-                </span>
-                <span>{pledge}</span>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
