@@ -104,7 +104,7 @@ export default function GbpChecklistClient() {
         </div>
 
         {/* Eyebrow */}
-        <p className={`${styles.eyebrow} text-carolina`}>
+        <p className={`${styles.eyebrow} text-brand`}>
           Free Download &middot; GBP Field Guide
         </p>
 
@@ -116,7 +116,7 @@ export default function GbpChecklistClient() {
         </h1>
 
         {/* Subheadline */}
-        <p className={`${styles.sub} text-muted`}>
+        <p className={`${styles.sub} text-text-muted`}>
           Most home service contractors have 4&ndash;6 gaps in their GBP they
           don&rsquo;t know about. This checklist finds them in 20 minutes.
         </p>
@@ -139,7 +139,7 @@ export default function GbpChecklistClient() {
                 You&rsquo;re in. Check your inbox &mdash; the checklist is on its
                 way.
               </p>
-              <p className={`${styles.thankYouSub} text-muted`}>
+              <p className={`${styles.thankYouSub} text-text-muted`}>
                 While you wait: make sure{" "}
                 <strong style={{ color: "var(--text)" }}>
                   chad@localsearchally.com
@@ -151,7 +151,7 @@ export default function GbpChecklistClient() {
             <form onSubmit={handleSubmit} noValidate>
               <div className={styles.fieldGroup}>
                 <div className={styles.field}>
-                  <label htmlFor='firstName' className={`${styles.label} text-muted`}>
+                  <label htmlFor='firstName' className={`${styles.label} text-text-muted`}>
                     First name
                   </label>
                   <input
@@ -168,7 +168,7 @@ export default function GbpChecklistClient() {
                 </div>
 
                 <div className={styles.field}>
-                  <label htmlFor='email' className={`${styles.label} text-muted`}>
+                  <label htmlFor='email' className={`${styles.label} text-text-muted`}>
                     Email address
                   </label>
                   <input
@@ -186,7 +186,7 @@ export default function GbpChecklistClient() {
               </div>
 
               {status === "error" && errorMsg && (
-                <p className={`${styles.errorMsg} text-red`} role='alert'>
+                <p className={`${styles.errorMsg} text-status-error`} role='alert'>
                   {errorMsg}
                 </p>
               )}
@@ -199,7 +199,7 @@ export default function GbpChecklistClient() {
                 {status === "loading" ? "Sending…" : "Send Me the Checklist →"}
               </button>
 
-              <p className={`${styles.trust} text-muted`}>
+              <p className={`${styles.trust} text-text-muted`}>
                 No spam. Just the checklist. Unsubscribe any time.
               </p>
             </form>

@@ -1,9 +1,9 @@
 .section {
-  padding-top: var(--section-spacing);
-  padding-bottom: var(--section-spacing);
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
   position: relative;
   overflow: hidden;
-  background: var(--surface);
+  background: var(--color-surface);
 }
 
 .inner {
@@ -11,8 +11,8 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--page-gutter);
-  padding-right: var(--page-gutter);
+  padding-left: var(--space-page-gutter);
+  padding-right: var(--space-page-gutter);
   position: relative;
   z-index: 1;
 }
@@ -78,13 +78,13 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .locationTag svg {
   width: 12px;
   height: 12px;
-  color: var(--carolina);
+  color: var(--color-brand);
   flex-shrink: 0;
 }
 
@@ -101,7 +101,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--color-brand);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -112,7 +112,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--carolina);
+  background: var(--color-brand);
   opacity: 0.6;
 }
 
@@ -122,7 +122,7 @@
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.025em;
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .body {
@@ -134,7 +134,7 @@
 .p {
   font-family: var(--font-ui);
   font-size: 1rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   line-height: 1.8;
 }
 
@@ -168,20 +168,20 @@
 .pledgeCheck svg {
   width: 10px;
   height: 10px;
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .pledgeText {
   font-family: var(--font-ui);
   font-size: 0.9375rem;
-  color: var(--text);
+  color: var(--color-text);
   line-height: 1.5;
 }
 
 /* ─── Divider ───────────────────────────────────────── */
 .divider {
   height: 1px;
-  background: var(--border);
+  background: var(--color-border);
 }
 
 /* ─── Signature / name block ─────────────────────────── */
@@ -195,7 +195,7 @@
   font-family: var(--font-display);
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--color-text);
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
@@ -203,20 +203,20 @@
 .sigRole {
   font-family: var(--font-ui);
   font-size: 0.8125rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   margin-top: 0.125rem;
 }
 
 .sigSep {
   width: 1px;
   height: 36px;
-  background: var(--border-strong);
+  background: var(--color-border-strong);
 }
 
 .sigPhone {
   font-family: var(--font-ui);
   font-size: 0.875rem;
-  color: var(--carolina);
+  color: var(--color-brand);
   text-decoration: none;
   letter-spacing: 0.02em;
 }

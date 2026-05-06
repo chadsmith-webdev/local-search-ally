@@ -1,16 +1,16 @@
 .section {
-  padding-top: var(--section-spacing);
-  padding-bottom: var(--section-spacing);
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
   position: relative;
-  background: var(--surface);
+  background: var(--color-surface);
 }
 
 .inner {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding-left: var(--page-gutter);
-  padding-right: var(--page-gutter);
+  padding-left: var(--space-page-gutter);
+  padding-right: var(--space-page-gutter);
 }
 
 /* ── Two-column grid ── */
@@ -69,12 +69,12 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .locationTag svg {
   flex-shrink: 0;
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 /* ── Text column ── */
@@ -90,7 +90,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--color-brand);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -101,7 +101,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--carolina);
+  background: var(--color-brand);
   opacity: 0.6;
 }
 
@@ -111,12 +111,12 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.025em;
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .h2 em {
   font-style: normal;
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .body {
@@ -129,7 +129,7 @@
   font-family: var(--font-ui);
   font-size: 1.0625rem;
   line-height: 1.75;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 /* ── Mobile ── */

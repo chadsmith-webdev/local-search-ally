@@ -1,7 +1,7 @@
 /* ─── Panel ────────────────────────────────────────── */
 .panel {
-  background: var(--surface);
-  border: 1px solid var(--border-strong);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
   border-radius: 14px;
   overflow: hidden;
   width: 100%;
@@ -17,26 +17,26 @@
   align-items: center;
   gap: 0.625rem;
   padding: 0.75rem 1rem;
-  background: var(--surface2);
-  border-bottom: 1px solid var(--border);
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .searchIcon {
-  color: var(--muted);
+  color: var(--color-text-muted);
   flex-shrink: 0;
 }
 
 .searchQuery {
   font-family: var(--font-ui);
   font-size: 0.875rem;
-  color: var(--text);
+  color: var(--color-text);
   flex: 1;
   letter-spacing: 0.01em;
 }
 
 .searchX {
   font-size: 1.1rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   line-height: 1;
 }
 
@@ -47,7 +47,7 @@
   justify-content: space-between;
   padding: 0.4rem 1rem;
   background: rgba(123, 175, 212, 0.04);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .packLabel {
@@ -56,14 +56,14 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .packDot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--carolina);
+  background: var(--color-brand);
   opacity: 0.7;
   animation: packPulse 2.4s ease-in-out infinite;
 }
@@ -88,7 +88,7 @@
   display: flex;
   gap: 0.75rem;
   padding: 0.8rem 1rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
   align-items: flex-start;
 }
 
@@ -110,7 +110,7 @@
   font-family: var(--font-ui);
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 /* ─── Result body ─────────────────────────────────── */
@@ -126,7 +126,7 @@
   font-family: var(--font-ui);
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--color-text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -143,12 +143,12 @@
   font-family: var(--font-ui);
   font-size: 0.775rem;
   font-weight: 700;
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .stars {
   font-size: 0.7rem;
-  color: var(--carolina);
+  color: var(--color-brand);
   letter-spacing: 1px;
 }
 
@@ -159,7 +159,7 @@
 .reviewCount {
   font-family: var(--font-ui);
   font-size: 0.725rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 /* ─── Meta row ────────────────────────────────────── */
@@ -173,25 +173,25 @@
   font-family: var(--font-ui);
   font-size: 0.725rem;
   font-weight: 500;
-  color: var(--green);
+  color: var(--color-status-success);
 }
 
 .statusClosed {
   font-family: var(--font-ui);
   font-size: 0.725rem;
   font-weight: 500;
-  color: var(--red);
+  color: var(--color-status-error);
 }
 
 .metaDot {
-  color: var(--muted);
+  color: var(--color-text-muted);
   font-size: 0.725rem;
 }
 
 .category {
   font-family: var(--font-ui);
   font-size: 0.725rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 /* ─── Not ranked header ───────────────────────────── */
@@ -210,7 +210,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--red);
+  color: var(--color-status-error);
   opacity: 0.85;
 }
 
@@ -241,7 +241,7 @@
   font-family: var(--font-ui);
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--red);
+  color: var(--color-status-error);
   opacity: 0.75;
 }
 
@@ -259,14 +259,14 @@
   font-family: var(--font-ui);
   font-size: 0.775rem;
   font-weight: 600;
-  color: var(--red);
+  color: var(--color-status-error);
 }
 
 .notFoundDot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--red);
+  background: var(--color-status-error);
   flex-shrink: 0;
   animation: blink 1.6s ease-in-out infinite;
 }
@@ -284,6 +284,6 @@
 .notRankedSub {
   font-family: var(--font-ui);
   font-size: 0.725rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   opacity: 0.55;
 }

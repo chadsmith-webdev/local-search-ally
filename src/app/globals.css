@@ -1,579 +1,2389 @@
+/* ============================================================
+
+   LOCAL SEARCH ALLY — DESIGN TOKENS
+
+   tokens.css
+
+   ARCHITECTURE RULES:
+
+   1. This file contains ONLY custom properties (variables).
+
+   2. No selectors other than :root belong here.
+
+   3. components.css consumes these tokens — never raw hex values.
+
+   4. Adding a new token here is the ONLY approved way to introduce
+
+      a new color, size, or spacing value to the system.
+
+   5. If you find yourself writing a hex value in components.css,
+
+      stop and add a token here first.
+
+   ============================================================ */
+
 @import "tailwindcss";
 
 :root {
-  /* Breakpoints (reference only — use these values in @media queries)
-     --bp-sm:  600px   Mobile → small tablet
-     --bp-md:  768px   Tablet
-     --bp-lg:  900px   Large tablet / small desktop
-     --bp-xl:  1024px  Desktop
-  */
 
-  /* Fonts */
-  --font-display: "Bricolage Grotesque", serif;
-  --font-ui: "Space Grotesk", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  /* ──────────────────────────────────────────────────────────
 
-  /* Brand colors - Cyber Industrial */
-  --carolina: #7bafd4;
-  --carolina-dark: #4d8cb9;
-  --carolina-dim: rgba(123, 175, 212, 0.08);
-  --slate: #1a222e;
-  --steel: #3a5570;
+     FONTS
 
-  /* Deep Dark Palette */
-  --bg: #0a0a0a;
-  --surface: #141414;
-  --surface2: #1e1e1e;
-  --text: #f8f9fa;
-  --muted: #7a838d;
+     Two families max. Display = headings/hero. UI = everything
 
-  /* Status colors */
-  --red: #ff4d4d;
-  --yellow: #ffcc00;
-  --green: #00ff88;
+     else. Mono = code only.
+
+  ────────────────────────────────────────────────────────── */
+
+  --font-display : "Bricolage Grotesque", serif;
+
+  --font-ui      : "Space Grotesk", sans-serif;
+
+  --font-mono    : "JetBrains Mono", monospace;
+
+  /* ──────────────────────────────────────────────────────────
+
+     TYPE SCALE — Major Third (×1.25)
+
+     Base: 1rem (16px). Each step = previous × 1.25.
+
+     Use these tokens for ALL font-size declarations.
+
+     Never write a raw rem/px font-size in components.css.
+
+     Step  |  Token         |  Value   |  px equiv
+
+     -------+----------------+----------+-----------
+
+      -2   |  --text-xs     |  0.64rem |  ~10px
+
+      -1   |  --text-sm     |  0.8rem  |  ~13px
+
+       0   |  --text-base   |  1rem    |   16px
+
+      +1   |  --text-md     |  1.25rem |   20px
+
+      +2   |  --text-lg     |  1.563rem|   25px
+
+      +3   |  --text-xl     |  1.953rem|   31px
+
+      +4   |  --text-2xl    |  2.441rem|   39px
+
+      +5   |  --text-3xl    |  3.052rem|   49px
+
+  ────────────────────────────────────────────────────────── */
+
+  --text-xs   : 0.64rem;
+
+  --text-sm   : 0.8rem;
+
+  --text-base : 1rem;
+
+  --text-md   : 1.25rem;
+
+  --text-lg   : 1.563rem;
+
+  --text-xl   : 1.953rem;
+
+  --text-2xl  : 2.441rem;
+
+  --text-3xl  : 3.052rem;
+
+  /* Fluid display sizes — used for hero/section headings only.
+
+     clamp(min, preferred, max). Do not use for body text.     */
+
+  --text-hero    : clamp(2.441rem, 6vw, 3.815rem);
+
+  --text-heading : clamp(1.953rem, 4vw, 2.441rem);
+
+  --text-subhead : clamp(1.25rem,  3vw, 1.563rem);
+
+  /* Line heights */
+
+  --leading-tight  : 1.2;
+
+  --leading-snug   : 1.35;
+
+  --leading-normal : 1.6;
+
+  --leading-loose  : 1.8;
+
+  /* Letter spacing */
+
+  --tracking-tight  : -0.02em;
+
+  --tracking-normal : -0.01em;
+
+  --tracking-wide   : 0.05em;
+
+  --tracking-widest : 0.15em;
+
+  /* Font weights */
+
+  --weight-normal : 400;
+
+  --weight-medium : 500;
+
+  --weight-bold   : 600;
+
+  --weight-black  : 700;
+
+  /* ──────────────────────────────────────────────────────────
+
+     COLOR — BRAND PALETTE
+
+     These are raw color values. Use semantic aliases below
+
+     in components — never reference these directly in
+
+     components.css unless building a new semantic alias.
+
+  ────────────────────────────────────────────────────────── */
+
+  /* Carolina blue ramp */
+
+  --carolina-50  : rgba(123, 175, 212, 0.08);  /* tint — hover bg, dim fills */
+
+  --carolina-100 : rgba(123, 175, 212, 0.15);  /* subtle bg                  */
+
+  --carolina-200 : rgba(123, 175, 212, 0.4);   /* border emphasis            */
+
+  --carolina-400 : #7bafd4;                    /* brand primary              */
+
+  --carolina-600 : #4d8cb9;                    /* dark variant               */
+
+  --carolina-800 : #2e6a96;                    /* deepest — use sparingly    */
+
+  /* Slate/steel ramp — structural, backgrounds, borders */
+
+  --slate-900 : #0a0a0a;   /* page background                   */
+
+  --slate-800 : #141414;   /* surface (cards, panels)           */
+
+  --slate-700 : #1a222e;   /* brand dark / glass base           */
+
+  --slate-600 : #1e1e1e;   /* surface-2 (nested surfaces)       */
+
+  --slate-500 : #3a5570;   /* steel — borders, dividers         */
+
+  --slate-400 : #4a5568;   /* muted borders                     */
+
+  /* Text ramp */
+
+  --ink-100 : #f8f9fa;   /* primary text — on dark bg          */
+
+  --ink-400 : #a0aab4;   /* secondary text — labels, captions  */
+
+  --ink-600 : #7a838d;   /* tertiary — metadata, timestamps    */
+
+  /* Status colors — foreground on dark surface ONLY.
+
+     Never use as background with dark text.               */
+
+  --status-red    : #ff4d4d;
+
+  --status-yellow : #ffcc00;
+
+  --status-green  : #00ff88;
+
+  /* Border values */
+
+  --border-subtle : rgba(255, 255, 255, 0.06);
+
+  --border-base   : rgba(255, 255, 255, 0.12);
+
+  --border-strong : rgba(255, 255, 255, 0.2);
+
+  --border-brand  : var(--carolina-400);
+
+  /* ──────────────────────────────────────────────────────────
+
+     COLOR — SEMANTIC ALIASES
+
+     Reference THESE in components.css, not the raw palette.
+
+     This is the layer that makes the system refactorable —
+
+     swap a brand color here and every component updates.
+
+  ────────────────────────────────────────────────────────── */
+
+  /* Backgrounds */
+
+  --color-bg         : var(--slate-900);   /* page root             */
+
+  --color-surface    : var(--slate-800);   /* cards, panels         */
+
+  --color-surface-2  : var(--slate-600);   /* nested surfaces       */
+
+  --color-overlay    : var(--slate-700);   /* modals, dropdowns     */
+
+  /* Text */
+
+  --color-text         : var(--ink-100);   /* primary — always use this for body  */
+
+  --color-text-muted   : var(--ink-400);   /* secondary labels — never body copy  */
+
+  --color-text-subtle  : var(--ink-600);   /* metadata only — fails 4.5:1, use sparingly */
+
+  --color-text-brand   : var(--carolina-400);
+
+  --color-text-brand-dark : var(--carolina-600);
+
+  /* Interactive / brand */
+
+  --color-brand        : var(--carolina-400);
+
+  --color-brand-dark   : var(--carolina-600);
+
+  --color-brand-dim    : var(--carolina-50);
+
+  --color-brand-border : var(--carolina-200);
+
+  /* Status — TEXT color on dark surface */
+
+  --color-status-success : var(--status-green);
+
+  --color-status-warning : var(--status-yellow);
+
+  --color-status-error   : var(--status-red);
 
   /* Borders */
-  --border: rgba(255, 255, 255, 0.06);
-  --border-strong: rgba(255, 255, 255, 0.12);
 
-  /* Border radius */
-  --radius-xs: 4px;
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-pill: 100px;
-  --radius-full: 50%;
+  --color-border         : var(--border-subtle);
 
-  /* Spacing */
-  --page-gutter: clamp(1.5rem, 6vw, 5rem);
-  --section-spacing: clamp(4rem, 8vw, 10rem);
+  --color-border-strong  : var(--border-base);
 
-  /* Gradient */
-  --gradient-cta: linear-gradient(135deg, #7bafd4 0%, #3a5570 100%);
-  --gradient-cyber: linear-gradient(
-    90deg,
-    transparent,
-    var(--carolina),
-    transparent
-  );
+  --color-border-brand   : var(--border-brand);
+
+  /* Gradients */
+
+  --gradient-cta   : linear-gradient(135deg, var(--carolina-400) 0%, var(--slate-500) 100%);
+
+  --gradient-cyber : linear-gradient(90deg, transparent, var(--carolina-400), transparent);
+
+  --gradient-glow  : radial-gradient(ellipse at top, rgba(123, 175, 212, 0.15) 0%, transparent 60%);
+
+  /* ──────────────────────────────────────────────────────────
+
+     SPACING SCALE
+
+     Base unit: 0.25rem (4px). All spacing is a multiple.
+
+     Use these tokens for padding, margin, and gap.
+
+     Never write raw px spacing in components.css.
+
+     Token      |  Value   |  px
+
+     -----------+----------+------
+
+     --space-1  |  0.25rem |   4px
+
+     --space-2  |  0.5rem  |   8px
+
+     --space-3  |  0.75rem |  12px
+
+     --space-4  |  1rem    |  16px
+
+     --space-5  |  1.25rem |  20px
+
+     --space-6  |  1.5rem  |  24px
+
+     --space-8  |  2rem    |  32px
+
+     --space-10 |  2.5rem  |  40px
+
+     --space-12 |  3rem    |  48px
+
+     --space-16 |  4rem    |  64px
+
+  ────────────────────────────────────────────────────────── */
+
+  --space-1  : 0.25rem;
+
+  --space-2  : 0.5rem;
+
+  --space-3  : 0.75rem;
+
+  --space-4  : 1rem;
+
+  --space-5  : 1.25rem;
+
+  --space-6  : 1.5rem;
+
+  --space-8  : 2rem;
+
+  --space-10 : 2.5rem;
+
+  --space-12 : 3rem;
+
+  --space-16 : 4rem;
+
+  /* Layout-level spacing — fluid via clamp() */
+
+  --space-page-gutter  : clamp(1.5rem, 6vw, 5rem);
+
+  --space-section      : clamp(4rem, 8vw, 10rem);
+
+  --space-section-sm   : clamp(2rem, 4vw, 5rem);
+
+  /* ──────────────────────────────────────────────────────────
+
+     BORDER RADIUS
+
+     Use these names — never raw px values in components.css.
+
+  ────────────────────────────────────────────────────────── */
+
+  --radius-xs   : 4px;
+
+  --radius-sm   : 6px;
+
+  --radius-md   : 8px;
+
+  --radius-lg   : 12px;
+
+  --radius-xl   : 16px;
+
+  --radius-pill : 100px;
+
+  --radius-full : 50%;
+
+  /* ──────────────────────────────────────────────────────────
+
+     ELEVATION (box-shadow)
+
+     Conveys depth for floating elements — not decoration.
+
+     sm = tooltips, md = dropdowns/popovers, lg = modals.
+
+  ────────────────────────────────────────────────────────── */
+
+  --shadow-sm  : 0 2px 8px rgba(0, 0, 0, 0.4);
+
+  --shadow-md  : 0 4px 24px rgba(0, 0, 0, 0.5);
+
+  --shadow-lg  : 0 8px 48px rgba(0, 0, 0, 0.6);
+
+  --shadow-glow: 0 0 32px rgba(123, 175, 212, 0.3);
+
+  --shadow-glow-lg: 0 0 52px rgba(123, 175, 212, 0.5);
+
+  /* ──────────────────────────────────────────────────────────
+
+     MOTION
+
+     All animation values come from here.
+
+     Components never write raw ms or cubic-bezier values.
+
+  ────────────────────────────────────────────────────────── */
+
+  --duration-fast    : 0.15s;
+
+  --duration-base    : 0.2s;
+
+  --duration-slow    : 0.3s;
+
+  --ease-out         : ease-out;
+
+  --ease-in-out      : ease-in-out;
+
+  --ease-spring      : cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ──────────────────────────────────────────────────────────
+
+     BREAKPOINTS — reference only
+
+     Use these values in @media queries. Do not assign to
+
+     layout properties — CSS custom properties cannot be used
+
+     inside @media() expressions.
+
+     --bp-sm  : 600px    mobile → small tablet
+
+     --bp-md  : 768px    tablet
+
+     --bp-lg  : 900px    large tablet / small desktop
+
+     --bp-xl  : 1024px   desktop
+
+  ────────────────────────────────────────────────────────── */
+
+  /* ──────────────────────────────────────────────────────────
+
+     Z-INDEX SCALE
+
+     Named layers — never write a raw z-index in components.
+
+  ────────────────────────────────────────────────────────── */
+
+  --z-below    : -1;
+
+  --z-base     : 0;
+
+  --z-raised   : 10;
+
+  --z-dropdown : 100;
+
+  --z-sticky   : 200;
+
+  --z-modal    : 300;
+
+  --z-toast    : 400;
+
+  --z-skip     : 9999;
+
 }
 
-* {
+/* ──────────────────────────────────────────────────────────
+
+   TAILWIND v4 THEME BRIDGE
+
+   Registers brand tokens as Tailwind utility classes.
+
+   e.g. text-brand, bg-surface, border-brand-border
+
+   Keep in sync with :root above.
+
+────────────────────────────────────────────────────────── */
+
+@theme {
+
+  /* Colors */
+
+  --color-brand         : #7bafd4;
+
+  --color-brand-dark    : #4d8cb9;
+
+  --color-bg            : #0a0a0a;
+
+  --color-surface       : #141414;
+
+  --color-surface-2     : #1e1e1e;
+
+  --color-overlay       : #1a222e;
+
+  --color-steel         : #3a5570;
+
+  --color-text          : #f8f9fa;
+
+  --color-text-muted    : #a0aab4;
+
+  --color-text-subtle   : #7a838d;
+
+  --color-status-success: #00ff88;
+
+  --color-status-warning: #ffcc00;
+
+  --color-status-error  : #ff4d4d;
+
+  /* Fonts */
+
+  --font-family-display : var(--font-display);
+
+  --font-family-sans    : var(--font-ui);
+
+  --font-family-mono    : var(--font-mono);
+
+}
+
+/* ============================================================
+
+   LOCAL SEARCH ALLY — COMPONENTS
+
+   components.css
+
+   ARCHITECTURE RULES:
+
+   1. Import tokens.css BEFORE this file. Always.
+
+   2. Every value here must reference a token from tokens.css.
+
+      No raw hex, px, rem, or ms values — only var(--token).
+
+   3. Each component block starts with a banner comment that
+
+      defines: what it is, when to use it, what NOT to override.
+
+   4. States are always defined in this order where applicable:
+
+      default → hover → focus-visible → active → disabled → error
+
+   ============================================================ */
+
+/* ──────────────────────────────────────────────────────────
+
+   BASE RESET & GLOBAL DEFAULTS
+
+────────────────────────────────────────────────────────── */
+
+*,
+
+*::before,
+
+*::after {
+
   box-sizing: border-box;
+
   margin: 0;
+
   padding: 0;
+
+}
+
+html {
+
+  /* Prevent font size inflation on mobile */
+
+  -webkit-text-size-adjust: 100%;
+
+  text-size-adjust: 100%;
+
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-ui);
-  -webkit-font-smoothing: antialiased;
-  letter-spacing: -0.01em;
-  line-height: 1.6;
+
+  background-color  : var(--color-bg);
+
+  color             : var(--color-text);
+
+  font-family       : var(--font-ui);
+
+  font-size         : var(--text-base);
+
+  font-weight       : var(--weight-normal);
+
+  line-height       : var(--leading-normal);
+
+  letter-spacing    : var(--tracking-normal);
+
+  -webkit-font-smoothing : antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
+
 }
 
-/* Focus rings */
+/* Form element font inheritance — browsers don't do this by default */
+
+input,
+
+select,
+
+textarea,
+
+button {
+
+  font-family : inherit;
+
+  font-size   : inherit;
+
+}
+
+img,
+
+video,
+
+svg {
+
+  display   : block;
+
+  max-width : 100%;
+
+}
+
+/* ──────────────────────────────────────────────────────────
+
+   ACCESSIBILITY — GLOBAL
+
+   These rules must never be removed or overridden.
+
+────────────────────────────────────────────────────────── */
+
+/* Focus ring — full-opacity brand color, meets 3:1 for UI components.
+
+   Applied globally via :focus-visible so keyboard users always see it.
+
+   Do NOT reduce opacity or remove this rule.                          */
+
 :focus-visible {
-  outline: 2px solid rgba(123, 175, 212, 0.5);
-  outline-offset: 2px;
+
+  outline        : 2px solid var(--color-brand);
+
+  outline-offset : 3px;
+
+  border-radius  : var(--radius-xs);
+
 }
 
-/* Skip-to-content link — visible only on keyboard focus */
+/* Skip-to-content — keyboard navigation shortcut.
+
+   Sits off-screen until focused. Required on every page.             */
+
 .skip-link {
-  position: absolute;
-  top: -100%;
-  left: 1rem;
-  z-index: 9999;
-  padding: 0.75rem 1.25rem;
-  background: var(--carolina);
-  color: #0a0a0a;
-  font-family: var(--font-ui);
-  font-weight: 600;
-  font-size: 0.875rem;
-  border-radius: var(--radius-sm);
+
+  position      : absolute;
+
+  top           : -100%;
+
+  left          : var(--space-4);
+
+  z-index       : var(--z-skip);
+
+  padding       : var(--space-3) var(--space-5);
+
+  background    : var(--color-brand);
+
+  color         : var(--color-bg);
+
+  font-family   : var(--font-ui);
+
+  font-size     : var(--text-sm);
+
+  font-weight   : var(--weight-bold);
+
+  border-radius : var(--radius-sm);
+
   text-decoration: none;
-  transition: top 0.15s ease;
+
+  transition    : top var(--duration-fast) var(--ease-out);
+
 }
 
 .skip-link:focus {
-  top: 1rem;
+
+  top: var(--space-4);
+
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+/* Reduced motion — kills all animations and transitions.
+
+   This rule must exist and must remain comprehensive.                 */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+
+  *::before,
+
+  *::after {
+
+    animation-duration       : 0.01ms !important;
+
+    animation-iteration-count: 1      !important;
+
+    transition-duration      : 0.01ms !important;
+
+    scroll-behavior          : auto   !important;
+
+  }
+
 }
-::-webkit-scrollbar-track {
-  background: var(--bg);
+
+/* Visually hidden — for screen reader labels that have no visual counterpart */
+
+.sr-only {
+
+  position   : absolute;
+
+  width      : 1px;
+
+  height     : 1px;
+
+  padding    : 0;
+
+  margin     : -1px;
+
+  overflow   : hidden;
+
+  clip       : rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border     : 0;
+
 }
+
+/* ──────────────────────────────────────────────────────────
+
+   SCROLLBAR
+
+────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar       { width: 6px; }
+
+::-webkit-scrollbar-track { background: var(--color-bg); }
+
 ::-webkit-scrollbar-thumb {
-  background: var(--surface2);
-  border-radius: var(--radius-xs);
+
+  background    : var(--color-surface-2);
+
+  border-radius : var(--radius-xs);
+
 }
 
-/* Selection */
 ::selection {
-  background: rgba(123, 175, 212, 0.2);
+
+  background: var(--carolina-100, rgba(123, 175, 212, 0.15));
+
 }
 
-/* Input/select resets */
-input,
-select,
-textarea {
-  font-family: var(--font-ui);
+/* ──────────────────────────────────────────────────────────
+
+   LAYOUT UTILITIES
+
+   Use these class names in JSX/HTML. Do not replicate these
+
+   rules inline — compose them.
+
+────────────────────────────────────────────────────────── */
+
+/* Full-width vertical rhythm wrapper for page sections */
+
+.section {
+
+  width          : 100%;
+
+  padding-top    : var(--space-section);
+
+  padding-bottom : var(--space-section);
+
 }
 
-/* Prose — blog post content */
-.prose {
-  color: var(--text);
-  font-family: var(--font-ui);
-  line-height: 1.8;
-  font-size: 1.05rem;
-}
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.25;
-  margin: 2rem 0 1rem;
-  color: var(--text);
-}
-.prose h1 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-}
-.prose h2 {
-  font-size: clamp(1.35rem, 3vw, 1.85rem);
-}
-.prose h3 {
-  font-size: 1.25rem;
-}
-.prose p {
-  margin-bottom: 1.4rem;
-}
-.prose ul,
-.prose ol {
-  margin: 0 0 1.4rem 1.5rem;
-}
-.prose li {
-  margin-bottom: 0.4rem;
-}
-.prose a {
-  color: var(--carolina);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.prose a:hover {
-  color: var(--carolina-dark);
-}
-.prose strong {
-  color: var(--text);
-  font-weight: 600;
-}
-.prose blockquote {
-  border-left: 3px solid var(--carolina);
-  padding: 0.5rem 0 0.5rem 1.25rem;
-  margin: 1.5rem 0;
-  color: var(--muted);
-  font-style: italic;
-}
-.prose code {
-  font-family: var(--font-mono);
-  font-size: 0.875em;
-  background: var(--surface);
-  padding: 0.15em 0.4em;
-  border-radius: var(--radius-xs);
-  color: var(--carolina);
-}
-.prose pre {
-  background: var(--surface);
-  border-radius: var(--radius-md);
-  padding: 1.25rem;
-  overflow-x: auto;
-  margin: 1.5rem 0;
-  border: 1px solid var(--border);
-}
-.prose pre code {
-  background: none;
-  padding: 0;
-  color: var(--text);
-  font-size: 0.875rem;
-}
-.prose hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 2.5rem 0;
+.section--sm {
+
+  padding-top    : var(--space-section-sm);
+
+  padding-bottom : var(--space-section-sm);
+
 }
 
-/* Glass HUD — floating elements only (modals, tooltips, dropdowns, panels) */
-.glass-module {
-  background: rgba(26, 34, 46, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(123, 175, 212, 0.2);
-  box-shadow: inset 0 0 15px rgba(123, 175, 212, 0.05);
+/* Standard content container — max-width + fluid horizontal gutter */
+
+.container {
+
+  max-width    : 1200px;
+
+  width        : 100%;
+
+  margin-left  : auto;
+
+  margin-right : auto;
+
+  padding-left : var(--space-page-gutter);
+
+  padding-right: var(--space-page-gutter);
+
 }
 
-.module-header {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--carolina);
-  opacity: 0.6;
+/* Narrow — text-heavy sections: blog posts, FAQs, legal */
+
+.container--narrow {
+
+  max-width    : 800px;
+
+  width        : 100%;
+
+  margin-left  : auto;
+
+  margin-right : auto;
+
+  padding-left : var(--space-page-gutter);
+
+  padding-right: var(--space-page-gutter);
+
+}
+
+/* Wide — data-heavy sections: portfolio grids, comparison tables */
+
+.container--wide {
+
+  max-width    : 1440px;
+
+  width        : 100%;
+
+  margin-left  : auto;
+
+  margin-right : auto;
+
+  padding-left : var(--space-page-gutter);
+
+  padding-right: var(--space-page-gutter);
+
+}
+
+/* ──────────────────────────────────────────────────────────
+
+   TYPOGRAPHY COMPONENTS
+
+   Heading classes: apply to the correct semantic element.
+
+   Do not use .heading-hero on an <h3>.
+
+   Do not use these for non-heading text — use body classes.
+
+────────────────────────────────────────────────────────── */
+
+.heading-hero {
+
+  font-family   : var(--font-display);
+
+  font-size     : var(--text-hero);
+
+  font-weight   : var(--weight-black);
+
+  line-height   : var(--leading-tight);
+
+  letter-spacing: var(--tracking-tight);
+
+  color         : var(--color-text);
+
+}
+
+.heading-1 {
+
+  font-family   : var(--font-display);
+
+  font-size     : var(--text-heading);
+
+  font-weight   : var(--weight-black);
+
+  line-height   : var(--leading-tight);
+
+  letter-spacing: var(--tracking-tight);
+
+  color         : var(--color-text);
+
+}
+
+.heading-2 {
+
+  font-family   : var(--font-display);
+
+  font-size     : var(--text-subhead);
+
+  font-weight   : var(--weight-bold);
+
+  line-height   : var(--leading-snug);
+
+  letter-spacing: var(--tracking-tight);
+
+  color         : var(--color-text);
+
+}
+
+.heading-3 {
+
+  font-family   : var(--font-ui);
+
+  font-size     : var(--text-md);
+
+  font-weight   : var(--weight-bold);
+
+  line-height   : var(--leading-snug);
+
+  color         : var(--color-text);
+
+}
+
+/* Body text — default is var(--text-base). Override size only. */
+
+.body-lg {
+
+  font-size  : var(--text-md);
+
+  line-height: var(--leading-loose);
+
+  color      : var(--color-text);
+
+}
+
+.body-base {
+
+  font-size  : var(--text-base);
+
+  line-height: var(--leading-normal);
+
+  color      : var(--color-text);
+
+}
+
+.body-sm {
+
+  font-size  : var(--text-sm);
+
+  line-height: var(--leading-normal);
+
+  color      : var(--color-text-muted);
+
+}
+
+/* Label — monospace eyebrow text above section headings.
+
+   Use ONLY for section labels. Not for body copy.        */
+
+.label {
+
+  font-family   : var(--font-mono);
+
+  font-size     : var(--text-xs);
+
+  font-weight   : var(--weight-normal);
+
+  color         : var(--color-brand);
+
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  border-bottom: 1px solid var(--steel);
+
+  letter-spacing: var(--tracking-widest);
+
+  opacity       : 0.7;
+
 }
 
-/* ─── CTA Buttons ────────────────────────────────────────────────────────────
-   Canonical button styles — use these globally. Components should compose
-   these classes and only add layout overrides (width, margin, centering).
-   ─────────────────────────────────────────────────────────────────────────── */
+/* ──────────────────────────────────────────────────────────
 
-/* Primary — gradient fill, high-contrast, single most important action */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
+   BUTTONS
+
+   Use .btn as a base. Add a modifier: --primary, --secondary,
+
+   --ghost, --danger. Never override padding or font-size
+
+   on individual instances — adjust the token instead.
+
+   Composition pattern in JSX:
+
+     <button class="btn btn--primary">Get Started</button>
+
+     <a href="/contact" class="btn btn--secondary">Learn More</a>
+
+────────────────────────────────────────────────────────── */
+
+/* Base — shared structure for all button variants */
+
+.btn {
+
+  display        : inline-flex;
+
+  align-items    : center;
+
   justify-content: center;
-  background: var(--gradient-cta);
-  color: var(--bg);
-  border: none;
-  border-radius: var(--radius-sm);
-  padding: 0.875rem 1.75rem;
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+
+  gap            : var(--space-2);
+
+  padding        : var(--space-3) var(--space-6);  /* 12px 24px */
+
+  font-family    : var(--font-ui);
+
+  font-size      : var(--text-sm);                 /* 0.8rem ~13px */
+
+  font-weight    : var(--weight-bold);
+
+  letter-spacing : var(--tracking-wide);
+
+  line-height    : 1;
+
   text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  box-shadow: 0 0 32px rgba(123, 175, 212, 0.3);
-  transition:
-    filter 0.2s ease,
-    transform 0.15s ease,
-    box-shadow 0.2s ease;
+
+  white-space    : nowrap;
+
+  cursor         : pointer;
+
+  border         : 1px solid transparent;
+
+  border-radius  : var(--radius-sm);
+
+  transition     :
+
+    filter          var(--duration-base) var(--ease-out),
+
+    transform       var(--duration-fast) var(--ease-out),
+
+    box-shadow      var(--duration-base) var(--ease-out),
+
+    background      var(--duration-base) var(--ease-out),
+
+    border-color    var(--duration-base) var(--ease-out),
+
+    color           var(--duration-base) var(--ease-out),
+
+    opacity         var(--duration-base) var(--ease-out);
+
 }
 
-.btn-primary:hover {
-  filter: brightness(1.1);
-  transform: translateY(-1px);
-  box-shadow: 0 0 52px rgba(123, 175, 212, 0.5);
+/* Primary — gradient fill. The single most important action on a page.
+
+   Use once per viewport. Never on secondary actions.                   */
+
+.btn--primary {
+
+  background : var(--gradient-cta);
+
+  color      : var(--color-bg);
+
+  border-color: transparent;
+
+  box-shadow : var(--shadow-glow);
+
 }
 
-.btn-primary:active {
-  transform: translateY(0) scale(0.98);
+.btn--primary:hover {
+
+  filter    : brightness(1.1);
+
+  transform : translateY(-1px);
+
+  box-shadow: var(--shadow-glow-lg);
+
 }
 
-/* Secondary — outline, low-pressure, supporting actions */
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  color: var(--carolina);
-  border: 1px solid rgba(123, 175, 212, 0.4);
-  border-radius: var(--radius-sm);
-  padding: 0.875rem 1.75rem;
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
+.btn--primary:focus-visible {
+
+  outline       : 2px solid var(--color-brand);
+
+  outline-offset: 3px;
+
+  filter        : brightness(1.1);
+
 }
 
-.btn-secondary:hover {
-  background: var(--carolina-dim);
-  border-color: var(--carolina);
-  color: var(--text);
+.btn--primary:active {
+
+  transform : translateY(0) scale(0.98);
+
+  filter    : brightness(0.95);
+
+  box-shadow: var(--shadow-glow);
+
 }
 
-/* Texture & Effects */
-.noise {
-  position: relative;
-}
-.noise::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 10;
+.btn--primary:disabled,
+
+.btn--primary[aria-disabled="true"] {
+
+  opacity       : 0.38;
+
+  cursor        : not-allowed;
+
   pointer-events: none;
-  opacity: 0.015;
-  background-image: url("/images/noise.svg");
-  filter: contrast(120%) brightness(120%);
+
+  box-shadow    : none;
+
+  filter        : none;
+
+  transform     : none;
+
 }
+
+/* Secondary — outline. Supporting actions alongside a primary button.
+
+   Can appear multiple times per viewport.                              */
+
+.btn--secondary {
+
+  background  : transparent;
+
+  color       : var(--color-brand);
+
+  border-color: var(--color-brand-border);
+
+}
+
+.btn--secondary:hover {
+
+  background  : var(--color-brand-dim);
+
+  border-color: var(--color-brand);
+
+  color       : var(--color-text);
+
+}
+
+.btn--secondary:focus-visible {
+
+  outline       : 2px solid var(--color-brand);
+
+  outline-offset: 3px;
+
+  background    : var(--color-brand-dim);
+
+}
+
+.btn--secondary:active {
+
+  transform  : scale(0.98);
+
+  background : var(--carolina-100, rgba(123, 175, 212, 0.15));
+
+}
+
+.btn--secondary:disabled,
+
+.btn--secondary[aria-disabled="true"] {
+
+  opacity       : 0.38;
+
+  cursor        : not-allowed;
+
+  pointer-events: none;
+
+}
+
+/* Ghost — no border, no background. Inline actions, icon buttons.
+
+   Never use as a primary CTA.                                      */
+
+.btn--ghost {
+
+  background  : transparent;
+
+  color       : var(--color-text-muted);
+
+  border-color: transparent;
+
+}
+
+.btn--ghost:hover {
+
+  background: var(--color-brand-dim);
+
+  color     : var(--color-text);
+
+}
+
+.btn--ghost:focus-visible {
+
+  outline       : 2px solid var(--color-brand);
+
+  outline-offset: 3px;
+
+}
+
+.btn--ghost:active  { transform: scale(0.97); }
+
+.btn--ghost:disabled,
+
+.btn--ghost[aria-disabled="true"] {
+
+  opacity       : 0.38;
+
+  cursor        : not-allowed;
+
+  pointer-events: none;
+
+}
+
+/* Danger — destructive actions only (delete, remove, cancel subscription).
+
+   Requires explicit user confirmation before triggering.                   */
+
+.btn--danger {
+
+  background  : transparent;
+
+  color       : var(--color-status-error);
+
+  border-color: rgba(255, 77, 77, 0.3);
+
+}
+
+.btn--danger:hover {
+
+  background  : rgba(255, 77, 77, 0.1);
+
+  border-color: var(--color-status-error);
+
+}
+
+.btn--danger:focus-visible {
+
+  outline       : 2px solid var(--color-status-error);
+
+  outline-offset: 3px;
+
+}
+
+.btn--danger:active { transform: scale(0.98); }
+
+.btn--danger:disabled,
+
+.btn--danger[aria-disabled="true"] {
+
+  opacity       : 0.38;
+
+  cursor        : not-allowed;
+
+  pointer-events: none;
+
+}
+
+/* Size modifiers — use when context requires a smaller/larger button.
+
+   Default (.btn alone) is medium.                                     */
+
+.btn--sm {
+
+  padding    : var(--space-2) var(--space-4);
+
+  font-size  : var(--text-xs);
+
+  border-radius: var(--radius-xs);
+
+}
+
+.btn--lg {
+
+  padding  : var(--space-4) var(--space-8);  /* 16px 32px */
+
+  font-size: var(--text-base);
+
+}
+
+/* ──────────────────────────────────────────────────────────
+
+   FORM INPUTS
+
+   All inputs share the .input base. Use modifiers for
+
+   specific types. Wrap label + input in .field.
+
+   Composition:
+
+     <div class="field">
+
+       <label class="field__label" for="email">Email</label>
+
+       <input class="input" id="email" type="email" />
+
+       <p class="field__hint">We'll never share your email.</p>
+
+     </div>
+
+────────────────────────────────────────────────────────── */
+
+/* Field wrapper — manages label/input/hint vertical rhythm */
+
+.field {
+
+  display       : flex;
+
+  flex-direction: column;
+
+  gap           : var(--space-2);
+
+}
+
+.field__label {
+
+  font-size  : var(--text-sm);
+
+  font-weight: var(--weight-bold);
+
+  color      : var(--color-text);
+
+  cursor     : pointer;
+
+}
+
+.field__hint {
+
+  font-size: var(--text-xs);
+
+  color    : var(--color-text-muted);
+
+}
+
+.field__error {
+
+  font-size: var(--text-xs);
+
+  color    : var(--color-status-error);
+
+}
+
+/* Base input — used for text, email, tel, url, number, search */
+
+.input {
+
+  width        : 100%;
+
+  padding      : var(--space-3) var(--space-4);   /* 12px 16px */
+
+  background   : var(--color-surface);
+
+  color        : var(--color-text);
+
+  font-family  : var(--font-ui);
+
+  font-size    : var(--text-base);
+
+  border       : 1px solid var(--color-border-strong);
+
+  border-radius: var(--radius-md);
+
+  outline      : none;
+
+  transition   :
+
+    border-color var(--duration-base) var(--ease-out),
+
+    box-shadow   var(--duration-base) var(--ease-out);
+
+  /* Prevent zoom on iOS — minimum 16px renders without zoom */
+
+}
+
+.input::placeholder {
+
+  color  : var(--color-text-subtle);
+
+  opacity: 1;
+
+}
+
+.input:hover {
+
+  border-color: var(--color-brand-border);
+
+}
+
+.input:focus {
+
+  border-color: var(--color-brand);
+
+  box-shadow  : 0 0 0 3px var(--color-brand-dim);
+
+  outline     : none;
+
+}
+
+.input:disabled {
+
+  opacity      : 0.38;
+
+  cursor       : not-allowed;
+
+  border-color : var(--color-border);
+
+}
+
+/* Error state — apply to .input when .field__error is shown */
+
+.input--error {
+
+  border-color: var(--color-status-error);
+
+}
+
+.input--error:focus {
+
+  border-color: var(--color-status-error);
+
+  box-shadow  : 0 0 0 3px rgba(255, 77, 77, 0.15);
+
+}
+
+/* Textarea — same rules as .input, height is explicit */
+
+.textarea {
+
+  composes  : input; /* if using CSS Modules — otherwise copy .input rules */
+
+  min-height: 120px;
+
+  resize    : vertical;
+
+}
+
+/* If not using CSS Modules, use .input on a <textarea> directly.
+
+   The only textarea-specific rule is min-height and resize.     */
+
+textarea.input {
+
+  min-height: 120px;
+
+  resize    : vertical;
+
+}
+
+/* Select — same visual as .input but with dropdown arrow */
+
+select.input {
+
+  appearance           : none;
+
+  -webkit-appearance   : none;
+
+  background-image     : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237a838d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+  background-repeat    : no-repeat;
+
+  background-position  : right var(--space-4) center;
+
+  padding-right        : var(--space-10);
+
+}
+
+/* ──────────────────────────────────────────────────────────
+
+   STATUS BADGES
+
+   Inline indicators for state, category, or signal.
+
+   Use ONLY for status — not for decoration.
+
+   Usage rules:
+
+   - Success (green): active, live, complete, verified
+
+   - Warning (yellow): pending, expiring, needs attention
+
+   - Error (red): failed, expired, blocked, error
+
+   - Neutral: draft, inactive, unknown
+
+   - Brand: featured, new, highlighted
+
+   Never use a status badge as a navigation element.
+
+   Never use color alone — always include the text label.
+
+────────────────────────────────────────────────────────── */
+
+.badge {
+
+  display      : inline-flex;
+
+  align-items  : center;
+
+  gap          : var(--space-1);
+
+  padding      : var(--space-1) var(--space-3);
+
+  font-family  : var(--font-mono);
+
+  font-size    : var(--text-xs);
+
+  font-weight  : var(--weight-bold);
+
+  letter-spacing: var(--tracking-widest);
+
+  text-transform: uppercase;
+
+  border-radius: var(--radius-pill);
+
+  border       : 1px solid transparent;
+
+  white-space  : nowrap;
+
+}
+
+/* Success */
+
+.badge--success {
+
+  background  : rgba(0, 255, 136, 0.1);
+
+  color       : var(--color-status-success);
+
+  border-color: rgba(0, 255, 136, 0.2);
+
+}
+
+/* Warning */
+
+.badge--warning {
+
+  background  : rgba(255, 204, 0, 0.1);
+
+  color       : var(--color-status-warning);
+
+  border-color: rgba(255, 204, 0, 0.2);
+
+}
+
+/* Error */
+
+.badge--error {
+
+  background  : rgba(255, 77, 77, 0.1);
+
+  color       : var(--color-status-error);
+
+  border-color: rgba(255, 77, 77, 0.2);
+
+}
+
+/* Neutral — draft, inactive, unknown states */
+
+.badge--neutral {
+
+  background  : var(--color-surface-2);
+
+  color       : var(--color-text-muted);
+
+  border-color: var(--color-border-strong);
+
+}
+
+/* Brand — new features, highlights */
+
+.badge--brand {
+
+  background  : var(--color-brand-dim);
+
+  color       : var(--color-brand);
+
+  border-color: var(--color-brand-border);
+
+}
+
+/* Dot indicator — prepend to badge text for visual emphasis.
+
+   Always paired with text — never standalone.               */
+
+.badge__dot {
+
+  width        : 6px;
+
+  height       : 6px;
+
+  border-radius: var(--radius-full);
+
+  background   : currentColor;
+
+  flex-shrink  : 0;
+
+}
+
+/* ──────────────────────────────────────────────────────────
+
+   CARDS & SURFACES
+
+   Cards are bounded content containers.
+
+   .card is the base. Modifiers change surface depth.
+
+   Use .card for: service features, portfolio items, FAQ items,
+
+   stat blocks, testimonials.
+
+   Do NOT use .card for: full-width page sections (use .section),
+
+   navigation (use nav), forms (use .field wrappers).
+
+────────────────────────────────────────────────────────── */
+
+/* Base card — sits on --color-surface */
+
+.card {
+
+  background   : var(--color-surface);
+
+  border       : 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  padding      : var(--space-6);
+
+  transition   : border-color var(--duration-base) var(--ease-out);
+
+}
+
+/* Elevated — for interactive cards (hover lifts) */
+
+.card--elevated {
+
+  background   : var(--color-surface);
+
+  border       : 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  padding      : var(--space-6);
+
+  box-shadow   : var(--shadow-sm);
+
+  transition   :
+
+    border-color var(--duration-base) var(--ease-out),
+
+    box-shadow   var(--duration-base) var(--ease-out),
+
+    transform    var(--duration-fast) var(--ease-out);
+
+}
+
+.card--elevated:hover {
+
+  border-color: var(--color-brand-border);
+
+  box-shadow  : var(--shadow-md);
+
+  transform   : translateY(-2px);
+
+}
+
+/* Glass — for floating overlays: modals, tooltips, dropdowns, sticky panels.
+
+   Do NOT apply to inline content blocks — backdrop-filter creates a stacking
+
+   context that breaks children with position:fixed.                          */
+
+.card--glass {
+
+  background    : rgba(26, 34, 46, 0.85);
+
+  backdrop-filter      : blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  border        : 1px solid var(--color-brand-border);
+
+  border-radius : var(--radius-lg);
+
+  padding       : var(--space-6);
+
+  box-shadow    : inset 0 0 15px rgba(123, 175, 212, 0.05), var(--shadow-md);
+
+}
+
+/* Stat card — numeric metric display blocks */
+
+.card--stat {
+
+  background   : var(--color-surface);
+
+  border       : 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  padding      : var(--space-6);
+
+  position     : relative;
+
+  overflow     : hidden;
+
+}
+
+.card--stat::before {
+
+  content     : "";
+
+  position    : absolute;
+
+  top         : 0;
+
+  left        : 0;
+
+  right       : 0;
+
+  height      : 2px;
+
+  background  : var(--gradient-cyber);
+
+  opacity     : 0.6;
+
+}
+
+/* Card sub-elements */
+
+.card__label {
+
+  font-family   : var(--font-mono);
+
+  font-size     : var(--text-xs);
+
+  color         : var(--color-brand);
+
+  text-transform: uppercase;
+
+  letter-spacing: var(--tracking-widest);
+
+  opacity       : 0.7;
+
+  margin-bottom : var(--space-2);
+
+}
+
+.card__title {
+
+  font-family: var(--font-display);
+
+  font-size  : var(--text-md);
+
+  font-weight: var(--weight-bold);
+
+  color      : var(--color-text);
+
+  margin-bottom: var(--space-2);
+
+}
+
+.card__body {
+
+  font-size  : var(--text-sm);
+
+  line-height: var(--leading-loose);
+
+  color      : var(--color-text-muted);
+
+}
+
+.card__stat-value {
+
+  font-family   : var(--font-display);
+
+  font-size     : var(--text-2xl);
+
+  font-weight   : var(--weight-black);
+
+  color         : var(--color-text);
+
+  line-height   : var(--leading-tight);
+
+  letter-spacing: var(--tracking-tight);
+
+}
+
+.card__stat-label {
+
+  font-size  : var(--text-xs);
+
+  color      : var(--color-text-muted);
+
+  margin-top : var(--space-1);
+
+}
+
+/* ──────────────────────────────────────────────────────────
+
+   NAVIGATION
+
+   .nav is the top-level wrapper. Handles layout only.
+
+   .nav__link handles state. .nav__cta is the right-side CTA.
+
+   Do NOT override .nav__link color directly — use the hover
+
+   and active states defined here.
+
+────────────────────────────────────────────────────────── */
+
+.nav {
+
+  position  : sticky;
+
+  top       : 0;
+
+  z-index   : var(--z-sticky);
+
+  width     : 100%;
+
+  background: rgba(10, 10, 10, 0.8);
+
+  backdrop-filter      : blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--color-border);
+
+}
+
+.nav__inner {
+
+  max-width  : 1200px;
+
+  margin     : 0 auto;
+
+  padding    : 0 var(--space-page-gutter);
+
+  height     : 64px;
+
+  display    : flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap        : var(--space-8);
+
+}
+
+.nav__logo {
+
+  font-family   : var(--font-display);
+
+  font-size     : var(--text-md);
+
+  font-weight   : var(--weight-black);
+
+  color         : var(--color-text);
+
+  text-decoration: none;
+
+  letter-spacing: var(--tracking-tight);
+
+  flex-shrink   : 0;
+
+}
+
+.nav__links {
+
+  display    : flex;
+
+  align-items: center;
+
+  gap        : var(--space-1);
+
+  list-style : none;
+
+}
+
+.nav__link {
+
+  font-size     : var(--text-sm);
+
+  font-weight   : var(--weight-medium);
+
+  color         : var(--color-text-muted);
+
+  text-decoration: none;
+
+  padding       : var(--space-2) var(--space-3);
+
+  border-radius : var(--radius-sm);
+
+  transition    : color var(--duration-fast) var(--ease-out),
+
+                  background var(--duration-fast) var(--ease-out);
+
+}
+
+.nav__link:hover {
+
+  color     : var(--color-text);
+
+  background: var(--color-brand-dim);
+
+}
+
+.nav__link:focus-visible {
+
+  outline       : 2px solid var(--color-brand);
+
+  outline-offset: 2px;
+
+  color         : var(--color-text);
+
+}
+
+/* Active — current page indicator */
+
+.nav__link--active {
+
+  color: var(--color-text);
+
+}
+
+.nav__link--active::after {
+
+  content     : "";
+
+  display     : block;
+
+  height      : 2px;
+
+  background  : var(--color-brand);
+
+  border-radius: var(--radius-pill);
+
+  margin-top  : 2px;
+
+}
+
+/* Right-side CTA — single action, uses .btn .btn--primary */
+
+.nav__cta {
+
+  flex-shrink: 0;
+
+}
+
+/* Mobile menu toggle — visible below 768px */
+
+.nav__toggle {
+
+  display : none;
+
+  padding : var(--space-2);
+
+  background: transparent;
+
+  border  : none;
+
+  color   : var(--color-text);
+
+  cursor  : pointer;
+
+  border-radius: var(--radius-sm);
+
+}
+
+.nav__toggle:focus-visible {
+
+  outline       : 2px solid var(--color-brand);
+
+  outline-offset: 2px;
+
+}
+
+@media (max-width: 768px) {
+
+  .nav__links { display: none; }
+
+  .nav__cta   { display: none; }
+
+  .nav__toggle{ display: flex; }
+
+  /* When mobile menu is open — toggled via JS by adding .is-open to .nav */
+
+  .nav.is-open .nav__links {
+
+    display       : flex;
+
+    flex-direction: column;
+
+    align-items   : flex-start;
+
+    position      : absolute;
+
+    top           : 64px;
+
+    left          : 0;
+
+    right         : 0;
+
+    background    : var(--color-overlay);
+
+    border-bottom : 1px solid var(--color-border);
+
+    padding       : var(--space-4) var(--space-page-gutter);
+
+    gap           : var(--space-1);
+
+  }
+
+  .nav.is-open .nav__cta {
+
+    display: flex;
+
+    padding: var(--space-4) var(--space-page-gutter);
+
+    background: var(--color-overlay);
+
+    width: 100%;
+
+  }
+
+  .nav.is-open .nav__cta .btn {
+
+    width: 100%;
+
+    justify-content: center;
+
+  }
+
+}
+
+/* ──────────────────────────────────────────────────────────
+
+   PROSE — rich text content (blog posts, service pages)
+
+   Apply .prose to the wrapper element of any server-rendered
+
+   or CMS-driven HTML content. Do NOT apply to UI components.
+
+────────────────────────────────────────────────────────── */
+
+.prose {
+
+  color      : var(--color-text);
+
+  font-family: var(--font-ui);
+
+  font-size  : var(--text-base);
+
+  line-height: var(--leading-loose);
+
+  max-width  : 72ch;
+
+}
+
+.prose h1,
+
+.prose h2,
+
+.prose h3,
+
+.prose h4 {
+
+  font-family  : var(--font-display);
+
+  font-weight  : var(--weight-black);
+
+  line-height  : var(--leading-tight);
+
+  color        : var(--color-text);
+
+  margin-top   : var(--space-8);
+
+  margin-bottom: var(--space-4);
+
+}
+
+.prose h1 { font-size: var(--text-heading); }
+
+.prose h2 { font-size: var(--text-subhead); }
+
+.prose h3 { font-size: var(--text-md); }
+
+.prose h4 { font-size: var(--text-base); }
+
+.prose p          { margin-bottom: var(--space-5); }
+
+.prose ul,
+
+.prose ol         { margin: 0 0 var(--space-5) var(--space-6); }
+
+.prose li         { margin-bottom: var(--space-2); }
+
+.prose a {
+
+  color          : var(--color-brand);
+
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+
+  transition     : color var(--duration-fast) var(--ease-out);
+
+}
+
+.prose a:hover        { color: var(--color-brand-dark); }
+
+.prose strong         { color: var(--color-text); font-weight: var(--weight-bold); }
+
+.prose blockquote {
+
+  border-left  : 3px solid var(--color-brand);
+
+  padding      : var(--space-3) 0 var(--space-3) var(--space-5);
+
+  margin       : var(--space-6) 0;
+
+  color        : var(--color-text-muted);
+
+  font-style   : italic;
+
+}
+
+.prose code {
+
+  font-family  : var(--font-mono);
+
+  font-size    : 0.875em;
+
+  background   : var(--color-surface);
+
+  color        : var(--color-brand);
+
+  padding      : 0.15em 0.4em;
+
+  border-radius: var(--radius-xs);
+
+}
+
+.prose pre {
+
+  background   : var(--color-surface);
+
+  border       : 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  padding      : var(--space-5);
+
+  overflow-x   : auto;
+
+  margin       : var(--space-6) 0;
+
+}
+
+.prose pre code {
+
+  background: none;
+
+  padding   : 0;
+
+  color     : var(--color-text);
+
+  font-size : var(--text-sm);
+
+}
+
+.prose hr {
+
+  border     : none;
+
+  border-top : 1px solid var(--color-border);
+
+  margin     : var(--space-10) 0;
+
+}
+
+/* ──────────────────────────────────────────────────────────
+
+   HUD / CYBER EFFECTS
+
+   Decorative elements that reinforce the brand aesthetic.
+
+   All optional — pages function fully without them.
+
+   Apply only to sections that intentionally use the theme.
+
+────────────────────────────────────────────────────────── */
+
+/* Tech grid background — hero sections, feature backgrounds */
 
 .tech-grid {
-  position: relative;
+
+  position        : relative;
+
   background-image:
+
     radial-gradient(circle, rgba(123, 175, 212, 0.12) 1px, transparent 1px),
-    linear-gradient(to right, rgba(123, 175, 212, 0.04) 1px, transparent 1px),
+
+    linear-gradient(to right,  rgba(123, 175, 212, 0.04) 1px, transparent 1px),
+
     linear-gradient(to bottom, rgba(123, 175, 212, 0.04) 1px, transparent 1px);
-  background-size:
+
+  background-size :
+
     32px 32px,
+
     128px 128px,
+
     128px 128px;
+
   background-position: center center;
+
 }
 
-.scan-line {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(123, 175, 212, 0.03) 50%,
-    transparent
-  );
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: 10;
-  animation: scan 12s linear infinite;
-}
+/* HUD frame — corner bracket decoration on image or card components.
 
-/* HUD Frame & Brackets */
+   Requires two child elements with classes .bracket-bl and .bracket-br
+
+   for the bottom corners.                                             */
+
 .hud-frame {
+
   position: relative;
+
   overflow: hidden;
+
 }
+
 .hud-frame::before,
+
 .hud-frame::after,
-.hud-frame .bracket-top,
-.hud-frame .bracket-bottom {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border: 1px solid var(--carolina);
-  opacity: 0.4;
-  z-index: 20;
+
+.hud-frame .bracket-bl,
+
+.hud-frame .bracket-br {
+
+  content       : "";
+
+  position      : absolute;
+
+  width         : 16px;
+
+  height        : 16px;
+
+  border        : 1px solid var(--color-brand);
+
+  opacity       : 0.4;
+
+  z-index       : var(--z-raised);
+
   pointer-events: none;
+
 }
-/* Top-Left */
-.hud-frame::before {
-  top: 0;
-  left: 0;
-  border-right: 0;
-  border-bottom: 0;
-}
-/* Top-Right */
-.hud-frame::after {
-  top: 0;
-  right: 0;
-  border-left: 0;
-  border-bottom: 0;
-}
-/* Bottom-Left */
-.hud-frame .bracket-bottom {
-  bottom: 0;
-  left: 0;
-  border-right: 0;
-  border-top: 0;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-}
-/* Bottom-Right */
-.hud-frame .bracket-right {
-  bottom: 0;
-  right: 0;
-  border-left: 0;
-  border-top: 0;
-  width: 16px;
-  height: 16px;
-  border: 1px solid var(--carolina);
-  position: absolute;
-  opacity: 0.4;
-  z-index: 20;
-  pointer-events: none;
-}
+
+.hud-frame::before  { top: 0; left:  0; border-right:  none; border-bottom: none; }
+
+.hud-frame::after   { top: 0; right: 0; border-left:   none; border-bottom: none; }
+
+.hud-frame .bracket-bl { bottom: 0; left:  0; border-right: none; border-top: none; }
+
+.hud-frame .bracket-br { bottom: 0; right: 0; border-left:  none; border-top: none; }
+
+/* Pulsing node — decorative dot for stat blocks or feature callouts */
 
 .pulsing-node {
-  width: 4px;
-  height: 4px;
-  background: var(--carolina);
+
+  width        : 6px;
+
+  height       : 6px;
+
+  background   : var(--color-brand);
+
   border-radius: var(--radius-full);
-  box-shadow: 0 0 8px var(--carolina);
-  animation: pulse-node 2s ease-in-out infinite;
+
+  box-shadow   : 0 0 8px var(--color-brand);
+
+  animation    : pulse-node 2s var(--ease-in-out) infinite;
+
 }
 
 @keyframes pulse-node {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: scale(0.8);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.3);
-  }
+
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+
+  50%       { opacity: 1;   transform: scale(1.3); }
+
 }
 
-.tech-line {
-  position: absolute;
-  height: 1px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--carolina) 0 4px,
-    transparent 4px 8px
-  );
-  opacity: 0.15;
-  pointer-events: none;
-}
+/* Scanning line — single instance per section, motion decorative only */
 
-/* Animations */
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: scale(0.8);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes scan {
-  from {
-    transform: translateY(-100vh);
-  }
-  to {
-    transform: translateY(100vh);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ─── Tailwind v4 theme tokens ───────────────────────────────────────────────
-   Registers brand values as Tailwind utilities:
-   text-carolina, bg-surface, border-steel, font-serif, font-sans, font-mono
-   ─────────────────────────────────────────────────────────────────────────── */
-@theme {
-  --color-carolina: #7bafd4;
-  --color-carolina-dark: #4d8cb9;
-  --color-slate: #1a222e;
-  --color-steel: #3a5570;
-  --color-surface: #141414;
-  --color-surface-2: #1e1e1e;
-  --color-bg: #0a0a0a;
-  --color-text: #f8f9fa;
-  --color-muted: #6c757d;
-  --color-red: #ff4d4d;
-  --color-yellow: #ffcc00;
-  --color-green: #00ff88;
-
-  --font-family-serif: var(--font-display);
-  --font-family-sans: var(--font-ui);
-  --font-family-mono: var(--font-mono);
-}
-
-/* ─── Shared layout utilities ────────────────────────────────────────────────
-   Use these class names in JSX instead of Tailwind layout utilities.
-   Safe to use in both server and client components.
-   ─────────────────────────────────────────────────────────────────────────── */
-
-/* Full-width section wrapper — handles vertical rhythm */
-.section {
-  width: 100%;
-  padding-top: var(--section-spacing);
-  padding-bottom: var(--section-spacing);
-}
-
-/* Standard width for premium content sections — matching original 1200px */
-.container-cinematic {
-  max-width: 1200px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--page-gutter);
-  padding-right: var(--page-gutter);
-}
-
-/* Centered content container — max-width + horizontal gutter */
-.container {
-  max-width: 1200px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--page-gutter);
-  padding-right: var(--page-gutter);
-}
-
-/* Narrow container for text-heavy sections */
-.container-narrow {
-  max-width: 800px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--page-gutter);
-  padding-right: var(--page-gutter);
-}
-
-/* Scanning line — used in Success section stat block */
 .scanning-line {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--carolina), transparent);
-  top: -2px;
-  border-radius: 1px;
-  opacity: 0.4;
-  will-change: transform;
-  animation: scanning 3s linear infinite;
+
+  position     : absolute;
+
+  left         : 0;
+
+  right        : 0;
+
+  height       : 2px;
+
+  background   : var(--gradient-cyber);
+
+  border-radius: var(--radius-xs);
+
+  opacity      : 0.4;
+
+  pointer-events: none;
+
+  will-change  : transform;
+
+  animation    : scanning 3s linear infinite;
+
 }
 
 @keyframes scanning {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(500px);
-  }
+
+  from { transform: translateY(0); }
+
+  to   { transform: translateY(500px); }
+
 }
 
-/* FAQ responsive grid */
-.faq-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
+/* Noise texture overlay — apply to .noise parent element.
+
+   Low opacity — preserves readability of content beneath.  */
+
+.noise {
+
+  position: relative;
+
 }
 
-@media (min-width: 1024px) {
-  .faq-grid {
-    grid-template-columns: 0.8fr 1.2fr;
-  }
+.noise::before {
+
+  content          : "";
+
+  position         : absolute;
+
+  inset            : 0;
+
+  z-index          : var(--z-raised);
+
+  pointer-events   : none;
+
+  opacity          : 0.015;
+
+  background-image : url("/images/noise.svg");
+
+  filter           : contrast(120%) brightness(120%);
+
+}
+
+/* ──────────────────────────────────────────────────────────
+
+   ANIMATIONS — REUSABLE KEYFRAMES
+
+   Use these class names to apply entrance animations.
+
+   All respect prefers-reduced-motion via the global rule above.
+
+────────────────────────────────────────────────────────── */
+
+.animate-fade-up {
+
+  animation: fadeUp var(--duration-slow) var(--ease-out) both;
+
+}
+
+.animate-fade-in {
+
+  animation: fadeIn var(--duration-slow) var(--ease-out) both;
+
+}
+
+/* Stagger children — add data-delay="1" through "5" to stagger items */
+
+[data-delay="1"] { animation-delay: 0.1s; }
+
+[data-delay="2"] { animation-delay: 0.2s; }
+
+[data-delay="3"] { animation-delay: 0.3s; }
+
+[data-delay="4"] { animation-delay: 0.4s; }
+
+[data-delay="5"] { animation-delay: 0.5s; }
+
+@keyframes fadeUp {
+
+  from { opacity: 0; transform: translateY(16px); }
+
+  to   { opacity: 1; transform: translateY(0);    }
+
+}
+
+@keyframes fadeIn {
+
+  from { opacity: 0; }
+
+  to   { opacity: 1; }
+
+}
+
+@keyframes spin {
+
+  to { transform: rotate(360deg); }
+
+}
+
+/* Loading spinner — use on any element needing a spin state */
+
+.spin {
+
+  animation: spin 1s linear infinite;
+
 }
 
 /* ─── Blog index editorial intro ─────────────────────────────────────────────
@@ -581,8 +2391,8 @@ textarea {
    ─────────────────────────────────────────────────────────────────────────── */
 .blog-intro-wrap {
   width: 100%;
-  padding: clamp(3rem, 6vw, 5rem) var(--page-gutter) clamp(2rem, 4vw, 3rem);
-  border-bottom: 1px solid var(--border);
+  padding: clamp(3rem, 6vw, 5rem) var(--space-page-gutter) clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .blog-intro-inner {
@@ -593,7 +2403,7 @@ textarea {
 .blog-intro-label {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--carolina);
+  color: var(--color-brand);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   opacity: 0.7;
@@ -605,23 +2415,36 @@ textarea {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--text);
+  color: var(--color-text);
   margin-bottom: 1.5rem;
 }
 
 .blog-intro-body {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--muted);
+  color: var(--color-text-muted);
   margin-bottom: 1rem;
 }
 
 .blog-intro-body a {
-  color: var(--carolina);
+  color: var(--color-brand);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .blog-intro-body a:hover {
-  color: var(--carolina-dark);
+  color: var(--color-brand-dark);
+}
+
+/* ─── FAQ layout ─────────────────────────────────────────────────────────── */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .faq-grid {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
 }

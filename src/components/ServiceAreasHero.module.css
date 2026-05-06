@@ -4,8 +4,8 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--section-spacing) * 1.35) var(--page-gutter)
-    var(--section-spacing);
+  padding: calc(var(--space-section) * 1.35) var(--space-page-gutter)
+    var(--space-section);
 }
 
 .grid {
@@ -51,7 +51,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--carolina);
+  color: var(--color-brand);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -62,7 +62,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--carolina);
+  background: var(--color-brand);
   opacity: 0.6;
 }
 
@@ -73,11 +73,11 @@
   line-height: 1.08;
   letter-spacing: -0.03em;
   max-width: 860px;
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .h1Accent {
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .bodyWrap {
@@ -114,7 +114,7 @@
   align-items: center;
   justify-content: center;
   background: var(--gradient-cta);
-  color: var(--bg);
+  color: var(--color-bg);
   border: none;
   border-radius: var(--radius-sm);
   padding: 0.875rem 1.75rem;
@@ -148,7 +148,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: var(--carolina);
+  color: var(--color-brand);
   border: 1px solid rgba(123, 175, 212, 0.4);
   border-radius: var(--radius-sm);
   padding: 0.875rem 1.75rem;
@@ -167,15 +167,15 @@
 }
 
 .secondaryBtn:hover {
-  background: var(--carolina-dim);
-  border-color: var(--carolina);
-  color: var(--text);
+  background: var(--color-brand-dim);
+  border-color: var(--color-brand);
+  color: var(--color-text);
 }
 
 .trust {
   font-family: var(--font-ui);
   font-size: 0.75rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   opacity: 0.7;
   letter-spacing: 0.05em;
 }

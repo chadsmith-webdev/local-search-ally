@@ -1,5 +1,5 @@
 .section {
-  padding: var(--section-spacing) var(--page-gutter);
+  padding: var(--space-section) var(--space-page-gutter);
 }
 
 .card {
@@ -47,7 +47,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--color-brand);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -58,7 +58,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--carolina);
+  background: var(--color-brand);
   opacity: 0.6;
 }
 
@@ -68,7 +68,7 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.025em;
-  color: var(--text);
+  color: var(--color-text);
   max-width: 560px;
 }
 
@@ -81,7 +81,7 @@
 
 .social {
   font-size: 0.875rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   font-style: italic;
 }
 
@@ -98,7 +98,7 @@
   align-items: center;
   justify-content: center;
   background: var(--gradient-cta);
-  color: var(--bg);
+  color: var(--color-bg);
   border: none;
   border-radius: var(--radius-sm);
   padding: 0.875rem 1.75rem;
@@ -123,7 +123,7 @@
 
 .zeroFriction {
   font-size: 0.75rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   letter-spacing: 0.01em;
 }
 

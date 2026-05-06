@@ -27,7 +27,7 @@
   font-family: var(--font-display);
   font-size: clamp(3rem, 8vw, 4.8rem);
   line-height: 1;
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .statBody {
@@ -49,7 +49,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--color-brand);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -60,7 +60,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--carolina);
+  background: var(--color-brand);
   opacity: 0.6;
 }
 

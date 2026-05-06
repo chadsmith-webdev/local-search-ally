@@ -27,7 +27,7 @@
   z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 120px var(--page-gutter, 40px) 80px var(--page-gutter, 40px);
+  padding: 120px var(--space-page-gutter, 40px) 80px var(--space-page-gutter, 40px);
 }
 
 .content {
@@ -46,18 +46,18 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: var(--color-text);
   margin: 0;
 }
 
 .colorSpan {
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .subheading {
   font-size: 1.25rem;
   line-height: 1.6;
-  color: var(--carolina);
+  color: var(--color-brand);
   margin: 0 auto;
   font-weight: 500;
   max-width: 600px;
@@ -66,7 +66,7 @@
 .description {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--text);
+  color: var(--color-text);
   margin: 0 auto;
   max-width: 650px;
 }
@@ -76,7 +76,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: var(--carolina);
+  color: var(--color-brand);
   border: 1px solid rgba(123, 175, 212, 0.4);
   border-radius: var(--radius-sm);
   padding: 0.875rem 1.75rem;
@@ -96,16 +96,16 @@
 
 .cta:hover,
 .cta:active {
-  background: var(--carolina-dim);
-  border-color: var(--carolina);
-  color: var(--text);
+  background: var(--color-brand-dim);
+  border-color: var(--color-brand);
+  color: var(--color-text);
 }
 
 .trustStat {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--carolina-light, #b6d6ec);
+  color: var(--color-brand, #b6d6ec);
   font-size: 1rem;
   margin: 18px auto 0 auto;
   background: rgba(123, 175, 212, 0.07);
@@ -116,13 +116,13 @@
 }
 
 .trustStat strong {
-  color: var(--carolina);
+  color: var(--color-brand);
   font-weight: 700;
 }
 
 .trustSource {
   font-size: 0.85em;
-  color: var(--carolina);
+  color: var(--color-brand);
   margin-left: 8px;
   opacity: 0.7;
 }
@@ -131,7 +131,7 @@
   display: none;
   align-items: center;
   gap: 6px;
-  color: var(--carolina);
+  color: var(--color-brand);
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -141,7 +141,7 @@
 
 .callLink:hover,
 .callLink:focus-visible {
-  color: var(--text);
+  color: var(--color-text);
   text-decoration: underline;
 }
 

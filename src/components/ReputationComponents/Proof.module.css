@@ -1,6 +1,6 @@
 .section {
   padding: 100px 24px;
-  background: var(--surface);
+  background: var(--color-surface);
 }
 
 .container {
@@ -18,7 +18,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina, #7bafd4);
+  color: var(--color-brand, #7bafd4);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -29,7 +29,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--carolina, #7bafd4);
+  background: var(--color-brand, #7bafd4);
   opacity: 0.6;
 }
 
@@ -38,14 +38,14 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: var(--color-text);
   margin-bottom: 16px;
 }
 
 .intro {
   font-family: var(--font-ui);
   font-size: 1.125rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   line-height: 1.7;
   max-width: 600px;
 }
@@ -70,7 +70,7 @@
 
 .pillar {
   padding: 30px;
-  background: var(--surface);
+  background: var(--color-surface);
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
@@ -87,7 +87,7 @@
   left: 0;
   width: 2px;
   height: 0;
-  background: var(--carolina);
+  background: var(--color-brand);
   transition: height 0.4s ease;
 }
 
@@ -104,7 +104,7 @@
 .pillarIcon {
   width: 40px;
   height: 40px;
-  color: var(--carolina);
+  color: var(--color-brand);
   opacity: 0.8;
 }
 
@@ -117,7 +117,7 @@
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--color-text);
   margin: 0 0 8px 0;
   letter-spacing: -0.01em;
 }
@@ -125,7 +125,7 @@
 .pillarContent p {
   font-family: var(--font-ui);
   font-size: 0.875rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   line-height: 1.6;
   margin: 0;
 }
@@ -193,7 +193,7 @@
   font-family: var(--font-mono);
   font-size: 0.65rem;
   letter-spacing: 0.2em;
-  color: var(--carolina);
+  color: var(--color-brand);
   opacity: 0.8;
   display: block;
   margin-bottom: 8px;
@@ -203,7 +203,7 @@
   font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--text);
+  color: var(--color-text);
   letter-spacing: 0.05em;
   margin-bottom: 4px;
   text-shadow: 0 0 20px rgba(123, 175, 212, 0.3);
@@ -212,7 +212,7 @@
 .hubStatus {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--green, #00ff88);
+  color: var(--color-status-success, #00ff88);
   letter-spacing: 0.1em;
   font-weight: 600;
 }
@@ -251,7 +251,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--carolina) 0%, transparent 100%);
+  background: linear-gradient(90deg, var(--color-brand) 0%, transparent 100%);
   opacity: 0;
   transition: opacity 0.3s ease-out;
 }
@@ -275,7 +275,7 @@
   font-family: var(--font-mono);
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--carolina);
+  color: var(--color-brand);
   line-height: 1;
   letter-spacing: -0.02em;
   margin-bottom: 10px;
@@ -284,7 +284,7 @@
 .statLabel {
   font-family: var(--font-ui);
   font-size: 0.875rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   line-height: 1.5;
   margin-bottom: 10px;
 }
@@ -294,12 +294,12 @@
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--color-text-muted);
   opacity: 0.6;
 }
 
 .commitment {
-  background: var(--surface);
+  background: var(--color-surface);
   border-radius: var(--radius-lg);
   padding: 40px;
 }
@@ -310,7 +310,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--color-text-muted);
   margin-bottom: 20px;
 }
 
@@ -332,7 +332,7 @@
 .listItem {
   font-family: var(--font-ui);
   font-size: 1rem;
-  color: var(--text);
+  color: var(--color-text);
   display: flex;
   align-items: flex-start;
   gap: 10px;

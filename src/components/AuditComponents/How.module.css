@@ -1,6 +1,6 @@
 .section {
   padding: 100px 40px;
-  background: var(--bg);
+  background: var(--color-bg);
 }
 
 .container {
@@ -17,14 +17,14 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: var(--color-text);
   margin: 0 0 16px 0;
 }
 
 .intro {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: var(--text);
+  color: var(--color-text);
   margin: 0;
 }
 
@@ -47,7 +47,7 @@
   border-color: rgba(123, 175, 212, 0.4);
   background: linear-gradient(
     135deg,
-    var(--surface) 0%,
+    var(--color-surface) 0%,
     var(--surface-hover, #242424) 100%
   );
   transform: translateY(-4px);
@@ -68,7 +68,7 @@
   font-family: var(--font-ui);
   font-size: 1.3rem;
   font-weight: 600;
-  color: var(--carolina);
+  color: var(--color-brand);
   margin: 0 0 12px 0;
   letter-spacing: -0.01em;
   position: relative;
@@ -78,7 +78,7 @@
 .stepDescription {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--muted);
+  color: var(--color-text-muted);
   margin: 0;
   position: relative;
   z-index: 2;

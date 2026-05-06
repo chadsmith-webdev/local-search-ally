@@ -26,7 +26,7 @@ export default function TermsPage() {
             <H1 style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)" }}>
               Terms of Service
             </H1>
-            <p className='text-[0.65rem] text-muted/40 uppercase tracking-widest'>
+            <p className='text-[0.65rem] text-text-muted/40 uppercase tracking-widest'>
               Effective: Jan 16, 2024 · Updated: Apr 3, 2026
             </p>
             <div className='h-px bg-white/5 w-full' />
@@ -99,7 +99,7 @@ export default function TermsPage() {
               </Body>
               <a
                 href='mailto:chad@localsearchally.com'
-                className='text-carolina text-sm underlineDecoration-carolina/20 underline underline-offset-4'
+                className='text-brand text-sm underlineDecoration-carolina/20 underline underline-offset-4'
               >
                 chad@localsearchally.com
               </a>

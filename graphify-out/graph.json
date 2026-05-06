@@ -6082,7 +6082,7 @@
       "label": "BellaVistaServiceAreaPage()",
       "file_type": "code",
       "source_file": "src/app/service-areas/bella-vista-ar/page.js",
-      "source_location": "L138",
+      "source_location": "L168",
       "id": "bella_vista_ar_page_bellavistaserviceareapage",
       "community": 52,
       "norm_label": "bellavistaserviceareapage()"
@@ -21404,7 +21404,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/service-areas/bella-vista-ar/page.js",
-      "source_location": "L138",
+      "source_location": "L168",
       "weight": 1.0,
       "_src": "src_app_service_areas_bella_vista_ar_page_js",
       "_tgt": "bella_vista_ar_page_bellavistaserviceareapage",

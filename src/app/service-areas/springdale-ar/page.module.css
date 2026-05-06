@@ -6,9 +6,9 @@
   position: relative;
   min-height: 100dvh;
   overflow: hidden;
-  padding-top: calc(var(--section-spacing) * 1.35);
-  padding-bottom: var(--section-spacing);
-  border-bottom: 1px solid var(--border);
+  padding-top: calc(var(--space-section) * 1.35);
+  padding-bottom: var(--space-section);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .grid {
@@ -44,8 +44,8 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--page-gutter);
-  padding-right: var(--page-gutter);
+  padding-left: var(--space-page-gutter);
+  padding-right: var(--space-page-gutter);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,7 +76,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .eyebrow::before,
@@ -85,7 +85,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--carolina);
+  background: var(--color-brand);
   opacity: 0.6;
 }
 
@@ -96,7 +96,7 @@
 .faqQuestion,
 .cardTitle {
   font-family: var(--font-display);
-  color: var(--text);
+  color: var(--color-text);
   letter-spacing: -0.03em;
 }
 
@@ -108,7 +108,7 @@
 }
 
 .heroAccent {
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .heroBody,
@@ -139,7 +139,7 @@
   align-items: center;
   justify-content: center;
   background: var(--gradient-cta);
-  color: var(--bg);
+  color: var(--color-bg);
   border: none;
   border-radius: var(--radius-sm);
   padding: 0.875rem 1.75rem;
@@ -173,7 +173,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: var(--carolina);
+  color: var(--color-brand);
   border: 1px solid rgba(123, 175, 212, 0.4);
   border-radius: var(--radius-sm);
   padding: 0.875rem 1.75rem;
@@ -192,9 +192,9 @@
 }
 
 .secondaryBtn:hover {
-  background: var(--carolina-dim);
-  border-color: var(--carolina);
-  color: var(--text);
+  background: var(--color-brand-dim);
+  border-color: var(--color-brand);
+  color: var(--color-text);
 }
 
 .secondaryBtn:active {
@@ -204,7 +204,7 @@
 .trust {
   font-family: var(--font-ui);
   font-size: 0.75rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   opacity: 0.7;
   letter-spacing: 0.05em;
 }
@@ -246,7 +246,7 @@
 
 .panelLabel,
 .stepLabel {
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .cardLabel {
@@ -265,7 +265,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 5vw, 4rem);
   line-height: 1;
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .panelCopy {
@@ -306,7 +306,7 @@
   border-radius: var(--radius-xs);
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--carolina);
+  color: var(--color-brand);
   flex-shrink: 0;
 }
 
@@ -350,7 +350,7 @@
   font-size: clamp(1.7rem, 3vw, 2.25rem);
   line-height: 1.08;
   letter-spacing: -0.03em;
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .briefStat {
@@ -729,7 +729,7 @@
   font-size: clamp(1.55rem, 3vw, 2.2rem);
   line-height: 1.12;
   letter-spacing: -0.03em;
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .proofEditorial .proofPanel {
@@ -754,16 +754,16 @@
 }
 
 .ctaSection {
-  padding: clamp(2rem, 4.6vw, 3rem) var(--page-gutter)
-    calc(var(--section-spacing) * 0.9);
-  border-top: 1px solid var(--border);
+  padding: clamp(2rem, 4.6vw, 3rem) var(--space-page-gutter)
+    calc(var(--space-section) * 0.9);
+  border-top: 1px solid var(--color-border);
   background:
     radial-gradient(
       circle at 10% 20%,
       rgba(123, 175, 212, 0.15),
       transparent 55%
     ),
-    var(--surface);
+    var(--color-surface);
 }
 
 .ctaInner {
@@ -887,7 +887,7 @@
   }
 
   .hero {
-    padding-top: calc(var(--section-spacing) * 1.1);
+    padding-top: calc(var(--space-section) * 1.1);
   }
 
   .heroTitle {

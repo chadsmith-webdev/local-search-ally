@@ -1,6 +1,6 @@
 .section {
-  padding: 0 var(--page-gutter) var(--section-spacing);
-  background: var(--bg);
+  padding: 0 var(--space-page-gutter) var(--space-section);
+  background: var(--color-bg);
 }
 
 .inner {
@@ -15,20 +15,20 @@
 
   border-radius: var(--radius-xl);
   overflow: hidden;
-  background: var(--surface);
+  background: var(--color-surface);
 }
 
 /* ─── Preview panel (left) ──────────────────────────── */
 .preview {
   position: relative;
   overflow: hidden;
-  background: var(--bg);
+  background: var(--color-bg);
   padding: 3rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 420px;
-  border-right: 1px solid var(--border-strong);
+  border-right: 1px solid var(--color-border-strong);
 }
 
 .previewGrid {
@@ -93,7 +93,7 @@
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--color-brand);
   opacity: 0.6;
 }
 
@@ -118,7 +118,7 @@
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--text);
+  color: var(--color-text);
   line-height: 1.05;
 }
 
@@ -127,7 +127,7 @@
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--carolina);
+  color: var(--color-brand);
   line-height: 1.05;
 }
 
@@ -157,7 +157,7 @@
   font-family: var(--font-mono);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--color-text);
   letter-spacing: -0.02em;
 }
 
@@ -167,7 +167,7 @@
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--color-brand);
   opacity: 0.7;
 }
 
@@ -207,7 +207,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .h2 {
@@ -216,13 +216,13 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .edition {
   font-family: var(--font-ui);
   font-size: 0.875rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   margin-top: -0.75rem;
 }
 
@@ -230,7 +230,7 @@
   font-family: var(--font-ui);
   font-size: 1.0625rem;
   line-height: 1.75;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 /* Meta row */
@@ -261,8 +261,8 @@
   font-family: var(--font-ui);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--bg);
-  background: var(--carolina);
+  color: var(--color-bg);
+  background: var(--color-brand);
   text-decoration: none;
   padding: 0.875rem 1.875rem;
   border-radius: var(--radius-md);
@@ -286,7 +286,7 @@
 }
 
 .downloadBtn:focus-visible {
-  outline: 2px solid var(--carolina);
+  outline: 2px solid var(--color-brand);
   outline-offset: 3px;
 }
 
@@ -298,7 +298,7 @@
 
   .preview {
     border-right: none;
-    border-bottom: 1px solid var(--border-strong);
+    border-bottom: 1px solid var(--color-border-strong);
     min-height: 320px;
     padding: 2.5rem 2rem;
   }

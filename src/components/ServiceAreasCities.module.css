@@ -17,7 +17,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--color-brand);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -28,7 +28,7 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--carolina);
+  background: var(--color-brand);
   opacity: 0.6;
 }
 
@@ -137,7 +137,7 @@
 }
 
 .card:hover .city {
-  color: var(--carolina);
+  color: var(--color-brand);
 }
 
 .county {
@@ -150,7 +150,7 @@
 }
 
 .badge {
-  color: var(--carolina);
+  color: var(--color-brand);
   font-family: var(--font-ui);
   font-size: 0.68rem;
   font-weight: 600;
@@ -173,7 +173,7 @@
 .cityPageLink {
   display: inline-flex;
   margin-top: 0.85rem;
-  color: var(--carolina);
+  color: var(--color-brand);
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -217,7 +217,7 @@
 }
 
 .card:hover .tag {
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .footerNoteRow {
@@ -232,7 +232,7 @@
 }
 
 .footerLink {
-  color: var(--carolina);
+  color: var(--color-brand);
   text-decoration: none;
   font-weight: 800;
 }

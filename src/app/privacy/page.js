@@ -26,7 +26,7 @@ export default function PrivacyPage() {
             <H1 style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)" }}>
               Privacy Policy
             </H1>
-            <p className='text-[0.65rem] text-muted/40 uppercase tracking-widest'>
+            <p className='text-[0.65rem] text-text-muted/40 uppercase tracking-widest'>
               Effective: Jan 16, 2024 · Updated: Apr 3, 2026
             </p>
             <div className='h-px bg-white/5 w-full' />
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
               Siloam Springs, AR. Questions?{" "}
               <a
                 href='mailto:chad@localsearchally.com'
-                className='text-carolina hover:underline'
+                className='text-brand hover:underline'
               >
                 chad@localsearchally.com
               </a>
@@ -112,7 +112,7 @@ export default function PrivacyPage() {
               </Body>
               <a
                 href='mailto:chad@localsearchally.com'
-                className='text-carolina text-sm underlineDecoration-carolina/20 underline underline-offset-4'
+                className='text-brand text-sm underlineDecoration-carolina/20 underline underline-offset-4'
               >
                 chad@localsearchally.com
               </a>

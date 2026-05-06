@@ -2,7 +2,7 @@
 .section {
   position: relative;
   padding: 8rem 0;
-  background: var(--bg);
+  background: var(--color-bg);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   text-align: center;
   overflow: hidden;
@@ -43,7 +43,7 @@
   z-index: 1;
   max-width: 840px;
   margin: 0 auto;
-  padding: 0 var(--page-gutter);
+  padding: 0 var(--space-page-gutter);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +56,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--color-brand);
   opacity: 0.6;
 }
 
@@ -66,13 +66,13 @@
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.03em;
-  color: var(--text);
+  color: var(--color-text);
   max-width: 720px;
 }
 
 .h2 em {
   font-style: normal;
-  color: var(--carolina);
+  color: var(--color-brand);
   text-shadow:
     0 0 20px rgba(123, 175, 212, 0.5),
     0 0 60px rgba(123, 175, 212, 0.15);
@@ -81,7 +81,7 @@
 .sub {
   font-family: var(--font-ui);
   font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
-  color: var(--muted);
+  color: var(--color-text-muted);
   line-height: 1.75;
   max-width: 600px;
 }
@@ -101,7 +101,7 @@
   align-items: center;
   justify-content: center;
   background: var(--gradient-cta);
-  color: var(--bg);
+  color: var(--color-bg);
   border: none;
   padding: 1rem 2.25rem;
   font-family: var(--font-ui);
@@ -130,7 +130,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: var(--carolina);
+  color: var(--color-brand);
   border: 1px solid rgba(123, 175, 212, 0.35);
   padding: 1rem 2rem;
   font-family: var(--font-ui);
@@ -144,8 +144,8 @@
 }
 
 .btnSecondary:hover {
-  background: var(--carolina-dim);
-  border-color: var(--carolina);
+  background: var(--color-brand-dim);
+  border-color: var(--color-brand);
 }
 
 /* ─── Trust line ────────────────────────────────────────── */
@@ -153,7 +153,7 @@
   font-family: var(--font-ui);
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--color-text-muted);
   opacity: 0.55;
   letter-spacing: 0.08em;
   text-transform: uppercase;
