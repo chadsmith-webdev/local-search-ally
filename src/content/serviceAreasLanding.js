@@ -18,7 +18,7 @@ export const serviceAreasLandingContent = {
   hero: {
     eyebrow: "Where I Work",
     h1: {
-      text: "Service areas across Northwest Arkansas,",
+      text: "Local SEO service areas in Northwest Arkansas,",
       accent: "handled city by city.",
     },
     body: [

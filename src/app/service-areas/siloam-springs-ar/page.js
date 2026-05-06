@@ -45,10 +45,9 @@ const citationStats = [
 
 export function generateMetadata() {
   return {
-    title:
-      "Local SEO in Siloam Springs, AR for Home Service Trades | Local Search Ally",
+    title: "Local SEO for Siloam Springs Trades | Local Search Ally",
     description:
-      "Local SEO and web design for Siloam Springs home service trades. I help HVAC, plumbing, roofing, and electrical businesses show up in Google Maps and turn searches into calls.",
+      "Local SEO for Siloam Springs home service trades. HVAC, plumbing, roofing, and electrical — I help you show up in Google Maps and get calls.",
     alternates: {
       canonical: pageUrl,
     },
@@ -60,6 +59,12 @@ export function generateMetadata() {
       siteName: "Local Search Ally",
       locale: "en_US",
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Local SEO in Siloam Springs, AR | Local Search Ally",
+      description:
+        "Siloam Springs local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
     },
   };
 }
@@ -138,6 +143,31 @@ const faqJsonLd = {
   })),
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.localsearchally.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Service Areas",
+      item: "https://www.localsearchally.com/service-areas",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Siloam Springs",
+      item: pageUrl,
+    },
+  ],
+};
+
 export default function SiloamSpringsServiceAreaPage() {
   return (
     <>
@@ -150,6 +180,10 @@ export default function SiloamSpringsServiceAreaPage() {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <main className={styles.main}>
         <section className={styles.hero}>

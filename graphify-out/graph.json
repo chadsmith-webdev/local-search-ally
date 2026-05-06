@@ -5722,7 +5722,7 @@
       "label": "ServiceAreasPage()",
       "file_type": "code",
       "source_file": "src/app/service-areas/page.js",
-      "source_location": "L26",
+      "source_location": "L51",
       "id": "service_areas_page_serviceareaspage",
       "community": 69,
       "norm_label": "serviceareaspage()"
@@ -21020,7 +21020,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/service-areas/page.js",
-      "source_location": "L26",
+      "source_location": "L51",
       "weight": 1.0,
       "_src": "src_app_service_areas_page_js",
       "_tgt": "service_areas_page_serviceareaspage",
