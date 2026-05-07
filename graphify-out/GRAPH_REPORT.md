@@ -1,4 +1,4 @@
-# Graph Report - local-search-ally  (2026-05-06)
+# Graph Report - local-search-ally  (2026-05-07)
 
 ## Corpus Check
 - 211 files · ~2,727,743 words

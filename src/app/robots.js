@@ -14,6 +14,10 @@ export default function robots() {
       { userAgent: "OAI-SearchBot", allow: "/" },
       { userAgent: "PerplexityBot", allow: "/" },
       { userAgent: "ClaudeBot", allow: "/" },
+      // Google AI (Gemini / AI Overviews)
+      { userAgent: "Google-Extended", allow: "/" },
+      // Bing / Microsoft Copilot
+      { userAgent: "Bingbot", allow: "/" },
     ],
     sitemap: `${siteConfig.url}/sitemap.xml`,
   };
