@@ -1,11 +1,11 @@
 # Graph Report - local-search-ally  (2026-05-06)
 
 ## Corpus Check
-- 210 files · ~2,227,561 words
+- 211 files · ~2,235,354 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1035 nodes · 1324 edges · 39 communities detected
+- 1037 nodes · 1325 edges · 39 communities detected
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 91 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
@@ -252,11 +252,11 @@ Nodes (2): check(), main()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `validate_url()` connect `Community 4` to `Community 0`, `Community 3`, `Community 6`, `Community 13`, `Community 20`?**
-  _High betweenness centrality (0.037) - this node is a cross-community bridge._
+  _High betweenness centrality (0.039) - this node is a cross-community bridge._
 - **Why does `run_comparison()` connect `Community 0` to `Community 4`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Why does `get_oauth_credentials()` connect `Community 3` to `Community 19`, `Community 23`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `run_comparison()` (e.g. with `validate_url()` and `url_hash()`) actually correct?**
   _`run_comparison()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 23 inferred relationships involving `buildOGImage()` (e.g. with `OGImage()` and `OGImage()`) actually correct?**

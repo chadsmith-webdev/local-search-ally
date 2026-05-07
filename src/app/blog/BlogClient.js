@@ -1,34 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./BlogClient.module.css";
 
-// ── Reading progress bar ──────────────────────────────────────────────────────
-
-function ReadingProgress() {
-  const barRef = useRef();
-
-  useEffect(() => {
-    const onScroll = () => {
-      const total = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
-      if (barRef.current) barRef.current.style.width = `${pct}%`;
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <div className={styles.progressTrack} aria-hidden='true'>
-      <div ref={barRef} className={styles.progressBar} />
-    </div>
-  );
-}
-
-// ── Post card ─────────────────────────────────────────────────────────────────
+// ── Variants ──────────────────────────────────────────────────────────────────
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -39,6 +16,8 @@ const fadeUp = {
   },
 };
 
+// ── Post card ─────────────────────────────────────────────────────────────────
+
 function PostCard({ post, index }) {
   return (
     <motion.div
@@ -46,10 +25,9 @@ function PostCard({ post, index }) {
       initial='hidden'
       whileInView='visible'
       viewport={{ once: true, amount: 0.1 }}
-      transition={{ delay: index * 0.07 }}
+      transition={{ delay: index * 0.06 }}
     >
       <Link href={`/blog/${post.slug}`} className={styles.card}>
-        {/* Feature image */}
         <div className={styles.cardImage}>
           {post.image ? (
             <Image
@@ -59,7 +37,6 @@ function PostCard({ post, index }) {
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               style={{ objectFit: "cover" }}
               className={styles.cardImg}
-              priority={index === 0}
             />
           ) : (
             <div className={styles.cardImageFallback} aria-hidden='true' />
@@ -68,14 +45,12 @@ function PostCard({ post, index }) {
             <span className={styles.cardTag}>{post.tags[0]}</span>
           )}
         </div>
-
-        {/* Content */}
         <div className={styles.cardBody}>
           <h2 className={styles.cardTitle}>{post.title}</h2>
           <p className={styles.cardDesc}>{post.description}</p>
           <div className={styles.cardMeta}>
             <span className={styles.cardReadTime}>{post.readTime}</span>
-            <span className={styles.cardCta}>READ_MORE →</span>
+            <span className={styles.cardCta}>Read post →</span>
           </div>
         </div>
       </Link>
@@ -83,41 +58,92 @@ function PostCard({ post, index }) {
   );
 }
 
+// ── Featured card (hero right panel) ─────────────────────────────────────────
+
+function FeaturedCard({ post }) {
+  if (!post) return null;
+  return (
+    <Link href={`/blog/${post.slug}`} className={styles.featuredCard}>
+      <div className={styles.featuredImage}>
+        {post.image ? (
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            sizes='(max-width: 900px) 100vw, 45vw'
+            style={{ objectFit: "cover" }}
+            className={styles.featuredImg}
+            priority
+          />
+        ) : (
+          <div className={styles.featuredImageFallback} aria-hidden='true' />
+        )}
+        {post.tags?.[0] && (
+          <span className={styles.featuredTag}>{post.tags[0]}</span>
+        )}
+      </div>
+      <div className={styles.featuredBody}>
+        <p className={styles.featuredLabel}>Latest post</p>
+        <h2 className={styles.featuredTitle}>{post.title}</h2>
+        <span className={styles.featuredCta}>Read now →</span>
+      </div>
+    </Link>
+  );
+}
+
 // ── Blog index ────────────────────────────────────────────────────────────────
 
 export default function BlogClient({ posts }) {
+  const featuredPost = posts[0] ?? null;
+  const remainingPosts = posts.slice(1);
+
   return (
     <div className={styles.page}>
-      <ReadingProgress />
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
+      <section className={styles.hero} id='blog-hero'>
+        <div className={styles.heroGlow} aria-hidden='true' />
 
-      {/* Hero */}
-      <section className={styles.hero}>
-        <div className={styles.heroOrb} aria-hidden='true' />
-        <motion.div
-          className={styles.heroContent}
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <span className={styles.eyebrow}>Local Search Ally · Insights</span>
-          <h1 className={styles.h1}>
-            SEO for contractors is <em className={styles.accent}>broken.</em>
-            <br />
-            Here&rsquo;s how to fix it.
-          </h1>
-          <p className={styles.subhead}>
-            No fluff. No generic marketing advice. Just practical guidance on
-            how to win the Map Pack and get the calls you deserve.
-          </p>
-        </motion.div>
+        <div className={styles.heroInner}>
+          {/* Left: copy */}
+          <motion.div
+            className={styles.heroLeft}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <span className={styles.eyebrow}>Local Search Ally · Insights</span>
+            <h1 className={styles.h1}>
+              The NWA contractor&rsquo;s guide to getting{" "}
+              <em className={styles.accent}>found on Google.</em>
+            </h1>
+            <p className={styles.subhead}>
+              Practical local SEO — written for HVAC companies, plumbers,
+              roofers, and electricians in Northwest Arkansas.
+            </p>
+            <a href='#all-posts' className={styles.scrollLink}>
+              ↓ All posts
+            </a>
+          </motion.div>
+
+          {/* Right: featured post */}
+          <motion.div
+            className={styles.heroRight}
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.65, ease: "easeOut", delay: 0.1 }}
+          >
+            <FeaturedCard post={featuredPost} />
+          </motion.div>
+        </div>
       </section>
 
-      {/* Post grid */}
-      <section className={styles.gridSection}>
-        <div className={styles.inner}>
-          {posts.length > 0 ? (
+      {/* ── Post grid ────────────────────────────────────────────────────── */}
+      <section className={styles.gridSection} id='all-posts'>
+        <div className={styles.gridInner}>
+          <p className={styles.gridLabel}>All posts</p>
+          {remainingPosts.length > 0 ? (
             <div className={styles.grid}>
-              {posts.map((post, i) => (
+              {remainingPosts.map((post, i) => (
                 <PostCard key={post.slug} post={post} index={i} />
               ))}
             </div>
@@ -131,9 +157,9 @@ export default function BlogClient({ posts }) {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ──────────────────────────────────────────────────────────── */}
       <section className={styles.ctaSection}>
-        <div className={styles.inner}>
+        <div className={styles.ctaInner}>
           <motion.div
             className={styles.ctaBox}
             initial={{ opacity: 0, y: 24 }}
