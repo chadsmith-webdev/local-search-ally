@@ -33,8 +33,16 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 60% 70% at 75% 50%, rgba(123, 175, 212, 0.07) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(58, 85, 112, 0.08) 0%, transparent 60%);
+    radial-gradient(
+      ellipse 60% 70% at 75% 50%,
+      rgba(123, 175, 212, 0.07) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 40% 40% at 20% 80%,
+      rgba(58, 85, 112, 0.08) 0%,
+      transparent 60%
+    );
 }
 
 .heroInner {
@@ -279,7 +287,9 @@
 .cardImg {
   object-fit: cover;
   filter: grayscale(1);
-  transition: filter 0.6s ease, transform 0.6s ease;
+  transition:
+    filter 0.6s ease,
+    transform 0.6s ease;
 }
 
 .card:hover .cardImg {

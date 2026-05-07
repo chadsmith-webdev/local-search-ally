@@ -1,7 +1,7 @@
 # Graph Report - local-search-ally  (2026-05-06)
 
 ## Corpus Check
-- 211 files · ~2,235,354 words
+- 211 files · ~2,727,743 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
