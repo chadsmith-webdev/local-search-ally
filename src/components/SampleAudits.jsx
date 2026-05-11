@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import styles from "./SampleAudits.module.css";
 
 const fadeUp = {
@@ -11,7 +11,6 @@ const fadeUp = {
 
 const AUDITS = [
   {
-    id: "ef7d5469-7b5d-43c3-b376-c350019c5c45",
     label: "HVAC contractor — Siloam Springs, AR",
     score: 2,
     bucket: "Critical",
@@ -24,7 +23,6 @@ const AUDITS = [
     ],
   },
   {
-    id: "42d42486-f85b-441f-9ea4-f92e8d80576b",
     label: "Remodeling contractor — Rogers, AR",
     score: 3,
     bucket: "Critical",
@@ -37,7 +35,6 @@ const AUDITS = [
     ],
   },
   {
-    id: "de2b6604-d9de-40b6-a15c-980a9934303c",
     label: "Landscaping contractor — Springdale, AR",
     score: 3,
     bucket: "Critical",
@@ -139,14 +136,7 @@ export default function SampleAudits() {
                 ))}
               </ul>
 
-              <Link
-                href={`https://audit.localsearchally.com/audit/${audit.id}`}
-                className={styles.viewLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View full report →
-              </Link>
+
             </motion.div>
           ))}
         </div>
