@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./ContactClient.module.css";
+import { track } from "@/lib/analytics";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -46,6 +47,7 @@ export default function ContactClient() {
       });
 
       if (res.ok) {
+        track("contact_form_submitted");
         setFormState(FORM_STATES.SUCCESS);
       } else {
         const body = await res.json().catch(() => ({}));
@@ -121,6 +123,7 @@ export default function ContactClient() {
                 target='_blank'
                 rel='noopener noreferrer'
                 className={styles.btnCalendly}
+                onClick={() => track('call_booked')}
               >
                 Book your strategy call →
               </a>

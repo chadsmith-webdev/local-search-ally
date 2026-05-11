@@ -2,7 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MotionProvider from "@/components/MotionProvider";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import { siteConfig } from "@/lib/metadata";
 import {
   Bricolage_Grotesque,
@@ -99,7 +99,18 @@ export default function RootLayout({ children }) {
           </main>
           <Footer />
         </MotionProvider>
-        <GoogleAnalytics gaId='G-SGQ98MEHWZ' />
+        <Script
+          src='https://www.googletagmanager.com/gtag/js?id=G-SGQ98MEHWZ'
+          strategy='afterInteractive'
+        />
+        <Script id='ga4-init' strategy='afterInteractive'>{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-SGQ98MEHWZ', {
+            linker: { domains: ['localsearchally.com', 'audit.localsearchally.com'] }
+          });
+        `}</Script>
       </body>
     </html>
   );
