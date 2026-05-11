@@ -396,4 +396,96 @@ export const cityPageData = {
     spokesEyebrow: "By trade",
     spokesTitle: "Centerton SEO by trade",
   },
+
+  "siloam-springs-ar": {
+    city: "Siloam Springs",
+    state: "Arkansas",
+    slug: "siloam-springs-ar",
+    auditCityParam: "Siloam Springs",
+    metaTitle: "Local SEO for Siloam Springs Trades | Local Search Ally",
+    metaDescription:
+      "Local SEO for Siloam Springs home service trades. HVAC, plumbing, roofing, and electrical — I help you show up in Google Maps and get calls.",
+    ogTitle: "Local SEO in Siloam Springs, AR | Local Search Ally",
+    ogDescription:
+      "Siloam Springs local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+    jsonLdAreaServed: "Siloam Springs",
+    heroAccent: "home service trades.",
+    heroBody1:
+      "If you run a home service business in Siloam Springs, local SEO is what gets you found when people are ready to hire. When someone searches for \"plumber in Siloam Springs\" or \"HVAC near me,\" Google shows a short list. If your business is not in that list, you are easy to miss even if your work is better.",
+    heroBody2:
+      "I help Siloam Springs home service trades show up where calls start: Google Maps, city + service searches, and service pages that match what people actually type.",
+    briefLabel: "Siloam Springs local brief",
+    briefTitle: "It's a tight-knit market. Being found on Google is now table stakes.",
+    briefBody:
+      "Word-of-mouth used to be enough in Siloam Springs. It's not anymore. Homeowners start on Google first. If you're not there clearly, they call someone else.",
+    signalsLabel: "What that means in Siloam Springs",
+    signals: [
+      "Established community with stable housing stock and ongoing maintenance demand.",
+      "Tight-knit market where being found on Google matters more than word-of-mouth alone.",
+      "Mobile search is critical because homeowners often search the moment a problem happens.",
+    ],
+    problemBody1:
+      "Most home service trades in Siloam Springs are busy until the same referral pipeline slows down. When that happens, the companies already showing up in search absorb the demand.",
+    problemBody2:
+      "The problem is usually not a lack of searches. It is weak local visibility. If your Google Business Profile, city pages, and review signals are uneven, your competitor gets the call first.",
+    fitEyebrow: "Built for Siloam Springs",
+    tradeList: ["HVAC", "Plumbing", "Roofing", "Electrical", "Landscaping", "Remodeling"],
+    focusAreas: [
+      {
+        title: "Google Business Profile",
+        body: "Category alignment, service-area relevance, and the trust signals that help you earn map visibility.",
+      },
+      {
+        title: "Service-page clarity",
+        body: "Pages built around the city + service searches Siloam Springs homeowners actually use when they need help now.",
+      },
+      {
+        title: "Call-path cleanup",
+        body: "Mobile-first page structure that makes it easy to call instead of bounce back to the search results.",
+      },
+    ],
+    auditEyebrow: "Why this matters",
+    auditTitle: "The search behavior is already there",
+    auditStatement:
+      "Siloam Springs homeowners already search when something breaks. The businesses that look local, credible, and easy to call are the ones that win the first conversation.",
+    auditBody:
+      "Siloam Springs is an established market with steady search demand for home services. Those searches often happen on mobile the moment a problem shows up.",
+    citationStats: [
+      "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
+      "51% of consumers use Google Maps for local search (Backlinko)",
+      "61% of consumers say they are more likely to choose a business that has a website (BrightLocal)",
+    ],
+    faqTitle: "Questions I expect from Siloam Springs trade owners",
+    faqItems: [
+      {
+        question: "Do you only work with Siloam Springs businesses?",
+        answer:
+          "No. I'm based in Siloam Springs and work with home service trades across Northwest Arkansas. But Siloam Springs is my home market — I know the competition, the search trends, and the customer behavior here better than anywhere else.",
+      },
+      {
+        question: "How long before I see results?",
+        answer:
+          "It depends on where you're starting and how competitive your service is locally. Some gaps (like outdated GBP info) fix quickly. Lasting growth usually comes from consistent monthly improvements that compound.",
+      },
+      {
+        question: "What if I already have a website?",
+        answer:
+          "I start with an audit to see where the biggest gaps are. Sometimes it's GBP and service-page clarity. Sometimes it's site structure and the path visitors take to call. Most of the time, it's a combination.",
+      },
+      {
+        question: "Are there contracts or hidden fees?",
+        answer:
+          "No contracts. You're not locked in. No hidden fees — I quote upfront based on the scope. If this isn't working for you, you can stop anytime.",
+      },
+      {
+        question: "What's the first step?",
+        answer:
+          "Run the free audit. It takes about 90 seconds and you get a clear baseline across eight local SEO sections — then let's talk about what comes next if there's a good fit.",
+      },
+    ],
+    processAuditBody:
+      "I review your visibility in Siloam Springs search results, your service pages, your Google Business Profile, and who currently holds the top spots.",
+    spokesEyebrow: "By trade",
+    spokesTitle: "Siloam Springs SEO by trade",
+  },
 };
