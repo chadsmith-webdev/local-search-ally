@@ -46,6 +46,10 @@ export async function GET(request) {
   for (const contact of contacts) {
     if (contact.unsubscribed) continue;
 
+    // Skip anyone who came in via the audit tool — they're already in a
+    // longer, more contextual drip sequence. Sending both is redundant.
+    if (contact.lastName === "audit") continue;
+
     const start = new Date(contact.createdAt);
     const daysSince = Math.floor((today - start) / (1000 * 60 * 60 * 24));
     const step = SEQUENCE.find((s) => s.day === daysSince);

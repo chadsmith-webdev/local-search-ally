@@ -40,6 +40,7 @@ export async function POST(request) {
       audienceId: AUDIENCE_ID,
       email,
       firstName,
+      lastName: "gbp-checklist",
       unsubscribed: false,
     });
 
