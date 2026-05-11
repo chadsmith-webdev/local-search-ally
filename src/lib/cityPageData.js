@@ -488,4 +488,96 @@ export const cityPageData = {
     spokesEyebrow: "By trade",
     spokesTitle: "Siloam Springs SEO by trade",
   },
+
+  "bella-vista-ar": {
+    city: "Bella Vista",
+    state: "Arkansas",
+    slug: "bella-vista-ar",
+    auditCityParam: "Bella Vista",
+    metaTitle: "Local SEO for Bella Vista Trades | Local Search Ally",
+    metaDescription:
+      "Local SEO for Bella Vista home service trades. Established community, older homes, trust-focused buyers — I help you show up clearly and get called first.",
+    ogTitle: "Local SEO in Bella Vista, AR | Local Search Ally",
+    ogDescription:
+      "Bella Vista local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+    jsonLdAreaServed: "Bella Vista",
+    heroAccent: "home service trades.",
+    heroBody1:
+      "If you run a home service business in Bella Vista, local SEO is what separates the contractors getting steady work from the ones struggling to find consistent calls. Bella Vista is an established community with older housing stock. That means steady, predictable demand for HVAC replacement, roofing repairs, plumbing work, and remodeling. Homeowners here know they need help. The contractors they find online are the ones they call.",
+    heroBody2:
+      "In Bella Vista, trust and reviews matter more than price. Homeowners are willing to spend for quality work and peace of mind. But they search before they hire. If you're not showing up clearly in Google Maps and search results — with good reviews, a polished website, and strong local signals — you lose calls to contractors who did the work to show up.",
+    briefLabel: "Bella Vista local brief",
+    briefTitle: "Bella Vista homeowners search for trusted contractors. Weak visibility means losing work to competitors with stronger search presence.",
+    briefBody:
+      "Bella Vista is an established, affluent community with homes that need regular maintenance and upgrades. HVAC systems fail. Roofs age. Plumbing breaks. That creates steady, predictable demand for the contractors who show up when searches happen.",
+    signalsLabel: "What that means in Bella Vista",
+    signals: [
+      "Established community with older housing stock that drives steady demand for maintenance and replacement.",
+      "Homeowners here expect professional contractors with a polished website, strong GBP, and real reviews.",
+      "Trust and reputation matter more than price — homeowners are willing to invest in quality.",
+      "Predictable, year-round demand from HVAC, roofing, plumbing, electrical, and remodeling work.",
+    ],
+    problemBody1:
+      "Most established contractors in Bella Vista have great reputations. Their work is solid. But reputation alone does not bring calls anymore. Homeowners search first. If you are not in the search results, they never know you exist.",
+    problemBody2:
+      "Bella Vista homeowners expect to find contractors online. They expect to see reviews. They expect a professional website. If your website and GBP are weak, you look less trustworthy than a competitor with a polished profile and good reviews. Perception matters as much as reality.",
+    fitEyebrow: "Built for Bella Vista",
+    tradeList: ["HVAC", "Plumbing", "Roofing", "Electrical", "Landscaping", "Remodeling"],
+    focusAreas: [
+      {
+        title: "Google Business Profile built for trust markets",
+        body: "Strong reviews, clear service areas, response to all feedback, and professional photos. In Bella Vista, a polished GBP is expected. Homeowners check reviews before they call.",
+      },
+      {
+        title: "Website built for quality-conscious buyers",
+        body: "Service pages that explain your process and build trust. Clear call paths. Fast load times. Bella Vista homeowners are willing to spend for quality work — your website needs to reflect that.",
+      },
+      {
+        title: "Review strategy and reputation management",
+        body: "Request system that keeps momentum going, response strategy so you're engaged, and consistent messaging. In Bella Vista, reviews are often the deciding factor between you and a competitor.",
+      },
+    ],
+    auditEyebrow: "Why Bella Vista matters",
+    auditTitle: "Steady demand from homeowners who search",
+    auditStatement:
+      "Bella Vista homes are aging. That creates predictable demand for HVAC, roofing, plumbing, and electrical work. Homeowners here have money to spend and expect professional contractors. The ones they find online are the ones they hire.",
+    auditBody:
+      "Bella Vista is an established community with a large base of older homes. That means steady, consistent demand for maintenance and replacement work. Unlike new-construction markets where demand is sporadic, Bella Vista homeowners need reliable contractors year-round.",
+    citationStats: [
+      "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
+      "51% of consumers use Google Maps for local search (Backlinko)",
+      "60% of consumers say quality of website affects perception of the business (BrightLocal)",
+    ],
+    faqTitle: "Questions I expect from Bella Vista trade owners",
+    faqItems: [
+      {
+        question: "Do you work with established trades in Bella Vista?",
+        answer:
+          "Yes. Many of the contractors I work with in Bella Vista have been in business for years. Their work is solid, but they needed stronger online visibility to match their reputation.",
+      },
+      {
+        question: "How much does it cost to show up in Bella Vista searches?",
+        answer:
+          "Varies. The question is not what it costs — it is what invisibility costs. If you are not showing up clearly when Bella Vista homeowners search, you lose calls to contractors who are. One job is thousands of dollars. Strong visibility pays for itself fast.",
+      },
+      {
+        question: "Will this work if I'm already busy?",
+        answer:
+          "Yes. Better visibility means more calls to choose from. You can be selective about which jobs you take, which improves margins and workload quality.",
+      },
+      {
+        question: "Are there long-term contracts?",
+        answer: "No. I do not lock you into contracts.",
+      },
+      {
+        question: "What is the first step?",
+        answer:
+          "Run the free audit. You get a clear baseline across eight local SEO sections — then reach out and I can talk through what makes sense.",
+      },
+    ],
+    processAuditBody:
+      "I review your visibility in Bella Vista search results, your Google Business Profile, your website, your reviews, and the signals that help you show up for homeowners searching now.",
+    spokesEyebrow: "By trade",
+    spokesTitle: "Bella Vista SEO by trade",
+  },
 };

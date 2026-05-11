@@ -1,58 +1,17 @@
-import Link from "next/link";
-import styles from "./page.module.css";
+import CityPageClient from "@/components/CityPageClient";
+import { cityPageData } from "@/lib/cityPageData";
 
+const d = cityPageData["bella-vista-ar"];
 const pageUrl = "https://www.localsearchally.com/service-areas/bella-vista-ar";
-
-const tradeList = [
-  "HVAC",
-  "Plumbing",
-  "Roofing",
-  "Electrical",
-  "Remodeling",
-  "Landscaping",
-  "General contracting",
-];
-
-const focusAreas = [
-  {
-    title: "Google Business Profile built for trust markets",
-    body: "Strong reviews, clear service areas, response to all feedback, and professional photos. In Bella Vista, a polished GBP is expected. Homeowners check reviews before they call.",
-  },
-  {
-    title: "Website built for quality-conscious buyers",
-    body: "Service pages that explain your process and build trust. Case studies or before/after work. Clear call paths. Fast load times. Bella Vista homeowners are willing to spend for quality—your website needs to justify that investment.",
-  },
-  {
-    title: "Review strategy and reputation management",
-    body: "Request system that keeps momentum going, response strategy so you're engaged, and consistent messaging. In Bella Vista, reviews are often the deciding factor between you and a competitor.",
-  },
-];
-
-const bellaVistaSignals = [
-  "Established community with older housing stock that drives steady demand for maintenance and replacement.",
-  "Homeowners here expect professional contractors with a polished website, strong GBP, and real reviews.",
-  "Trust and reputation matter more than price — homeowners are willing to invest in quality.",
-  "Predictable, year-round demand from HVAC, roofing, plumbing, electrical, and remodeling work.",
-];
-
-const citationStats = [
-  "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
-  "51% of consumers use Google Maps for local search (Backlinko)",
-  "60% of consumers say quality of website affects perception of the business (BrightLocal)",
-];
 
 export function generateMetadata() {
   return {
-    title: "Local SEO for Bella Vista Trades | Local Search Ally",
-    description:
-      "Local SEO for Bella Vista home service trades. Established community, older homes, trust-focused buyers — I help you show up clearly and get called first.",
-    alternates: {
-      canonical: pageUrl,
-    },
+    title: d.metaTitle,
+    description: d.metaDescription,
+    alternates: { canonical: pageUrl },
     openGraph: {
-      title: "Local SEO in Bella Vista, AR | Local Search Ally",
-      description:
-        "Bella Vista local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+      title: d.ogTitle,
+      description: d.ogDescription,
       url: pageUrl,
       siteName: "Local Search Ally",
       locale: "en_US",
@@ -60,507 +19,96 @@ export function generateMetadata() {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Local SEO in Bella Vista, AR | Local Search Ally",
-      description:
-        "Bella Vista local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+      title: d.ogTitle,
+      description: d.ogDescription,
     },
   };
 }
 
-const faqItems = [
-  {
-    question: "Do you work with established trades in Bella Vista?",
-    answer:
-      "Yes. Many of the contractors I work with in Bella Vista have been in business for years. Their work is solid, but they needed stronger online visibility to match their reputation.",
-  },
-  {
-    question: "How much does it cost to show up in Bella Vista searches?",
-    answer:
-      "Varies. The question is not what it costs — it is what invisibility costs. If you are not showing up clearly when Bella Vista homeowners search, you lose calls to contractors who are. One job is thousands of dollars. Strong visibility pays for itself fast.",
-  },
-  {
-    question: "Will this work if I'm already busy?",
-    answer:
-      "Yes. Better visibility means more calls to choose from. You can be selective about which jobs you take, which improves margins and workload quality.",
-  },
-  {
-    question: "Are there long-term contracts?",
-    answer: "No. I do not lock you into contracts.",
-  },
-  {
-    question: "What is the first step?",
-    answer:
-      "Run the free audit. You get a clear baseline across eight local SEO sections — then reach out and I can talk through what makes sense.",
-  },
-];
-
-const localBusinessJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://www.localsearchally.com/#localbusiness",
-  name: "Local Search Ally",
-  url: "https://www.localsearchally.com",
-  telephone: "+14793808626",
-  description:
-    "Local SEO and web design for home service trades in Northwest Arkansas.",
-  areaServed: [
-    {
-      "@type": "City",
-      name: "Bella Vista",
-      containedInPlace: {
-        "@type": "State",
-        name: "Arkansas",
-      },
-    },
-  ],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Siloam Springs",
-    addressRegion: "AR",
-    addressCountry: "US",
-    postalCode: "72761",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: "36.18808",
-    longitude: "-94.54064",
-  },
-};
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
-
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.localsearchally.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Service Areas",
-      item: "https://www.localsearchally.com/service-areas",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Bella Vista",
-      item: pageUrl,
-    },
-  ],
-};
-
 export default function BellaVistaServiceAreaPage() {
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.localsearchally.com/#localbusiness",
+    name: "Local Search Ally",
+    url: "https://www.localsearchally.com",
+    telephone: "+14793808626",
+    description:
+      "Local SEO and web design for home service trades in Northwest Arkansas.",
+    areaServed: [
+      {
+        "@type": "City",
+        name: d.jsonLdAreaServed,
+        containedInPlace: { "@type": "State", name: "Arkansas" },
+      },
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Siloam Springs",
+      addressRegion: "AR",
+      addressCountry: "US",
+      postalCode: "72761",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "36.18808",
+      longitude: "-94.54064",
+    },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: d.faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.localsearchally.com" },
+      { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.localsearchally.com/service-areas" },
+      { "@type": "ListItem", position: 3, name: d.city, item: pageUrl },
+    ],
+  };
+
   return (
     <>
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(localBusinessJsonLd),
-        }}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <CityPageClient
+        city={d.city}
+        slug={d.slug}
+        heroAccent={d.heroAccent}
+        heroBody1={d.heroBody1}
+        heroBody2={d.heroBody2}
+        briefLabel={d.briefLabel}
+        briefTitle={d.briefTitle}
+        briefBody={d.briefBody}
+        signalsLabel={d.signalsLabel}
+        signals={d.signals}
+        problemBody1={d.problemBody1}
+        problemBody2={d.problemBody2}
+        fitEyebrow={d.fitEyebrow}
+        tradeList={d.tradeList}
+        focusAreas={d.focusAreas}
+        auditEyebrow={d.auditEyebrow}
+        auditTitle={d.auditTitle}
+        auditStatement={d.auditStatement}
+        auditBody={d.auditBody}
+        citationStats={d.citationStats}
+        faqTitle={d.faqTitle}
+        faqItems={d.faqItems}
+        processAuditBody={d.processAuditBody}
+        spokesEyebrow={d.spokesEyebrow}
+        spokesTitle={d.spokesTitle}
+        auditUrl={process.env.NEXT_PUBLIC_AUDIT_URL}
       />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <main className={styles.main}>
-        <section className={styles.hero}>
-          <div className={styles.grid} aria-hidden='true' />
-          <div className={styles.orb} aria-hidden='true' />
-          <div className={styles.heroInner}>
-            <div className={styles.heroScene}>
-              <div className={styles.heroContent}>
-                <span className={styles.eyebrow}>Bella Vista, Arkansas</span>
-                <h1 className={styles.heroTitle}>
-                  Local SEO for Bella Vista
-                  <span className={styles.heroAccent}>
-                    {" "}
-                    home service trades.
-                  </span>
-                </h1>
-                <p className={styles.heroBody}>
-                  If you run a home service business in Bella Vista, local SEO
-                  is what separates the contractors getting steady work from the
-                  ones struggling to find consistent calls. Bella Vista is an
-                  established community with older housing stock. That means
-                  steady, predictable demand for HVAC replacement, roofing
-                  repairs, plumbing work, and remodeling. Homeowners here know
-                  they need help. The contractors they find online are the ones
-                  they call.
-                </p>
-                <p className={styles.heroBody}>
-                  In Bella Vista, trust and reviews matter more than price.
-                  Homeowners are willing to spend for quality work and peace of
-                  mind. But they search before they hire. If you're not showing
-                  up clearly in Google Maps and search results—with good
-                  reviews, a polished website, and strong local signals—you lose
-                  calls to contractors who did the work to show up.
-                </p>
-                <div className={styles.heroActions}>
-                  <Link
-                    href={`${process.env.NEXT_PUBLIC_AUDIT_URL}?city=Bella+Vista`}
-                    className={styles.primaryBtn}
-                  >
-                    Run Your Free Audit
-                  </Link>
-                  <Link href='/contact' className={styles.secondaryBtn}>
-                    Start With a Free Conversation
-                  </Link>
-                </div>
-                <p className={styles.trust}>
-                  No pitch, no signup — results in about 90 seconds.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className={`section ${styles.briefSectionWrap}`}>
-          <div className={`container ${styles.briefSection}`}>
-            <div className={styles.briefShell}>
-              <div className={styles.briefLead}>
-                <p className={styles.panelLabel}>Bella Vista local brief</p>
-                <h2 className={styles.briefTitle}>
-                  Bella Vista homeowners search for trusted contractors. Weak
-                  visibility means losing work to competitors with stronger
-                  search visibility.
-                </h2>
-                <p className={styles.panelCopy}>
-                  Bella Vista is an established, affluent community with homes
-                  that need regular maintenance and upgrades. HVAC systems fail.
-                  Roofs age. Plumbing breaks. That creates steady, predictable
-                  demand for the contractors who show up when searches happen.
-                </p>
-                <div className={styles.briefStat}>
-                  <span className={styles.panelNumber}>60</span>
-                  <p className={styles.panelCopy}>
-                    Percent of consumers say quality of website affects
-                    perception of the business. In Bella Vista, a polished
-                    website and GBP are expected.
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.briefSignals}>
-                <p className={styles.cardLabel}>
-                  What that means in Bella Vista
-                </p>
-                <ul className={styles.signalList}>
-                  {bellaVistaSignals.map((signal) => (
-                    <li key={signal} className={styles.signalItem}>
-                      {signal}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className={`section ${styles.problemSectionWrap}`}>
-          <div className='container'>
-            <div className={styles.problemEditorial}>
-              <div className={styles.sectionIntro}>
-                <p className={styles.sectionEyebrow}>The real problem</p>
-                <h2 className={styles.sectionTitle}>
-                  Reputation built on work, but visibility built on search.
-                </h2>
-              </div>
-              <div className={styles.problemCopy}>
-                <p className={styles.bodyCopy}>
-                  Most established contractors in Bella Vista have great
-                  reputations. Their work is solid. But reputation alone does
-                  not bring calls anymore. Homeowners search first. If you are
-                  not in the search results, they never know you exist.
-                </p>
-                <p className={styles.bodyCopy}>
-                  Bella Vista homeowners expect to find contractors online. They
-                  expect to see reviews. They expect a professional website. If
-                  your website and GBP are weak, you look less trustworthy than
-                  a competitor with a polished profile and good reviews.
-                  Perception matters as much as reality.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className={`section ${styles.fitSectionWrap}`}>
-          <div className='container'>
-            <div className={styles.fitStructured}>
-              <div className={styles.sectionIntro}>
-                <p className={styles.sectionEyebrow}>Built for Bella Vista</p>
-                <h2 className={styles.sectionTitle}>
-                  Made for home service trades, not generic businesses
-                </h2>
-                <p className={styles.bodyCopy}>
-                  I work with home service trades in Northwest Arkansas,
-                  including Bella Vista. The work is centered on visibility that
-                  supports calls, not vague reports.
-                </p>
-              </div>
-
-              <div className={styles.fitGrid}>
-                <article className={styles.surfaceCard}>
-                  <p className={styles.cardLabel}>Common fits</p>
-                  <div className={styles.tradeChips}>
-                    {tradeList.map((trade) => (
-                      <span key={trade} className={styles.tradeChip}>
-                        {trade}
-                      </span>
-                    ))}
-                  </div>
-                </article>
-
-                <div className={styles.focusGrid}>
-                  {focusAreas.map((area) => (
-                    <article key={area.title} className={styles.surfaceCard}>
-                      <p className={styles.cardTitle}>{area.title}</p>
-                      <p className={styles.bodyCopy}>{area.body}</p>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className='section'>
-          <div className={`container ${styles.processSection}`}>
-            <div className={styles.sectionIntro}>
-              <p className={styles.sectionEyebrow}>How it works</p>
-              <h2 className={styles.sectionTitle}>
-                Three steps from invisible to getting calls
-              </h2>
-            </div>
-            <div className={styles.processRail}>
-              <article className={styles.processNode}>
-                <p className={styles.stepLabel}>Step 01</p>
-                <h3 className={styles.stepTitle}>Audit</h3>
-                <p className={styles.bodyCopy}>
-                  I review your visibility in Bella Vista search results, your
-                  Google Business Profile, your website, your reviews, and the
-                  signals that help you show up for homeowners searching now.
-                </p>
-              </article>
-              <article className={styles.processNode}>
-                <p className={styles.stepLabel}>Step 02</p>
-                <h3 className={styles.stepTitle}>Fix Priority Gaps</h3>
-                <p className={styles.bodyCopy}>
-                  I improve what matters first: Google Business Profile
-                  strength, review momentum, on-page clarity, and lead paths
-                  that build trust.
-                </p>
-              </article>
-              <article className={styles.processNode}>
-                <p className={styles.stepLabel}>Step 03</p>
-                <h3 className={styles.stepTitle}>Grow and Track</h3>
-                <p className={styles.bodyCopy}>
-                  I track what changes visibility and call quality, then adjust
-                  based on what the data shows. You see what changed and why.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className='section'>
-          <div className='container'>
-            <div className={styles.proofEditorial}>
-              <div className={styles.sectionIntro}>
-                <p className={styles.sectionEyebrow}>Why Bella Vista matters</p>
-                <h2 className={styles.sectionTitle}>
-                  Steady demand from homeowners who search
-                </h2>
-              </div>
-
-              <div className={styles.proofLead}>
-                <p className={styles.proofStatement}>
-                  Bella Vista homes are aging. That creates predictable demand
-                  for HVAC, roofing, plumbing, and electrical work. Homeowners
-                  here have money to spend and expect professional contractors.
-                  The ones they find online are the ones they hire.
-                </p>
-                <p className={styles.bodyCopy}>
-                  Bella Vista is an established community with a large base of
-                  older homes. That means steady, consistent demand for
-                  maintenance and replacement work. Unlike new-construction
-                  markets where demand is sporadic, Bella Vista homeowners need
-                  reliable contractors year-round.
-                </p>
-              </div>
-
-              <div className={styles.proofPanel}>
-                <p className={styles.cardLabel}>What the data says</p>
-                <ul className={styles.citationList}>
-                  {citationStats.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className={`section ${styles.faqSectionWrap}`}>
-          <div className={`container ${styles.faqSection}`}>
-            <div className={styles.sectionIntro}>
-              <p className={styles.sectionEyebrow}>FAQ</p>
-              <h2 className={styles.sectionTitle}>
-                Questions I expect from Bella Vista trade owners
-              </h2>
-            </div>
-            <div className={styles.faqStack}>
-              {faqItems.map((item) => (
-                <article key={item.question} className={styles.faqItem}>
-                  <h3 className={styles.faqQuestion}>{item.question}</h3>
-                  <p className={styles.bodyCopy}>{item.answer}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-
-        <section className={`section ${styles.spokeSection}`}>
-          <div className='container'>
-            <div className={styles.sectionIntro} style={{marginBottom: "1.35rem"}}>
-              <p className={styles.sectionEyebrow}>By trade</p>
-              <h2 className={styles.sectionTitle}>
-                Bella Vista SEO by trade
-              </h2>
-              <p className={styles.bodyCopy}>
-                Each trade has different search patterns, urgency levels, and
-                competitive dynamics. Pick yours for a more specific look at
-                what local SEO means for your business in Bella Vista.
-              </p>
-            </div>
-            <div className={styles.spokeGrid}>
-              <Link href='/service-areas/bella-vista-ar/hvac' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>HVAC</span>
-                <span className={styles.spokeHint}>Heating, cooling, and seasonal search spikes</span>
-                <span className={styles.spokeArrow}>See Bella Vista HVAC SEO →</span>
-              </Link>
-              <Link href='/service-areas/bella-vista-ar/plumbing' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>Plumbing</span>
-                <span className={styles.spokeHint}>Emergency and maintenance search visibility</span>
-                <span className={styles.spokeArrow}>See Bella Vista Plumbing SEO →</span>
-              </Link>
-              <Link href='/service-areas/bella-vista-ar/electrical' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>Electrical</span>
-                <span className={styles.spokeHint}>Panel upgrades, repairs, and high-trust jobs</span>
-                <span className={styles.spokeArrow}>See Bella Vista Electrical SEO →</span>
-              </Link>
-              <Link href='/service-areas/bella-vista-ar/roofing' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>Roofing</span>
-                <span className={styles.spokeHint}>Storm surge and replacement search capture</span>
-                <span className={styles.spokeArrow}>See Bella Vista Roofing SEO →</span>
-              </Link>
-              <Link href='/service-areas/bella-vista-ar/landscaping' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>Landscaping</span>
-                <span className={styles.spokeHint}>Seasonal demand and repeat-service visibility</span>
-                <span className={styles.spokeArrow}>See Bella Vista Landscaping SEO →</span>
-              </Link>
-              <Link href='/service-areas/bella-vista-ar/remodeling' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>Remodeling</span>
-                <span className={styles.spokeHint}>High-consideration projects and trust signals</span>
-                <span className={styles.spokeArrow}>See Bella Vista Remodeling SEO →</span>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className={`section ${styles.spokeSection}`}>
-          <div className='container'>
-            <div className={styles.sectionIntro} style={{marginBottom: "1.35rem"}}>
-              <p className={styles.sectionEyebrow}>By trade</p>
-              <h2 className={styles.sectionTitle}>
-                Bella Vista SEO by trade
-              </h2>
-              <p className={styles.bodyCopy}>
-                Each trade has different search patterns, urgency levels, and
-                competitive dynamics. Pick yours for a more specific look at
-                what local SEO means for your business in Bella Vista.
-              </p>
-            </div>
-            <div className={styles.spokeGrid}>
-              <Link href='/service-areas/bella-vista-ar/hvac' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>HVAC</span>
-                <span className={styles.spokeHint}>Heating, cooling, and seasonal search spikes</span>
-                <span className={styles.spokeArrow}>See Bella Vista HVAC SEO →</span>
-              </Link>
-              <Link href='/service-areas/bella-vista-ar/plumbing' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>Plumbing</span>
-                <span className={styles.spokeHint}>Emergency and maintenance search visibility</span>
-                <span className={styles.spokeArrow}>See Bella Vista Plumbing SEO →</span>
-              </Link>
-              <Link href='/service-areas/bella-vista-ar/electrical' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>Electrical</span>
-                <span className={styles.spokeHint}>Panel upgrades, repairs, and high-trust jobs</span>
-                <span className={styles.spokeArrow}>See Bella Vista Electrical SEO →</span>
-              </Link>
-              <Link href='/service-areas/bella-vista-ar/roofing' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>Roofing</span>
-                <span className={styles.spokeHint}>Storm surge and replacement search capture</span>
-                <span className={styles.spokeArrow}>See Bella Vista Roofing SEO →</span>
-              </Link>
-              <Link href='/service-areas/bella-vista-ar/landscaping' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>Landscaping</span>
-                <span className={styles.spokeHint}>Seasonal demand and repeat-service visibility</span>
-                <span className={styles.spokeArrow}>See Bella Vista Landscaping SEO →</span>
-              </Link>
-              <Link href='/service-areas/bella-vista-ar/remodeling' className={styles.spokeCard}>
-                <span className={styles.spokeTrade}>Remodeling</span>
-                <span className={styles.spokeHint}>High-consideration projects and trust signals</span>
-                <span className={styles.spokeArrow}>See Bella Vista Remodeling SEO →</span>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.ctaSection}>
-          <div className={styles.ctaInner}>
-            <p className={styles.sectionEyebrow}>Next step</p>
-            <h2 className={styles.ctaTitle}>
-              Run your free Bella Vista SEO audit
-            </h2>
-            <p className={styles.bodyCopy}>
-              Enter your business name and city. I will run a live audit across
-eight local SEO sections and show you exactly where you stand.
-            </p>
-            <div className={styles.heroActions}>
-              <Link
-                href={`${process.env.NEXT_PUBLIC_AUDIT_URL}?city=Bella+Vista`}
-                className={styles.primaryBtn}
-              >
-                Run Your Free Audit
-              </Link>
-              <Link href='/contact' className={styles.secondaryBtn}>
-                Start With a Free Conversation
-              </Link>
-            </div>
-          </div>
-        </section>
-      </main>
     </>
   );
 }
