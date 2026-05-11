@@ -32,57 +32,60 @@ function IconCheck() {
 
 const TIERS = [
   {
-    name: "Visibility",
-    price: "$497",
+    name: "DIY Pro",
+    price: "$49",
     period: "/month",
     description:
-      "For trades that have a decent website but aren't showing up in the Map Pack.",
+      "You run it. We built the tools we use on our own clients — now you can use them too.",
     features: [
-      "Google Business Profile full audit + optimization",
-      "GBP management — posts, photos, Q&A",
-      "Citation cleanup (top 15 directories)",
-      "Monthly visibility report in plain English",
-      "Review request process — templates + guidance",
+      "Geo-grid rank tracking across your service area",
+      "Google Business Profile audit + monitoring",
+      "Citation tracking across top directories",
+      "AI visibility check (ChatGPT, Perplexity, Google AI)",
+      "8 pro local SEO tools in one dashboard",
+      "Monthly report — plain English, no jargon",
     ],
-    cta: "Start With a Free Call",
-    href: "/contact",
+    cta: "Start Free Trial →",
+    href: "https://audit.localsearchally.com/signup",
     recommended: false,
+    external: true,
   },
   {
-    name: "Growth",
-    price: "$797",
+    name: "Multi-Location",
+    price: "$199",
     period: "/month",
     description:
-      "For trades ready to rank above competitors and turn search into calls.",
+      "For operators running 2–10 locations or small agencies managing multiple clients.",
     features: [
-      "Everything in Visibility",
-      "On-page SEO for up to 3 service pages/month",
-      "Keyword strategy — what to rank for, in which cities",
-      "Monthly competitor tracking",
-      "1 local content piece per month",
-      "Priority email access",
+      "Everything in DIY Pro",
+      "Up to 10 location profiles",
+      "Cross-location rank comparison",
+      "Consolidated reporting across all locations",
+      "Priority support",
     ],
-    cta: "Start With a Free Call",
-    href: "/contact",
+    cta: "Start Free Trial →",
+    href: "https://audit.localsearchally.com/signup?plan=multi",
     recommended: true,
+    external: true,
   },
   {
-    name: "Full Stack",
-    price: "$1,197",
-    period: "/month",
+    name: "Done-for-You",
+    price: "$497",
+    period: "/month starting",
     description:
-      "For trades that want everything — found online, a website that converts, and a reputation that sells.",
+      "You focus on the trade. I handle everything that gets you found — GBP, citations, on-page SEO, and monthly reporting.",
     features: [
-      "Everything in Growth",
-      "Website hosting + maintenance",
-      "Up to 2 website updates per month",
-      "1 blog post written and published monthly",
-      "Reputation monitoring + response guidance",
-      "Quarterly strategy call (recorded)",
+      "Full GBP audit, optimization, and ongoing management",
+      "Citation cleanup across top 15 directories",
+      "On-page SEO for your service pages",
+      "Monthly plain-English visibility report",
+      "Review request process — templates + guidance",
+      "Final price scoped on the first call based on your market",
     ],
-    cta: "Start With a Free Call",
+    cta: "Book a Free Call →",
     href: "/contact",
     recommended: false,
+    external: false,
   },
 ];
 
@@ -106,9 +109,9 @@ const STEPS = [
 
 const GUARANTEES = [
   "No long-term contracts — cancel any time",
-  "I'll tell you which plan to start with on the first call",
-  "Additional NWA service locations add at $297/month",
-  "Pay annually and get 2 months free",
+  "DIY plans include a 14-day free trial, no card required",
+  "Done-for-you price is scoped on the first call — never a surprise",
+  "Pay annually on DIY plans and get 2 months free",
 ];
 
 export default function ServicesPricing() {
@@ -129,9 +132,9 @@ export default function ServicesPricing() {
             <span className={styles.accent}>No long-term contracts.</span>
           </h2>
           <p className={styles.lead}>
-            Every plan is month-to-month. If it&rsquo;s not working, you can
-            leave. Most clients start on Growth — I&rsquo;ll tell you if
-            something different makes more sense for where you are.
+            Two ways to work with me: use the tools yourself, or have me do it
+            for you. Either way, no contracts and no guesswork on what you&rsquo;re
+            paying for.
           </p>
         </motion.div>
 
@@ -177,8 +180,11 @@ export default function ServicesPricing() {
                   className={
                     tier.recommended ? styles.ctaPrimary : styles.ctaSecondary
                   }
+                  {...(tier.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
                 >
-                  {tier.cta} →
+                  {tier.cta}
                 </Link>
               </div>
             </motion.div>

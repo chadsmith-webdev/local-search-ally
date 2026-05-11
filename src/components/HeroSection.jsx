@@ -63,8 +63,8 @@ export default function HeroSection() {
               >
                 Run Your Free Audit →
               </Link>
-              <Link href='#how-it-works' className={styles.btnSecondary}>
-                How it works ↓
+              <Link href='/contact' className={styles.btnSecondary}>
+                Already know you need help? Book a call →
               </Link>
             </motion.div>
 
@@ -76,9 +76,10 @@ export default function HeroSection() {
             <motion.p variants={fadeUp} className={styles.overview}>
               Local Search Ally is a one-person local SEO service in Siloam
               Springs, AR, helping NWA home service trades get found on Google
-              and into the Map Pack. Starts at $497/month, month-to-month, no
-              contracts.{" "}
-              <time dateTime='2026-05-03'>Last updated: May 2026.</time>
+              and into the Map Pack. DIY tools start at $49/month. Done-for-you
+              managed services start at $497/month — scoped on the first call.
+              Month-to-month, no contracts.{" "}
+              <time dateTime='2026-05-11'>Last updated: May 2026.</time>
             </motion.p>
           </motion.div>
         </div>

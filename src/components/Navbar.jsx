@@ -108,10 +108,20 @@ export default function Navbar() {
 
         {/* Desktop phone CTA */}
         <a
-          href='tel:+14793808626'
+          href='tel:+147****8626'
           className={`${styles.phone} ${styles.desktopCta}`}
         >
           (479) 380-8626
+        </a>
+
+        {/* Log in link */}
+        <a
+          href='https://audit.localsearchally.com/login'
+          className={styles.loginLink}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Log in
         </a>
 
         {/* Mobile phone icon (sticky bar only) */}

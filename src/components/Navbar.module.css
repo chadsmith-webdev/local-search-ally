@@ -93,6 +93,25 @@
   color: var(--text);
 }
 
+.loginLink {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--carolina);
+  text-decoration: none;
+  border: 1px solid rgba(123, 175, 212, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.875rem;
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.loginLink:hover {
+  background: var(--carolina-dim);
+  border-color: var(--carolina);
+}
+
 /* ─── Dropdown ───────────────────────────────────────── */
 .dropdownParent {
   position: relative;
@@ -248,6 +267,10 @@
   }
 
   .desktopCta {
+    display: none;
+  }
+
+  .loginLink {
     display: none;
   }
 
