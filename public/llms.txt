@@ -1,6 +1,6 @@
 # Local Search Ally — AI-Readable Overview
 
-> Last updated: 2026-05-03
+> Last updated: 2026-05-11
 
 ## About
 
@@ -14,39 +14,45 @@
 
 ## What We Do
 
-Local Search Ally helps home service trade businesses in Northwest Arkansas get found on Google and rank in the Map Pack. Services are month-to-month with no long-term contracts.
+Local Search Ally helps home service trade businesses in Northwest Arkansas get found on Google and rank in the Map Pack. There are two ways to work together: a self-serve audit and tracking platform for owner-operators who want to run their own local SEO, and a done-for-you managed service for contractors who want Chad to handle it. All plans are month-to-month with no long-term contracts.
 
 ## Services
 
-### Local SEO
-- Google Business Profile management and optimization
-- NAP citation cleanup across 50+ directories
-- On-page SEO for service and location pages
-- Keyword strategy targeting NWA local searches
-- Monthly ranking and call-tracking reports
-- **Starting price:** $497/month
+### DIY Pro — Self-Serve Local SEO Platform
+- Full local SEO audit dashboard (GBP, reviews, citations, backlinks, on-page, technical, AI visibility)
+- Geo-grid rank tracking across your service area
+- Google Business Profile audit and monitoring
+- Citation tracking across top directories
+- AI visibility check (ChatGPT, Perplexity, Google AI)
+- 8 pro local SEO tools in one dashboard
+- Monthly report in plain English
+- 14-day free trial, no card required
+- **Price:** $49/month
 
-### Google Business Profile Optimization
-- Profile completion, category selection, and photo management
-- Weekly Google Posts
-- Review response and engagement
-- Included in all SEO plans or available standalone
+### Multi-Location — For 2–10 Locations or Agencies
+- Everything in DIY Pro
+- Up to 10 location profiles under one account
+- Cross-location rank comparison
+- Consolidated reporting across all locations
+- Priority support
+- 14-day free trial, no card required
+- **Price:** $199/month
 
-### Web Design for Contractors
-- Mobile-first, SEO-built websites for home service trades
-- Optimized for local keyword targeting and lead generation
-- **Starting price:** $799 one-time
-
-### Reputation Management
-- Review request process and response templates
-- GBP review monitoring
-- **Starting price:** $99/month
+### Done-for-You — Managed Local SEO
+- Full Google Business Profile audit, optimization, and ongoing management
+- Citation cleanup across top 15 directories (NAP consistency)
+- On-page SEO for service pages
+- Monthly plain-English visibility report
+- Review request process — templates and guidance
+- Direct access to Chad — no account manager
+- Final price scoped on the first call based on market, competition, and goals
+- **Price:** Starting at $497/month
 
 ### Citation Building
-- Citation audit across 50+ directories
+- Citation audit across major directories
 - NAP inconsistency cleanup
 - Trade-specific and local NWA directory submissions
-- Ongoing citation monitoring
+- Available as part of Done-for-You or as a standalone project
 
 ## Service Area
 
@@ -72,20 +78,22 @@ Northwest Arkansas, including:
 
 ## Pricing
 
-| Plan | Price | Includes |
+| Plan | Price | Best For |
 |------|-------|---------|
-| Visibility | $497/month | GBP management, citation cleanup, monthly reporting |
-| Growth | $797/month | Visibility + on-page SEO, keyword strategy, competitor tracking |
-| Full Stack | $1,197/month | Growth + website maintenance, monthly blog content, reputation monitoring |
-| Web Design | $799 one-time | Mobile-first contractor website |
-| Reputation Management | $99/month | Review requests, monitoring, response templates |
+| DIY Pro | $49/month | Owner-operators running their own local SEO |
+| Multi-Location | $199/month | 2–10 locations or small agencies |
+| Done-for-You | Starting at $497/month | Contractors who want Chad to handle everything |
 
-No setup fees. No cancellation penalties. Cancel any time.
+- No setup fees
+- No long-term contracts — cancel any time
+- DIY plans include a 14-day free trial, no card required
+- Pay annually on DIY plans and get 2 months free
+- Done-for-You price is scoped on the first call — never a surprise
 
 ## Free Tool
 
-**Free Local SEO Audit:** https://audit.localsearchally.com  
-Checks Google Business Profile completeness, review velocity, citation consistency, on-page SEO, technical SEO, backlinks, and competitor visibility. No email required to start. Results in ~90 seconds.
+**Free Local SEO Audit:** https://audit.localsearchally.com
+Checks Google Business Profile completeness, review velocity, citation consistency, on-page SEO, technical SEO, backlinks, and AI visibility (ChatGPT, Perplexity, Google AI). No email required to start. Results in about 60 seconds.
 
 ## About Chad Smith
 
@@ -106,6 +114,8 @@ Local SEO guides for NWA contractors published at https://www.localsearchally.co
 - Headquarters: Siloam Springs, AR 72761
 - Geographic focus: Northwest Arkansas (NWA)
 - Minimum contract: None — month-to-month
+- DIY plans: $49/month (single location) and $199/month (multi-location)
+- Done-for-You: Starting at $497/month
 - GBP rating: 5.0 (1 review)
 - Languages: English
 

@@ -91,7 +91,7 @@ const faqItems = [
   {
     question: "What is the first step?",
     answer:
-      "Run the free audit. You get a clear baseline across seven local SEO sections then reach out and I can talk through what makes sense.",
+      "Run the free audit. You get a clear baseline across eight local SEO sections — then reach out and I can talk through what makes sense.",
   },
 ];
 
@@ -435,6 +435,55 @@ export default function FayettevilleServiceAreaPage() {
           </div>
         </section>
 
+
+        <section className={`section ${styles.spokeSection}`}>
+          <div className='container'>
+            <div className={styles.sectionIntro} style={{marginBottom: "1.35rem"}}>
+              <p className={styles.sectionEyebrow}>By trade</p>
+              <h2 className={styles.sectionTitle}>
+                Fayetteville SEO by trade
+              </h2>
+              <p className={styles.bodyCopy}>
+                Each trade has different search patterns, urgency levels, and
+                competitive dynamics. Pick yours for a more specific look at
+                what local SEO means for your business in Fayetteville.
+              </p>
+            </div>
+            <div className={styles.spokeGrid}>
+              <Link href='/service-areas/fayetteville-ar/hvac' className={styles.spokeCard}>
+                <span className={styles.spokeTrade}>HVAC</span>
+                <span className={styles.spokeHint}>Heating, cooling, and seasonal search spikes</span>
+                <span className={styles.spokeArrow}>See Fayetteville HVAC SEO →</span>
+              </Link>
+              <Link href='/service-areas/fayetteville-ar/plumbing' className={styles.spokeCard}>
+                <span className={styles.spokeTrade}>Plumbing</span>
+                <span className={styles.spokeHint}>Emergency and maintenance search visibility</span>
+                <span className={styles.spokeArrow}>See Fayetteville Plumbing SEO →</span>
+              </Link>
+              <Link href='/service-areas/fayetteville-ar/electrical' className={styles.spokeCard}>
+                <span className={styles.spokeTrade}>Electrical</span>
+                <span className={styles.spokeHint}>Panel upgrades, repairs, and high-trust jobs</span>
+                <span className={styles.spokeArrow}>See Fayetteville Electrical SEO →</span>
+              </Link>
+              <Link href='/service-areas/fayetteville-ar/roofing' className={styles.spokeCard}>
+                <span className={styles.spokeTrade}>Roofing</span>
+                <span className={styles.spokeHint}>Storm surge and replacement search capture</span>
+                <span className={styles.spokeArrow}>See Fayetteville Roofing SEO →</span>
+              </Link>
+              <Link href='/service-areas/fayetteville-ar/landscaping' className={styles.spokeCard}>
+                <span className={styles.spokeTrade}>Landscaping</span>
+                <span className={styles.spokeHint}>Seasonal demand and repeat-service visibility</span>
+                <span className={styles.spokeArrow}>See Fayetteville Landscaping SEO →</span>
+              </Link>
+              <Link href='/service-areas/fayetteville-ar/remodeling' className={styles.spokeCard}>
+                <span className={styles.spokeTrade}>Remodeling</span>
+                <span className={styles.spokeHint}>High-consideration projects and trust signals</span>
+                <span className={styles.spokeArrow}>See Fayetteville Remodeling SEO →</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className={styles.ctaSection}>
           <div className={styles.ctaInner}>
             <p className={styles.sectionEyebrow}>Next step</p>
@@ -443,7 +492,7 @@ export default function FayettevilleServiceAreaPage() {
             </h2>
             <p className={styles.bodyCopy}>
               Enter your business name and city. I will run a live audit across
-              seven local SEO sections and show you exactly where you stand.
+              eight local SEO sections and show you exactly where you stand.
             </p>
             <div className={styles.heroActions}>
               <Link href={`${process.env.NEXT_PUBLIC_AUDIT_URL}?city=Fayetteville`} className={styles.primaryBtn}>

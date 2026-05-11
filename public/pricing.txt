@@ -1,61 +1,66 @@
 # Local Search Ally — Pricing
+Last updated: May 2026
 
 Local Search Ally is run by Chad Smith, based in Siloam Springs, AR.
-All services are month-to-month. No contracts. No setup fees. Cancel any time.
+All plans are month-to-month. No contracts. No setup fees. Cancel any time.
 
 ---
 
-## Local SEO
+## Two ways to work together
 
-Starting at $497/month
+There's a self-serve tool for contractors who want to manage their own SEO,
+and a done-for-you managed service for contractors who want Chad to run it.
+
+---
+
+## DIY Pro — $49/month
+
+For owner-operators who want to track and improve their own local SEO.
+
+Includes:
+- Full local SEO audit dashboard (GBP, reviews, citations, backlinks, on-page, technical, AI visibility)
+- Geo-grid rank tracker (see where you rank across your service area)
+- Score history — watch your numbers move over time
+- Priority action list — what to fix first, explained in plain language
+- 14-day free trial, cancel anytime before trial ends
+
+Sign up at: https://audit.localsearchally.com/signup
+
+---
+
+## Multi-Location — $199/month
+
+For contractors managing 2–10 locations, or local marketing agencies.
+
+Includes everything in DIY Pro, plus:
+- Up to 10 location dashboards under one account
+- Separate geo-grid tracker per location
+- Side-by-side score comparison across locations
+- 14-day free trial, cancel anytime before trial ends
+
+Sign up at: https://audit.localsearchally.com/signup?plan=multi
+
+---
+
+## Done-for-You — Starting at $497/month
+
+For contractors who want Chad to handle their local SEO entirely.
+Final price is scoped on the first call based on your market, competition, and goals.
 
 Includes:
 - Google Business Profile optimization and ongoing management
-- Citation audit and cleanup (NAP consistency across directories)
+- Citation audit and cleanup (NAP consistency across all major directories)
 - On-page local SEO improvements (service pages, title tags, schema)
+- Reputation system (review request process, monitoring, response templates)
 - Monthly ranking and visibility report
 - Direct access to Chad — no account manager in between
+- Dashboard access so you can watch the numbers move
 
-Best for: Home service contractors in Northwest Arkansas who want to rank in the Google Map Pack and get more calls from local search.
+Best for: Home service contractors in Northwest Arkansas who want to rank in
+the Google Map Pack and get more calls from local search — without spending
+time on it themselves.
 
----
-
-## Web Design & Development
-
-Custom quote — contact for pricing.
-
-Includes:
-- Mobile-first design built for lead generation (calls, form fills)
-- Local SEO architecture baked in from the start (schema, page structure, metadata)
-- Fast load times (Vercel-hosted, Next.js)
-- Integration with Google Analytics and call tracking
-
-Best for: Contractors who need a new site or whose current site is losing calls due to speed, clarity, or missing local signals.
-
----
-
-## Google Business Profile Optimization (one-time)
-
-Contact for pricing.
-
-Includes:
-- Full GBP audit
-- Category optimization (primary + secondary)
-- Photo strategy and upload
-- Service and description rewrite
-- Q&A setup
-- Review response templates
-
----
-
-## Reputation Management
-
-Included with Local SEO retainer or available as an add-on.
-
-Includes:
-- Review request process and templates
-- Review monitoring
-- Responses drafted for your approval
+Book a call: https://www.localsearchally.com/contact
 
 ---
 
@@ -65,7 +70,9 @@ No cost. No email required to start.
 
 Run your audit at: https://audit.localsearchally.com
 
-Shows: Google Map Pack visibility, GBP completeness score, top citation gaps.
+Shows: Google Business Profile score, review signals, citation gaps,
+backlink profile, on-page SEO, technical health, and AI citability.
+Eight sections scored. Takes about 60 seconds.
 
 ---
 
