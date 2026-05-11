@@ -303,4 +303,97 @@ export const cityPageData = {
       "I review your visibility in Rogers search results, your service pages, your Google Business Profile, and who currently holds the top spots.",
     jsonLdAreaServed: "Rogers",
   },
+
+  "centerton-ar": {
+    city: "Centerton",
+    state: "Arkansas",
+    slug: "centerton-ar",
+    auditCityParam: "Centerton",
+    metaTitle: "Local SEO in Centerton, AR for Home Service Trades | Local Search Ally",
+    metaDescription:
+      "Local SEO and web design for Centerton home service trades. I help HVAC, electrical, plumbing, and remodeling contractors show up in Google Maps and turn searches into booked calls.",
+    ogTitle: "Local SEO in Centerton, AR | Local Search Ally",
+    ogDescription:
+      "Centerton local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+    jsonLdAreaServed: "Centerton",
+    heroAccent: "home service trades.",
+    heroBody1:
+      "If you run a home service business in Centerton, local SEO is what separates the contractors capturing early market dominance from the ones arriving late to a growing market. Centerton is one of the fastest-growing cities in Arkansas. New construction means new homeowners. New homeowners search for contractors they can trust. The contractors showing up first in Google Maps and search results establish dominance before a crowded market forms.",
+    heroBody2:
+      "Most new homeowners are first-time Google searchers for home services. They don't have established contractors. They search. The contractor they find first becomes their contractor. In Centerton, visibility now means owning this market before it matures and becomes competitive.",
+    briefLabel: "Centerton local brief",
+    briefTitle:
+      "Centerton is growing fast. Early visibility means owning the market before competition establishes itself.",
+    briefBody:
+      "Centerton is experiencing rapid growth. New construction, new neighborhoods, new residents. Every new home means demand for HVAC, electrical, plumbing, roofing, and remodeling. The opportunity is now.",
+    signalsLabel: "What that means in Centerton",
+    signals: [
+      "One of the fastest-growing cities in Arkansas with new construction and new homeowners.",
+      "New homeowners are first-time searchers for home services — less reliance on referrals.",
+      "Market is underserved in local search compared to mature cities like Rogers or Fayetteville.",
+      "Early visibility advantage — contractors who show up first establish dominance before the market matures.",
+    ],
+    problemBody1:
+      "Centerton is growing. But growth is not permanent opportunity. As more contractors move into the market and build visibility, the advantage of being discovered first fades. New homeowners stop becoming easy to find and start becoming competitive to find.",
+    problemBody2:
+      "The contractors who establish visibility now — in Centerton's growth phase — will own the market for years. The ones waiting to see how the market develops will be fighting an uphill battle against established competition.",
+    fitEyebrow: "Built for Centerton",
+    tradeList: ["HVAC", "Plumbing", "Electrical", "Roofing", "Landscaping", "Remodeling"],
+    focusAreas: [
+      {
+        title: "Google Business Profile built for growth markets",
+        body: "Fast setup, strong foundational signals, rapid review momentum. In Centerton, being visible from day one matters. A polished GBP shows you are established even if you are new to the market.",
+      },
+      {
+        title: "Website built for first-time searchers",
+        body: "Clear service offerings, trust-building content, mobile-first design, easy call paths. New homeowners often search on phones. Your website needs to make hiring obvious.",
+      },
+      {
+        title: "Review strategy for new markets",
+        body: "Review request process that builds momentum fast, consistent response strategy, clear communication. In Centerton, early reviews establish you as trustworthy before competitors move in.",
+      },
+    ],
+    auditEyebrow: "Why Centerton matters",
+    auditTitle: "The market is forming now",
+    auditStatement:
+      "Centerton is one of the fastest-growing cities in Arkansas. New homes mean new demand. New homeowners mean new search volume. The contractors visible now will handle most of the work as the market matures.",
+    auditBody:
+      "Markets follow patterns. Early growth creates demand from buyers with minimal competition for visible contractors. As the market matures, more contractors enter and visibility becomes competitive. The smart move is to establish visibility during the growth phase, before the market becomes crowded.",
+    citationStats: [
+      "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
+      "51% of consumers use Google Maps for local search (Backlinko)",
+      "28% of searches for something nearby result in a purchase (Think With Google)",
+    ],
+    faqTitle: "Questions I expect from Centerton trade owners",
+    faqItems: [
+      {
+        question: "Should I focus on Centerton specifically?",
+        answer:
+          "Yes. Centerton is growing and underserved in local search. Early visibility here means less competition than in mature markets like Rogers or Fayetteville.",
+      },
+      {
+        question: "How much does it cost to be visible in a growing market?",
+        answer:
+          "Less than in mature markets. Early visibility is easier because fewer contractors have done the work. One job in Centerton early compounds into steady work as the market grows.",
+      },
+      {
+        question: "Will the market become saturated with contractors?",
+        answer:
+          "Probably, eventually. That's why the move is now. Establish visibility while the market is underserved. By the time competing contractors move in, you are already known.",
+      },
+      {
+        question: "Are there long-term contracts?",
+        answer: "No. I do not lock you into contracts.",
+      },
+      {
+        question: "What is the first step?",
+        answer:
+          "Run the free audit. You get a clear baseline across eight local SEO sections — then reach out and I can talk through what makes sense.",
+      },
+    ],
+    processAuditBody:
+      "I review your visibility in Centerton search results, your Google Business Profile, your website, your reviews, and the signals that help you show up for new homeowners searching now.",
+    spokesEyebrow: "By trade",
+    spokesTitle: "Centerton SEO by trade",
+  },
 };

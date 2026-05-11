@@ -25,57 +25,57 @@ export function generateMetadata() {
   };
 }
 
-const localBusinessJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://www.localsearchally.com/#localbusiness",
-  name: "Local Search Ally",
-  url: "https://www.localsearchally.com",
-  telephone: "+14793808626",
-  description:
-    "Local SEO and web design for home service trades in Northwest Arkansas.",
-  areaServed: [
-    {
-      "@type": "City",
-      name: d.jsonLdAreaServed,
-      containedInPlace: { "@type": "State", name: "Arkansas" },
-    },
-  ],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Siloam Springs",
-    addressRegion: "AR",
-    addressCountry: "US",
-    postalCode: "72761",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: "36.18808",
-    longitude: "-94.54064",
-  },
-};
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: d.faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: { "@type": "Answer", text: item.answer },
-  })),
-};
-
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.localsearchally.com" },
-    { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.localsearchally.com/service-areas" },
-    { "@type": "ListItem", position: 3, name: d.city, item: pageUrl },
-  ],
-};
-
 export default function SpringdaleServiceAreaPage() {
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.localsearchally.com/#localbusiness",
+    name: "Local Search Ally",
+    url: "https://www.localsearchally.com",
+    telephone: "+14793808626",
+    description:
+      "Local SEO and web design for home service trades in Northwest Arkansas.",
+    areaServed: [
+      {
+        "@type": "City",
+        name: d.jsonLdAreaServed,
+        containedInPlace: { "@type": "State", name: "Arkansas" },
+      },
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Siloam Springs",
+      addressRegion: "AR",
+      addressCountry: "US",
+      postalCode: "72761",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "36.18808",
+      longitude: "-94.54064",
+    },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: d.faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.localsearchally.com" },
+      { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.localsearchally.com/service-areas" },
+      { "@type": "ListItem", position: 3, name: d.city, item: pageUrl },
+    ],
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />

@@ -90,7 +90,7 @@ export default function SampleAudits() {
         <div className={styles.cards}>
           {AUDITS.map((audit, i) => (
             <motion.div
-              key={audit.id}
+              key={audit.label}
               className={styles.card}
               initial="hidden"
               whileInView="visible"
