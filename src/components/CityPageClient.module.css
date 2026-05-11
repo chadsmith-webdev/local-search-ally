@@ -71,6 +71,36 @@
   gap: 1.1rem;
 }
 
+/* ── Breadcrumb (trade spoke pages only) ───────────────────────────────── */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.breadcrumbLink {
+  color: var(--carolina);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.breadcrumbLink:hover {
+  opacity: 0.75;
+}
+
+.breadcrumbSep {
+  color: var(--muted);
+  opacity: 0.5;
+}
+
+.breadcrumbCurrent {
+  color: rgba(248, 249, 250, 0.7);
+}
+
 /* ── Labels / eyebrows ─────────────────────────────────────────────────── */
 
 .eyebrow,
