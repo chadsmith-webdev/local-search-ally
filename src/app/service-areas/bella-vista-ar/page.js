@@ -217,7 +217,7 @@ export default function BellaVistaServiceAreaPage() {
                 </p>
                 <div className={styles.heroActions}>
                   <Link
-                    href={process.env.NEXT_PUBLIC_AUDIT_URL}
+                    href={`${process.env.NEXT_PUBLIC_AUDIT_URL}?city=Bella+Vista`}
                     className={styles.primaryBtn}
                   >
                     Run Your Free Audit
@@ -452,7 +452,7 @@ export default function BellaVistaServiceAreaPage() {
             </p>
             <div className={styles.heroActions}>
               <Link
-                href={process.env.NEXT_PUBLIC_AUDIT_URL}
+                href={`${process.env.NEXT_PUBLIC_AUDIT_URL}?city=Bella+Vista`}
                 className={styles.primaryBtn}
               >
                 Run Your Free Audit

@@ -182,7 +182,7 @@ export default function LowellServiceAreaPage() {
                   who wants maximum return on local SEO for minimal effort.
                 </p>
                 <div className={styles.heroActions}>
-                  <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.primaryBtn}>
+                  <Link href={`${process.env.NEXT_PUBLIC_AUDIT_URL}?city=Lowell`} className={styles.primaryBtn}>
                     Run Your Free Audit
                   </Link>
                   <Link href='/contact' className={styles.secondaryBtn}>
@@ -405,7 +405,7 @@ export default function LowellServiceAreaPage() {
               seven local SEO sections and show you exactly where you stand.
             </p>
             <div className={styles.heroActions}>
-              <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.primaryBtn}>
+              <Link href={`${process.env.NEXT_PUBLIC_AUDIT_URL}?city=Lowell`} className={styles.primaryBtn}>
                 Run Your Free Audit
               </Link>
               <Link href='/contact' className={styles.secondaryBtn}>

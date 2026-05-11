@@ -214,7 +214,7 @@ export default function BentonvilleServiceAreaPage() {
                 </p>
                 <div className={styles.heroActions}>
                   <Link
-                    href={process.env.NEXT_PUBLIC_AUDIT_URL}
+                    href={`${process.env.NEXT_PUBLIC_AUDIT_URL}?city=Bentonville`}
                     className={styles.primaryBtn}
                   >
                     Run Your Free Audit
@@ -450,7 +450,7 @@ export default function BentonvilleServiceAreaPage() {
             </p>
             <div className={styles.heroActions}>
               <Link
-                href={process.env.NEXT_PUBLIC_AUDIT_URL}
+                href={`${process.env.NEXT_PUBLIC_AUDIT_URL}?city=Bentonville`}
                 className={styles.primaryBtn}
               >
                 Run Your Free Audit

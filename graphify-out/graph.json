@@ -7450,7 +7450,7 @@
       "label": "ServicesPricing()",
       "file_type": "code",
       "source_file": "src/components/ServicesPricing.jsx",
-      "source_location": "L114",
+      "source_location": "L117",
       "id": "components_servicespricing_servicespricing",
       "community": 57,
       "norm_label": "servicespricing()"
@@ -22742,7 +22742,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ServicesPricing.jsx",
-      "source_location": "L114",
+      "source_location": "L117",
       "weight": 1.0,
       "_src": "src_components_servicespricing_jsx",
       "_tgt": "components_servicespricing_servicespricing",

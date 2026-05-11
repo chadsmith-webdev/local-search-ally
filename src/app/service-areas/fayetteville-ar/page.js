@@ -215,7 +215,7 @@ export default function FayettevilleServiceAreaPage() {
                   your market.
                 </p>
                 <div className={styles.heroActions}>
-                  <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.primaryBtn}>
+                  <Link href={`${process.env.NEXT_PUBLIC_AUDIT_URL}?city=Fayetteville`} className={styles.primaryBtn}>
                     Run Your Free Audit
                   </Link>
                   <Link href='/contact' className={styles.secondaryBtn}>
@@ -446,7 +446,7 @@ export default function FayettevilleServiceAreaPage() {
               seven local SEO sections and show you exactly where you stand.
             </p>
             <div className={styles.heroActions}>
-              <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.primaryBtn}>
+              <Link href={`${process.env.NEXT_PUBLIC_AUDIT_URL}?city=Fayetteville`} className={styles.primaryBtn}>
                 Run Your Free Audit
               </Link>
               <Link href='/contact' className={styles.secondaryBtn}>
