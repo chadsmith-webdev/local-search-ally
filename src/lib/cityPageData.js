@@ -4,6 +4,106 @@
  */
 
 export const cityPageData = {
+  "springdale-ar": {
+    city: "Springdale",
+    state: "Arkansas",
+    slug: "springdale-ar",
+    auditCityParam: "Springdale",
+    metaTitle: "Local SEO for Springdale Trades | Local Search Ally",
+    metaDescription:
+      "Local SEO for Springdale home service trades. Trades here compete in both Springdale and Fayetteville searches — I help you show up where calls start.",
+    ogTitle: "Local SEO in Springdale, AR | Local Search Ally",
+    ogDescription:
+      "Springdale local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+    jsonLdAreaServed: "Springdale",
+    heroAccent: "home service trades.",
+    heroBody1:
+      "If you run a home service business in Springdale, local SEO is what separates the busy contractors from the ones watching competitors capture most of the calls. Springdale is a dense residential and commercial market. Homeowners search when they need you. The contractors showing up clearly in Google Maps and search results get the work.",
+    heroBody2:
+      "Springdale is unique because trades here compete across both Springdale and Fayetteville searches. Local relevance signals have to be dialed in exactly right. A weak Google Business Profile or confusing service-area boundaries mean you lose visibility when it matters most.",
+    briefLabel: "Springdale local brief",
+    briefTitle:
+      "Springdale is dense and mixed-market. Weak local signals cost you calls to competitors with clearer visibility.",
+    briefBody:
+      "Springdale is one of the most active home service markets in Northwest Arkansas. It has both established residential neighborhoods and growing commercial districts. That means more types of demand and more competition fighting for the top spots.",
+    signalsLabel: "What that means in Springdale",
+    signals: [
+      "Dense residential and commercial market with high search volume for home services.",
+      "Trades here compete across both Springdale and Fayetteville searches — local relevance signals have to be dialed in exactly right.",
+      "Mobile-first searching from homeowners and property managers looking for immediate help.",
+      "Mixed demand creates opportunities across residential maintenance, repairs, and commercial property management.",
+    ],
+    problemBody1:
+      "Most home service trades in Springdale are busy through referrals. But referrals slow down. When they do, the contractors already showing up in Map Pack and service-area searches absorb the demand.",
+    problemBody2:
+      "Springdale's density and commercial mix mean that local relevance has to be tight across Google Business Profile, service categories, service-area boundaries, and reviews. If any of those signals are weak, you lose calls to competitors with stronger visibility.",
+    fitEyebrow: "Built for Springdale",
+    tradeList: [
+      "HVAC",
+      "Plumbing",
+      "Roofing",
+      "Electrical",
+      "Remodeling",
+      "Landscaping",
+      "General contracting",
+    ],
+    focusAreas: [
+      {
+        title: "Google Business Profile built for dense markets",
+        body: "Category alignment, service-area boundaries, strong review momentum, and consistent signals across phone, website, and hours. In Springdale, clear boundaries mean you show up for both Springdale and nearby searches without confusion.",
+      },
+      {
+        title: "Website built for search-first markets",
+        body: "Service pages optimized for 'HVAC near me,' 'plumber Springdale,' and related searches. Mobile-first design, fast load times, and clear call paths. Springdale homeowners search before they call.",
+      },
+      {
+        title: "Local relevance and citation strength",
+        body: "Presence across directories with consistent name, address, phone, and categories. Response to reviews. Clear service-area definition. In Springdale, trades with tight local signals capture more calls.",
+      },
+    ],
+    auditEyebrow: "Why Springdale matters",
+    auditTitle: "The search behavior is already there",
+    auditStatement:
+      "Springdale homeowners search when they need a contractor. High volume, consistent demand across residential and commercial, and homeowners ready to hire now. The contractors that show up first get the calls.",
+    auditBody:
+      "Springdale is one of the most active home service markets in NWA. More searches happen here than in many surrounding cities. The residential neighborhoods drive steady demand for HVAC, plumbing, roofing, and remodeling. The commercial mix drives additional demand from property managers and small business owners.",
+    citationStats: [
+      "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
+      "51% of consumers use Google Maps for local search (Backlinko)",
+      "61% of consumers say they are more likely to choose a business that has a website (BrightLocal)",
+    ],
+    faqTitle: "Questions I expect from Springdale trade owners",
+    faqItems: [
+      {
+        question: "Do you only work with Springdale businesses?",
+        answer:
+          "No. I work with home service trades across Northwest Arkansas. Springdale is one of the core markets I serve.",
+      },
+      {
+        question: "How much does it cost to rank in Springdale?",
+        answer:
+          "Varies. The question is not what it costs — it is what invisibility costs. If you are not showing up in Springdale searches, you are losing calls to competitors who do. One job means thousands of dollars. Proper visibility pays for itself fast.",
+      },
+      {
+        question: "Should I focus on Springdale or Fayetteville searches?",
+        answer:
+          "Both. Trades in Springdale often get searches from both cities. A well-configured Google Business Profile and service boundaries mean you show up for both without confusion or duplicate listings.",
+      },
+      {
+        question: "Are there long-term contracts?",
+        answer: "No. I do not lock you into contracts.",
+      },
+      {
+        question: "What is the first step?",
+        answer:
+          "Run the free audit. You get a clear baseline across eight local SEO sections — then reach out and I can talk through what makes sense.",
+      },
+    ],
+    processAuditBody:
+      "I review your visibility in Springdale search results, your Google Business Profile, your website, your reviews, and the signals that help you show up for searches that matter.",
+    spokesEyebrow: "By trade",
+    spokesTitle: "Springdale SEO by trade",
+  },
   "rogers-ar": {
     city: "Rogers",
     state: "Arkansas",
