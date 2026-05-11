@@ -5,6 +5,7 @@ import AuthoritySection from "@/components/AuthoritySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ServicesSection from "@/components/ServicesSection";
 import ProcessSection from "@/components/ProcessSection";
+import SampleAudits from "@/components/SampleAudits";
 import FAQSection from "@/components/FAQSection";
 import FinalCTASection from "@/components/FinalCTASection";
 
@@ -306,6 +307,7 @@ export default function Page() {
       <TestimonialsSection />
       <ServicesSection />
       <ProcessSection />
+      <SampleAudits />
       <FAQSection heading='Common questions about local SEO for NWA contractors.' />
       <FinalCTASection />
     </>
