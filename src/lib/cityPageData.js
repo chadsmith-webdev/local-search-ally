@@ -104,6 +104,106 @@ export const cityPageData = {
     spokesEyebrow: "By trade",
     spokesTitle: "Springdale SEO by trade",
   },
+  "bentonville-ar": {
+    city: "Bentonville",
+    state: "Arkansas",
+    slug: "bentonville-ar",
+    auditCityParam: "Bentonville",
+    metaTitle: "Local SEO for Bentonville Trades | Local Search Ally",
+    metaDescription:
+      "Local SEO for Bentonville home service trades. Quality-focused buyers who read reviews and compare — I help you show up clearly and get chosen.",
+    ogTitle: "Local SEO in Bentonville, AR | Local Search Ally",
+    ogDescription:
+      "Bentonville local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+    jsonLdAreaServed: "Bentonville",
+    heroAccent: "home service trades.",
+    heroBody1:
+      "If you run a home service business in Bentonville, local SEO is what gets you found when people are ready to hire. When someone searches for \"AC repair Bentonville\" or \"plumber near me,\" Google shows a short list. If your business is not in that list, you are easy to miss even if your work is better.",
+    heroBody2:
+      "I help Bentonville home service trades show up where calls start: Google Maps, city + service searches, and service pages that match what people actually type. Bentonville homeowners research heavily. Reviews matter. Your website, GBP, and service pages need to be sharp. I make sure you show up clearly in all three.",
+    briefLabel: "Bentonville local brief",
+    briefTitle:
+      "Bentonville is competitive. Reviews and polish actually determine visibility.",
+    briefBody:
+      "This is not a market where a thin Google Business Profile and outdated website slide by quietly. Bentonville homeowners research. They compare. They read reviews. When demand spikes, the businesses with stronger local signals — better GBP, sharper service pages, more reviews — get calls first.",
+    signalsLabel: "What that means in Bentonville",
+    signals: [
+      "Higher-income homeowners who invest in quality contractors — not price shoppers.",
+      "Research-heavy market where Google reviews are decision-drivers.",
+      "A polished website, full Google Business Profile, and strong reviews are expected — not optional.",
+      "Mix of newer subdivisions and established neighborhoods creates consistent demand across remodeling, upgrades, and maintenance.",
+    ],
+    problemBody1:
+      "Most home service trades in Bentonville are busy until the same referral pipeline slows down. When that happens, the companies already showing up in search absorb the demand.",
+    problemBody2:
+      "The problem is usually not a lack of searches. It is weak local visibility. Bentonville is competitive enough that if your Google Business Profile, reviews, website, and local signals are thin or uneven, your competitor gets the call first. Homeowners here research online before they call. If you don't show up clearly, they move on.",
+    fitEyebrow: "Built for Bentonville",
+    tradeList: [
+      "HVAC",
+      "Plumbing",
+      "Roofing",
+      "Electrical",
+      "Remodeling",
+      "Landscaping",
+      "General contracting",
+    ],
+    focusAreas: [
+      {
+        title: "Google Business Profile built for quality-focused buyers",
+        body: "Category alignment, service-area relevance, strong reviews, and high-quality photos that showcase professionalism. Bentonville buyers compare options. Your GBP needs to prove you're the professional choice.",
+      },
+      {
+        title: "Reviews as your primary sales tool",
+        body: "Review request workflow that works consistently. Response strategy so you're engaged. Your reviews are proof of quality in a market where Bentonville homeowners compare based on feedback.",
+      },
+      {
+        title: "Website built for Bentonville's research-heavy market",
+        body: "Pages optimized for city + service searches, trust signals (testimonials, credentials, complex projects), mobile-first design, and clear call paths. When homeowners research Bentonville contractors online, your site needs to show you're the right choice.",
+      },
+    ],
+    auditEyebrow: "Why Bentonville matters",
+    auditTitle: "The search behavior is already there",
+    auditStatement:
+      "Bentonville homeowners already search when they need a contractor. They research online, compare reviews, and call whoever shows up first and looks most professional. The businesses that look local, credible, and easy to call are the ones that win.",
+    auditBody:
+      "Bentonville is one of the most active home service markets in Northwest Arkansas. Homeowners here have higher budgets, expect quality, and trust reviews. More of them search before they call, and those searches often happen on mobile the moment a problem shows up. If you show up clearly in that search, you get the call.",
+    citationStats: [
+      "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
+      "51% of consumers use Google Maps for local search (Backlinko)",
+      "61% of consumers say they are more likely to choose a business that has a website (BrightLocal)",
+    ],
+    faqTitle: "Questions I expect from Bentonville trade owners",
+    faqItems: [
+      {
+        question: "Do you only work with Bentonville businesses?",
+        answer:
+          "No. I am based in Siloam Springs and work with home service trades across Northwest Arkansas. Bentonville is one of the core markets I serve.",
+      },
+      {
+        question: "How fast can rankings improve?",
+        answer:
+          "It depends on your starting point and how competitive your service category is in Bentonville. Some fixes move quickly. Lasting growth usually comes from consistent monthly improvements.",
+      },
+      {
+        question: "Do I need a new website first?",
+        answer:
+          "Not always. I start by finding your highest-impact gaps first. Sometimes it is Google Business Profile and reviews. Sometimes it is website structure and conversion paths.",
+      },
+      {
+        question: "Are there long-term contracts?",
+        answer: "No. I do not lock you into contracts.",
+      },
+      {
+        question: "What is the first step?",
+        answer:
+          "Run the free audit. You get a clear baseline across eight local SEO sections — then reach out and I can talk through what makes sense.",
+      },
+    ],
+    processAuditBody:
+      "I review your visibility in Bentonville search results, your Google Business Profile, your website, your reviews, and who currently holds the top spots.",
+    spokesEyebrow: "By trade",
+    spokesTitle: "Bentonville SEO by trade",
+  },
   "rogers-ar": {
     city: "Rogers",
     state: "Arkansas",
