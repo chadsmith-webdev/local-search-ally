@@ -20,8 +20,8 @@ export async function generateStaticParams() {
   return params;
 }
 
-export function generateMetadata({ params }) {
-  const { city: citySlug, trade: tradeSlug } = params;
+export async function generateMetadata({ params }) {
+  const { city: citySlug, trade: tradeSlug } = await params;
   const city = CITY_META[citySlug];
   const trade = TRADE_META[tradeSlug];
   if (!city || !trade) return {};
@@ -46,8 +46,8 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function CityTradePage({ params }) {
-  const { city: citySlug, trade: tradeSlug } = params;
+export default async function CityTradePage({ params }) {
+  const { city: citySlug, trade: tradeSlug } = await params;
   const city = CITY_META[citySlug];
   const trade = TRADE_META[tradeSlug];
 
