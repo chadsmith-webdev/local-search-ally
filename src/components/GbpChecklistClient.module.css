@@ -147,7 +147,7 @@
   border: none;
   border-radius: 8px;
   background: linear-gradient(135deg, #7bafd4 0%, #3a5570 100%);
-  color: #0a0a0a;
+  color: var(--bg);
   font-size: 1rem;
   font-weight: 600;
   font-family: inherit;

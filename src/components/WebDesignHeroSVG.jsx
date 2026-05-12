@@ -40,8 +40,8 @@ export default function WebDesignHeroSVG() {
       {/* Hero section */}
       <rect x="30" y="90" width="460" height="120" rx="6" fill="#0d0d0d" />
       <rect x="50" y="110" width="180" height="14" rx="3" fill="#f8f9fa" opacity="0.25" />
-      <rect x="50" y="130" width="240" height="8" rx="2" fill="#888" opacity="0.2" />
-      <rect x="50" y="144" width="200" height="8" rx="2" fill="#888" opacity="0.15" />
+      <rect x="50" y="130" width="240" height="8" rx="2" fill="#7a838d" opacity="0.2" />
+      <rect x="50" y="144" width="200" height="8" rx="2" fill="#7a838d" opacity="0.15" />
       <rect x="50" y="164" width="100" height="24" rx="5" fill="#7bafd4" opacity="0.35" />
       {/* Hero image placeholder */}
       <rect x="320" y="100" width="150" height="100" rx="6" fill="#1e1e1e" />
@@ -51,26 +51,26 @@ export default function WebDesignHeroSVG() {
       {/* Service cards */}
       <rect x="30" y="220" width="140" height="80" rx="6" fill="#1a1a1a" stroke="#333" strokeWidth="0.5" />
       <rect x="45" y="235" width="60" height="8" rx="2" fill="#f8f9fa" opacity="0.2" />
-      <rect x="45" y="250" width="110" height="5" rx="1" fill="#888" opacity="0.12" />
-      <rect x="45" y="260" width="90" height="5" rx="1" fill="#888" opacity="0.1" />
+      <rect x="45" y="250" width="110" height="5" rx="1" fill="#7a838d" opacity="0.12" />
+      <rect x="45" y="260" width="90" height="5" rx="1" fill="#7a838d" opacity="0.1" />
       <rect x="45" y="276" width="50" height="12" rx="3" fill="#7bafd4" opacity="0.2" />
 
       <rect x="185" y="220" width="140" height="80" rx="6" fill="#1a1a1a" stroke="#333" strokeWidth="0.5" />
       <rect x="200" y="235" width="60" height="8" rx="2" fill="#f8f9fa" opacity="0.2" />
-      <rect x="200" y="250" width="110" height="5" rx="1" fill="#888" opacity="0.12" />
-      <rect x="200" y="260" width="90" height="5" rx="1" fill="#888" opacity="0.1" />
+      <rect x="200" y="250" width="110" height="5" rx="1" fill="#7a838d" opacity="0.12" />
+      <rect x="200" y="260" width="90" height="5" rx="1" fill="#7a838d" opacity="0.1" />
       <rect x="200" y="276" width="50" height="12" rx="3" fill="#7bafd4" opacity="0.2" />
 
       <rect x="340" y="220" width="140" height="80" rx="6" fill="#1a1a1a" stroke="#333" strokeWidth="0.5" />
       <rect x="355" y="235" width="60" height="8" rx="2" fill="#f8f9fa" opacity="0.2" />
-      <rect x="355" y="250" width="110" height="5" rx="1" fill="#888" opacity="0.12" />
-      <rect x="355" y="260" width="90" height="5" rx="1" fill="#888" opacity="0.1" />
+      <rect x="355" y="250" width="110" height="5" rx="1" fill="#7a838d" opacity="0.12" />
+      <rect x="355" y="260" width="90" height="5" rx="1" fill="#7a838d" opacity="0.1" />
       <rect x="355" y="276" width="50" height="12" rx="3" fill="#7bafd4" opacity="0.2" />
 
       {/* Footer */}
       <rect x="30" y="316" width="460" height="36" rx="4" fill="#111" />
-      <rect x="50" y="330" width="80" height="6" rx="1" fill="#888" opacity="0.12" />
-      <rect x="390" y="330" width="80" height="6" rx="1" fill="#888" opacity="0.12" />
+      <rect x="50" y="330" width="80" height="6" rx="1" fill="#7a838d" opacity="0.12" />
+      <rect x="390" y="330" width="80" height="6" rx="1" fill="#7a838d" opacity="0.12" />
     </svg>
   );
 }

@@ -149,7 +149,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #00ff88;
+  background: var(--status-green);
   box-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
   flex-shrink: 0;
 }

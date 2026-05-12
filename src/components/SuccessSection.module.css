@@ -274,7 +274,7 @@
 }
 
 .mapStars {
-  color: #f5a623;
+  color: var(--status-yellow);
   letter-spacing: -0.5px;
 }
 

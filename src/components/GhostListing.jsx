@@ -232,7 +232,7 @@ export default function GhostListing() {
               ratingNum="4.7"
               reviewCount={89}
               openStatus="Closes 5 PM"
-              openColor="#888"
+              openColor="var(--muted)"
               phone="(479) 555-0198"
               delay={0.6}
             />
