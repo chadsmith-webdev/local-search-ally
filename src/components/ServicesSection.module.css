@@ -1,91 +1,186 @@
-/* ─── ServicesSection ──────────────────────────────────── */
+/* ─── ServicesSection.module.css ──────────────────────────────────── */
+
 .section {
-  padding: 7rem 0;
-  background: var(--surface);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  padding: 8rem 0;
+  background: var(--surface, #141414);
+  overflow: hidden;
+}
+
+/* Top edge: dissolves in from hero bottom fade */
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(123, 175, 212, 0.15) 30%,
+    rgba(123, 175, 212, 0.15) 70%,
+    transparent
+  );
+}
+
+/* Carolina blue atmospheric bloom — top-left quadrant */
+.bloom {
+  position: absolute;
+  top: -8%;
+  left: -5%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at 20% 20%,
+    rgba(123, 175, 212, 0.06) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .inner {
+  position: relative;
+  z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--page-gutter);
+  padding: 0 var(--page-gutter, 1.5rem);
 }
 
+/* ── Header ──────────────────────────────────────────────── */
 .header {
-  max-width: 620px;
-  margin-bottom: 3.5rem;
+  max-width: 640px;
+  margin-bottom: 4rem;
 }
 
-.sectionTag {
+.eyebrow {
   font-family: var(--font-ui);
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--carolina);
-  opacity: 0.7;
-  display: block;
-  margin-bottom: 1rem;
+  color: var(--carolina, #7bafd4);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--carolina, #7bafd4);
+  opacity: 0.5;
 }
 
 .h2 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.5vw, 2.875rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.12;
   letter-spacing: -0.025em;
-  color: var(--text);
-  margin-bottom: 1rem;
+  color: var(--text, #f0f0f0);
+  margin-bottom: 1.25rem;
+}
+
+.h2 em {
+  font-style: normal;
+  color: var(--carolina, #7bafd4);
 }
 
 .lead {
   font-family: var(--font-ui);
   font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
-  color: var(--muted);
-  line-height: 1.7;
+  color: var(--muted, #888);
+  line-height: 1.75;
 }
 
-/* ─── 2x2 grid ──────────────────────────────────────────── */
+/* ── 2×2 card grid ───────────────────────────────────────── */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
-/* ─── Service card ──────────────────────────────────────── */
+/* ── Card ────────────────────────────────────────────────── */
 .card {
   position: relative;
-  background: var(--bg);
-  border-radius: var(--radius-lg);
+  background: var(--bg, #0a0a0a);
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 2rem 1.75rem;
+  padding: 2.25rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
-  transition: border-color 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+/* Carolina glow on card hover */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(123, 175, 212, 0),
+    transparent
+  );
+  transition: background 0.35s ease;
 }
 
 .card:hover {
-  border-color: rgba(123, 175, 212, 0.25);
+  border-color: rgba(123, 175, 212, 0.22);
+  box-shadow: 0 0 40px rgba(123, 175, 212, 0.06);
+}
+
+.card:hover::after {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(123, 175, 212, 0.4),
+    transparent
+  );
+}
+
+/* Service number */
+.cardNum {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: rgba(123, 175, 212, 0.4);
+  letter-spacing: 0.1em;
 }
 
 .cardName {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--text, #f0f0f0);
   line-height: 1.25;
+  margin: 0;
 }
 
 .cardDesc {
   font-family: var(--font-ui);
   font-size: 0.9375rem;
-  color: var(--muted);
+  color: var(--muted, #888);
   line-height: 1.7;
   flex: 1;
+  margin: 0;
 }
 
+/* Outcome line — the payoff sentence */
 .cardOutcome {
   display: flex;
   align-items: flex-start;
@@ -93,7 +188,7 @@
   font-family: var(--font-ui);
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--carolina);
+  color: var(--carolina, #7bafd4);
   line-height: 1.45;
 }
 
@@ -103,32 +198,37 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--carolina);
-  margin-top: 5px;
-  box-shadow: 0 0 6px rgba(123, 175, 212, 0.6);
+  background: var(--carolina, #7bafd4);
+  margin-top: 4px;
+  box-shadow: 0 0 8px rgba(123, 175, 212, 0.7);
 }
 
 .cardLink {
   font-family: var(--font-ui);
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--carolina);
+  color: var(--carolina, #7bafd4);
   text-decoration: none;
-  border-bottom: 1px solid rgba(123, 175, 212, 0.3);
+  border-bottom: 1px solid rgba(123, 175, 212, 0.25);
   padding-bottom: 2px;
   align-self: flex-start;
+  letter-spacing: 0.02em;
   transition:
     color 0.2s ease,
     border-color 0.2s ease;
-  letter-spacing: 0.02em;
 }
 
 .cardLink:hover {
-  color: var(--text);
-  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--text, #f0f0f0);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
-/* ─── Footer ────────────────────────────────────────────── */
+.cardLink:focus-visible {
+  outline: 2px solid var(--carolina, #7bafd4);
+  outline-offset: 3px;
+}
+
+/* ── Footer row ──────────────────────────────────────────── */
 .footer {
   display: flex;
   align-items: center;
@@ -136,17 +236,18 @@
   flex-wrap: wrap;
   gap: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 2rem;
+  padding-top: 2.25rem;
 }
 
 .pricing {
   font-family: var(--font-ui);
   font-size: 0.9375rem;
-  color: var(--muted);
+  color: var(--muted, #888);
+  margin: 0;
 }
 
 .pricing strong {
-  color: var(--text);
+  color: var(--text, #f0f0f0);
   font-weight: 700;
 }
 
@@ -154,7 +255,7 @@
   font-family: var(--font-ui);
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--carolina);
+  color: var(--carolina, #7bafd4);
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: opacity 0.2s ease;
@@ -164,10 +265,15 @@
   opacity: 0.75;
 }
 
-/* ─── Responsive ────────────────────────────────────────── */
+.allServices:focus-visible {
+  outline: 2px solid var(--carolina, #7bafd4);
+  outline-offset: 3px;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 768px) {
   .section {
-    padding: 5rem 0;
+    padding: 5.5rem 0;
   }
 
   .grid {

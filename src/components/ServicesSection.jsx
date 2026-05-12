@@ -1,13 +1,14 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import styles from "./ServicesSection.module.css";
 
 const services = [
   {
     id: "GBP_OPT",
+    num: "01",
     name: "GBP Optimization",
     description:
       "Complete profile buildout, category selection, photo strategy, weekly posting, and review response management.",
@@ -16,6 +17,7 @@ const services = [
   },
   {
     id: "CITATION_BUILD",
+    num: "02",
     name: "Citation Building",
     description:
       "Full audit and cleanup of all directory listings. Consistent NAP across 50+ directories — Yelp, Angi, BBB, and beyond.",
@@ -24,6 +26,7 @@ const services = [
   },
   {
     id: "LOCAL_SEO",
+    num: "03",
     name: "Local SEO",
     description:
       "Service area pages, on-page optimization, and keyword targeting for your specific trade and city combination.",
@@ -32,6 +35,7 @@ const services = [
   },
   {
     id: "REPUTATION_MGMT",
+    num: "04",
     name: "Reputation Management",
     description:
       "Review generation system, response templates, and ongoing monitoring. More 5-star reviews, fewer silent unhappy customers.",
@@ -42,11 +46,11 @@ const services = [
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
@@ -54,38 +58,62 @@ const cardVariants = {
   },
 };
 
+const headVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 export default function ServicesSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const prefersReduced = useReducedMotion();
+
+  const animate = !prefersReduced && inView ? "visible" : prefersReduced ? "visible" : "hidden";
 
   return (
-    <section className={styles.section} ref={ref} id='services'>
+    <section className={styles.section} id="services" ref={ref}>
+      {/* Atmospheric surface — subtle carolina bloom top-left */}
+      <div className={styles.bloom} aria-hidden="true" />
+
       <div className={styles.inner}>
-        <div className={styles.header}>
-          <span className={styles.sectionTag}>HOW I FIX IT</span>
-          <h2 className={styles.h2}>What I actually do</h2>
+        {/* ── Header ── */}
+        <motion.div
+          className={styles.header}
+          variants={headVariants}
+          initial="hidden"
+          animate={animate}
+        >
+          <span className={styles.eyebrow}>WHAT I DO</span>
+          <h2 className={styles.h2}>
+            Four things that move the needle.<br />
+            <em>Nothing else.</em>
+          </h2>
           <p className={styles.lead}>
             Each service targets a specific failure point. Together they close
             every gap between you and the Map Pack.
           </p>
-        </div>
+        </motion.div>
 
+        {/* ── Service cards ── */}
         <motion.div
           className={styles.grid}
-          variants={containerVariants}
-          initial='hidden'
-          animate={inView ? "visible" : "hidden"}
+          variants={prefersReduced ? {} : containerVariants}
+          initial="hidden"
+          animate={animate}
         >
           {services.map((svc) => (
             <motion.div
               key={svc.id}
               className={styles.card}
-              variants={cardVariants}
+              variants={prefersReduced ? {} : cardVariants}
             >
+              <span className={styles.cardNum} aria-hidden="true">
+                {svc.num}
+              </span>
               <h3 className={styles.cardName}>{svc.name}</h3>
               <p className={styles.cardDesc}>{svc.description}</p>
               <div className={styles.cardOutcome}>
-                <span className={styles.outcomePip} aria-hidden='true' />
+                <span className={styles.outcomePip} aria-hidden="true" />
                 {svc.outcome}
               </div>
               <Link href={svc.href} className={styles.cardLink}>
@@ -95,13 +123,14 @@ export default function ServicesSection() {
           ))}
         </motion.div>
 
+        {/* ── Footer row ── */}
         <div className={styles.footer}>
           <p className={styles.pricing}>
             Starting at <strong>$497/month</strong> · No setup fees · No
             contracts
           </p>
-          <Link href='/services' className={styles.allServices}>
-            See all services and pricing →
+          <Link href="/services" className={styles.allServices}>
+            See all services →
           </Link>
         </div>
       </div>

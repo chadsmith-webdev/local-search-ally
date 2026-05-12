@@ -1,13 +1,8 @@
 import HeroSection from "@/components/HeroSection";
-import LostCallsSection from "@/components/LostCallsSection";
-import DiagnosticSection from "@/components/DiagnosticSection";
-import AuthoritySection from "@/components/AuthoritySection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import ServicesSection from "@/components/ServicesSection";
-import ProcessSection from "@/components/ProcessSection";
-import SampleAudits from "@/components/SampleAudits";
-import FAQSection from "@/components/FAQSection";
-import FinalCTASection from "@/components/FinalCTASection";
+// StatsSection, ProcessSection, FinalCTASection — built next
+// Legacy sections preserved in /components but removed from homepage
+
 
 export const metadata = {
   title: "Local SEO for NWA Contractors | Local Search Ally",
@@ -301,15 +296,8 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
       <HeroSection />
-      <LostCallsSection />
-      <AuthoritySection />
-      <DiagnosticSection />
-      <TestimonialsSection />
       <ServicesSection />
-      <ProcessSection />
-      <SampleAudits />
-      <FAQSection heading='Common questions about local SEO for NWA contractors.' />
-      <FinalCTASection />
+      {/* StatsSection, ProcessSection, FinalCTASection — coming next */}
     </>
   );
 }
