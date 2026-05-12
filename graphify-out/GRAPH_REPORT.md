@@ -1,11 +1,11 @@
 # Graph Report - local-search-ally  (2026-05-12)
 
 ## Corpus Check
-- 218 files · ~4,157,431 words
+- 219 files · ~4,158,421 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1054 nodes · 1337 edges · 40 communities detected
+- 1058 nodes · 1340 edges · 39 communities detected
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 93 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
@@ -37,16 +37,15 @@
 - [[_COMMUNITY_Community 24|Community 24]]
 - [[_COMMUNITY_Community 25|Community 25]]
 - [[_COMMUNITY_Community 26|Community 26]]
-- [[_COMMUNITY_Community 27|Community 27]]
 - [[_COMMUNITY_Community 28|Community 28]]
+- [[_COMMUNITY_Community 29|Community 29]]
 - [[_COMMUNITY_Community 30|Community 30]]
 - [[_COMMUNITY_Community 31|Community 31]]
 - [[_COMMUNITY_Community 32|Community 32]]
 - [[_COMMUNITY_Community 33|Community 33]]
-- [[_COMMUNITY_Community 34|Community 34]]
+- [[_COMMUNITY_Community 35|Community 35]]
 - [[_COMMUNITY_Community 36|Community 36]]
 - [[_COMMUNITY_Community 37|Community 37]]
-- [[_COMMUNITY_Community 38|Community 38]]
 - [[_COMMUNITY_Community 41|Community 41]]
 - [[_COMMUNITY_Community 43|Community 43]]
 - [[_COMMUNITY_Community 45|Community 45]]
@@ -78,16 +77,16 @@
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.06
-Nodes (59): capture_baseline(), fetch_cwv_data(), fetch_page_data(), hash_content(), init_db(), main(), normalize_url(), Fetch and parse a page using the project's existing scripts.      Returns dict w (+51 more)
+Cohesion: 0.03
+Nodes (35): OGImage(), OGImage(), sitemap(), OGImage(), OGImage(), OGImage(), BlogPage(), OGImage() (+27 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.06
-Nodes (51): _build_css(), _build_cwv_section(), _build_executive_summary(), _build_gsc_section(), _build_indexation_section(), _build_methodology_footer(), _build_recommendations(), _build_title_page() (+43 more)
+Nodes (59): capture_baseline(), fetch_cwv_data(), fetch_page_data(), hash_content(), init_db(), main(), normalize_url(), Fetch and parse a page using the project's existing scripts.      Returns dict w (+51 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.04
-Nodes (25): OGImage(), OGImage(), OGImage(), OGImage(), OGImage(), OGImage(), OGImage(), OGImage() (+17 more)
+Cohesion: 0.06
+Nodes (51): _build_css(), _build_cwv_section(), _build_executive_summary(), _build_gsc_section(), _build_indexation_section(), _build_methodology_footer(), _build_recommendations(), _build_title_page() (+43 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.06
@@ -134,94 +133,90 @@ Cohesion: 0.14
 Nodes (21): _get_cache_path(), get_domain_metrics(), get_graph_info(), _get_latest_release(), _graph_file_url(), _is_cached(), main(), Get the cache file path for a domain's data. (+13 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.14
-Nodes (10): sitemap(), BlogPage(), getAllPosts(), getPostBySlug(), GET(), generateStaticParams(), OGImage(), BlogPost() (+2 more)
-
-### Community 15 - "Community 15"
 Cohesion: 0.18
 Nodes (14): cmd_create(), cmd_delete(), cmd_list(), cmd_show(), _ensure_dir(), _load_preset(), _preset_path(), Ensure presets directory exists. (+6 more)
 
-### Community 16 - "Community 16"
+### Community 15 - "Community 15"
 Cohesion: 0.18
 Nodes (15): main(), Check H1 findings for misleading data., Check Common Crawl findings for misleading interpretations., Detect reciprocal link patterns (A links to B and B links back)., Validate health score data sufficiency., Run all validations on a backlink report.      Args:         report_data: Dictio, Check schema findings for false positives., Check verification findings for false negatives and inconsistencies. (+7 more)
 
-### Community 17 - "Community 17"
+### Community 16 - "Community 16"
 Cohesion: 0.13
 Nodes (2): generate(), main()
 
-### Community 18 - "Community 18"
+### Community 17 - "Community 17"
 Cohesion: 0.2
 Nodes (13): cmd_estimate(), cmd_log(), cmd_reset(), cmd_summary(), cmd_today(), _load_ledger(), _lookup_cost(), Estimate cost for a batch. (+5 more)
 
-### Community 19 - "Community 19"
+### Community 18 - "Community 18"
 Cohesion: 0.26
 Nodes (13): _build_ga4_client(), country_breakdown(), device_breakdown(), main(), organic_traffic_report(), Get top organic landing pages from GA4.      Args:         property_id: GA4 prop, Organic sessions broken down by device category.      Args:         property_id:, Organic sessions broken down by country.      Args:         property_id: GA4 pro (+5 more)
 
-### Community 20 - "Community 20"
+### Community 19 - "Community 19"
 Cohesion: 0.24
 Nodes (13): get_anchor_text(), get_linking_domains(), get_top_pages(), get_url_metrics(), main(), _moz_request(), _rate_limit(), Get URL-level metrics: Domain Authority, Page Authority, Spam Score, link counts (+5 more)
 
-### Community 21 - "Community 21"
+### Community 20 - "Community 20"
 Cohesion: 0.29
 Nodes (11): check_setup(), load_settings(), main(), Load Claude Code settings.json., Save Claude Code settings.json., Check if MCP is already configured., Remove MCP configuration., Configure MCP server in Claude Code settings. (+3 more)
 
-### Community 22 - "Community 22"
+### Community 21 - "Community 21"
 Cohesion: 0.24
 Nodes (7): displace(), dot3(), fade(), InvisibilityHologram(), lerp(), perlin3(), useDynamicData()
 
-### Community 23 - "Community 23"
+### Community 22 - "Community 22"
 Cohesion: 0.33
 Nodes (9): batch_notify(), _build_indexing_service(), get_notification_metadata(), main(), notify_url(), Get the latest notification metadata for a URL.      Args:         url: The URL, Batch notify multiple URLs with quota awareness.      Args:         urls: List o, Build the Indexing API v3 service. (+1 more)
 
-### Community 24 - "Community 24"
+### Community 23 - "Community 23"
 Cohesion: 0.33
 Nodes (9): _build_youtube_service(), get_channel_info(), get_video_details(), main(), Get detailed information about a specific YouTube video.      Args:         vide, Get channel information.      Args:         channel_id: YouTube channel ID., Build the YouTube Data API v3 service., Search YouTube for videos matching a query.      Args:         query: Search que (+1 more)
 
-### Community 25 - "Community 25"
+### Community 24 - "Community 24"
 Cohesion: 0.22
 Nodes (2): FunnelLabels(), useCountUp()
 
-### Community 26 - "Community 26"
+### Community 25 - "Community 25"
 Cohesion: 0.44
 Nodes (7): email1Html(), email2Html(), email3Html(), email4Html(), footer(), logoBlock(), POST()
 
-### Community 27 - "Community 27"
+### Community 26 - "Community 26"
 Cohesion: 0.39
 Nodes (7): _build_ads_client(), generate_keyword_ideas(), get_keyword_volumes(), main(), Generate keyword ideas from seed keywords.      Args:         seed_keywords: Lis, Get search volume for specific keywords.      Args:         keywords: List of ke, Build Google Ads client from config.
 
 ### Community 28 - "Community 28"
 Cohesion: 0.33
+Nodes (2): fadeUp(), Listing()
+
+### Community 29 - "Community 29"
+Cohesion: 0.33
 Nodes (3): getCityTradeFAQs(), getCityTradeSignals(), CityTradePage()
 
 ### Community 30 - "Community 30"
-Cohesion: 0.33
-Nodes (2): fadeUp(), Listing()
-
-### Community 31 - "Community 31"
 Cohesion: 0.47
 Nodes (5): main(), Validate JSON-LD blocks in HTML content., Validate a single schema object., validate_jsonld(), _validate_schema_object()
 
-### Community 32 - "Community 32"
+### Community 31 - "Community 31"
 Cohesion: 0.47
 Nodes (5): _escape(), generate_html(), main(), HTML-escape a value, handling None., Generate a self-contained HTML report from comparison data.
 
-### Community 33 - "Community 33"
+### Community 32 - "Community 32"
 Cohesion: 0.53
 Nodes (5): capture_screenshot(), main(), normalize_url(), Normalize URL and return (url, parsed_url)., Capture a screenshot of a web page.      Args:         url: URL to capture
 
-### Community 34 - "Community 34"
+### Community 33 - "Community 33"
 Cohesion: 0.47
 Nodes (5): analyze_visual(), main(), normalize_url(), Normalize URL and return (url, parsed_url)., Analyze visual aspects of a web page.      Args:         url: URL to analyze
 
-### Community 36 - "Community 36"
+### Community 35 - "Community 35"
 Cohesion: 0.67
 Nodes (3): generate_image(), main(), Call Gemini API to generate an image.
 
-### Community 37 - "Community 37"
+### Community 36 - "Community 36"
 Cohesion: 0.67
 Nodes (3): estimate_cost(), main(), Estimate cost for a single image.
 
-### Community 38 - "Community 38"
+### Community 37 - "Community 37"
 Cohesion: 0.67
 Nodes (3): edit_image(), main(), Call Gemini API to edit an image.
 
@@ -240,11 +235,11 @@ Nodes (2): check(), main()
 ## Knowledge Gaps
 - **228 isolated node(s):** `Tests for scripts/sync_flow.py`, `After a real sync, every FLOW stage directory must contain at least one prompt f`, `Every synced prompt file must start with the CC BY 4.0 attribution comment.`, `agents/seo-flow.md must not grant Bash to the agent (VULN-A01).`, `agents/seo-flow.md must warn the agent that WebFetch responses are untrusted (VU` (+223 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 17`** (16 nodes): `Bullet()`, `Check()`, `CheckCategory()`, `CTA()`, `Divider()`, `FixIt()`, `GBPChecklist()`, `generate()`, `InvisibilityReport()`, `LocalSEOChecklist()`, `Logo()`, `main()`, `generate-pdfs.mjs`, `PageFtr()`, `PageHdr()`, `PhoneNotRinging()`
+- **Thin community `Community 16`** (16 nodes): `Bullet()`, `Check()`, `CheckCategory()`, `CTA()`, `Divider()`, `FixIt()`, `GBPChecklist()`, `generate()`, `InvisibilityReport()`, `LocalSEOChecklist()`, `Logo()`, `main()`, `generate-pdfs.mjs`, `PageFtr()`, `PageHdr()`, `PhoneNotRinging()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 25`** (10 nodes): `BottomGlow()`, `FunnelLabels()`, `FunnelScene()`, `FunnelTier()`, `Particles()`, `RotatingGroup()`, `SearchFunnel3D()`, `TierRing()`, `useCountUp()`, `SearchFunnel3D.jsx`
+- **Thin community `Community 24`** (10 nodes): `BottomGlow()`, `FunnelLabels()`, `FunnelScene()`, `FunnelTier()`, `Particles()`, `RotatingGroup()`, `SearchFunnel3D()`, `TierRing()`, `useCountUp()`, `SearchFunnel3D.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 30`** (7 nodes): `fadeUp()`, `GhostListing()`, `GhostSlot()`, `Listing()`, `NWAMap()`, `StarRating()`, `GhostListing.jsx`
+- **Thin community `Community 28`** (7 nodes): `fadeUp()`, `GhostListing()`, `GhostSlot()`, `Listing()`, `NWAMap()`, `StarRating()`, `GhostListing.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 41`** (4 nodes): `FunnelParticle()`, `SearchFunnel()`, `useCountUp()`, `SearchFunnel.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -256,11 +251,11 @@ Nodes (2): check(), main()
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `validate_url()` connect `Community 3` to `Community 0`, `Community 4`, `Community 6`, `Community 13`, `Community 20`?**
+- **Why does `validate_url()` connect `Community 3` to `Community 1`, `Community 4`, `Community 6`, `Community 13`, `Community 19`?**
   _High betweenness centrality (0.053) - this node is a cross-community bridge._
-- **Why does `run_comparison()` connect `Community 0` to `Community 3`?**
+- **Why does `run_comparison()` connect `Community 1` to `Community 3`?**
   _High betweenness centrality (0.018) - this node is a cross-community bridge._
-- **Why does `load_config()` connect `Community 4` to `Community 27`, `Community 19`?**
+- **Why does `load_config()` connect `Community 4` to `Community 18`, `Community 26`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `run_comparison()` (e.g. with `validate_url()` and `url_hash()`) actually correct?**
   _`run_comparison()` has 7 INFERRED edges - model-reasoned connections that need verification._
@@ -269,4 +264,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `Tests for scripts/sync_flow.py`, `After a real sync, every FLOW stage directory must contain at least one prompt f`, `Every synced prompt file must start with the CC BY 4.0 attribution comment.` to the rest of the system?**
   _228 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.06 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.03 - nodes in this community are weakly interconnected._
