@@ -445,7 +445,7 @@ export const cityPageData = {
       },
     ],
     auditEyebrow: "Why this matters",
-    auditTitle: "The search behavior is already there",
+    auditTitle: "Word of mouth still works — until it doesn't",
     auditStatement:
       "Siloam Springs homeowners already search when something breaks. The businesses that look local, credible, and easy to call are the ones that win the first conversation.",
     auditBody:
