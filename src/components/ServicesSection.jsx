@@ -85,7 +85,7 @@ export default function ServicesSection() {
         >
           <span className={styles.eyebrow}>WHAT I DO</span>
           <h2 className={styles.h2}>
-            Four things that move rankings.<br />
+            Local SEO that moves rankings.<br />
             <em>Nothing else.</em>
           </h2>
           <p className={styles.lead}>
