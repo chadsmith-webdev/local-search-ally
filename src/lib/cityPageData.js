@@ -68,9 +68,9 @@ export const cityPageData = {
     auditBody:
       "Springdale is one of the most active home service markets in NWA. More searches happen here than in many surrounding cities. The residential neighborhoods drive steady demand for HVAC, plumbing, roofing, and remodeling. The commercial mix drives additional demand from property managers and small business owners.",
     citationStats: [
+      "72% of consumers use Google to search for local business information (BrightLocal)",
+      "50% of consumers who perform a local search visit a store within one day (Think With Google)",
       "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
-      "51% of consumers use Google Maps for local search (Backlinko)",
-      "61% of consumers say they are more likely to choose a business that has a website (BrightLocal)",
     ],
     faqTitle: "Questions I expect from Springdale trade owners",
     faqItems: [
