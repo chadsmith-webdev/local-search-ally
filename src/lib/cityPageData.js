@@ -269,9 +269,9 @@ export const cityPageData = {
       },
     ],
     citationStats: [
+      "97% of consumers use Google to evaluate local businesses (BrightLocal)",
+      "42% of searchers click on Google Map Pack results for local queries (Backlinko, 2024)",
       "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
-      "51% of consumers use Google Maps for local search (Backlinko)",
-      "61% of consumers say they are more likely to choose a business that has a website (BrightLocal)",
     ],
     faqItems: [
       {
