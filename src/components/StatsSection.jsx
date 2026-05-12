@@ -81,7 +81,7 @@ export default function StatsSection() {
       >
         {/* Centered label */}
         <motion.p className={styles.label} variants={fadeUp}>
-          Why local search matters
+          Why local SEO matters
         </motion.p>
 
         {/* Stats row */}
