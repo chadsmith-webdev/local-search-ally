@@ -162,7 +162,7 @@ export const cityPageData = {
       },
     ],
     auditEyebrow: "Why Bentonville matters",
-    auditTitle: "The search behavior is already there",
+    auditTitle: "Reviews decide the call before you answer it",
     auditStatement:
       "Bentonville homeowners already search when they need a contractor. They research online, compare reviews, and call whoever shows up first and looks most professional. The businesses that look local, credible, and easy to call are the ones that win.",
     auditBody:
