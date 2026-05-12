@@ -14,7 +14,7 @@ export const cityPageData = {
       "Local SEO for Springdale home service trades. Trades here compete in both Springdale and Fayetteville searches — I help you show up where calls start.",
     ogTitle: "Local SEO in Springdale, AR | Local Search Ally",
     ogDescription:
-      "Springdale local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+      "High search volume, two markets in one. If you're not showing up on Google, a Springdale contractor who is gets that call.",
     jsonLdAreaServed: "Springdale",
     heroAccent: "home service trades.",
     heroBody1:
@@ -114,7 +114,7 @@ export const cityPageData = {
       "Local SEO for Bentonville home service trades. Quality-focused buyers who read reviews and compare — I help you show up clearly and get chosen.",
     ogTitle: "Local SEO in Bentonville, AR | Local Search Ally",
     ogDescription:
-      "Bentonville local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+      "Bentonville homeowners research before they call. Strong reviews and a complete GBP are what win jobs here.",
     jsonLdAreaServed: "Bentonville",
     heroAccent: "home service trades.",
     heroBody1:
@@ -214,7 +214,7 @@ export const cityPageData = {
       "Local SEO for Rogers home service trades. High-growth market, real competition — I help HVAC, plumbing, and roofing businesses get into the Map Pack.",
     ogTitle: "Local SEO in Rogers, AR | Local Search Ally",
     ogDescription:
-      "Rogers local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+      "Rogers grew fast and so did the competition. Local SEO is what separates contractors who get calls from ones who don't.",
     heroAccent: "home service trades.",
     heroBody1:
       "If you run a home service business in Rogers, local SEO is what gets you found when people are ready to hire. When someone searches for \"AC repair Rogers AR\" or \"plumber near me,\" Google shows a short list. If your business is not in that list, you are easy to miss even if your work is better.",
@@ -314,7 +314,7 @@ export const cityPageData = {
       "Local SEO and web design for Centerton home service trades. I help HVAC, electrical, plumbing, and remodeling contractors show up in Google Maps and turn searches into booked calls.",
     ogTitle: "Local SEO in Centerton, AR | Local Search Ally",
     ogDescription:
-      "Centerton local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+      "Centerton is growing and the competition hasn't caught up yet. Good window to build visibility before it gets crowded.",
     jsonLdAreaServed: "Centerton",
     heroAccent: "home service trades.",
     heroBody1:
@@ -407,7 +407,7 @@ export const cityPageData = {
       "Local SEO for Siloam Springs home service trades. HVAC, plumbing, roofing, and electrical — I help you show up in Google Maps and get calls.",
     ogTitle: "Local SEO in Siloam Springs, AR | Local Search Ally",
     ogDescription:
-      "Siloam Springs local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+      "Siloam Springs runs on referrals — until someone searches. Make sure you're there when they do.",
     jsonLdAreaServed: "Siloam Springs",
     heroAccent: "home service trades.",
     heroBody1:
@@ -499,7 +499,7 @@ export const cityPageData = {
       "Local SEO for Bella Vista home service trades. Established community, older homes, trust-focused buyers — I help you show up clearly and get called first.",
     ogTitle: "Local SEO in Bella Vista, AR | Local Search Ally",
     ogDescription:
-      "Bella Vista local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+      "Bella Vista homeowners know what they want and they search before they call. Be found, look credible, get the job.",
     jsonLdAreaServed: "Bella Vista",
     heroAccent: "home service trades.",
     heroBody1:
@@ -591,7 +591,7 @@ export const cityPageData = {
       "Local SEO and web design for Cave Springs home service trades. I help HVAC, electrical, plumbing, and remodeling contractors show up in Google Maps and turn searches into booked calls.",
     ogTitle: "Local SEO in Cave Springs, AR | Local Search Ally",
     ogDescription:
-      "Cave Springs local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+      "Small market, low competition. A clean GBP and a few strong service pages can put you at the top in Cave Springs.",
     jsonLdAreaServed: "Cave Springs",
     heroAccent: "home service trades.",
     heroBody1:
@@ -683,7 +683,7 @@ export const cityPageData = {
       "Local SEO and web design for Lowell home service trades. I help HVAC, plumbing, roofing, and electrical contractors show up in Google Maps and turn searches into booked calls.",
     ogTitle: "Local SEO in Lowell, AR | Local Search Ally",
     ogDescription:
-      "Lowell local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+      "Lowell's steady residential demand doesn't get much attention from local SEO pros. That's your advantage.",
     jsonLdAreaServed: "Lowell",
     heroAccent: "home service trades.",
     heroBody1:
@@ -775,7 +775,7 @@ export const cityPageData = {
       "Local SEO for Fayetteville home service trades. Biggest market in NWA — I help HVAC, plumbing, and roofing businesses show up in the Map Pack and get calls.",
     ogTitle: "Local SEO in Fayetteville, AR | Local Search Ally",
     ogDescription:
-      "Fayetteville local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+      "Fayetteville is the most competitive local search market in NWA. Weak visibility here costs you real money.",
     jsonLdAreaServed: "Fayetteville",
     heroAccent: "home service trades.",
     heroBody1:
