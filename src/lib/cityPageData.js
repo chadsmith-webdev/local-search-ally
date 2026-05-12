@@ -175,9 +175,9 @@ export const cityPageData = {
     faqTitle: "Questions I expect from Bentonville trade owners",
     faqItems: [
       {
-        question: "Do you only work with Bentonville businesses?",
+        question: "I've heard Bentonville buyers are picky. Is that true?",
         answer:
-          "No. I am based in Siloam Springs and work with home service trades across Northwest Arkansas. Bentonville is one of the core markets I serve.",
+          "In my experience, yes — but in a good way. Bentonville homeowners research carefully, read reviews, and pay attention to how professional you look online. That's why I focus heavily on review signals and GBP completeness for trades here. The bar is higher, but so are the job values.",
       },
       {
         question: "How fast can rankings improve?",
@@ -275,9 +275,9 @@ export const cityPageData = {
     ],
     faqItems: [
       {
-        question: "Do you only work with Rogers businesses?",
+        question: "Rogers is growing fast. Does that make it easier or harder to rank?",
         answer:
-          "No. I am based in Siloam Springs and work with home service trades across Northwest Arkansas. Rogers is one of the core markets I serve.",
+          "Harder than it used to be, but still very doable. The market grew faster than most contractors built visibility, which means there's still a real window. But it's closing. The contractors already in the Map Pack are getting the calls while others are still figuring out their GBP.",
       },
       {
         question: "How fast can rankings improve?",
@@ -827,9 +827,9 @@ export const cityPageData = {
     faqTitle: "Questions I expect from Fayetteville trade owners",
     faqItems: [
       {
-        question: "Do you only work with Fayetteville businesses?",
+        question: "Fayetteville feels saturated. Is there still room?",
         answer:
-          "No. I am based in Siloam Springs and work with home service trades across Northwest Arkansas. Fayetteville is one of the core markets I serve.",
+          "There's always room for whoever does the work. Most contractors in Fayetteville have weak or inconsistent local signals — incomplete GBPs, thin service pages, few reviews. Fix those, and you rank. The market is competitive, but the bar to get in is still basic SEO done right.",
       },
       {
         question: "How much does it cost to rank in Fayetteville?",
