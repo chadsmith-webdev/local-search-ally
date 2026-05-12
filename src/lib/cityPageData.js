@@ -62,7 +62,7 @@ export const cityPageData = {
       },
     ],
     auditEyebrow: "Why Springdale matters",
-    auditTitle: "The search behavior is already there",
+    auditTitle: "Two markets, one chance to show up",
     auditStatement:
       "Springdale homeowners search when they need a contractor. High volume, consistent demand across residential and commercial, and homeowners ready to hire now. The contractors that show up first get the calls.",
     auditBody:
