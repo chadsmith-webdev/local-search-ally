@@ -3,7 +3,8 @@
   position: relative;
   z-index: 1;
   padding: 8rem 0;
-  background: var(--bg, #0a0a0a);
+  background: var(--bg, #0a0a0a);;
+  border-top: 1px solid rgba(255, 255, 255, 0.06)
   overflow: hidden;
 }
 
@@ -33,16 +34,22 @@
 
 .eyebrow {
   display: block;
-  font-size: 0.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--carolina, #7bafd4);
   margin-bottom: 1rem;
 }
 
+.eyebrow::before {
+  content: "— ";
+  opacity: 0.5;
+}
+
 .h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--text, #f0f0f0);
