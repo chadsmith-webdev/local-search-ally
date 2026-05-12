@@ -168,9 +168,9 @@ export const cityPageData = {
     auditBody:
       "Bentonville is one of the most active home service markets in Northwest Arkansas. Homeowners here have higher budgets, expect quality, and trust reviews. More of them search before they call, and those searches often happen on mobile the moment a problem shows up. If you show up clearly in that search, you get the call.",
     citationStats: [
+      "97% of consumers read reviews for local businesses (Local Consumer Review Survey, 2026)",
+      "60% of consumers say a business's website quality affects their perception (BrightLocal)",
       "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
-      "51% of consumers use Google Maps for local search (Backlinko)",
-      "61% of consumers say they are more likely to choose a business that has a website (BrightLocal)",
     ],
     faqTitle: "Questions I expect from Bentonville trade owners",
     faqItems: [
