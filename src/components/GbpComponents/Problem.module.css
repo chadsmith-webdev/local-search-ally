@@ -69,14 +69,14 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   margin: 0 0 16px 0;
 }
 
 .intro {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   margin: 0;
 }
 
@@ -123,7 +123,7 @@
 
 .statLabel {
   font-size: 1rem;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   line-height: 1.4;
   font-weight: 500;
 }
@@ -131,7 +131,7 @@
 .statistic p {
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   margin: 0 0 16px 0;
 }
 
@@ -233,7 +233,7 @@
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   margin: 0 0 8px 0;
   letter-spacing: -0.01em;
 }

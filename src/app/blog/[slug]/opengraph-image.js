@@ -7,8 +7,8 @@ export const contentType = OG_CONTENT_TYPE;
 
 const SITE_URL = "https://www.localsearchally.com";
 const CAROLINA = "#7BAFD4";
-const SLATE = "#012169";
-const TEXT = "#f0f0f0";
+const SLATE = "#1a222e";
+const TEXT = "#f8f9fa";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();

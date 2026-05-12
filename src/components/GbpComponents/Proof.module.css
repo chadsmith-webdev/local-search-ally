@@ -58,14 +58,14 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   margin: 0 0 16px 0;
 }
 
 .intro {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   margin: 0;
   max-width: 600px;
 }
@@ -127,7 +127,7 @@
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   margin: 0 0 8px 0;
   letter-spacing: -0.01em;
 }
@@ -135,7 +135,7 @@
 .pillarContent p {
   font-size: 0.85rem;
   line-height: 1.5;
-  color: var(--muted, #888888);
+  color: var(--muted, #7a838d);
   margin: 0;
 }
 
@@ -211,7 +211,7 @@
   font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   letter-spacing: 0.05em;
   margin-bottom: 4px;
   text-shadow: 0 0 20px rgba(123, 175, 212, 0.3);

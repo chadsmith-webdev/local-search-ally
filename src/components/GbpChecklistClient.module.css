@@ -127,7 +127,7 @@
   padding: 0 14px;
   font-size: 1rem;
   font-family: inherit;
-  color: #f8f9fa;
+  color: var(--text);
   transition: border-color 0.15s ease;
   outline: none;
 }
@@ -137,7 +137,7 @@
 }
 
 .input::placeholder {
-  color: #6c757d;
+  color: var(--muted);
 }
 
 /* Submit button */

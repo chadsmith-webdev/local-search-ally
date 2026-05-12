@@ -19,9 +19,9 @@ export const OG_SIZE = { width: 1200, height: 630 };
 export const OG_CONTENT_TYPE = "image/png";
 
 const CAROLINA = "#7BAFD4";
-const SLATE = "#012169";
+const SLATE = "#1a222e";
 const BG = "#0a0a0a";
-const TEXT = "#f0f0f0";
+const TEXT = "#f8f9fa";
 const MUTED = "#555555";
 
 export function loadFonts() {

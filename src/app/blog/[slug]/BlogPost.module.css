@@ -51,7 +51,7 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   margin: 0 0 0.875rem;
 }
 
@@ -59,7 +59,7 @@
   font-family: var(--font-ui, sans-serif);
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--muted, #888);
+  color: var(--muted, #7a838d);
   margin: 0 0 1.25rem;
 }
 
@@ -94,14 +94,14 @@
   font-family: var(--font-ui, sans-serif);
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   margin: 0;
 }
 
 .bylineMeta {
   font-family: var(--font-ui);
   font-size: 0.72rem;
-  color: #555;
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -148,7 +148,7 @@
   font-family: var(--font-ui, sans-serif);
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
   margin: 0 0 6px;
 }
 
@@ -156,7 +156,7 @@
   font-family: var(--font-ui, sans-serif);
   font-size: 0.84rem;
   line-height: 1.7;
-  color: var(--muted, #888);
+  color: var(--muted, #7a838d);
   margin: 0;
 }
 
@@ -176,13 +176,13 @@
 .navBack {
   font-family: var(--font-ui, sans-serif);
   font-size: 0.84rem;
-  color: var(--muted, #888);
+  color: var(--muted, #7a838d);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .navBack:hover {
-  color: var(--text, #f0f0f0);
+  color: var(--text, #f8f9fa);
 }
 
 .navCta {
@@ -191,7 +191,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #1e2a3a;
+  color: var(--slate);
   background: linear-gradient(135deg, #7bafd4 0%, #4a6b8a 100%);
   padding: 10px 20px;
   border-radius: var(--radius-sm);

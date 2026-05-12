@@ -149,7 +149,7 @@ export default function SearchFunnel() {
         <motion.g {...sec(0.3)}>
           <polygon points="15,55 405,55 328,185 92,185" fill="url(#sfFill1)" />
           <polygon points="15,55 405,55 328,185 92,185" fill="none" stroke="#7bafd4" strokeWidth="1.5" filter="url(#sfGlow)" opacity="0.75" />
-          <text x="210" y="107" textAnchor="middle" className="sf" fontSize="27" fontWeight="700" fill="#f0f0f0" letterSpacing="-0.5">
+          <text x="210" y="107" textAnchor="middle" className="sf" fontSize="27" fontWeight="700" fill="#f8f9fa" letterSpacing="-0.5">
             {n1}
           </text>
           <text x="210" y="130" textAnchor="middle" className="sf" fontSize="9" fontWeight="400" fill="#7bafd4" letterSpacing="2.5" opacity="0.9">
@@ -171,7 +171,7 @@ export default function SearchFunnel() {
         <motion.g {...sec(0.75)}>
           <polygon points="95,188 325,188 268,318 152,318" fill="url(#sfFill2)" />
           <polygon points="95,188 325,188 268,318 152,318" fill="none" stroke="#7bafd4" strokeWidth="1.5" filter="url(#sfGlow)" opacity="0.85" />
-          <text x="210" y="238" textAnchor="middle" className="sf" fontSize="23" fontWeight="700" fill="#f0f0f0" letterSpacing="-0.5">
+          <text x="210" y="238" textAnchor="middle" className="sf" fontSize="23" fontWeight="700" fill="#f8f9fa" letterSpacing="-0.5">
             {n2}
           </text>
           <text x="210" y="260" textAnchor="middle" className="sf" fontSize="9" fontWeight="400" fill="#7bafd4" letterSpacing="2" opacity="0.9">
