@@ -820,9 +820,9 @@ export const cityPageData = {
     auditBody:
       "Fayetteville is the most active home service market in Northwest Arkansas. More searches happen here than anywhere else in the region. That means more opportunity, but also more competition. You need strong visibility to stand out.",
     citationStats: [
+      "8 in 10 US consumers search for a local business online at least once a week (BrightLocal)",
+      "42% of searchers click on Google Map Pack results for local queries (Backlinko, 2024)",
       "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
-      "51% of consumers use Google Maps for local search (Backlinko)",
-      "61% of consumers say they are more likely to choose a business that has a website (BrightLocal)",
     ],
     faqTitle: "Questions I expect from Fayetteville trade owners",
     faqItems: [
