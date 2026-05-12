@@ -134,7 +134,7 @@ export const cityPageData = {
       "Mix of newer subdivisions and established neighborhoods creates consistent demand across remodeling, upgrades, and maintenance.",
     ],
     problemBody1:
-      "Most home service trades in Bentonville are busy until the same referral pipeline slows down. When that happens, the companies already showing up in search absorb the demand.",
+      "Bentonville buyers research before they spend. That applies to roofing estimates the same way it applies to anything else. If your online presence doesn't match the quality of your work, you lose jobs to contractors who look more credible on screen.",
     problemBody2:
       "The problem is usually not a lack of searches. It is weak local visibility. Bentonville is competitive enough that if your Google Business Profile, reviews, website, and local signals are thin or uneven, your competitor gets the call first. Homeowners here research online before they call. If you don't show up clearly, they move on.",
     fitEyebrow: "Built for Bentonville",
@@ -232,7 +232,7 @@ export const cityPageData = {
       "Mobile search matters because many calls start the moment a problem appears.",
     ],
     problemBody1:
-      "Most home service trades in Rogers are busy until the same referral pipeline slows down. When that happens, the companies already showing up in search absorb the demand.",
+      "Rogers added more residents faster than most contractors built visibility. That gap is closing. The contractors who got into the Map Pack early are now the default call. Everyone else is competing for what's left.",
     problemBody2:
       "The problem is usually not a lack of searches. It is weak local visibility. Rogers is competitive enough that if your Google Business Profile, city pages, and review signals are uneven, your competitor gets the call first.",
     fitEyebrow: "Built for Rogers",
@@ -425,7 +425,7 @@ export const cityPageData = {
       "Mobile search is critical because homeowners often search the moment a problem happens.",
     ],
     problemBody1:
-      "Most home service trades in Siloam Springs are busy until the same referral pipeline slows down. When that happens, the companies already showing up in search absorb the demand.",
+      "Siloam Springs is a referral market — until someone new moves in, or the usual guy is booked out, or it's urgent enough that waiting for a recommendation isn't an option. That's when they search. And right now, most local contractors aren't there when they do.",
     problemBody2:
       "The problem is usually not a lack of searches. It is weak local visibility. If your Google Business Profile, city pages, and review signals are uneven, your competitor gets the call first.",
     fitEyebrow: "Built for Siloam Springs",
@@ -794,7 +794,7 @@ export const cityPageData = {
       "Established residential base creates consistent demand across maintenance, repairs, and upgrades.",
     ],
     problemBody1:
-      "Most home service trades in Fayetteville are busy until the referral pipeline slows. When that happens, the contractors already showing up in Map Pack absorb the demand.",
+      "Fayetteville has more contractors, more searches, and more competition than anywhere else in NWA. The Map Pack shows three results. If you're not in it, you're invisible to the largest pool of ready-to-hire homeowners in the region.",
     problemBody2:
       "Fayetteville is large enough and competitive enough that weak visibility is not an option. Your Google Business Profile, website, reviews, and local signals need to be solid. If they're not, your competitor with better visibility gets the call. Period.",
     fitEyebrow: "Built for Fayetteville",
