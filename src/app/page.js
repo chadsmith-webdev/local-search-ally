@@ -1,9 +1,9 @@
 import HeroSection from "@/components/HeroSection";
+import ProblemSection from "@/components/ProblemSection";
 import ServicesSection from "@/components/ServicesSection";
 import StatsSection from "@/components/StatsSection";
 import ICPSection from "@/components/ICPSection";
 import ProcessSection from "@/components/ProcessSection";
-import ProofSection from "@/components/ProofSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCTASection from "@/components/FinalCTASection";
 // Legacy sections preserved in /components but removed from homepage
@@ -301,11 +301,11 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
       <HeroSection />
+      <ProblemSection />
       <ServicesSection />
       <StatsSection />
       <ICPSection />
       <ProcessSection />
-      <ProofSection />
       <TestimonialsSection />
       <FinalCTASection />
     </>

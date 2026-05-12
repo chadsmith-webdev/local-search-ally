@@ -1,134 +1,128 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import styles from "./ProblemSection.module.css";
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import styles from './ProblemSection.module.css';
+
+const FAILURE_MODES = [
+  {
+    label: 'No GBP presence',
+    desc: "An unclaimed or neglected profile tells Google you're not serious about serving the area.",
+  },
+  {
+    label: "Service pages that don't rank",
+    desc: 'If your website says "we do it all" and nothing else, it shows up for nothing.',
+  },
+  {
+    label: 'Zero local citations',
+    desc: 'Google cross-references your name, address, and phone across the web. Gaps kill trust.',
+  },
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.6, ease: 'easeOut' },
+  }),
 };
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const PROBLEMS = [
-  {
-    id: "ghost",
-    tag: "The Ghost Business",
-    body: "No Google Business Profile means missing the #1 tool for local visibility. To nearly half your potential customers, you simply don't exist.",
-  },
-  {
-    id: "trust",
-    tag: "The Trust Gap",
-    body: "Poor engagement or missing reviews tell Google your business might not be active. Active businesses respond to reviews. Invisible ones don't.",
-  },
-  {
-    id: "trap",
-    tag: "The Search Trap",
-    body: "When your name, address, and phone number aren't consistent across the web, search engines lose confidence in your data — and rank your competitors instead.",
-  },
-];
-
-const results = [
-  {
-    num: "1",
-    name: "Rogers HVAC & Repair",
-    winner: true,
-    tag: "gets the call",
-  },
-  { num: "2", name: "NWA Climate Control", winner: true, tag: null },
-  { num: "3", name: "Benton County Heating", winner: true, tag: null },
-  { num: "—", name: "Your Business", winner: false, missing: true, tag: null },
-];
 
 export default function ProblemSection() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+
   return (
-    <section className={styles.section}>
+    <section id="the-problem" className={styles.section} ref={ref}>
+      {/* Atmospheric bloom */}
+      <div className={styles.bloom} aria-hidden="true" />
+
       <div className={styles.inner}>
-        {/* Left: headline + problems */}
-        <motion.div
-          className={styles.left}
-          variants={stagger}
+        {/* Eyebrow */}
+        <motion.p
+          className={styles.eyebrow}
+          variants={fadeUp}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          animate={inView ? 'visible' : 'hidden'}
         >
-          <motion.span variants={fadeUp} className={styles.eyebrow}>
-            The Visibility Problem
-          </motion.span>
+          The Real Problem
+        </motion.p>
 
-          <motion.h2 variants={fadeUp} className={styles.h2}>
-            Invisibility is the silent thief of{" "}
-            <em>NWA small business.</em>
-          </motion.h2>
+        {/* H2 — keyword-optimized */}
+        <motion.h2
+          className={styles.h2}
+          variants={fadeUp}
+          custom={1}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+        >
+          Why Good Contractors Go Invisible on Google
+        </motion.h2>
 
-          <motion.p variants={fadeUp} className={styles.intro}>
-            You&rsquo;ve spent years mastering your trade. But while
-            you&rsquo;re out in the field, three invisible problems are keeping
-            new customers from finding you.
-          </motion.p>
+        {/* Subhead */}
+        <motion.p
+          className={styles.subhead}
+          variants={fadeUp}
+          custom={2}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+        >
+          It's not your work. It's not your reputation. It's where you show up
+          when someone needs you most.
+        </motion.p>
 
-          <motion.div variants={stagger} className={styles.problems}>
-            {PROBLEMS.map((p) => (
-              <motion.div key={p.id} variants={fadeUp} className={styles.problem}>
-                <span className={styles.problemTag}>{p.tag}</span>
-                <p className={styles.problemBody}>{p.body}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+        {/* Scene */}
+        <motion.div
+          className={styles.scene}
+          variants={fadeUp}
+          custom={3}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+        >
+          <p className={styles.sceneLine}>
+            A homeowner's pipe bursts at 11pm. They grab their phone and search
+            &ldquo;emergency plumber Bentonville.&rdquo; Three names appear.
+            They call the first one.
+          </p>
+          <p className={styles.sceneLine}>
+            You're not on that list — not because you're not the best plumber in
+            town, but because your Google Business Profile hasn't been touched in
+            two years, your website doesn't mention Bentonville once, and no one's
+            told Google you exist.
+          </p>
+          <p className={styles.sceneLinePunch}>
+            The contractor who gets that call isn't better at plumbing.
+            He's just easier to find.
+          </p>
         </motion.div>
 
-        {/* Right: scenario + mockup + stat */}
-        <motion.div
-          className={styles.right}
-          variants={stagger}
+        {/* Failure modes */}
+        <motion.ul
+          className={styles.failureList}
+          variants={fadeUp}
+          custom={4}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
+          animate={inView ? 'visible' : 'hidden'}
+          role="list"
         >
-          {/* Scenario */}
-          <motion.div variants={fadeUp} className={styles.scenario}>
-            <p className={styles.scenarioLabel}>Real scenario · 9:14pm</p>
-            <p className={styles.scenarioText}>
-              A homeowner in Rogers searches{" "}
-              <strong>&ldquo;HVAC repair near me&rdquo;</strong> on her phone.
-              Three companies appear in the Map Pack. She calls the first one,
-              books the job, and leaves a five-star review — for someone else.
-            </p>
-          </motion.div>
+          {FAILURE_MODES.map((item) => (
+            <li key={item.label} className={styles.failureItem}>
+              <span className={styles.failureLabel}>{item.label}</span>
+              <span className={styles.failureDesc}>{item.desc}</span>
+            </li>
+          ))}
+        </motion.ul>
 
-          {/* Search result mockup */}
-          <motion.div variants={fadeUp} className={styles.mockup}>
-            <p className={styles.mockupLabel}>
-              Google Map Pack · &ldquo;HVAC repair Rogers AR&rdquo;
-            </p>
-            {results.map((r) => (
-              <div
-                key={r.num}
-                className={`${styles.result} ${r.winner ? styles.winner : ""}`}
-              >
-                <span className={styles.resultNum}>{r.num}</span>
-                <span
-                  className={`${styles.resultName} ${r.missing ? styles.missing : ""}`}
-                >
-                  {r.name}
-                </span>
-                {r.tag && <span className={styles.resultTag}>{r.tag}</span>}
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Stat */}
-          <motion.div variants={fadeUp} className={styles.stat}>
-            <p className={styles.statText}>
-              <strong>88% of consumers</strong> who search for a local service
-              business on mobile call or visit within 24 hours.
-            </p>
-            <p className={styles.statSource}>— Think With Google</p>
-          </motion.div>
-        </motion.div>
+        {/* Bridge */}
+        <motion.p
+          className={styles.bridge}
+          variants={fadeUp}
+          custom={5}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+        >
+          These aren't hard problems to fix. But they don't fix themselves.
+        </motion.p>
       </div>
     </section>
   );
