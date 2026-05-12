@@ -2,6 +2,7 @@
   padding-top: var(--section-gap);
   padding-bottom: var(--section-gap);
   position: relative;
+  z-index: 1;
   overflow: hidden;
   /* Slate navy deep background — distinct from all other sections */
   background: var(--bg);

@@ -30,21 +30,19 @@ export default function HeroSection() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className={styles.hero} aria-label="Hero">
-      {/* ── 3D Canvas (desktop only via CSS) ── */}
-      <div className={styles.canvasWrap} aria-hidden="true">
-        <Suspense fallback={<div className={styles.canvasFallback} />}>
-          <HeroScene />
-        </Suspense>
-      </div>
+    <>
+      <section className={styles.hero} aria-label="Hero">
+        {/* ── 3D Canvas (desktop only via CSS) ── */}
+        <div className={styles.canvasWrap} aria-hidden="true">
+          <Suspense fallback={<div className={styles.canvasFallback} />}>
+            <HeroScene />
+          </Suspense>
+        </div>
 
-      {/* ── Atmospheric overlays ── */}
-      {/* Vignette: darkens center so text sits on a dark focal zone */}
-      <div className={styles.vignette} aria-hidden="true" />
-      {/* Bottom fade: dissolves hero into next section */}
-      <div className={styles.bottomFade} aria-hidden="true" />
-      {/* Carolina blue ambient bloom — top right */}
-      <div className={styles.bloom} aria-hidden="true" />
+        {/* ── Atmospheric overlays ── */}
+        <div className={styles.vignette} aria-hidden="true" />
+        {/* Carolina blue ambient bloom — top right */}
+        <div className={styles.bloom} aria-hidden="true" />
 
       {/* ── Content ── */}
       <div className={styles.inner}>
@@ -111,6 +109,9 @@ export default function HeroSection() {
       <div className={styles.scrollCue} aria-hidden="true">
         <span className={styles.scrollLine} />
       </div>
-    </section>
+      </section>
+      {/* Spacer: reserves 100vh in page flow so sections start below the fold */}
+      <div className={styles.heroSpacer} aria-hidden="true" />
+    </>
   );
 }
