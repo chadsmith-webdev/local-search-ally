@@ -764,4 +764,96 @@ export const cityPageData = {
     spokesEyebrow: "By trade",
     spokesTitle: "Lowell SEO by trade",
   },
+
+  "fayetteville-ar": {
+    city: "Fayetteville",
+    state: "Arkansas",
+    slug: "fayetteville-ar",
+    auditCityParam: "Fayetteville",
+    metaTitle: "Local SEO for Fayetteville Trades | Local Search Ally",
+    metaDescription:
+      "Local SEO for Fayetteville home service trades. Biggest market in NWA — I help HVAC, plumbing, and roofing businesses show up in the Map Pack and get calls.",
+    ogTitle: "Local SEO in Fayetteville, AR | Local Search Ally",
+    ogDescription:
+      "Fayetteville local SEO for home service trades. See where you stand, fix priority gaps, and get found in Google Maps.",
+    jsonLdAreaServed: "Fayetteville",
+    heroAccent: "home service trades.",
+    heroBody1:
+      "If you run a home service business in Fayetteville, local SEO is what separates the busy contractors from the ones getting crushed by competition. When someone searches for \"AC repair Fayetteville\" or \"plumber near me,\" Google shows a short list. The contractors in that list get the calls. Everyone else is invisible.",
+    heroBody2:
+      "Fayetteville is the largest market in Northwest Arkansas. More searches happen here. More competition fights for those same spots. I help Fayetteville home service trades cut through the noise and show up where calls start: Google Maps, city + service searches, and service pages built specifically for your market.",
+    briefLabel: "Fayetteville local brief",
+    briefTitle: "Fayetteville is large and competitive. Weak visibility means losing calls to competitors with better search presence.",
+    briefBody:
+      "Fayetteville is the biggest market in NWA. That means more searches, more demand, and more contractors fighting for the top spots. If you're not showing up clearly in the Map Pack, you're invisible to the homeowners searching right now.",
+    signalsLabel: "What that means in Fayetteville",
+    signals: [
+      "Largest market in Northwest Arkansas with high search volume for home services.",
+      "More demand, more visibility, more competition — the contractors at the top capture most calls.",
+      "Mobile-first market where emergency searches happen the moment a problem appears.",
+      "Established residential base creates consistent demand across maintenance, repairs, and upgrades.",
+    ],
+    problemBody1:
+      "Most home service trades in Fayetteville are busy until the referral pipeline slows. When that happens, the contractors already showing up in Map Pack absorb the demand.",
+    problemBody2:
+      "Fayetteville is large enough and competitive enough that weak visibility is not an option. Your Google Business Profile, website, reviews, and local signals need to be solid. If they're not, your competitor with better visibility gets the call. Period.",
+    fitEyebrow: "Built for Fayetteville",
+    tradeList: ["HVAC", "Plumbing", "Roofing", "Electrical", "Landscaping", "Remodeling"],
+    focusAreas: [
+      {
+        title: "Google Business Profile built for high-volume markets",
+        body: "Category alignment, service-area boundaries, strong review momentum, and consistency across all signals. In Fayetteville, weak GBP signals mean you lose to competitors with stronger profiles.",
+      },
+      {
+        title: "Website built for competitive search markets",
+        body: "Service pages optimized for high-search-volume keywords, mobile-first design, clear call paths, and fast load times. You're competing with dozens of contractors. Your website needs to make calling obvious.",
+      },
+      {
+        title: "Local authority and review strategy",
+        body: "Consistent citations across directories, review request workflow that keeps momentum going, and response strategy so you're engaged. In Fayetteville, proof of legitimacy separates you from competitors.",
+      },
+    ],
+    auditEyebrow: "Why Fayetteville matters",
+    auditTitle: "The search behavior is already there",
+    auditStatement:
+      "Fayetteville homeowners search when they need a contractor. High volume, consistent demand, and homeowners ready to hire now. The contractors that show up first get the calls.",
+    auditBody:
+      "Fayetteville is the most active home service market in Northwest Arkansas. More searches happen here than anywhere else in the region. That means more opportunity, but also more competition. You need strong visibility to stand out.",
+    citationStats: [
+      "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
+      "51% of consumers use Google Maps for local search (Backlinko)",
+      "61% of consumers say they are more likely to choose a business that has a website (BrightLocal)",
+    ],
+    faqTitle: "Questions I expect from Fayetteville trade owners",
+    faqItems: [
+      {
+        question: "Do you only work with Fayetteville businesses?",
+        answer:
+          "No. I am based in Siloam Springs and work with home service trades across Northwest Arkansas. Fayetteville is one of the core markets I serve.",
+      },
+      {
+        question: "How much does it cost to rank in Fayetteville?",
+        answer:
+          "Varies. The question is not what it costs — it is what invisibility costs. If you are not showing up in Fayetteville searches, you are losing calls to competitors who do. One HVAC job, one remodel, one electrical project means thousands of dollars. Proper visibility pays for itself fast.",
+      },
+      {
+        question: "My competitors' sites look more polished than mine. What do I do?",
+        answer:
+          "Two options: Rebuild or optimize. If your site is 5+ years old, a rebuild makes sense. You get mobile-first design, current standards, and proper local SEO. If your site is newer but underperforming, optimization often works just as well and costs less.",
+      },
+      {
+        question: "Are there long-term contracts?",
+        answer: "No. I do not lock you into contracts.",
+      },
+      {
+        question: "What is the first step?",
+        answer:
+          "Run the free audit. You get a clear baseline across eight local SEO sections — then reach out and I can talk through what makes sense.",
+      },
+    ],
+    processAuditBody:
+      "I review your visibility in Fayetteville search results, your Google Business Profile, your website, your reviews, and who currently holds the top spots.",
+    spokesEyebrow: "By trade",
+    spokesTitle: "Fayetteville SEO by trade",
+  },
 };
