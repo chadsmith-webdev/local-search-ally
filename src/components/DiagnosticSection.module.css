@@ -68,7 +68,7 @@
 
 /* Status-specific left border accent */
 .warn {
-  border-left: 3px solid #ffcc00;
+  border-left: 3px solid var(--status-yellow);
 }
 .error {
   border-left: 3px solid #ff4d4d;

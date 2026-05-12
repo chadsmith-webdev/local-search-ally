@@ -307,7 +307,7 @@
 
 .statBox p {
   font-size: 0.95rem;
-  color: var(--muted, #b0b0b0);
+  color: var(--muted, #7a838d);
   margin: 0;
   line-height: 1.5;
 }

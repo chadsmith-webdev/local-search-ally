@@ -116,7 +116,7 @@ export default function SearchFunnel() {
           </linearGradient>
           <linearGradient id="sfFill2" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%"   stopColor="#7bafd4" stopOpacity="0.16" />
-            <stop offset="100%" stopColor="#4a6b8a" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#3a5570" stopOpacity="0.1" />
           </linearGradient>
           <linearGradient id="sfFill3" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%"   stopColor="#7bafd4" stopOpacity="0.38" />
@@ -131,7 +131,7 @@ export default function SearchFunnel() {
         <style>{`.sf { font-family: var(--font-mono, 'JetBrains Mono', 'Courier New', monospace); }`}</style>
 
         {/* Background */}
-        <rect width="420" height="520" fill="#0a0f16" rx="12" />
+        <rect width="420" height="520" fill="#0a0a0a" rx="12" />
         <rect width="420" height="520" fill="url(#sfGrid)" rx="12" />
 
         {/* Corner brackets — static, intentionally not animated */}
@@ -155,7 +155,7 @@ export default function SearchFunnel() {
           <text x="210" y="130" textAnchor="middle" className="sf" fontSize="9" fontWeight="400" fill="#7bafd4" letterSpacing="2.5" opacity="0.9">
             GLOBAL SEARCHES / DAY
           </text>
-          <text x="210" y="150" textAnchor="middle" className="sf" fontSize="7.5" fill="#666" letterSpacing="1" opacity="0.8">
+          <text x="210" y="150" textAnchor="middle" className="sf" fontSize="7.5" fill="#7a838d" letterSpacing="1" opacity="0.8">
             All Google searches worldwide
           </text>
         </motion.g>
@@ -177,7 +177,7 @@ export default function SearchFunnel() {
           <text x="210" y="260" textAnchor="middle" className="sf" fontSize="9" fontWeight="400" fill="#7bafd4" letterSpacing="2" opacity="0.9">
             WITH LOCAL INTENT
           </text>
-          <text x="210" y="279" textAnchor="middle" className="sf" fontSize="7.5" fill="#666" letterSpacing="1" opacity="0.8">
+          <text x="210" y="279" textAnchor="middle" className="sf" fontSize="7.5" fill="#7a838d" letterSpacing="1" opacity="0.8">
             46% of all Google searches
           </text>
         </motion.g>
@@ -212,7 +212,7 @@ export default function SearchFunnel() {
           <text x="210" y="384" textAnchor="middle" className="sf" fontSize="8" fontWeight="500" fill="#7bafd4" letterSpacing="2.5" opacity="0.9">
             DAILY CONVERSIONS
           </text>
-          <text x="210" y="402" textAnchor="middle" className="sf" fontSize="7" fill="#666" letterSpacing="1" opacity="0.8">
+          <text x="210" y="402" textAnchor="middle" className="sf" fontSize="7" fill="#7a838d" letterSpacing="1" opacity="0.8">
             offline purchases from local search
           </text>
         </motion.g>
@@ -239,7 +239,7 @@ export default function SearchFunnel() {
         )}
 
         {/* Source note */}
-        <text x="210" y="506" textAnchor="middle" className="sf" fontSize="6.5" fill="#444" letterSpacing="1.5" opacity="0.9">
+        <text x="210" y="506" textAnchor="middle" className="sf" fontSize="6.5" fill="#7a838d" letterSpacing="1.5" opacity="0.9">
           SRC: BRIGHTLOCAL · SEARCHENGINEROUNDTABLE · THINK WITH GOOGLE
         </text>
       </svg>

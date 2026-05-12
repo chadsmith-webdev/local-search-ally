@@ -212,7 +212,7 @@
 .hubStatus {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--status-green, #00ff88);
+  color: var(--status-green, #00c96b);
   letter-spacing: 0.1em;
   font-weight: 600;
 }

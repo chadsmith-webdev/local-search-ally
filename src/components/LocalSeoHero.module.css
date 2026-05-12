@@ -105,7 +105,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--carolina, #b6d6ec);
+  color: var(--carolina, #7bafd4);
   font-size: 1rem;
   margin: 18px auto 0 auto;
   background: rgba(123, 175, 212, 0.07);

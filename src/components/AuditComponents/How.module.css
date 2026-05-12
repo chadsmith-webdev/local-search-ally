@@ -48,7 +48,7 @@
   background: linear-gradient(
     135deg,
     var(--surface) 0%,
-    var(--surface-hover, #242424) 100%
+    var(--surface2) 100%
   );
   transform: translateY(-4px);
 }
