@@ -257,15 +257,15 @@ export const cityPageData = {
     focusAreas: [
       {
         title: "Google Business Profile",
-        body: "Category alignment, service-area relevance, and the trust signals that help you earn map visibility.",
+        body: "Rogers has enough active contractors that a half-built profile gets buried. Category accuracy, photos, and review velocity all matter here.",
       },
       {
         title: "Service-page clarity",
-        body: "Pages built around the city + service searches Rogers homeowners actually use when they need help now.",
+        body: "Pages built around the searches Rogers homeowners use when something breaks — specific enough to rank, clear enough to call.",
       },
       {
         title: "Call-path cleanup",
-        body: "Mobile-first page structure that makes it easy to call instead of bounce back to the search results.",
+        body: "Rogers homeowners on mobile are comparison-shopping fast. One tap to call, no friction — or they're already on your competitor's page.",
       },
     ],
     citationStats: [
@@ -433,15 +433,15 @@ export const cityPageData = {
     focusAreas: [
       {
         title: "Google Business Profile",
-        body: "Category alignment, service-area relevance, and the trust signals that help you earn map visibility.",
+        body: "In a smaller market, your GBP is often the first and only thing a homeowner sees. An incomplete profile here gets skipped, not forgiven.",
       },
       {
         title: "Service-page clarity",
-        body: "Pages built around the city + service searches Siloam Springs homeowners actually use when they need help now.",
+        body: "Pages that match the searches Siloam Springs homeowners run when they can't wait for a referral — specific trade, specific city.",
       },
       {
         title: "Call-path cleanup",
-        body: "Mobile-first page structure that makes it easy to call instead of bounce back to the search results.",
+        body: "Siloam Springs searches happen quickly and decisions get made fast. A clean mobile experience turns a search into a call before they move on.",
       },
     ],
     auditEyebrow: "Why this matters",
