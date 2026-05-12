@@ -1,16 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { Suspense, useRef } from "react";
+import dynamic from "next/dynamic";
+import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import MapPackMockup from "./MapPackMockup";
 import styles from "./HeroSection.module.css";
 
-const container = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.1 },
-  },
-};
+// Load R3F canvas only on client, never SSR
+const HeroScene = dynamic(() => import("./HeroScene"), {
+  ssr: false,
+  loading: () => <div className={styles.canvasFallback} />,
+});
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -21,78 +21,97 @@ const fadeUp = {
   },
 };
 
-// h1 animates y only — opacity stays 1 so it's visible on first paint (LCP)
-const fadeUpNoOpacity = {
-  hidden: { y: 20 },
-  visible: {
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
+const container = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
 };
 
 export default function HeroSection() {
+  const prefersReduced = useReducedMotion();
+
   return (
-    <section className={styles.hero}>
-      <div className={styles.grid} aria-hidden='true' />
+    <section className={styles.hero} aria-label="Hero">
+      {/* ── 3D Canvas (desktop only via CSS) ── */}
+      <div className={styles.canvasWrap} aria-hidden="true">
+        <Suspense fallback={<div className={styles.canvasFallback} />}>
+          <HeroScene />
+        </Suspense>
+      </div>
 
+      {/* ── Atmospheric overlays ── */}
+      {/* Vignette: darkens center so text sits on a dark focal zone */}
+      <div className={styles.vignette} aria-hidden="true" />
+      {/* Bottom fade: dissolves hero into next section */}
+      <div className={styles.bottomFade} aria-hidden="true" />
+      {/* Carolina blue ambient bloom — top right */}
+      <div className={styles.bloom} aria-hidden="true" />
+
+      {/* ── Content ── */}
       <div className={styles.inner}>
-        {/* Left: content */}
-        <div className={styles.content}>
-          {/* Eyebrow sits above H1 — static so it appears in correct order */}
-          <span className={styles.eyebrow}>
-            MAP PACK SPECIALIST · NORTHWEST ARKANSAS
-          </span>
+        <span className={styles.eyebrow}>
+          MAP PACK SPECIALIST · NORTHWEST ARKANSAS
+        </span>
 
-          {/* H1 is outside the stagger container — renders on first paint for LCP */}
-          <h1 className={styles.h1}>
-            Local SEO for NWA <em>Home Service Contractors</em>
-          </h1>
+        {/* H1 outside stagger container for LCP */}
+        <h1 className={styles.h1}>
+          The best contractor in town
+          <br />
+          <em>shouldn&rsquo;t be the hardest to find.</em>
+        </h1>
 
-          <motion.div variants={container} initial='hidden' animate='visible'>
-            <motion.p variants={fadeUp} className={styles.subhead}>
-              Right now, someone in Northwest Arkansas is searching for your
-              exact trade. The question isn&rsquo;t whether they find a
-              contractor &mdash; they will. The question is whether it&rsquo;s
-              you. The audit tells you in 90 seconds.
-            </motion.p>
-
-            <motion.div variants={fadeUp} className={styles.ctas}>
-              <Link
-                href={process.env.NEXT_PUBLIC_AUDIT_URL}
-                className={styles.btnPrimary}
-              >
-                Run Your Free Audit →
-              </Link>
-              <Link href='/contact' className={styles.btnSecondary}>
-                Already know you need help? Book a call →
-              </Link>
-            </motion.div>
-
-            <motion.p variants={fadeUp} className={styles.trust}>
-              No contracts · No setup fees · No agency markup
-            </motion.p>
-
-            {/* AEO: 50-word product overview — always in DOM for crawler extraction */}
-            <motion.p variants={fadeUp} className={styles.overview}>
-              Local Search Ally is a one-person local SEO service in Siloam
-              Springs, AR, helping NWA home service trades get found on Google
-              and into the Map Pack. DIY tools start at $49/month. Done-for-you
-              managed services start at $497/month — scoped on the first call.
-              Month-to-month, no contracts.{" "}
-              <time dateTime='2026-05-11'>Last updated: May 2026.</time>
-            </motion.p>
-          </motion.div>
-        </div>
-
-        {/* Right: Map Pack diagnostic image */}
         <motion.div
-          className={styles.sceneCol}
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+          variants={prefersReduced ? {} : container}
+          initial="hidden"
+          animate="visible"
+          className={styles.textBlock}
         >
-          <MapPackMockup />
+          <motion.p
+            variants={prefersReduced ? {} : fadeUp}
+            className={styles.subhead}
+          >
+            Right now, someone in Northwest Arkansas is searching for your
+            exact trade. The question isn&rsquo;t whether they find a
+            contractor &mdash; they will. The question is whether it&rsquo;s
+            you.
+          </motion.p>
+
+          <motion.div
+            variants={prefersReduced ? {} : fadeUp}
+            className={styles.ctas}
+          >
+            <Link
+              href={process.env.NEXT_PUBLIC_AUDIT_URL || "https://audit.localsearchally.com"}
+              className={styles.btnPrimary}
+            >
+              Run Your Free Audit →
+            </Link>
+            <Link href="/contact" className={styles.btnSecondary}>
+              Book a strategy call →
+            </Link>
+          </motion.div>
+
+          <motion.p
+            variants={prefersReduced ? {} : fadeUp}
+            className={styles.trust}
+          >
+            No contracts · No setup fees · Cancel anytime
+          </motion.p>
         </motion.div>
+
+        {/* AEO blurb — always in DOM for crawlers */}
+        <p className={styles.overview}>
+          Local Search Ally is a one-person local SEO service in Siloam Springs,
+          AR, helping NWA home service trades get found on Google and into the
+          Map Pack. DIY tools start at $49/month. Done-for-you managed services
+          start at $497/month — scoped on the first call. Month-to-month, no
+          contracts.{" "}
+          <time dateTime="2026-05-12">Last updated: May 2026.</time>
+        </p>
+      </div>
+
+      {/* Scroll cue */}
+      <div className={styles.scrollCue} aria-hidden="true">
+        <span className={styles.scrollLine} />
       </div>
     </section>
   );

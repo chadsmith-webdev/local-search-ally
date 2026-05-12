@@ -18,6 +18,14 @@
   border-bottom-color: var(--border-strong);
 }
 
+/* Fully transparent when at the top of the homepage */
+.nav.transparent {
+  background: transparent;
+  border-bottom-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 .inner {
   max-width: 1200px;
   margin-left: auto;

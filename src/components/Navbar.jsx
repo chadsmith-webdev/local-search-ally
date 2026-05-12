@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 
@@ -23,15 +24,19 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    // Check initial scroll position (e.g. after back-navigation)
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
+    <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${isHome && !scrolled ? styles.transparent : ""}`}>
       <div className={styles.inner}>
         {/* Logo */}
         <Link href='/' className={styles.logo}>
