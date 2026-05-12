@@ -5578,7 +5578,7 @@
       "label": "Page()",
       "file_type": "code",
       "source_file": "src/app/page.js",
-      "source_location": "L283",
+      "source_location": "L285",
       "id": "app_page_page",
       "community": 66,
       "norm_label": "page()"
@@ -21095,7 +21095,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/page.js",
-      "source_location": "L283",
+      "source_location": "L285",
       "weight": 1.0,
       "_src": "src_app_page_js",
       "_tgt": "app_page_page",

@@ -36,7 +36,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${isHome && !scrolled ? styles.transparent : ""}`}>
+    <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${!isHome && !scrolled ? styles.opaque : ""}`}>
       <div className={styles.inner}>
         {/* Logo */}
         <Link href='/' className={styles.logo}>
