@@ -237,7 +237,7 @@ export const cityPageData = {
       "The problem is usually not a lack of searches. It is weak local visibility. Rogers is competitive enough that if your Google Business Profile, city pages, and review signals are uneven, your competitor gets the call first.",
     fitEyebrow: "Built for Rogers",
     auditEyebrow: "Why Rogers matters",
-    auditTitle: "The search behavior is already there",
+    auditTitle: "Fast growth brought real competition",
     auditStatement:
       "Rogers homeowners already search when something breaks. The businesses that look local, credible, and easy to call are the ones that win the first conversation.",
     auditBody:
