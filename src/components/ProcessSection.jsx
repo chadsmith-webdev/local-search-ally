@@ -43,9 +43,9 @@ export default function ProcessSection() {
             <motion.div
               key={step.num}
               className={styles.step}
-              initial={{ opacity: 0, y: 28 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.18 }}
+              initial={{ opacity: 0, x: -48 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.18 }}
             >
               <div className={styles.stepNode}>
                 <span className={styles.stepNum}>{step.num}</span>
