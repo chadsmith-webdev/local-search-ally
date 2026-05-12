@@ -23,20 +23,27 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 20);
-    // Check initial scroll position (e.g. after back-navigation)
+    // Set correct initial state after mount (handles back-navigation)
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Before mount, always render transparent on homepage, opaque elsewhere.
+  // This ensures server HTML and first client paint match (no hydration mismatch).
+  const isScrolled = mounted ? scrolled : false;
+  const showOpaque = !isHome && !isScrolled;
+
   return (
-    <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${!isHome && !scrolled ? styles.opaque : ""}`}>
+    <header className={`${styles.nav} ${isScrolled ? styles.scrolled : ""} ${showOpaque ? styles.opaque : ""}`}>
       <div className={styles.inner}>
         {/* Logo */}
         <Link href='/' className={styles.logo}>
