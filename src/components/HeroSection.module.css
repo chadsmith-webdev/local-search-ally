@@ -119,10 +119,6 @@
 .h1 em {
   font-style: normal;
   color: var(--carolina, #7bafd4);
-  /* Soft text-glow matching the scene light */
-  text-shadow:
-    0 0 12px rgba(123, 175, 212, 0.55),
-    0 0 36px rgba(123, 175, 212, 0.18);
 }
 
 .textBlock {
