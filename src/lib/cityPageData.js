@@ -814,7 +814,7 @@ export const cityPageData = {
       },
     ],
     auditEyebrow: "Why Fayetteville matters",
-    auditTitle: "The search behavior is already there",
+    auditTitle: "The biggest market in NWA doesn't forgive weak visibility",
     auditStatement:
       "Fayetteville homeowners search when they need a contractor. High volume, consistent demand, and homeowners ready to hire now. The contractors that show up first get the calls.",
     auditBody:
