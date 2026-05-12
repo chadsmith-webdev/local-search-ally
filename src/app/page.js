@@ -4,6 +4,7 @@ import StatsSection from "@/components/StatsSection";
 import ICPSection from "@/components/ICPSection";
 import ProcessSection from "@/components/ProcessSection";
 import ProofSection from "@/components/ProofSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCTASection from "@/components/FinalCTASection";
 // Legacy sections preserved in /components but removed from homepage
 
@@ -305,6 +306,7 @@ export default function Page() {
       <ICPSection />
       <ProcessSection />
       <ProofSection />
+      <TestimonialsSection />
       <FinalCTASection />
     </>
   );

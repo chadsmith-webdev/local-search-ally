@@ -1,128 +1,127 @@
-/* ─── TestimonialsSection ──────────────────────────────── */
+/* ─── TestimonialsSection ───────────────────────────────────────────── */
 .section {
-  padding: 7rem 0;
-  background: var(--bg);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  z-index: 1;
+  padding: 8rem 0;
+  background: var(--bg, #0a0a0a);
+  overflow: hidden;
+}
+
+/* Carolina blue bloom — bottom-right corner alternates */
+.bloom {
+  position: absolute;
+  bottom: -120px;
+  right: -120px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(123, 175, 212, 0.07) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 .inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--page-gutter);
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter, 1.5rem);
+  padding-right: var(--page-gutter, 1.5rem);
 }
 
-.header {
-  max-width: 620px;
-  margin-bottom: 3.5rem;
-}
-
-.sectionTag {
-  font-family: var(--font-ui);
-  font-size: 0.6875rem;
+.eyebrow {
+  display: block;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
-  opacity: 0.7;
-  display: block;
+  color: var(--carolina, #7bafd4);
   margin-bottom: 1rem;
 }
 
 .h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 2.875rem);
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  color: var(--text);
-  margin-bottom: 1rem;
+  color: var(--text, #f0f0f0);
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
 }
 
-.lead {
-  font-family: var(--font-ui);
-  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-/* ─── Grid ──────────────────────────────────────────────── */
-/* Single card: full-width centered; 2 cards: 50/50; 3: thirds */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.25rem;
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ─── Card ──────────────────────────────────────────────── */
+/* ─── Card ─────────────────────────────────────────────────────────── */
 .card {
-  position: relative;
-  background: var(--surface);
-  border-radius: var(--radius-lg);
+  background: var(--surface, #141414);
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 2rem 1.75rem;
+  padding: 2.5rem 2.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  margin: 0;
-  transition: border-color 0.25s ease;
+  gap: 1.5rem;
 }
 
-.card:hover {
-  border-color: rgba(123, 175, 212, 0.25);
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* ─── Stars ─────────────────────────────────────────────── */
 .stars {
   display: flex;
-  gap: 0.2rem;
+  gap: 3px;
 }
 
 .star {
-  font-size: 1rem;
-  color: var(--carolina);
+  width: 18px;
+  height: 18px;
+  fill: #f5c518;
 }
 
-/* ─── Quote ─────────────────────────────────────────────── */
+.timeAgo {
+  font-size: 0.8rem;
+  color: var(--muted, #888888);
+}
+
 .quote {
-  font-family: var(--font-ui);
-  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+  font-size: 1.05rem;
+  color: var(--text, #f0f0f0);
   line-height: 1.75;
-  color: var(--text);
   font-style: italic;
-  flex: 1;
+  margin: 0;
+  border: none;
+  padding: 0;
 }
 
-/* ─── Google attribution ────────────────────────────────── */
-.googleRow {
+.cardBottom {
   display: flex;
-  justify-content: center;
-  margin-top: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.author {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text, #f0f0f0);
 }
 
 .googleLink {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.625rem;
-  font-family: var(--font-ui);
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--muted);
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--carolina, #7bafd4);
   text-decoration: none;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  padding: 0.5rem 1.125rem;
-  background: var(--surface);
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .googleLink:hover {
-  border-color: var(--border-strong);
-  color: var(--text);
+  opacity: 0.75;
+  text-decoration: underline;
 }
 
 .googleIcon {
@@ -131,45 +130,31 @@
   flex-shrink: 0;
 }
 
-.googleArrow {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  opacity: 0.5;
+/* ─── Leave a review CTA ────────────────────────────────────────────── */
+.cta {
+  margin-top: 2rem;
+  text-align: center;
 }
 
-.googleLink:hover .googleArrow {
-  opacity: 1;
-}
-.attribution {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 1.25rem;
+.ctaLink {
+  font-size: 0.9rem;
+  color: var(--muted, #888888);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.name {
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--text);
+.ctaLink:hover {
+  color: var(--carolina, #7bafd4);
 }
 
-.context {
-  font-family: var(--font-ui);
-  font-size: 0.8125rem;
-  color: var(--muted);
-  letter-spacing: 0.01em;
-}
-
-/* ─── Responsive ─────────────────────────────────────────── */
+/* ─── Responsive ────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  .section {
-    padding: 5rem 0;
+  .card {
+    padding: 1.75rem 1.25rem;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
+  .cardBottom {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
