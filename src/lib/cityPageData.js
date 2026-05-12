@@ -451,9 +451,9 @@ export const cityPageData = {
     auditBody:
       "Siloam Springs is an established market with steady search demand for home services. Those searches often happen on mobile the moment a problem shows up.",
     citationStats: [
+      "46% of all Google searches have local intent (Search Engine Roundtable)",
+      "62% of consumers would avoid a business with incorrect information online (Local Business Discovery and Trust Report, 2023)",
       "88% of consumers who search for a local business on mobile call or visit within 24 hours (Think With Google)",
-      "51% of consumers use Google Maps for local search (Backlinko)",
-      "61% of consumers say they are more likely to choose a business that has a website (BrightLocal)",
     ],
     faqTitle: "Questions I expect from Siloam Springs trade owners",
     faqItems: [
