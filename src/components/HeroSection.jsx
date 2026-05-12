@@ -54,9 +54,7 @@ export default function HeroSection() {
 
         {/* H1 outside stagger container for LCP */}
         <h1 className={styles.h1}>
-          The best contractor in town
-          <br />
-          <em>shouldn&rsquo;t be the hardest to find.</em>
+          Local SEO for <em>Home Service Contractors</em>
         </h1>
 
         <motion.div
