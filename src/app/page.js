@@ -1,7 +1,9 @@
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import StatsSection from "@/components/StatsSection";
+import ICPSection from "@/components/ICPSection";
 import ProcessSection from "@/components/ProcessSection";
+import ProofSection from "@/components/ProofSection";
 import FinalCTASection from "@/components/FinalCTASection";
 // Legacy sections preserved in /components but removed from homepage
 
@@ -300,7 +302,9 @@ export default function Page() {
       <HeroSection />
       <ServicesSection />
       <StatsSection />
+      <ICPSection />
       <ProcessSection />
+      <ProofSection />
       <FinalCTASection />
     </>
   );
