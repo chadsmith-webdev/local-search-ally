@@ -254,6 +254,12 @@
   font-weight: 700;
 }
 
+.footerLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .allServices {
   font-family: var(--font-ui);
   font-size: 0.9375rem;

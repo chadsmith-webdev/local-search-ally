@@ -126,12 +126,22 @@ export default function ServicesSection() {
         {/* ── Footer row ── */}
         <div className={styles.footer}>
           <p className={styles.pricing}>
-            Starting at <strong>$497/month</strong> · No setup fees · No
-            contracts
+            DIY tools from <strong>$49/mo</strong> · Done-for-you from{" "}
+            <strong>$497/mo</strong> · No contracts
           </p>
-          <Link href="/services" className={styles.allServices}>
-            See all services →
-          </Link>
+          <div className={styles.footerLinks}>
+            <Link
+              href="https://audit.localsearchally.com/signup"
+              className={styles.allServices}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Try tools free →
+            </Link>
+            <Link href="/services" className={styles.allServices}>
+              See all services →
+            </Link>
+          </div>
         </div>
       </div>
     </section>
