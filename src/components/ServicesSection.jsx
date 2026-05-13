@@ -131,7 +131,7 @@ export default function ServicesSection() {
           </p>
           <div className={styles.footerLinks}>
             <Link
-              href="https://audit.localsearchally.com/signup"
+              href="https://audit.localsearchally.com/get-started"
               className={styles.allServices}
               target="_blank"
               rel="noopener noreferrer"
