@@ -11,9 +11,8 @@
 
 .hero {
   position: relative;
-  min-height: 100dvh;
   overflow: hidden;
-  padding-top: calc(var(--section-gap) * 1.35);
+  padding-top: var(--section-gap);
   padding-bottom: var(--section-gap);
   border-bottom: 1px solid var(--border);
 }
@@ -46,7 +45,6 @@
 
 .heroInner {
   position: relative;
-  min-height: calc(100dvh - 72px);
   max-width: 1200px;
   width: 100%;
   margin-left: auto;
@@ -55,20 +53,19 @@
   padding-right: var(--page-gutter);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: start;
 }
 
 .heroScene {
   width: 100%;
+  min-width: 0;
   max-width: 920px;
-  margin: 0 auto;
 }
 
 .heroContent {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
+  min-width: 0;
 }
 
 /* ── Breadcrumb (trade spoke pages only) ───────────────────────────────── */
@@ -145,6 +142,8 @@
   font-weight: 700;
   line-height: 1.06;
   max-width: 760px;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .heroAccent {
@@ -167,13 +166,8 @@
 .heroActions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.875rem;
-  margin-top: 0.5rem;
-}
-
-.primaryBtn,
-.secondaryBtn {
-  min-width: 220px;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
 }
 
 .primaryBtn {
@@ -1005,13 +999,13 @@
     padding-bottom: clamp(1.85rem, 6.8vw, 2.65rem);
   }
 
-  .hero {
-    padding-top: calc(var(--section-gap) * 1.1);
+  .heroTitle {
+    font-size: clamp(var(--text-lg), 7vw, var(--text-2xl));
+    line-height: 1.08;
   }
 
-  .heroTitle {
-    font-size: clamp(2rem, 11vw, 2.65rem);
-    line-height: 1.08;
+  .heroAccent {
+    display: block;
   }
 
   .heroBody,

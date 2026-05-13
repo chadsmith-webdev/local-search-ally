@@ -16,25 +16,49 @@ const fadeUpNoOpacity = {
   visible: { y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-// All other hero children
+// All other hero children — y-only so SSR/no-JS still renders content
 const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { y: 20 },
+  visible: { y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-// Scroll-triggered sections
+// Scroll-triggered sections — y-only so SSR/no-JS still renders content
 const sectionReveal = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  hidden: { y: 24 },
+  visible: { y: 0, transition: { duration: 0.55, ease: "easeOut" } },
 };
 
 const tradeSpokes = [
-  { slug: "hvac",       label: "HVAC",       hint: "Heating, cooling, and seasonal search spikes" },
-  { slug: "plumbing",   label: "Plumbing",   hint: "Emergency and maintenance search visibility" },
-  { slug: "electrical", label: "Electrical", hint: "Panel upgrades, repairs, and high-trust jobs" },
-  { slug: "roofing",    label: "Roofing",    hint: "Storm surge and replacement search capture" },
-  { slug: "landscaping",label: "Landscaping",hint: "Seasonal demand and repeat-service visibility" },
-  { slug: "remodeling", label: "Remodeling", hint: "High-consideration projects and trust signals" },
+  {
+    slug: "hvac",
+    label: "HVAC",
+    hint: "Heating, cooling, and seasonal search spikes",
+  },
+  {
+    slug: "plumbing",
+    label: "Plumbing",
+    hint: "Emergency and maintenance search visibility",
+  },
+  {
+    slug: "electrical",
+    label: "Electrical",
+    hint: "Panel upgrades, repairs, and high-trust jobs",
+  },
+  {
+    slug: "roofing",
+    label: "Roofing",
+    hint: "Storm surge and replacement search capture",
+  },
+  {
+    slug: "landscaping",
+    label: "Landscaping",
+    hint: "Seasonal demand and repeat-service visibility",
+  },
+  {
+    slug: "remodeling",
+    label: "Remodeling",
+    hint: "High-consideration projects and trust signals",
+  },
 ];
 
 /**
@@ -98,20 +122,23 @@ export default function CityPageClient({
     <main className={styles.main}>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className={styles.hero}>
-        <div className={styles.grid} aria-hidden="true" />
-        <div className={styles.orb} aria-hidden="true" />
+        <div className={styles.grid} aria-hidden='true' />
+        <div className={styles.orb} aria-hidden='true' />
         <div className={styles.heroInner}>
           <div className={styles.heroScene}>
             <motion.div
               className={styles.heroContent}
               variants={container}
-              initial="hidden"
-              animate="visible"
+              initial='hidden'
+              animate='visible'
             >
               <motion.span className={styles.eyebrow} variants={fadeUp}>
                 {city}, Arkansas
               </motion.span>
-              <motion.h1 className={styles.heroTitle} variants={fadeUpNoOpacity}>
+              <motion.h1
+                className={styles.heroTitle}
+                variants={fadeUpNoOpacity}
+              >
                 Local SEO for {city}
                 <span className={styles.heroAccent}> {heroAccent}</span>
               </motion.h1>
@@ -128,7 +155,7 @@ export default function CityPageClient({
                 >
                   Run Your Free Audit
                 </Link>
-                <Link href="/contact" className={styles.secondaryBtn}>
+                <Link href='/contact' className={styles.secondaryBtn}>
                   Start With a Free Conversation
                 </Link>
               </motion.div>
@@ -144,8 +171,8 @@ export default function CityPageClient({
       <motion.section
         className={`section ${styles.briefSectionWrap}`}
         variants={sectionReveal}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: true }}
       >
         <div className={`container ${styles.briefSection}`}>
@@ -181,11 +208,11 @@ export default function CityPageClient({
       <motion.section
         className={`section ${styles.problemSectionWrap}`}
         variants={sectionReveal}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: true }}
       >
-        <div className="container">
+        <div className='container'>
           <div className={styles.problemEditorial}>
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>The real problem</p>
@@ -205,11 +232,11 @@ export default function CityPageClient({
       <motion.section
         className={`section ${styles.fitSectionWrap}`}
         variants={sectionReveal}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: true }}
       >
-        <div className="container">
+        <div className='container'>
           <div className={styles.fitStructured}>
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>{fitEyebrow}</p>
@@ -250,10 +277,10 @@ export default function CityPageClient({
 
       {/* ── Process ──────────────────────────────────────────────────── */}
       <motion.section
-        className="section"
+        className='section'
         variants={sectionReveal}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: true }}
       >
         <div className={`container ${styles.processSection}`}>
@@ -291,13 +318,13 @@ export default function CityPageClient({
 
       {/* ── Proof / citations ────────────────────────────────────────── */}
       <motion.section
-        className="section"
+        className='section'
         variants={sectionReveal}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: true }}
       >
-        <div className="container">
+        <div className='container'>
           <div className={styles.proofEditorial}>
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>{auditEyebrow}</p>
@@ -325,8 +352,8 @@ export default function CityPageClient({
       <motion.section
         className={`section ${styles.faqSectionWrap}`}
         variants={sectionReveal}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: true }}
       >
         <div className={`container ${styles.faqSection}`}>
@@ -349,12 +376,15 @@ export default function CityPageClient({
       <motion.section
         className={`section ${styles.spokeSection}`}
         variants={sectionReveal}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: true }}
       >
-        <div className="container">
-          <div className={styles.sectionIntro} style={{ marginBottom: "1.35rem" }}>
+        <div className='container'>
+          <div
+            className={styles.sectionIntro}
+            style={{ marginBottom: "1.35rem" }}
+          >
             <p className={styles.sectionEyebrow}>{spokesEyebrow}</p>
             <h2 className={styles.sectionTitle}>{spokesTitle}</h2>
             <p className={styles.bodyCopy}>
@@ -385,9 +415,7 @@ export default function CityPageClient({
       <section className={styles.ctaSection}>
         <div className={styles.ctaInner}>
           <p className={styles.sectionEyebrow}>Next step</p>
-          <h2 className={styles.ctaTitle}>
-            Run your free {city} SEO audit
-          </h2>
+          <h2 className={styles.ctaTitle}>Run your free {city} SEO audit</h2>
           <p className={styles.bodyCopy}>
             Enter your business name and city. I will run a live audit across
             eight local SEO sections and show you exactly where you stand.
@@ -399,7 +427,7 @@ export default function CityPageClient({
             >
               Run Your Free Audit
             </Link>
-            <Link href="/contact" className={styles.secondaryBtn}>
+            <Link href='/contact' className={styles.secondaryBtn}>
               Start With a Free Conversation
             </Link>
           </div>
