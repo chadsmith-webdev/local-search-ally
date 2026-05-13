@@ -190,7 +190,7 @@ export function email2Html(firstName) {
 
       <p style="${pStyles}">&mdash; Chad</p>
 
-      <p style="${mutedPStyles}">P.S. &mdash; If you want me to pull a quick look at your profile and tell you what's actually missing, that's what the free audit is for. No pitch involved. &rarr; <a href="https://www.localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
+      <p style="${mutedPStyles}">P.S. &mdash; If you want me to pull a quick look at your profile and tell you what's actually missing, that's what the free audit is for. No pitch involved. &rarr; <a href="https://audit.localsearchally.com?utm_source=gbp-checklist&utm_medium=email&utm_campaign=drip-email2" style="${linkStyles}">Run your free SEO audit</a></p>
 
       ${footer()}
     </div>
@@ -232,7 +232,7 @@ export function email3Html(firstName) {
 
       <p style="${pStyles}">No contract. No pitch. Just an honest look at what's happening and what I'd do about it.</p>
 
-      <p style="${pStyles}">&rarr; <a href="https://www.localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
+      <p style="${pStyles}">&rarr; <a href="https://audit.localsearchally.com?utm_source=gbp-checklist&utm_medium=email&utm_campaign=drip-email3" style="${linkStyles}">Run your free SEO audit</a></p>
 
       <p style="${pStyles}">&mdash; Chad</p>
 
@@ -276,7 +276,7 @@ export function email4Html(firstName) {
 
       <p style="${pStyles}">No sales pitch at the end. If there's nothing I can help you with, I'll say so.</p>
 
-      <p style="${pStyles}">If you want one: &rarr; <a href="https://www.localsearchally.com" style="${linkStyles}">localsearchally.com</a></p>
+      <p style="${pStyles}">If you want one: &rarr; <a href="https://audit.localsearchally.com?utm_source=gbp-checklist&utm_medium=email&utm_campaign=drip-email4" style="${linkStyles}">Run your free SEO audit</a></p>
 
       <p style="${pStyles}">If you don't, no hard feelings. Keep the checklist. Use it.</p>
 
