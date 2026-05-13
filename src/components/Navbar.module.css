@@ -69,7 +69,7 @@
 .links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--space-6);
   list-style: none;
 }
 
@@ -272,7 +272,7 @@
   padding-top: 1.25rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1099px) {
   .links {
     display: none;
   }
