@@ -151,6 +151,31 @@ export default function SiloamPlumbingClient({ auditUrl }) {
                 easier to close here than in Rogers or Fayetteville, and the
                 gains tend to come faster.
               </p>
+
+              <div
+                className={styles.marketCompare}
+                aria-label='NWA market sizes by population'
+              >
+                <div className={styles.compareTile} data-state='primary'>
+                  <span className={styles.compareCity}>Siloam Springs</span>
+                  <span className={styles.compareValue}>~17K</span>
+                  <span className={styles.compareUnit}>residents</span>
+                </div>
+                <div className={styles.compareTile}>
+                  <span className={styles.compareCity}>Rogers</span>
+                  <span className={styles.compareValue}>~73K</span>
+                  <span className={styles.compareUnit}>residents</span>
+                </div>
+                <div className={styles.compareTile}>
+                  <span className={styles.compareCity}>Fayetteville</span>
+                  <span className={styles.compareValue}>~98K</span>
+                  <span className={styles.compareUnit}>residents</span>
+                </div>
+              </div>
+              <p className={styles.compareNote}>
+                Smaller pool of competing GBPs · Lower cost to reach the top
+                three
+              </p>
             </div>
           </div>
         </div>
@@ -208,6 +233,11 @@ export default function SiloamPlumbingClient({ auditUrl }) {
             <h2 className={styles.sectionTitle}>
               Plumber SEO Services in Siloam Springs
             </h2>
+            <p className={styles.servicesLead}>
+              Three pieces, worked in order. Each one stands on its own, but
+              together they decide whether a homeowner finds you or the plumber
+              one town over.
+            </p>
           </div>
           <div className={styles.serviceCards}>
             <div className={styles.serviceCard}>
