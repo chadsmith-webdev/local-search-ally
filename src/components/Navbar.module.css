@@ -272,6 +272,14 @@
   padding-top: 1.25rem;
 }
 
+.mobileMenu .mobileLogin {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  padding-top: 0.5rem;
+  padding-bottom: 1.25rem;
+}
+
 @media (max-width: 1099px) {
   .links {
     display: none;

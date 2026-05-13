@@ -235,6 +235,15 @@ export default function Navbar() {
         >
           Run Your Free SEO Audit →
         </Link>
+        <a
+          href='https://audit.localsearchally.com/login'
+          className={styles.mobileLogin}
+          target='_blank'
+          rel='noopener noreferrer'
+          onClick={() => setMenuOpen(false)}
+        >
+          Client login →
+        </a>
       </div>
     </header>
   );
