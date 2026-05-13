@@ -18,9 +18,9 @@ export const cityPageData = {
     jsonLdAreaServed: "Springdale",
     heroAccent: "home service trades.",
     heroBody1:
-      "If you run a home service business in Springdale, local SEO is what separates the busy contractors from the ones watching competitors capture most of the calls. Springdale is a dense residential and commercial market. Homeowners search when they need you. The contractors showing up clearly in Google Maps and search results get the work.",
+      "Springdale is a dense, working-class market with some of the highest home service search volume in NWA. But trades here face a challenge most other cities do not: your Google visibility has to work across both Springdale and Fayetteville searches. Homeowners close to the border search both cities. If your local signals are not calibrated for that overlap, you lose calls you should be winning.",
     heroBody2:
-      "Springdale is unique because trades here compete across both Springdale and Fayetteville searches. Local relevance signals have to be dialed in exactly right. A weak Google Business Profile or confusing service-area boundaries mean you lose visibility when it matters most.",
+      "I help Springdale trades get dialed in for both markets — clear service-area boundaries, consistent GBP signals, and service pages that rank where the searches actually happen.",
     briefLabel: "Springdale local brief",
     briefTitle:
       "Springdale is dense and mixed-market. Weak local signals cost you calls to competitors with clearer visibility.",
@@ -118,9 +118,9 @@ export const cityPageData = {
     jsonLdAreaServed: "Bentonville",
     heroAccent: "home service trades.",
     heroBody1:
-      "If you run a home service business in Bentonville, local SEO is what gets you found when people are ready to hire. When someone searches for \"AC repair Bentonville\" or \"plumber near me,\" Google shows a short list. If your business is not in that list, you are easy to miss even if your work is better.",
+      "Bentonville attracts a different kind of homeowner. Higher incomes, newer construction, and buyers who do their research before picking up the phone. Your online presence has to hold up under real scrutiny — reviews, photos, service pages, and a website that looks like you take your business seriously. In this market, a thin or outdated presence loses work to competitors who look more polished, even if their actual work is not better.",
     heroBody2:
-      "I help Bentonville home service trades show up where calls start: Google Maps, city + service searches, and service pages that match what people actually type. Bentonville homeowners research heavily. Reviews matter. Your website, GBP, and service pages need to be sharp. I make sure you show up clearly in all three.",
+      "I help home service trades in Bentonville build the kind of presence that earns trust before the first call — so you are on the shortlist when a Bentonville homeowner starts their search.",
     briefLabel: "Bentonville local brief",
     briefTitle:
       "Bentonville is competitive. Reviews and polish actually determine visibility.",
@@ -217,9 +217,9 @@ export const cityPageData = {
       "Rogers grew fast and so did the competition. Local SEO is what separates contractors who get calls from ones who don't.",
     heroAccent: "home service trades.",
     heroBody1:
-      "If you run a home service business in Rogers, local SEO is what gets you found when people are ready to hire. When someone searches for \"AC repair Rogers AR\" or \"plumber near me,\" Google shows a short list. If your business is not in that list, you are easy to miss even if your work is better.",
+      "Rogers has grown fast and has not slowed down. That growth brought more homeowners — and more contractors competing for the same searches. The businesses showing up in the Map Pack here are not necessarily the best. They are the ones with stronger local signals. In a market this active, weak visibility costs you calls every single week.",
     heroBody2:
-      "I help Rogers home service trades show up where calls start: Google Maps, city + service searches, and service pages that match what people actually type.",
+      "I help home service trades in Rogers tighten those signals — Google Business Profile, service pages, citations, reviews — so when someone searches for your trade in Rogers, your business is the one they find.",
     briefLabel: "Rogers local brief",
     briefTitle:
       "Rogers is competitive enough that weak local signals show up fast.",
@@ -318,9 +318,9 @@ export const cityPageData = {
     jsonLdAreaServed: "Centerton",
     heroAccent: "home service trades.",
     heroBody1:
-      "If you run a home service business in Centerton, local SEO is what separates the contractors capturing early market dominance from the ones arriving late to a growing market. Centerton is one of the fastest-growing cities in Arkansas. New construction means new homeowners. New homeowners search for contractors they can trust. The contractors showing up first in Google Maps and search results establish dominance before a crowded market forms.",
+      "Centerton is in the middle of a growth cycle that does not happen twice. New subdivisions going up, families moving in who do not have an established plumber or HVAC contractor yet. These homeowners go straight to Google because they have no one to call on. The contractor who builds local visibility now gets those first calls — and often keeps those customers for years.",
     heroBody2:
-      "Most new homeowners are first-time Google searchers for home services. They don't have established contractors. They search. The contractor they find first becomes their contractor. In Centerton, visibility now means owning this market before it matures and becomes competitive.",
+      "I help home service trades in Centerton establish a visible local presence while the market is still early — before it gets crowded and the window for easy gains closes.",
     briefLabel: "Centerton local brief",
     briefTitle:
       "Centerton is growing fast. Early visibility means owning the market before competition establishes itself.",
@@ -411,9 +411,9 @@ export const cityPageData = {
     jsonLdAreaServed: "Siloam Springs",
     heroAccent: "home service trades.",
     heroBody1:
-      "If you run a home service business in Siloam Springs, local SEO is what gets you found when people are ready to hire. When someone searches for \"plumber in Siloam Springs\" or \"HVAC near me,\" Google shows a short list. If your business is not in that list, you are easy to miss even if your work is better.",
+      "Siloam Springs is a smaller market, and that works in your favor. Search demand is real — homeowners here still need HVAC, plumbing, roofing, and the rest — but fewer businesses have invested in their local search presence. The gap between showing up and not showing up is easier to close here than in Rogers or Fayetteville. Local SEO improvements move faster in less saturated markets.",
     heroBody2:
-      "I help Siloam Springs home service trades show up where calls start: Google Maps, city + service searches, and service pages that match what people actually type.",
+      "I help home service trades in Siloam Springs take advantage of that gap — building the visibility that earns calls before bigger-market competitors start pushing into the area.",
     briefLabel: "Siloam Springs local brief",
     briefTitle: "It's a tight-knit market. Being found on Google is now table stakes.",
     briefBody:
@@ -503,9 +503,9 @@ export const cityPageData = {
     jsonLdAreaServed: "Bella Vista",
     heroAccent: "home service trades.",
     heroBody1:
-      "If you run a home service business in Bella Vista, local SEO is what separates the contractors getting steady work from the ones struggling to find consistent calls. Bella Vista is an established community with older housing stock. That means steady, predictable demand for HVAC replacement, roofing repairs, plumbing work, and remodeling. Homeowners here know they need help. The contractors they find online are the ones they call.",
+      "Bella Vista has one of the older housing stocks in NWA, and that creates a specific kind of demand. Systems age out. Projects pile up. Homeowners here have owned their homes for years and have real budgets for the right contractor. But they are also selective — they read reviews, look at photos, and compare options before they call. A sparse or sloppy online presence loses you estimates before you ever get the chance to give one.",
     heroBody2:
-      "In Bella Vista, trust and reviews matter more than price. Homeowners are willing to spend for quality work and peace of mind. But they search before they hire. If you're not showing up clearly in Google Maps and search results — with good reviews, a polished website, and strong local signals — you lose calls to contractors who did the work to show up.",
+      "I help home service trades in Bella Vista build the kind of presence that earns the trust of established homeowners — complete profile, consistent reviews, service pages that answer the questions buyers are already asking.",
     briefLabel: "Bella Vista local brief",
     briefTitle: "Bella Vista homeowners search for trusted contractors. Weak visibility means losing work to competitors with stronger search presence.",
     briefBody:
@@ -595,9 +595,9 @@ export const cityPageData = {
     jsonLdAreaServed: "Cave Springs",
     heroAccent: "home service trades.",
     heroBody1:
-      "If you run a home service business in Cave Springs, local SEO is your opportunity to establish visibility before the market matures. Cave Springs is a growing suburb with new residential developments. Most trades here are still relying on word-of-mouth. That means the contractor who shows up in search results now captures the demand from builders, property managers, and homeowners searching online before anyone else establishes visibility.",
+      "Cave Springs is still early. Most of the homes are new, most of the homeowners are new to the area, and most of them do not have a contractor they already trust. When something needs fixing or a project comes up, they search. The local SEO landscape here is not yet crowded — which means a contractor who gets established now has a real head start before the market fills in.",
     heroBody2:
-      "In established markets, visibility is competitive and expensive. In Cave Springs, the window is still open. A solid Google Business Profile, a functional website, and consistent reviews can put you at the top of searches with minimal competition. Early visibility here compounds — you become the known contractor as the market grows.",
+      "I help home service trades in Cave Springs get visible while the competition is still thin — the kind of early positioning that pays off for years as the market keeps growing.",
     briefLabel: "Cave Springs local brief",
     briefTitle: "Cave Springs is growing and open. The contractor who shows up first gets the market as it grows.",
     briefBody:
@@ -687,9 +687,9 @@ export const cityPageData = {
     jsonLdAreaServed: "Lowell",
     heroAccent: "home service trades.",
     heroBody1:
-      "If you run a home service business in Lowell, local SEO is your hidden advantage. Lowell is a smaller market that is significantly underserved in local search. Most trades here are still relying on referrals and word-of-mouth. That means the contractor who shows up in search results faces minimal competition. You can own the top spots in Lowell searches without the battle you would face in Rogers or Bentonville.",
+      "Lowell sits along the I-49 corridor between Rogers and Springdale, which means home service businesses here compete with contractors coming from both directions. Most local trades are still running on referrals and have not built out their Google presence. That makes Lowell an unusually good opportunity — the search demand is there, but the competition for it online is light.",
     heroBody2:
-      "In larger markets, visibility is expensive because competition is fierce. In Lowell, visibility is achievable because few contractors have done the work. A solid Google Business Profile, a functional website, and consistent reviews can put you at the top of local searches. That competitive advantage translates to calls.",
+      "I help home service trades in Lowell show up in the searches happening right now that their competitors are not capturing — before those competitors figure out what they are missing.",
     briefLabel: "Lowell local brief",
     briefTitle: "Lowell is underserved. Contractors who show up online face almost no local competition.",
     briefBody:
@@ -779,9 +779,9 @@ export const cityPageData = {
     jsonLdAreaServed: "Fayetteville",
     heroAccent: "home service trades.",
     heroBody1:
-      "If you run a home service business in Fayetteville, local SEO is what separates the busy contractors from the ones getting crushed by competition. When someone searches for \"AC repair Fayetteville\" or \"plumber near me,\" Google shows a short list. The contractors in that list get the calls. Everyone else is invisible.",
+      "Fayetteville is the biggest market in NWA, and the competition reflects it. When someone searches for a plumber or HVAC contractor here, they are looking at a longer list of options than in most other NWA cities. The businesses in the top three Map Pack spots absorb a disproportionate share of the calls. The ones outside that group are largely invisible, regardless of how good their work is.",
     heroBody2:
-      "Fayetteville is the largest market in Northwest Arkansas. More searches happen here. More competition fights for those same spots. I help Fayetteville home service trades cut through the noise and show up where calls start: Google Maps, city + service searches, and service pages built specifically for your market.",
+      "I help home service trades in Fayetteville build the local presence to compete at that level — the GBP signals, review velocity, and service page coverage it takes to stay in the Map Pack in a market this size.",
     briefLabel: "Fayetteville local brief",
     briefTitle: "Fayetteville is large and competitive. Weak visibility means losing calls to competitors with better search presence.",
     briefBody:

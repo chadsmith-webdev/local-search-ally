@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { Container, Section, Stack } from "@/components/ui/Layout";
-import { H1, H2, Body, Eyebrow } from "@/components/ui/Typography";
+import styles from "../legal.module.css";
 
 export const metadata = {
   title: "Privacy Policy | Local Search Ally",
@@ -17,109 +16,97 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className='bg-bg min-h-screen'>
-      <Section className='pt-32 pb-20'>
-        <Stack gap='4rem' style={{ maxWidth: "800px", margin: "0 auto" }}>
-          {/* Header */}
-          <Stack gap='1.5rem'>
-            <Eyebrow>LEGAL</Eyebrow>
-            <H1 style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)" }}>
-              Privacy Policy
-            </H1>
-            <p className='text-[0.65rem] text-text-muted/40 uppercase tracking-widest'>
-              Effective: Jan 16, 2024 · Updated: Apr 3, 2026
+    <main className={styles.page}>
+      <div className={styles.wrap}>
+        <header className={styles.header}>
+          <span className={styles.eyebrow}>Legal · Privacy</span>
+          <h1 className={styles.title}>Privacy Policy</h1>
+          <div className={styles.meta}>
+            <span className={styles.metaItem}>Effective Jan 16, 2024</span>
+            <span className={styles.metaDot} aria-hidden='true' />
+            <span className={styles.metaItem}>Updated Apr 3, 2026</span>
+          </div>
+          <p className={styles.intro}>
+            This policy explains what information Local Search Ally collects
+            when you use this website, how it&apos;s used, and how it&apos;s
+            stored. This site is operated by Chad Smith, based in Siloam
+            Springs, AR. Questions?{" "}
+            <a href='mailto:chad@localsearchally.com'>
+              chad@localsearchally.com
+            </a>
+          </p>
+        </header>
+
+        <div className={styles.body}>
+          <section className={styles.section} id='what-we-collect'>
+            <span className={styles.sectionLabel}>01</span>
+            <h2 className={styles.h2}>What this site collects and why</h2>
+            <h3 className={styles.h3}>The free audit tool</h3>
+            <p className={styles.p}>
+              When you run a free local SEO audit, you provide: Business name,
+              Website URL, Primary trade, and Service city.
             </p>
-            <div className='h-px bg-white/5 w-full' />
-            <Body>
-              This privacy policy explains what information Local Search Ally
-              collects when you use this website, how it&apos;s used, and how
-              it&apos;s stored. This site is operated by Chad Smith, based in
-              Siloam Springs, AR. Questions?{" "}
-              <a
-                href='mailto:chad@localsearchally.com'
-                className='text-brand hover:underline'
-              >
+            <p className={styles.p}>
+              This information is used to run the audit and return your scored
+              results. It&apos;s stored in a database so your results can be
+              accessed again via a shareable link.
+            </p>
+            <p className={styles.p}>
+              No account is required. You don&apos;t need to provide your name
+              or any personal contact information to see your audit results.
+            </p>
+          </section>
+
+          <hr className={styles.divider} />
+
+          <section className={styles.section} id='third-party-services'>
+            <span className={styles.sectionLabel}>02</span>
+            <h2 className={styles.h2}>Third-party services</h2>
+            <p className={styles.p}>
+              I use Google Analytics 4 to understand site traffic, Supabase for
+              storing audit results, and Resend for sending optional PDF
+              reports. I use Upstash for rate limiting to prevent abuse of the
+              free tool, and the Anthropic Claude API to generate the diagnostic
+              reports.
+            </p>
+          </section>
+
+          <hr className={styles.divider} />
+
+          <section className={styles.section} id='your-rights'>
+            <span className={styles.sectionLabel}>03</span>
+            <h2 className={styles.h2}>Data retention and your rights</h2>
+            <p className={styles.p}>
+              Audit results are stored indefinitely to support shareable result
+              URLs. You have the right to request deletion of your data at any
+              time by emailing{" "}
+              <a href='mailto:chad@localsearchally.com'>
                 chad@localsearchally.com
               </a>
-            </Body>
-          </Stack>
+              .
+            </p>
+          </section>
 
-          {/* Sections */}
-          <Stack gap='3rem'>
-            <Stack gap='1.5rem'>
-              <H2 style={{ fontSize: "1.5rem" }}>
-                What this site collects and why
-              </H2>
-              <Stack gap='1rem'>
-                <h3 className='font-serif font-bold text-text'>
-                  1. The free audit tool
-                </h3>
-                <Body>
-                  When you run a free local SEO audit, you provide: Business
-                  name, Website URL, Primary trade, and Service city.
-                </Body>
-                <Body>
-                  This information is used to run the audit and return your
-                  scored results. It&apos;s stored in a database so your results
-                  can be accessed again via a shareable link.
-                </Body>
-                <Body>
-                  No account is required. You don&apos;t need to provide your
-                  name or any personal contact information to see your audit
-                  results.
-                </Body>
-              </Stack>
-            </Stack>
-
-            <div className='h-px bg-white/5' />
-
-            <Stack gap='1.5rem'>
-              <H2 style={{ fontSize: "1.5rem" }}>Third-party services</H2>
-              <Body>
-                We use Google Analytics 4 to understand site traffic, Supabase
-                for storing audit results, and Resend for sending optional PDF
-                reports. We use Upstash for rate limiting to prevent abuse of
-                the free tool, and the Anthropic Claude API to generate the
-                diagnostic reports.
-              </Body>
-            </Stack>
-
-            <div className='h-px bg-white/5' />
-
-            <Stack gap='1.5rem'>
-              <H2 style={{ fontSize: "1.5rem" }}>
-                Data retention & Your rights
-              </H2>
-              <Body>
-                Audit results are stored indefinitely to support shareable
-                result URLs. You have the right to request deletion of your data
-                at any time by emailing chad@localsearchally.com.
-              </Body>
-            </Stack>
-
-            <div className='h-px bg-white/5' />
-
-            <Stack
-              gap='1.5rem'
-              className='p-8 bg-slate rounded-xl border border-white/5'
+          <aside className={styles.contact}>
+            <span className={styles.eyebrow}>Contact</span>
+            <p className={styles.contactName}>Chad Smith</p>
+            <p className={styles.contactMeta}>
+              Local Search Ally · Siloam Springs, AR
+            </p>
+            <a
+              className={styles.contactLink}
+              href='mailto:chad@localsearchally.com'
             >
-              <Eyebrow>CONTACT</Eyebrow>
-              <p className='font-serif text-lg font-bold text-text'>
-                Chad Smith
-              </p>
-              <Body className='text-sm'>
-                Local Search Ally · Siloam Springs, AR
-              </Body>
-              <a
-                href='mailto:chad@localsearchally.com'
-                className='text-brand text-sm underlineDecoration-carolina/20 underline underline-offset-4'
-              >
-                chad@localsearchally.com
-              </a>
-            </Stack>
-          </Stack>
-        </Stack>
-      </Section>
-    </div>
+              chad@localsearchally.com
+            </a>
+          </aside>
+
+          <nav className={styles.footerNav}>
+            <Link href='/'>← Back to home</Link>
+            <Link href='/terms'>Terms of Service</Link>
+          </nav>
+        </div>
+      </div>
+    </main>
   );
 }
