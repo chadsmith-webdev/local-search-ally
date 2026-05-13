@@ -361,7 +361,7 @@ export default function CityPageClient({
             <p className={styles.sectionEyebrow}>FAQ</p>
             <h2 className={styles.sectionTitle}>{faqTitle}</h2>
           </div>
-          <div className={styles.faqStack}>
+          <div className={styles.faqGrid}>
             {faqItems.map((item) => (
               <article key={item.question} className={styles.faqItem}>
                 <h3 className={styles.faqQuestion}>{item.question}</h3>
@@ -431,6 +431,9 @@ export default function CityPageClient({
               Start With a Free Conversation
             </Link>
           </div>
+          <p className={styles.trust}>
+            No pitch, no signup — results in about 90 seconds.
+          </p>
         </div>
       </section>
     </main>
