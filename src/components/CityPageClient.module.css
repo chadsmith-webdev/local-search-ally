@@ -118,10 +118,10 @@
 .sectionEyebrow::before {
   content: "";
   display: inline-block;
-  width: 24px;
+  width: 32px;
   height: 1px;
   background: var(--carolina);
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 /* ── Typography ────────────────────────────────────────────────────────── */
@@ -238,8 +238,7 @@
 .trust {
   font-family: var(--font-ui);
   font-size: 0.75rem;
-  color: var(--muted);
-  opacity: 0.7;
+  color: rgba(248, 249, 250, 0.62);
   letter-spacing: 0.05em;
 }
 
@@ -340,21 +339,18 @@
 }
 
 .signalItem::before {
-  content: "✓";
-  display: inline-flex;
+  content: "";
+  display: inline-block;
   flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
   width: 24px;
   height: 24px;
   margin-top: 0.08rem;
-  background: rgba(123, 175, 212, 0.15);
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%237bafd4' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M2.5 6.4 L5 8.8 L9.5 3.6'/></svg>")
+      center / 12px 12px no-repeat,
+    rgba(123, 175, 212, 0.15);
   border: 1px solid rgba(123, 175, 212, 0.3);
   border-radius: var(--radius-xs);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--carolina);
-  flex-shrink: 0;
 }
 
 /* ── Brief section ─────────────────────────────────────────────────────── */
@@ -824,37 +820,16 @@
   gap: 1rem;
 }
 
-/* ── Decorative divider lines ──────────────────────────────────────────── */
-
-.problemSectionWrap,
-.proofEditorial {
-  position: relative;
-}
-
-.problemSectionWrap::before,
-.proofEditorial::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.problemSectionWrap::before {
-  border-top: 1px solid rgba(123, 175, 212, 0.08);
-  border-bottom: 1px solid rgba(123, 175, 212, 0.05);
-}
-
-.proofEditorial::before {
-  border: 1px solid rgba(123, 175, 212, 0.08);
-  border-radius: inherit;
-}
-
 /* ── Trade spoke nav ───────────────────────────────────────────────────── */
 
 .spokeSection {
   padding-top: clamp(2.4rem, 5vw, 3.6rem);
   padding-bottom: clamp(2.4rem, 5vw, 3.6rem);
   border-top: 1px solid rgba(123, 175, 212, 0.1);
+}
+
+.spokesIntro {
+  margin-bottom: var(--space-6);
 }
 
 .spokeGrid {
