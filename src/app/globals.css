@@ -1054,6 +1054,91 @@ button.card-default:hover {
   color: var(--text-secondary);
 }
 
+/* Key Takeaways callout */
+.prose .key-takeaways {
+  position: relative;
+  margin: var(--space-8) 0;
+  padding: 1.75rem 1.75rem 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(123, 175, 212, 0.06) 0%,
+    rgba(123, 175, 212, 0.02) 100%
+  );
+  border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--carolina);
+  border-radius: var(--radius-md);
+}
+
+.prose .key-takeaways__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--carolina);
+  margin-bottom: 1.25rem;
+}
+
+.prose .key-takeaways__dot {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--carolina);
+  box-shadow: 0 0 0 4px rgba(123, 175, 212, 0.15);
+  animation: ktPulse 2.4s ease-in-out infinite;
+  transform: translateY(-1px);
+}
+
+@keyframes ktPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(123, 175, 212, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(123, 175, 212, 0.05);
+  }
+}
+
+.prose .key-takeaways ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.prose .key-takeaways li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.875rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.prose .key-takeaways li:last-child {
+  margin-bottom: 0;
+}
+
+.prose .key-takeaways li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 14px;
+  height: 8px;
+  border-left: 2px solid var(--carolina);
+  border-bottom: 2px solid var(--carolina);
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+.prose .key-takeaways li strong {
+  color: var(--text);
+}
+
 .prose blockquote {
   border-left: 2px solid var(--carolina);
   padding: var(--space-2) 0 var(--space-2) var(--space-6);
@@ -1099,6 +1184,51 @@ button.card-default:hover {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-strong);
   margin: var(--space-6) 0;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: var(--text-sm);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  table-layout: auto;
+}
+
+.prose thead {
+  background: var(--surface2);
+}
+
+.prose th {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.prose td {
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose tbody tr:hover {
+  background: var(--surface);
+}
+
+.prose td:first-child,
+.prose th:first-child {
+  color: var(--text);
+  font-weight: 500;
 }
 
 /* Blog intro block — server-rendered above blog list */

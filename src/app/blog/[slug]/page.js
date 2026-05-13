@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { getPostBySlug, getAllPosts } from "@/lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
+import KeyTakeaways from "@/components/KeyTakeaways";
 import styles from "./BlogPost.module.css";
 
 const SITE_URL = "https://www.localsearchally.com";
@@ -21,6 +23,7 @@ const mdxComponents = {
       }}
     />
   ),
+  KeyTakeaways,
 };
 
 export async function generateStaticParams() {
@@ -47,7 +50,9 @@ export async function generateMetadata({ params }) {
       siteName: "Local Search Ally",
       images: [
         {
-          url: metadata.image ? `${SITE_URL}${metadata.image}` : `${SITE_URL}/og-default.png`,
+          url: metadata.image
+            ? `${SITE_URL}${metadata.image}`
+            : `${SITE_URL}/og-default.png`,
           width: 1200,
           height: 630,
         },
@@ -57,7 +62,11 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: metadata.title,
       description: metadata.description,
-      images: [metadata.image ? `${SITE_URL}${metadata.image}` : `${SITE_URL}/og-default.png`],
+      images: [
+        metadata.image
+          ? `${SITE_URL}${metadata.image}`
+          : `${SITE_URL}/og-default.png`,
+      ],
     },
   };
 }
@@ -84,7 +93,9 @@ export default async function BlogPost({ params }) {
     dateModified: metadata.dateModified || metadata.date,
     image: {
       "@type": "ImageObject",
-      url: metadata.image ? `${SITE_URL}${metadata.image}` : `${SITE_URL}/og-default.png`,
+      url: metadata.image
+        ? `${SITE_URL}${metadata.image}`
+        : `${SITE_URL}/og-default.png`,
       width: 1200,
       height: 630,
     },
@@ -111,7 +122,12 @@ export default async function BlogPost({ params }) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${SITE_URL}/blog`,
+      },
       { "@type": "ListItem", position: 3, name: metadata.title, item: url },
     ],
   };
@@ -202,7 +218,11 @@ export default async function BlogPost({ params }) {
 
         {/* Content */}
         <div className='prose'>
-          <MDXRemote source={content} components={mdxComponents} />
+          <MDXRemote
+            source={content}
+            components={mdxComponents}
+            options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+          />
         </div>
 
         {/* Author bio */}
