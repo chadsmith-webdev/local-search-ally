@@ -123,6 +123,23 @@
   line-height: 1.65;
 }
 
+.phoneLink {
+  color: var(--carolina, #7bafd4);
+  font-style: normal;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(123, 175, 212, 0.4);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.phoneLink:hover,
+.phoneLink:focus-visible {
+  color: var(--carolina-dark, #4d8cb9);
+  border-bottom-color: var(--carolina-dark, #4d8cb9);
+}
+
 /* Responsive — single column on mobile */
 @media (max-width: 640px) {
   .grid {

@@ -138,8 +138,12 @@ export default function ICPSection() {
             ease: "easeOut",
           }}
         >
-          Not in NWA? I&apos;m not the right fit — local SEO is most effective
-          when the person doing it knows the market.
+          Don&apos;t see your trade? I work with trades outside NWA too — give
+          me a call at{" "}
+          <a href='tel:+14793808626' className={styles.phoneLink}>
+            (479) 380-8626
+          </a>
+          .
         </motion.p>
       </div>
     </section>
