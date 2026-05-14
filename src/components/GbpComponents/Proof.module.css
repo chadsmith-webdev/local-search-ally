@@ -339,6 +339,7 @@
   height: 18px;
   flex-shrink: 0;
   margin-top: 2px;
+  color: var(--carolina, #7bafd4);
 }
 
 @media (max-width: 900px) {

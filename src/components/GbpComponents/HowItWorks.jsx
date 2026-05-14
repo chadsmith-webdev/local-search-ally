@@ -9,17 +9,11 @@ const SIGNALS = [
     label: "Profile Accuracy",
     sub: "Name, address, phone, hours",
     icon: (
-      <svg
-        viewBox='0 0 20 20'
-        fill='none'
-        stroke='currentColor'
-        strokeWidth='1.5'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-        aria-hidden='true'
-      >
-        <rect x='3' y='3' width='14' height='14' rx='2' />
-        <path d='M7 10l2 2 4-4' />
+      <svg viewBox='0 0 24 24' aria-hidden='true'>
+        <path
+          fill='currentColor'
+          d='M10.6,16.6L17.65,9.55L16.23,8.13L10.6,13.75L7.77,10.92L6.36,12.33L10.6,16.6M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z'
+        />
       </svg>
     ),
     position: "topLeft",
@@ -29,16 +23,11 @@ const SIGNALS = [
     label: "Category Match",
     sub: "Primary & secondary categories",
     icon: (
-      <svg
-        viewBox='0 0 20 20'
-        fill='none'
-        stroke='currentColor'
-        strokeWidth='1.5'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-        aria-hidden='true'
-      >
-        <path d='M3 5h2M3 10h2M3 15h2M7 5h10M7 10h10M7 15h10' />
+      <svg viewBox='0 0 24 24' aria-hidden='true'>
+        <path
+          fill='currentColor'
+          d='M7,5H21V7H7V5M7,13V11H21V13H7M4,4.5A1.5,1.5 0 0,1 5.5,6A1.5,1.5 0 0,1 4,7.5A1.5,1.5 0 0,1 2.5,6A1.5,1.5 0 0,1 4,4.5M4,10.5A1.5,1.5 0 0,1 5.5,12A1.5,1.5 0 0,1 4,13.5A1.5,1.5 0 0,1 2.5,12A1.5,1.5 0 0,1 4,10.5M7,19V17H21V19H7M4,16.5A1.5,1.5 0 0,1 5.5,18A1.5,1.5 0 0,1 4,19.5A1.5,1.5 0 0,1 2.5,18A1.5,1.5 0 0,1 4,16.5Z'
+        />
       </svg>
     ),
     position: "topRight",
@@ -48,16 +37,11 @@ const SIGNALS = [
     label: "Review Signals",
     sub: "Rating, count & response rate",
     icon: (
-      <svg
-        viewBox='0 0 20 20'
-        fill='none'
-        stroke='currentColor'
-        strokeWidth='1.5'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-        aria-hidden='true'
-      >
-        <path d='M10 2l2.4 4.8 5.3.8-3.85 3.75.9 5.25L10 14l-4.75 2.58.9-5.25L2.3 7.6l5.3-.8Z' />
+      <svg viewBox='0 0 24 24' aria-hidden='true'>
+        <path
+          fill='currentColor'
+          d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'
+        />
       </svg>
     ),
     position: "bottomLeft",
@@ -67,19 +51,11 @@ const SIGNALS = [
     label: "Activity Signals",
     sub: "Posts, photos & Q&A updates",
     icon: (
-      <svg
-        viewBox='0 0 20 20'
-        fill='none'
-        stroke='currentColor'
-        strokeWidth='1.5'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-        aria-hidden='true'
-      >
-        <rect x='2' y='3' width='7' height='7' rx='1' />
-        <rect x='11' y='3' width='7' height='7' rx='1' />
-        <rect x='2' y='12' width='7' height='7' rx='1' />
-        <path d='M11 15.5h7M14.5 12v7' />
+      <svg viewBox='0 0 24 24' aria-hidden='true'>
+        <path
+          fill='currentColor'
+          d='M3,11H11V3H3M3,21H11V13H3M13,21H21V13H13M13,3V11H21V3'
+        />
       </svg>
     ),
     position: "bottomRight",

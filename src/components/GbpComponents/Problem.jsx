@@ -62,18 +62,15 @@ export default function Problem() {
             >
               <div className={styles.problemIcon}>
                 <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                  viewBox='0 0 24 24'
                   role='img'
                   aria-label='Profile card icon'
                   focusable='false'
                 >
-                  <rect x='2' y='3' width='14' height='12' rx='1' />
-                  <path d='M5 7h8M5 10h5' />
+                  <path
+                    fill='currentColor'
+                    d='M22,3H2C0.91,3.04 0.04,3.91 0,5V19C0.04,20.09 0.91,20.96 2,21H22C23.09,20.96 23.96,20.09 24,19V5C23.96,3.91 23.09,3.04 22,3M22,19H2V5H22V19M14,17V15.75C14,14.09 10.66,13.25 9,13.25C7.34,13.25 4,14.09 4,15.75V17H14M9,7A2.5,2.5 0 0,0 6.5,9.5A2.5,2.5 0 0,0 9,12A2.5,2.5 0 0,0 11.5,9.5A2.5,2.5 0 0,0 9,7M14,7V8H20V7H14M14,9V10H20V9H14M14,11V12H18V11H14Z'
+                  />
                 </svg>
               </div>
               <h3>Incomplete or Out-of-Date Profile</h3>
@@ -95,17 +92,15 @@ export default function Problem() {
             >
               <div className={styles.problemIcon}>
                 <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                  viewBox='0 0 24 24'
                   role='img'
                   aria-label='Star icon'
                   focusable='false'
                 >
-                  <path d='M9 2l2.3 5.4h5.9l-4.8 3.6 1.8 5.4-4.2-3.2-4.2 3.2 1.8-5.4-4.8-3.6h5.9z' />
+                  <path
+                    fill='currentColor'
+                    d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'
+                  />
                 </svg>
               </div>
               <h3>Few Reviews or a Rating Under 4.0</h3>
@@ -126,18 +121,15 @@ export default function Problem() {
             >
               <div className={styles.problemIcon}>
                 <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                  viewBox='0 0 24 24'
                   role='img'
                   aria-label='Tag icon'
                   focusable='false'
                 >
-                  <path d='M2 2h6l8 8-6 6-8-8V2z' />
-                  <circle cx='6' cy='6' r='1' />
+                  <path
+                    fill='currentColor'
+                    d='M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4A2,2 0 0,0 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z'
+                  />
                 </svg>
               </div>
               <h3>Wrong Categories or Missing Services</h3>
@@ -159,19 +151,15 @@ export default function Problem() {
             >
               <div className={styles.problemIcon}>
                 <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                  viewBox='0 0 24 24'
                   role='img'
                   aria-label='Photo icon'
                   focusable='false'
                 >
-                  <rect x='1' y='4' width='16' height='11' rx='1' />
-                  <circle cx='9' cy='10' r='3' />
-                  <path d='M6 4l1.5-2h3L12 4' />
+                  <path
+                    fill='currentColor'
+                    d='M19,19H5V5H19M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M13.96,12.29L11.21,15.83L9.25,13.47L6.5,17H17.5L13.96,12.29Z'
+                  />
                 </svg>
               </div>
               <h3>No Photos — or Photos from 2019</h3>
@@ -202,7 +190,9 @@ export default function Problem() {
               before they call. If your profile is incomplete, out of date, or
               buried in results, you're invisible to almost all of them.
             </p>
-            <p className={styles.source}>BrightLocal, "Local Consumer Review Survey"</p>
+            <p className={styles.source}>
+              BrightLocal, "Local Consumer Review Survey"
+            </p>
           </motion.div>
         </div>
       </div>

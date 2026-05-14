@@ -42,14 +42,11 @@ export default function Proof() {
           <div className={styles.engineGrid}>
             <div className={`${styles.pillar} ${styles.pillar1}`}>
               <div className={styles.pillarIcon}>
-                <svg
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1.5'
-                >
-                  <rect x='3' y='4' width='18' height='15' rx='2' />
-                  <path d='M8 4V2M16 4V2M3 9h18' />
+                <svg viewBox='0 0 24 24' aria-hidden='true'>
+                  <path
+                    fill='currentColor'
+                    d='M16,12.7L13.2,15.5L11.8,14.1L10.4,15.5L13.2,18.4L17.5,14.1L16,12.7M19,3H14.8C14.4,1.8 13.3,1 12,1C10.7,1 9.6,1.8 9.2,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,19H5V5H19V19Z'
+                  />
                 </svg>
               </div>
               <div className={styles.pillarContent}>
@@ -61,14 +58,11 @@ export default function Proof() {
 
             <div className={`${styles.pillar} ${styles.pillar2}`}>
               <div className={styles.pillarIcon}>
-                <svg
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1.5'
-                >
-                  <path d='M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z' />
-                  <line x1='7' y1='7' x2='7.01' y2='7' />
+                <svg viewBox='0 0 24 24' aria-hidden='true'>
+                  <path
+                    fill='currentColor'
+                    d='M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4A2,2 0 0,0 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z'
+                  />
                 </svg>
               </div>
               <div className={styles.pillarContent}>
@@ -83,13 +77,11 @@ export default function Proof() {
 
             <div className={`${styles.pillar} ${styles.pillar3}`}>
               <div className={styles.pillarIcon}>
-                <svg
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1.5'
-                >
-                  <path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z' />
+                <svg viewBox='0 0 24 24' aria-hidden='true'>
+                  <path
+                    fill='currentColor'
+                    d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'
+                  />
                 </svg>
               </div>
               <div className={styles.pillarContent}>
@@ -149,9 +141,15 @@ export default function Proof() {
               "I will communicate clearly and often.",
             ].map((item) => (
               <li key={item} className={styles.listItem}>
-                <svg className={styles.checkmark} viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                  <circle cx="9" cy="9" r="8" stroke="var(--carolina)" strokeWidth="1.2" />
-                  <path d="M5.5 9l2.5 2.5 4.5-5" stroke="var(--carolina)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <svg
+                  className={styles.checkmark}
+                  viewBox='0 0 24 24'
+                  aria-hidden='true'
+                >
+                  <path
+                    fill='currentColor'
+                    d='M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.41,10.09L6,11.5L11,16.5Z'
+                  />
                 </svg>
                 {item}
               </li>
