@@ -406,6 +406,13 @@ export default function CityPageClient({
                 </Link>
               ))}
             </div>
+            <p className={styles.spokesFallback}>
+              Don&rsquo;t see your trade? I work with home service trades across
+              Northwest Arkansas.{" "}
+              <Link href='/contact' className={styles.spokesFallbackLink}>
+                Schedule a call →
+              </Link>
+            </p>
           </div>
         </motion.section>
 
