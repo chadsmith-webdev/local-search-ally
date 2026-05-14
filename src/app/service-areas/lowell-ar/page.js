@@ -28,19 +28,22 @@ export function generateMetadata() {
 export default function LowellServiceAreaPage() {
   const localBusinessJsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     "@id": "https://www.localsearchally.com/#localbusiness",
     name: "Local Search Ally",
     url: "https://www.localsearchally.com",
     telephone: "+14793808626",
+    image: "https://www.localsearchally.com/icon.png",
     description:
-      "Local SEO and web design for home service trades in Northwest Arkansas.",
+      "Local SEO and web development for NWA home service trades — HVAC, plumbing, roofing, electrical, landscaping, and remodeling.",
+    founder: { "@id": "https://www.localsearchally.com/about#chad-smith" },
     areaServed: [
       {
         "@type": "City",
         name: d.jsonLdAreaServed,
         containedInPlace: { "@type": "State", name: "Arkansas" },
       },
+      { "@type": "AdministrativeArea", name: "Northwest Arkansas" },
     ],
     address: {
       "@type": "PostalAddress",
@@ -54,6 +57,19 @@ export default function LowellServiceAreaPage() {
       latitude: "36.18808",
       longitude: "-94.54064",
     },
+    openingHours: ["Mo-Fr 08:00-18:00", "Sa 09:00-12:00", "Su 14:00-18:00"],
+    knowsAbout: [
+      "Local SEO",
+      "Google Business Profile",
+      "Web Development",
+      "Contractor Marketing",
+    ],
+    sameAs: [
+      "https://www.linkedin.com/in/chadsmith_localsearchally",
+      "https://www.facebook.com/localsearchally",
+      "https://www.youtube.com/@chadsmith_localsearchally",
+    ],
+    priceRange: "$$",
   };
 
   const faqJsonLd = {
@@ -70,17 +86,38 @@ export default function LowellServiceAreaPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.localsearchally.com" },
-      { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.localsearchally.com/service-areas" },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.localsearchally.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Service Areas",
+        item: "https://www.localsearchally.com/service-areas",
+      },
       { "@type": "ListItem", position: 3, name: d.city, item: pageUrl },
     ],
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessJsonLd),
+        }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <CityPageClient
         city={d.city}
         slug={d.slug}

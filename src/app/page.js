@@ -8,7 +8,6 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCTASection from "@/components/FinalCTASection";
 // Legacy sections preserved in /components but removed from homepage
 
-
 export const metadata = {
   title: "Local SEO for NWA Contractors | Local Search Ally",
   description:
@@ -52,17 +51,27 @@ const jsonLd = {
   areaServed: [
     {
       "@type": "City",
+      name: "Lowell",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
       name: "Rogers",
       containedInPlace: { "@type": "State", name: "Arkansas" },
     },
     {
       "@type": "City",
-      name: "Bentonville",
+      name: "Centerton",
       containedInPlace: { "@type": "State", name: "Arkansas" },
     },
     {
       "@type": "City",
-      name: "Fayetteville",
+      name: "Pea Ridge",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Tontitown",
       containedInPlace: { "@type": "State", name: "Arkansas" },
     },
     {
@@ -72,7 +81,42 @@ const jsonLd = {
     },
     {
       "@type": "City",
+      name: "Bella Vista",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Bentonville",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Cave Springs",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Fayetteville",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Prairie Grove",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Eureka Springs",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
       name: "Siloam Springs",
+      containedInPlace: { "@type": "State", name: "Arkansas" },
+    },
+    {
+      "@type": "City",
+      name: "Farmington",
       containedInPlace: { "@type": "State", name: "Arkansas" },
     },
     { "@type": "AdministrativeArea", name: "Northwest Arkansas" },
