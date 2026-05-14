@@ -51,12 +51,12 @@ export default function GbpHeroSVG() {
       />
 
       {/* Location pin in header */}
-      <path
-        d='M110 88 c0-8 13-8 13 0 0 8-6.5 16-6.5 16s-6.5-8-6.5-16z'
-        fill='#7bafd4'
-        opacity='0.55'
-      />
-      <circle cx='116.5' cy='88' r='3.5' fill='#0a0a0a' opacity='0.4' />
+      <g transform='translate(106, 78) scale(0.9)' opacity='0.55'>
+        <path
+          fill='#7bafd4'
+          d='M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z'
+        />
+      </g>
 
       {/* Business name line */}
       <rect
@@ -71,12 +71,16 @@ export default function GbpHeroSVG() {
 
       {/* Star rating row */}
       {[0, 1, 2, 3, 4].map((i) => (
-        <path
+        <g
           key={`star-${i}`}
-          d={`M${82 + i * 22} 146 l3 6 6.5 1-4.8 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.8-4.6 6.5-1z`}
-          fill='#7bafd4'
+          transform={`translate(${75 + i * 22}, 142) scale(0.7)`}
           opacity={i < 4 ? 0.5 : 0.2}
-        />
+        >
+          <path
+            fill='#7bafd4'
+            d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'
+          />
+        </g>
       ))}
 
       {/* Review count text bar */}

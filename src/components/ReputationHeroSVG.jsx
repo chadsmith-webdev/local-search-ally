@@ -60,8 +60,12 @@ export default function ReputationHeroSVG() {
         stroke='#7bafd4'
         strokeWidth='1'
       />
-      <circle cx='80' cy='80' r='5' fill='#7bafd4' opacity='0.35' />
-      <path d='M68 94 q12-8 24 0' fill='#7bafd4' opacity='0.35' />
+      <g transform='translate(66, 70) scale(1.17)' opacity='0.4'>
+        <path
+          fill='#7bafd4'
+          d='M12,19.2C9.5,19.2 7.29,17.92 6,15.98C6.03,13.99 10,12.9 12,12.9C13.99,12.9 17.97,13.99 18,15.98C16.71,17.92 14.5,19.2 12,19.2M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z'
+        />
+      </g>
 
       {/* Reviewer name line */}
       <rect
@@ -86,12 +90,16 @@ export default function ReputationHeroSVG() {
 
       {/* 5-star row */}
       {[0, 1, 2, 3, 4].map((i) => (
-        <path
+        <g
           key={`star-${i}`}
-          d={`M${70 + i * 24} 132 l3.5 7 7.5 1.1-5.5 5.3 1.3 7.5-6.8-3.5-6.8 3.5 1.3-7.5-5.5-5.3 7.5-1.1z`}
-          fill='#7bafd4'
+          transform={`translate(${62 + i * 24}, 128) scale(0.8)`}
           opacity={i < 5 ? 0.5 : 0.15}
-        />
+        >
+          <path
+            fill='#7bafd4'
+            d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'
+          />
+        </g>
       ))}
 
       {/* Review text lines */}
