@@ -39,7 +39,9 @@ export default function FAQ() {
   function toggle(i) {
     const next = openIndex === i ? null : i;
     setOpenIndex(next);
-    setAnnouncement(next !== null ? `Answer expanded for: ${FAQS[i].q}` : "Answer collapsed");
+    setAnnouncement(
+      next !== null ? `Answer expanded for: ${FAQS[i].q}` : "Answer collapsed",
+    );
   }
 
   const motionItemProps = shouldReduceMotion
@@ -51,21 +53,24 @@ export default function FAQ() {
         variants: {
           hidden: { opacity: 0, y: 16 },
           visible: (i) => ({
-            opacity: 1, y: 0,
+            opacity: 1,
+            y: 0,
             transition: { duration: 0.5, ease: "easeOut", delay: i * 0.07 },
           }),
         },
       };
 
   return (
-    <section className={styles.section} aria-labelledby="faq-heading">
+    <section className={styles.section} aria-labelledby='faq-heading'>
       <div className={styles.container}>
         <div className={styles.header}>
           <span className={styles.eyebrow}>Questions</span>
-          <h2 className={styles.heading} id="faq-heading">Web Design Questions for NWA Contractors</h2>
+          <h2 className={styles.heading} id='faq-heading'>
+            Web Design Questions for NWA Contractors
+          </h2>
         </div>
 
-        <div className={styles.list} role="list">
+        <div className={styles.list} role='list'>
           {FAQS.map((item, i) => {
             const id = item.q
               .toLowerCase()
@@ -81,7 +86,7 @@ export default function FAQ() {
                 custom={i}
                 {...motionItemProps}
                 className={`${styles.item} ${isOpen ? styles.itemOpen : ""}`}
-                role="listitem"
+                role='listitem'
               >
                 <button
                   id={btnId}
@@ -91,9 +96,15 @@ export default function FAQ() {
                   aria-controls={panelId}
                 >
                   <span>{item.q}</span>
-                  <span className={`${styles.icon} ${isOpen ? styles.iconOpen : ""}`} aria-hidden="true">
-                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                      <path d="M10 4v12M4 10h12" />
+                  <span
+                    className={`${styles.icon} ${isOpen ? styles.iconOpen : ""}`}
+                    aria-hidden='true'
+                  >
+                    <svg viewBox='0 0 24 24' aria-hidden='true'>
+                      <path
+                        fill='currentColor'
+                        d='M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z'
+                      />
                     </svg>
                   </span>
                 </button>
@@ -101,7 +112,7 @@ export default function FAQ() {
                 {shouldReduceMotion ? (
                   <div
                     id={panelId}
-                    role="region"
+                    role='region'
                     aria-labelledby={btnId}
                     className={styles.answer}
                     style={!isOpen ? { display: "none" } : undefined}
@@ -111,7 +122,7 @@ export default function FAQ() {
                 ) : (
                   <motion.div
                     id={panelId}
-                    role="region"
+                    role='region'
                     aria-labelledby={btnId}
                     className={styles.answer}
                     initial={false}
@@ -130,7 +141,12 @@ export default function FAQ() {
           })}
         </div>
 
-        <div className={styles.srOnly} role="status" aria-live="polite" aria-atomic="true">
+        <div
+          className={styles.srOnly}
+          role='status'
+          aria-live='polite'
+          aria-atomic='true'
+        >
           {announcement}
         </div>
       </div>

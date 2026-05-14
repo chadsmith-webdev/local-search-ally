@@ -10,23 +10,25 @@ const fadeUp = {
 
 export default function Solution() {
   return (
-    <section className={styles.section} aria-labelledby="solution-heading">
+    <section className={styles.section} aria-labelledby='solution-heading'>
       <div className={styles.container}>
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial='hidden'
+          whileInView='visible'
           viewport={{ once: true }}
           variants={fadeUp}
           className={styles.header}
         >
           <span className={styles.eyebrow}>The Fix</span>
-          <h2 className={styles.heading} id="solution-heading">How Web Design Works for NWA Contractors</h2>
+          <h2 className={styles.heading} id='solution-heading'>
+            How Web Design Works for NWA Contractors
+          </h2>
         </motion.div>
 
         <div className={styles.grid}>
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial='hidden'
+            whileInView='visible'
             viewport={{ once: true }}
             variants={fadeUp}
             transition={{ delay: 0.1 }}
@@ -36,13 +38,15 @@ export default function Solution() {
               <p>
                 Most contractor websites are built by designers who don't
                 understand SEO, or by SEO people who can't design. I do both.
-                Every page is custom-coded, mobile-first, and built to
-                generate calls — not win a design award.
+                Every page is custom-coded, mobile-first, and built to generate
+                calls — not win a design award.
               </p>
             </div>
 
             <div className={styles.transparency}>
-              <h3 className={styles.transparencyHeading}>What I will never do</h3>
+              <h3 className={styles.transparencyHeading}>
+                What I will never do
+              </h3>
               <ul className={styles.transparencyList}>
                 <li>Use a drag-and-drop template and call it custom</li>
                 <li>Build a site that can't be found on Google</li>
@@ -53,8 +57,8 @@ export default function Solution() {
           </motion.div>
 
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial='hidden'
+            whileInView='visible'
             viewport={{ once: true }}
             variants={fadeUp}
             transition={{ delay: 0.2 }}
@@ -64,53 +68,73 @@ export default function Solution() {
             <div className={styles.whatGrid}>
               <div className={styles.whatItem}>
                 <div className={styles.whatIcon}>
-                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <rect x="2" y="3" width="14" height="12" rx="2" />
-                    <path d="M9 15v2M5 17h8" />
+                  <svg viewBox='0 0 24 24' aria-hidden='true'>
+                    <path
+                      fill='currentColor'
+                      d='M21,14H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10L8,21V22H16V21L14,18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2Z'
+                    />
                   </svg>
                 </div>
                 <div>
                   <h4>Custom Design &amp; Code</h4>
-                  <p>No templates. Built on Next.js for speed, SEO, and flexibility. Your site, your brand, your code.</p>
+                  <p>
+                    No templates. Built on Next.js for speed, SEO, and
+                    flexibility. Your site, your brand, your code.
+                  </p>
                 </div>
               </div>
 
               <div className={styles.whatItem}>
                 <div className={styles.whatIcon}>
-                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <rect x="4" y="1" width="10" height="16" rx="2" />
-                    <path d="M9 14h.01" />
+                  <svg viewBox='0 0 24 24' aria-hidden='true'>
+                    <path
+                      fill='currentColor'
+                      d='M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3C19,1.89 18.1,1 17,1Z'
+                    />
                   </svg>
                 </div>
                 <div>
                   <h4>Mobile-First Build</h4>
-                  <p>Phone experience designed first. Fast load times, click-to-call buttons, and thumb-friendly navigation.</p>
+                  <p>
+                    Phone experience designed first. Fast load times,
+                    click-to-call buttons, and thumb-friendly navigation.
+                  </p>
                 </div>
               </div>
 
               <div className={styles.whatItem}>
                 <div className={styles.whatIcon}>
-                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <circle cx="9" cy="9" r="6" />
-                    <path d="M13.5 13.5L17 17" />
+                  <svg viewBox='0 0 24 24' aria-hidden='true'>
+                    <path
+                      fill='currentColor'
+                      d='M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z'
+                    />
                   </svg>
                 </div>
                 <div>
                   <h4>SEO Built In</h4>
-                  <p>Proper heading structure, meta tags, fast Core Web Vitals, structured data, and local keyword targeting from day one.</p>
+                  <p>
+                    Proper heading structure, meta tags, fast Core Web Vitals,
+                    structured data, and local keyword targeting from day one.
+                  </p>
                 </div>
               </div>
 
               <div className={styles.whatItem}>
                 <div className={styles.whatIcon}>
-                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M16.5 12.69v2.34a1.56 1.56 0 0 1-1.7 1.56 15.44 15.44 0 0 1-6.73-2.4" />
-                    <path d="M3.4 3.6A15.2 15.2 0 0 0 8.07 8.27" />
+                  <svg viewBox='0 0 24 24' aria-hidden='true'>
+                    <path
+                      fill='currentColor'
+                      d='M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z'
+                    />
                   </svg>
                 </div>
                 <div>
                   <h4>Lead-Gen Focus</h4>
-                  <p>Every page has one clear goal: get the visitor to call, book, or fill out a form. No dead ends.</p>
+                  <p>
+                    Every page has one clear goal: get the visitor to call,
+                    book, or fill out a form. No dead ends.
+                  </p>
                 </div>
               </div>
             </div>
