@@ -9,7 +9,7 @@
       "source_file": "postcss.config.mjs",
       "source_location": "L1",
       "id": "postcss_config_mjs",
-      "community": 171,
+      "community": 173,
       "norm_label": "postcss.config.mjs"
     },
     {
@@ -18,8 +18,17 @@
       "source_file": "next.config.mjs",
       "source_location": "L1",
       "id": "next_config_mjs",
-      "community": 172,
+      "community": 174,
       "norm_label": "next.config.mjs"
+    },
+    {
+      "label": "audit-shot.mjs",
+      "file_type": "code",
+      "source_file": "audit-shot.mjs",
+      "source_location": "L1",
+      "id": "audit_shot_mjs",
+      "community": 175,
+      "norm_label": "audit-shot.mjs"
     },
     {
       "label": "eslint.config.mjs",
@@ -27,7 +36,7 @@
       "source_file": "eslint.config.mjs",
       "source_location": "L1",
       "id": "eslint_config_mjs",
-      "community": 173,
+      "community": 176,
       "norm_label": "eslint.config.mjs"
     },
     {
@@ -36,7 +45,7 @@
       "source_file": "claude-seo/uninstall.ps1",
       "source_location": "L1",
       "id": "claude_seo_uninstall_ps1",
-      "community": 44,
+      "community": 43,
       "norm_label": "uninstall.ps1"
     },
     {
@@ -45,7 +54,7 @@
       "source_file": "claude-seo/uninstall.ps1",
       "source_location": "L7",
       "id": "claude_seo_uninstall_write_color",
-      "community": 44,
+      "community": 43,
       "norm_label": "write-color()"
     },
     {
@@ -54,7 +63,7 @@
       "source_file": "claude-seo/uninstall.ps1",
       "source_location": "L11",
       "id": "claude_seo_uninstall_main",
-      "community": 44,
+      "community": 43,
       "norm_label": "main()"
     },
     {
@@ -63,7 +72,7 @@
       "source_file": "claude-seo/install.ps1",
       "source_location": "L1",
       "id": "claude_seo_install_ps1",
-      "community": 45,
+      "community": 44,
       "norm_label": "install.ps1"
     },
     {
@@ -72,7 +81,7 @@
       "source_file": "claude-seo/install.ps1",
       "source_location": "L12",
       "id": "claude_seo_install_resolve_python",
-      "community": 45,
+      "community": 44,
       "norm_label": "resolve-python()"
     },
     {
@@ -81,7 +90,7 @@
       "source_file": "claude-seo/install.ps1",
       "source_location": "L26",
       "id": "claude_seo_install_invoke_external",
-      "community": 45,
+      "community": 44,
       "norm_label": "invoke-external()"
     },
     {
@@ -360,7 +369,7 @@
       "source_file": "claude-seo/extensions/dataforseo/uninstall.ps1",
       "source_location": "L1",
       "id": "claude_seo_extensions_dataforseo_uninstall_ps1",
-      "community": 174,
+      "community": 177,
       "norm_label": "uninstall.ps1"
     },
     {
@@ -369,7 +378,7 @@
       "source_file": "claude-seo/extensions/dataforseo/install.ps1",
       "source_location": "L1",
       "id": "claude_seo_extensions_dataforseo_install_ps1",
-      "community": 175,
+      "community": 178,
       "norm_label": "install.ps1"
     },
     {
@@ -378,7 +387,7 @@
       "source_file": "claude-seo/extensions/firecrawl/uninstall.ps1",
       "source_location": "L1",
       "id": "claude_seo_extensions_firecrawl_uninstall_ps1",
-      "community": 176,
+      "community": 179,
       "norm_label": "uninstall.ps1"
     },
     {
@@ -387,7 +396,7 @@
       "source_file": "claude-seo/extensions/firecrawl/install.ps1",
       "source_location": "L1",
       "id": "claude_seo_extensions_firecrawl_install_ps1",
-      "community": 177,
+      "community": 180,
       "norm_label": "install.ps1"
     },
     {
@@ -531,7 +540,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/generate.py",
       "source_location": "L1",
       "id": "claude_seo_extensions_banana_scripts_generate_py",
-      "community": 36,
+      "community": 35,
       "norm_label": "generate.py"
     },
     {
@@ -540,7 +549,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/generate.py",
       "source_location": "L32",
       "id": "scripts_generate_generate_image",
-      "community": 36,
+      "community": 35,
       "norm_label": "generate_image()"
     },
     {
@@ -549,7 +558,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/generate.py",
       "source_location": "L111",
       "id": "scripts_generate_main",
-      "community": 36,
+      "community": 35,
       "norm_label": "main()"
     },
     {
@@ -557,7 +566,7 @@
       "file_type": "rationale",
       "source_file": "claude-seo/extensions/banana/scripts/generate.py",
       "source_location": "L34",
-      "community": 36,
+      "community": 35,
       "norm_label": "call gemini api to generate an image.",
       "id": "scripts_generate_rationale_34"
     },
@@ -711,7 +720,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/batch.py",
       "source_location": "L1",
       "id": "claude_seo_extensions_banana_scripts_batch_py",
-      "community": 37,
+      "community": 36,
       "norm_label": "batch.py"
     },
     {
@@ -720,7 +729,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/batch.py",
       "source_location": "L36",
       "id": "scripts_batch_estimate_cost",
-      "community": 37,
+      "community": 36,
       "norm_label": "estimate_cost()"
     },
     {
@@ -729,7 +738,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/batch.py",
       "source_location": "L42",
       "id": "scripts_batch_main",
-      "community": 37,
+      "community": 36,
       "norm_label": "main()"
     },
     {
@@ -737,7 +746,7 @@
       "file_type": "rationale",
       "source_file": "claude-seo/extensions/banana/scripts/batch.py",
       "source_location": "L37",
-      "community": 37,
+      "community": 36,
       "norm_label": "estimate cost for a single image.",
       "id": "scripts_batch_rationale_37"
     },
@@ -747,7 +756,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/edit.py",
       "source_location": "L1",
       "id": "claude_seo_extensions_banana_scripts_edit_py",
-      "community": 38,
+      "community": 37,
       "norm_label": "edit.py"
     },
     {
@@ -756,7 +765,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/edit.py",
       "source_location": "L26",
       "id": "scripts_edit_edit_image",
-      "community": 38,
+      "community": 37,
       "norm_label": "edit_image()"
     },
     {
@@ -765,7 +774,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/edit.py",
       "source_location": "L117",
       "id": "scripts_edit_main",
-      "community": 38,
+      "community": 37,
       "norm_label": "main()"
     },
     {
@@ -773,7 +782,7 @@
       "file_type": "rationale",
       "source_file": "claude-seo/extensions/banana/scripts/edit.py",
       "source_location": "L27",
-      "community": 38,
+      "community": 37,
       "norm_label": "call gemini api to edit an image.",
       "id": "scripts_edit_rationale_27"
     },
@@ -891,7 +900,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/validate_setup.py",
       "source_location": "L1",
       "id": "claude_seo_extensions_banana_scripts_validate_setup_py",
-      "community": 46,
+      "community": 45,
       "norm_label": "validate_setup.py"
     },
     {
@@ -900,7 +909,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/validate_setup.py",
       "source_location": "L25",
       "id": "scripts_validate_setup_check",
-      "community": 46,
+      "community": 45,
       "norm_label": "check()"
     },
     {
@@ -909,7 +918,7 @@
       "source_file": "claude-seo/extensions/banana/scripts/validate_setup.py",
       "source_location": "L34",
       "id": "scripts_validate_setup_main",
-      "community": 46,
+      "community": 45,
       "norm_label": "main()"
     },
     {
@@ -918,7 +927,7 @@
       "source_file": "claude-seo/hooks/validate-schema.py",
       "source_location": "L1",
       "id": "claude_seo_hooks_validate_schema_py",
-      "community": 31,
+      "community": 30,
       "norm_label": "validate-schema.py"
     },
     {
@@ -927,7 +936,7 @@
       "source_file": "claude-seo/hooks/validate-schema.py",
       "source_location": "L36",
       "id": "hooks_validate_schema_validate_jsonld",
-      "community": 31,
+      "community": 30,
       "norm_label": "validate_jsonld()"
     },
     {
@@ -936,7 +945,7 @@
       "source_file": "claude-seo/hooks/validate-schema.py",
       "source_location": "L62",
       "id": "hooks_validate_schema_validate_schema_object",
-      "community": 31,
+      "community": 30,
       "norm_label": "_validate_schema_object()"
     },
     {
@@ -945,7 +954,7 @@
       "source_file": "claude-seo/hooks/validate-schema.py",
       "source_location": "L117",
       "id": "hooks_validate_schema_main",
-      "community": 31,
+      "community": 30,
       "norm_label": "main()"
     },
     {
@@ -953,7 +962,7 @@
       "file_type": "rationale",
       "source_file": "claude-seo/hooks/validate-schema.py",
       "source_location": "L37",
-      "community": 31,
+      "community": 30,
       "norm_label": "validate json-ld blocks in html content.",
       "id": "hooks_validate_schema_rationale_37"
     },
@@ -962,7 +971,7 @@
       "file_type": "rationale",
       "source_file": "claude-seo/hooks/validate-schema.py",
       "source_location": "L63",
-      "community": 31,
+      "community": 30,
       "norm_label": "validate a single schema object.",
       "id": "hooks_validate_schema_rationale_63"
     },
@@ -1557,7 +1566,7 @@
       "source_file": "claude-seo/scripts/drift_report.py",
       "source_location": "L1",
       "id": "claude_seo_scripts_drift_report_py",
-      "community": 32,
+      "community": 31,
       "norm_label": "drift_report.py"
     },
     {
@@ -1566,7 +1575,7 @@
       "source_file": "claude-seo/scripts/drift_report.py",
       "source_location": "L55",
       "id": "scripts_drift_report_escape",
-      "community": 32,
+      "community": 31,
       "norm_label": "_escape()"
     },
     {
@@ -1575,7 +1584,7 @@
       "source_file": "claude-seo/scripts/drift_report.py",
       "source_location": "L62",
       "id": "scripts_drift_report_generate_html",
-      "community": 32,
+      "community": 31,
       "norm_label": "generate_html()"
     },
     {
@@ -1584,7 +1593,7 @@
       "source_file": "claude-seo/scripts/drift_report.py",
       "source_location": "L319",
       "id": "scripts_drift_report_main",
-      "community": 32,
+      "community": 31,
       "norm_label": "main()"
     },
     {
@@ -1592,7 +1601,7 @@
       "file_type": "rationale",
       "source_file": "claude-seo/scripts/drift_report.py",
       "source_location": "L56",
-      "community": 32,
+      "community": 31,
       "norm_label": "html-escape a value, handling none.",
       "id": "scripts_drift_report_rationale_56"
     },
@@ -1601,7 +1610,7 @@
       "file_type": "rationale",
       "source_file": "claude-seo/scripts/drift_report.py",
       "source_location": "L63",
-      "community": 32,
+      "community": 31,
       "norm_label": "generate a self-contained html report from comparison data.",
       "id": "scripts_drift_report_rationale_63"
     },
@@ -2457,7 +2466,7 @@
       "source_file": "claude-seo/scripts/capture_screenshot.py",
       "source_location": "L1",
       "id": "claude_seo_scripts_capture_screenshot_py",
-      "community": 33,
+      "community": 32,
       "norm_label": "capture_screenshot.py"
     },
     {
@@ -2466,7 +2475,7 @@
       "source_file": "claude-seo/scripts/capture_screenshot.py",
       "source_location": "L33",
       "id": "scripts_capture_screenshot_normalize_url",
-      "community": 33,
+      "community": 32,
       "norm_label": "normalize_url()"
     },
     {
@@ -2475,7 +2484,7 @@
       "source_file": "claude-seo/scripts/capture_screenshot.py",
       "source_location": "L48",
       "id": "scripts_capture_screenshot_capture_screenshot",
-      "community": 33,
+      "community": 32,
       "norm_label": "capture_screenshot()"
     },
     {
@@ -2484,7 +2493,7 @@
       "source_file": "claude-seo/scripts/capture_screenshot.py",
       "source_location": "L128",
       "id": "scripts_capture_screenshot_main",
-      "community": 33,
+      "community": 32,
       "norm_label": "main()"
     },
     {
@@ -2492,7 +2501,7 @@
       "file_type": "rationale",
       "source_file": "claude-seo/scripts/capture_screenshot.py",
       "source_location": "L34",
-      "community": 33,
+      "community": 32,
       "norm_label": "normalize url and return (url, parsed_url).",
       "id": "scripts_capture_screenshot_rationale_34"
     },
@@ -2501,7 +2510,7 @@
       "file_type": "rationale",
       "source_file": "claude-seo/scripts/capture_screenshot.py",
       "source_location": "L55",
-      "community": 33,
+      "community": 32,
       "norm_label": "capture a screenshot of a web page.      args:         url: url to capture",
       "id": "scripts_capture_screenshot_rationale_55"
     },
@@ -3627,7 +3636,7 @@
       "source_file": "claude-seo/scripts/analyze_visual.py",
       "source_location": "L1",
       "id": "claude_seo_scripts_analyze_visual_py",
-      "community": 34,
+      "community": 33,
       "norm_label": "analyze_visual.py"
     },
     {
@@ -3636,7 +3645,7 @@
       "source_file": "claude-seo/scripts/analyze_visual.py",
       "source_location": "L23",
       "id": "scripts_analyze_visual_normalize_url",
-      "community": 34,
+      "community": 33,
       "norm_label": "normalize_url()"
     },
     {
@@ -3645,7 +3654,7 @@
       "source_file": "claude-seo/scripts/analyze_visual.py",
       "source_location": "L38",
       "id": "scripts_analyze_visual_analyze_visual",
-      "community": 34,
+      "community": 33,
       "norm_label": "analyze_visual()"
     },
     {
@@ -3654,7 +3663,7 @@
       "source_file": "claude-seo/scripts/analyze_visual.py",
       "source_location": "L183",
       "id": "scripts_analyze_visual_main",
-      "community": 34,
+      "community": 33,
       "norm_label": "main()"
     },
     {
@@ -3662,7 +3671,7 @@
       "file_type": "rationale",
       "source_file": "claude-seo/scripts/analyze_visual.py",
       "source_location": "L24",
-      "community": 34,
+      "community": 33,
       "norm_label": "normalize url and return (url, parsed_url).",
       "id": "scripts_analyze_visual_rationale_24"
     },
@@ -3671,7 +3680,7 @@
       "file_type": "rationale",
       "source_file": "claude-seo/scripts/analyze_visual.py",
       "source_location": "L39",
-      "community": 34,
+      "community": 33,
       "norm_label": "analyze visual aspects of a web page.      args:         url: url to analyze",
       "id": "scripts_analyze_visual_rationale_39"
     },
@@ -5508,7 +5517,7 @@
       "source_file": "scripts/verify-rogers-redesign.mjs",
       "source_location": "L1",
       "id": "scripts_verify_rogers_redesign_mjs",
-      "community": 178,
+      "community": 181,
       "norm_label": "verify-rogers-redesign.mjs"
     },
     {
@@ -5751,7 +5760,7 @@
       "source_file": "src/app/service-areas/rogers-ar/page.js",
       "source_location": "L1",
       "id": "src_app_service_areas_rogers_ar_page_js",
-      "community": 47,
+      "community": 46,
       "norm_label": "page.js"
     },
     {
@@ -5760,7 +5769,7 @@
       "source_file": "src/app/service-areas/rogers-ar/page.js",
       "source_location": "L7",
       "id": "rogers_ar_page_generatemetadata",
-      "community": 47,
+      "community": 46,
       "norm_label": "generatemetadata()"
     },
     {
@@ -5769,7 +5778,7 @@
       "source_file": "src/app/service-areas/rogers-ar/page.js",
       "source_location": "L28",
       "id": "rogers_ar_page_rogersserviceareapage",
-      "community": 47,
+      "community": 46,
       "norm_label": "rogersserviceareapage()"
     },
     {
@@ -5796,7 +5805,7 @@
       "source_file": "src/app/service-areas/springdale-ar/page.js",
       "source_location": "L1",
       "id": "src_app_service_areas_springdale_ar_page_js",
-      "community": 48,
+      "community": 47,
       "norm_label": "page.js"
     },
     {
@@ -5805,7 +5814,7 @@
       "source_file": "src/app/service-areas/springdale-ar/page.js",
       "source_location": "L7",
       "id": "springdale_ar_page_generatemetadata",
-      "community": 48,
+      "community": 47,
       "norm_label": "generatemetadata()"
     },
     {
@@ -5814,7 +5823,7 @@
       "source_file": "src/app/service-areas/springdale-ar/page.js",
       "source_location": "L28",
       "id": "springdale_ar_page_springdaleserviceareapage",
-      "community": 48,
+      "community": 47,
       "norm_label": "springdaleserviceareapage()"
     },
     {
@@ -5841,7 +5850,7 @@
       "source_file": "src/app/service-areas/bentonville-ar/page.js",
       "source_location": "L1",
       "id": "src_app_service_areas_bentonville_ar_page_js",
-      "community": 49,
+      "community": 48,
       "norm_label": "page.js"
     },
     {
@@ -5850,7 +5859,7 @@
       "source_file": "src/app/service-areas/bentonville-ar/page.js",
       "source_location": "L7",
       "id": "bentonville_ar_page_generatemetadata",
-      "community": 49,
+      "community": 48,
       "norm_label": "generatemetadata()"
     },
     {
@@ -5859,7 +5868,7 @@
       "source_file": "src/app/service-areas/bentonville-ar/page.js",
       "source_location": "L28",
       "id": "bentonville_ar_page_bentonvilleserviceareapage",
-      "community": 49,
+      "community": 48,
       "norm_label": "bentonvilleserviceareapage()"
     },
     {
@@ -5886,7 +5895,7 @@
       "source_file": "src/app/service-areas/centerton-ar/page.js",
       "source_location": "L1",
       "id": "src_app_service_areas_centerton_ar_page_js",
-      "community": 50,
+      "community": 49,
       "norm_label": "page.js"
     },
     {
@@ -5895,7 +5904,7 @@
       "source_file": "src/app/service-areas/centerton-ar/page.js",
       "source_location": "L7",
       "id": "centerton_ar_page_generatemetadata",
-      "community": 50,
+      "community": 49,
       "norm_label": "generatemetadata()"
     },
     {
@@ -5904,7 +5913,7 @@
       "source_file": "src/app/service-areas/centerton-ar/page.js",
       "source_location": "L28",
       "id": "centerton_ar_page_centertonserviceareapage",
-      "community": 50,
+      "community": 49,
       "norm_label": "centertonserviceareapage()"
     },
     {
@@ -5931,7 +5940,7 @@
       "source_file": "src/app/service-areas/siloam-springs-ar/page.js",
       "source_location": "L1",
       "id": "src_app_service_areas_siloam_springs_ar_page_js",
-      "community": 51,
+      "community": 50,
       "norm_label": "page.js"
     },
     {
@@ -5940,7 +5949,7 @@
       "source_file": "src/app/service-areas/siloam-springs-ar/page.js",
       "source_location": "L7",
       "id": "siloam_springs_ar_page_generatemetadata",
-      "community": 51,
+      "community": 50,
       "norm_label": "generatemetadata()"
     },
     {
@@ -5949,7 +5958,7 @@
       "source_file": "src/app/service-areas/siloam-springs-ar/page.js",
       "source_location": "L28",
       "id": "siloam_springs_ar_page_siloamspringsserviceareapage",
-      "community": 51,
+      "community": 50,
       "norm_label": "siloamspringsserviceareapage()"
     },
     {
@@ -5973,10 +5982,64 @@
     {
       "label": "page.js",
       "file_type": "code",
+      "source_file": "src/app/service-areas/siloam-springs-ar/hvac/page.js",
+      "source_location": "L1",
+      "id": "src_app_service_areas_siloam_springs_ar_hvac_page_js",
+      "community": 51,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "src/app/service-areas/siloam-springs-ar/hvac/page.js",
+      "source_location": "L6",
+      "id": "hvac_page_generatemetadata",
+      "community": 51,
+      "norm_label": "generatemetadata()"
+    },
+    {
+      "label": "SiloamSpringHvacPage()",
+      "file_type": "code",
+      "source_file": "src/app/service-areas/siloam-springs-ar/hvac/page.js",
+      "source_location": "L30",
+      "id": "hvac_page_siloamspringhvacpage",
+      "community": 51,
+      "norm_label": "siloamspringhvacpage()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/service-areas/siloam-springs-ar/plumbing/page.js",
+      "source_location": "L1",
+      "id": "src_app_service_areas_siloam_springs_ar_plumbing_page_js",
+      "community": 52,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "src/app/service-areas/siloam-springs-ar/plumbing/page.js",
+      "source_location": "L6",
+      "id": "plumbing_page_generatemetadata",
+      "community": 52,
+      "norm_label": "generatemetadata()"
+    },
+    {
+      "label": "SiloamSpringPlumbingPage()",
+      "file_type": "code",
+      "source_file": "src/app/service-areas/siloam-springs-ar/plumbing/page.js",
+      "source_location": "L30",
+      "id": "plumbing_page_siloamspringplumbingpage",
+      "community": 52,
+      "norm_label": "siloamspringplumbingpage()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
       "source_file": "src/app/service-areas/fayetteville-ar/page.js",
       "source_location": "L1",
       "id": "src_app_service_areas_fayetteville_ar_page_js",
-      "community": 52,
+      "community": 53,
       "norm_label": "page.js"
     },
     {
@@ -5985,7 +6048,7 @@
       "source_file": "src/app/service-areas/fayetteville-ar/page.js",
       "source_location": "L7",
       "id": "fayetteville_ar_page_generatemetadata",
-      "community": 52,
+      "community": 53,
       "norm_label": "generatemetadata()"
     },
     {
@@ -5994,7 +6057,7 @@
       "source_file": "src/app/service-areas/fayetteville-ar/page.js",
       "source_location": "L28",
       "id": "fayetteville_ar_page_fayettevilleserviceareapage",
-      "community": 52,
+      "community": 53,
       "norm_label": "fayettevilleserviceareapage()"
     },
     {
@@ -6018,46 +6081,10 @@
     {
       "label": "page.js",
       "file_type": "code",
-      "source_file": "src/app/service-areas/[city]/[trade]/page.js",
-      "source_location": "L1",
-      "id": "src_app_service_areas_city_trade_page_js",
-      "community": 28,
-      "norm_label": "page.js"
-    },
-    {
-      "label": "generateStaticParams()",
-      "file_type": "code",
-      "source_file": "src/app/service-areas/[city]/[trade]/page.js",
-      "source_location": "L12",
-      "id": "trade_page_generatestaticparams",
-      "community": 28,
-      "norm_label": "generatestaticparams()"
-    },
-    {
-      "label": "generateMetadata()",
-      "file_type": "code",
-      "source_file": "src/app/service-areas/[city]/[trade]/page.js",
-      "source_location": "L22",
-      "id": "trade_page_generatemetadata",
-      "community": 28,
-      "norm_label": "generatemetadata()"
-    },
-    {
-      "label": "CityTradePage()",
-      "file_type": "code",
-      "source_file": "src/app/service-areas/[city]/[trade]/page.js",
-      "source_location": "L48",
-      "id": "trade_page_citytradepage",
-      "community": 28,
-      "norm_label": "citytradepage()"
-    },
-    {
-      "label": "page.js",
-      "file_type": "code",
       "source_file": "src/app/service-areas/cave-springs-ar/page.js",
       "source_location": "L1",
       "id": "src_app_service_areas_cave_springs_ar_page_js",
-      "community": 53,
+      "community": 54,
       "norm_label": "page.js"
     },
     {
@@ -6066,7 +6093,7 @@
       "source_file": "src/app/service-areas/cave-springs-ar/page.js",
       "source_location": "L7",
       "id": "cave_springs_ar_page_generatemetadata",
-      "community": 53,
+      "community": 54,
       "norm_label": "generatemetadata()"
     },
     {
@@ -6075,7 +6102,7 @@
       "source_file": "src/app/service-areas/cave-springs-ar/page.js",
       "source_location": "L28",
       "id": "cave_springs_ar_page_cavespringsserviceareapage",
-      "community": 53,
+      "community": 54,
       "norm_label": "cavespringsserviceareapage()"
     },
     {
@@ -6102,7 +6129,7 @@
       "source_file": "src/app/service-areas/bella-vista-ar/page.js",
       "source_location": "L1",
       "id": "src_app_service_areas_bella_vista_ar_page_js",
-      "community": 54,
+      "community": 55,
       "norm_label": "page.js"
     },
     {
@@ -6111,7 +6138,7 @@
       "source_file": "src/app/service-areas/bella-vista-ar/page.js",
       "source_location": "L7",
       "id": "bella_vista_ar_page_generatemetadata",
-      "community": 54,
+      "community": 55,
       "norm_label": "generatemetadata()"
     },
     {
@@ -6120,7 +6147,7 @@
       "source_file": "src/app/service-areas/bella-vista-ar/page.js",
       "source_location": "L28",
       "id": "bella_vista_ar_page_bellavistaserviceareapage",
-      "community": 54,
+      "community": 55,
       "norm_label": "bellavistaserviceareapage()"
     },
     {
@@ -6147,7 +6174,7 @@
       "source_file": "src/app/service-areas/lowell-ar/page.js",
       "source_location": "L1",
       "id": "src_app_service_areas_lowell_ar_page_js",
-      "community": 55,
+      "community": 56,
       "norm_label": "page.js"
     },
     {
@@ -6156,7 +6183,7 @@
       "source_file": "src/app/service-areas/lowell-ar/page.js",
       "source_location": "L7",
       "id": "lowell_ar_page_generatemetadata",
-      "community": 55,
+      "community": 56,
       "norm_label": "generatemetadata()"
     },
     {
@@ -6165,7 +6192,7 @@
       "source_file": "src/app/service-areas/lowell-ar/page.js",
       "source_location": "L28",
       "id": "lowell_ar_page_lowellserviceareapage",
-      "community": 55,
+      "community": 56,
       "norm_label": "lowellserviceareapage()"
     },
     {
@@ -6199,7 +6226,7 @@
       "label": "PrivacyPage()",
       "file_type": "code",
       "source_file": "src/app/privacy/page.js",
-      "source_location": "L18",
+      "source_location": "L17",
       "id": "privacy_page_privacypage",
       "community": 74,
       "norm_label": "privacypage()"
@@ -6253,7 +6280,7 @@
       "label": "TermsPage()",
       "file_type": "code",
       "source_file": "src/app/terms/page.js",
-      "source_location": "L18",
+      "source_location": "L17",
       "id": "terms_page_termspage",
       "community": 76,
       "norm_label": "termspage()"
@@ -6336,7 +6363,7 @@
       "source_file": "src/app/blog/BlogClient.js",
       "source_location": "L1",
       "id": "src_app_blog_blogclient_js",
-      "community": 39,
+      "community": 38,
       "norm_label": "blogclient.js"
     },
     {
@@ -6345,7 +6372,7 @@
       "source_file": "src/app/blog/BlogClient.js",
       "source_location": "L21",
       "id": "blog_blogclient_postcard",
-      "community": 39,
+      "community": 38,
       "norm_label": "postcard()"
     },
     {
@@ -6354,7 +6381,7 @@
       "source_file": "src/app/blog/BlogClient.js",
       "source_location": "L63",
       "id": "blog_blogclient_featuredcard",
-      "community": 39,
+      "community": 38,
       "norm_label": "featuredcard()"
     },
     {
@@ -6363,7 +6390,7 @@
       "source_file": "src/app/blog/BlogClient.js",
       "source_location": "L96",
       "id": "blog_blogclient_blogclient",
-      "community": 39,
+      "community": 38,
       "norm_label": "blogclient()"
     },
     {
@@ -6379,7 +6406,7 @@
       "label": "generateStaticParams()",
       "file_type": "code",
       "source_file": "src/app/blog/[slug]/page.js",
-      "source_location": "L26",
+      "source_location": "L29",
       "id": "slug_page_generatestaticparams",
       "community": 14,
       "norm_label": "generatestaticparams()"
@@ -6388,7 +6415,7 @@
       "label": "generateMetadata()",
       "file_type": "code",
       "source_file": "src/app/blog/[slug]/page.js",
-      "source_location": "L31",
+      "source_location": "L34",
       "id": "slug_page_generatemetadata",
       "community": 14,
       "norm_label": "generatemetadata()"
@@ -6397,7 +6424,7 @@
       "label": "BlogPost()",
       "file_type": "code",
       "source_file": "src/app/blog/[slug]/page.js",
-      "source_location": "L65",
+      "source_location": "L74",
       "id": "slug_page_blogpost",
       "community": 14,
       "norm_label": "blogpost()"
@@ -6795,7 +6822,7 @@
       "source_file": "src/content/serviceAreasLanding.js",
       "source_location": "L1",
       "id": "src_content_serviceareaslanding_js",
-      "community": 179,
+      "community": 182,
       "norm_label": "serviceareaslanding.js"
     },
     {
@@ -6876,7 +6903,7 @@
       "source_file": "src/components/GbpChecklistClient.jsx",
       "source_location": "L1",
       "id": "src_components_gbpchecklistclient_jsx",
-      "community": 40,
+      "community": 39,
       "norm_label": "gbpchecklistclient.jsx"
     },
     {
@@ -6885,7 +6912,7 @@
       "source_file": "src/components/GbpChecklistClient.jsx",
       "source_location": "L6",
       "id": "components_gbpchecklistclient_logosvg",
-      "community": 40,
+      "community": 39,
       "norm_label": "logosvg()"
     },
     {
@@ -6894,7 +6921,7 @@
       "source_file": "src/components/GbpChecklistClient.jsx",
       "source_location": "L33",
       "id": "components_gbpchecklistclient_checkicon",
-      "community": 40,
+      "community": 39,
       "norm_label": "checkicon()"
     },
     {
@@ -6903,8 +6930,44 @@
       "source_file": "src/components/GbpChecklistClient.jsx",
       "source_location": "L58",
       "id": "components_gbpchecklistclient_gbpchecklistclient",
-      "community": 40,
+      "community": 39,
       "norm_label": "gbpchecklistclient()"
+    },
+    {
+      "label": "SiloamHvacClient.jsx",
+      "file_type": "code",
+      "source_file": "src/components/SiloamHvacClient.jsx",
+      "source_location": "L1",
+      "id": "src_components_siloamhvacclient_jsx",
+      "community": 93,
+      "norm_label": "siloamhvacclient.jsx"
+    },
+    {
+      "label": "SiloamHvacClient()",
+      "file_type": "code",
+      "source_file": "src/components/SiloamHvacClient.jsx",
+      "source_location": "L61",
+      "id": "components_siloamhvacclient_siloamhvacclient",
+      "community": 93,
+      "norm_label": "siloamhvacclient()"
+    },
+    {
+      "label": "KeyTakeaways.jsx",
+      "file_type": "code",
+      "source_file": "src/components/KeyTakeaways.jsx",
+      "source_location": "L1",
+      "id": "src_components_keytakeaways_jsx",
+      "community": 94,
+      "norm_label": "keytakeaways.jsx"
+    },
+    {
+      "label": "KeyTakeaways()",
+      "file_type": "code",
+      "source_file": "src/components/KeyTakeaways.jsx",
+      "source_location": "L1",
+      "id": "components_keytakeaways_keytakeaways",
+      "community": 94,
+      "norm_label": "keytakeaways()"
     },
     {
       "label": "PortfolioHonesty.jsx",
@@ -6912,7 +6975,7 @@
       "source_file": "src/components/PortfolioHonesty.jsx",
       "source_location": "L1",
       "id": "src_components_portfoliohonesty_jsx",
-      "community": 93,
+      "community": 95,
       "norm_label": "portfoliohonesty.jsx"
     },
     {
@@ -6921,7 +6984,7 @@
       "source_file": "src/components/PortfolioHonesty.jsx",
       "source_location": "L16",
       "id": "components_portfoliohonesty_portfoliohonesty",
-      "community": 93,
+      "community": 95,
       "norm_label": "portfoliohonesty()"
     },
     {
@@ -6930,7 +6993,7 @@
       "source_file": "src/components/ContactClient.jsx",
       "source_location": "L1",
       "id": "src_components_contactclient_jsx",
-      "community": 94,
+      "community": 96,
       "norm_label": "contactclient.jsx"
     },
     {
@@ -6939,7 +7002,7 @@
       "source_file": "src/components/ContactClient.jsx",
       "source_location": "L26",
       "id": "components_contactclient_contactclient",
-      "community": 94,
+      "community": 96,
       "norm_label": "contactclient()"
     },
     {
@@ -6948,7 +7011,7 @@
       "source_file": "src/components/TestimonialsSection.jsx",
       "source_location": "L1",
       "id": "src_components_testimonialssection_jsx",
-      "community": 56,
+      "community": 57,
       "norm_label": "testimonialssection.jsx"
     },
     {
@@ -6957,16 +7020,16 @@
       "source_file": "src/components/TestimonialsSection.jsx",
       "source_location": "L22",
       "id": "components_testimonialssection_stars",
-      "community": 56,
+      "community": 57,
       "norm_label": "stars()"
     },
     {
       "label": "TestimonialsSection()",
       "file_type": "code",
       "source_file": "src/components/TestimonialsSection.jsx",
-      "source_location": "L34",
+      "source_location": "L42",
       "id": "components_testimonialssection_testimonialssection",
-      "community": 56,
+      "community": 57,
       "norm_label": "testimonialssection()"
     },
     {
@@ -6975,7 +7038,7 @@
       "source_file": "src/components/SuccessSection.jsx",
       "source_location": "L1",
       "id": "src_components_successsection_jsx",
-      "community": 95,
+      "community": 97,
       "norm_label": "successsection.jsx"
     },
     {
@@ -6984,7 +7047,7 @@
       "source_file": "src/components/SuccessSection.jsx",
       "source_location": "L93",
       "id": "components_successsection_successsection",
-      "community": 95,
+      "community": 97,
       "norm_label": "successsection()"
     },
     {
@@ -6993,7 +7056,7 @@
       "source_file": "src/components/AboutHero.jsx",
       "source_location": "L1",
       "id": "src_components_abouthero_jsx",
-      "community": 96,
+      "community": 98,
       "norm_label": "abouthero.jsx"
     },
     {
@@ -7002,7 +7065,7 @@
       "source_file": "src/components/AboutHero.jsx",
       "source_location": "L16",
       "id": "components_abouthero_abouthero",
-      "community": 96,
+      "community": 98,
       "norm_label": "abouthero()"
     },
     {
@@ -7011,16 +7074,16 @@
       "source_file": "src/components/CityPageClient.jsx",
       "source_location": "L1",
       "id": "src_components_citypageclient_jsx",
-      "community": 97,
+      "community": 99,
       "norm_label": "citypageclient.jsx"
     },
     {
       "label": "CityPageClient()",
       "file_type": "code",
       "source_file": "src/components/CityPageClient.jsx",
-      "source_location": "L69",
+      "source_location": "L93",
       "id": "components_citypageclient_citypageclient",
-      "community": 97,
+      "community": 99,
       "norm_label": "citypageclient()"
     },
     {
@@ -7029,7 +7092,7 @@
       "source_file": "src/components/LocalSeoHero.jsx",
       "source_location": "L1",
       "id": "src_components_localseohero_jsx",
-      "community": 98,
+      "community": 100,
       "norm_label": "localseohero.jsx"
     },
     {
@@ -7038,7 +7101,7 @@
       "source_file": "src/components/LocalSeoHero.jsx",
       "source_location": "L15",
       "id": "components_localseohero_localseohero",
-      "community": 98,
+      "community": 100,
       "norm_label": "localseohero()"
     },
     {
@@ -7047,7 +7110,7 @@
       "source_file": "src/components/WebDesignHeroSVG.jsx",
       "source_location": "L1",
       "id": "src_components_webdesignherosvg_jsx",
-      "community": 99,
+      "community": 101,
       "norm_label": "webdesignherosvg.jsx"
     },
     {
@@ -7056,7 +7119,7 @@
       "source_file": "src/components/WebDesignHeroSVG.jsx",
       "source_location": "L1",
       "id": "components_webdesignherosvg_webdesignherosvg",
-      "community": 99,
+      "community": 101,
       "norm_label": "webdesignherosvg()"
     },
     {
@@ -7155,7 +7218,7 @@
       "source_file": "src/components/StatsSection.jsx",
       "source_location": "L1",
       "id": "src_components_statssection_jsx",
-      "community": 57,
+      "community": 58,
       "norm_label": "statssection.jsx"
     },
     {
@@ -7164,7 +7227,7 @@
       "source_file": "src/components/StatsSection.jsx",
       "source_location": "L46",
       "id": "components_statssection_statitem",
-      "community": 57,
+      "community": 58,
       "norm_label": "statitem()"
     },
     {
@@ -7173,7 +7236,7 @@
       "source_file": "src/components/StatsSection.jsx",
       "source_location": "L69",
       "id": "components_statssection_statssection",
-      "community": 57,
+      "community": 58,
       "norm_label": "statssection()"
     },
     {
@@ -7182,7 +7245,7 @@
       "source_file": "src/components/HeroScene.js",
       "source_location": "L1",
       "id": "src_components_heroscene_js",
-      "community": 41,
+      "community": 40,
       "norm_label": "heroscene.js"
     },
     {
@@ -7191,7 +7254,7 @@
       "source_file": "src/components/HeroScene.js",
       "source_location": "L14",
       "id": "components_heroscene_signalgrid",
-      "community": 41,
+      "community": 40,
       "norm_label": "signalgrid()"
     },
     {
@@ -7200,7 +7263,7 @@
       "source_file": "src/components/HeroScene.js",
       "source_location": "L161",
       "id": "components_heroscene_scene",
-      "community": 41,
+      "community": 40,
       "norm_label": "scene()"
     },
     {
@@ -7209,7 +7272,7 @@
       "source_file": "src/components/HeroScene.js",
       "source_location": "L176",
       "id": "components_heroscene_heroscene",
-      "community": 41,
+      "community": 40,
       "norm_label": "heroscene()"
     },
     {
@@ -7218,7 +7281,7 @@
       "source_file": "src/components/ServicesSection.jsx",
       "source_location": "L1",
       "id": "src_components_servicessection_jsx",
-      "community": 100,
+      "community": 102,
       "norm_label": "servicessection.jsx"
     },
     {
@@ -7227,7 +7290,7 @@
       "source_file": "src/components/ServicesSection.jsx",
       "source_location": "L66",
       "id": "components_servicessection_servicessection",
-      "community": 100,
+      "community": 102,
       "norm_label": "servicessection()"
     },
     {
@@ -7236,7 +7299,7 @@
       "source_file": "src/components/LostCallsSection.jsx",
       "source_location": "L1",
       "id": "src_components_lostcallssection_jsx",
-      "community": 101,
+      "community": 103,
       "norm_label": "lostcallssection.jsx"
     },
     {
@@ -7245,7 +7308,7 @@
       "source_file": "src/components/LostCallsSection.jsx",
       "source_location": "L36",
       "id": "components_lostcallssection_lostcallssection",
-      "community": 101,
+      "community": 103,
       "norm_label": "lostcallssection()"
     },
     {
@@ -7254,7 +7317,7 @@
       "source_file": "src/components/ResourcesGrid.jsx",
       "source_location": "L1",
       "id": "src_components_resourcesgrid_jsx",
-      "community": 58,
+      "community": 59,
       "norm_label": "resourcesgrid.jsx"
     },
     {
@@ -7263,7 +7326,7 @@
       "source_file": "src/components/ResourcesGrid.jsx",
       "source_location": "L16",
       "id": "components_resourcesgrid_downloadicon",
-      "community": 58,
+      "community": 59,
       "norm_label": "downloadicon()"
     },
     {
@@ -7272,7 +7335,7 @@
       "source_file": "src/components/ResourcesGrid.jsx",
       "source_location": "L61",
       "id": "components_resourcesgrid_resourcesgrid",
-      "community": 58,
+      "community": 59,
       "norm_label": "resourcesgrid()"
     },
     {
@@ -7281,7 +7344,7 @@
       "source_file": "src/components/FinalCTASection.jsx",
       "source_location": "L1",
       "id": "src_components_finalctasection_jsx",
-      "community": 102,
+      "community": 104,
       "norm_label": "finalctasection.jsx"
     },
     {
@@ -7290,7 +7353,7 @@
       "source_file": "src/components/FinalCTASection.jsx",
       "source_location": "L8",
       "id": "components_finalctasection_finalctasection",
-      "community": 102,
+      "community": 104,
       "norm_label": "finalctasection()"
     },
     {
@@ -7299,16 +7362,16 @@
       "source_file": "src/components/ICPSection.jsx",
       "source_location": "L1",
       "id": "src_components_icpsection_jsx",
-      "community": 103,
+      "community": 105,
       "norm_label": "icpsection.jsx"
     },
     {
       "label": "ICPSection()",
       "file_type": "code",
       "source_file": "src/components/ICPSection.jsx",
-      "source_location": "L56",
+      "source_location": "L66",
       "id": "components_icpsection_icpsection",
-      "community": 103,
+      "community": 105,
       "norm_label": "icpsection()"
     },
     {
@@ -7317,7 +7380,7 @@
       "source_file": "src/components/Footer.jsx",
       "source_location": "L1",
       "id": "src_components_footer_jsx",
-      "community": 104,
+      "community": 106,
       "norm_label": "footer.jsx"
     },
     {
@@ -7326,7 +7389,7 @@
       "source_file": "src/components/Footer.jsx",
       "source_location": "L4",
       "id": "components_footer_footer",
-      "community": 104,
+      "community": 106,
       "norm_label": "footer()"
     },
     {
@@ -7335,7 +7398,7 @@
       "source_file": "src/components/AuthoritySection.jsx",
       "source_location": "L1",
       "id": "src_components_authoritysection_jsx",
-      "community": 105,
+      "community": 107,
       "norm_label": "authoritysection.jsx"
     },
     {
@@ -7344,35 +7407,8 @@
       "source_file": "src/components/AuthoritySection.jsx",
       "source_location": "L8",
       "id": "components_authoritysection_authoritysection",
-      "community": 105,
+      "community": 107,
       "norm_label": "authoritysection()"
-    },
-    {
-      "label": "ProofSection.jsx",
-      "file_type": "code",
-      "source_file": "src/components/ProofSection.jsx",
-      "source_location": "L1",
-      "id": "src_components_proofsection_jsx",
-      "community": 59,
-      "norm_label": "proofsection.jsx"
-    },
-    {
-      "label": "fadeUp()",
-      "file_type": "code",
-      "source_file": "src/components/ProofSection.jsx",
-      "source_location": "L7",
-      "id": "components_proofsection_fadeup",
-      "community": 59,
-      "norm_label": "fadeup()"
-    },
-    {
-      "label": "ProofSection()",
-      "file_type": "code",
-      "source_file": "src/components/ProofSection.jsx",
-      "source_location": "L41",
-      "id": "components_proofsection_proofsection",
-      "community": 59,
-      "norm_label": "proofsection()"
     },
     {
       "label": "ServiceAreasProof.jsx",
@@ -7380,7 +7416,7 @@
       "source_file": "src/components/ServiceAreasProof.jsx",
       "source_location": "L1",
       "id": "src_components_serviceareasproof_jsx",
-      "community": 106,
+      "community": 108,
       "norm_label": "serviceareasproof.jsx"
     },
     {
@@ -7389,7 +7425,7 @@
       "source_file": "src/components/ServiceAreasProof.jsx",
       "source_location": "L3",
       "id": "components_serviceareasproof_serviceareasproof",
-      "community": 106,
+      "community": 108,
       "norm_label": "serviceareasproof()"
     },
     {
@@ -7398,7 +7434,7 @@
       "source_file": "src/components/ServiceAreasCities.jsx",
       "source_location": "L1",
       "id": "src_components_serviceareascities_jsx",
-      "community": 107,
+      "community": 109,
       "norm_label": "serviceareascities.jsx"
     },
     {
@@ -7407,7 +7443,7 @@
       "source_file": "src/components/ServiceAreasCities.jsx",
       "source_location": "L4",
       "id": "components_serviceareascities_serviceareascities",
-      "community": 107,
+      "community": 109,
       "norm_label": "serviceareascities()"
     },
     {
@@ -7416,7 +7452,7 @@
       "source_file": "src/components/MotionProvider.jsx",
       "source_location": "L1",
       "id": "src_components_motionprovider_jsx",
-      "community": 108,
+      "community": 110,
       "norm_label": "motionprovider.jsx"
     },
     {
@@ -7425,7 +7461,7 @@
       "source_file": "src/components/MotionProvider.jsx",
       "source_location": "L5",
       "id": "components_motionprovider_motionprovider",
-      "community": 108,
+      "community": 110,
       "norm_label": "motionprovider()"
     },
     {
@@ -7461,7 +7497,7 @@
       "source_file": "src/components/ReputationHero.jsx",
       "source_location": "L1",
       "id": "src_components_reputationhero_jsx",
-      "community": 109,
+      "community": 111,
       "norm_label": "reputationhero.jsx"
     },
     {
@@ -7470,7 +7506,7 @@
       "source_file": "src/components/ReputationHero.jsx",
       "source_location": "L15",
       "id": "components_reputationhero_reputationhero",
-      "community": 109,
+      "community": 111,
       "norm_label": "reputationhero()"
     },
     {
@@ -7479,7 +7515,7 @@
       "source_file": "src/components/ServicesDetail.jsx",
       "source_location": "L1",
       "id": "src_components_servicesdetail_jsx",
-      "community": 29,
+      "community": 28,
       "norm_label": "servicesdetail.jsx"
     },
     {
@@ -7488,7 +7524,7 @@
       "source_file": "src/components/ServicesDetail.jsx",
       "source_location": "L19",
       "id": "components_servicesdetail_iconseo",
-      "community": 29,
+      "community": 28,
       "norm_label": "iconseo()"
     },
     {
@@ -7497,7 +7533,7 @@
       "source_file": "src/components/ServicesDetail.jsx",
       "source_location": "L37",
       "id": "components_servicesdetail_iconweb",
-      "community": 29,
+      "community": 28,
       "norm_label": "iconweb()"
     },
     {
@@ -7506,7 +7542,7 @@
       "source_file": "src/components/ServicesDetail.jsx",
       "source_location": "L55",
       "id": "components_servicesdetail_icongbp",
-      "community": 29,
+      "community": 28,
       "norm_label": "icongbp()"
     },
     {
@@ -7515,7 +7551,7 @@
       "source_file": "src/components/ServicesDetail.jsx",
       "source_location": "L72",
       "id": "components_servicesdetail_iconreputation",
-      "community": 29,
+      "community": 28,
       "norm_label": "iconreputation()"
     },
     {
@@ -7524,7 +7560,7 @@
       "source_file": "src/components/ServicesDetail.jsx",
       "source_location": "L88",
       "id": "components_servicesdetail_iconcitation",
-      "community": 29,
+      "community": 28,
       "norm_label": "iconcitation()"
     },
     {
@@ -7533,7 +7569,7 @@
       "source_file": "src/components/ServicesDetail.jsx",
       "source_location": "L242",
       "id": "components_servicesdetail_servicesdetail",
-      "community": 29,
+      "community": 28,
       "norm_label": "servicesdetail()"
     },
     {
@@ -7542,7 +7578,7 @@
       "source_file": "src/components/ResourcesHero.jsx",
       "source_location": "L1",
       "id": "src_components_resourceshero_jsx",
-      "community": 110,
+      "community": 112,
       "norm_label": "resourceshero.jsx"
     },
     {
@@ -7551,7 +7587,7 @@
       "source_file": "src/components/ResourcesHero.jsx",
       "source_location": "L16",
       "id": "components_resourceshero_resourceshero",
-      "community": 110,
+      "community": 112,
       "norm_label": "resourceshero()"
     },
     {
@@ -7560,7 +7596,7 @@
       "source_file": "src/components/CitationWebDiagram.jsx",
       "source_location": "L1",
       "id": "src_components_citationwebdiagram_jsx",
-      "community": 111,
+      "community": 113,
       "norm_label": "citationwebdiagram.jsx"
     },
     {
@@ -7569,7 +7605,7 @@
       "source_file": "src/components/CitationWebDiagram.jsx",
       "source_location": "L88",
       "id": "components_citationwebdiagram_citationwebdiagram",
-      "community": 111,
+      "community": 113,
       "norm_label": "citationwebdiagram()"
     },
     {
@@ -7578,7 +7614,7 @@
       "source_file": "src/components/GbpHero.jsx",
       "source_location": "L1",
       "id": "src_components_gbphero_jsx",
-      "community": 112,
+      "community": 114,
       "norm_label": "gbphero.jsx"
     },
     {
@@ -7587,7 +7623,7 @@
       "source_file": "src/components/GbpHero.jsx",
       "source_location": "L15",
       "id": "components_gbphero_gbphero",
-      "community": 112,
+      "community": 114,
       "norm_label": "gbphero()"
     },
     {
@@ -7623,7 +7659,7 @@
       "source_file": "src/components/ServicesAuditBridge.jsx",
       "source_location": "L1",
       "id": "src_components_servicesauditbridge_jsx",
-      "community": 113,
+      "community": 115,
       "norm_label": "servicesauditbridge.jsx"
     },
     {
@@ -7632,7 +7668,7 @@
       "source_file": "src/components/ServicesAuditBridge.jsx",
       "source_location": "L17",
       "id": "components_servicesauditbridge_servicesauditbridge",
-      "community": 113,
+      "community": 115,
       "norm_label": "servicesauditbridge()"
     },
     {
@@ -7641,7 +7677,7 @@
       "source_file": "src/components/LocalSeoHeroSVG.jsx",
       "source_location": "L1",
       "id": "src_components_localseoherosvg_jsx",
-      "community": 114,
+      "community": 116,
       "norm_label": "localseoherosvg.jsx"
     },
     {
@@ -7650,7 +7686,7 @@
       "source_file": "src/components/LocalSeoHeroSVG.jsx",
       "source_location": "L2",
       "id": "components_localseoherosvg_localseoherosvg",
-      "community": 114,
+      "community": 116,
       "norm_label": "localseoherosvg()"
     },
     {
@@ -7767,7 +7803,7 @@
       "source_file": "src/components/StakesSection.jsx",
       "source_location": "L1",
       "id": "src_components_stakessection_jsx",
-      "community": 115,
+      "community": 117,
       "norm_label": "stakessection.jsx"
     },
     {
@@ -7776,7 +7812,7 @@
       "source_file": "src/components/StakesSection.jsx",
       "source_location": "L46",
       "id": "components_stakessection_stakessection",
-      "community": 115,
+      "community": 117,
       "norm_label": "stakessection()"
     },
     {
@@ -7785,7 +7821,7 @@
       "source_file": "src/components/AboutDifference.jsx",
       "source_location": "L1",
       "id": "src_components_aboutdifference_jsx",
-      "community": 116,
+      "community": 118,
       "norm_label": "aboutdifference.jsx"
     },
     {
@@ -7794,7 +7830,7 @@
       "source_file": "src/components/AboutDifference.jsx",
       "source_location": "L35",
       "id": "components_aboutdifference_aboutdifference",
-      "community": 116,
+      "community": 118,
       "norm_label": "aboutdifference()"
     },
     {
@@ -7803,7 +7839,7 @@
       "source_file": "src/components/ServicesPageFinalCTA.jsx",
       "source_location": "L1",
       "id": "src_components_servicespagefinalcta_jsx",
-      "community": 117,
+      "community": 119,
       "norm_label": "servicespagefinalcta.jsx"
     },
     {
@@ -7812,7 +7848,7 @@
       "source_file": "src/components/ServicesPageFinalCTA.jsx",
       "source_location": "L17",
       "id": "components_servicespagefinalcta_servicespagefinalcta",
-      "community": 117,
+      "community": 119,
       "norm_label": "servicespagefinalcta()"
     },
     {
@@ -7843,12 +7879,30 @@
       "norm_label": "portfoliodemos()"
     },
     {
+      "label": "SiloamPlumbingClient.jsx",
+      "file_type": "code",
+      "source_file": "src/components/SiloamPlumbingClient.jsx",
+      "source_location": "L1",
+      "id": "src_components_siloamplumbingclient_jsx",
+      "community": 120,
+      "norm_label": "siloamplumbingclient.jsx"
+    },
+    {
+      "label": "SiloamPlumbingClient()",
+      "file_type": "code",
+      "source_file": "src/components/SiloamPlumbingClient.jsx",
+      "source_location": "L61",
+      "id": "components_siloamplumbingclient_siloamplumbingclient",
+      "community": 120,
+      "norm_label": "siloamplumbingclient()"
+    },
+    {
       "label": "SearchFunnel.jsx",
       "file_type": "code",
       "source_file": "src/components/SearchFunnel.jsx",
       "source_location": "L1",
       "id": "src_components_searchfunnel_jsx",
-      "community": 42,
+      "community": 41,
       "norm_label": "searchfunnel.jsx"
     },
     {
@@ -7857,7 +7911,7 @@
       "source_file": "src/components/SearchFunnel.jsx",
       "source_location": "L7",
       "id": "components_searchfunnel_usecountup",
-      "community": 42,
+      "community": 41,
       "norm_label": "usecountup()"
     },
     {
@@ -7866,7 +7920,7 @@
       "source_file": "src/components/SearchFunnel.jsx",
       "source_location": "L30",
       "id": "components_searchfunnel_funnelparticle",
-      "community": 42,
+      "community": 41,
       "norm_label": "funnelparticle()"
     },
     {
@@ -7875,7 +7929,7 @@
       "source_file": "src/components/SearchFunnel.jsx",
       "source_location": "L61",
       "id": "components_searchfunnel_searchfunnel",
-      "community": 42,
+      "community": 41,
       "norm_label": "searchfunnel()"
     },
     {
@@ -7884,7 +7938,7 @@
       "source_file": "src/components/ProcessSection.jsx",
       "source_location": "L1",
       "id": "src_components_processsection_jsx",
-      "community": 118,
+      "community": 121,
       "norm_label": "processsection.jsx"
     },
     {
@@ -7893,7 +7947,7 @@
       "source_file": "src/components/ProcessSection.jsx",
       "source_location": "L26",
       "id": "components_processsection_processsection",
-      "community": 118,
+      "community": 121,
       "norm_label": "processsection()"
     },
     {
@@ -7902,7 +7956,7 @@
       "source_file": "src/components/Navbar.jsx",
       "source_location": "L1",
       "id": "src_components_navbar_jsx",
-      "community": 119,
+      "community": 122,
       "norm_label": "navbar.jsx"
     },
     {
@@ -7911,7 +7965,7 @@
       "source_file": "src/components/Navbar.jsx",
       "source_location": "L24",
       "id": "components_navbar_navbar",
-      "community": 119,
+      "community": 122,
       "norm_label": "navbar()"
     },
     {
@@ -7920,7 +7974,7 @@
       "source_file": "src/components/GhostListing.jsx",
       "source_location": "L1",
       "id": "src_components_ghostlisting_jsx",
-      "community": 30,
+      "community": 29,
       "norm_label": "ghostlisting.jsx"
     },
     {
@@ -7929,7 +7983,7 @@
       "source_file": "src/components/GhostListing.jsx",
       "source_location": "L6",
       "id": "components_ghostlisting_fadeup",
-      "community": 30,
+      "community": 29,
       "norm_label": "fadeup()"
     },
     {
@@ -7938,7 +7992,7 @@
       "source_file": "src/components/GhostListing.jsx",
       "source_location": "L12",
       "id": "components_ghostlisting_starrating",
-      "community": 30,
+      "community": 29,
       "norm_label": "starrating()"
     },
     {
@@ -7947,7 +8001,7 @@
       "source_file": "src/components/GhostListing.jsx",
       "source_location": "L24",
       "id": "components_ghostlisting_listing",
-      "community": 30,
+      "community": 29,
       "norm_label": "listing()"
     },
     {
@@ -7956,7 +8010,7 @@
       "source_file": "src/components/GhostListing.jsx",
       "source_location": "L46",
       "id": "components_ghostlisting_ghostslot",
-      "community": 30,
+      "community": 29,
       "norm_label": "ghostslot()"
     },
     {
@@ -7965,7 +8019,7 @@
       "source_file": "src/components/GhostListing.jsx",
       "source_location": "L66",
       "id": "components_ghostlisting_nwamap",
-      "community": 30,
+      "community": 29,
       "norm_label": "nwamap()"
     },
     {
@@ -7974,7 +8028,7 @@
       "source_file": "src/components/GhostListing.jsx",
       "source_location": "L193",
       "id": "components_ghostlisting_ghostlisting",
-      "community": 30,
+      "community": 29,
       "norm_label": "ghostlisting()"
     },
     {
@@ -7983,7 +8037,7 @@
       "source_file": "src/components/ServiceAreasHero.jsx",
       "source_location": "L1",
       "id": "src_components_serviceareashero_jsx",
-      "community": 120,
+      "community": 123,
       "norm_label": "serviceareashero.jsx"
     },
     {
@@ -7992,7 +8046,7 @@
       "source_file": "src/components/ServiceAreasHero.jsx",
       "source_location": "L4",
       "id": "components_serviceareashero_serviceareashero",
-      "community": 120,
+      "community": 123,
       "norm_label": "serviceareashero()"
     },
     {
@@ -8001,7 +8055,7 @@
       "source_file": "src/components/DiagnosticSection.jsx",
       "source_location": "L1",
       "id": "src_components_diagnosticsection_jsx",
-      "community": 121,
+      "community": 124,
       "norm_label": "diagnosticsection.jsx"
     },
     {
@@ -8010,7 +8064,7 @@
       "source_file": "src/components/DiagnosticSection.jsx",
       "source_location": "L49",
       "id": "components_diagnosticsection_diagnosticsection",
-      "community": 121,
+      "community": 124,
       "norm_label": "diagnosticsection()"
     },
     {
@@ -8046,7 +8100,7 @@
       "source_file": "src/components/WebDesignHero.jsx",
       "source_location": "L1",
       "id": "src_components_webdesignhero_jsx",
-      "community": 122,
+      "community": 125,
       "norm_label": "webdesignhero.jsx"
     },
     {
@@ -8055,7 +8109,7 @@
       "source_file": "src/components/WebDesignHero.jsx",
       "source_location": "L15",
       "id": "components_webdesignhero_webdesignhero",
-      "community": 122,
+      "community": 125,
       "norm_label": "webdesignhero()"
     },
     {
@@ -8064,7 +8118,7 @@
       "source_file": "src/components/PortfolioCraft.jsx",
       "source_location": "L1",
       "id": "src_components_portfoliocraft_jsx",
-      "community": 123,
+      "community": 126,
       "norm_label": "portfoliocraft.jsx"
     },
     {
@@ -8073,7 +8127,7 @@
       "source_file": "src/components/PortfolioCraft.jsx",
       "source_location": "L31",
       "id": "components_portfoliocraft_portfoliocraft",
-      "community": 123,
+      "community": 126,
       "norm_label": "portfoliocraft()"
     },
     {
@@ -8082,7 +8136,7 @@
       "source_file": "src/components/FAQSection.jsx",
       "source_location": "L1",
       "id": "src_components_faqsection_jsx",
-      "community": 124,
+      "community": 127,
       "norm_label": "faqsection.jsx"
     },
     {
@@ -8091,7 +8145,7 @@
       "source_file": "src/components/FAQSection.jsx",
       "source_location": "L95",
       "id": "components_faqsection_faqsection",
-      "community": 124,
+      "community": 127,
       "norm_label": "faqsection()"
     },
     {
@@ -8100,7 +8154,7 @@
       "source_file": "src/components/FreeAuditHero.jsx",
       "source_location": "L1",
       "id": "src_components_freeaudithero_jsx",
-      "community": 125,
+      "community": 128,
       "norm_label": "freeaudithero.jsx"
     },
     {
@@ -8109,7 +8163,7 @@
       "source_file": "src/components/FreeAuditHero.jsx",
       "source_location": "L3",
       "id": "components_freeaudithero_freeaudithero",
-      "community": 125,
+      "community": 128,
       "norm_label": "freeaudithero()"
     },
     {
@@ -8118,7 +8172,7 @@
       "source_file": "src/components/GuideSection.jsx",
       "source_location": "L1",
       "id": "src_components_guidesection_jsx",
-      "community": 126,
+      "community": 129,
       "norm_label": "guidesection.jsx"
     },
     {
@@ -8127,7 +8181,7 @@
       "source_file": "src/components/GuideSection.jsx",
       "source_location": "L24",
       "id": "components_guidesection_guidesection",
-      "community": 126,
+      "community": 129,
       "norm_label": "guidesection()"
     },
     {
@@ -8136,7 +8190,7 @@
       "source_file": "src/components/ReputationHeroSVG.jsx",
       "source_location": "L1",
       "id": "src_components_reputationherosvg_jsx",
-      "community": 127,
+      "community": 130,
       "norm_label": "reputationherosvg.jsx"
     },
     {
@@ -8145,7 +8199,7 @@
       "source_file": "src/components/ReputationHeroSVG.jsx",
       "source_location": "L2",
       "id": "components_reputationherosvg_reputationherosvg",
-      "community": 127,
+      "community": 130,
       "norm_label": "reputationherosvg()"
     },
     {
@@ -8154,7 +8208,7 @@
       "source_file": "src/components/PortfolioHero.jsx",
       "source_location": "L1",
       "id": "src_components_portfoliohero_jsx",
-      "community": 128,
+      "community": 131,
       "norm_label": "portfoliohero.jsx"
     },
     {
@@ -8163,7 +8217,7 @@
       "source_file": "src/components/PortfolioHero.jsx",
       "source_location": "L16",
       "id": "components_portfoliohero_portfoliohero",
-      "community": 128,
+      "community": 131,
       "norm_label": "portfoliohero()"
     },
     {
@@ -8172,7 +8226,7 @@
       "source_file": "src/components/ResourcesFeatured.jsx",
       "source_location": "L1",
       "id": "src_components_resourcesfeatured_jsx",
-      "community": 129,
+      "community": 132,
       "norm_label": "resourcesfeatured.jsx"
     },
     {
@@ -8181,7 +8235,7 @@
       "source_file": "src/components/ResourcesFeatured.jsx",
       "source_location": "L23",
       "id": "components_resourcesfeatured_resourcesfeatured",
-      "community": 129,
+      "community": 132,
       "norm_label": "resourcesfeatured()"
     },
     {
@@ -8190,7 +8244,7 @@
       "source_file": "src/components/AboutPledge.jsx",
       "source_location": "L1",
       "id": "src_components_aboutpledge_jsx",
-      "community": 130,
+      "community": 133,
       "norm_label": "aboutpledge.jsx"
     },
     {
@@ -8199,7 +8253,7 @@
       "source_file": "src/components/AboutPledge.jsx",
       "source_location": "L24",
       "id": "components_aboutpledge_aboutpledge",
-      "community": 130,
+      "community": 133,
       "norm_label": "aboutpledge()"
     },
     {
@@ -8208,7 +8262,7 @@
       "source_file": "src/components/SignalMapDiagram.jsx",
       "source_location": "L1",
       "id": "src_components_signalmapdiagram_jsx",
-      "community": 131,
+      "community": 134,
       "norm_label": "signalmapdiagram.jsx"
     },
     {
@@ -8217,26 +8271,8 @@
       "source_file": "src/components/SignalMapDiagram.jsx",
       "source_location": "L87",
       "id": "components_signalmapdiagram_signalmapdiagram",
-      "community": 131,
+      "community": 134,
       "norm_label": "signalmapdiagram()"
-    },
-    {
-      "label": "TradePageClient.jsx",
-      "file_type": "code",
-      "source_file": "src/components/TradePageClient.jsx",
-      "source_location": "L1",
-      "id": "src_components_tradepageclient_jsx",
-      "community": 132,
-      "norm_label": "tradepageclient.jsx"
-    },
-    {
-      "label": "TradePageClient()",
-      "file_type": "code",
-      "source_file": "src/components/TradePageClient.jsx",
-      "source_location": "L44",
-      "id": "components_tradepageclient_tradepageclient",
-      "community": 132,
-      "norm_label": "tradepageclient()"
     },
     {
       "label": "AboutOrigin.jsx",
@@ -8244,7 +8280,7 @@
       "source_file": "src/components/AboutOrigin.jsx",
       "source_location": "L1",
       "id": "src_components_aboutorigin_jsx",
-      "community": 133,
+      "community": 135,
       "norm_label": "aboutorigin.jsx"
     },
     {
@@ -8253,7 +8289,7 @@
       "source_file": "src/components/AboutOrigin.jsx",
       "source_location": "L17",
       "id": "components_aboutorigin_aboutorigin",
-      "community": 133,
+      "community": 135,
       "norm_label": "aboutorigin()"
     },
     {
@@ -8262,16 +8298,16 @@
       "source_file": "src/components/ProblemSection.jsx",
       "source_location": "L1",
       "id": "src_components_problemsection_jsx",
-      "community": 134,
+      "community": 136,
       "norm_label": "problemsection.jsx"
     },
     {
       "label": "ProblemSection()",
       "file_type": "code",
       "source_file": "src/components/ProblemSection.jsx",
-      "source_location": "L46",
+      "source_location": "L31",
       "id": "components_problemsection_problemsection",
-      "community": 134,
+      "community": 136,
       "norm_label": "problemsection()"
     },
     {
@@ -8280,7 +8316,7 @@
       "source_file": "src/components/ServicesPageHero.jsx",
       "source_location": "L1",
       "id": "src_components_servicespagehero_jsx",
-      "community": 135,
+      "community": 137,
       "norm_label": "servicespagehero.jsx"
     },
     {
@@ -8289,7 +8325,7 @@
       "source_file": "src/components/ServicesPageHero.jsx",
       "source_location": "L17",
       "id": "components_servicespagehero_servicespagehero",
-      "community": 135,
+      "community": 137,
       "norm_label": "servicespagehero()"
     },
     {
@@ -8298,7 +8334,7 @@
       "source_file": "src/components/CitationHeroSVG.jsx",
       "source_location": "L1",
       "id": "src_components_citationherosvg_jsx",
-      "community": 136,
+      "community": 138,
       "norm_label": "citationherosvg.jsx"
     },
     {
@@ -8307,7 +8343,7 @@
       "source_file": "src/components/CitationHeroSVG.jsx",
       "source_location": "L2",
       "id": "components_citationherosvg_citationherosvg",
-      "community": 136,
+      "community": 138,
       "norm_label": "citationherosvg()"
     },
     {
@@ -8316,7 +8352,7 @@
       "source_file": "src/components/HowItWorksSection.jsx",
       "source_location": "L1",
       "id": "src_components_howitworkssection_jsx",
-      "community": 137,
+      "community": 139,
       "norm_label": "howitworkssection.jsx"
     },
     {
@@ -8325,7 +8361,7 @@
       "source_file": "src/components/HowItWorksSection.jsx",
       "source_location": "L35",
       "id": "components_howitworkssection_howitworkssection",
-      "community": 137,
+      "community": 139,
       "norm_label": "howitworkssection()"
     },
     {
@@ -8334,7 +8370,7 @@
       "source_file": "src/components/ui/Layout.jsx",
       "source_location": "L1",
       "id": "src_components_ui_layout_jsx",
-      "community": 43,
+      "community": 42,
       "norm_label": "layout.jsx"
     },
     {
@@ -8343,7 +8379,7 @@
       "source_file": "src/components/ui/Layout.jsx",
       "source_location": "L1",
       "id": "ui_layout_container",
-      "community": 43,
+      "community": 42,
       "norm_label": "container()"
     },
     {
@@ -8352,7 +8388,7 @@
       "source_file": "src/components/ui/Layout.jsx",
       "source_location": "L5",
       "id": "ui_layout_section",
-      "community": 43,
+      "community": 42,
       "norm_label": "section()"
     },
     {
@@ -8361,7 +8397,7 @@
       "source_file": "src/components/ui/Layout.jsx",
       "source_location": "L9",
       "id": "ui_layout_stack",
-      "community": 43,
+      "community": 42,
       "norm_label": "stack()"
     },
     {
@@ -8424,7 +8460,7 @@
       "source_file": "src/components/ui/Typography.jsx",
       "source_location": "L1",
       "id": "src_components_ui_typography_jsx",
-      "community": 35,
+      "community": 34,
       "norm_label": "typography.jsx"
     },
     {
@@ -8433,7 +8469,7 @@
       "source_file": "src/components/ui/Typography.jsx",
       "source_location": "L1",
       "id": "ui_typography_h1",
-      "community": 35,
+      "community": 34,
       "norm_label": "h1()"
     },
     {
@@ -8442,7 +8478,7 @@
       "source_file": "src/components/ui/Typography.jsx",
       "source_location": "L5",
       "id": "ui_typography_h2",
-      "community": 35,
+      "community": 34,
       "norm_label": "h2()"
     },
     {
@@ -8451,7 +8487,7 @@
       "source_file": "src/components/ui/Typography.jsx",
       "source_location": "L9",
       "id": "ui_typography_body",
-      "community": 35,
+      "community": 34,
       "norm_label": "body()"
     },
     {
@@ -8460,7 +8496,7 @@
       "source_file": "src/components/ui/Typography.jsx",
       "source_location": "L13",
       "id": "ui_typography_eyebrow",
-      "community": 35,
+      "community": 34,
       "norm_label": "eyebrow()"
     },
     {
@@ -8469,7 +8505,7 @@
       "source_file": "src/components/LocalSeoComponents/Proof.jsx",
       "source_location": "L1",
       "id": "src_components_localseocomponents_proof_jsx",
-      "community": 138,
+      "community": 140,
       "norm_label": "proof.jsx"
     },
     {
@@ -8478,7 +8514,7 @@
       "source_file": "src/components/LocalSeoComponents/Proof.jsx",
       "source_location": "L6",
       "id": "localseocomponents_proof_proof",
-      "community": 138,
+      "community": 140,
       "norm_label": "proof()"
     },
     {
@@ -8487,7 +8523,7 @@
       "source_file": "src/components/LocalSeoComponents/FAQ.jsx",
       "source_location": "L1",
       "id": "src_components_localseocomponents_faq_jsx",
-      "community": 139,
+      "community": 141,
       "norm_label": "faq.jsx"
     },
     {
@@ -8496,7 +8532,7 @@
       "source_file": "src/components/LocalSeoComponents/FAQ.jsx",
       "source_location": "L7",
       "id": "localseocomponents_faq_faq",
-      "community": 139,
+      "community": 141,
       "norm_label": "faq()"
     },
     {
@@ -8505,7 +8541,7 @@
       "source_file": "src/components/LocalSeoComponents/Problem.jsx",
       "source_location": "L1",
       "id": "src_components_localseocomponents_problem_jsx",
-      "community": 140,
+      "community": 142,
       "norm_label": "problem.jsx"
     },
     {
@@ -8514,7 +8550,7 @@
       "source_file": "src/components/LocalSeoComponents/Problem.jsx",
       "source_location": "L6",
       "id": "localseocomponents_problem_problem",
-      "community": 140,
+      "community": 142,
       "norm_label": "problem()"
     },
     {
@@ -8523,7 +8559,7 @@
       "source_file": "src/components/LocalSeoComponents/Process.jsx",
       "source_location": "L1",
       "id": "src_components_localseocomponents_process_jsx",
-      "community": 141,
+      "community": 143,
       "norm_label": "process.jsx"
     },
     {
@@ -8532,7 +8568,7 @@
       "source_file": "src/components/LocalSeoComponents/Process.jsx",
       "source_location": "L11",
       "id": "localseocomponents_process_process",
-      "community": 141,
+      "community": 143,
       "norm_label": "process()"
     },
     {
@@ -8541,7 +8577,7 @@
       "source_file": "src/components/LocalSeoComponents/Solution.jsx",
       "source_location": "L1",
       "id": "src_components_localseocomponents_solution_jsx",
-      "community": 142,
+      "community": 144,
       "norm_label": "solution.jsx"
     },
     {
@@ -8550,7 +8586,7 @@
       "source_file": "src/components/LocalSeoComponents/Solution.jsx",
       "source_location": "L11",
       "id": "localseocomponents_solution_solution",
-      "community": 142,
+      "community": 144,
       "norm_label": "solution()"
     },
     {
@@ -8559,7 +8595,7 @@
       "source_file": "src/components/WebDesignComponents/Proof.jsx",
       "source_location": "L1",
       "id": "src_components_webdesigncomponents_proof_jsx",
-      "community": 143,
+      "community": 145,
       "norm_label": "proof.jsx"
     },
     {
@@ -8568,7 +8604,7 @@
       "source_file": "src/components/WebDesignComponents/Proof.jsx",
       "source_location": "L11",
       "id": "webdesigncomponents_proof_proof",
-      "community": 143,
+      "community": 145,
       "norm_label": "proof()"
     },
     {
@@ -8577,7 +8613,7 @@
       "source_file": "src/components/WebDesignComponents/FAQ.jsx",
       "source_location": "L1",
       "id": "src_components_webdesigncomponents_faq_jsx",
-      "community": 144,
+      "community": 146,
       "norm_label": "faq.jsx"
     },
     {
@@ -8586,7 +8622,7 @@
       "source_file": "src/components/WebDesignComponents/FAQ.jsx",
       "source_location": "L34",
       "id": "webdesigncomponents_faq_faq",
-      "community": 144,
+      "community": 146,
       "norm_label": "faq()"
     },
     {
@@ -8595,7 +8631,7 @@
       "source_file": "src/components/WebDesignComponents/Problem.jsx",
       "source_location": "L1",
       "id": "src_components_webdesigncomponents_problem_jsx",
-      "community": 145,
+      "community": 147,
       "norm_label": "problem.jsx"
     },
     {
@@ -8604,7 +8640,7 @@
       "source_file": "src/components/WebDesignComponents/Problem.jsx",
       "source_location": "L6",
       "id": "webdesigncomponents_problem_problem",
-      "community": 145,
+      "community": 147,
       "norm_label": "problem()"
     },
     {
@@ -8613,7 +8649,7 @@
       "source_file": "src/components/WebDesignComponents/Process.jsx",
       "source_location": "L1",
       "id": "src_components_webdesigncomponents_process_jsx",
-      "community": 146,
+      "community": 148,
       "norm_label": "process.jsx"
     },
     {
@@ -8622,7 +8658,7 @@
       "source_file": "src/components/WebDesignComponents/Process.jsx",
       "source_location": "L11",
       "id": "webdesigncomponents_process_process",
-      "community": 146,
+      "community": 148,
       "norm_label": "process()"
     },
     {
@@ -8631,7 +8667,7 @@
       "source_file": "src/components/WebDesignComponents/Solution.jsx",
       "source_location": "L1",
       "id": "src_components_webdesigncomponents_solution_jsx",
-      "community": 147,
+      "community": 149,
       "norm_label": "solution.jsx"
     },
     {
@@ -8640,7 +8676,7 @@
       "source_file": "src/components/WebDesignComponents/Solution.jsx",
       "source_location": "L11",
       "id": "webdesigncomponents_solution_solution",
-      "community": 147,
+      "community": 149,
       "norm_label": "solution()"
     },
     {
@@ -8649,7 +8685,7 @@
       "source_file": "src/components/WebDesignComponents/HowItWorks.jsx",
       "source_location": "L1",
       "id": "src_components_webdesigncomponents_howitworks_jsx",
-      "community": 148,
+      "community": 150,
       "norm_label": "howitworks.jsx"
     },
     {
@@ -8658,7 +8694,7 @@
       "source_file": "src/components/WebDesignComponents/HowItWorks.jsx",
       "source_location": "L55",
       "id": "webdesigncomponents_howitworks_howitworks",
-      "community": 148,
+      "community": 150,
       "norm_label": "howitworks()"
     },
     {
@@ -8667,7 +8703,7 @@
       "source_file": "src/components/GbpComponents/Proof.jsx",
       "source_location": "L1",
       "id": "src_components_gbpcomponents_proof_jsx",
-      "community": 149,
+      "community": 151,
       "norm_label": "proof.jsx"
     },
     {
@@ -8676,7 +8712,7 @@
       "source_file": "src/components/GbpComponents/Proof.jsx",
       "source_location": "L6",
       "id": "gbpcomponents_proof_proof",
-      "community": 149,
+      "community": 151,
       "norm_label": "proof()"
     },
     {
@@ -8685,7 +8721,7 @@
       "source_file": "src/components/GbpComponents/FAQ.jsx",
       "source_location": "L1",
       "id": "src_components_gbpcomponents_faq_jsx",
-      "community": 150,
+      "community": 152,
       "norm_label": "faq.jsx"
     },
     {
@@ -8694,7 +8730,7 @@
       "source_file": "src/components/GbpComponents/FAQ.jsx",
       "source_location": "L7",
       "id": "gbpcomponents_faq_faq",
-      "community": 150,
+      "community": 152,
       "norm_label": "faq()"
     },
     {
@@ -8703,7 +8739,7 @@
       "source_file": "src/components/GbpComponents/Problem.jsx",
       "source_location": "L1",
       "id": "src_components_gbpcomponents_problem_jsx",
-      "community": 151,
+      "community": 153,
       "norm_label": "problem.jsx"
     },
     {
@@ -8712,7 +8748,7 @@
       "source_file": "src/components/GbpComponents/Problem.jsx",
       "source_location": "L6",
       "id": "gbpcomponents_problem_problem",
-      "community": 151,
+      "community": 153,
       "norm_label": "problem()"
     },
     {
@@ -8721,7 +8757,7 @@
       "source_file": "src/components/GbpComponents/Process.jsx",
       "source_location": "L1",
       "id": "src_components_gbpcomponents_process_jsx",
-      "community": 152,
+      "community": 154,
       "norm_label": "process.jsx"
     },
     {
@@ -8730,7 +8766,7 @@
       "source_file": "src/components/GbpComponents/Process.jsx",
       "source_location": "L11",
       "id": "gbpcomponents_process_process",
-      "community": 152,
+      "community": 154,
       "norm_label": "process()"
     },
     {
@@ -8739,7 +8775,7 @@
       "source_file": "src/components/GbpComponents/Solution.jsx",
       "source_location": "L1",
       "id": "src_components_gbpcomponents_solution_jsx",
-      "community": 153,
+      "community": 155,
       "norm_label": "solution.jsx"
     },
     {
@@ -8748,7 +8784,7 @@
       "source_file": "src/components/GbpComponents/Solution.jsx",
       "source_location": "L11",
       "id": "gbpcomponents_solution_solution",
-      "community": 153,
+      "community": 155,
       "norm_label": "solution()"
     },
     {
@@ -8757,7 +8793,7 @@
       "source_file": "src/components/GbpComponents/HowItWorks.jsx",
       "source_location": "L1",
       "id": "src_components_gbpcomponents_howitworks_jsx",
-      "community": 154,
+      "community": 156,
       "norm_label": "howitworks.jsx"
     },
     {
@@ -8766,7 +8802,7 @@
       "source_file": "src/components/GbpComponents/HowItWorks.jsx",
       "source_location": "L89",
       "id": "gbpcomponents_howitworks_howitworks",
-      "community": 154,
+      "community": 156,
       "norm_label": "howitworks()"
     },
     {
@@ -8775,7 +8811,7 @@
       "source_file": "src/components/ReputationComponents/Proof.jsx",
       "source_location": "L1",
       "id": "src_components_reputationcomponents_proof_jsx",
-      "community": 155,
+      "community": 157,
       "norm_label": "proof.jsx"
     },
     {
@@ -8784,7 +8820,7 @@
       "source_file": "src/components/ReputationComponents/Proof.jsx",
       "source_location": "L11",
       "id": "reputationcomponents_proof_proof",
-      "community": 155,
+      "community": 157,
       "norm_label": "proof()"
     },
     {
@@ -8793,7 +8829,7 @@
       "source_file": "src/components/ReputationComponents/FAQ.jsx",
       "source_location": "L1",
       "id": "src_components_reputationcomponents_faq_jsx",
-      "community": 156,
+      "community": 158,
       "norm_label": "faq.jsx"
     },
     {
@@ -8802,7 +8838,7 @@
       "source_file": "src/components/ReputationComponents/FAQ.jsx",
       "source_location": "L34",
       "id": "reputationcomponents_faq_faq",
-      "community": 156,
+      "community": 158,
       "norm_label": "faq()"
     },
     {
@@ -8811,7 +8847,7 @@
       "source_file": "src/components/ReputationComponents/Problem.jsx",
       "source_location": "L1",
       "id": "src_components_reputationcomponents_problem_jsx",
-      "community": 157,
+      "community": 159,
       "norm_label": "problem.jsx"
     },
     {
@@ -8820,7 +8856,7 @@
       "source_file": "src/components/ReputationComponents/Problem.jsx",
       "source_location": "L6",
       "id": "reputationcomponents_problem_problem",
-      "community": 157,
+      "community": 159,
       "norm_label": "problem()"
     },
     {
@@ -8829,7 +8865,7 @@
       "source_file": "src/components/ReputationComponents/Process.jsx",
       "source_location": "L1",
       "id": "src_components_reputationcomponents_process_jsx",
-      "community": 158,
+      "community": 160,
       "norm_label": "process.jsx"
     },
     {
@@ -8838,7 +8874,7 @@
       "source_file": "src/components/ReputationComponents/Process.jsx",
       "source_location": "L11",
       "id": "reputationcomponents_process_process",
-      "community": 158,
+      "community": 160,
       "norm_label": "process()"
     },
     {
@@ -8847,7 +8883,7 @@
       "source_file": "src/components/ReputationComponents/Solution.jsx",
       "source_location": "L1",
       "id": "src_components_reputationcomponents_solution_jsx",
-      "community": 159,
+      "community": 161,
       "norm_label": "solution.jsx"
     },
     {
@@ -8856,7 +8892,7 @@
       "source_file": "src/components/ReputationComponents/Solution.jsx",
       "source_location": "L11",
       "id": "reputationcomponents_solution_solution",
-      "community": 159,
+      "community": 161,
       "norm_label": "solution()"
     },
     {
@@ -8865,7 +8901,7 @@
       "source_file": "src/components/ReputationComponents/HowItWorks.jsx",
       "source_location": "L1",
       "id": "src_components_reputationcomponents_howitworks_jsx",
-      "community": 160,
+      "community": 162,
       "norm_label": "howitworks.jsx"
     },
     {
@@ -8874,7 +8910,7 @@
       "source_file": "src/components/ReputationComponents/HowItWorks.jsx",
       "source_location": "L55",
       "id": "reputationcomponents_howitworks_howitworks",
-      "community": 160,
+      "community": 162,
       "norm_label": "howitworks()"
     },
     {
@@ -8883,7 +8919,7 @@
       "source_file": "src/components/AuditComponents/CTA.jsx",
       "source_location": "L1",
       "id": "src_components_auditcomponents_cta_jsx",
-      "community": 161,
+      "community": 163,
       "norm_label": "cta.jsx"
     },
     {
@@ -8892,7 +8928,7 @@
       "source_file": "src/components/AuditComponents/CTA.jsx",
       "source_location": "L6",
       "id": "auditcomponents_cta_cta",
-      "community": 161,
+      "community": 163,
       "norm_label": "cta()"
     },
     {
@@ -8901,7 +8937,7 @@
       "source_file": "src/components/AuditComponents/How.jsx",
       "source_location": "L1",
       "id": "src_components_auditcomponents_how_jsx",
-      "community": 162,
+      "community": 164,
       "norm_label": "how.jsx"
     },
     {
@@ -8910,7 +8946,7 @@
       "source_file": "src/components/AuditComponents/How.jsx",
       "source_location": "L6",
       "id": "auditcomponents_how_how",
-      "community": 162,
+      "community": 164,
       "norm_label": "how()"
     },
     {
@@ -8919,7 +8955,7 @@
       "source_file": "src/components/AuditComponents/What.jsx",
       "source_location": "L1",
       "id": "src_components_auditcomponents_what_jsx",
-      "community": 163,
+      "community": 165,
       "norm_label": "what.jsx"
     },
     {
@@ -8928,7 +8964,7 @@
       "source_file": "src/components/AuditComponents/What.jsx",
       "source_location": "L6",
       "id": "auditcomponents_what_what",
-      "community": 163,
+      "community": 165,
       "norm_label": "what()"
     },
     {
@@ -8937,7 +8973,7 @@
       "source_file": "src/components/AuditComponents/Value.jsx",
       "source_location": "L1",
       "id": "src_components_auditcomponents_value_jsx",
-      "community": 164,
+      "community": 166,
       "norm_label": "value.jsx"
     },
     {
@@ -8946,7 +8982,7 @@
       "source_file": "src/components/AuditComponents/Value.jsx",
       "source_location": "L6",
       "id": "auditcomponents_value_value",
-      "community": 164,
+      "community": 166,
       "norm_label": "value()"
     },
     {
@@ -8955,7 +8991,7 @@
       "source_file": "src/components/CitationComponents/Proof.jsx",
       "source_location": "L1",
       "id": "src_components_citationcomponents_proof_jsx",
-      "community": 165,
+      "community": 167,
       "norm_label": "proof.jsx"
     },
     {
@@ -8964,7 +9000,7 @@
       "source_file": "src/components/CitationComponents/Proof.jsx",
       "source_location": "L6",
       "id": "citationcomponents_proof_proof",
-      "community": 165,
+      "community": 167,
       "norm_label": "proof()"
     },
     {
@@ -8973,7 +9009,7 @@
       "source_file": "src/components/CitationComponents/FAQ.jsx",
       "source_location": "L1",
       "id": "src_components_citationcomponents_faq_jsx",
-      "community": 166,
+      "community": 168,
       "norm_label": "faq.jsx"
     },
     {
@@ -8982,7 +9018,7 @@
       "source_file": "src/components/CitationComponents/FAQ.jsx",
       "source_location": "L7",
       "id": "citationcomponents_faq_faq",
-      "community": 166,
+      "community": 168,
       "norm_label": "faq()"
     },
     {
@@ -8991,7 +9027,7 @@
       "source_file": "src/components/CitationComponents/Problem.jsx",
       "source_location": "L1",
       "id": "src_components_citationcomponents_problem_jsx",
-      "community": 167,
+      "community": 169,
       "norm_label": "problem.jsx"
     },
     {
@@ -9000,7 +9036,7 @@
       "source_file": "src/components/CitationComponents/Problem.jsx",
       "source_location": "L6",
       "id": "citationcomponents_problem_problem",
-      "community": 167,
+      "community": 169,
       "norm_label": "problem()"
     },
     {
@@ -9009,7 +9045,7 @@
       "source_file": "src/components/CitationComponents/Process.jsx",
       "source_location": "L1",
       "id": "src_components_citationcomponents_process_jsx",
-      "community": 168,
+      "community": 170,
       "norm_label": "process.jsx"
     },
     {
@@ -9018,7 +9054,7 @@
       "source_file": "src/components/CitationComponents/Process.jsx",
       "source_location": "L11",
       "id": "citationcomponents_process_process",
-      "community": 168,
+      "community": 170,
       "norm_label": "process()"
     },
     {
@@ -9027,7 +9063,7 @@
       "source_file": "src/components/CitationComponents/Solution.jsx",
       "source_location": "L1",
       "id": "src_components_citationcomponents_solution_jsx",
-      "community": 169,
+      "community": 171,
       "norm_label": "solution.jsx"
     },
     {
@@ -9036,7 +9072,7 @@
       "source_file": "src/components/CitationComponents/Solution.jsx",
       "source_location": "L11",
       "id": "citationcomponents_solution_solution",
-      "community": 169,
+      "community": 171,
       "norm_label": "solution()"
     },
     {
@@ -9144,7 +9180,7 @@
       "source_file": "src/lib/metadata.js",
       "source_location": "L1",
       "id": "src_lib_metadata_js",
-      "community": 180,
+      "community": 183,
       "norm_label": "metadata.js"
     },
     {
@@ -9153,7 +9189,7 @@
       "source_file": "src/lib/analytics.js",
       "source_location": "L1",
       "id": "src_lib_analytics_js",
-      "community": 170,
+      "community": 172,
       "norm_label": "analytics.js"
     },
     {
@@ -9162,7 +9198,7 @@
       "source_file": "src/lib/analytics.js",
       "source_location": "L24",
       "id": "lib_analytics_track",
-      "community": 170,
+      "community": 172,
       "norm_label": "track()"
     },
     {
@@ -9198,35 +9234,8 @@
       "source_file": "src/lib/cityPageData.js",
       "source_location": "L1",
       "id": "src_lib_citypagedata_js",
-      "community": 181,
+      "community": 184,
       "norm_label": "citypagedata.js"
-    },
-    {
-      "label": "tradePageData.js",
-      "file_type": "code",
-      "source_file": "src/lib/tradePageData.js",
-      "source_location": "L1",
-      "id": "src_lib_tradepagedata_js",
-      "community": 28,
-      "norm_label": "tradepagedata.js"
-    },
-    {
-      "label": "getCityTradeSignals()",
-      "file_type": "code",
-      "source_file": "src/lib/tradePageData.js",
-      "source_location": "L320",
-      "id": "lib_tradepagedata_getcitytradesignals",
-      "community": 28,
-      "norm_label": "getcitytradesignals()"
-    },
-    {
-      "label": "getCityTradeFAQs()",
-      "file_type": "code",
-      "source_file": "src/lib/tradePageData.js",
-      "source_location": "L349",
-      "id": "lib_tradepagedata_getcitytradefaqs",
-      "community": 28,
-      "norm_label": "getcitytradefaqs()"
     },
     {
       "label": "Local SEO for HVAC Companies",
@@ -21547,6 +21556,54 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/app/service-areas/siloam-springs-ar/hvac/page.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "src_app_service_areas_siloam_springs_ar_hvac_page_js",
+      "_tgt": "hvac_page_generatemetadata",
+      "source": "src_app_service_areas_siloam_springs_ar_hvac_page_js",
+      "target": "hvac_page_generatemetadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/service-areas/siloam-springs-ar/hvac/page.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "src_app_service_areas_siloam_springs_ar_hvac_page_js",
+      "_tgt": "hvac_page_siloamspringhvacpage",
+      "source": "src_app_service_areas_siloam_springs_ar_hvac_page_js",
+      "target": "hvac_page_siloamspringhvacpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/service-areas/siloam-springs-ar/plumbing/page.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "src_app_service_areas_siloam_springs_ar_plumbing_page_js",
+      "_tgt": "plumbing_page_generatemetadata",
+      "source": "src_app_service_areas_siloam_springs_ar_plumbing_page_js",
+      "target": "plumbing_page_generatemetadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/service-areas/siloam-springs-ar/plumbing/page.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "src_app_service_areas_siloam_springs_ar_plumbing_page_js",
+      "_tgt": "plumbing_page_siloamspringplumbingpage",
+      "source": "src_app_service_areas_siloam_springs_ar_plumbing_page_js",
+      "target": "plumbing_page_siloamspringplumbingpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/app/service-areas/fayetteville-ar/page.js",
       "source_location": "L7",
       "weight": 1.0,
@@ -21591,66 +21648,6 @@
       "_tgt": "lib_og_buildogimage",
       "source": "fayetteville_ar_opengraph_image_ogimage",
       "target": "lib_og_buildogimage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/service-areas/[city]/[trade]/page.js",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_src": "src_app_service_areas_city_trade_page_js",
-      "_tgt": "trade_page_generatestaticparams",
-      "source": "src_app_service_areas_city_trade_page_js",
-      "target": "trade_page_generatestaticparams",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/service-areas/[city]/[trade]/page.js",
-      "source_location": "L22",
-      "weight": 1.0,
-      "_src": "src_app_service_areas_city_trade_page_js",
-      "_tgt": "trade_page_generatemetadata",
-      "source": "src_app_service_areas_city_trade_page_js",
-      "target": "trade_page_generatemetadata",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/service-areas/[city]/[trade]/page.js",
-      "source_location": "L48",
-      "weight": 1.0,
-      "_src": "src_app_service_areas_city_trade_page_js",
-      "_tgt": "trade_page_citytradepage",
-      "source": "src_app_service_areas_city_trade_page_js",
-      "target": "trade_page_citytradepage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "src/app/service-areas/[city]/[trade]/page.js",
-      "source_location": "L58",
-      "weight": 1.0,
-      "_src": "trade_page_citytradepage",
-      "_tgt": "lib_tradepagedata_getcitytradesignals",
-      "source": "trade_page_citytradepage",
-      "target": "lib_tradepagedata_getcitytradesignals"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "src/app/service-areas/[city]/[trade]/page.js",
-      "source_location": "L59",
-      "weight": 1.0,
-      "_src": "trade_page_citytradepage",
-      "_tgt": "lib_tradepagedata_getcitytradefaqs",
-      "source": "trade_page_citytradepage",
-      "target": "lib_tradepagedata_getcitytradefaqs"
     },
     {
       "relation": "contains",
@@ -21800,7 +21797,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/privacy/page.js",
-      "source_location": "L18",
+      "source_location": "L17",
       "weight": 1.0,
       "_src": "src_app_privacy_page_js",
       "_tgt": "privacy_page_privacypage",
@@ -21848,7 +21845,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/terms/page.js",
-      "source_location": "L18",
+      "source_location": "L17",
       "weight": 1.0,
       "_src": "src_app_terms_page_js",
       "_tgt": "terms_page_termspage",
@@ -21980,7 +21977,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/blog/[slug]/page.js",
-      "source_location": "L26",
+      "source_location": "L29",
       "weight": 1.0,
       "_src": "src_app_blog_slug_page_js",
       "_tgt": "slug_page_generatestaticparams",
@@ -21992,7 +21989,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/blog/[slug]/page.js",
-      "source_location": "L31",
+      "source_location": "L34",
       "weight": 1.0,
       "_src": "src_app_blog_slug_page_js",
       "_tgt": "slug_page_generatemetadata",
@@ -22004,7 +22001,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/blog/[slug]/page.js",
-      "source_location": "L65",
+      "source_location": "L74",
       "weight": 1.0,
       "_src": "src_app_blog_slug_page_js",
       "_tgt": "slug_page_blogpost",
@@ -22543,6 +22540,30 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/SiloamHvacClient.jsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "src_components_siloamhvacclient_jsx",
+      "_tgt": "components_siloamhvacclient_siloamhvacclient",
+      "source": "src_components_siloamhvacclient_jsx",
+      "target": "components_siloamhvacclient_siloamhvacclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/KeyTakeaways.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "src_components_keytakeaways_jsx",
+      "_tgt": "components_keytakeaways_keytakeaways",
+      "source": "src_components_keytakeaways_jsx",
+      "target": "components_keytakeaways_keytakeaways",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/PortfolioHonesty.jsx",
       "source_location": "L16",
       "weight": 1.0,
@@ -22580,7 +22601,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/TestimonialsSection.jsx",
-      "source_location": "L34",
+      "source_location": "L42",
       "weight": 1.0,
       "_src": "src_components_testimonialssection_jsx",
       "_tgt": "components_testimonialssection_testimonialssection",
@@ -22616,7 +22637,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/CityPageClient.jsx",
-      "source_location": "L69",
+      "source_location": "L93",
       "weight": 1.0,
       "_src": "src_components_citypageclient_jsx",
       "_tgt": "components_citypageclient_citypageclient",
@@ -22892,7 +22913,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ICPSection.jsx",
-      "source_location": "L56",
+      "source_location": "L66",
       "weight": 1.0,
       "_src": "src_components_icpsection_jsx",
       "_tgt": "components_icpsection_icpsection",
@@ -22922,30 +22943,6 @@
       "_tgt": "components_authoritysection_authoritysection",
       "source": "src_components_authoritysection_jsx",
       "target": "components_authoritysection_authoritysection",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ProofSection.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "src_components_proofsection_jsx",
-      "_tgt": "components_proofsection_fadeup",
-      "source": "src_components_proofsection_jsx",
-      "target": "components_proofsection_fadeup",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ProofSection.jsx",
-      "source_location": "L41",
-      "weight": 1.0,
-      "_src": "src_components_proofsection_jsx",
-      "_tgt": "components_proofsection_proofsection",
-      "source": "src_components_proofsection_jsx",
-      "target": "components_proofsection_proofsection",
       "confidence_score": 1.0
     },
     {
@@ -23431,6 +23428,18 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/SiloamPlumbingClient.jsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "src_components_siloamplumbingclient_jsx",
+      "_tgt": "components_siloamplumbingclient_siloamplumbingclient",
+      "source": "src_components_siloamplumbingclient_jsx",
+      "target": "components_siloamplumbingclient_siloamplumbingclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/SearchFunnel.jsx",
       "source_location": "L7",
       "weight": 1.0,
@@ -23755,18 +23764,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/TradePageClient.jsx",
-      "source_location": "L44",
-      "weight": 1.0,
-      "_src": "src_components_tradepageclient_jsx",
-      "_tgt": "components_tradepageclient_tradepageclient",
-      "source": "src_components_tradepageclient_jsx",
-      "target": "components_tradepageclient_tradepageclient",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/components/AboutOrigin.jsx",
       "source_location": "L17",
       "weight": 1.0,
@@ -23780,7 +23777,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ProblemSection.jsx",
-      "source_location": "L46",
+      "source_location": "L31",
       "weight": 1.0,
       "_src": "src_components_problemsection_jsx",
       "_tgt": "components_problemsection_problemsection",
@@ -24590,30 +24587,6 @@
       "_tgt": "lib_og_loadfonts",
       "source": "lib_og_loadfonts",
       "target": "lib_og_buildogimage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/tradePageData.js",
-      "source_location": "L320",
-      "weight": 1.0,
-      "_src": "src_lib_tradepagedata_js",
-      "_tgt": "lib_tradepagedata_getcitytradesignals",
-      "source": "src_lib_tradepagedata_js",
-      "target": "lib_tradepagedata_getcitytradesignals",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/tradePageData.js",
-      "source_location": "L349",
-      "weight": 1.0,
-      "_src": "src_lib_tradepagedata_js",
-      "_tgt": "lib_tradepagedata_getcitytradefaqs",
-      "source": "src_lib_tradepagedata_js",
-      "target": "lib_tradepagedata_getcitytradefaqs",
       "confidence_score": 1.0
     },
     {

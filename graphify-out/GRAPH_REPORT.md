@@ -1,12 +1,12 @@
-# Graph Report - local-search-ally  (2026-05-12)
+# Graph Report - local-search-ally  (2026-05-14)
 
 ## Corpus Check
-- 221 files · ~4,159,315 words
+- 223 files · ~4,303,648 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1063 nodes · 1343 edges · 40 communities detected
-- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 93 edges (avg confidence: 0.81)
+- 1064 nodes · 1340 edges · 39 communities detected
+- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 91 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -38,18 +38,17 @@
 - [[_COMMUNITY_Community 25|Community 25]]
 - [[_COMMUNITY_Community 26|Community 26]]
 - [[_COMMUNITY_Community 27|Community 27]]
-- [[_COMMUNITY_Community 28|Community 28]]
+- [[_COMMUNITY_Community 29|Community 29]]
 - [[_COMMUNITY_Community 30|Community 30]]
 - [[_COMMUNITY_Community 31|Community 31]]
 - [[_COMMUNITY_Community 32|Community 32]]
 - [[_COMMUNITY_Community 33|Community 33]]
-- [[_COMMUNITY_Community 34|Community 34]]
+- [[_COMMUNITY_Community 35|Community 35]]
 - [[_COMMUNITY_Community 36|Community 36]]
 - [[_COMMUNITY_Community 37|Community 37]]
-- [[_COMMUNITY_Community 38|Community 38]]
-- [[_COMMUNITY_Community 42|Community 42]]
-- [[_COMMUNITY_Community 44|Community 44]]
-- [[_COMMUNITY_Community 46|Community 46]]
+- [[_COMMUNITY_Community 41|Community 41]]
+- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 45|Community 45]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `run_comparison()` - 28 edges
@@ -189,51 +188,47 @@ Nodes (7): email1Html(), email2Html(), email3Html(), email4Html(), footer(), log
 Cohesion: 0.39
 Nodes (7): _build_ads_client(), generate_keyword_ideas(), get_keyword_volumes(), main(), Generate keyword ideas from seed keywords.      Args:         seed_keywords: Lis, Get search volume for specific keywords.      Args:         keywords: List of ke, Build Google Ads client from config.
 
-### Community 28 - "Community 28"
-Cohesion: 0.33
-Nodes (3): getCityTradeFAQs(), getCityTradeSignals(), CityTradePage()
-
-### Community 30 - "Community 30"
+### Community 29 - "Community 29"
 Cohesion: 0.33
 Nodes (2): fadeUp(), Listing()
 
-### Community 31 - "Community 31"
+### Community 30 - "Community 30"
 Cohesion: 0.47
 Nodes (5): main(), Validate JSON-LD blocks in HTML content., Validate a single schema object., validate_jsonld(), _validate_schema_object()
 
-### Community 32 - "Community 32"
+### Community 31 - "Community 31"
 Cohesion: 0.47
 Nodes (5): _escape(), generate_html(), main(), HTML-escape a value, handling None., Generate a self-contained HTML report from comparison data.
 
-### Community 33 - "Community 33"
+### Community 32 - "Community 32"
 Cohesion: 0.53
 Nodes (5): capture_screenshot(), main(), normalize_url(), Normalize URL and return (url, parsed_url)., Capture a screenshot of a web page.      Args:         url: URL to capture
 
-### Community 34 - "Community 34"
+### Community 33 - "Community 33"
 Cohesion: 0.47
 Nodes (5): analyze_visual(), main(), normalize_url(), Normalize URL and return (url, parsed_url)., Analyze visual aspects of a web page.      Args:         url: URL to analyze
 
-### Community 36 - "Community 36"
+### Community 35 - "Community 35"
 Cohesion: 0.67
 Nodes (3): generate_image(), main(), Call Gemini API to generate an image.
 
-### Community 37 - "Community 37"
+### Community 36 - "Community 36"
 Cohesion: 0.67
 Nodes (3): estimate_cost(), main(), Estimate cost for a single image.
 
-### Community 38 - "Community 38"
+### Community 37 - "Community 37"
 Cohesion: 0.67
 Nodes (3): edit_image(), main(), Call Gemini API to edit an image.
 
-### Community 42 - "Community 42"
+### Community 41 - "Community 41"
 Cohesion: 0.67
 Nodes (2): SearchFunnel(), useCountUp()
 
-### Community 44 - "Community 44"
+### Community 43 - "Community 43"
 Cohesion: 1.0
 Nodes (2): Main(), Write-Color()
 
-### Community 46 - "Community 46"
+### Community 45 - "Community 45"
 Cohesion: 1.0
 Nodes (2): check(), main()
 
@@ -244,24 +239,24 @@ Nodes (2): check(), main()
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 25`** (10 nodes): `BottomGlow()`, `FunnelLabels()`, `FunnelScene()`, `FunnelTier()`, `Particles()`, `RotatingGroup()`, `SearchFunnel3D()`, `TierRing()`, `useCountUp()`, `SearchFunnel3D.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 30`** (7 nodes): `fadeUp()`, `GhostListing()`, `GhostSlot()`, `Listing()`, `NWAMap()`, `StarRating()`, `GhostListing.jsx`
+- **Thin community `Community 29`** (7 nodes): `fadeUp()`, `GhostListing()`, `GhostSlot()`, `Listing()`, `NWAMap()`, `StarRating()`, `GhostListing.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 42`** (4 nodes): `FunnelParticle()`, `SearchFunnel()`, `useCountUp()`, `SearchFunnel.jsx`
+- **Thin community `Community 41`** (4 nodes): `FunnelParticle()`, `SearchFunnel()`, `useCountUp()`, `SearchFunnel.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 44`** (3 nodes): `Main()`, `uninstall.ps1`, `Write-Color()`
+- **Thin community `Community 43`** (3 nodes): `Main()`, `uninstall.ps1`, `Write-Color()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 46`** (3 nodes): `validate_setup.py`, `check()`, `main()`
+- **Thin community `Community 45`** (3 nodes): `validate_setup.py`, `check()`, `main()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `validate_url()` connect `Community 3` to `Community 0`, `Community 4`, `Community 6`, `Community 13`, `Community 20`?**
-  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+  _High betweenness centrality (0.055) - this node is a cross-community bridge._
 - **Why does `run_comparison()` connect `Community 0` to `Community 3`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **Why does `load_config()` connect `Community 4` to `Community 27`, `Community 19`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `run_comparison()` (e.g. with `validate_url()` and `url_hash()`) actually correct?**
   _`run_comparison()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 23 inferred relationships involving `buildOGImage()` (e.g. with `OGImage()` and `OGImage()`) actually correct?**
