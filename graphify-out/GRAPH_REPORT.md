@@ -1,11 +1,11 @@
 # Graph Report - local-search-ally  (2026-05-14)
 
 ## Corpus Check
-- 223 files · ~4,303,648 words
+- 223 files · ~4,303,620 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1064 nodes · 1340 edges · 39 communities detected
+- 1065 nodes · 1341 edges · 39 communities detected
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 91 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 

@@ -129,8 +129,8 @@ export default function ServicesPricing() {
           </h2>
           <p className={styles.lead}>
             Two ways to work with me: use the tools yourself, or have me do it
-            for you. Either way, no contracts and no guesswork on what you&rsquo;re
-            paying for.
+            for you. Either way, no contracts and no guesswork on what
+            you&rsquo;re paying for.
           </p>
         </motion.div>
 
