@@ -81,6 +81,19 @@ export default function SiloamPlumbingClient({ auditUrl }) {
           <path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z' />
         </svg>
         <div className={styles.heroInner}>
+          <nav className={styles.breadcrumb} aria-label='Breadcrumb'>
+            <Link href='/service-areas'>Service Areas</Link>
+            <span className={styles.breadcrumbSep} aria-hidden='true'>
+              ›
+            </span>
+            <Link href='/service-areas/siloam-springs-ar'>Siloam Springs</Link>
+            <span className={styles.breadcrumbSep} aria-hidden='true'>
+              ›
+            </span>
+            <span className={styles.breadcrumbCurrent} aria-current='page'>
+              Plumbing SEO
+            </span>
+          </nav>
           <motion.div
             className={styles.heroContent}
             variants={container}

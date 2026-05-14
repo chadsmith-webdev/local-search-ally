@@ -81,6 +81,19 @@ export default function SiloamElectricalClient({ auditUrl }) {
           <path d='M13 2 3 14h9l-1 8 10-12h-9l1-8z' />
         </svg>
         <div className={styles.heroInner}>
+          <nav className={styles.breadcrumb} aria-label='Breadcrumb'>
+            <Link href='/service-areas'>Service Areas</Link>
+            <span className={styles.breadcrumbSep} aria-hidden='true'>
+              ›
+            </span>
+            <Link href='/service-areas/siloam-springs-ar'>Siloam Springs</Link>
+            <span className={styles.breadcrumbSep} aria-hidden='true'>
+              ›
+            </span>
+            <span className={styles.breadcrumbCurrent} aria-current='page'>
+              Electrician SEO
+            </span>
+          </nav>
           <motion.div
             className={styles.heroContent}
             variants={container}

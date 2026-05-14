@@ -82,6 +82,19 @@ export default function SiloamHvacClient({ auditUrl }) {
           <path d='M12 12v.01' />
         </svg>
         <div className={styles.heroInner}>
+          <nav className={styles.breadcrumb} aria-label='Breadcrumb'>
+            <Link href='/service-areas'>Service Areas</Link>
+            <span className={styles.breadcrumbSep} aria-hidden='true'>
+              ›
+            </span>
+            <Link href='/service-areas/siloam-springs-ar'>Siloam Springs</Link>
+            <span className={styles.breadcrumbSep} aria-hidden='true'>
+              ›
+            </span>
+            <span className={styles.breadcrumbCurrent} aria-current='page'>
+              HVAC SEO
+            </span>
+          </nav>
           <motion.div
             className={styles.heroContent}
             variants={container}
@@ -103,7 +116,8 @@ export default function SiloamHvacClient({ auditUrl }) {
               If your Google Business Profile is thin, your reviews haven&apos;t
               moved in a year, or you&apos;re not showing up during peak season,
               those calls go to someone else. I help HVAC contractors in Siloam
-              Springs build the local search presence that puts them in that spot.
+              Springs build the local search presence that puts them in that
+              spot.
             </motion.p>
             <motion.div className={styles.heroActions} variants={fadeUp}>
               <Link
@@ -147,11 +161,11 @@ export default function SiloamHvacClient({ auditUrl }) {
                 realize.
               </p>
               <p className={styles.bodyCopy}>
-                When someone moves here and the AC fails their first summer, they
-                don&apos;t know anyone to ask. When it&apos;s 96° and your usual
-                guy is slammed, homeowners search. That&apos;s the moment local
-                visibility matters — and most HVAC contractors in Siloam Springs
-                aren&apos;t there.
+                When someone moves here and the AC fails their first summer,
+                they don&apos;t know anyone to ask. When it&apos;s 96° and your
+                usual guy is slammed, homeowners search. That&apos;s the moment
+                local visibility matters — and most HVAC contractors in Siloam
+                Springs aren&apos;t there.
               </p>
 
               <div
