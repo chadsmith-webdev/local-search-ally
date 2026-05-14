@@ -82,7 +82,7 @@
 .star {
   width: 18px;
   height: 18px;
-  fill: #f5c518;
+  fill: var(--carolina);
 }
 
 .timeAgo {

@@ -10,7 +10,7 @@
 /* Carolina blue atmospheric bloom — bottom-left corner
    (mirrors ServicesSection's top-left bloom, alternating placement) */
 .section::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10%;
   left: -10%;
@@ -95,6 +95,16 @@
   color: var(--text, #f0f0f0);
   font-size: 1rem;
   margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.tradeIcon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--carolina, #7bafd4);
 }
 
 .tradeDesc {
