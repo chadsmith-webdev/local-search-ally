@@ -238,13 +238,14 @@ export default function SiloamRoofingClient({ auditUrl }) {
             homeowner picked the out-of-state truck that did.
           </p>
           <div className={styles.problemCallout}>
-            <span className={styles.calloutLabel}>Reviews drive trust</span>
-            <span className={styles.calloutStat}>97%</span>
+            <span className={styles.calloutLabel}>Trust threshold</span>
+            <span className={styles.calloutStat}>62%</span>
             <p className={styles.calloutText}>
-              97% of consumers read reviews for local businesses (Local Consumer
-              Review Survey, 2026). For a roof replacement, that number
-              effectively rounds to everyone — and what they see is what decides
-              the call.
+              62% of consumers would avoid using a business if they found
+              incorrect information online (Local Business Discovery and Trust
+              Report, 2023). On a roof replacement, one wrong phone number or
+              outdated address is all it takes for a homeowner to scroll to the
+              next crew.
             </p>
           </div>
           <p className={styles.problemLead}>

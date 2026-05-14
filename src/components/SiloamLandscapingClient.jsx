@@ -239,12 +239,14 @@ export default function SiloamLandscapingClient({ auditUrl }) {
             all season.
           </p>
           <div className={styles.problemCallout}>
-            <span className={styles.calloutLabel}>Reviews drive trust</span>
-            <span className={styles.calloutStat}>97%</span>
+            <span className={styles.calloutLabel}>Search frequency</span>
+            <span className={styles.calloutStat}>80% weekly</span>
             <p className={styles.calloutText}>
-              97% of consumers read reviews for local businesses (Local Consumer
-              Review Survey, 2026). For a service that shows up every Tuesday on
-              the front lawn, the neighbors&apos; reviews are the whole pitch.
+              80% of US consumers search online for local businesses on a weekly
+              basis, and 32% search daily (SOCi Consumer Behavior Index, 2024).
+              Landscaping isn&apos;t an emergency call — it&apos;s a recurring,
+              compared-and-considered decision, and the neighbors are looking
+              long before they ever wave you down at the curb.
             </p>
           </div>
           <p className={styles.problemLead}>
