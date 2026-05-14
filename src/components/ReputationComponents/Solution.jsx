@@ -10,23 +10,25 @@ const fadeUp = {
 
 export default function Solution() {
   return (
-    <section className={styles.section} aria-labelledby="solution-heading">
+    <section className={styles.section} aria-labelledby='solution-heading'>
       <div className={styles.container}>
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial='hidden'
+          whileInView='visible'
           viewport={{ once: true }}
           variants={fadeUp}
           className={styles.header}
         >
           <span className={styles.eyebrow}>The Fix</span>
-          <h2 className={styles.heading} id="solution-heading">A Review Engine That Runs Without You</h2>
+          <h2 className={styles.heading} id='solution-heading'>
+            A Review Engine That Runs Without You
+          </h2>
         </motion.div>
 
         <div className={styles.grid}>
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial='hidden'
+            whileInView='visible'
             viewport={{ once: true }}
             variants={fadeUp}
             transition={{ delay: 0.1 }}
@@ -34,14 +36,17 @@ export default function Solution() {
           >
             <div className={styles.answerFirst}>
               <p>
-                Most contractors get reviews randomly — great job here, silence there.
-                I build a repeatable system that turns completed jobs into new reviews
-                within 24 hours, without cold calls or awkward asks.
+                Most contractors get reviews randomly — great job here, silence
+                there. I build a repeatable system that turns completed jobs
+                into new reviews within 24 hours, without cold calls or awkward
+                asks.
               </p>
             </div>
 
             <div className={styles.transparency}>
-              <h3 className={styles.transparencyHeading}>What I will never do</h3>
+              <h3 className={styles.transparencyHeading}>
+                What I will never do
+              </h3>
               <ul className={styles.transparencyList}>
                 <li>Fake reviews or paid placements</li>
                 <li>Review gating (hiding negative feedback)</li>
@@ -52,8 +57,8 @@ export default function Solution() {
           </motion.div>
 
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial='hidden'
+            whileInView='visible'
             viewport={{ once: true }}
             variants={fadeUp}
             transition={{ delay: 0.2 }}
@@ -63,50 +68,74 @@ export default function Solution() {
             <div className={styles.whatGrid}>
               <div className={styles.whatItem}>
                 <div className={styles.whatIcon}>
-                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M16 3H2a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h5l3 3 3-3h3a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z" />
+                  <svg viewBox='0 0 24 24' aria-hidden='true'>
+                    <path
+                      fill='currentColor'
+                      d='M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z'
+                    />
                   </svg>
                 </div>
                 <div>
                   <h4>Review Request System</h4>
-                  <p>A simple, personal follow-up process that captures happy customers before they forget — via text, email, or both.</p>
+                  <p>
+                    A simple, personal follow-up process that captures happy
+                    customers before they forget — via text, email, or both.
+                  </p>
                 </div>
               </div>
 
               <div className={styles.whatItem}>
                 <div className={styles.whatIcon}>
-                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M14 2H4a2 2 0 0 0-2 2v12l4-2 3 2 3-2 4 2V4a2 2 0 0 0-2-2z" />
+                  <svg viewBox='0 0 24 24' aria-hidden='true'>
+                    <path
+                      fill='currentColor'
+                      d='M10,9V5L3,12L10,19V14.9C15,14.9 18.5,16.5 21,20C20,15 17,10 10,9Z'
+                    />
                   </svg>
                 </div>
                 <div>
                   <h4>Response Templates</h4>
-                  <p>Ready-made responses for positive and negative reviews — professional, personal, and written in your voice.</p>
+                  <p>
+                    Ready-made responses for positive and negative reviews —
+                    professional, personal, and written in your voice.
+                  </p>
                 </div>
               </div>
 
               <div className={styles.whatItem}>
                 <div className={styles.whatIcon}>
-                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M9 2l2.3 5.4h5.9l-4.8 3.6 1.8 5.4L9 13.2 4.8 16.4l1.8-5.4L1.8 7.4H7.7z" />
+                  <svg viewBox='0 0 24 24' aria-hidden='true'>
+                    <path
+                      fill='currentColor'
+                      d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'
+                    />
                   </svg>
                 </div>
                 <div>
                   <h4>Rating Recovery Strategy</h4>
-                  <p>If negative reviews are dragging your average down, I'll show you how to steadily rebuild it with volume and recency.</p>
+                  <p>
+                    If negative reviews are dragging your average down, I'll
+                    show you how to steadily rebuild it with volume and recency.
+                  </p>
                 </div>
               </div>
 
               <div className={styles.whatItem}>
                 <div className={styles.whatIcon}>
-                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M3 3h12v12H3z" />
-                    <path d="M3 9h12M9 3v12" />
+                  <svg viewBox='0 0 24 24' aria-hidden='true'>
+                    <path
+                      fill='currentColor'
+                      d='M3,11H11V3H3M3,21H11V13H3M13,21H21V13H13M13,3V11H21V3'
+                    />
                   </svg>
                 </div>
                 <div>
                   <h4>Monthly Monitoring</h4>
-                  <p>New reviews flagged and reported monthly. I track velocity, rating trends, and alert you to anything that needs attention.</p>
+                  <p>
+                    New reviews flagged and reported monthly. I track velocity,
+                    rating trends, and alert you to anything that needs
+                    attention.
+                  </p>
                 </div>
               </div>
             </div>
