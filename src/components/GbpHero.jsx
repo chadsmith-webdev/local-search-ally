@@ -49,27 +49,15 @@ export default function GbpHero() {
                 <svg
                   width='22'
                   height='22'
-                  viewBox='0 0 22 22'
-                  fill='none'
+                  viewBox='0 0 24 24'
                   xmlns='http://www.w3.org/2000/svg'
                   aria-hidden='true'
                   focusable='false'
                   style={{ marginRight: 8 }}
                 >
-                  <circle
-                    cx='11'
-                    cy='11'
-                    r='10'
-                    stroke='#7bafd4'
-                    strokeWidth='2'
-                    fill='none'
-                  />
                   <path
-                    d='M7 11.5l2.5 2.5 5-5'
-                    stroke='#7bafd4'
-                    strokeWidth='2'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
+                    fill='#7bafd4'
+                    d='M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.41,10.09L6,11.5L11,16.5Z'
                   />
                 </svg>
                 <span>

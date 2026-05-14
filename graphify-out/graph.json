@@ -8701,7 +8701,7 @@
       "label": "HowItWorks()",
       "file_type": "code",
       "source_file": "src/components/WebDesignComponents/HowItWorks.jsx",
-      "source_location": "L55",
+      "source_location": "L65",
       "id": "webdesigncomponents_howitworks_howitworks",
       "community": 150,
       "norm_label": "howitworks()"
@@ -24098,7 +24098,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/WebDesignComponents/HowItWorks.jsx",
-      "source_location": "L55",
+      "source_location": "L65",
       "weight": 1.0,
       "_src": "src_components_webdesigncomponents_howitworks_jsx",
       "_tgt": "webdesigncomponents_howitworks_howitworks",
