@@ -73,18 +73,15 @@ export default function Problem() {
             >
               <div className={styles.problemIcon}>
                 <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                  viewBox='0 0 24 24'
                   role='img'
                   aria-label='Location pin icon'
                   focusable='false'
                 >
-                  <path d='M9 1c-3.3 0-6 2.7-6 6 0 4 6 10 6 10s6-6 6-10c0-3.3-2.7-6-6-6Z' />
-                  <circle cx='9' cy='7' r='1.5' />
+                  <path
+                    fill='currentColor'
+                    d='M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z'
+                  />
                 </svg>
               </div>
               <h3>Not Visible in Google Maps</h3>
@@ -106,17 +103,15 @@ export default function Problem() {
             >
               <div className={styles.problemIcon}>
                 <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                  viewBox='0 0 24 24'
                   role='img'
                   aria-label='Star badge icon'
                   focusable='false'
                 >
-                  <path d='M9 2l2.3 5.4h5.9l-4.8 3.6 1.8 5.4-4.2-3.2-4.2 3.2 1.8-5.4-4.8-3.6h5.9z' />
+                  <path
+                    fill='currentColor'
+                    d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'
+                  />
                 </svg>
               </div>
               <h3>Missing Reviews & Social Proof</h3>
@@ -138,18 +133,15 @@ export default function Problem() {
             >
               <div className={styles.problemIcon}>
                 <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                  viewBox='0 0 24 24'
                   role='img'
                   aria-label='Magnifying glass icon'
                   focusable='false'
                 >
-                  <circle cx='8' cy='8' r='5' />
-                  <path d='m13 13 3 3' />
+                  <path
+                    fill='currentColor'
+                    d='M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z'
+                  />
                 </svg>
               </div>
               <h3>Your Website Doesn't Rank for Local Keywords</h3>
@@ -171,19 +163,15 @@ export default function Problem() {
             >
               <div className={styles.problemIcon}>
                 <svg
-                  viewBox='0 0 18 18'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                  viewBox='0 0 24 24'
                   role='img'
                   aria-label='Document icon'
                   focusable='false'
                 >
-                  <rect x='2' y='4' width='14' height='10' rx='1' />
-                  <path d='M6 4V3c0-.5.5-1 1-1h4c.5 0 1 .5 1 1v1' />
-                  <line x1='9' y1='8' x2='9' y2='11' />
+                  <path
+                    fill='currentColor'
+                    d='M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z'
+                  />
                 </svg>
               </div>
               <h3>Lost Leads to Bigger Companies</h3>

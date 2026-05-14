@@ -67,7 +67,9 @@ export default function FAQ() {
           variants={fadeUp}
         >
           <span className={styles.eyebrow}>Questions</span>
-          <h2 className={styles.heading}>Citation Building Questions for NWA Contractors</h2>
+          <h2 className={styles.heading}>
+            Citation Building Questions for NWA Contractors
+          </h2>
           <p className={styles.intro}>
             Everything you need to know about citation building, NAP
             consistency, and how I approach it for contractors in Northwest
@@ -106,20 +108,10 @@ export default function FAQ() {
                 >
                   <span>{faq.question}</span>
                   <span className={styles.icon} aria-hidden>
-                    <svg
-                      width='18'
-                      height='18'
-                      viewBox='0 0 24 24'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                      aria-hidden
-                    >
+                    <svg width='18' height='18' viewBox='0 0 24 24' aria-hidden>
                       <path
-                        d='M12 5v14M5 12h14'
-                        stroke='currentColor'
-                        strokeWidth='2'
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
+                        fill='currentColor'
+                        d='M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z'
                       />
                     </svg>
                   </span>
@@ -131,7 +123,9 @@ export default function FAQ() {
                     role='region'
                     aria-labelledby={`faq-cit-header-${id}`}
                     className={styles.answer}
-                    style={openIndex !== index ? { display: "none" } : undefined}
+                    style={
+                      openIndex !== index ? { display: "none" } : undefined
+                    }
                   >
                     <p>{faq.answer}</p>
                   </div>
