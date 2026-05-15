@@ -1,11 +1,11 @@
-# Graph Report - local-search-ally  (2026-05-14)
+# Graph Report - local-search-ally  (2026-05-15)
 
 ## Corpus Check
-- 223 files · ~4,303,460 words
+- 231 files · ~4,318,788 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1065 nodes · 1341 edges · 39 communities detected
+- 1085 nodes · 1353 edges · 39 communities detected
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 91 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
@@ -89,12 +89,12 @@ Cohesion: 0.04
 Nodes (25): OGImage(), OGImage(), OGImage(), OGImage(), OGImage(), OGImage(), OGImage(), OGImage() (+17 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.06
-Nodes (42): detect_trends(), main(), query_history(), Analyze p75 timeseries to detect trends.      Compares the average of the last 4, Query CrUX History API for weekly CWV trends.      Args:         url_or_origin:, fetch_page(), main(), Fetch a web page and return response details.      Args:         url: The URL to (+34 more)
-
-### Community 4 - "Community 4"
 Cohesion: 0.07
 Nodes (45): build_service(), check_credentials(), detect_tier(), _exchange_code(), get_api_key(), get_oauth_credentials(), get_service_account_credentials(), load_config() (+37 more)
+
+### Community 4 - "Community 4"
+Cohesion: 0.06
+Nodes (42): detect_trends(), main(), query_history(), Analyze p75 timeseries to detect trends.      Compares the average of the last 4, Query CrUX History API for weekly CWV trends.      Args:         url_or_origin:, fetch_page(), main(), Fetch a web page and return response details.      Args:         url: The URL to (+34 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.15
@@ -251,12 +251,12 @@ Nodes (2): check(), main()
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `validate_url()` connect `Community 3` to `Community 0`, `Community 4`, `Community 6`, `Community 13`, `Community 20`?**
-  _High betweenness centrality (0.055) - this node is a cross-community bridge._
-- **Why does `run_comparison()` connect `Community 0` to `Community 3`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
-- **Why does `load_config()` connect `Community 4` to `Community 27`, `Community 19`?**
+- **Why does `validate_url()` connect `Community 4` to `Community 0`, `Community 3`, `Community 6`, `Community 13`, `Community 20`?**
+  _High betweenness centrality (0.052) - this node is a cross-community bridge._
+- **Why does `run_comparison()` connect `Community 0` to `Community 4`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `load_config()` connect `Community 3` to `Community 27`, `Community 19`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `run_comparison()` (e.g. with `validate_url()` and `url_hash()`) actually correct?**
   _`run_comparison()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 23 inferred relationships involving `buildOGImage()` (e.g. with `OGImage()` and `OGImage()`) actually correct?**
