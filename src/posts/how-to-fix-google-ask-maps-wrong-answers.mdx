@@ -1,0 +1,243 @@
+---
+title: "How to Fix Wrong AI Answers on Your Google Business Profile"
+date: "2026-05-15"
+description: "Google replaced GBP Q&A with Ask Maps in November 2025 — and 62% of consumers avoid businesses with wrong info online. Here's the step-by-step fix."
+image: "/images/how-to-fix-google-ask-maps-wrong-answers.png"
+imageAlt: "Smartphone showing a wrong AI-generated answer in Google Maps Ask feature, with a thumbs-down correction prompt visible"
+tags:
+  [
+    "google business profile",
+    "ask maps",
+    "local seo",
+    "gbp ai answers",
+  ]
+faqs:
+  - question: "Can I delete a wrong AI answer in Google Ask Maps?"
+    answer: "No. There's no direct edit or delete option. You report it using the thumbs-down or ⋮ menu in the listing panel, then update the source data the AI trusts — your GBP, website, reviews, or external citations. The answer changes when the underlying data changes."
+  - question: "How long does it take for Ask Maps to update after I fix my GBP?"
+    answer: "Typically a few days to a couple of weeks. Google recrawls profiles on its own schedule. Adding FAQPage schema markup to your website can speed things up for website-sourced corrections."
+  - question: "Does Google officially explain how Ask Maps picks its sources?"
+    answer: "No. There's no published weighting from Google. The four-source hierarchy — GBP fields, website, reviews, external citations — is based on patterns documented by local SEO researchers, not official Google documentation."
+  - question: "Is Ask Maps available everywhere, or just in some markets?"
+    answer: "As of early 2026, Ask Maps is rolling out in the United States. International availability is limited. Check by searching the business name in Google Maps and looking for an Ask button near the top of the listing panel."
+---
+
+<KeyTakeaways>
+
+- Google replaced the GBP Q&A feature with Gemini-powered Ask Maps in November 2025 — there's no edit button for wrong answers.
+- **62% of consumers would avoid using a business if they found incorrect information online** ([Local Business Discovery and Trust Report, 2023](https://www.brightlocal.com/research/local-business-discovery-and-trust-report/)). Wrong AI answers cost you calls before they happen.
+- You can't edit the AI directly — fix the sources it trusts: your GBP fields, your website FAQ, your review responses, and your external citation listings, in that order.
+- Using review *responses* to correct factual errors inline is one of the most underused tactics for retraining Ask Maps — the AI indexes responses alongside the reviews themselves.
+
+</KeyTakeaways>
+
+---
+
+Google is generating answers about your business. Not just surfacing your profile — actually writing a response and delivering it to someone who asked a question. And if that response gets your hours, services, or pricing wrong, there's no edit button.
+
+That's the situation since Google retired the Q&A API in November 2025 and replaced it with Gemini-powered Ask Maps. The old system let you write and pin your own answers to customer questions. The new one generates them for you — whether you're ready or not.
+
+**62% of consumers would avoid a business if they found incorrect information about it online** (BrightLocal, 2023). That stat predates Ask Maps. The stakes have only gone up since.
+
+This guide walks through every layer of the fix, in the order you should tackle them — from the two-minute band-aid to the ongoing habits that keep wrong answers from coming back.
+
+---
+
+## What Happened to Google Business Profile Q&A?
+
+Google deprecated the My Business Q&A API on November 3, 2025. The user-facing Q&A section followed in December. What replaced it — Ask Maps — is a Gemini-powered feature that answers customer questions in real time, pulling from multiple data sources and synthesizing a response on the fly.
+
+Only 68% of business contact information on ChatGPT and Perplexity matches the details on those businesses' actual Google Business Profiles (SOCi, 2026). Ask Maps has the same underlying problem. The AI doesn't verify before it surfaces an answer — it synthesizes from whatever it finds and weights the sources it trusts most.
+
+Google's stated reason for removing Q&A was reliability: crowd-sourced answers went stale, unmoderated content created inconsistencies. Fair enough. But the replacement has a different reliability problem. When the AI gets something wrong, the correction path isn't obvious. You're not correcting a user-submitted answer anymore. You're correcting an AI's interpretation of your data.
+
+Understanding what data it actually reads — and in what order — is where the fix starts.
+
+For background on how AI generates answers about your business across Google's search features, see my earlier post on [how AI-generated answers about your business work](/blog/google-business-profile-ai-answers).
+
+---
+
+## Why Can't You Edit Google Ask Maps Answers Directly?
+
+You can't change the AI's output directly. What you can do is change the inputs it trusts.
+
+Every fix in this guide targets one of four layers: your GBP dashboard, your website content, your review responses, or your external citation listings. That's the Source of Truth framework — instead of trying to edit an output you don't control, you control the data the AI is reading.
+
+<figure className="chart-container" style={{margin: '2.5rem 0', textAlign: 'center', padding: '1.5rem', borderRadius: '12px'}}>
+  <svg viewBox="0 0 560 340" style={{maxWidth: '100%', height: 'auto', fontFamily: "'Inter', system-ui, sans-serif"}} role="img" aria-label="Horizontal bar chart showing Ask Maps data source trust hierarchy. GBP Fields has the highest trust weight, followed by Website Content, Review Content, and External Citations with the lowest weight.">
+    <title>Ask Maps Data Source Trust Hierarchy</title>
+    <desc>Four horizontal bars showing the relative trust weight of data sources Ask Maps uses to generate business answers: GBP Fields (highest), Website Content (high), Review Content (medium), External Citations (lower). Based on observed local SEO research patterns, not official Google data.</desc>
+    <text x="280" y="28" textAnchor="middle" fontSize="15" fontWeight="600" fill="currentColor">Ask Maps Data Source Trust Hierarchy</text>
+    <text x="280" y="47" textAnchor="middle" fontSize="11" fill="currentColor" opacity="0.45">Relative weight when generating business answers</text>
+    <rect x="180" y="72" width="324" height="40" rx="5" fill="#7bafd4" />
+    <text x="174" y="97" textAnchor="end" fontSize="12" fontWeight="500" fill="currentColor" opacity="0.9">GBP Fields</text>
+    <text x="514" y="97" textAnchor="start" fontSize="11" fontWeight="700" fill="#7bafd4">Highest</text>
+    <rect x="180" y="130" width="246" height="40" rx="5" fill="#7bafd4" opacity="0.72" />
+    <text x="174" y="155" textAnchor="end" fontSize="12" fontWeight="500" fill="currentColor" opacity="0.9">Website Content</text>
+    <text x="435" y="155" textAnchor="start" fontSize="11" fontWeight="700" fill="#7bafd4" opacity="0.82">High</text>
+    <rect x="180" y="188" width="178" height="40" rx="5" fill="#7bafd4" opacity="0.50" />
+    <text x="174" y="213" textAnchor="end" fontSize="12" fontWeight="500" fill="currentColor" opacity="0.9">Review Content</text>
+    <text x="368" y="213" textAnchor="start" fontSize="11" fontWeight="700" fill="#7bafd4" opacity="0.60">Medium</text>
+    <rect x="180" y="246" width="120" height="40" rx="5" fill="#7bafd4" opacity="0.32" />
+    <text x="174" y="271" textAnchor="end" fontSize="12" fontWeight="500" fill="currentColor" opacity="0.9">External Citations</text>
+    <text x="310" y="271" textAnchor="start" fontSize="11" fontWeight="700" fill="#7bafd4" opacity="0.42">Lower</text>
+    <text x="280" y="305" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.40">Observed hierarchy based on local SEO research — not official Google data</text>
+    <text x="280" y="322" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.32">Source: Local SEO practitioner documentation, 2025–2026</text>
+  </svg>
+</figure>
+
+The practical implication: if an answer is wrong and you've already updated the GBP but the AI hasn't corrected itself, the error is almost certainly coming from a layer below — a stale citation, a review with outdated information, or a website page that contradicts the profile. The layers don't override each other cleanly. They create a composite answer, and bad data anywhere in the stack can surface.
+
+Think of it as a data hygiene problem, not an AI problem. The AI is reading something wrong somewhere. Your job is to find which layer has the bad data and clean it.
+
+---
+
+## Step 1: Report the Wrong Answer First
+
+[AI_IMAGE: A close-up of a smartphone screen displaying a Google Maps business listing panel. The AI-generated answer bubble shows incorrect information — blurred or stylized text to avoid real branding. A glowing red warning icon or thumbs-down gesture is visible near the answer. Dark ambient background, cool blue interface glow, cinematic depth of field. Editorial tech photography style. 16:9 ratio.]
+
+This step takes two minutes. Do it before anything else, even though it won't fix the problem on its own.
+
+Open Google Maps, pull up the listing, and find the Ask Maps answer that's wrong. Tap the thumbs-down icon or the ⋮ menu next to the response. Select "Information is incorrect." That sends a direct signal to Google that this specific answer has a problem.
+
+Don't expect an immediate change. This is a signal, not an edit. Google processes these on its own timeline — days to weeks in most cases. And if you stop here without fixing the underlying source data, the same wrong answer will likely return, because the AI is still reading the same bad input.
+
+Flag it anyway. Two minutes now, a documented correction signal in Google's system, and one less thing to track later.
+
+---
+
+## Step 2: Audit Every Field in Your GBP Dashboard
+
+Google treats the GBP as the primary source of truth. Every correction effort starts here before anywhere else.
+
+Customers are 70% more likely to visit and 50% more likely to consider purchasing from businesses with a complete Google Business Profile ([Google](https://support.google.com/business/answer/7091)). Completeness matters to customers reading the listing and to the AI synthesizing answers from it. An incomplete profile isn't just a missed opportunity — it's an invitation for the AI to fill in the gaps from less reliable sources.
+
+Here's what to audit field by field:
+
+**Business description.** The AI quotes this directly in Ask Maps responses. Write it in plain declarative sentences: "We offer same-day HVAC repair in Rogers, Bentonville, and Springdale." Marketing copy gets filtered or misread. Facts get used. If your description currently reads like an ad, rewrite it like a spec sheet.
+
+**Services list.** If a service you offer isn't listed, the AI may tell customers you don't offer it. Be exhaustive — list individual services, not just broad categories. An HVAC company shouldn't just list "HVAC." List tune-ups, new installations, emergency repairs, duct cleaning, and every other specific line item.
+
+**Attributes.** Payment methods, hours, accessibility features — every factual field the AI treats as authoritative. Fill them all out and keep them current. Hours are the most common source of wrong Ask Maps answers I see when auditing profiles.
+
+**Owner Q&A.** This feature survived the Q&A deprecation and gets overlooked. You can still seed your profile with owner-posted questions and verified answers. These carry high-authority signals because they come directly from the verified business owner. Use them for the questions customers ask most: service area, emergency availability, pricing ranges, what's included in a standard service call.
+
+**Posts and photos.** Consistent activity signals profile freshness. An inactive GBP produces weaker, less accurate AI answers over time. Posting regularly — even once a week — keeps the AI reading current data rather than defaulting to cached or third-party sources.
+
+For a full field-by-field walkthrough, see my guide on [optimizing every section of your Google Business Profile](/blog/how-to-optimize-your-google-business-profile-as-a-contractor).
+
+---
+
+## Step 3: Optimize Your Website as the AI's Backup Source
+
+When the GBP is missing what the AI needs, it crawls the linked website next. The structure of those pages matters as much as the content on them.
+
+45% of consumers now use ChatGPT or other AI tools for local business recommendations (BrightLocal, 2026). The website work you do to fix Ask Maps answers also improves how every other AI platform reads your business — Perplexity, ChatGPT, Bing Copilot. It's not a one-platform fix.
+
+**Create a dedicated FAQ page.** Use plain question-and-answer pairs with declarative language. "Our service area includes Rogers, Bentonville, Fayetteville, and Springdale." "We accept all major credit cards, checks, and Venmo." "Emergency service is available 24/7 for existing customers." Avoid marketing language — the AI needs facts it can extract without interpretation. Ambiguous sentences get inferred, and that's where errors enter.
+
+**Add FAQPage schema markup.** JSON-LD schema formats your Q&A content in a structure the AI can parse directly, without guessing at your meaning. It reduces the chance of misreading and makes your FAQ answers eligible for rich results in standard search at the same time.
+
+{/* [UNIQUE INSIGHT] */}
+> **What most practitioners miss:** Ask Maps doesn't just read the text on your FAQ page — it reads the structure. A properly marked-up FAQ with FAQPage schema gives the AI labeled, machine-readable pairs it can use directly. Unstructured service page prose requires inference. Less inference means fewer wrong answers. The schema is doing as much work as the copy.
+
+**Review your service pages.** Each service should have a clear, specific description: what the service includes, what geographic areas you cover, any facts about availability or pricing. If a page reads like a placeholder, the AI treats it like one.
+
+[AI_IMAGE: A minimal dark-mode laptop screen displaying a clean FAQ page with clearly structured question-and-answer pairs. The text is legible but generic. Soft Carolina blue accent highlights on the active question. The surrounding desk is dark and uncluttered. Overhead angle, slightly warm ambient light from screen glow. Professional editorial style. 16:9 ratio.]
+
+---
+
+## Step 4: Use Review Responses to Correct the Record
+
+This is the tactic most practitioners skip, and it's one of the more reliable ways to retrain what Ask Maps says about a business.
+
+97% of consumers read reviews for local businesses ([BrightLocal, Local Consumer Review Survey, 2026](https://www.brightlocal.com/research/local-consumer-review-survey/)). Ask Maps knows this — review content carries significant weight in how the AI synthesizes answers. That cuts both ways. Accurate reviews help. Reviews with factual errors can become part of the answer.
+
+What isn't obvious: **the AI indexes your responses to reviews alongside the reviews themselves.**
+
+When a customer writes "I heard they only take cash but they actually accepted my card," that review contains a claim about payment methods. If your response reads "We accept all major credit cards, Venmo, and checks — glad we could clear that up," you've created two data points instead of one. Your response is a verified, owner-generated correction. The AI can read it as authoritative because it comes from the confirmed business owner.
+
+{/* [PERSONAL EXPERIENCE] */}
+> **From a real audit:** I found a GBP where hours had been corrected months earlier — the profile was accurate. But Ask Maps was still surfacing the old hours. The source was a review from a customer who'd mentioned the previous schedule. The review was more recent than the profile update, and the AI was weighting it. A single response clarifying the current hours fixed the Ask Maps answer within two weeks.
+
+On seeding accurate details: when asking satisfied customers for reviews, you can suggest mentioning specific, accurate service details. "They installed my system the same day I called" gives the AI usable facts. "Great service, very professional" gives it nothing it can work with in an answer.
+
+For a full review collection approach, see my guide on [getting more Google reviews as a contractor](/blog/how-to-get-more-google-reviews-as-a-contractor).
+
+---
+
+## Step 5: Audit Your External Citations for Bad Data
+
+If you've updated the GBP, built out the website FAQ, and addressed reviews — and the AI is still giving wrong answers — something in your citation footprint has bad data.
+
+Less than half of businesses that lead in Google local search results also appear in AI local recommendations ([SOCi Local Visibility Index, 2026](https://www.socsci.co/local-visibility-index)). Citation inconsistency is one of the primary drivers of that gap. A Yelp listing with outdated hours, or an Angi profile listing a service you no longer offer, can influence Ask Maps even when your GBP is clean. These third-party directories have real domain authority that Google's AI respects.
+
+<figure className="chart-container" style={{margin: '2.5rem 0', textAlign: 'center', padding: '1.5rem', borderRadius: '12px'}}>
+  <svg viewBox="0 0 560 380" style={{maxWidth: '100%', height: 'auto', fontFamily: "'Inter', system-ui, sans-serif"}} role="img" aria-label="Lollipop chart showing citation audit priority order for home service businesses, with Google Business Profile as highest priority and Apple Maps as lowest.">
+    <title>Citation Audit Priority Order for Home Service Businesses</title>
+    <desc>Six directories ranked by audit priority from highest to lowest: 1. Google Business Profile — check NAP, hours, services, and attributes. 2. Yelp — check NAP first, then hours. 3. Bing Places — check NAP and active services. 4. Angi and HomeAdvisor — check NAP and listed services. 5. Facebook Business — check NAP and hours. 6. Apple Maps — check NAP and address accuracy.</desc>
+    <text x="280" y="28" textAnchor="middle" fontSize="15" fontWeight="600" fill="currentColor">Citation Audit Priority Order</text>
+    <text x="280" y="47" textAnchor="middle" fontSize="11" fill="currentColor" opacity="0.45">For home service businesses — fix in this order</text>
+    <line x1="180" y1="91" x2="443" y2="91" stroke="currentColor" strokeWidth="1.5" opacity="0.15" />
+    <circle cx="459" cy="91" r="16" fill="#7bafd4" />
+    <text x="459" y="96" textAnchor="middle" fontSize="12" fontWeight="700" fill="white">1</text>
+    <text x="174" y="84" textAnchor="end" fontSize="12" fontWeight="500" fill="currentColor" opacity="0.9">Google Business Profile</text>
+    <text x="174" y="99" textAnchor="end" fontSize="10" fill="currentColor" opacity="0.45">Check: NAP, hours, services, attributes</text>
+    <line x1="180" y1="133" x2="400" y2="133" stroke="currentColor" strokeWidth="1.5" opacity="0.15" />
+    <circle cx="416" cy="133" r="16" fill="#7bafd4" opacity="0.82" />
+    <text x="416" y="138" textAnchor="middle" fontSize="12" fontWeight="700" fill="white">2</text>
+    <text x="174" y="126" textAnchor="end" fontSize="12" fontWeight="500" fill="currentColor" opacity="0.9">Yelp</text>
+    <text x="174" y="141" textAnchor="end" fontSize="10" fill="currentColor" opacity="0.45">Check: NAP first, then hours</text>
+    <line x1="180" y1="175" x2="356" y2="175" stroke="currentColor" strokeWidth="1.5" opacity="0.15" />
+    <circle cx="372" cy="175" r="16" fill="#7bafd4" opacity="0.66" />
+    <text x="372" y="180" textAnchor="middle" fontSize="12" fontWeight="700" fill="white">3</text>
+    <text x="174" y="168" textAnchor="end" fontSize="12" fontWeight="500" fill="currentColor" opacity="0.9">Bing Places</text>
+    <text x="174" y="183" textAnchor="end" fontSize="10" fill="currentColor" opacity="0.45">Check: NAP + active services</text>
+    <line x1="180" y1="217" x2="319" y2="217" stroke="currentColor" strokeWidth="1.5" opacity="0.15" />
+    <circle cx="335" cy="217" r="16" fill="#7bafd4" opacity="0.52" />
+    <text x="335" y="222" textAnchor="middle" fontSize="12" fontWeight="700" fill="white">4</text>
+    <text x="174" y="210" textAnchor="end" fontSize="12" fontWeight="500" fill="currentColor" opacity="0.9">Angi / HomeAdvisor</text>
+    <text x="174" y="225" textAnchor="end" fontSize="10" fill="currentColor" opacity="0.45">Check: NAP + listed services</text>
+    <line x1="180" y1="259" x2="282" y2="259" stroke="currentColor" strokeWidth="1.5" opacity="0.15" />
+    <circle cx="298" cy="259" r="16" fill="#7bafd4" opacity="0.38" />
+    <text x="298" y="264" textAnchor="middle" fontSize="12" fontWeight="700" fill="white">5</text>
+    <text x="174" y="252" textAnchor="end" fontSize="12" fontWeight="500" fill="currentColor" opacity="0.9">Facebook Business</text>
+    <text x="174" y="267" textAnchor="end" fontSize="10" fill="currentColor" opacity="0.45">Check: NAP + hours</text>
+    <line x1="180" y1="301" x2="245" y2="301" stroke="currentColor" strokeWidth="1.5" opacity="0.15" />
+    <circle cx="261" cy="301" r="16" fill="#7bafd4" opacity="0.26" />
+    <text x="261" y="306" textAnchor="middle" fontSize="12" fontWeight="700" fill="white">6</text>
+    <text x="174" y="294" textAnchor="end" fontSize="12" fontWeight="500" fill="currentColor" opacity="0.9">Apple Maps</text>
+    <text x="174" y="309" textAnchor="end" fontSize="10" fill="currentColor" opacity="0.45">Check: NAP + address accuracy</text>
+    <text x="280" y="358" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.35">Source: Local SEO practitioner recommendation, 2026</text>
+  </svg>
+</figure>
+
+Start with NAP — name, address, phone number. A mismatch here is a conflict the AI reads as an inconsistency and tries to resolve, often by picking the wrong version. Then hours. Then services.
+
+{/* [ORIGINAL DATA] */}
+> **What I find in audits:** When I've audited GBPs for NWA home service businesses, persistent wrong Ask Maps answers almost never come from the GBP itself. They come from Yelp listings that haven't been touched in 18 months or more — wrong hours, outdated service lists, in a couple of cases an old address from a previous location. The GBP was accurate. The AI was still reading Yelp because it had the most recently indexed conflicting data point.
+
+The directories that matter most for home service trades: Yelp (Google indexes it heavily), Bing Places (cross-pollinates with Microsoft's AI features), Angi and HomeAdvisor (high domain authority in the trades category), Facebook Business (widely used as a verification signal), and Apple Maps (increasingly relevant as iOS AI features tie into location data).
+
+For a deeper look at how citation consistency affects your visibility across AI platforms, see my guide on [why citation accuracy matters for local SEO](/blog/what-are-citations).
+
+---
+
+## How Often Should You Check What Google's AI Is Saying?
+
+A single round of fixes won't hold permanently. Ask Maps reads live data. A new review with a factual error, or a directory listing that reverts after a data aggregator update, can reintroduce the wrong answer months after you cleaned everything up.
+
+[AI_IMAGE: A contractor or tradesperson — worn work shirt, hands weathered — checking a smartphone in a job site environment, garage or driveway softly blurred in the background. The phone screen glows with a maps interface. Expression focused, confident — not frustrated. Natural light, cinematic color grade, slightly desaturated. Emphasizes the real person behind the Google listing. 16:9 ratio.]
+
+The cadence that keeps answers accurate without taking over your week:
+
+- **Monthly**: Search the business name plus your top two or three service keywords from an incognito window. Open Ask Maps. Screenshot anything wrong and work through the fix steps above.
+- **Weekly**: Respond to all new reviews — especially any that mention specific details about services, hours, or payment. Every response is a data point.
+- **Quarterly**: Re-audit your top citation directories for accuracy and verify that your FAQPage schema is still valid and complete.
+- **Immediately**: Update the GBP within 24 hours of any change to hours, services, or pricing. The AI recrawls on its own schedule — the sooner the update is live, the sooner it reads corrected data.
+
+The businesses that get hurt most by wrong AI answers aren't the ones who got unlucky. They're the ones who set up their profile once and walked away. Consistent maintenance is both the fix and the prevention.
+
+---
+
+If you want to see where your GBP stands right now — what gaps exist before Ask Maps surfaces the wrong answer to a customer — run the free audit at [audit.localsearchally.com](https://audit.localsearchally.com). It takes about two minutes and shows you exactly what the AI is working with.
