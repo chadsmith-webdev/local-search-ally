@@ -31,25 +31,16 @@ export default function AboutHero() {
           </motion.span>
 
           <motion.h1 variants={fadeUp} className={styles.h1}>
-            I&rsquo;m not an agency.{" "}
-            <em>I&rsquo;m one person in Siloam Springs</em> who knows how local
-            search works.
+            Good contractors lose jobs to worse ones every day.{" "}
+            <em>I&rsquo;m trying to fix that.</em>
           </motion.h1>
 
           <motion.p variants={fadeUp} className={styles.subhead}>
-            Home service trades almost everywhere run on referrals. The problem
-            with referrals is that they&rsquo;re invisible to Google — and
-            there are only so many of them. I saw this pattern repeatedly in
-            the contractor world: great work, terrible visibility. I moved to
-            NWA to fix it here.
-          </motion.p>
-
-          <motion.p variants={fadeUp} className={styles.subhead}>
-            The work wasn&rsquo;t the problem. Visibility was.
+            Not because they do worse work. Because they&rsquo;re harder to find
+            on Google.
           </motion.p>
         </motion.div>
 
-        {/* Quick-scan stats row */}
         <motion.div
           className={styles.stats}
           initial={{ opacity: 0, y: 20 }}
@@ -57,8 +48,8 @@ export default function AboutHero() {
           transition={{ delay: 0.55, duration: 0.6, ease: "easeOut" }}
         >
           {[
-            { number: "NWA Only", label: "Local market focus" },
-            { number: "No contracts", label: "Cancel any time" },
+            { number: "NWA Only", label: "One market, not everywhere" },
+            { number: "No contracts", label: "Month-to-month, cancel anytime" },
             { number: "One person", label: "No junior staff, no outsourcing" },
           ].map(({ number, label }) => (
             <div className={styles.stat} key={label}>

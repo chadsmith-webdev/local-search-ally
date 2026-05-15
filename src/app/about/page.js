@@ -1,12 +1,14 @@
 import AboutHero from "@/components/AboutHero";
 import AboutOrigin from "@/components/AboutOrigin";
 import AboutDifference from "@/components/AboutDifference";
+import AboutApproach from "@/components/AboutApproach";
+import AboutServiceAreas from "@/components/AboutServiceAreas";
 import AboutPledge from "@/components/AboutPledge";
 
 export const metadata = {
   title: "About Chad Smith | Local Search Ally — NWA Contractor SEO",
   description:
-    "Local Search Ally is Chad Smith, based in Siloam Springs, AR. I help NWA home service trades get found on Google — no contracts, radical transparency, and work you can actually see.",
+    "Local Search Ally is Chad Smith, based in Siloam Springs, AR. I help NWA home service trades get found on Google — no contracts, radical transparency, and diagnostic honesty.",
   alternates: {
     canonical: "https://www.localsearchally.com/about",
   },
@@ -92,6 +94,8 @@ export default function AboutPage() {
       <AboutHero />
       <AboutOrigin />
       <AboutDifference />
+      <AboutApproach />
+      <AboutServiceAreas />
       <AboutPledge />
     </>
   );

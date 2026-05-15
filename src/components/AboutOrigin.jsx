@@ -63,34 +63,30 @@ export default function AboutOrigin() {
             </motion.span>
 
             <motion.h2 className={styles.h2} variants={fadeUp}>
-              I came to SEO through the contractor world,{" "}
-              <em>not the other way around.</em>
+              I didn&rsquo;t start in marketing.{" "}
+              <em>I started in real estate wholesaling.</em>
             </motion.h2>
 
             <motion.div className={styles.body} variants={container}>
               <motion.p variants={fadeUp}>
-                Before Local Search Ally, I spent time in real estate
-                wholesaling. That put me in regular contact with contractors —
-                HVAC techs, plumbers, roofers, tile guys. And I kept noticing
-                the same thing: the most skilled people I worked with were the
-                hardest to find online. Websites from 2014, Google Business
-                Profiles with no photos, zero reviews.
+                I started in real estate wholesaling in North Carolina, where I
+                needed to reach distressed homeowners on a tight budget. So I
+                taught myself SEO &mdash; not from a course, just from doing it
+                and figuring out what worked.
               </motion.p>
               <motion.p variants={fadeUp}>
-                When someone searched for an HVAC tech or a plumber in their
-                area, those guys didn&rsquo;t show up. Not because the work
-                wasn&rsquo;t there — because the website or GBP listing
-                wasn&rsquo;t.
+                While I was doing that, I kept running into the same kind of
+                person: a plumber, a roofer, an HVAC tech who was genuinely
+                better than the competition but didn&rsquo;t show up in search.
+                The other guy &mdash; maybe not as good &mdash; was getting the
+                calls because he ranked higher. I saw that enough times that it
+                stuck.
               </motion.p>
               <motion.p variants={fadeUp}>
-                I started digging into why. Turns out local search has a
-                specific logic — citations, proximity signals, GBP completeness,
-                on-page relevance, review velocity — and most contractors had
-                none of it in place. Not because they were doing anything wrong.
-                Just because no one had ever set it up for them.
-              </motion.p>
-              <motion.p variants={fadeUp}>
-                That&rsquo;s the gap I fill.
+                I moved to Northwest Arkansas in 2024 and built Local Search
+                Ally around fixing that. Same problem exists here. If anything,
+                the market&rsquo;s growing fast enough that the visibility gap
+                is getting wider.
               </motion.p>
             </motion.div>
           </motion.div>

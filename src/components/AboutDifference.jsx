@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./AboutDifference.module.css";
 
@@ -13,23 +14,23 @@ const container = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-const WORK_ITEMS = [
-  {
-    label: "One-on-one",
-    body: "You talk to me, not an account manager. I know your business, your service area, your competitors.",
-  },
-  {
-    label: "Plain reporting",
-    body: "Every month I tell you exactly what I did and why. Actual rankings, actual Map Pack position, actual call volume — not a PDF full of 'impressions.'",
-  },
-  {
-    label: "Month to month",
-    body: "No 6-month contracts. No lock-in to hide a slow start. If I stop delivering, you stop paying.",
-  },
-  {
-    label: "NWA only",
-    body: "Rogers, Bentonville, Springdale, Fayetteville, and the surrounding areas. I know which job-search keywords bring calls here.",
-  },
+const AUDIT_SECTIONS = [
+  "Google Business Profile",
+  "Reviews & reputation",
+  "On-page SEO",
+  "Technical SEO",
+  "Citation consistency",
+  "Backlink signals",
+  "Competitor comparison",
+  "AI search visibility",
+];
+
+const DFY_ITEMS = [
+  "GBP optimization and ongoing management",
+  "Citation cleanup across top directories",
+  "On-page SEO for service and location pages",
+  "Review request process and templates",
+  "Monthly plain-English visibility reports",
 ];
 
 export default function AboutDifference() {
@@ -40,93 +41,35 @@ export default function AboutDifference() {
           variants={container}
           initial='hidden'
           whileInView='visible'
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: true, amount: 0.1 }}
           className={styles.wrapper}
         >
-          {/* Section A: How I Work */}
-          <div className={styles.block}>
+          <div className={styles.header}>
             <motion.span className={styles.eyebrow} variants={fadeUp}>
-              What working with me looks like
+              What I am &mdash; and what I&rsquo;m not
             </motion.span>
             <motion.h2 className={styles.h2} variants={fadeUp}>
-              No black box. <em>You always know what&rsquo;s happening.</em>
+              I&rsquo;ll be straight with you.{" "}
+              <em>Solo operator. Not an agency.</em>
             </motion.h2>
-            <motion.p className={styles.lead} variants={fadeUp}>
-              I work one-on-one with contractors in Northwest Arkansas.
-            </motion.p>
-
-            <motion.div className={styles.items} variants={container}>
-              {WORK_ITEMS.map(({ label, body }) => (
-                <motion.div
-                  className={styles.item}
-                  key={label}
-                  variants={fadeUp}
-                >
-                  <div className={styles.itemDot} aria-hidden='true' />
-                  <div className={styles.itemText}>
-                    <span className={styles.itemLabel}>{label}</span>
-                    <span className={styles.itemBody}>{body}</span>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
           </div>
 
-          {/* Divider */}
-          <div className={styles.divider} aria-hidden='true' />
-
-          {/* Section B: Why not a bigger agency + startup honesty */}
-          <motion.h2 className={styles.h2Section} variants={fadeUp}>
-            Why not a bigger agency?
-          </motion.h2>
-
-          <div className={styles.twoCol}>
-            <motion.div className={styles.col} variants={container}>
-              <motion.span className={styles.eyebrow} variants={fadeUp}>
-                Fair question
-              </motion.span>
-              <motion.h3 className={styles.h3} variants={fadeUp}>
-                Most agencies treat contractors as an afterthought.
-              </motion.h3>
-              <motion.div className={styles.body} variants={container}>
-                <motion.p variants={fadeUp}>
-                  The established SEO agencies in NWA are built around
-                  enterprise clients — regional health systems, retail chains,
-                  multi-location brands. When a plumbing company with three
-                  trucks signs on, they get the junior account manager and a
-                  campaign built from the same template as everyone else.
-                </motion.p>
-                <motion.p variants={fadeUp}>
-                  What I bring is focus. Home service trades are the only
-                  clients I take. NWA is the only market I work in. Being small
-                  isn&rsquo;t a limitation. It&rsquo;s the point.
-                </motion.p>
-              </motion.div>
-            </motion.div>
-
-            <motion.div className={styles.col} variants={container}>
-              <motion.span className={styles.eyebrow} variants={fadeUp}>
-                No manufactured credibility
-              </motion.span>
-              <motion.h3 className={styles.h3} variants={fadeUp}>
-                I&rsquo;m building this. I&rsquo;m not going to pretend
-                otherwise.
-              </motion.h3>
-              <motion.div className={styles.body} variants={container}>
-                <motion.p variants={fadeUp}>
-                  Local Search Ally is a startup. I don&rsquo;t have 200 client
-                  case studies. I have demo sites built to prove the method,
-                  tracked rankings from my own projects, and a clear picture of
-                  how local search works in this market.
-                </motion.p>
-                <motion.p variants={fadeUp}>
-                  I can show you the methodology, walk you through the logic,
-                  and give you an honest read on where your business stands
-                  online right now. What I won&rsquo;t do is claim a track
-                  record I don&rsquo;t have.
-                </motion.p>
-              </motion.div>
-            </motion.div>
+          <div className={styles.bodyText}>
+            <motion.p variants={fadeUp}>
+              I taught myself SEO, and I&rsquo;m still in the middle of learning
+              web development &mdash; I&rsquo;m at Bellevue University,
+              finishing up in 2027.
+            </motion.p>
+            <motion.p variants={fadeUp}>
+              Before I worked with any clients, I built demo sites for HVAC,
+              plumbing, and electrical contractors to test whether the approach
+              actually held up. The audit tool runs real searches on your real
+              business. Nothing gets rounded up to look better than it is.
+            </motion.p>
+            <motion.p variants={fadeUp}>
+              I&rsquo;d rather tell you something you don&rsquo;t want to hear
+              than oversell and disappear.
+            </motion.p>
           </div>
         </motion.div>
       </div>

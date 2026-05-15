@@ -15,10 +15,11 @@ const container = {
 };
 
 const PLEDGES = [
-  "I will never claim results I haven't achieved.",
-  "I will tell you if something is outside my skill set.",
-  "I will never lock you into a contract.",
-  "I will communicate clearly and often.",
+  "I won&rsquo;t promise rankings. No one can guarantee a Google ranking, and anyone who says otherwise is lying to you.",
+  "I&rsquo;ll tell you what I find, even when it&rsquo;s not good news.",
+  "I&rsquo;ll tell you when SEO isn&rsquo;t the right move for where you are right now.",
+  "I&rsquo;ll explain what I&rsquo;m doing and why, every month, in plain English.",
+  "If it&rsquo;s not working, I&rsquo;ll tell you that before you ask.",
 ];
 
 export default function AboutPledge() {
@@ -38,10 +39,10 @@ export default function AboutPledge() {
           {/* Pledge block */}
           <div className={styles.pledgeBlock}>
             <motion.span className={styles.eyebrow} variants={fadeUp}>
-              What you can hold me to
+              My transparency pledge
             </motion.span>
             <motion.h2 className={styles.h2} variants={fadeUp}>
-              Four things I commit to. <em>In plain language.</em>
+              What you can hold me to. <em>In plain language.</em>
             </motion.h2>
 
             <motion.ul className={styles.pledgeList} variants={container}>
@@ -63,7 +64,7 @@ export default function AboutPledge() {
                       <path d='M2.5 8.5l3.5 3.5 7.5-8' />
                     </svg>
                   </div>
-                  <span>&ldquo;{pledge}&rdquo;</span>
+                  <span dangerouslySetInnerHTML={{ __html: pledge }} />
                 </motion.li>
               ))}
             </motion.ul>
@@ -72,18 +73,22 @@ export default function AboutPledge() {
           {/* CTA block */}
           <motion.div className={styles.ctaBlock} variants={fadeUp}>
             <h2 className={styles.ctaHeading}>
-              If this sounds like how you want to work — let&rsquo;s talk.
+              Start with the audit
             </h2>
             <p className={styles.ctaBody}>
-              Thirty minutes. Free. No pitch, no agenda beyond understanding
-              where your business stands and whether there&rsquo;s a good fit.
+              The best way to know if I can help is to see what the audit turns
+              up on your business. It takes 90 seconds and you&rsquo;ll walk
+              away with specific numbers &mdash; not a generic score.
+            </p>
+            <p className={styles.ctaBody} style={{ marginTop: '-1rem', opacity: 0.8 }}>
+              No pitch waiting on the other end. Just your data.
             </p>
             <div className={styles.ctaActions}>
-              <Link href='/contact' className={styles.btnPrimary}>
-                Start With a Free Conversation
+              <Link href={process.env.NEXT_PUBLIC_AUDIT_URL || "https://audit.localsearchally.com"} className={styles.btnPrimary}>
+                See Where You Stand Online &rarr;
               </Link>
-              <Link href={process.env.NEXT_PUBLIC_AUDIT_URL} className={styles.btnSecondary}>
-                Or run the free SEO audit first →
+              <Link href='/contact' className={styles.btnSecondary}>
+                Let&rsquo;s Talk &mdash; It&rsquo;s Free
               </Link>
             </div>
           </motion.div>

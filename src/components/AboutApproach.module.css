@@ -2,7 +2,7 @@
   padding-top: var(--section-gap);
   padding-bottom: var(--section-gap);
   position: relative;
-  background: var(--bg);
+  background: var(--surface);
 }
 
 .inner {
@@ -16,11 +16,10 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 3rem;
 }
 
-/* Header */
-.header {
+.sectionHead {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -73,15 +72,4 @@
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.7;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .twoCol {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 1.75rem;
-  }
 }
