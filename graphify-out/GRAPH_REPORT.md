@@ -1,11 +1,11 @@
 # Graph Report - local-search-ally  (2026-05-16)
 
 ## Corpus Check
-- 237 files · ~4,415,788 words
+- 239 files · ~4,417,970 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1097 nodes · 1359 edges · 39 communities detected
+- 1101 nodes · 1362 edges · 40 communities detected
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 91 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
@@ -43,12 +43,13 @@
 - [[_COMMUNITY_Community 31|Community 31]]
 - [[_COMMUNITY_Community 32|Community 32]]
 - [[_COMMUNITY_Community 33|Community 33]]
-- [[_COMMUNITY_Community 35|Community 35]]
+- [[_COMMUNITY_Community 34|Community 34]]
 - [[_COMMUNITY_Community 36|Community 36]]
 - [[_COMMUNITY_Community 37|Community 37]]
-- [[_COMMUNITY_Community 41|Community 41]]
-- [[_COMMUNITY_Community 43|Community 43]]
-- [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 38|Community 38]]
+- [[_COMMUNITY_Community 42|Community 42]]
+- [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 46|Community 46]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `run_comparison()` - 28 edges
@@ -93,8 +94,8 @@ Cohesion: 0.07
 Nodes (45): build_service(), check_credentials(), detect_tier(), _exchange_code(), get_api_key(), get_oauth_credentials(), get_service_account_credentials(), load_config() (+37 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.06
-Nodes (42): detect_trends(), main(), query_history(), Analyze p75 timeseries to detect trends.      Compares the average of the last 4, Query CrUX History API for weekly CWV trends.      Args:         url_or_origin:, fetch_page(), main(), Fetch a web page and return response details.      Args:         url: The URL to (+34 more)
+Cohesion: 0.07
+Nodes (38): detect_trends(), main(), query_history(), Analyze p75 timeseries to detect trends.      Compares the average of the last 4, Query CrUX History API for weekly CWV trends.      Args:         url_or_origin:, Validate a URL for use with Google APIs. Rejects private/loopback addresses., validate_url(), get_anchor_text() (+30 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.15
@@ -134,31 +135,31 @@ Nodes (21): _get_cache_path(), get_domain_metrics(), get_graph_info(), _get_late
 
 ### Community 14 - "Community 14"
 Cohesion: 0.14
-Nodes (10): sitemap(), BlogPage(), getAllPosts(), getPostBySlug(), GET(), generateStaticParams(), OGImage(), BlogPost() (+2 more)
+Nodes (17): fetch_page(), main(), Fetch a web page and return response details.      Args:         url: The URL to, main(), parse_html(), Parse HTML and extract SEO-relevant elements.      Args:         html: HTML cont, _head_check(), main() (+9 more)
 
 ### Community 15 - "Community 15"
-Cohesion: 0.18
-Nodes (14): cmd_create(), cmd_delete(), cmd_list(), cmd_show(), _ensure_dir(), _load_preset(), _preset_path(), Ensure presets directory exists. (+6 more)
+Cohesion: 0.14
+Nodes (10): sitemap(), BlogPage(), getAllPosts(), getPostBySlug(), GET(), generateStaticParams(), OGImage(), BlogPost() (+2 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.18
-Nodes (15): main(), Check H1 findings for misleading data., Check Common Crawl findings for misleading interpretations., Detect reciprocal link patterns (A links to B and B links back)., Validate health score data sufficiency., Run all validations on a backlink report.      Args:         report_data: Dictio, Check schema findings for false positives., Check verification findings for false negatives and inconsistencies. (+7 more)
+Nodes (14): cmd_create(), cmd_delete(), cmd_list(), cmd_show(), _ensure_dir(), _load_preset(), _preset_path(), Ensure presets directory exists. (+6 more)
 
 ### Community 17 - "Community 17"
+Cohesion: 0.18
+Nodes (15): main(), Check H1 findings for misleading data., Check Common Crawl findings for misleading interpretations., Detect reciprocal link patterns (A links to B and B links back)., Validate health score data sufficiency., Run all validations on a backlink report.      Args:         report_data: Dictio, Check schema findings for false positives., Check verification findings for false negatives and inconsistencies. (+7 more)
+
+### Community 18 - "Community 18"
 Cohesion: 0.13
 Nodes (2): generate(), main()
 
-### Community 18 - "Community 18"
+### Community 19 - "Community 19"
 Cohesion: 0.2
 Nodes (13): cmd_estimate(), cmd_log(), cmd_reset(), cmd_summary(), cmd_today(), _load_ledger(), _lookup_cost(), Estimate cost for a batch. (+5 more)
 
-### Community 19 - "Community 19"
+### Community 20 - "Community 20"
 Cohesion: 0.26
 Nodes (13): _build_ga4_client(), country_breakdown(), device_breakdown(), main(), organic_traffic_report(), Get top organic landing pages from GA4.      Args:         property_id: GA4 prop, Organic sessions broken down by device category.      Args:         property_id:, Organic sessions broken down by country.      Args:         property_id: GA4 pro (+5 more)
-
-### Community 20 - "Community 20"
-Cohesion: 0.24
-Nodes (13): get_anchor_text(), get_linking_domains(), get_top_pages(), get_url_metrics(), main(), _moz_request(), _rate_limit(), Get URL-level metrics: Domain Authority, Page Authority, Spam Score, link counts (+5 more)
 
 ### Community 21 - "Community 21"
 Cohesion: 0.29
@@ -208,54 +209,60 @@ Nodes (5): capture_screenshot(), main(), normalize_url(), Normalize URL and retu
 Cohesion: 0.47
 Nodes (5): analyze_visual(), main(), normalize_url(), Normalize URL and return (url, parsed_url)., Analyze visual aspects of a web page.      Args:         url: URL to analyze
 
-### Community 35 - "Community 35"
-Cohesion: 0.67
-Nodes (3): generate_image(), main(), Call Gemini API to generate an image.
+### Community 34 - "Community 34"
+Cohesion: 0.4
+Nodes (1): generateMetadata()
 
 ### Community 36 - "Community 36"
 Cohesion: 0.67
-Nodes (3): estimate_cost(), main(), Estimate cost for a single image.
+Nodes (3): generate_image(), main(), Call Gemini API to generate an image.
 
 ### Community 37 - "Community 37"
 Cohesion: 0.67
+Nodes (3): estimate_cost(), main(), Estimate cost for a single image.
+
+### Community 38 - "Community 38"
+Cohesion: 0.67
 Nodes (3): edit_image(), main(), Call Gemini API to edit an image.
 
-### Community 41 - "Community 41"
+### Community 42 - "Community 42"
 Cohesion: 0.67
 Nodes (2): SearchFunnel(), useCountUp()
 
-### Community 43 - "Community 43"
+### Community 44 - "Community 44"
 Cohesion: 1.0
 Nodes (2): Main(), Write-Color()
 
-### Community 45 - "Community 45"
+### Community 46 - "Community 46"
 Cohesion: 1.0
 Nodes (2): check(), main()
 
 ## Knowledge Gaps
 - **228 isolated node(s):** `Tests for scripts/sync_flow.py`, `After a real sync, every FLOW stage directory must contain at least one prompt f`, `Every synced prompt file must start with the CC BY 4.0 attribution comment.`, `agents/seo-flow.md must not grant Bash to the agent (VULN-A01).`, `agents/seo-flow.md must warn the agent that WebFetch responses are untrusted (VU` (+223 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 17`** (16 nodes): `Bullet()`, `Check()`, `CheckCategory()`, `CTA()`, `Divider()`, `FixIt()`, `GBPChecklist()`, `generate()`, `InvisibilityReport()`, `LocalSEOChecklist()`, `Logo()`, `main()`, `generate-pdfs.mjs`, `PageFtr()`, `PageHdr()`, `PhoneNotRinging()`
+- **Thin community `Community 18`** (16 nodes): `Bullet()`, `Check()`, `CheckCategory()`, `CTA()`, `Divider()`, `FixIt()`, `GBPChecklist()`, `generate()`, `InvisibilityReport()`, `LocalSEOChecklist()`, `Logo()`, `main()`, `generate-pdfs.mjs`, `PageFtr()`, `PageHdr()`, `PhoneNotRinging()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 25`** (10 nodes): `BottomGlow()`, `FunnelLabels()`, `FunnelScene()`, `FunnelTier()`, `Particles()`, `RotatingGroup()`, `SearchFunnel3D()`, `TierRing()`, `useCountUp()`, `SearchFunnel3D.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 29`** (7 nodes): `fadeUp()`, `GhostListing()`, `GhostSlot()`, `Listing()`, `NWAMap()`, `StarRating()`, `GhostListing.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 41`** (4 nodes): `FunnelParticle()`, `SearchFunnel()`, `useCountUp()`, `SearchFunnel.jsx`
+- **Thin community `Community 34`** (5 nodes): `generateMetadata()`, `SiloamSpringPlumbingPage()`, `SpringdalePlumbingPage()`, `page.js`, `page.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 43`** (3 nodes): `Main()`, `uninstall.ps1`, `Write-Color()`
+- **Thin community `Community 42`** (4 nodes): `FunnelParticle()`, `SearchFunnel()`, `useCountUp()`, `SearchFunnel.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 45`** (3 nodes): `validate_setup.py`, `check()`, `main()`
+- **Thin community `Community 44`** (3 nodes): `Main()`, `uninstall.ps1`, `Write-Color()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 46`** (3 nodes): `validate_setup.py`, `check()`, `main()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `validate_url()` connect `Community 4` to `Community 0`, `Community 3`, `Community 6`, `Community 13`, `Community 20`?**
+- **Why does `validate_url()` connect `Community 4` to `Community 0`, `Community 3`, `Community 6`, `Community 13`, `Community 14`?**
   _High betweenness centrality (0.051) - this node is a cross-community bridge._
 - **Why does `run_comparison()` connect `Community 0` to `Community 4`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **Why does `load_config()` connect `Community 3` to `Community 27`, `Community 19`?**
+- **Why does `load_config()` connect `Community 3` to `Community 27`, `Community 20`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `run_comparison()` (e.g. with `validate_url()` and `url_hash()`) actually correct?**
   _`run_comparison()` has 7 INFERRED edges - model-reasoned connections that need verification._
