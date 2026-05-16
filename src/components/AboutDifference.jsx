@@ -50,7 +50,7 @@ export default function AboutDifference() {
             </motion.span>
             <motion.h2 className={styles.h2} variants={fadeUp}>
               I&rsquo;ll be straight with you.{" "}
-              <em className={styles.accent}>Solo operator. Not an agency.</em>
+              <em className={styles.accent}>I&rsquo;m a solo operator, not an agency.</em>
             </motion.h2>
           </div>
 
