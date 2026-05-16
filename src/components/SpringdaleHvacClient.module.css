@@ -222,31 +222,31 @@
   margin: 0;
 }
 
-/* ── Scenario tiles (HVAC-specific market widget) ──────────────────────────── */
+/* ── Market comparison grid ───────────────────────────────────────────────── */
 
-.scenarioGrid {
+.marketCompare {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
   margin-top: var(--space-4);
 }
 
-.scenarioTile {
+.compareTile {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-1);
   padding: var(--space-4);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.015);
 }
 
-.scenarioTile[data-state="primary"] {
+.compareTile[data-state="primary"] {
   border-color: rgba(123, 175, 212, 0.4);
   background: rgba(123, 175, 212, 0.05);
 }
 
-.scenarioTag {
+.compareCity {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 500;
@@ -255,33 +255,31 @@
   color: var(--muted);
 }
 
-.scenarioTile[data-state="primary"] .scenarioTag {
+.compareTile[data-state="primary"] .compareCity {
   color: var(--carolina);
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
-.scenarioTitle {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+.compareValue {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--text);
+  line-height: 1.1;
 }
 
-.scenarioTile[data-state="primary"] .scenarioTitle {
+.compareTile[data-state="primary"] .compareValue {
   color: var(--carolina);
 }
 
-.scenarioBody {
+.compareUnit {
   font-family: var(--font-ui);
-  font-size: var(--text-sm);
-  line-height: 1.55;
+  font-size: var(--text-xs);
   color: var(--muted);
-  margin: 0;
 }
 
-.scenarioNote {
+.compareNote {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 500;
@@ -292,7 +290,7 @@
 }
 
 @media (max-width: 600px) {
-  .scenarioGrid {
+  .marketCompare {
     grid-template-columns: 1fr;
   }
 }
