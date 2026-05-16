@@ -3,28 +3,28 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import styles from "./SpringdalePlumbingClient.module.css";
+import styles from "./SpringdaleElectricalClient.module.css";
 
 const FAQS = [
   {
-    q: "How long does it take to see Map Pack movement in Springdale?",
-    a: "Springdale is a dense, competitive market, often overlapping with Fayetteville searches. For plumbers with a baseline presence, we usually see significant Map Pack movement within 90 days. If you are starting from zero or have a suspended/filtered profile, the timeline is closer to 4-6 months of consistent signal building.",
+    q: "How long does it take to see results for electrician SEO in Springdale?",
+    a: "Springdale is a competitive market for electricians, especially for high-value terms like 'panel upgrades' or 'EV charger installation.' Most contractors I work with start seeing Map Pack movement within 90 days. For new businesses or those needing significant GBP cleanup, a 4-6 month timeline is more realistic for consistent lead flow.",
   },
   {
-    q: "Should I focus on 'Plumber Springdale' or 'Plumber near me'?",
-    a: "Both, but they require different signals. 'Plumber Springdale' relies heavily on your business address and local citations. 'Plumber near me' is driven by the searcher's proximity and your Google Business Profile strength. I optimize for both to ensure you capture homeowners whether they are in downtown Springdale or the residential outskirts.",
+    q: "Should I focus on 'Electrician Springdale' or service-specific searches?",
+    a: "You need both. 'Electrician Springdale' is a broad search for general needs, but specific terms like 'EV charger installer' or 'emergency electrical repair' often capture homeowners who are ready to hire immediately. I optimize for both to ensure you're visible for the full range of Springdale demand.",
   },
   {
-    q: "Do I need a separate website for my Springdale office?",
-    a: "Not necessarily. If you have one primary office in Springdale, a single, well-optimized website with a dedicated Springdale service page is usually more powerful than splitting your authority across two sites. I focus on making your Springdale page the local authority for plumbing searches.",
+    q: "Do I need a physical office in Springdale to rank in the Map Pack?",
+    a: "A physical address in Springdale is the strongest signal for the Map Pack. If you are a service-area business (SAB) without a storefront, I can still rank you, but your service-area boundaries and local citations must be perfectly aligned to compete with brick-and-mortar competitors.",
   },
   {
     q: "Why are my competitors outranking me with fewer reviews?",
-    a: "Reviews are only one part of the local algorithm. If a competitor has a more complete GBP, better service-area boundary definitions, or service-specific pages on their website (like 'drain cleaning' or 'water heater repair'), Google may see them as more relevant despite a lower review count. I fix those relevance gaps first.",
+    a: "Review count is just one signal. If a competitor has a more complete GBP, better service category alignment, or a website with dedicated pages for Springdale-specific services, Google may rank them higher. I focus on fixing those structural gaps so your reviews carry more weight.",
   },
   {
-    q: "Can you help if I serve both Springdale and Fayetteville?",
-    a: "Yes. In fact, most plumbers in this corridor have to serve both. The challenge is telling Google exactly where your boundaries are so you don't get filtered out of either market. I specialize in setting up service-area signals that maximize your reach across both cities.",
+    q: "Can you help me get more commercial electrical leads in Springdale?",
+    a: "Yes. Springdale has a massive industrial and commercial sector. By optimizing your GBP for commercial categories and building service pages that speak to property managers and business owners, I can capture high-ticket commercial demand alongside residential calls.",
   },
 ];
 
@@ -57,7 +57,7 @@ const sectionReveal = {
  * @param {Object} props
  * @param {string} props.auditUrl
  */
-export default function SpringdalePlumbingClient({ auditUrl }) {
+export default function SpringdaleElectricalClient({ auditUrl }) {
   const [openFaq, setOpenFaq] = useState(0);
 
   return (
@@ -77,7 +77,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
           strokeLinejoin='round'
           xmlns='http://www.w3.org/2000/svg'
         >
-          <path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z' />
+          <path d='M13 2 3 14h9l-1 8 10-12h-9l1-8z' />
         </svg>
         <div className={styles.heroInner}>
           <nav className={styles.breadcrumb} aria-label='Breadcrumb'>
@@ -90,7 +90,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
               ›
             </span>
             <span className={styles.breadcrumbCurrent} aria-current='page'>
-              Plumbing SEO
+              Electrician SEO
             </span>
           </nav>
           <motion.div
@@ -103,18 +103,18 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
               Springdale, Arkansas
             </motion.span>
             <motion.h1 className={styles.heroTitle} variants={fadeUpNoOpacity}>
-              Springdale Plumber SEO & Map Pack Optimization
+              Springdale Electrical SEO: Winning the Map Pack
             </motion.h1>
             <motion.p className={styles.heroBody} variants={fadeUp}>
-              Springdale is a high-demand plumbing market where visibility is
-              everything. When a pipe bursts or a water heater fails, homeowners
-              search for the most credible local pro. If you aren't in the Map
-              Pack, those calls go to your competitors.
+              Springdale homeowners don&apos;t take chances with electrical
+              work. They search for the most credible local pro who shows up
+              first. If you aren&apos;t in the Map Pack, you&apos;re missing out on the 
+              highest-intent calls in the city.
             </motion.p>
             <motion.p className={styles.heroBody} variants={fadeUp}>
-              I help Springdale plumbers dominate local search by dialing in the
-              exact signals Google looks for in a major NWA market — from GBP
-              authority to service-page relevance.
+              I help Springdale electricians build the local search authority 
+              that earns trust instantly — from verified license signals to 
+              showcasing your best local projects.
             </motion.p>
             <motion.div className={styles.heroActions} variants={fadeUp}>
               <Link
@@ -147,22 +147,22 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>The Market</p>
               <h2 className={styles.sectionTitle}>
-                High volume, high competition, higher rewards
+                A major market with industrial and residential demand
               </h2>
             </div>
             <div className={styles.marketCopy}>
               <p className={styles.bodyCopy}>
-                Springdale is one of the most active home service markets in
-                Northwest Arkansas. With a mix of older residential
-                neighborhoods and rapid new commercial growth, the demand for
-                plumbing services is constant and varied.
+                Springdale is a powerhouse in Northwest Arkansas, combining a 
+                massive residential population with a deep industrial core. 
+                For an electrical business, this means a steady stream of 
+                residential calls mixed with high-value commercial and 
+                industrial opportunities.
               </p>
               <p className={styles.bodyCopy}>
-                Because Springdale sits between Rogers and Fayetteville, the
-                search competition is significantly higher than in outlying
-                towns. To win here, your local SEO signals have to be sharper,
-                your review velocity faster, and your GBP more complete than the
-                average contractor.
+                Because of this density, the competition for the top three 
+                spots in Google Maps is fierce. To win, your business needs 
+                stronger local signals and more relevant content than the 
+                national franchises and Fayetteville competitors.
               </p>
 
               <div
@@ -186,7 +186,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
                 </div>
               </div>
               <p className={styles.compareNote}>
-                Major NWA corridor · Dense residential & commercial mix
+                High-demand hub · Diverse residential & industrial sectors
               </p>
             </div>
           </div>
@@ -204,29 +204,29 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
         <div className={styles.problemInner}>
           <p className={styles.sectionEyebrow}>The Problem</p>
           <h2 className={styles.problemTitle}>
-            The Local Search Challenge for Plumbers in Springdale
+            The Electrical SEO Problem in Springdale
           </h2>
           <p className={styles.problemLead}>
-            Springdale plumbing businesses face a unique challenge: search
-            overlap. Google often mixes Springdale results with Fayetteville or
-            Rogers listings. If your local relevance isn't strong enough, Google
-            will bypass you for a larger company with a stronger digital
-            footprint.
+            Electrical work is high-stakes. Whether it&apos;s a flickering 
+            light or a full panel upgrade, homeowners vet their options 
+            thoroughly. They scan reviews, look for licenses, and check 
+            project photos. If your digital presence is thin, they move on 
+            to the next electrician in the Map Pack.
           </p>
           <div className={styles.problemCallout}>
-            <span className={styles.calloutLabel}>Visibility Gap</span>
-            <span className={styles.calloutStat}>70%</span>
+            <span className={styles.calloutLabel}>Decision window</span>
+            <span className={styles.calloutStat}>3 results</span>
             <p className={styles.calloutText}>
-              The percentage of clicks that go to the top three Map Pack
-              results. If you're on page two, you're essentially invisible to
-              Springdale homeowners in a rush.
+              Homeowners rarely look past the top three results in Google 
+              Maps. If you aren&apos;t there, you&apos;re effectively 
+              invisible to the most motivated callers in Springdale.
             </p>
           </div>
           <p className={styles.problemLead}>
-            It isn't enough to just have a Google Business Profile. In a market
-            this size, you need a profile that is actively managed, service
-            pages that capture specific search intent, and a digital reputation
-            that outshines the national franchises.
+            The problem isn&apos;t a lack of demand. Springdale is growing 
+            fast. The issue is visibility. Without a fully optimized Google 
+            Business Profile and dedicated service pages, you&apos;re losing 
+            high-value jobs to competitors who are easier to find.
           </p>
         </div>
       </motion.section>
@@ -243,11 +243,11 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
           <div className={styles.servicesHeader}>
             <p className={styles.sectionEyebrow}>My Approach</p>
             <h2 className={styles.sectionTitle}>
-              Local SEO Services for Springdale Plumbing Contractors
+              Electrician SEO services in Springdale
             </h2>
             <p className={styles.servicesLead}>
-              I focus on the three pillars that actually drive calls for
-              plumbers in high-competition markets.
+              I focus on the three pillars that actually drive electrical 
+              calls in high-competition markets.
             </p>
           </div>
           <div className={styles.serviceCards}>
@@ -258,10 +258,10 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
               <span className={styles.cardNumber}>01</span>
               <h3 className={styles.cardTitle}>GBP Authority</h3>
               <p className={styles.cardBody}>
-                Your Google Business Profile is your storefront. I optimize
-                every detail — from service categories to geo-tagged photos — to
-                ensure you're the first choice for homeowners searching in
-                Springdale.
+                Your GBP is your digital storefront. I optimize your 
+                categories, service-area signals, and photo stream to ensure 
+                you outrank competitors and capture the Map Pack for 
+                Springdale electrical searches.
               </p>
             </div>
             <div className={styles.serviceCard}>
@@ -269,12 +269,11 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
                 02
               </span>
               <span className={styles.cardNumber}>02</span>
-              <h3 className={styles.cardTitle}>Intent-Based Pages</h3>
+              <h3 className={styles.cardTitle}>Specialized Pages</h3>
               <p className={styles.cardBody}>
-                Homeowners don't just search for &quot;plumber.&quot; They
-                search for &quot;emergency drain cleaning&quot; or &quot;water
-                heater installation.&quot; I build pages that capture this
-                specific intent and rank for it.
+                I build service-specific pages for panel upgrades, EV charger 
+                installs, and emergency repairs. Generic pages don&apos;t 
+                rank in Springdale — high-intent, specialized content does.
               </p>
             </div>
             <div className={styles.serviceCard}>
@@ -284,9 +283,9 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
               <span className={styles.cardNumber}>03</span>
               <h3 className={styles.cardTitle}>Local Trust Signals</h3>
               <p className={styles.cardBody}>
-                Review velocity and citation consistency are the backbone of NWA
-                rankings. I help you build a system to earn reviews consistently
-                and keep your listings accurate across the web.
+                I help you build a review system that builds trust 
+                automatically and ensure your business info is consistent 
+                across every directory that matters in Northwest Arkansas.
               </p>
             </div>
           </div>
@@ -304,37 +303,38 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
         <div className={styles.resultsInner}>
           <p className={styles.sectionEyebrow}>What Changes</p>
           <h2 className={styles.resultsTitle}>
-            How Local SEO Grows Your Springdale Plumbing Business
+            How Electrical SEO Wins More Calls in Springdale
           </h2>
           <p className={styles.resultsLead}>
-            Local SEO transforms how Springdale homeowners find your trucks.
+            Local SEO transforms your business into the first call for 
+            Springdale homeowners.
           </p>
 
           <div className={styles.contrastGrid}>
             <div className={styles.contrastCol} data-state='before'>
-              <span className={styles.contrastLabel}>Before Optimization</span>
+              <span className={styles.contrastLabel}>Before SEO</span>
               <ul className={styles.contrastList}>
-                <li>Buried under national franchises</li>
-                <li>Losing calls to Fayetteville competitors</li>
-                <li>Sparse reviews from three years ago</li>
-                <li>One-page website that nobody finds</li>
+                <li>Buried under Fayetteville competitors</li>
+                <li>Losing high-value panel upgrade jobs</li>
+                <li>Thin profile looks &quot;untrustworthy&quot;</li>
+                <li>Relying solely on unpredictable referrals</li>
               </ul>
             </div>
             <div className={styles.contrastCol} data-state='after'>
-              <span className={styles.contrastLabel}>After Optimization</span>
+              <span className={styles.contrastLabel}>After SEO</span>
               <ul className={styles.contrastList}>
-                <li>Top 3 Map Pack for key Springdale searches</li>
-                <li>Dominating &quot;near me&quot; searches locally</li>
-                <li>Fresh review stream building trust</li>
-                <li>Service pages that act as 24/7 lead generators</li>
+                <li>Top 3 Map Pack for Springdale Electricians</li>
+                <li>Dominating EV charger and generator searches</li>
+                <li>Fresh reviews and license visibility building trust</li>
+                <li>Steady stream of qualified, ready-to-hire leads</li>
               </ul>
             </div>
           </div>
 
           <p className={styles.resultsFootnote}>
-            <span className={styles.footnoteValue}>Springdale Core</span>
+            <span className={styles.footnoteValue}>Springdale Power</span>
             <span className={styles.footnoteLabel}>
-              Focused on capturing the dense NWA corridor
+              Capturing the industrial and residential core
             </span>
           </p>
         </div>
@@ -352,7 +352,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
           <div className={styles.faqHeader}>
             <p className={styles.sectionEyebrow}>Common Questions</p>
             <h2 className={styles.sectionTitle}>
-              Springdale Plumber SEO Questions
+              Springdale Electrician SEO — Common Questions
             </h2>
           </div>
           <ul className={styles.faqList}>
@@ -417,14 +417,11 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
       >
         <div className={styles.ctaInner}>
           <p className={styles.sectionEyebrow}>Get Started</p>
-          <h2 className={styles.ctaTitle}>
-            Get Your Free Springdale Plumber SEO Audit
-          </h2>
+          <h2 className={styles.ctaTitle}>Free Springdale Electrician SEO Audit</h2>
           <p className={styles.ctaBody}>
-            Ready to see why your competitors are winning the Map Pack? Run the
-            free audit and I&apos;ll show you exactly where your plumbing
-            business stands in Springdale search results. No signup, no sales
-            call required.
+            Ready to stop being invisible in Springdale? Run the free audit 
+            and I&apos;ll show you exactly how your electrical business 
+            compares to the top three Map Pack results. No signup required.
           </p>
           <div className={styles.ctaActions}>
             <Link

@@ -67,25 +67,25 @@ export default function SpringdaleHvacPage() {
         name: "How long does it take to see results in the Springdale HVAC market?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Springdale is one of the most competitive HVAC markets in Northwest Arkansas. We typically see Map Pack movement within 90 days for established businesses. New businesses or those with filtered profiles may take 4-6 months of consistent work.",
+          text: "Springdale is one of the most competitive HVAC markets in Northwest Arkansas. I typically see Map Pack movement within 90 days for established businesses. New businesses or those with filtered profiles may take 4-6 months of consistent work.",
         },
-      },
-      {
+        },
+        {
         "@type": "Question",
         name: "Should I focus on 'HVAC Springdale' or service-specific terms?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "You need both. 'HVAC Springdale' is high volume, but specific terms like 'AC repair Springdale' capture homeowners ready to hire immediately. I build dedicated pages for each to maximize your reach.",
+          text: "You need both. 'HVAC Springdale' is high volume, but specific terms like 'AC repair Springdale' capture homeowners ready to hire immediately. I optimize for both.",
         },
-      },
-      {
+        },
+        {
         "@type": "Question",
         name: "Does local SEO help with commercial HVAC leads in Springdale?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Springdale has a large commercial base. By optimizing your GBP categories and adding commercial project photos, we signal to Google that you handle both residential and industrial HVAC sectors.",
+          text: "Yes. Springdale has a large commercial base. By optimizing your GBP for commercial categories and adding commercial project photos, I signal to Google that you handle both residential and industrial HVAC sectors.",
         },
-      },
+        },
       {
         "@type": "Question",
         name: "What is the biggest mistake Springdale HVAC companies make with their GBP?",

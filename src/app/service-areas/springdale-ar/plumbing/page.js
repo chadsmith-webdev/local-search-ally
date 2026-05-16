@@ -91,7 +91,7 @@ export default function SpringdalePlumbingPage() {
         name: "Why are my competitors outranking me with fewer reviews?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Reviews are only one part of the algorithm. If a competitor has a more complete GBP, better service-area boundary definitions, or service-specific pages on their website (like 'drain cleaning'), Google may see them as more relevant despite a lower review count.",
+          text: "Reviews are only one part of the algorithm. If a competitor has a more complete GBP, better service-area boundary definitions, or service-specific pages on their website (like 'drain cleaning'), Google may see them as more relevant despite a lower review count. I fix those relevance gaps first.",
         },
       },
       {

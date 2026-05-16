@@ -8,7 +8,7 @@ import styles from "./SpringdaleHvacClient.module.css";
 const FAQS = [
   {
     q: "How long does it take to see results in the Springdale HVAC market?",
-    a: "Springdale is one of the most competitive HVAC markets in Northwest Arkansas. If you have an established business with a decent review base, we typically see movement in Map Pack rankings within 90 days. For new businesses or those with flagged profiles, it can take 4 to 6 months of consistent work on GBP signals and local citations to break into the top three.",
+    a: "Springdale is one of the most competitive HVAC markets in Northwest Arkansas. If you have an established business with a decent review base, I typically see movement in Map Pack rankings within 90 days. For new businesses or those with flagged profiles, it can take 4 to 6 months of consistent work on GBP signals and local citations to break into the top three.",
   },
   {
     q: "Should I focus on 'HVAC Springdale' or service-specific terms?",
@@ -16,7 +16,7 @@ const FAQS = [
   },
   {
     q: "Does local SEO help with commercial HVAC leads in Springdale?",
-    a: "Absolutely. Springdale has a massive commercial and industrial base. Facility managers and business owners search for local pros just like homeowners do. By optimizing your GBP categories and adding commercial-specific project photos, we signal to Google that you handle both sectors.",
+    a: "Absolutely. Springdale has a massive commercial and industrial base. Facility managers and business owners search for local pros just like homeowners do. By optimizing your GBP categories and adding commercial-specific project photos, I signal to Google that you handle both sectors.",
   },
   {
     q: "What is the biggest mistake Springdale HVAC companies make with their GBP?",
