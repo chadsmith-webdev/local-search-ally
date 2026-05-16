@@ -1,11 +1,11 @@
-# Graph Report - local-search-ally  (2026-05-15)
+# Graph Report - local-search-ally  (2026-05-16)
 
 ## Corpus Check
-- 231 files · ~4,414,618 words
+- 237 files · ~4,415,788 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1085 nodes · 1353 edges · 39 communities detected
+- 1097 nodes · 1359 edges · 39 communities detected
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 91 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
@@ -252,7 +252,7 @@ Nodes (2): check(), main()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `validate_url()` connect `Community 4` to `Community 0`, `Community 3`, `Community 6`, `Community 13`, `Community 20`?**
-  _High betweenness centrality (0.052) - this node is a cross-community bridge._
+  _High betweenness centrality (0.051) - this node is a cross-community bridge._
 - **Why does `run_comparison()` connect `Community 0` to `Community 4`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Why does `load_config()` connect `Community 3` to `Community 27`, `Community 19`?**

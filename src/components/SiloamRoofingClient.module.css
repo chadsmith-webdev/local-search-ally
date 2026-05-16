@@ -1,5 +1,5 @@
-/* ── SiloamElectricalClient.module.css ──────────────────────────────────────────────
-   Spoke page: Siloam Springs × Electrical
+/* ── SiloamRoofingClient.module.css ─────────────────────────────────────────
+   Spoke page: Siloam Springs × Roofing
    Design language: dark-mode-native, Linear-inspired precision.
    Borders: rgba(255,255,255,0.05–0.08) — never solid on dark.
    Surfaces: rgba(255,255,255,0.02–0.05) for elevated elements.
@@ -167,9 +167,20 @@
 
 /* ── Market ─────────────────────────────────────────────────────────────────── */
 
+.sectionContainer {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+}
+
 .marketSection {
   background: var(--surface2);
   border-bottom: 1px solid var(--border);
+  padding-top: calc(var(--section-gap) * 0.5);
+  padding-bottom: calc(var(--section-gap) * 0.5);
 }
 
 .marketEditorial {
@@ -211,7 +222,7 @@
   margin: 0;
 }
 
-/* ── Scenario tiles (HVAC-specific market widget) ──────────────────────────── */
+/* ── Scenario tiles (Trade-specific market widget) ─────────────────────────── */
 
 .scenarioGrid {
   display: grid;
@@ -298,6 +309,8 @@
 .problemSection {
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
 }
 
 .problemInner {
@@ -382,6 +395,8 @@
 .servicesSection {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+  padding-top: calc(var(--section-gap) * 0.5);
+  padding-bottom: calc(var(--section-gap) * 0.5);
 }
 
 .servicesHeader {
@@ -513,6 +528,8 @@
 .resultsSection {
   background: var(--slate);
   border-bottom: 1px solid var(--border);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
 }
 
 .resultsInner {
@@ -562,6 +579,9 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.015);
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    background var(--duration-base) var(--ease-out);
 }
 
 .contrastCol[data-state="after"] {
@@ -662,6 +682,8 @@
 .faqSection {
   background: var(--surface2);
   border-bottom: 1px solid var(--border);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
 }
 
 .faqHeader {
@@ -767,6 +789,8 @@
 
 .ctaSection {
   background: var(--bg);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
 }
 
 .ctaInner {
