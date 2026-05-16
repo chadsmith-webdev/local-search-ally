@@ -43,13 +43,12 @@ export default function AboutHero() {
           </motion.span>
 
           <motion.h1 variants={fadeUp} className={styles.h1}>
-            Good contractors lose jobs to worse ones every day.{" "}
-            <em className={styles.accent}>I&rsquo;m trying to fix that.</em>
+            Good contractors lose jobs to worse ones every day.
           </motion.h1>
 
           <motion.p variants={fadeUp} className={styles.subhead}>
             Not because they do worse work. Because they&rsquo;re harder to find
-            on Google.
+            on Google. <em className={styles.accent}>I&rsquo;m trying to fix that.</em>
           </motion.p>
         </motion.div>
 
