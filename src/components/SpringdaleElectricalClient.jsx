@@ -147,7 +147,7 @@ export default function SpringdaleElectricalClient({ auditUrl }) {
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>The Market</p>
               <h2 className={styles.sectionTitle}>
-                A major market with industrial and residential demand
+                A diverse market with deep industrial and residential needs
               </h2>
             </div>
             <div className={styles.marketCopy}>
