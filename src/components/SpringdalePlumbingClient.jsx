@@ -103,13 +103,12 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
               Springdale, Arkansas
             </motion.span>
             <motion.h1 className={styles.heroTitle} variants={fadeUpNoOpacity}>
-              Springdale Plumber SEO
+              Springdale Plumber SEO & Map Pack Optimization
             </motion.h1>
             <motion.p className={styles.heroBody} variants={fadeUp}>
-              Springdale is a dense, high-demand plumbing market. When a pipe
-              bursts or a water heater fails, homeowners search for the nearest
-              pro they can trust. If you aren't in the Map Pack, you're losing
-              those calls to the same three competitors every day.
+              Springdale is a high-demand plumbing market where visibility is everything. When a pipe
+              bursts or a water heater fails, homeowners search for the most credible local pro. 
+              If you aren't in the Map Pack, those calls go to your competitors.
             </motion.p>
             <motion.p className={styles.heroBody} variants={fadeUp}>
               I help Springdale plumbers dominate local search by dialing in the
@@ -147,7 +146,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>The Market</p>
               <h2 className={styles.sectionTitle}>
-                High volume, high competition, higher rewards
+                A High-Demand Market for Springdale Plumbing Services
               </h2>
             </div>
             <div className={styles.marketCopy}>
@@ -204,7 +203,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
         <div className={styles.problemInner}>
           <p className={styles.sectionEyebrow}>The Problem</p>
           <h2 className={styles.problemTitle}>
-            The &quot;Overlap&quot; Problem in Springdale
+            The Local Search Challenge for Plumbers in Springdale
           </h2>
           <p className={styles.problemLead}>
             Springdale plumbing businesses face a unique challenge: search
@@ -243,7 +242,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
           <div className={styles.servicesHeader}>
             <p className={styles.sectionEyebrow}>My Approach</p>
             <h2 className={styles.sectionTitle}>
-              Plumber SEO Services for Springdale
+              Local SEO Strategy for Springdale Plumbing Contractors
             </h2>
             <p className={styles.servicesLead}>
               I focus on the three pillars that actually drive calls for
@@ -304,7 +303,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
         <div className={styles.resultsInner}>
           <p className={styles.sectionEyebrow}>What Changes</p>
           <h2 className={styles.resultsTitle}>
-            From &quot;Invisible&quot; to &quot;First Call&quot;
+            How Local SEO Grows Your Springdale Plumbing Business
           </h2>
           <p className={styles.resultsLead}>
             Local SEO transforms how Springdale homeowners find your trucks.
@@ -352,7 +351,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
           <div className={styles.faqHeader}>
             <p className={styles.sectionEyebrow}>Common Questions</p>
             <h2 className={styles.sectionTitle}>
-              Springdale Plumber SEO — FAQ
+              Springdale Plumber SEO — Frequently Asked Questions
             </h2>
           </div>
           <ul className={styles.faqList}>
@@ -417,7 +416,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
       >
         <div className={styles.ctaInner}>
           <p className={styles.sectionEyebrow}>Get Started</p>
-          <h2 className={styles.ctaTitle}>Free Springdale Plumber SEO Audit</h2>
+          <h2 className={styles.ctaTitle}>Get Your Free Springdale Plumber SEO Audit</h2>
           <p className={styles.ctaBody}>
             Ready to see why your competitors are winning the Map Pack? Run the
             free audit and I&apos;ll show you exactly where your plumbing
