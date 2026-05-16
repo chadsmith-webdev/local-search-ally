@@ -2,7 +2,7 @@
   padding-top: var(--section-gap);
   padding-bottom: var(--section-gap);
   position: relative;
-  background: var(--surface);
+  background: var(--bg);
 }
 
 .inner {
@@ -13,10 +13,11 @@
   padding-right: var(--page-gutter);
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 5rem;
+  align-items: center;
 }
 
 .sectionHead {
@@ -32,10 +33,11 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--dynamic-accent, var(--carolina));
   display: flex;
   align-items: center;
   gap: 0.625rem;
+  transition: color 0.3s ease;
 }
 
 .eyebrow::before {
@@ -43,8 +45,9 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--carolina);
+  background: var(--dynamic-accent, var(--carolina));
   opacity: 0.6;
+  transition: background 0.3s ease;
 }
 
 .h2 {
@@ -56,20 +59,34 @@
   color: var(--text);
 }
 
-.h2 em {
+.accent {
   font-style: italic;
-  color: var(--carolina);
+  color: var(--dynamic-accent, var(--carolina));
+  transition: color 0.3s ease;
 }
 
 .bodyText {
-  max-width: 800px;
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: 1.25rem;
+  margin-top: 2rem;
+  max-width: 640px;
 }
 
 .bodyText p {
-  font-size: var(--text-base);
+  font-family: var(--font-ui);
+  font-size: 1.0625rem;
+  line-height: 1.75;
   color: var(--text-secondary);
-  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .graphicCol {
+    order: -1;
+  }
 }

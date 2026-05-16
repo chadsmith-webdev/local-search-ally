@@ -16,9 +16,9 @@
 /* ── Two-column grid ── */
 .grid {
   display: grid;
-  grid-template-columns: 440px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 5rem;
-  align-items: center;
+  align-items: flex-start; /* Required for sticky to work correctly */
 }
 
 /* ── Photo column ── */
@@ -26,15 +26,19 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.25rem;
+  gap: 1.5rem;
+  position: sticky;
+  top: 100px; /* Adjusting for nav bar height + breathing room */
 }
 
 .photoFrame {
   position: relative;
   width: 100%;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 4 / 5;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
 }
 
 .photoFrame::before {
@@ -60,21 +64,29 @@
   display: block;
 }
 
-.locationTag {
+.infoList {
   display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-family: var(--font-ui);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 
-.locationTag svg {
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.infoItem svg {
   flex-shrink: 0;
-  color: var(--carolina);
+  color: var(--dynamic-accent, var(--carolina));
+  transition: color 0.3s ease;
 }
 
 /* ── Text column ── */
@@ -90,10 +102,11 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--dynamic-accent, var(--carolina));
   display: flex;
   align-items: center;
   gap: 0.625rem;
+  transition: color 0.3s ease;
 }
 
 .eyebrow::before {
@@ -101,8 +114,9 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--carolina);
+  background: var(--dynamic-accent, var(--carolina));
   opacity: 0.6;
+  transition: background 0.3s ease;
 }
 
 .h2 {
@@ -114,9 +128,10 @@
   color: var(--text);
 }
 
-.h2 em {
+.accent {
   font-style: italic;
-  color: var(--carolina);
+  color: var(--dynamic-accent, var(--carolina));
+  transition: color 0.3s ease;
 }
 
 .body {

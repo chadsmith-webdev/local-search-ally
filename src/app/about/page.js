@@ -1,9 +1,4 @@
-import AboutHero from "@/components/AboutHero";
-import AboutOrigin from "@/components/AboutOrigin";
-import AboutDifference from "@/components/AboutDifference";
-import AboutApproach from "@/components/AboutApproach";
-import AboutServiceAreas from "@/components/AboutServiceAreas";
-import AboutPledge from "@/components/AboutPledge";
+import AboutPageClient from "@/components/AboutPageClient";
 
 export const metadata = {
   title: "About Chad Smith | Local Search Ally — NWA Contractor SEO",
@@ -91,12 +86,7 @@ export default function AboutPage() {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
-      <AboutHero />
-      <AboutOrigin />
-      <AboutDifference />
-      <AboutApproach />
-      <AboutServiceAreas />
-      <AboutPledge />
+      <AboutPageClient />
     </>
   );
 }

@@ -33,10 +33,11 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--carolina);
+  color: var(--dynamic-accent, var(--carolina));
   display: flex;
   align-items: center;
   gap: 0.625rem;
+  transition: color 0.3s ease;
 }
 
 .eyebrow::before {
@@ -44,8 +45,9 @@
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--carolina);
+  background: var(--dynamic-accent, var(--carolina));
   opacity: 0.6;
+  transition: background 0.3s ease;
 }
 
 .h2 {
@@ -57,9 +59,10 @@
   color: var(--text);
 }
 
-.h2 em {
+.accent {
   font-style: italic;
-  color: var(--carolina);
+  color: var(--dynamic-accent, var(--carolina));
+  transition: color 0.3s ease;
 }
 
 .bodyText {

@@ -43,7 +43,7 @@ export default function AboutServiceAreas() {
             </motion.span>
             <motion.h2 className={styles.h2} variants={fadeUp}>
               I work with NWA home service contractors,{" "}
-              <em>specifically.</em>
+              <em className={styles.accent}>specifically.</em>
             </motion.h2>
           </div>
 

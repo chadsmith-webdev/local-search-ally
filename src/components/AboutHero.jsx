@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./AboutHero.module.css";
+import HeroScene from "./HeroScene";
 
 const container = {
   hidden: {},
@@ -14,10 +15,20 @@ const fadeUp = {
 };
 
 export default function AboutHero() {
+  const { scrollY } = useScroll();
+  
+  // Parallax: background moves down slower (0.3x)
+  const bgY = useTransform(scrollY, [0, 500], [0, 150]);
+  // Parallax: foreground moves up slightly (-0.1x)
+  const fgY = useTransform(scrollY, [0, 500], [0, -50]);
+
   return (
     <section className={styles.hero}>
-      <div className={styles.grid} aria-hidden='true' />
-      <div className={styles.orb} aria-hidden='true' />
+      <motion.div style={{ y: bgY }} className={styles.bgWrap}>
+        <div className={styles.grid} aria-hidden='true' />
+        <div className={styles.orb} aria-hidden='true' />
+        <HeroScene />
+      </motion.div>
 
       <div className={styles.inner}>
         <motion.div
@@ -25,6 +36,7 @@ export default function AboutHero() {
           variants={container}
           initial='hidden'
           animate='visible'
+          style={{ y: fgY }}
         >
           <motion.span variants={fadeUp} className={styles.eyebrow}>
             About Chad Smith
@@ -32,7 +44,7 @@ export default function AboutHero() {
 
           <motion.h1 variants={fadeUp} className={styles.h1}>
             Good contractors lose jobs to worse ones every day.{" "}
-            <em>I&rsquo;m trying to fix that.</em>
+            <em className={styles.accent}>I&rsquo;m trying to fix that.</em>
           </motion.h1>
 
           <motion.p variants={fadeUp} className={styles.subhead}>

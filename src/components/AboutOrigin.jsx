@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./AboutOrigin.module.css";
 
 const fadeUp = {
@@ -15,6 +15,12 @@ const container = {
 };
 
 export default function AboutOrigin() {
+  const { scrollYProgress } = useScroll();
+  
+  // Parallax: text moves up slightly, photo moves down slightly
+  const textY = useTransform(scrollYProgress, [0.1, 0.4], [50, -50]);
+  const photoY = useTransform(scrollYProgress, [0.1, 0.4], [-50, 50]);
+
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
@@ -25,46 +31,43 @@ export default function AboutOrigin() {
           whileInView='visible'
           viewport={{ once: true, amount: 0.15 }}
         >
-          {/* Photo column */}
+          {/* Photo column with Sticky Anchor */}
           <motion.div className={styles.photoCol} variants={fadeUp}>
             <div className={styles.photoFrame}>
               <Image
                 src='/images/chadsmith-profile.png'
                 alt='Chad Smith — founder of Local Search Ally, Siloam Springs AR'
                 fill
-                sizes='(max-width: 900px) 100vw, 440px'
+                sizes='(max-width: 900px) 100vw, 280px'
                 className={styles.photo}
                 priority={true}
               />
             </div>
-            <div className={styles.locationTag}>
-              <svg
-                width='10'
-                height='13'
-                viewBox='0 0 10 13'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='1.5'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                aria-hidden='true'
-              >
-                <path d='M5 1C2.79 1 1 2.79 1 5c0 3.25 4 7.5 4 7.5s4-4.25 4-7.5C9 2.79 7.21 1 5 1z' />
-                <circle cx='5' cy='5' r='1.25' />
-              </svg>
-              Siloam Springs, AR &mdash; serving all of NWA
+            <div className={styles.infoList}>
+              <div className={styles.infoItem}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>Chad Smith, Founder</span>
+              </div>
+              <div className={styles.infoItem}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.7a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.7z"/></svg>
+                <span>Local SEO and Web Development</span>
+              </div>
+              <div className={styles.infoItem}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Siloam Springs, Arkansas</span>
+              </div>
             </div>
           </motion.div>
 
           {/* Text column */}
-          <motion.div className={styles.textCol} variants={container}>
+          <motion.div className={styles.textCol} variants={container} style={{ y: textY }}>
             <motion.span className={styles.eyebrow} variants={fadeUp}>
               How I got here
             </motion.span>
 
             <motion.h2 className={styles.h2} variants={fadeUp}>
               I didn&rsquo;t start in marketing.{" "}
-              <em>I started in real estate wholesaling.</em>
+              <em className={styles.accent}>I started in real estate wholesaling.</em>
             </motion.h2>
 
             <motion.div className={styles.body} variants={container}>
