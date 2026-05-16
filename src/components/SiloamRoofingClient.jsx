@@ -143,13 +143,13 @@ export default function SiloamRoofingClient({ auditUrl }) {
 
       {/* ── The Market ───────────────────────────────────────────────────── */}
       <motion.section
-        className={`section-sm ${styles.marketSection}`}
+        className={styles.marketSection}
         variants={sectionReveal}
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}
       >
-        <div className='container'>
+        <div className={styles.sectionContainer}>
           <div className={styles.marketEditorial}>
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>The Market</p>
@@ -259,13 +259,13 @@ export default function SiloamRoofingClient({ auditUrl }) {
 
       {/* ── Services ─────────────────────────────────────────────────────── */}
       <motion.section
-        className={`section-sm ${styles.servicesSection}`}
+        className={styles.servicesSection}
         variants={sectionReveal}
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}
       >
-        <div className='container'>
+        <div className={styles.sectionContainer}>
           <div className={styles.servicesHeader}>
             <p className={styles.sectionEyebrow}>My Approach</p>
             <h2 className={styles.sectionTitle}>
@@ -391,7 +391,7 @@ export default function SiloamRoofingClient({ auditUrl }) {
         whileInView='visible'
         viewport={{ once: true }}
       >
-        <div className='container'>
+        <div className={styles.sectionContainer}>
           <div className={styles.faqHeader}>
             <p className={styles.sectionEyebrow}>Common Questions</p>
             <h2 className={styles.sectionTitle}>
