@@ -215,12 +215,12 @@ export default function SpringdaleHvacClient({ auditUrl }) {
             you&apos;re only three blocks from the homeowner.
           </p>
           <div className={styles.problemCallout}>
-            <span className={styles.calloutLabel}>Decision window</span>
-            <span className={styles.calloutStat}>3 results</span>
+            <span className={styles.calloutLabel}>Map Pack Clicks</span>
+            <span className={styles.calloutStat}>42%</span>
             <p className={styles.calloutText}>
-              Homeowners in an HVAC emergency rarely look past the top three Map
-              Pack results. If you aren&apos;t there, you aren&apos;t even in
-              the conversation.
+              42% of searchers click on Google Map Pack results for local 
+              queries (Backlinko, 2024). In an HVAC emergency, homeowners 
+              don&apos;t scroll — they call the first credible pro they see.
             </p>
           </div>
           <p className={styles.problemLead}>

@@ -214,12 +214,13 @@ export default function SpringdaleElectricalClient({ auditUrl }) {
             to the next electrician in the Map Pack.
           </p>
           <div className={styles.problemCallout}>
-            <span className={styles.calloutLabel}>Decision window</span>
-            <span className={styles.calloutStat}>3 results</span>
+            <span className={styles.calloutLabel}>Vetting process</span>
+            <span className={styles.calloutStat}>67%</span>
             <p className={styles.calloutText}>
-              Homeowners rarely look past the top three results in Google 
-              Maps. If you aren&apos;t there, you&apos;re effectively 
-              invisible to the most motivated callers in Springdale.
+              67% of consumers go on to look at business reviews after 
+              conducting a local search (Consumer Search Behavior, 2025). 
+              For high-stakes electrical work, that vetting is the 
+              difference between a call and a click-away.
             </p>
           </div>
           <p className={styles.problemLead}>
