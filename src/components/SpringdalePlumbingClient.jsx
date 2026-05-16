@@ -106,9 +106,10 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
               Springdale Plumber SEO & Map Pack Optimization
             </motion.h1>
             <motion.p className={styles.heroBody} variants={fadeUp}>
-              Springdale is a high-demand plumbing market where visibility is everything. When a pipe
-              bursts or a water heater fails, homeowners search for the most credible local pro. 
-              If you aren't in the Map Pack, those calls go to your competitors.
+              Springdale is a high-demand plumbing market where visibility is
+              everything. When a pipe bursts or a water heater fails, homeowners
+              search for the most credible local pro. If you aren't in the Map
+              Pack, those calls go to your competitors.
             </motion.p>
             <motion.p className={styles.heroBody} variants={fadeUp}>
               I help Springdale plumbers dominate local search by dialing in the
@@ -242,7 +243,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
           <div className={styles.servicesHeader}>
             <p className={styles.sectionEyebrow}>My Approach</p>
             <h2 className={styles.sectionTitle}>
-              Local SEO Strategy for Springdale Plumbing Contractors
+              Local SEO Services for Springdale Plumbing Contractors
             </h2>
             <p className={styles.servicesLead}>
               I focus on the three pillars that actually drive calls for
@@ -351,7 +352,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
           <div className={styles.faqHeader}>
             <p className={styles.sectionEyebrow}>Common Questions</p>
             <h2 className={styles.sectionTitle}>
-              Springdale Plumber SEO — Frequently Asked Questions
+              Springdale Plumber SEO Questions
             </h2>
           </div>
           <ul className={styles.faqList}>
@@ -416,7 +417,9 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
       >
         <div className={styles.ctaInner}>
           <p className={styles.sectionEyebrow}>Get Started</p>
-          <h2 className={styles.ctaTitle}>Get Your Free Springdale Plumber SEO Audit</h2>
+          <h2 className={styles.ctaTitle}>
+            Get Your Free Springdale Plumber SEO Audit
+          </h2>
           <p className={styles.ctaBody}>
             Ready to see why your competitors are winning the Map Pack? Run the
             free audit and I&apos;ll show you exactly where your plumbing

@@ -104,7 +104,7 @@ export default function SpringdaleHvacClient({ auditUrl }) {
               Springdale, Arkansas
             </motion.span>
             <motion.h1 className={styles.heroTitle} variants={fadeUpNoOpacity}>
-              Springdale HVAC SEO: Getting Found in the Map Pack
+              Springdale HVAC SEO: Get Found in the Map Pack
             </motion.h1>
             <motion.p className={styles.heroBody} variants={fadeUp}>
               Springdale homeowners search when they are most uncomfortable.
@@ -285,9 +285,9 @@ export default function SpringdaleHvacClient({ auditUrl }) {
               <h3 className={styles.cardTitle}>NWA Authority</h3>
               <p className={styles.cardBody}>
                 I build your local citations and review systems to signal to
-                Google that you are the authoritative local choice for Springdale,
-                reducing the risk of being filtered out by Rogers or Fayetteville
-                competitors.
+                Google that you are the authoritative local choice for
+                Springdale, reducing the risk of being filtered out by Rogers or
+                Fayetteville competitors.
               </p>
             </div>
           </div>
@@ -353,9 +353,7 @@ export default function SpringdaleHvacClient({ auditUrl }) {
         <div className={styles.sectionContainer}>
           <div className={styles.faqHeader}>
             <p className={styles.sectionEyebrow}>Common Questions</p>
-            <h2 className={styles.sectionTitle}>
-              Springdale HVAC SEO — FAQ
-            </h2>
+            <h2 className={styles.sectionTitle}>Springdale HVAC SEO — FAQ</h2>
           </div>
           <ul className={styles.faqList}>
             {FAQS.map((item, i) => {
@@ -444,4 +442,3 @@ export default function SpringdaleHvacClient({ auditUrl }) {
     </main>
   );
 }
-
