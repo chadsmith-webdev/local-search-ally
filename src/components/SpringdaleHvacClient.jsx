@@ -104,7 +104,7 @@ export default function SpringdaleHvacClient({ auditUrl }) {
               Springdale, Arkansas
             </motion.span>
             <motion.h1 className={styles.heroTitle} variants={fadeUpNoOpacity}>
-              Springdale HVAC SEO
+              Springdale HVAC SEO: Getting Found in the Map Pack
             </motion.h1>
             <motion.p className={styles.heroBody} variants={fadeUp}>
               Springdale homeowners search when they are most uncomfortable.
@@ -205,7 +205,7 @@ export default function SpringdaleHvacClient({ auditUrl }) {
         <div className={styles.problemInner}>
           <p className={styles.sectionEyebrow}>The Problem</p>
           <h2 className={styles.problemTitle}>
-            The &quot;Fayetteville Filter&quot; Problem
+            The HVAC SEO Problem in Springdale
           </h2>
           <p className={styles.problemLead}>
             Many Springdale HVAC businesses get &quot;filtered&quot; out of
@@ -305,7 +305,7 @@ export default function SpringdaleHvacClient({ auditUrl }) {
         <div className={styles.resultsInner}>
           <p className={styles.sectionEyebrow}>What Changes</p>
           <h2 className={styles.resultsTitle}>
-            From &quot;Invisible&quot; to &quot;First Choice&quot;
+            How HVAC SEO Wins More Calls in Springdale
           </h2>
           <p className={styles.resultsLead}>
             Local SEO transforms your digital footprint into a lead-generating
@@ -441,6 +441,10 @@ export default function SpringdaleHvacClient({ auditUrl }) {
           </p>
         </div>
       </motion.section>
+    </main>
+  );
+}
+tion>
     </main>
   );
 }
