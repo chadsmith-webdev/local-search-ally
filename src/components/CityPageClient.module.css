@@ -7,6 +7,22 @@
   display: block;
 }
 
+/* Replaces global .section — vertical rhythm */
+.section {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+/* Replaces global .container — horizontal centering + gutters */
+.wrap {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+}
+
 /* ── Hero ──────────────────────────────────────────────────────────────── */
 
 .hero {
@@ -813,7 +829,7 @@
 }
 
 .ctaInner {
-  max-width: 760px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
   justify-items: center;

@@ -2,8 +2,8 @@ import styles from "./ServiceAreasProof.module.css";
 
 export default function ServiceAreasProof({ problem, trades }) {
   return (
-    <section className='section'>
-      <div className={`container ${styles.inner}`}>
+    <section className={styles.section}>
+      <div className={styles.inner}>
         <div className={styles.problemBlock}>
           <div className={styles.statCard}>
             <p className={styles.stat}>{problem.stat}</p>

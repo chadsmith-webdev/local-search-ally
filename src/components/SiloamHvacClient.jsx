@@ -139,13 +139,13 @@ export default function SiloamHvacClient({ auditUrl }) {
 
       {/* ── The Market ───────────────────────────────────────────────────── */}
       <motion.section
-        className={`section-sm ${styles.marketSection}`}
+        className={styles.marketSection}
         variants={sectionReveal}
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}
       >
-        <div className='container'>
+        <div className={styles.sectionContainer}>
           <div className={styles.marketEditorial}>
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>The Market</p>
@@ -208,7 +208,7 @@ export default function SiloamHvacClient({ auditUrl }) {
 
       {/* ── Problem ──────────────────────────────────────────────────────── */}
       <motion.section
-        className={`section ${styles.problemSection}`}
+        className={styles.problemSection}
         variants={sectionReveal}
         initial='hidden'
         whileInView='visible'
@@ -246,13 +246,13 @@ export default function SiloamHvacClient({ auditUrl }) {
 
       {/* ── Services ─────────────────────────────────────────────────────── */}
       <motion.section
-        className={`section-sm ${styles.servicesSection}`}
+        className={styles.servicesSection}
         variants={sectionReveal}
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}
       >
-        <div className='container'>
+        <div className={styles.sectionContainer}>
           <div className={styles.servicesHeader}>
             <p className={styles.sectionEyebrow}>My Approach</p>
             <h2 className={styles.sectionTitle}>
@@ -314,7 +314,7 @@ export default function SiloamHvacClient({ auditUrl }) {
 
       {/* ── Results ──────────────────────────────────────────────────────── */}
       <motion.section
-        className={`section ${styles.resultsSection}`}
+        className={styles.resultsSection}
         variants={sectionReveal}
         initial='hidden'
         whileInView='visible'
@@ -372,13 +372,13 @@ export default function SiloamHvacClient({ auditUrl }) {
 
       {/* ── FAQ ─────────────────────────────────────────────────────────── */}
       <motion.section
-        className={`section ${styles.faqSection}`}
+        className={styles.faqSection}
         variants={sectionReveal}
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}
       >
-        <div className='container'>
+        <div className={styles.sectionContainer}>
           <div className={styles.faqHeader}>
             <p className={styles.sectionEyebrow}>Common Questions</p>
             <h2 className={styles.sectionTitle}>
@@ -439,7 +439,7 @@ export default function SiloamHvacClient({ auditUrl }) {
 
       {/* ── CTA ──────────────────────────────────────────────────────────── */}
       <motion.section
-        className={`section ${styles.ctaSection}`}
+        className={styles.ctaSection}
         variants={sectionReveal}
         initial='hidden'
         whileInView='visible'

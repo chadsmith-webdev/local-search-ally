@@ -1,11 +1,12 @@
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--section-gap) * 1.35) var(--page-gutter)
+  padding: calc(var(--section-gap) * 1.5) var(--page-gutter)
     var(--section-gap);
+  background: var(--bg);
 }
 
 .grid {
@@ -36,7 +37,7 @@
 
 .inner {
   position: relative;
-  max-width: 920px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

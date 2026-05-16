@@ -1,7 +1,4 @@
-import ServiceAreasCities from "@/components/ServiceAreasCities";
-import ServiceAreasHero from "@/components/ServiceAreasHero";
-import ServiceAreasProcess from "@/components/ServiceAreasProcess";
-import ServiceAreasProof from "@/components/ServiceAreasProof";
+import ServiceAreasPageClient from "@/components/ServiceAreasPageClient";
 import { serviceAreasLandingContent } from "@/content/serviceAreasLanding";
 
 export const metadata = {
@@ -59,16 +56,7 @@ export default function ServiceAreasPage() {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <ServiceAreasHero content={serviceAreasLandingContent.hero} />
-      <ServiceAreasCities content={serviceAreasLandingContent.cities} />
-      <ServiceAreasProof
-        problem={serviceAreasLandingContent.problem}
-        trades={serviceAreasLandingContent.trades}
-      />
-      <ServiceAreasProcess
-        content={serviceAreasLandingContent.process}
-        cta={serviceAreasLandingContent.cta}
-      />
+      <ServiceAreasPageClient content={serviceAreasLandingContent} />
     </>
   );
 }

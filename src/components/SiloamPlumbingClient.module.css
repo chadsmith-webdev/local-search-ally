@@ -167,9 +167,20 @@
 
 /* ── Market ─────────────────────────────────────────────────────────────────── */
 
+.sectionContainer {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+}
+
 .marketSection {
   background: var(--surface2);
   border-bottom: 1px solid var(--border);
+  padding-top: calc(var(--section-gap) * 0.5);
+  padding-bottom: calc(var(--section-gap) * 0.5);
 }
 
 .marketEditorial {
@@ -298,6 +309,8 @@
 .servicesSection {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+  padding-top: calc(var(--section-gap) * 0.5);
+  padding-bottom: calc(var(--section-gap) * 0.5);
 }
 
 .servicesHeader {
@@ -428,6 +441,8 @@
 
 .ctaSection {
   background: var(--bg);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
 }
 
 .ctaInner {
@@ -470,6 +485,8 @@
 .faqSection {
   background: var(--surface2);
   border-bottom: 1px solid var(--border);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
 }
 
 .faqHeader {
@@ -574,6 +591,8 @@
 .resultsSection {
   background: var(--slate);
   border-bottom: 1px solid var(--border);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
 }
 
 .resultsInner {
@@ -724,6 +743,8 @@
 .problemSection {
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
 }
 
 .problemInner {

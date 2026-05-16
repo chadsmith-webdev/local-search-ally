@@ -170,13 +170,13 @@ export default function CityPageClient({
 
         {/* ── City brief ───────────────────────────────────────────────── */}
         <motion.section
-          className={`section ${styles.briefSectionWrap}`}
+          className={styles.briefSectionWrap}
           variants={sectionReveal}
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
         >
-          <div className={`container ${styles.briefSection}`}>
+          <div className={`${styles.wrap} ${styles.briefSection}`}>
             <div className={styles.briefShell}>
               <div className={styles.briefLead}>
                 <p className={styles.panelLabel}>{briefLabel}</p>
@@ -207,13 +207,13 @@ export default function CityPageClient({
 
         {/* ── Problem ──────────────────────────────────────────────────── */}
         <motion.section
-          className={`section ${styles.problemSectionWrap}`}
+          className={styles.problemSectionWrap}
           variants={sectionReveal}
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
         >
-          <div className='container'>
+          <div className={styles.wrap}>
             <div className={styles.problemEditorial}>
               <div className={styles.sectionIntro}>
                 <p className={styles.sectionEyebrow}>The real problem</p>
@@ -231,13 +231,13 @@ export default function CityPageClient({
 
         {/* ── Fit / trades ─────────────────────────────────────────────── */}
         <motion.section
-          className={`section ${styles.fitSectionWrap}`}
+          className={styles.fitSectionWrap}
           variants={sectionReveal}
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
         >
-          <div className='container'>
+          <div className={styles.wrap}>
             <div className={styles.fitStructured}>
               <div className={styles.sectionIntro}>
                 <p className={styles.sectionEyebrow}>{fitEyebrow}</p>
@@ -278,13 +278,13 @@ export default function CityPageClient({
 
         {/* ── Process ──────────────────────────────────────────────────── */}
         <motion.section
-          className='section'
+          className={styles.section}
           variants={sectionReveal}
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
         >
-          <div className={`container ${styles.processSection}`}>
+          <div className={`${styles.wrap} ${styles.processSection}`}>
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>How it works</p>
               <h2 className={styles.sectionTitle}>
@@ -319,13 +319,13 @@ export default function CityPageClient({
 
         {/* ── Proof / citations ────────────────────────────────────────── */}
         <motion.section
-          className='section'
+          className={styles.section}
           variants={sectionReveal}
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
         >
-          <div className='container'>
+          <div className={styles.wrap}>
             <div className={styles.proofEditorial}>
               <div className={styles.sectionIntro}>
                 <p className={styles.sectionEyebrow}>{auditEyebrow}</p>
@@ -351,13 +351,13 @@ export default function CityPageClient({
 
         {/* ── FAQ ──────────────────────────────────────────────────────── */}
         <motion.section
-          className={`section ${styles.faqSectionWrap}`}
+          className={styles.faqSectionWrap}
           variants={sectionReveal}
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
         >
-          <div className={`container ${styles.faqSection}`}>
+          <div className={`${styles.wrap} ${styles.faqSection}`}>
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>FAQ</p>
               <h2 className={styles.sectionTitle}>{faqTitle}</h2>
@@ -375,13 +375,13 @@ export default function CityPageClient({
 
         {/* ── Trade spokes ─────────────────────────────────────────────── */}
         <motion.section
-          className={`section ${styles.spokeSection}`}
+          className={styles.spokeSection}
           variants={sectionReveal}
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
         >
-          <div className='container'>
+          <div className={styles.wrap}>
             <div className={`${styles.sectionIntro} ${styles.spokesIntro}`}>
               <p className={styles.sectionEyebrow}>{spokesEyebrow}</p>
               <h2 className={styles.sectionTitle}>{spokesTitle}</h2>

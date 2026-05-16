@@ -3,8 +3,8 @@ import styles from "./ServiceAreasCities.module.css";
 
 export default function ServiceAreasCities({ content }) {
   return (
-    <section className='section'>
-      <div className={`container ${styles.inner}`}>
+    <section className={styles.section}>
+      <div className={styles.inner}>
         <div className={styles.header}>
           <p className={styles.eyebrow}>{content.eyebrow}</p>
           <h2 className={styles.h2}>{content.h2}</h2>
