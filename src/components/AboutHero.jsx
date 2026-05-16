@@ -43,7 +43,7 @@ export default function AboutHero() {
           </motion.span>
 
           <motion.h1 variants={fadeUp} className={styles.h1}>
-            Good contractors lose jobs to worse ones every day.
+            Good contractors <em className={styles.accent}>lose jobs</em> to worse ones every day.
           </motion.h1>
 
           <motion.p variants={fadeUp} className={styles.subhead}>
