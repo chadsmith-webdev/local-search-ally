@@ -146,7 +146,7 @@ export default function SpringdalePlumbingClient({ auditUrl }) {
             <div className={styles.sectionIntro}>
               <p className={styles.sectionEyebrow}>The Market</p>
               <h2 className={styles.sectionTitle}>
-                A High-Demand Market for Springdale Plumbing Services
+                High volume, high competition, higher rewards
               </h2>
             </div>
             <div className={styles.marketCopy}>
