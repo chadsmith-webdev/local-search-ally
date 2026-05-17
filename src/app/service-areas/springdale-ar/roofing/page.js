@@ -5,12 +5,12 @@ const auditUrl = process.env.NEXT_PUBLIC_AUDIT_URL ?? "/audit";
 
 export function generateMetadata() {
   return {
-    title: "Springdale Roofing SEO | Local Search Ally",
+    title: "Springdale, AR Roofing SEO | Local Search Ally",
     description:
       "Win the Springdale roofing market. I help roofing contractors in Springdale, AR rank higher in the Map Pack, capture storm-damage leads, and outrank NWA competitors.",
     alternates: { canonical: pageUrl },
     openGraph: {
-      title: "Springdale Roofing SEO | Local Search Ally",
+      title: "Springdale, AR Roofing SEO | Local Search Ally",
       description:
         "Win the Springdale roofing market. I help roofing contractors in Springdale, AR rank higher in the Map Pack, capture storm-damage leads, and outrank NWA competitors.",
       url: pageUrl,
@@ -20,7 +20,7 @@ export function generateMetadata() {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Springdale Roofing SEO | Local Search Ally",
+      title: "Springdale, AR Roofing SEO | Local Search Ally",
       description:
         "Win the Springdale roofing market. I help roofing contractors in Springdale, AR rank higher in the Map Pack, capture storm-damage leads, and outrank NWA competitors.",
     },
@@ -46,15 +46,15 @@ export default function SpringdaleRoofingPage() {
     ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Springdale",
+      addressLocality: "Siloam Springs",
       addressRegion: "AR",
       addressCountry: "US",
-      postalCode: "72764",
+      postalCode: "72761",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "36.1867",
-      longitude: "-94.1288",
+      latitude: "36.18670",
+      longitude: "-94.12880",
     },
   };
 

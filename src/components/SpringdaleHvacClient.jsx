@@ -176,14 +176,14 @@ export default function SpringdaleHvacClient({ auditUrl }) {
                   <span className={styles.compareUnit}>residents</span>
                 </div>
                 <div className={styles.compareTile}>
-                  <span className={styles.compareCity}>Siloam Springs</span>
-                  <span className={styles.compareValue}>~17K</span>
-                  <span className={styles.compareUnit}>residents</span>
+                  <span className={styles.compareCity}>Peak demand</span>
+                  <span className={styles.compareValue}>July–Aug</span>
+                  <span className={styles.compareUnit}>emergency searches highest in summer</span>
                 </div>
                 <div className={styles.compareTile}>
-                  <span className={styles.compareCity}>Fayetteville</span>
-                  <span className={styles.compareValue}>~98K</span>
-                  <span className={styles.compareUnit}>residents</span>
+                  <span className={styles.compareCity}>Commercial</span>
+                  <span className={styles.compareValue}>Growing</span>
+                  <span className={styles.compareUnit}>industrial base adds rooftop service</span>
                 </div>
               </div>
               <p className={styles.compareNote}>
@@ -436,6 +436,18 @@ export default function SpringdaleHvacClient({ auditUrl }) {
           </div>
           <p className={styles.trust}>
             No contracts. No pitch. Results in about 90 seconds.
+          </p>
+          <p className={styles.trust}>
+            Prefer a call?{" "}
+            <a href="tel:+14793808626">(479) 380-8626</a>
+          </p>
+          <p className={styles.trust}>
+            More in Springdale:{" "}
+            <Link href="/service-areas/springdale-ar/electrical">Electrical</Link>
+            {" · "}
+            <Link href="/service-areas/springdale-ar/plumbing">Plumbing</Link>
+            {" · "}
+            <Link href="/service-areas/springdale-ar/roofing">Roofing</Link>
           </p>
         </div>
       </motion.section>

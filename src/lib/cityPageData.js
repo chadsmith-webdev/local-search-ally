@@ -9,9 +9,9 @@ export const cityPageData = {
     state: "Arkansas",
     slug: "springdale-ar",
     auditCityParam: "Springdale",
-    metaTitle: "Local SEO for Springdale Trades | Local Search Ally",
+    metaTitle: "Local SEO for Springdale, AR Trades | Local Search Ally",
     metaDescription:
-      "Local SEO for Springdale home service trades. Trades here compete in both Springdale and Fayetteville searches — I help you show up where calls start.",
+      "Local SEO for Springdale, AR home service trades — where you compete across Springdale and Fayetteville searches. I help you show up where calls start.",
     ogTitle: "Local SEO in Springdale, AR | Local Search Ally",
     ogDescription:
       "High search volume, two markets in one. If you're not showing up on Google, a Springdale contractor who is gets that call.",

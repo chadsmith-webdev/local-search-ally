@@ -177,14 +177,14 @@ export default function SpringdaleLandscapingClient({ auditUrl }) {
                   <span className={styles.compareUnit}>residents</span>
                 </div>
                 <div className={styles.compareTile}>
-                  <span className={styles.compareCity}>Siloam Springs</span>
-                  <span className={styles.compareValue}>~17K</span>
-                  <span className={styles.compareUnit}>residents</span>
+                  <span className={styles.compareCity}>Spring rush</span>
+                  <span className={styles.compareValue}>Mar–May</span>
+                  <span className={styles.compareUnit}>bulk of bookings in a 10-week window</span>
                 </div>
                 <div className={styles.compareTile}>
-                  <span className={styles.compareCity}>Fayetteville</span>
-                  <span className={styles.compareValue}>~98K</span>
-                  <span className={styles.compareUnit}>residents</span>
+                  <span className={styles.compareCity}>Neighborhoods</span>
+                  <span className={styles.compareValue}>Dense</span>
+                  <span className={styles.compareUnit}>recurring route demand across the city</span>
                 </div>
               </div>
               <p className={styles.compareNote}>
@@ -437,6 +437,18 @@ export default function SpringdaleLandscapingClient({ auditUrl }) {
           </div>
           <p className={styles.trust}>
             No contracts. No pitch. Results in about 90 seconds.
+          </p>
+          <p className={styles.trust}>
+            Prefer a call?{" "}
+            <a href="tel:+14793808626">(479) 380-8626</a>
+          </p>
+          <p className={styles.trust}>
+            More in Springdale:{" "}
+            <Link href="/service-areas/springdale-ar/roofing">Roofing</Link>
+            {" · "}
+            <Link href="/service-areas/springdale-ar/remodeling">Remodeling</Link>
+            {" · "}
+            <Link href="/service-areas/springdale-ar/hvac">HVAC</Link>
           </p>
         </div>
       </motion.section>

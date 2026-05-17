@@ -5,14 +5,14 @@ const auditUrl = process.env.NEXT_PUBLIC_AUDIT_URL ?? "/audit";
 
 export function generateMetadata() {
   return {
-    title: "Springdale Electrician SEO | Local Search Ally",
+    title: "Springdale, AR Electrician SEO | Local Search Ally",
     description:
-      "Win the Springdale electrical market. I help electricians in Springdale, AR dominate the Map Pack, capture commercial leads, and outrank NWA competitors.",
+      "Win the Springdale, AR electrical market. I help electricians rank above competitors in the Map Pack, capture commercial leads, and outrank NWA competitors.",
     alternates: { canonical: pageUrl },
     openGraph: {
-      title: "Springdale Electrician SEO | Local Search Ally",
+      title: "Springdale, AR Electrician SEO | Local Search Ally",
       description:
-        "Win the Springdale electrical market. I help electricians in Springdale, AR dominate the Map Pack, capture commercial leads, and outrank NWA competitors.",
+        "Win the Springdale, AR electrical market. I help electricians rank above competitors in the Map Pack, capture commercial leads, and outrank NWA competitors.",
       url: pageUrl,
       siteName: "Local Search Ally",
       locale: "en_US",
@@ -20,9 +20,9 @@ export function generateMetadata() {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Springdale Electrician SEO | Local Search Ally",
+      title: "Springdale, AR Electrician SEO | Local Search Ally",
       description:
-        "Win the Springdale electrical market. I help electricians in Springdale, AR dominate the Map Pack, capture commercial leads, and outrank NWA competitors.",
+        "Win the Springdale, AR electrical market. I help electricians rank above competitors in the Map Pack, capture commercial leads, and outrank NWA competitors.",
     },
   };
 }
@@ -46,15 +46,15 @@ export default function SpringdaleElectricalPage() {
     ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Springdale",
+      addressLocality: "Siloam Springs",
       addressRegion: "AR",
       addressCountry: "US",
-      postalCode: "72764",
+      postalCode: "72761",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "36.1867",
-      longitude: "-94.1288",
+      latitude: "36.18670",
+      longitude: "-94.12880",
     },
   };
 

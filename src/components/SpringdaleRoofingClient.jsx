@@ -179,14 +179,14 @@ export default function SpringdaleRoofingClient({ auditUrl }) {
                   <span className={styles.compareUnit}>residents</span>
                 </div>
                 <div className={styles.compareTile}>
-                  <span className={styles.compareCity}>Siloam Springs</span>
-                  <span className={styles.compareValue}>~17K</span>
-                  <span className={styles.compareUnit}>residents</span>
+                  <span className={styles.compareCity}>Storm chasers</span>
+                  <span className={styles.compareValue}>Flood in</span>
+                  <span className={styles.compareUnit}>after every NWA hail event</span>
                 </div>
                 <div className={styles.compareTile}>
-                  <span className={styles.compareCity}>Fayetteville</span>
-                  <span className={styles.compareValue}>~98K</span>
-                  <span className={styles.compareUnit}>residents</span>
+                  <span className={styles.compareCity}>Post-storm</span>
+                  <span className={styles.compareValue}>10x</span>
+                  <span className={styles.compareUnit}>search surge for local roofers</span>
                 </div>
               </div>
               <p className={styles.compareNote}>
@@ -443,6 +443,18 @@ export default function SpringdaleRoofingClient({ auditUrl }) {
           </div>
           <p className={styles.trust}>
             No contracts. No pitch. Results in about 90 seconds.
+          </p>
+          <p className={styles.trust}>
+            Prefer a call?{" "}
+            <a href="tel:+14793808626">(479) 380-8626</a>
+          </p>
+          <p className={styles.trust}>
+            More in Springdale:{" "}
+            <Link href="/service-areas/springdale-ar/hvac">HVAC</Link>
+            {" · "}
+            <Link href="/service-areas/springdale-ar/plumbing">Plumbing</Link>
+            {" · "}
+            <Link href="/service-areas/springdale-ar/remodeling">Remodeling</Link>
           </p>
         </div>
       </motion.section>

@@ -5,14 +5,14 @@ const auditUrl = process.env.NEXT_PUBLIC_AUDIT_URL ?? "/audit";
 
 export function generateMetadata() {
   return {
-    title: "Springdale HVAC SEO | Local Search Ally",
+    title: "Springdale, AR HVAC SEO | Local Search Ally",
     description:
-      "Win the Springdale HVAC market. I help HVAC contractors in Springdale, AR dominate the Map Pack, capture commercial leads, and outrank NWA competitors.",
+      "Win the Springdale, AR HVAC market. I help HVAC contractors rank above competitors in the Map Pack, capture commercial leads, and outrank NWA competitors.",
     alternates: { canonical: pageUrl },
     openGraph: {
-      title: "Springdale HVAC SEO | Local Search Ally",
+      title: "Springdale, AR HVAC SEO | Local Search Ally",
       description:
-        "Win the Springdale HVAC market. I help HVAC contractors in Springdale, AR dominate the Map Pack, capture commercial leads, and outrank NWA competitors.",
+        "Win the Springdale, AR HVAC market. I help HVAC contractors rank above competitors in the Map Pack, capture commercial leads, and outrank NWA competitors.",
       url: pageUrl,
       siteName: "Local Search Ally",
       locale: "en_US",
@@ -20,9 +20,9 @@ export function generateMetadata() {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Springdale HVAC SEO | Local Search Ally",
+      title: "Springdale, AR HVAC SEO | Local Search Ally",
       description:
-        "Win the Springdale HVAC market. I help HVAC contractors in Springdale, AR dominate the Map Pack, capture commercial leads, and outrank NWA competitors.",
+        "Win the Springdale, AR HVAC market. I help HVAC contractors rank above competitors in the Map Pack, capture commercial leads, and outrank NWA competitors.",
     },
   };
 }
@@ -46,15 +46,15 @@ export default function SpringdaleHvacPage() {
     ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Springdale",
+      addressLocality: "Siloam Springs",
       addressRegion: "AR",
       addressCountry: "US",
-      postalCode: "72764",
+      postalCode: "72761",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "36.1867",
-      longitude: "-94.1288",
+      latitude: "36.18670",
+      longitude: "-94.12880",
     },
   };
 

@@ -5,14 +5,14 @@ const auditUrl = process.env.NEXT_PUBLIC_AUDIT_URL ?? "/audit";
 
 export function generateMetadata() {
   return {
-    title: "Springdale Landscaping SEO | Local Search Ally",
+    title: "Springdale, AR Landscaping SEO | Local Search Ally",
     description:
-      "Win the Springdale landscaping market. I help landscapers in Springdale, AR dominate the Map Pack, showcase real projects, and outrank NWA competitors.",
+      "Win the Springdale, AR landscaping market. I help landscapers show up first in the Map Pack, showcase real projects, and outrank NWA competitors.",
     alternates: { canonical: pageUrl },
     openGraph: {
-      title: "Springdale Landscaping SEO | Local Search Ally",
+      title: "Springdale, AR Landscaping SEO | Local Search Ally",
       description:
-        "Win the Springdale landscaping market. I help landscapers in Springdale, AR dominate the Map Pack, showcase real projects, and outrank NWA competitors.",
+        "Win the Springdale, AR landscaping market. I help landscapers show up first in the Map Pack, showcase real projects, and outrank NWA competitors.",
       url: pageUrl,
       siteName: "Local Search Ally",
       locale: "en_US",
@@ -20,9 +20,9 @@ export function generateMetadata() {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Springdale Landscaping SEO | Local Search Ally",
+      title: "Springdale, AR Landscaping SEO | Local Search Ally",
       description:
-        "Win the Springdale landscaping market. I help landscapers in Springdale, AR dominate the Map Pack, showcase real projects, and outrank NWA competitors.",
+        "Win the Springdale, AR landscaping market. I help landscapers show up first in the Map Pack, showcase real projects, and outrank NWA competitors.",
     },
   };
 }
@@ -46,15 +46,15 @@ export default function SpringdaleLandscapingPage() {
     ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Springdale",
+      addressLocality: "Siloam Springs",
       addressRegion: "AR",
       addressCountry: "US",
-      postalCode: "72764",
+      postalCode: "72761",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "36.1867",
-      longitude: "-94.1288",
+      latitude: "36.18670",
+      longitude: "-94.12880",
     },
   };
 
@@ -67,7 +67,7 @@ export default function SpringdaleLandscapingPage() {
         name: "How long does it take to see landscaping SEO results in Springdale?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Springdale is a dense market with high demand. I usually see Map Pack movement within 90 days for established businesses. If you are starting fresh, expect 4-6 months to build the authority needed to dominate the top three results.",
+          text: "Springdale is a dense market with high demand. I usually see Map Pack movement within 90 days for established businesses. If you are starting fresh, expect 4-6 months to build the authority needed to rank in the top three results.",
         },
       },
       {
