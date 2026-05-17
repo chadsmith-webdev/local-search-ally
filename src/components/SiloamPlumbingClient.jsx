@@ -448,6 +448,18 @@ export default function SiloamPlumbingClient({ auditUrl }) {
           <p className={styles.trust}>
             No contracts. No pitch. Results in about 90 seconds.
           </p>
+          <p className={styles.trust}>
+            Prefer a call?{" "}
+            <a href="tel:+14793808626">(479) 380-8626</a>
+          </p>
+          <p className={styles.trust}>
+            More in Siloam Springs:{" "}
+            <Link href="/service-areas/siloam-springs-ar/electrical">Electrical</Link>
+            {" · "}
+            <Link href="/service-areas/siloam-springs-ar/hvac">HVAC</Link>
+            {" · "}
+            <Link href="/service-areas/siloam-springs-ar/roofing">Roofing</Link>
+          </p>
         </div>
       </motion.section>
     </main>

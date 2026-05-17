@@ -6,12 +6,12 @@ const auditUrl = process.env.NEXT_PUBLIC_AUDIT_URL ?? "/audit";
 
 export function generateMetadata() {
   return {
-    title: "Siloam Springs Landscaping SEO | Local Search Ally",
+    title: "Siloam Springs, AR Landscaping SEO | Local Search Ally",
     description:
       "Landscaping in Siloam Springs is won on photos and neighbor reviews. I help local crews show up first when homeowners search for lawn care, mulch, and design.",
     alternates: { canonical: pageUrl },
     openGraph: {
-      title: "Siloam Springs Landscaping SEO | Local Search Ally",
+      title: "Siloam Springs, AR Landscaping SEO | Local Search Ally",
       description:
         "Landscaping in Siloam Springs is won on photos and neighbor reviews. I help local crews show up first when homeowners search for lawn care, mulch, and design.",
       url: pageUrl,
@@ -21,7 +21,7 @@ export function generateMetadata() {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Siloam Springs Landscaping SEO | Local Search Ally",
+      title: "Siloam Springs, AR Landscaping SEO | Local Search Ally",
       description:
         "Landscaping in Siloam Springs is won on photos and neighbor reviews. I help local crews show up first when homeowners search for lawn care, mulch, and design.",
     },

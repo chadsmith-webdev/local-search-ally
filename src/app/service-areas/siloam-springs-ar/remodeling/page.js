@@ -6,12 +6,12 @@ const auditUrl = process.env.NEXT_PUBLIC_AUDIT_URL ?? "/audit";
 
 export function generateMetadata() {
   return {
-    title: "Siloam Springs Remodeling SEO | Local Search Ally",
+    title: "Siloam Springs, AR Remodeling SEO | Local Search Ally",
     description:
       "Remodeling is the highest-stakes home decision a homeowner makes. I help Siloam Springs remodelers show up first when kitchens, baths, and additions get researched online.",
     alternates: { canonical: pageUrl },
     openGraph: {
-      title: "Siloam Springs Remodeling SEO | Local Search Ally",
+      title: "Siloam Springs, AR Remodeling SEO | Local Search Ally",
       description:
         "Remodeling is the highest-stakes home decision a homeowner makes. I help Siloam Springs remodelers show up first when kitchens, baths, and additions get researched online.",
       url: pageUrl,
@@ -21,7 +21,7 @@ export function generateMetadata() {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Siloam Springs Remodeling SEO | Local Search Ally",
+      title: "Siloam Springs, AR Remodeling SEO | Local Search Ally",
       description:
         "Remodeling is the highest-stakes home decision a homeowner makes. I help Siloam Springs remodelers show up first when kitchens, baths, and additions get researched online.",
     },
@@ -92,7 +92,7 @@ export default function SiloamSpringsRemodelingPage() {
         name: "My typical job is $40k+. Are homeowners really finding contractors that way on Google?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Higher the ticket, deeper the research. A homeowner spending $40,000 on a kitchen will spend weeks comparing remodelers — GBP profile, photos, recent reviews, website portfolio, the Houzz profile, the Facebook page. They are not picking based on the first ad. They are vetting. If your online presence holds up against scrutiny, you make the shortlist. If it doesn't, you get cut before the consultation is ever booked.",
+          text: "Higher the ticket, deeper the research. A homeowner spending $40,000 on a kitchen will spend weeks comparing remodelers — GBP profile, photos, recent reviews, website portfolio, the Houzz profile, the Facebook page. They are not picking based on the first ad. They are vetting. If your GBP, reviews, and website hold up against scrutiny, you make the shortlist. If it doesn't, you get cut before the consultation is ever booked.",
         },
       },
       {

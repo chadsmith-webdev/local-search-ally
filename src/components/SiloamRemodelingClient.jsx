@@ -20,7 +20,7 @@ const FAQS = [
   },
   {
     q: "My typical job is $40k+. Are homeowners really finding contractors that way on Google?",
-    a: "Higher the ticket, deeper the research. A homeowner spending $40,000 on a kitchen will spend weeks comparing remodelers — GBP profile, photos, recent reviews, website portfolio, the Houzz profile, the Facebook page. They are not picking based on the first ad. They are vetting. If your online presence holds up against scrutiny, you make the shortlist. If it doesn't, you get cut before the consultation is ever booked.",
+    a: "Higher the ticket, deeper the research. A homeowner spending $40,000 on a kitchen will spend weeks comparing remodelers — GBP profile, photos, recent reviews, website portfolio, the Houzz profile, the Facebook page. They are not picking based on the first ad. They are vetting. If your GBP, reviews, and website hold up against scrutiny, you make the shortlist. If it doesn't, you get cut before the consultation is ever booked.",
   },
   {
     q: "Do you work with remodelers outside Siloam Springs?",
@@ -119,7 +119,7 @@ export default function SiloamRemodelingClient({ auditUrl }) {
             <motion.p className={styles.heroBody} variants={fadeUp}>
               If your Google presence looks thin, dated, or thrown together,
               homeowners spending $40,000 on a kitchen will move on to the
-              remodeler whose online presence matches the size of the
+              remodeler whose GBP and website match the size of the
               investment. I help remodelers in Siloam Springs build the kind of
               local search footprint a serious homeowner expects before they
               ever pick up the phone.
@@ -253,7 +253,7 @@ export default function SiloamRemodelingClient({ auditUrl }) {
           </div>
           <p className={styles.problemLead}>
             The problem isn&apos;t whether homeowners in Siloam Springs are
-            remodeling. They are. The problem is whether your online presence —
+            remodeling. They are. The problem is whether your search footprint —
             your GBP, your project photos, your service pages, your reviews —
             survives the weeks of quiet research that happen before they ever
             reach out for a quote.
@@ -499,6 +499,18 @@ export default function SiloamRemodelingClient({ auditUrl }) {
           </div>
           <p className={styles.trust}>
             No contracts. No pitch. Results in about 90 seconds.
+          </p>
+          <p className={styles.trust}>
+            Prefer a call?{" "}
+            <a href="tel:+14793808626">(479) 380-8626</a>
+          </p>
+          <p className={styles.trust}>
+            More in Siloam Springs:{" "}
+            <Link href="/service-areas/siloam-springs-ar/hvac">HVAC</Link>
+            {" · "}
+            <Link href="/service-areas/siloam-springs-ar/plumbing">Plumbing</Link>
+            {" · "}
+            <Link href="/service-areas/siloam-springs-ar/roofing">Roofing</Link>
           </p>
         </div>
       </motion.section>

@@ -402,7 +402,7 @@ export const cityPageData = {
     state: "Arkansas",
     slug: "siloam-springs-ar",
     auditCityParam: "Siloam Springs",
-    metaTitle: "Local SEO for Siloam Springs Trades | Local Search Ally",
+    metaTitle: "Local SEO for Siloam Springs, AR Trades | Local Search Ally",
     metaDescription:
       "Local SEO for Siloam Springs home service trades. HVAC, plumbing, roofing, and electrical — I help you show up in Google Maps and get calls.",
     ogTitle: "Local SEO in Siloam Springs, AR | Local Search Ally",

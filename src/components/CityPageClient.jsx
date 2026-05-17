@@ -439,6 +439,10 @@ export default function CityPageClient({
             <p className={styles.trust}>
               No pitch, no signup — results in about 90 seconds.
             </p>
+            <p className={styles.trust}>
+              Prefer a call?{" "}
+              <a href="tel:+14793808626">(479) 380-8626</a>
+            </p>
           </div>
         </section>
       </main>
